@@ -1480,6 +1480,10 @@ BEGIN
    		 t.column_name = _col
    INTO _col_type; 	
    
+   IF _col_type = 'character' THEN
+  	_col_type = 'varchar'; 
+   END IF;
+   
    IF _col_type is null THEN
    	 perform raiserror('can not find out the column type. check table and column names');
    END IF;
@@ -1490,6 +1494,10 @@ BEGIN
   WHERE concat(t.table_schema,'.',t.table_name) = _tablename and 
   upper(t.column_name) = 'ID'
   INTO _id_type;
+  
+  IF _id_type = 'character' THEN
+  	_id_type = 'varchar'; 
+  END IF;
   
   IF _type = 'password' THEN
      drop extension pgcrypto;
@@ -1510,6 +1518,9 @@ BEGIN
      WHERE concat(t.table_schema,'.',t.table_name) = _relatetable and 
      upper(t.column_name) = 'ID'
      INTO rel_id_type;
+       IF rel_id_type = 'character' THEN
+          rel_id_type = 'varchar'; 
+       END IF;
      
      IF rel_id_type is null THEN
        perform raiserror('can not find out the relation ID type. check table and column names');
@@ -1644,14 +1655,15 @@ BEGIN
            t.column_name = 'userid')>0 THEN
          _squery = concat( ' UPDATE ', _tablename, ' 
          					 SET ',_col,' = $2::',_col_type,' , userid = $3
-                             WHERE id::',_id_type,' = $1::',_id_type,';                                
+                             WHERE id = $1::',_id_type,';                                
                               ');
 							
          EXECUTE format(_squery) USING _id,_value, _userid::int; 
       ELSE
+        -- perform raiserror(_id_type::varchar);
          _squery = concat( ' UPDATE ', _tablename, ' 
          					 SET ',_col,' = $2::',_col_type,' 
-                             WHERE id::',_id_type,' = $1::',_id_type,';                                
+                             WHERE id = $1::',_id_type,';                                
                               ');
 		--PERFORM raiserror(_value::varchar);
          EXECUTE format(_squery) USING _id,_value; 
