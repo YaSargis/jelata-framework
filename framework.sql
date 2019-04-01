@@ -130,7 +130,6 @@ DECLARE
   _val varchar;
 BEGIN
 
-
 	col = injson->>'col';
     val = injson->>'val';
     _table = injson->>'table';
@@ -138,20 +137,28 @@ BEGIN
     IF val is not null and length(val) >= 3 THEN
     	_val = concat('%',upper(_val),'%');
     	squery = concat(squery,
-        	'SELECT array_to_json(array_agg(row_to_json(d))) FROM (SELECT ' , 
+        	'SELECT array_to_json(array_agg(row_to_json(d))) FROM (
+            SELECT ' , 
             col , ' as value, ' , col , ' 
         	as label FROM ' , _table , ' WHERE upper(' , 
             col , ')::varchar like $1::varchar ) as d');
             	
        EXECUTE format(squery) USING _val INTO outjson;
        
+       
+       
        outjson = coalesce(outjson,
        					(SELECT array_to_json(array_agg(row_to_json(d))) 
-                         FROM (SELECT val as value, val as label) as d));
+                         FROM (
+                        
+                         SELECT val as value, val as label
+                         
+                         ) as d));
             
     END IF;        
 
 	outjson = coalesce(outjson,'[]');
+    outjson = '{"label":"","value":null}'::jsonb||outjson::jsonb; 
 
 END;
 $_$;
