@@ -130,6 +130,7 @@ DECLARE
   _val varchar;
 BEGIN
 
+
 	col = injson->>'col';
     val = injson->>'val';
     _table = injson->>'table';
@@ -145,7 +146,7 @@ BEGIN
        EXECUTE format(squery) USING _val INTO outjson;
        
        outjson = coalesce(outjson,
-       					(SELECT row_to_json(d) 
+       					(SELECT array_to_json(array_agg(row_to_json(d))) 
                          FROM (SELECT val as value, val as label) as d));
             
     END IF;        
