@@ -1851,7 +1851,8 @@ BEGIN
       FROM framework.treesbranches as tb
       	LEFT JOIN framework.views as v on v.id = tb.viewid
         LEFT JOIN framework.compos as c on c.id = tb.compoid
-      WHERE tb.treesid = t.id and tb.title is not null) as d) as  items  
+      WHERE tb.treesid = t.id and tb.title is not null
+      ORDER BY tb.orderby) as d) as  items  
   FROM framework.trees as t
   WHERE t.url = _path and (t.roles is null
   or 
@@ -2833,7 +2834,8 @@ CREATE TABLE treesbranches (
     created timestamp without time zone DEFAULT now() NOT NULL,
     treeviewtype smallint,
     viewid integer,
-    compoid integer
+    compoid integer,
+    orderby smallint	
 );
 
 
