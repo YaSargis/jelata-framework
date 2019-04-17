@@ -18,7 +18,6 @@ def getList(result,body, userdetail=None):
 	useroles = []
 	if userdetail:
 		useroles = userdetail.get('roles') or []
-		print(userdetail)
 	joins = ""
 	orderby = ""
 	where = ""
@@ -111,29 +110,76 @@ def getList(result,body, userdetail=None):
 				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + ".id = " + tpath[i-1].get("t") + "." + col.get('relatecolumn')  
 		
 		if col.get("defaultval"):
-			defv = col.get("defaultval")
-			if defv[:5] == 'func:':
-				defv = " = " + defv[5:] + " "
-			elif defv in ('is null','is not null'):
-				defv = ' ' + defv 
-			elif defv == "_orgs_":
-				userorgs = str(userdetail.get('orgs'))
-				defv = " in (select value::varchar from json_array_elements_text('" + userorgs + "') "
-			elif defv == "_userid_":
-				#if userdetail is not None and len(userdetail) > 0:
-				userid = str(userdetail.get('id'))	
-				#if userid and len(userid)>0:
-				defv = " = '" + userid + "' "	
-			elif defv == "_orgid_":
-				orgid = str(userdetail.get('orgid'))	
-				defv = " = '" + orgid + "' "				
-			else :
-				defv = " = '" + defv + "'"
-			if "related" in col:
-				where += "and t" + str(col.get("t")) + "." + col.get("col") + "::varchar " + defv + " "				
+			colname = ''
+			if 'fn' not in col:	
+				if "related" in col:
+					colname = "t" + str(col.get("t")) + "." + col.get("col")
+					#where += "and t" + str(col.get("t")) + "." + col.get("col") + "::varchar " + defv + " "				
+				else:
+					#where += "and t1." + col.get("col") + "::varchar " + defv + " "
+					colname = "t1." + col.get("col")
 			else:
-				where += "and t1." + col.get("col") + "::varchar " + defv + " "	
-				
+				#where += 'and ' + col.get("fn").get('label') + "( " 
+				colname =  col.get("fn").get('label') + "( "
+				for cl in col.get("fncolumns"):
+					colname += "t" + str(cl.get('t')) + "." + cl.get('label') + ","
+				colname = colname[:len(colname)-1]
+				colname += ')'
+			defv = ''
+			if len(col.get("defaultval"))>0: 
+				defv = '('
+			for d in col.get("defaultval"):
+				def_v = d.get('value')
+				act_v = d.get('act').get('value')
+				bool_v = d.get('bool').get('value')
+				if act_v == 'like' or act_v == 'not like':
+					if def_v == "_userid_":
+						userid = str(userdetail.get('id'))	
+						defv += bool_v + " " + colname + " " + act_v + " '%" + userid + "%' "	
+					elif def_v == "_orgid_":
+						orgid = str(userdetail.get('orgid'))	
+						defv += bool_v + " " + colname + " " + act_v + " '%" + orgid + "%' "						
+					else :
+						defv += bool_v + " " + colname +  " " + act_v + " '%" + def_v + "%' "
+				elif act_v == 'is null' or act_v == 'is not null':		
+						defv += bool_v + " " + colname +  " " + act_v 
+				elif act_v == 'in' or act_v == 'not in':
+					if def_v == "_orgs_":
+						userorgs = str(userdetail.get('orgs'))
+						if col.get('type') == 'array':
+							defv += bool_v + " (select count(*) from json_array_elements_text('" + userorgs + "') as j1 join json_array_elements_text(" + colname + ") as j2 on j1.value::varchar=j2.value::varchar)>0 "
+						else:
+							defv += bool_v + " " + colname +  "::varchar " + act_v + "(select value::varchar from json_array_elements_text('" + userorgs + "')) "
+					elif def_v == "_userid_":
+						userid = str(userdetail.get('id'))	
+						defv += bool_v + " " + colname + "::varchar " + act_v + " ('" + userid + "') "	
+					elif def_v == bool_v + "_orgid_":
+						orgid = str(userdetail.get('orgid'))	
+						defv += bool_v + " " + colname +  "::varchar " + act_v + " ('" + orgid + "') "		
+					elif def_v.find(',') != -1:	
+						defv += bool_v + " " + colname +  "::varchar " + act_v + " (select value::varchar from json_array_elements_text('[" + def_v + "]')) "
+						defv = defv.replace('[','["').replace(',','","').replace(']','"]')		
+					else :
+						defv += bool_v + " " + colname +  "::varchar " + act_v + " ('" + def_v + "') "
+				else:
+					if def_v == "_orgs_":
+						userorgs = str(userdetail.get('orgs'))
+						defv += bool_v + " " + colname + "::varchar " + act_v + " (select value::varchar from json_array_elements_text('" + userorgs + "')) "
+					elif def_v == "_userid_":
+						userid = str(userdetail.get('id'))	
+						defv += bool_v + " " + colname + " " + act_v + " '" + userid + "' "	
+					elif def_v == bool_v + "_orgid_":
+						orgid = str(userdetail.get('orgid'))	
+						defv += bool_v + " " + colname +  " " + act_v + " '" + orgid + "' "		
+					else :
+						defv += bool_v + " " + colname +  " " + act_v + " '" + def_v + "' "
+			if len(defv) > 0:
+				defv = defv.replace('(or','( ')
+				defv = defv.replace('(and','( ')
+				defv += ')'
+			where += "and " + defv + " " 			
+						
+
 		if 'inputs' in body:
 			order_by = body.get("inputs").get("orderby") or []
 			if body.get("inputs").get(col.get("title")):
@@ -202,9 +248,9 @@ def getList(result,body, userdetail=None):
 								for x in col.get("column"):	
 									where += " or "
 									if x.get("t"):
-										where += " lower(t" + str(x.get("t") or '1') + "." + x.get("label") + "::varchar) like lower('%" + str(v) + "%') "
+										where += " lower(t" + str(x.get("t") or '1') + "." + x.get("label") + "::varchar) like lower('%" + str(v).strip() + "%') "
 									else:	
-										where += " lower(" + x.get("label") + "::varchar) like lower('%" + str(v) + "%') "
+										where += " lower(" + x.get("label") + "::varchar) like lower('%" + str(v).strip() + "%') "
 								where = where.replace("( or","(") + " ) "
 							
 	pagenum = 1
@@ -222,10 +268,12 @@ def getList(result,body, userdetail=None):
 		if body.get('pagination') and 'pagesize' in body.get('pagination'):
 			pagesize = int(body.get('pagination').get('pagesize'))
 		
-		page1 = (pagenum * pagesize) - pagesize + 1
-		page2 = pagenum * pagesize
+		page1 = (pagenum * pagesize) - pagesize
+		#page1 = (pagenum * pagesize) - pagesize + 1
+		#page2 = pagenum * pagesize
 		pageselect = 'SELECT * FROM (' 
-		pagewhere += ') as pz WHERE pz.rownum between ' + str(page1) + ' and ' + str(page2) + '   '
+		#pagewhere += ') as pz WHERE pz.rownum between ' + str(page1) + ' and ' + str(page2) + '   '
+		pagewhere += ' LIMIT ' + str(pagesize) + ' OFFSET ' + str(page1) + ') as pz  '
 	
 	rownum += 'ROW_NUMBER() over ( order by '
 	
@@ -234,7 +282,14 @@ def getList(result,body, userdetail=None):
 			t = "1"
 			if col.get("related"):
 				t = str(col.get("t"))
-			rownum += "t" + t + "." + col.get("col") + " " + col.get("desc") + ","
+			if not col.get('fn'):	
+				rownum += "t" + t + "." + col.get("col") + " " + col.get("desc") + ","
+			else:
+				rownum += col.get("fn").get('value') +'('
+				for x in col.get('fncols'):
+					rownum += 't' + str(x.get('t')) + '.' + x.get('label') + ','
+				rownum = rownum[:len(rownum) - 1] 	
+				rownum += ") " + col.get("desc") + ","
 		rownum = rownum[:len(rownum) - 1]
 	else:
 		rownum += 't1.id'

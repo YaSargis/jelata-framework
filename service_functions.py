@@ -126,7 +126,7 @@ def log(from_c, txt):
 		str(datetime.today().day) + ' ' + str(datetime.today().hour) + ':' + 
 		str(datetime.today().minute) + ':' + str(datetime.today().second))	
 
-	logfile = open('./logs/' + nowstr + '.log', 'at')
+	logfile = open('./logs/' + nowstr + '.log', 'at', encoding = "utf-8")
 
 	logfile.write('\n' + fullnowstr + ' || ' + from_c + ' || ' + txt)	
 	logfile.close()

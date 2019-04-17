@@ -4,7 +4,7 @@ settingsFile = load(df)
 df.close()
 dsn = settingsFile.get("dsn")# database connection string
 port = settingsFile.get("port")#2323
-poolsize = 20
+poolsize = 30
 path = 'jelatafraework'
 
 #U can use userorgs by default value in configurator like this <userorgs>

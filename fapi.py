@@ -49,9 +49,12 @@ def onRequest(self, url, type):
 	method = url[4:] #cut 4 symbols from url start, work only if it will be api/
 	files = [] #variable for files
 	sesid = self.get_cookie("sesid") or ''	#get session id cookie
-	log(url, 'args: ' + str(self.request.arguments) + '; body: ' + str(self.request.body) + 
-		'; sess: ' + sesid + '; type: ' + str(type))
-
+	if self.request.headers['Content-Type'].find('multipart/form-data') == -1:
+		log(url, 'args: ' + str(self.request.arguments) + '; body: ' + str(self.request.body.decode('utf-8')) + 
+			'; sess: ' + sesid + '; type: ' + str(type))
+	else:
+		log(url, 'args: ' + str(self.request.arguments) + 
+			'; sess: ' + sesid + '; type: ' + str(type))		
 	if primaryAuthorization == "1" and sesid == '':
 		self.set_status(401,None)
 		self.write('{"message":"No session"}')
