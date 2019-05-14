@@ -1,9 +1,10 @@
 from uuid import uuid4
 from json import loads, dumps
+from psycopg2 import extras
 from tornado import gen
 
 from basehandler import BaseHandler
-from service_functions import showError, buildInjson, default_headers, log
+from service_functions import showError, default_headers, log
 from settings import maindomain, primaryAuthorization
 
 def savefile(self):
@@ -49,7 +50,7 @@ def onRequest(self, url, type):
 	method = url[4:] #cut 4 symbols from url start, work only if it will be api/
 	files = [] #variable for files
 	sesid = self.get_cookie("sesid") or ''	#get session id cookie
-	if self.request.headers['Content-Type'].find('multipart/form-data') == -1:
+	if self.request.headers.get('Content-Type').find('multipart/form-data') == -1:
 		log(url, 'args: ' + str(self.request.arguments) + '; body: ' + str(self.request.body.decode('utf-8')) + 
 			'; sess: ' + sesid + '; type: ' + str(type))
 	else:
@@ -59,16 +60,14 @@ def onRequest(self, url, type):
 		self.set_status(401,None)
 		self.write('{"message":"No session"}')
 		return
-	if type in (1,3):
-		args = self.request.arguments #GET request arguments
-		for k in args: # decode it
-			args[k] = args.get(k)[0].decode('utf-8') 
-	elif type in (2,4):
+	args = self.request.arguments 
+	for k in args:
+		args[k] = args.get(k)[0].decode('utf-8')
+		
+	if type in (2,4):
 		files = self.request.files#.get("files") #get request files	
 		body = {}
-		args = self.request.arguments 
-		for k in args:
-			args[k] = args.get(k)[0].decode('utf-8') 
+
 		if files:
 			value = args.get('value') 
 			if not value:
@@ -81,14 +80,18 @@ def onRequest(self, url, type):
 			
 		for k in args:
 			body[k] = args.get(k)
-		args = body		
+			
+		args = body	
+		for k in args:
+			if args[k] == "":
+				args[k] = None
 	squery = "select * from framework.fn_fapi(injson:=%s,apititle:=%s,apitype:=%s,sessid:=%s,primaryauthorization:=%s)"
 	result = None
 	try:
-		result = yield self.db.execute(squery,(buildInjson(args).replace('""','null'),method,str(type),sesid,primaryAuthorization,))
+		result = yield self.db.execute(squery,(extras.Json(args),method,str(type),sesid,primaryAuthorization,))
 	except Exception as e:
 		log(url + '_Error',' args: ' + 
-			buildInjson(args).replace('""','null') + '; sess: ' + 
+			str(extras.Json(args)) + '; sess: ' + 
 			sesid + '; type: ' + str(type) + '; Error:' + str(e))
 		showError(str(e), self)
 		return

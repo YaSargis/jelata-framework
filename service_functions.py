@@ -82,14 +82,7 @@ def refObj(oldarray,newarray):
 		if isin:
 			oldarray.remove(oldarray[i])	
 		i += 1		
-	return oldarray	
-	
-def buildInjson(injson):
-	"""
-		build injson parametr for pass it in postgresql function for universal api methods
-	"""
-	strInjson = (dumps(injson).replace("'","''"))
-	return strInjson	
+	return oldarray		
 
 def showError(err,self):
 	"""

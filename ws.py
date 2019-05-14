@@ -1,10 +1,11 @@
 from json import loads, dumps
 from time import sleep
+from psycopg2 import extras
 from tornado import gen, websocket
 from tornado.ioloop import PeriodicCallback
 from basehandler import BaseHandler
 from settings import maindomain, primaryAuthorization
-from service_functions import showError, buildInjson, log
+from service_functions import showError, log
 
 class WebSocket(websocket.WebSocketHandler, BaseHandler):
 	def check_origin(self, origin):
@@ -31,7 +32,7 @@ class WebSocket(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(5)			
 			try:
-				result = yield self.db.execute(squery,(buildInjson(message).replace('""','null'),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
 			except Exception as err:
 				err = str(err)
 				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')

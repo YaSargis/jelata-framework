@@ -1,5 +1,5 @@
 # Current Version
-Jelata Framework v. 0.0.2
+Jelata Framework v. 0.0.3
 
 # Getting Started
 Jelata Framework is a tool combining a framework and development environment that you can use in your browser. 
@@ -30,7 +30,9 @@ After starting the server, in the browser, go to http://127.0.0.1:8080 and in th
 <p><b>login:</b> admin</p>
 <p><b>password:</b> 123</p>
 <p>PS Be sure to change the administrator password before release.</p>
-More detail instructions you can get after starting the server followink link http://127.0.0.1:8080/jdocumentation					
+More detail instructions you can get after starting the server followink link http://127.0.0.1:8080/jdocumentation	
+
+You can write your own front-end for framework using <a href="https://github.com/YaSargis/jelata-framework-main-frontend">main frontent project</a>				
 
 ## Authors
 
