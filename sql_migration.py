@@ -89,11 +89,11 @@ def getList(result,body, userdetail=None):
 		if col.get("relation") and not col.get('depency') and not col.get('related'):
 			if 'join' in col:
 				if col.get("join"):
-					joins += " JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + ".id" 
+					joins += " JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id") 
 				else:
-					joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + ".id" 
+					joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id") 
 			else:
-				joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + ".id" 
+				joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id")  
 		
 		if col.get("tpath"):
 			i = 1
@@ -168,7 +168,7 @@ def getList(result,body, userdetail=None):
 					elif def_v == "_userid_":
 						userid = str(userdetail.get('id'))	
 						defv += bool_v + " " + colname + " " + act_v + " '" + userid + "' "	
-					elif def_v == bool_v + "_orgid_":
+					elif def_v == "_orgid_":
 						orgid = str(userdetail.get('orgid'))	
 						defv += bool_v + " " + colname +  " " + act_v + " '" + orgid + "' "		
 					else :
@@ -203,7 +203,7 @@ def getList(result,body, userdetail=None):
 						if body.get("filters").get(col.get("column")):
 							where += "and t" + str(col.get("t") or '1') + "." + col.get("column") + " = '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
 					elif col.get("type") == "substr":
-						where += "and coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + "::varchar,'') like '%" + formatInj(body.get("filters").get(col.get("column"))) + "%' "
+						where += "and upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + "::varchar,'')) like upper('%" + formatInj(body.get("filters").get(col.get("column"))) + "%') "
 					elif col.get("type") == "period":
 						if formatInj(body.get("filters").get(col.get("column")).get("date1")) is not None and formatInj(body.get("filters").get(col.get("column")).get("date2")) is not None:
 							where += ("and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 

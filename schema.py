@@ -115,6 +115,7 @@ class Schema(BaseHandler):
 								'subscrible':result.get('subscrible'),
 								'isorderby':result.get('orderby'),
 								'viewid':result.get('id'),
+								'checker':result.get('checker'),
 								'user':user
 							}))
 			
