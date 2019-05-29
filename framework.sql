@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.17
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-05-28 19:25:58
+-- Started on 2019-05-29 19:27:30
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -2132,7 +2132,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 298 (class 1255 OID 359467)
+-- TOC entry 300 (class 1255 OID 359467)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2141,14 +2141,14 @@ CREATE FUNCTION fn_userorg_upd(injson json) RETURNS void
     AS $$
 DECLARE
   _orgid int;
-  userid int;
+  _userid int;
 BEGIN
 	_orgid = injson->>'orgid';
-	userid = injson->>'userid';
+	_userid = injson->>'userid';
     
     UPDATE framework.users
     SET orgid = _orgid
-    WHERE id = userid;
+    WHERE id = _userid;
 
 END;
 $$;
@@ -2157,7 +2157,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 299 (class 1255 OID 359468)
+-- TOC entry 298 (class 1255 OID 359468)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2210,7 +2210,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 300 (class 1255 OID 359469)
+-- TOC entry 299 (class 1255 OID 359469)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4665,7 +4665,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-05-28 19:26:47
+-- Completed on 2019-05-29 19:28:17
 
 --
 -- PostgreSQL database dump complete
