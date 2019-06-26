@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.17
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-06-08 02:30:03
+-- Started on 2019-06-26 17:39:11
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -4565,11 +4565,11 @@ CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, isma
 
 
 --
--- TOC entry 2366 (class 2620 OID 360824)
+-- TOC entry 2366 (class 2620 OID 377150)
 -- Name: users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
-CREATE TRIGGER users_tr BEFORE INSERT OR UPDATE OF password, roles, orgs, userid ON framework.users FOR EACH ROW EXECUTE PROCEDURE public.fn_user_check();
+CREATE TRIGGER users_tr BEFORE UPDATE OF password, roles, orgs, userid ON framework.users FOR EACH ROW EXECUTE PROCEDURE public.fn_user_check();
 
 
 --
@@ -4719,7 +4719,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-06-08 02:30:53
+-- Completed on 2019-06-26 17:40:01
 
 --
 -- PostgreSQL database dump complete
