@@ -80,9 +80,9 @@ def getList(result,body, userdetail=None):
 					squery += " distinct "
 				else:
 					for cl in col.get("fncolumns"):
-						gropby += "t" + str(cl.get('t')) + "." + cl.get('label') + ","
+						gropby += "t" + str(cl.get('t')) + '."' + cl.get('label') + '",'
 				for cl in col.get("fncolumns"):
-					squery += "t" + str(cl.get('t')) + "." + cl.get('label') + ","
+					squery += "t" + str(cl.get('t')) + '."' + cl.get('label') + '",'
 				squery = squery[:len(squery)-1]
 				squery += ') as "' + col.get("title") + '", ' 				
 
