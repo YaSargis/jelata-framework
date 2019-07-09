@@ -52,7 +52,7 @@ def getList(result,body, userdetail=None):
 					if str(col.get("relationcolums")) != '[]':	
 						if col.get('depfunc'):
 							for k in col.get("relationcolums"):
-								relcols += 't' + str(col.get('t')) + '."' + k.get('value') + '",'
+								relcols += 't' + str(col.get('t')) + '.' + k.get('value') + ','
 							relcols = relcols[:len(relcols) - 1]
 							squery += ("(SELECT " + col.get('depfunc') + 
 								"(" + relcols + ") FROM " + col.get("relation") + 
@@ -62,7 +62,7 @@ def getList(result,body, userdetail=None):
 							gropby += (" t1.id ,")
 						else:
 							for k in col.get("relationcolums"):
-								relcols += 't' + str(col.get('t')) + '."' + k.get('value') + '",'
+								relcols += 't' + str(col.get('t')) + '.' + k.get('value') + ','
 							relcols = relcols[:len(relcols) - 1]
 							squery += ("coalesce((SELECT array_to_json(array_agg(row_to_json(d))) FROM  ((SELECT " + 
 								relcols + 
@@ -83,17 +83,19 @@ def getList(result,body, userdetail=None):
 						gropby += "t" + str(cl.get('t')) + '."' + cl.get('label') + '",'
 				for cl in col.get("fncolumns"):
 					squery += "t" + str(cl.get('t')) + '."' + cl.get('label') + '",'
+					if col.get("fn").get('label') == 'concat':
+						squery += "' ',"
 				squery = squery[:len(squery)-1]
 				squery += ') as "' + col.get("title") + '", ' 				
 
 		if col.get("relation") and not col.get('depency') and not col.get('related'):
 			if 'join' in col:
 				if col.get("join"):
-					joins += " JOIN " + col.get("relation") + " as t" + str(col.get("t")) + ' on t1."' + col.get("col") + '" = t' + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '"'
+					joins += " JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id") 
 				else:
-					joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + ' on t1."' + col.get("col") + '" = t' + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '"' 
+					joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id") 
 			else:
-				joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + ' on t1."' + col.get("col") + '" = t' + str(col.get("t")) + '.' + (col.get("relcol") or "id") + '"'  
+				joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id")  
 		
 		if col.get("tpath"):
 			i = 1
@@ -101,28 +103,28 @@ def getList(result,body, userdetail=None):
 			while i < len(tpath):
 				if col.get("join"):
 					if joins.find(" as " + tpath[i].get("t")) == -1:
-						joins += " JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + ".id" 
+						joins += " JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + "." + tpath[i].get("col") + " = " + tpath[i].get("t") + ".id" 
 				else:
 					if joins.find(tpath[i].get("t")) == -1:
-						joins += " LEFT JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + ".id" 
+						joins += " LEFT JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + "." + tpath[i].get("col") + " = " + tpath[i].get("t") + ".id" 
 				i += 1
 			if 	joins.find(" as t" + str(col.get("t"))) == -1:
-				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + ".id = " + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'
+				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + ".id = " + tpath[i-1].get("t") + "." + col.get('relatecolumn')  
 		
 		if col.get("defaultval"):
 			colname = ''
 			if 'fn' not in col:	
 				if "related" in col:
-					colname = "t" + str(col.get("t")) + '."' + col.get("col") + '"'
+					colname = "t" + str(col.get("t")) + "." + col.get("col")
 					#where += "and t" + str(col.get("t")) + "." + col.get("col") + "::varchar " + defv + " "				
 				else:
 					#where += "and t1." + col.get("col") + "::varchar " + defv + " "
-					colname = 't1."' + col.get("col") + '"'
+					colname = "t1." + col.get("col")
 			else:
 				#where += 'and ' + col.get("fn").get('label') + "( " 
 				colname =  col.get("fn").get('label') + "( "
 				for cl in col.get("fncolumns"):
-					colname += "t" + str(cl.get('t')) + '."' + cl.get('label') + '",'
+					colname += "t" + str(cl.get('t')) + "." + cl.get('label') + ","
 				colname = colname[:len(colname)-1]
 				colname += ')'
 			defv = ''
@@ -135,44 +137,44 @@ def getList(result,body, userdetail=None):
 				if act_v == 'like' or act_v == 'not like':
 					if def_v == "_userid_":
 						userid = str(userdetail.get('id'))	
-						defv += bool_v + ' "' + colname + '" ' + act_v + " '%" + userid + "%' "	
+						defv += bool_v + " " + colname + " " + act_v + " '%" + userid + "%' "	
 					elif def_v == "_orgid_":
 						orgid = str(userdetail.get('orgid'))	
-						defv += bool_v + ' "' + colname + '" ' + act_v + " '%" + orgid + "%' "						
+						defv += bool_v + " " + colname + " " + act_v + " '%" + orgid + "%' "						
 					else :
-						defv += bool_v + ' "' + colname +  '" ' + act_v + " '%" + def_v + "%' "
+						defv += bool_v + " " + colname +  " " + act_v + " '%" + def_v + "%' "
 				elif act_v == 'is null' or act_v == 'is not null':		
-						defv += bool_v + ' "' + colname +  '" ' + act_v 
+						defv += bool_v + " " + colname +  " " + act_v 
 				elif act_v == 'in' or act_v == 'not in':
 					if def_v == "_orgs_":
 						userorgs = str(userdetail.get('orgs'))
 						if col.get('type') == 'array':
-							defv += bool_v + " (select count(*) from json_array_elements_text('" + userorgs + "') " + 'as j1 join json_array_elements_text("' + colname + '") as j2 on j1.value::varchar=j2.value::varchar)>0 '
+							defv += bool_v + " (select count(*) from json_array_elements_text('" + userorgs + "') as j1 join json_array_elements_text(" + colname + ") as j2 on j1.value::varchar=j2.value::varchar)>0 "
 						else:
-							defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + "(select value::varchar from json_array_elements_text('" + userorgs + "')) "
+							defv += bool_v + " " + colname +  "::varchar " + act_v + "(select value::varchar from json_array_elements_text('" + userorgs + "')) "
 					elif def_v == "_userid_":
 						userid = str(userdetail.get('id'))	
-						defv += bool_v + ' "' + colname + '"::varchar ' + act_v + " ('" + userid + "') "	
+						defv += bool_v + " " + colname + "::varchar " + act_v + " ('" + userid + "') "	
 					elif def_v == bool_v + "_orgid_":
 						orgid = str(userdetail.get('orgid'))	
-						defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + " ('" + orgid + "') "		
+						defv += bool_v + " " + colname +  "::varchar " + act_v + " ('" + orgid + "') "		
 					elif def_v.find(',') != -1:	
-						defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + " (select value::varchar from json_array_elements_text('[" + def_v + "]')) "
+						defv += bool_v + " " + colname +  "::varchar " + act_v + " (select value::varchar from json_array_elements_text('[" + def_v + "]')) "
 						defv = defv.replace('[','["').replace(',','","').replace(']','"]')		
 					else :
-						defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + " ('" + def_v + "') "
+						defv += bool_v + " " + colname +  "::varchar " + act_v + " ('" + def_v + "') "
 				else:
 					if def_v == "_orgs_":
 						userorgs = str(userdetail.get('orgs'))
-						defv += bool_v + ' "' + colname + '"::varchar ' + act_v + " (select value::varchar from json_array_elements_text('" + userorgs + "')) "
+						defv += bool_v + " " + colname + "::varchar " + act_v + " (select value::varchar from json_array_elements_text('" + userorgs + "')) "
 					elif def_v == "_userid_":
 						userid = str(userdetail.get('id'))	
-						defv += bool_v + ' "' + colname + '" ' + act_v + " '" + userid + "' "	
+						defv += bool_v + " " + colname + " " + act_v + " '" + userid + "' "	
 					elif def_v == "_orgid_":
 						orgid = str(userdetail.get('orgid'))	
-						defv += bool_v + ' "' + colname +  '" ' + act_v + " '" + orgid + "' "		
+						defv += bool_v + " " + colname +  " " + act_v + " '" + orgid + "' "		
 					else :
-						defv += bool_v + ' "' + colname +  '" ' + act_v + " '" + def_v + "' "
+						defv += bool_v + " " + colname +  " " + act_v + " '" + def_v + "' "
 			if len(defv) > 0:
 				defv = defv.replace('(or','( ')
 				defv = defv.replace('(and','( ')
@@ -201,31 +203,31 @@ def getList(result,body, userdetail=None):
 				if (col.get("type") == "typehead" and col.get("title") in body.get("filters")) or str(col.get("column")) in body.get("filters"): 
 					if col.get("type") == "select":
 						if body.get("filters").get(col.get("column")):
-							where += "and t" + str(col.get("t") or '1') + '."' + col.get("column") + '"' + " = '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
+							where += "and t" + str(col.get("t") or '1') + "." + col.get("column") + " = '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
 					elif col.get("type") == "substr":
-						where += "and upper(coalesce(t" + str(col.get("t") or '1') + '."' + col.get("column") + '"' + "::varchar,'')) like upper('%" + formatInj(body.get("filters").get(col.get("column"))) + "%') "
+						where += "and upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + "::varchar,'')) like upper('%" + formatInj(body.get("filters").get(col.get("column"))) + "%') "
 					elif col.get("type") == "period":
 						if formatInj(body.get("filters").get(col.get("column")).get("date1")) is not None and formatInj(body.get("filters").get(col.get("column")).get("date2")) is not None:
-							where += ("and t" + str(col.get("t") or '1') + '."' + col.get("column") + '"' + "::date >= '" + 
+							where += ("and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 
 								formatInj(body.get("filters").get(col.get("column")).get("date1")) + 
-								"' and t" + str(col.get("t") or '1') + '."' + col.get("column") + '"' +
+								"' and t" + str(col.get("t") or '1') + "." + col.get("column") + 
 								"::date <= '" + formatInj(body.get("filters").get(col.get("column")).get("date2")) + "' ")									
 					elif col.get("type") == "multiselect":
 						if len(body.get("filters").get(col.get("column"))) > 0 :
-							where += ("and (t" + str(col.get("t") or '1') + '."' + col.get("column") + '"' +
+							where += ("and (t" + str(col.get("t") or '1') + "." + col.get("column") + 
 								"::varchar in ( select (value::varchar::json)->>'value'::varchar from json_array_elements_text('" + 
 								dumps(body.get("filters").get(col.get("column"))) + "')) or ( select count(*) from json_array_elements_text('" + 
 								dumps(body.get("filters").get(col.get("column"))) + "') where (value::varchar::json)->>'value' is null )>0)")
 					elif col.get("type") == "multijson":
 						if len(body.get("filters").get(col.get("column"))) > 0:
 							where += ("and  ( select count(*) from json_array_elements_text('" + 
-								dumps(body.get("filters").get(col.get("column"))) + "') as a JOIN json_array_elements_text(t" + str(col.get("t") or '1') + '."' + 
-								col.get("column") + '")' + "as b on (a.value::varchar::json)->>'value'::varchar = b.value::varchar or (a.value::varchar::json->>'value') is null )>0 ")
+								dumps(body.get("filters").get(col.get("column"))) + "') as a JOIN json_array_elements_text(t" + str(col.get("t") or '1') + "." + 
+								col.get("column") + ") as b on (a.value::varchar::json)->>'value'::varchar = b.value::varchar or (a.value::varchar::json->>'value') is null )>0 ")
 					elif col.get("type") == "check":
 						ch = 'false'
 						if body.get("filters").get(col.get("column")):
 							ch = 'true'
-						where += "and coalesce(t" + str(col.get("t") or '1') + '."' + col.get("column") + '",false) = ' + str(ch) + " "
+						where += "and coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + ",false) = " + str(ch) + " "
 					elif col.get("type") == "typehead":
 						
 						v = formatInj(body.get("filters").get(col.get("title")))
@@ -239,18 +241,18 @@ def getList(result,body, userdetail=None):
 									if len(v) >= i+1:
 										where += " and "
 										if cols[i].get("t"):
-											where += " lower(t" + str(cols[i].get("t") or '1') + '."' + cols[i].get("label") + '"' + "::varchar) like lower('" + str(v[i]) + "%') "
+											where += " lower(t" + str(cols[i].get("t") or '1') + "." + cols[i].get("label") + "::varchar) like lower('" + str(v[i]) + "%') "
 										else:	
-											where += ' lower("' + cols[i].get("label") + '"' + "::varchar) like lower('" + str(v[i]) + "') "
+											where += " lower(" + cols[i].get("label") + "::varchar) like lower('" + str(v[i]) + "') "
 									i += 1	
 								where = where.replace("( and","(") + " ) "	
 							else:
 								for x in col.get("column"):	
 									where += " or "
 									if x.get("t"):
-										where += " lower(t" + str(x.get("t") or '1') + '."' + x.get("label") + '"' + "::varchar) like lower('%" + str(v).strip() + "%') "
+										where += " lower(t" + str(x.get("t") or '1') + "." + x.get("label") + "::varchar) like lower('%" + str(v).strip() + "%') "
 									else:	
-										where += ' lower("' + x.get("label") + '"' + "::varchar) like lower('%" + str(v).strip() + "%') "
+										where += " lower(" + x.get("label") + "::varchar) like lower('%" + str(v).strip() + "%') "
 								where = where.replace("( or","(") + " ) "
 							
 	pagenum = 1
@@ -283,11 +285,11 @@ def getList(result,body, userdetail=None):
 			if col.get("related"):
 				t = str(col.get("t"))
 			if not col.get('fn'):	
-				rownum += "t" + t + '."' + col.get("col") + '" ' + col.get("desc") + ","
+				rownum += "t" + t + "." + col.get("col") + " " + col.get("desc") + ","
 			else:
 				rownum += col.get("fn").get('value') +'('
 				for x in col.get('fncols'):
-					rownum += 't' + str(x.get('t')) + '."' + x.get('label') + '",'
+					rownum += 't' + str(x.get('t')) + '.' + x.get('label') + ','
 				rownum = rownum[:len(rownum) - 1] 	
 				rownum += ") " + col.get("desc") + ","
 		rownum = rownum[:len(rownum) - 1]

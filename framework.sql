@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.17
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-07-01 16:55:14
+-- Started on 2019-07-09 17:26:27
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -3873,6 +3873,7 @@ COPY columntypes (id, typename) FROM stdin;
 16	typehead_api
 17	multiselect_api
 18	multitypehead_api
+19	link
 \.
 
 
@@ -3891,7 +3892,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('columntypes_id_seq1', 1, false);
+SELECT pg_catalog.setval('columntypes_id_seq1', 1, true);
 
 
 --
@@ -4764,7 +4765,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-07-01 16:56:04
+-- Completed on 2019-07-09 17:27:18
 
 --
 -- PostgreSQL database dump complete
