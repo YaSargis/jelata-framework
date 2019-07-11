@@ -91,11 +91,11 @@ def getList(result,body, userdetail=None):
 		if col.get("relation") and not col.get('depency') and not col.get('related'):
 			if 'join' in col:
 				if col.get("join"):
-					joins += " JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id") 
+					joins += " JOIN " + col.get("relation") + " as t" + str(col.get("t")) + ' on t1."' + col.get("col") + '" = t' + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '"'
 				else:
-					joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id") 
+					joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + ' on t1."' + col.get("col") + '" = t' + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '"'
 			else:
-				joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + " on t1." + col.get("col") + " = t" + str(col.get("t")) + "." + (col.get("relcol") or "id")  
+				joins += " LEFT JOIN " + col.get("relation") + " as t" + str(col.get("t")) + ' on t1."' + col.get("col") + '" = t' + str(col.get("t")) + '."' + (col.get("relcol") or "id")  + '"'
 		
 		if col.get("tpath"):
 			i = 1
@@ -103,19 +103,19 @@ def getList(result,body, userdetail=None):
 			while i < len(tpath):
 				if col.get("join"):
 					if joins.find(" as " + tpath[i].get("t")) == -1:
-						joins += " JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + "." + tpath[i].get("col") + " = " + tpath[i].get("t") + ".id" 
+						joins += " JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + ".id" 
 				else:
 					if joins.find(tpath[i].get("t")) == -1:
-						joins += " LEFT JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + "." + tpath[i].get("col") + " = " + tpath[i].get("t") + ".id" 
+						joins += " LEFT JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + ".id" 
 				i += 1
 			if 	joins.find(" as t" + str(col.get("t"))) == -1:
-				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + ".id = " + tpath[i-1].get("t") + "." + col.get('relatecolumn')  
+				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + ".id = " + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
 		
 		if col.get("defaultval"):
 			colname = ''
 			if 'fn' not in col:	
 				if "related" in col:
-					colname = "t" + str(col.get("t")) + "." + col.get("col")
+					colname = "t" + str(col.get("t")) + '."' + col.get("col") + '"'
 					#where += "and t" + str(col.get("t")) + "." + col.get("col") + "::varchar " + defv + " "				
 				else:
 					#where += "and t1." + col.get("col") + "::varchar " + defv + " "
