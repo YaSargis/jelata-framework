@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.17
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-07-12 18:01:51
+-- Started on 2019-07-18 20:28:46
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -198,7 +198,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 274 (class 1255 OID 359439)
+-- TOC entry 314 (class 1255 OID 359439)
 -- Name: fn_autocomplete(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -234,7 +234,7 @@ BEGIN
        					(SELECT array_to_json(array_agg(row_to_json(d))) 
                          FROM (
                         
-                         SELECT _val as value, _val as label
+                         SELECT injson ->> 'val' as value, injson ->> 'val' as label
                          
                          ) as d));
             
@@ -250,7 +250,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 275 (class 1255 OID 359440)
+-- TOC entry 274 (class 1255 OID 359440)
 -- Name: fn_branchestree_recurs(integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -288,7 +288,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 276 (class 1255 OID 359441)
+-- TOC entry 275 (class 1255 OID 359441)
 -- Name: fn_compo(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -319,7 +319,7 @@ $$;
 ALTER FUNCTION framework.fn_compo(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 277 (class 1255 OID 359442)
+-- TOC entry 276 (class 1255 OID 359442)
 -- Name: fn_compo_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -350,7 +350,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 278 (class 1255 OID 359443)
+-- TOC entry 277 (class 1255 OID 359443)
 -- Name: fn_compo_save(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -459,7 +459,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_save(injson json, OUT _id integer) OWNER TO postgres;
 
 --
--- TOC entry 315 (class 1255 OID 384481)
+-- TOC entry 313 (class 1255 OID 384481)
 -- Name: fn_copyview(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -536,7 +536,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
--- TOC entry 314 (class 1255 OID 359444)
+-- TOC entry 315 (class 1255 OID 359444)
 -- Name: fn_createconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -548,106 +548,108 @@ DECLARE
 BEGIN
 
 	tabname = injson->>'tabname';
-  SELECT
-  	array_to_json(array_agg(row_to_json(d))) 
-  FROM (
-  SELECT ROW_NUMBER() OVER (order by  f.column_id) as t, *, '[]'::JSON as relationcolums,'[]'::JSON as roles  FROM 
-  (SELECT 
-  	distinct
-      t.column_name as col,		
-      substring(coalesce(pgd.description, t.column_name),1,62) as title ,
-       framework.fn_htmldatatype(t.data_type) as type,
-      true as visible,
-	      /*	CASE WHEN y.table_schema is not null 
-            THEN  concat(y.table_schema , '.' , y.table_name)
-             ELSE y.table_schema
-        END*/
-       (SELECT concat(y.table_schema , '.' , y.table_name)
-        FROM information_schema.table_constraints as c
-               JOIN information_schema.key_column_usage AS x ON 
-      				c.constraint_name = x.constraint_name and x.column_name = t.column_name                        
-	  			 JOIN information_schema.constraint_column_usage 
-        AS y ON y.constraint_name = c.constraint_name and y.column_name = t.column_name 
-        WHERE c.table_name = t.table_name
-      	and c.table_schema = t.table_schema and c.constraint_type = 'FOREIGN KEY'
-        LIMIT 1)	
-      as relation,	
-       (SELECT concat(y.column_name )
-        FROM information_schema.table_constraints as c
-               JOIN information_schema.key_column_usage AS x ON 
-      				c.constraint_name = x.constraint_name and x.column_name = t.column_name                        
-	  			 JOIN information_schema.constraint_column_usage 
-        AS y ON y.constraint_name = c.constraint_name and y.column_name = t.column_name 
-        WHERE c.table_name = t.table_name
-      	and c.table_schema = t.table_schema and c.constraint_type = 'FOREIGN KEY'
-        LIMIT 1) as relcol,	
-      --'[]'::JSON as relationcolums,
-      false as "join",
-      false as onetomany,
-      
-      null as defaultval,
-      '' as width,
-      t.ordinal_position as column_id,
-     false as depency,
-     null as depencycol,
-    --'[]'::JSON as roles,
-    '' as classname        
- FROM information_schema.columns as t
- 	  left join pg_catalog.pg_statio_all_tables as st on 
-      		st.schemaname = t.table_schema 
-      		and st.relname = t.table_name	
- 	  left join pg_catalog.pg_description pgd on pgd.objoid=st.relid
-			and pgd.objsubid=t.ordinal_position
-       /*left join information_schema.table_constraints as c on c.table_name = t.table_name
-      	and c.table_schema = t.table_schema and c.constraint_type = 'FOREIGN KEY'
-         
-      LEFT JOIN information_schema.key_column_usage AS x ON 
-      c.constraint_name = x.constraint_name and x.column_name = t.column_name                        
-	  LEFT JOIN information_schema.constraint_column_usage 
-        AS y ON y.constraint_name = c.constraint_name and x.column_name = t.column_name */
-                                 
- WHERE concat(t.table_schema,'.',t.table_name) = tabname
-
- 
- UNION ALL
- SELECT 
-     x.table_name  as col,
-     --,		
-      x.table_name as title ,
-      'array' as type,
-      false as visible,
-	  concat(x.table_schema , '.' , x.table_name) as relation,
-       null as relcol,
-      --'[]'::JSON as relationcolums,
-      false as join,
-      true as onetomany,
-      
-      null as defaultval,
-      '' as width,
-     (SELECT count(t.*) FROM information_schema.columns as t                                 
-     WHERE concat(t.table_schema,'.',t.table_name) = tabname) + 1 as column_id,
-     true as depency,
-     x.column_name as depencycol,
-    --'[]'::JSON as roles,
-    '' as classname  
-    
-          
- FROM  information_schema.key_column_usage as x
-
-        --  and t.column_name = x.column_name
-       left join information_schema.referential_constraints as c
-       on c.constraint_name = x.constraint_name and c.constraint_schema = x.constraint_schema
-       left join information_schema.key_column_usage y
-          on y.ordinal_position = x.position_in_unique_constraint
-          and y.constraint_name = c.unique_constraint_name
-                                 
- WHERE concat(y.table_schema,'.',y.table_name) = tabname
- 	and y.table_name is not null
- 
- ) as f
- ORDER BY f.column_id, relation) as d
- INTO outjson;
- 
+    SELECT array_to_json(array_agg(row_to_json(d)))
+    FROM (
+           SELECT ROW_NUMBER() OVER(
+           order by f.column_id) as t,
+                    *
+           FROM (
+                  SELECT distinct t.column_name as col,
+                         substring(coalesce(pgd.description, t.column_name), 1, 32)
+                           as title,
+                         framework.fn_htmldatatype(t.data_type) as type,
+                         true as visible, /*    CASE WHEN y.table_schema is not null 
+                THEN  concat(y.table_schema , '.' , y.table_name)
+                 ELSE y.table_schema
+            END*/
+                         (
+                           SELECT concat(y.table_schema, '.', y.table_name)
+                           FROM information_schema.table_constraints as c
+                                JOIN information_schema.key_column_usage AS x ON
+                                  c.constraint_name = x.constraint_name and
+                                  x.column_name = t.column_name
+                                JOIN information_schema.constraint_column_usage AS y
+                                  ON y.constraint_name = c.constraint_name and
+                                  x.column_name = t.column_name
+                           WHERE c.table_name = t.table_name and
+                                 c.table_schema = t.table_schema and
+                                 c.constraint_type = 'FOREIGN KEY'
+                           LIMIT 1
+                         ) as relation,
+                         (
+                           SELECT concat(y.column_name)
+                           FROM information_schema.table_constraints as c
+                                JOIN information_schema.key_column_usage AS x ON
+                                  c.constraint_name = x.constraint_name and
+                                  x.column_name = t.column_name
+                                JOIN information_schema.constraint_column_usage AS y
+                                  ON y.constraint_name = c.constraint_name and
+                                  x.column_name = t.column_name
+                           WHERE c.table_name = t.table_name and
+                                 c.table_schema = t.table_schema and
+                                 c.constraint_type = 'FOREIGN KEY'
+                           LIMIT 1
+                         ) as relcol,
+                         '[]'                     as relationcolums,
+                         false as "join",
+                         false as onetomany,
+                         null as defaultval,
+                         ''                     as width,
+                         t.ordinal_position as column_id,
+                         false as depency,
+                         null as depencycol,
+                         '[]'                     as roles,
+                         ''                     as classname
+                  FROM information_schema.columns as t
+                       left join pg_catalog.pg_statio_all_tables as st on
+                         st.schemaname = t.table_schema and st.relname =
+                         t.table_name
+                       left join pg_catalog.pg_description pgd on pgd.objoid =
+                         st.relid and pgd.objsubid = t.ordinal_position /*left join information_schema.table_constraints as c on c.table_name = t.table_name
+              and c.table_schema = t.table_schema and c.constraint_type = 'FOREIGN KEY'
+             
+          LEFT JOIN information_schema.key_column_usage AS x ON 
+          c.constraint_name = x.constraint_name and x.column_name = t.column_name                        
+          LEFT JOIN information_schema.constraint_column_usage 
+            AS y ON y.constraint_name = c.constraint_name and x.column_name = t.column_name */
+                  WHERE concat(t.table_schema, '.', t.table_name) = tabname
+                  UNION ALL
+                  SELECT x.table_name as col,
+                         --,        
+                         x.table_name as title,
+                         'array'                     as type,
+                         false as visible,
+                         concat(x.table_schema, '.', x.table_name) as relation,
+                         null as relcol,
+                         '[]'                     as relationcolums,
+                         false as join,
+                         true as onetomany,
+                         null as defaultval,
+                         ''                     as width,
+                         (
+                           SELECT count(t.*)
+                           FROM information_schema.columns as t
+                           WHERE concat(t.table_schema, '.', t.table_name) = tabname
+                         ) + 1 as column_id,
+                         true as depency,
+                         x.column_name as depencycol,
+                         '[]'                     as roles,
+                         ''                     as classname
+                  FROM information_schema.key_column_usage as x
+                       --  and t.column_name = x.column_name
+                       left join information_schema.referential_constraints as c on
+                         c.constraint_name = x.constraint_name and
+                         c.constraint_schema = x.constraint_schema
+                       left join information_schema.key_column_usage y on
+                         y.ordinal_position = x.position_in_unique_constraint and
+                         y.constraint_name = c.unique_constraint_name
+                  WHERE concat(y.table_schema, '.', y.table_name) = tabname and
+                        y.table_name is not null
+                ) as f
+           ORDER BY f.column_id,
+                    relation
+         ) as d
+    INTO outjson;
  outjson = coalesce(outjson,'[]');
 END;
 $$;
@@ -656,7 +658,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 280 (class 1255 OID 359445)
+-- TOC entry 279 (class 1255 OID 359445)
 -- Name: fn_deleterow(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -757,7 +759,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
--- TOC entry 281 (class 1255 OID 359446)
+-- TOC entry 280 (class 1255 OID 359446)
 -- Name: fn_fapi(json, character varying, smallint, character, smallint); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -837,7 +839,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 282 (class 1255 OID 359447)
+-- TOC entry 281 (class 1255 OID 359447)
 -- Name: fn_formparams(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -892,7 +894,7 @@ $$;
 ALTER FUNCTION framework.fn_formparams(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json) OWNER TO postgres;
 
 --
--- TOC entry 310 (class 1255 OID 359448)
+-- TOC entry 309 (class 1255 OID 359448)
 -- Name: fn_formselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1151,7 +1153,7 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 283 (class 1255 OID 359450)
+-- TOC entry 282 (class 1255 OID 359450)
 -- Name: fn_getacttypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1177,7 +1179,7 @@ $$;
 ALTER FUNCTION framework.fn_getacttypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 284 (class 1255 OID 359451)
+-- TOC entry 283 (class 1255 OID 359451)
 -- Name: fn_getfunctions(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1214,7 +1216,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 285 (class 1255 OID 359452)
+-- TOC entry 284 (class 1255 OID 359452)
 -- Name: fn_getselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1255,7 +1257,7 @@ $$;
 ALTER FUNCTION framework.fn_getselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 312 (class 1255 OID 362838)
+-- TOC entry 311 (class 1255 OID 362838)
 -- Name: fn_getusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1281,7 +1283,7 @@ $$;
 ALTER FUNCTION framework.fn_getusersettings(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 286 (class 1255 OID 359453)
+-- TOC entry 285 (class 1255 OID 359453)
 -- Name: fn_htmldatatype(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1333,7 +1335,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
--- TOC entry 287 (class 1255 OID 359454)
+-- TOC entry 286 (class 1255 OID 359454)
 -- Name: fn_logout(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1355,7 +1357,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 288 (class 1255 OID 359455)
+-- TOC entry 287 (class 1255 OID 359455)
 -- Name: fn_mainmenu(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1405,7 +1407,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 289 (class 1255 OID 359456)
+-- TOC entry 288 (class 1255 OID 359456)
 -- Name: fn_mainmenu_recurs(json, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1444,7 +1446,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu_recurs(_roles json, _parentid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 290 (class 1255 OID 359457)
+-- TOC entry 289 (class 1255 OID 359457)
 -- Name: fn_mainmenusigma(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1530,7 +1532,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 291 (class 1255 OID 359458)
+-- TOC entry 290 (class 1255 OID 359458)
 -- Name: fn_notif_setsended(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1553,7 +1555,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 292 (class 1255 OID 359459)
+-- TOC entry 291 (class 1255 OID 359459)
 -- Name: fn_paramtypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1581,7 +1583,7 @@ $$;
 ALTER FUNCTION framework.fn_paramtypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 293 (class 1255 OID 359460)
+-- TOC entry 292 (class 1255 OID 359460)
 -- Name: fn_refreshconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1653,7 +1655,7 @@ $$;
 ALTER FUNCTION framework.fn_refreshconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 311 (class 1255 OID 362836)
+-- TOC entry 310 (class 1255 OID 362836)
 -- Name: fn_saveusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1679,7 +1681,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
--- TOC entry 313 (class 1255 OID 359461)
+-- TOC entry 312 (class 1255 OID 359461)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2069,7 +2071,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 294 (class 1255 OID 359463)
+-- TOC entry 293 (class 1255 OID 359463)
 -- Name: fn_sess(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2116,7 +2118,7 @@ $$;
 ALTER FUNCTION framework.fn_sess(_login character varying, pass character varying, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 295 (class 1255 OID 359464)
+-- TOC entry 294 (class 1255 OID 359464)
 -- Name: fn_tabcolumns(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2145,7 +2147,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 296 (class 1255 OID 359465)
+-- TOC entry 295 (class 1255 OID 359465)
 -- Name: fn_trees_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2223,7 +2225,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 297 (class 1255 OID 359466)
+-- TOC entry 296 (class 1255 OID 359466)
 -- Name: fn_userjson(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2261,7 +2263,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 300 (class 1255 OID 359467)
+-- TOC entry 299 (class 1255 OID 359467)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2286,7 +2288,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 298 (class 1255 OID 359468)
+-- TOC entry 297 (class 1255 OID 359468)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2339,7 +2341,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 299 (class 1255 OID 359469)
+-- TOC entry 298 (class 1255 OID 359469)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2392,7 +2394,7 @@ $$;
 ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json) OWNER TO postgres;
 
 --
--- TOC entry 301 (class 1255 OID 359470)
+-- TOC entry 300 (class 1255 OID 359470)
 -- Name: fn_viewnotif_get(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2441,7 +2443,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 302 (class 1255 OID 359471)
+-- TOC entry 301 (class 1255 OID 359471)
 -- Name: fn_viewsave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2674,7 +2676,7 @@ $$;
 ALTER FUNCTION framework.fn_viewsave(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 303 (class 1255 OID 359472)
+-- TOC entry 302 (class 1255 OID 359472)
 -- Name: get_colcongif(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2725,7 +2727,7 @@ ALTER FUNCTION framework.get_colcongif(injson json, OUT outjson json) OWNER TO p
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 304 (class 1255 OID 359477)
+-- TOC entry 303 (class 1255 OID 359477)
 -- Name: fn_trees_add_org(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2753,7 +2755,7 @@ $$;
 ALTER FUNCTION public.fn_trees_add_org() OWNER TO postgres;
 
 --
--- TOC entry 279 (class 1255 OID 359478)
+-- TOC entry 278 (class 1255 OID 359478)
 -- Name: fn_treesbranch_check(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2782,7 +2784,7 @@ $$;
 ALTER FUNCTION public.fn_treesbranch_check() OWNER TO postgres;
 
 --
--- TOC entry 308 (class 1255 OID 359479)
+-- TOC entry 307 (class 1255 OID 359479)
 -- Name: fn_user_check(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2846,7 +2848,7 @@ $$;
 ALTER FUNCTION public.fn_user_check() OWNER TO postgres;
 
 --
--- TOC entry 305 (class 1255 OID 359480)
+-- TOC entry 304 (class 1255 OID 359480)
 -- Name: isnumeric(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2866,7 +2868,7 @@ $_$;
 ALTER FUNCTION public.isnumeric(text) OWNER TO postgres;
 
 --
--- TOC entry 306 (class 1255 OID 359481)
+-- TOC entry 305 (class 1255 OID 359481)
 -- Name: prettydate(date); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2882,7 +2884,7 @@ $$;
 ALTER FUNCTION public.prettydate(d date, OUT "do" character varying) OWNER TO postgres;
 
 --
--- TOC entry 307 (class 1255 OID 359482)
+-- TOC entry 306 (class 1255 OID 359482)
 -- Name: raiserror(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2898,7 +2900,7 @@ $$;
 ALTER FUNCTION public.raiserror(_hint character varying) OWNER TO postgres;
 
 --
--- TOC entry 309 (class 1255 OID 359487)
+-- TOC entry 308 (class 1255 OID 359487)
 -- Name: tr_orgs(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3953,6 +3955,7 @@ COPY columntypes (id, typename) FROM stdin;
 19	link
 20	textarea
 21	texteditor
+22	colorrow
 \.
 
 
@@ -3971,7 +3974,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('columntypes_id_seq1', 3, true);
+SELECT pg_catalog.setval('columntypes_id_seq1', 4, true);
 
 
 --
@@ -4845,7 +4848,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-07-12 18:02:42
+-- Completed on 2019-07-18 20:29:38
 
 --
 -- PostgreSQL database dump complete
