@@ -103,13 +103,13 @@ def getList(result,body, userdetail=None):
 			while i < len(tpath):
 				if col.get("join"):
 					if joins.find(" as " + tpath[i].get("t")) == -1:
-						joins += " JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + ".id" 
+						joins += " JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + '."' + (col.get("relcol") or "id") + '"'
 				else:
 					if joins.find(tpath[i].get("t")) == -1:
-						joins += " LEFT JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + ".id" 
+						joins += " LEFT JOIN " + tpath[i].get("table") + " as " + tpath[i].get("t") + " on " + tpath[i-1].get("t") + '."' + tpath[i].get("col") + '" = ' + tpath[i].get("t") + '."' + (col.get("relcol") or "id") + '"'
 				i += 1
 			if 	joins.find(" as t" + str(col.get("t"))) == -1:
-				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + ".id = " + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
+				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '" = ' + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
 		
 		if col.get("defaultval"):
 			colname = ''
