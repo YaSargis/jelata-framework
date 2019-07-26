@@ -223,9 +223,9 @@ def getList(result,body, userdetail=None):
 							where += ("and  ( select count(*) from json_array_elements_text('" + 
 								dumps(body.get("filters").get(col.get("column"))) + "') as a JOIN json_array_elements_text(t" + str(col.get("t") or '1') + "." + 
 								col.get("column") + ") as b on (a.value::varchar::json)->>'value'::varchar = b.value::varchar or (a.value::varchar::json->>'value') is null )>0 ")
-					elif col.get("type") == "check":
+					elif col.get("type") == "check" and body.get("filters").get(col.get("column")) is not None:
 						ch = 'false'
-						if body.get("filters").get(col.get("column")):
+						if body.get("filters").get(col.get("column")) == True:
 							ch = 'true'
 						where += "and coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + ",false) = " + str(ch) + " "
 					elif col.get("type") == "typehead":
