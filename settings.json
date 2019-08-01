@@ -1,1 +1,1 @@
-{"loading": true, "dsn": "host=127.0.0.1 dbname=framework user=postgres password=Qwerty123 port=5432", "port": "8080", "developerRole": "0", "maindomain": "http://185.117.153.61:8080", "primaryAuthorization": "1", "redirect401": "http://localhost:8080/auth"}
+{"loading": true, "dsn": "host=127.0.0.1 dbname=framework user=postgres password=Qwerty123 port=5432", "port": "8080", "developerRole": "0", "maindomain": "http://localhost:8080", "primaryAuthorization": "1", "redirect401": "http://localhost:8080/auth"}
