@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-08-01 17:29:57
+-- Started on 2019-08-13 10:32:08
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -34,7 +34,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2490 (class 0 OID 0)
+-- TOC entry 2526 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -51,7 +51,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 2491 (class 0 OID 0)
+-- TOC entry 2527 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -62,7 +62,7 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 234 (class 1255 OID 65495)
+-- TOC entry 238 (class 1255 OID 65495)
 -- Name: fn_allviews(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -116,7 +116,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 235 (class 1255 OID 65496)
+-- TOC entry 239 (class 1255 OID 65496)
 -- Name: fn_allviews_sel(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -170,7 +170,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews_sel(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 236 (class 1255 OID 65497)
+-- TOC entry 240 (class 1255 OID 65497)
 -- Name: fn_apimethods(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -198,7 +198,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 238 (class 1255 OID 65498)
+-- TOC entry 242 (class 1255 OID 65498)
 -- Name: fn_autocomplete(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -250,7 +250,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 239 (class 1255 OID 65499)
+-- TOC entry 243 (class 1255 OID 65499)
 -- Name: fn_branchestree_recurs(integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -288,7 +288,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 240 (class 1255 OID 65500)
+-- TOC entry 244 (class 1255 OID 65500)
 -- Name: fn_compo(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -319,7 +319,7 @@ $$;
 ALTER FUNCTION framework.fn_compo(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 241 (class 1255 OID 65501)
+-- TOC entry 245 (class 1255 OID 65501)
 -- Name: fn_compo_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -350,7 +350,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 242 (class 1255 OID 65502)
+-- TOC entry 246 (class 1255 OID 65502)
 -- Name: fn_compo_save(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -459,7 +459,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_save(injson json, OUT _id integer) OWNER TO postgres;
 
 --
--- TOC entry 243 (class 1255 OID 65503)
+-- TOC entry 247 (class 1255 OID 65503)
 -- Name: fn_copyview(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -536,7 +536,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
--- TOC entry 244 (class 1255 OID 65504)
+-- TOC entry 248 (class 1255 OID 65504)
 -- Name: fn_createconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -658,7 +658,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 246 (class 1255 OID 65505)
+-- TOC entry 250 (class 1255 OID 65505)
 -- Name: fn_deleterow(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -759,7 +759,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
--- TOC entry 247 (class 1255 OID 65506)
+-- TOC entry 251 (class 1255 OID 65506)
 -- Name: fn_fapi(json, character varying, smallint, character, smallint); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -839,7 +839,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 248 (class 1255 OID 65507)
+-- TOC entry 252 (class 1255 OID 65507)
 -- Name: fn_formparams(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -894,7 +894,7 @@ $$;
 ALTER FUNCTION framework.fn_formparams(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json) OWNER TO postgres;
 
 --
--- TOC entry 249 (class 1255 OID 65508)
+-- TOC entry 253 (class 1255 OID 65508)
 -- Name: fn_formselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1153,7 +1153,7 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 250 (class 1255 OID 65510)
+-- TOC entry 254 (class 1255 OID 65510)
 -- Name: fn_getacttypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1179,7 +1179,7 @@ $$;
 ALTER FUNCTION framework.fn_getacttypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 251 (class 1255 OID 65511)
+-- TOC entry 255 (class 1255 OID 65511)
 -- Name: fn_getfunctions(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1216,7 +1216,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 252 (class 1255 OID 65512)
+-- TOC entry 256 (class 1255 OID 65512)
 -- Name: fn_getselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1257,7 +1257,7 @@ $$;
 ALTER FUNCTION framework.fn_getselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 253 (class 1255 OID 65513)
+-- TOC entry 257 (class 1255 OID 65513)
 -- Name: fn_getusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1283,7 +1283,7 @@ $$;
 ALTER FUNCTION framework.fn_getusersettings(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 254 (class 1255 OID 65514)
+-- TOC entry 258 (class 1255 OID 65514)
 -- Name: fn_htmldatatype(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1335,7 +1335,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
--- TOC entry 237 (class 1255 OID 65515)
+-- TOC entry 241 (class 1255 OID 65515)
 -- Name: fn_logout(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1357,7 +1357,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 255 (class 1255 OID 65516)
+-- TOC entry 259 (class 1255 OID 65516)
 -- Name: fn_mainmenu(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1407,7 +1407,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 256 (class 1255 OID 65517)
+-- TOC entry 260 (class 1255 OID 65517)
 -- Name: fn_mainmenu_recurs(json, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1446,7 +1446,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu_recurs(_roles json, _parentid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 257 (class 1255 OID 65518)
+-- TOC entry 261 (class 1255 OID 65518)
 -- Name: fn_mainmenusigma(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1532,7 +1532,143 @@ $$;
 ALTER FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 258 (class 1255 OID 65519)
+-- TOC entry 316 (class 1255 OID 81573)
+-- Name: fn_menu_recurs(json, integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
+--
+
+CREATE FUNCTION fn_menu_recurs(_roles json, _parentid integer, menu_id integer, OUT outjson json) RETURNS json
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+	SELECT
+    	array_to_json(array_agg(row_to_json(d))) 
+    FROM
+      (SELECT 
+        m.*,
+        m.title as label,
+        m.path as to,
+        framework.fn_menu_recurs(_roles,m.id,menu_id) as items,
+        (SELECT count(m2.id) FROM framework.mainmenu as m2 WHERE m2.parentid = m.id) as childs
+      FROM framework.mainmenu as m
+      	--JOIN framework.menus as mn on mn.id = m.menuid --and not mn.ismainmenu 
+      WHERE  ((SELECT count(*)
+      			FROM json_array_elements_text(_roles) as r
+                WHERE r.value::varchar = '0'
+           		)>0     
+      
+      			 or 
+      		 (SELECT count(*)
+                			FROM json_array_elements_text(m.roles) as r
+                             JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar 
+                            )>0)
+      	and coalesce(m.parentid,0) = coalesce(_parentid,0) and m.menuid = menu_id
+      ORDER BY m.orderby
+      ) as d
+    INTO outjson;
+END;
+$$;
+
+
+ALTER FUNCTION framework.fn_menu_recurs(_roles json, _parentid integer, menu_id integer, OUT outjson json) OWNER TO postgres;
+
+--
+-- TOC entry 317 (class 1255 OID 81574)
+-- Name: fn_menus(json); Type: FUNCTION; Schema: framework; Owner: postgres
+--
+
+CREATE FUNCTION fn_menus(injson json, OUT outjson json) RETURNS json
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+  _userid int;
+  _roles json;
+  _usermenu json;
+  _userdetail json;
+BEGIN
+	_userid = injson->>'userid';	
+	SELECT
+    	u.roles
+    FROM framework.users as u
+    WHERE u.id = _userid
+    INTO _roles;
+	
+
+    
+	IF _userid is null THEN
+    	SELECT 
+				'[{"label": "Notifications", "icon": "pi pi-fw pi-inbox", "to":"/list/notifs"},
+				{"label": "login", "icon": "pi pi-fw pi-power-off", "to": "/logout"}]' as usermenu
+        INTO _usermenu;        
+        
+		SELECT row_to_json(d)
+        FROM
+        (SELECT 
+        	'' as login,
+            'unknown' as fam,
+            '' as im,
+            '' as ot,
+            0 as orgid,
+            '' as orgname,
+            '' as photo,
+            '{}' as usersettings) as d
+         INTO _userdetail;   
+    ELSE
+    	SELECT 
+				'[{"label": "Account", "icon": "pi pi-fw pi-user", "to": "/getone/account?id=_userid_"},
+				{"label": "Notifications", "icon": "pi pi-fw pi-inbox", "to":"/list/notifs?userid=_userid_"},
+                {"label": "My organization", "icon": "pi pi-fw pi-inbox", "to":"/getone/myorg?id=_orgid_"},
+				{"label": "logout", "icon": "pi pi-fw pi-power-off", "to": "/logout"}]' as usermenu
+        INTO _usermenu;  
+        
+        SELECT row_to_json(d)
+        FROM
+        (SELECT 
+        	u.login,
+            u.fam,
+            u.im,
+            u.ot,
+            u.orgs,
+            u.orgid,
+        	o.orgname,
+            (u.photo->0)::json->>'src' as photo,
+            u.usersettings
+        FROM framework.users as u
+			LEFT JOIN framework.orgs as o on u.orgid = o.id 
+        WHERE u.id = _userid) as d
+        INTO _userdetail;
+     
+    END IF;    
+	
+
+    --outjson = framework.fn_menu_recurs(_roles, 0);
+	SELECT
+    	row_to_json(d)
+    FROM
+    (SELECT 
+    	--outjson as mainmenu,
+        _userdetail as userdetail,
+        (SELECT
+        	array_to_json(array_agg(row_to_json(t)))
+         FROM
+        (SELECT 
+        	ms.menutype as id,
+            mt.mtypename as menutype,
+            coalesce(framework.fn_menu_recurs(_roles, 0,ms.id),'[]') as menu
+         FROM framework.menus as ms 
+         	JOIN framework.menutypes as mt on mt.id = ms.menutype
+         ) as t) as menus,
+        coalesce(_usermenu,'[]') as usermenu) as d
+    INTO outjson;    
+    
+    --outjson = coalesce(outjson,'[]');
+END;
+$$;
+
+
+ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgres;
+
+--
+-- TOC entry 262 (class 1255 OID 65519)
 -- Name: fn_notif_setsended(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1555,7 +1691,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 259 (class 1255 OID 65520)
+-- TOC entry 263 (class 1255 OID 65520)
 -- Name: fn_paramtypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1583,7 +1719,7 @@ $$;
 ALTER FUNCTION framework.fn_paramtypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 260 (class 1255 OID 65521)
+-- TOC entry 264 (class 1255 OID 65521)
 -- Name: fn_refreshconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1655,7 +1791,7 @@ $$;
 ALTER FUNCTION framework.fn_refreshconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 261 (class 1255 OID 65522)
+-- TOC entry 265 (class 1255 OID 65522)
 -- Name: fn_saveusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1681,7 +1817,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
--- TOC entry 262 (class 1255 OID 65523)
+-- TOC entry 266 (class 1255 OID 65523)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2071,7 +2207,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 263 (class 1255 OID 65525)
+-- TOC entry 267 (class 1255 OID 65525)
 -- Name: fn_sess(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2118,7 +2254,7 @@ $$;
 ALTER FUNCTION framework.fn_sess(_login character varying, pass character varying, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 245 (class 1255 OID 65526)
+-- TOC entry 249 (class 1255 OID 65526)
 -- Name: fn_tabcolumns(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2147,7 +2283,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 264 (class 1255 OID 65527)
+-- TOC entry 268 (class 1255 OID 65527)
 -- Name: fn_trees_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2225,7 +2361,28 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 265 (class 1255 OID 65528)
+-- TOC entry 283 (class 1255 OID 73361)
+-- Name: fn_trees_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
+--
+
+CREATE FUNCTION fn_trees_tr_del() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+
+	DELETE FROM framework.treesbranches WHERE treesid = OLD.id;
+    DELETE FROM framework.treesacts WHERE treesid = OLD.id;
+    
+    RETURN OLD; 
+
+END;
+$$;
+
+
+ALTER FUNCTION framework.fn_trees_tr_del() OWNER TO postgres;
+
+--
+-- TOC entry 269 (class 1255 OID 65528)
 -- Name: fn_userjson(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2263,7 +2420,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 266 (class 1255 OID 65529)
+-- TOC entry 270 (class 1255 OID 65529)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2288,7 +2445,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 267 (class 1255 OID 65530)
+-- TOC entry 271 (class 1255 OID 65530)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2341,7 +2498,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 268 (class 1255 OID 65531)
+-- TOC entry 272 (class 1255 OID 65531)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2394,7 +2551,7 @@ $$;
 ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json) OWNER TO postgres;
 
 --
--- TOC entry 269 (class 1255 OID 65532)
+-- TOC entry 273 (class 1255 OID 65532)
 -- Name: fn_viewnotif_get(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2443,7 +2600,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 270 (class 1255 OID 65533)
+-- TOC entry 274 (class 1255 OID 65533)
 -- Name: fn_viewsave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2676,7 +2833,7 @@ $$;
 ALTER FUNCTION framework.fn_viewsave(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 271 (class 1255 OID 65534)
+-- TOC entry 275 (class 1255 OID 65534)
 -- Name: get_colcongif(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2724,14 +2881,96 @@ $$;
 
 ALTER FUNCTION framework.get_colcongif(injson json, OUT outjson json) OWNER TO postgres;
 
-SET search_path = public, pg_catalog;
-
 --
--- TOC entry 272 (class 1255 OID 65535)
--- Name: fn_trees_add_org(); Type: FUNCTION; Schema: public; Owner: postgres
+-- TOC entry 320 (class 1255 OID 81577)
+-- Name: tr_mainmenu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
-CREATE FUNCTION fn_trees_add_org() RETURNS trigger
+CREATE FUNCTION tr_mainmenu_tr() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+
+	IF NEW.parentid is not null and NEW.parentid = NEW.id THEN
+    	PERFORM raiserror('parent id can not be = id');
+    END IF;
+    
+    IF NEW.parentid is not null and 
+    	NEW.menuid is not null and
+    (SELECT 
+    	m.menutype
+     FROM framework.menus as m
+     WHERE m.id = NEW.menuid
+     ) = '3' THEN
+     	PERFORM raiserror('Footer menu can not have child elements');
+    END IF;
+    
+    RETURN NEW;
+
+END;
+$$;
+
+
+ALTER FUNCTION framework.tr_mainmenu_tr() OWNER TO postgres;
+
+--
+-- TOC entry 319 (class 1255 OID 81576)
+-- Name: tr_menu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
+--
+
+CREATE FUNCTION tr_menu_tr() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+
+	IF NEW.ismainmenu and NEW.menutype in ('1','2')
+    THEN
+    	UPDATE framework.menus
+        SET ismainmenu = false
+        WHERE id <> NEW.id;
+    END IF;
+    IF NEW.menutype not in ('1','2') THEN
+    	NEW.ismainmenu = false; 
+    END IF;
+    
+   
+    
+    RETURN NEW;
+END;
+$$;
+
+
+ALTER FUNCTION framework.tr_menu_tr() OWNER TO postgres;
+
+--
+-- TOC entry 318 (class 1255 OID 81575)
+-- Name: tr_menus_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
+--
+
+CREATE FUNCTION tr_menus_tr_del() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+
+	IF OLD.ismainmenu = true THEN
+    	PERFORM raiserror('Access denied. It is main menu');
+    END IF;
+    
+    DELETE FROM framework.mainmenu WHERE menuid = OLD.id;
+    
+    RETURN OLD;
+END;
+$$;
+
+
+ALTER FUNCTION framework.tr_menus_tr_del() OWNER TO postgres;
+
+--
+-- TOC entry 323 (class 1255 OID 81583)
+-- Name: tr_trees_add_org(); Type: FUNCTION; Schema: framework; Owner: postgres
+--
+
+CREATE FUNCTION tr_trees_add_org() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 DECLARE
@@ -2752,14 +2991,14 @@ END;
 $$;
 
 
-ALTER FUNCTION public.fn_trees_add_org() OWNER TO postgres;
+ALTER FUNCTION framework.tr_trees_add_org() OWNER TO postgres;
 
 --
--- TOC entry 273 (class 1255 OID 65536)
--- Name: fn_treesbranch_check(); Type: FUNCTION; Schema: public; Owner: postgres
+-- TOC entry 321 (class 1255 OID 81578)
+-- Name: tr_treesbranch_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
-CREATE FUNCTION fn_treesbranch_check() RETURNS trigger
+CREATE FUNCTION tr_treesbranch_check() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 BEGIN
@@ -2781,14 +3020,14 @@ END;
 $$;
 
 
-ALTER FUNCTION public.fn_treesbranch_check() OWNER TO postgres;
+ALTER FUNCTION framework.tr_treesbranch_check() OWNER TO postgres;
 
 --
--- TOC entry 282 (class 1255 OID 65537)
--- Name: fn_user_check(); Type: FUNCTION; Schema: public; Owner: postgres
+-- TOC entry 322 (class 1255 OID 81580)
+-- Name: tr_user_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
-CREATE FUNCTION fn_user_check() RETURNS trigger
+CREATE FUNCTION tr_user_check() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 DECLARE 
@@ -2864,10 +3103,12 @@ END;
 $$;
 
 
-ALTER FUNCTION public.fn_user_check() OWNER TO postgres;
+ALTER FUNCTION framework.tr_user_check() OWNER TO postgres;
+
+SET search_path = public, pg_catalog;
 
 --
--- TOC entry 274 (class 1255 OID 65538)
+-- TOC entry 276 (class 1255 OID 65538)
 -- Name: isnumeric(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2887,7 +3128,7 @@ $_$;
 ALTER FUNCTION public.isnumeric(text) OWNER TO postgres;
 
 --
--- TOC entry 275 (class 1255 OID 65539)
+-- TOC entry 277 (class 1255 OID 65539)
 -- Name: prettydate(date); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2903,7 +3144,7 @@ $$;
 ALTER FUNCTION public.prettydate(d date, OUT "do" character varying) OWNER TO postgres;
 
 --
--- TOC entry 276 (class 1255 OID 65540)
+-- TOC entry 278 (class 1255 OID 65540)
 -- Name: raiserror(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2917,32 +3158,6 @@ $$;
 
 
 ALTER FUNCTION public.raiserror(_hint character varying) OWNER TO postgres;
-
---
--- TOC entry 277 (class 1255 OID 65541)
--- Name: tr_orgs(); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION tr_orgs() RETURNS trigger
-    LANGUAGE plpgsql
-    AS $$
-DECLARE
-  _useroles json;
-  _userorgs json;
-  _orgs json;
-  _org int;
-  _parentid int;
-BEGIN
-
-      
-	RETURN new;
-
-
-END;
-$$;
-
-
-ALTER FUNCTION public.tr_orgs() OWNER TO postgres;
 
 SET search_path = framework, pg_catalog;
 
@@ -2978,7 +3193,7 @@ CREATE TABLE apimethods (
 ALTER TABLE apimethods OWNER TO postgres;
 
 --
--- TOC entry 2492 (class 0 OID 0)
+-- TOC entry 2528 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: TABLE apimethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3031,7 +3246,7 @@ CREATE SEQUENCE columntypes_id_seq1
 ALTER TABLE columntypes_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 2493 (class 0 OID 0)
+-- TOC entry 2529 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: columntypes_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3146,7 +3361,8 @@ CREATE TABLE mainmenu (
     orderby smallint DEFAULT 0 NOT NULL,
     path character varying(150) DEFAULT '/'::character varying NOT NULL,
     roles json,
-    icon character varying(150)
+    icon character varying(150),
+    menuid integer NOT NULL
 );
 
 
@@ -3168,12 +3384,88 @@ CREATE SEQUENCE mainmenu_id_seq
 ALTER TABLE mainmenu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2494 (class 0 OID 0)
+-- TOC entry 2530 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: mainmenu_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
 
 ALTER SEQUENCE mainmenu_id_seq OWNED BY mainmenu.id;
+
+
+--
+-- TOC entry 225 (class 1259 OID 81587)
+-- Name: menus; Type: TABLE; Schema: framework; Owner: postgres
+--
+
+CREATE TABLE menus (
+    id integer NOT NULL,
+    menutype smallint,
+    menutitle character varying(350),
+    ismainmenu boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE menus OWNER TO postgres;
+
+--
+-- TOC entry 224 (class 1259 OID 81585)
+-- Name: menus_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
+--
+
+CREATE SEQUENCE menus_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE menus_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2531 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: menus_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
+--
+
+ALTER SEQUENCE menus_id_seq OWNED BY menus.id;
+
+
+--
+-- TOC entry 223 (class 1259 OID 81548)
+-- Name: menutypes; Type: TABLE; Schema: framework; Owner: postgres
+--
+
+CREATE TABLE menutypes (
+    id smallint NOT NULL,
+    mtypename character varying NOT NULL
+);
+
+
+ALTER TABLE menutypes OWNER TO postgres;
+
+--
+-- TOC entry 222 (class 1259 OID 81546)
+-- Name: menutypes_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
+--
+
+CREATE SEQUENCE menutypes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE menutypes_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2532 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: menutypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
+--
+
+ALTER SEQUENCE menutypes_id_seq OWNED BY menutypes.id;
 
 
 --
@@ -3230,7 +3522,7 @@ CREATE TABLE orgs (
 ALTER TABLE orgs OWNER TO postgres;
 
 --
--- TOC entry 2495 (class 0 OID 0)
+-- TOC entry 2533 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.orgname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3239,7 +3531,7 @@ COMMENT ON COLUMN orgs.orgname IS 'Наименование';
 
 
 --
--- TOC entry 2496 (class 0 OID 0)
+-- TOC entry 2534 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.ogrn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3248,7 +3540,7 @@ COMMENT ON COLUMN orgs.ogrn IS 'ОГРН';
 
 
 --
--- TOC entry 2497 (class 0 OID 0)
+-- TOC entry 2535 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.address_f; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3257,7 +3549,7 @@ COMMENT ON COLUMN orgs.address_f IS 'Фактический адрес';
 
 
 --
--- TOC entry 2498 (class 0 OID 0)
+-- TOC entry 2536 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.address_j; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3266,7 +3558,7 @@ COMMENT ON COLUMN orgs.address_j IS 'Юридический адрес';
 
 
 --
--- TOC entry 2499 (class 0 OID 0)
+-- TOC entry 2537 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.inn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3275,7 +3567,7 @@ COMMENT ON COLUMN orgs.inn IS 'ИНН';
 
 
 --
--- TOC entry 2500 (class 0 OID 0)
+-- TOC entry 2538 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.fio_ruk; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3284,7 +3576,7 @@ COMMENT ON COLUMN orgs.fio_ruk IS 'ФИО руководителя';
 
 
 --
--- TOC entry 2501 (class 0 OID 0)
+-- TOC entry 2539 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.fio_glbuh; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3293,7 +3585,7 @@ COMMENT ON COLUMN orgs.fio_glbuh IS 'ФИО гл. бухгалтера';
 
 
 --
--- TOC entry 2502 (class 0 OID 0)
+-- TOC entry 2540 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3302,7 +3594,7 @@ COMMENT ON COLUMN orgs.parentid IS 'Головная организация';
 
 
 --
--- TOC entry 2503 (class 0 OID 0)
+-- TOC entry 2541 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: COLUMN orgs.shortname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3368,7 +3660,7 @@ CREATE SEQUENCE relfortest_id_seq
 ALTER TABLE relfortest_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2504 (class 0 OID 0)
+-- TOC entry 2542 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: relfortest_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3392,7 +3684,7 @@ CREATE TABLE roles (
 ALTER TABLE roles OWNER TO postgres;
 
 --
--- TOC entry 2505 (class 0 OID 0)
+-- TOC entry 2543 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN roles.systema; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3401,7 +3693,7 @@ COMMENT ON COLUMN roles.systema IS 'Система';
 
 
 --
--- TOC entry 2506 (class 0 OID 0)
+-- TOC entry 2544 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN roles.hierarchy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3442,7 +3734,7 @@ CREATE TABLE spapi (
 ALTER TABLE spapi OWNER TO postgres;
 
 --
--- TOC entry 2507 (class 0 OID 0)
+-- TOC entry 2545 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: COLUMN spapi.id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3466,7 +3758,7 @@ CREATE SEQUENCE spapi_id_seq
 ALTER TABLE spapi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2508 (class 0 OID 0)
+-- TOC entry 2546 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: spapi_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3533,7 +3825,7 @@ CREATE SEQUENCE trees_id_seq
 ALTER TABLE trees_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2509 (class 0 OID 0)
+-- TOC entry 2547 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: trees_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3575,7 +3867,7 @@ CREATE SEQUENCE treesacts_id_seq
 ALTER TABLE treesacts_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2510 (class 0 OID 0)
+-- TOC entry 2548 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: treesacts_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3621,7 +3913,7 @@ CREATE SEQUENCE treesbranches_id_seq
 ALTER TABLE treesbranches_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2511 (class 0 OID 0)
+-- TOC entry 2549 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: treesbranches_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3684,7 +3976,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2512 (class 0 OID 0)
+-- TOC entry 2550 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3739,7 +4031,7 @@ CREATE SEQUENCE views_id_seq
 ALTER TABLE views_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2513 (class 0 OID 0)
+-- TOC entry 2551 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: views_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3770,7 +4062,7 @@ CREATE TABLE viewsnotification (
 ALTER TABLE viewsnotification OWNER TO postgres;
 
 --
--- TOC entry 2514 (class 0 OID 0)
+-- TOC entry 2552 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: TABLE viewsnotification; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3795,7 +4087,7 @@ CREATE SEQUENCE viewsnotification_id_seq
 ALTER TABLE viewsnotification_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2515 (class 0 OID 0)
+-- TOC entry 2553 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: viewsnotification_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -3818,7 +4110,7 @@ CREATE TABLE viewtypes (
 ALTER TABLE viewtypes OWNER TO postgres;
 
 --
--- TOC entry 2200 (class 2604 OID 65740)
+-- TOC entry 2218 (class 2604 OID 65740)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3826,7 +4118,7 @@ ALTER TABLE ONLY columntypes ALTER COLUMN id SET DEFAULT nextval('columntypes_id
 
 
 --
--- TOC entry 2211 (class 2604 OID 65741)
+-- TOC entry 2229 (class 2604 OID 65741)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3834,7 +4126,23 @@ ALTER TABLE ONLY mainmenu ALTER COLUMN id SET DEFAULT nextval('mainmenu_id_seq':
 
 
 --
--- TOC entry 2218 (class 2604 OID 65742)
+-- TOC entry 2281 (class 2604 OID 81590)
+-- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY menus ALTER COLUMN id SET DEFAULT nextval('menus_id_seq'::regclass);
+
+
+--
+-- TOC entry 2280 (class 2604 OID 81551)
+-- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY menutypes ALTER COLUMN id SET DEFAULT nextval('menutypes_id_seq'::regclass);
+
+
+--
+-- TOC entry 2236 (class 2604 OID 65742)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3842,7 +4150,7 @@ ALTER TABLE ONLY relfortest ALTER COLUMN id SET DEFAULT nextval('relfortest_id_s
 
 
 --
--- TOC entry 2223 (class 2604 OID 65743)
+-- TOC entry 2241 (class 2604 OID 65743)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3850,7 +4158,7 @@ ALTER TABLE ONLY spapi ALTER COLUMN id SET DEFAULT nextval('spapi_id_seq'::regcl
 
 
 --
--- TOC entry 2227 (class 2604 OID 65744)
+-- TOC entry 2245 (class 2604 OID 65744)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3858,7 +4166,7 @@ ALTER TABLE ONLY trees ALTER COLUMN id SET DEFAULT nextval('trees_id_seq'::regcl
 
 
 --
--- TOC entry 2229 (class 2604 OID 65745)
+-- TOC entry 2247 (class 2604 OID 65745)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3866,7 +4174,7 @@ ALTER TABLE ONLY treesacts ALTER COLUMN id SET DEFAULT nextval('treesacts_id_seq
 
 
 --
--- TOC entry 2232 (class 2604 OID 65746)
+-- TOC entry 2250 (class 2604 OID 65746)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3874,7 +4182,7 @@ ALTER TABLE ONLY treesbranches ALTER COLUMN id SET DEFAULT nextval('treesbranche
 
 
 --
--- TOC entry 2241 (class 2604 OID 65747)
+-- TOC entry 2259 (class 2604 OID 65747)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3882,7 +4190,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
--- TOC entry 2256 (class 2604 OID 65748)
+-- TOC entry 2274 (class 2604 OID 65748)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3890,7 +4198,7 @@ ALTER TABLE ONLY views ALTER COLUMN id SET DEFAULT nextval('views_id_seq'::regcl
 
 
 --
--- TOC entry 2261 (class 2604 OID 65749)
+-- TOC entry 2279 (class 2604 OID 65749)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -3898,7 +4206,7 @@ ALTER TABLE ONLY viewsnotification ALTER COLUMN id SET DEFAULT nextval('viewsnot
 
 
 --
--- TOC entry 2444 (class 0 OID 65542)
+-- TOC entry 2476 (class 0 OID 65542)
 -- Dependencies: 183
 -- Data for Name: acttypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -3911,7 +4219,7 @@ COPY acttypes (id, actname) FROM stdin;
 
 
 --
--- TOC entry 2445 (class 0 OID 65545)
+-- TOC entry 2477 (class 0 OID 65545)
 -- Dependencies: 184
 -- Data for Name: apimethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -3923,7 +4231,7 @@ COPY apimethods (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 2446 (class 0 OID 65549)
+-- TOC entry 2478 (class 0 OID 65549)
 -- Dependencies: 185
 -- Data for Name: columntypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -3963,7 +4271,7 @@ COPY columntypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 2516 (class 0 OID 0)
+-- TOC entry 2554 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: columntypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -3972,7 +4280,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 
 
 --
--- TOC entry 2517 (class 0 OID 0)
+-- TOC entry 2555 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -3981,7 +4289,7 @@ SELECT pg_catalog.setval('columntypes_id_seq1', 4, true);
 
 
 --
--- TOC entry 2449 (class 0 OID 65556)
+-- TOC entry 2481 (class 0 OID 65556)
 -- Dependencies: 188
 -- Data for Name: compos; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -3993,7 +4301,7 @@ COPY compos (id, title, path, config, created) FROM stdin;
 
 
 --
--- TOC entry 2518 (class 0 OID 0)
+-- TOC entry 2556 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: compos_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4002,7 +4310,7 @@ SELECT pg_catalog.setval('compos_id_seq', 8, true);
 
 
 --
--- TOC entry 2451 (class 0 OID 65567)
+-- TOC entry 2483 (class 0 OID 65567)
 -- Dependencies: 190
 -- Data for Name: filtertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4019,7 +4327,7 @@ COPY filtertypes (id, ftname) FROM stdin;
 
 
 --
--- TOC entry 2452 (class 0 OID 65570)
+-- TOC entry 2484 (class 0 OID 65570)
 -- Dependencies: 191
 -- Data for Name: functions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4034,7 +4342,7 @@ COPY functions (id, funcname, functype) FROM stdin;
 
 
 --
--- TOC entry 2453 (class 0 OID 65573)
+-- TOC entry 2485 (class 0 OID 65573)
 -- Dependencies: 192
 -- Data for Name: logtable; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4044,51 +4352,51 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 
 
 --
--- TOC entry 2519 (class 0 OID 0)
+-- TOC entry 2557 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 6955, true);
+SELECT pg_catalog.setval('logtable_id_seq', 6968, true);
 
 
 --
--- TOC entry 2455 (class 0 OID 65583)
+-- TOC entry 2487 (class 0 OID 65583)
 -- Dependencies: 194
 -- Data for Name: mainmenu; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
-COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, icon) FROM stdin;
-9	SP API	2	2018-12-21 14:32:59.333	f	7	/list/spapi	[1]	\N
-63	Menus	57	2019-03-15 09:29:46.75475	f	6	/menus	[0]	pi pi-fw pi-plus
-8	Logs	\N	2018-12-17 16:59:24.177	f	5	/list/logs	[1]	\N
-56	Sigma	\N	2019-03-15 09:25:38.734437	f	0	/	[0]	pi pi-fw pi-home
-64	Messages	57	2019-03-15 09:30:12.903699	f	7	/messages	[0]	pi pi-fw pi-spinner
-57	Components	56	2019-03-15 09:26:24.038004	f	1	/	[0]	pi pi-fw pi-globe
-6	Compositions	2	2018-12-11 08:40:45.927	f	4	/list/compos	[0]	pi pi-table
-65	Charts	57	2019-03-15 09:30:39.657018	f	8	/charts	[0]	pi pi-fw pi-chart-bar
-4	Menu Settings	2	2018-11-30 12:44:57.98	t	9	/list/menusettings/	[0]	pi pi-bars
-58	Sample Page	57	2019-03-15 09:27:06.583319	f	1	/sample	[0]	pi pi-fw pi-th-large
-5	Users	\N	2018-11-30 15:19:17.057	f	6	/list/users	[0]	pi pi-users
-59	Forms	57	2019-03-15 09:27:37.780909	f	2	/forms	[0]	pi pi-fw pi-file
-66	Misc	57	2019-03-15 09:31:03.89889	f	8	/misc	[0]	pi pi-fw pi-upload
-60	Data	57	2019-03-15 09:28:05.012457	f	3	/data	[0]	pi pi-fw pi-table
-67	Documentation	56	2019-03-15 10:11:53.306876	f	2	/documentation	[0]	pi pi-fw pi-question
-61	Panels	57	2019-03-15 09:28:44.88184	f	4	/panels	[0]	pi pi-fw pi-list
-72	Framework Documentation	\N	2019-03-22 09:22:48.47185	f	4	/	[0]	\N
-68	View Source	56	2019-03-15 10:12:39.958606	f	3	/sigmasource	[0]	pi pi-fw pi-search
-62	Overlays	57	2019-03-15 09:29:15.673439	f	5	/overlays	[0]	pi pi-fw pi-clone
-70	English	72	2019-03-21 12:28:58.473125	f	0	/jdocumentation	[0]	\N
-71	Русский	72	2019-03-21 12:29:37.606743	f	2	/jdocumentation_rus	[0]	\N
-69	Global Settings	2	2019-03-15 11:41:44.701615	f	0	/projectsettings	[0]	pi pi-cog
-47	Trees	2	2019-03-14 11:33:25.912516	f	3	/list/trees	[0]	pi pi-sitemap
-3	Views	2	2018-12-17 15:05:36.69	t	2	/viewlist	[1]	pi pi-star-o
-2	Project Settings	\N	2018-11-30 12:43:58.967	t	3	/	[0]	pi pi-globe
+COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, icon, menuid) FROM stdin;
+9	SP API	2	2018-12-21 14:32:59.333	f	7	/list/spapi	[1]	\N	1
+63	Menus	57	2019-03-15 09:29:46.75475	f	6	/menus	[0]	pi pi-fw pi-plus	1
+8	Logs	\N	2018-12-17 16:59:24.177	f	5	/list/logs	[1]	\N	1
+56	Sigma	\N	2019-03-15 09:25:38.734437	f	0	/	[0]	pi pi-fw pi-home	1
+64	Messages	57	2019-03-15 09:30:12.903699	f	7	/messages	[0]	pi pi-fw pi-spinner	1
+57	Components	56	2019-03-15 09:26:24.038004	f	1	/	[0]	pi pi-fw pi-globe	1
+6	Compositions	2	2018-12-11 08:40:45.927	f	4	/list/compos	[0]	pi pi-table	1
+65	Charts	57	2019-03-15 09:30:39.657018	f	8	/charts	[0]	pi pi-fw pi-chart-bar	1
+58	Sample Page	57	2019-03-15 09:27:06.583319	f	1	/sample	[0]	pi pi-fw pi-th-large	1
+5	Users	\N	2018-11-30 15:19:17.057	f	6	/list/users	[0]	pi pi-users	1
+59	Forms	57	2019-03-15 09:27:37.780909	f	2	/forms	[0]	pi pi-fw pi-file	1
+66	Misc	57	2019-03-15 09:31:03.89889	f	8	/misc	[0]	pi pi-fw pi-upload	1
+60	Data	57	2019-03-15 09:28:05.012457	f	3	/data	[0]	pi pi-fw pi-table	1
+67	Documentation	56	2019-03-15 10:11:53.306876	f	2	/documentation	[0]	pi pi-fw pi-question	1
+61	Panels	57	2019-03-15 09:28:44.88184	f	4	/panels	[0]	pi pi-fw pi-list	1
+72	Framework Documentation	\N	2019-03-22 09:22:48.47185	f	4	/	[0]	\N	1
+68	View Source	56	2019-03-15 10:12:39.958606	f	3	/sigmasource	[0]	pi pi-fw pi-search	1
+62	Overlays	57	2019-03-15 09:29:15.673439	f	5	/overlays	[0]	pi pi-fw pi-clone	1
+70	English	72	2019-03-21 12:28:58.473125	f	0	/jdocumentation	[0]	\N	1
+71	Русский	72	2019-03-21 12:29:37.606743	f	2	/jdocumentation_rus	[0]	\N	1
+69	Global Settings	2	2019-03-15 11:41:44.701615	f	0	/projectsettings	[0]	pi pi-cog	1
+47	Trees	2	2019-03-14 11:33:25.912516	f	3	/list/trees	[0]	pi pi-sitemap	1
+3	Views	2	2018-12-17 15:05:36.69	t	2	/viewlist	[1]	pi pi-star-o	1
+2	Project Settings	\N	2018-11-30 12:43:58.967	t	3	/	[0]	pi pi-globe	1
+4	Menu Settings	2	2018-11-30 12:44:57.98	t	9	/list/projectmenus	[0]	pi pi-bars	1
 \.
 
 
 --
--- TOC entry 2520 (class 0 OID 0)
+-- TOC entry 2558 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: mainmenu_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4097,7 +4405,49 @@ SELECT pg_catalog.setval('mainmenu_id_seq', 77, true);
 
 
 --
--- TOC entry 2457 (class 0 OID 65596)
+-- TOC entry 2518 (class 0 OID 81587)
+-- Dependencies: 225
+-- Data for Name: menus; Type: TABLE DATA; Schema: framework; Owner: postgres
+--
+
+COPY menus (id, menutype, menutitle, ismainmenu) FROM stdin;
+1	1	mainmenu	t
+\.
+
+
+--
+-- TOC entry 2559 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: menus_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
+--
+
+SELECT pg_catalog.setval('menus_id_seq', 1, true);
+
+
+--
+-- TOC entry 2516 (class 0 OID 81548)
+-- Dependencies: 223
+-- Data for Name: menutypes; Type: TABLE DATA; Schema: framework; Owner: postgres
+--
+
+COPY menutypes (id, mtypename) FROM stdin;
+1	Left Menu
+2	Header Menu
+3	Footer Menu
+\.
+
+
+--
+-- TOC entry 2560 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: menutypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
+--
+
+SELECT pg_catalog.setval('menutypes_id_seq', 3, true);
+
+
+--
+-- TOC entry 2489 (class 0 OID 65596)
 -- Dependencies: 196
 -- Data for Name: methodtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4111,7 +4461,7 @@ COPY methodtypes (id, methotypename) FROM stdin;
 
 
 --
--- TOC entry 2458 (class 0 OID 65599)
+-- TOC entry 2490 (class 0 OID 65599)
 -- Dependencies: 197
 -- Data for Name: opertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4124,7 +4474,7 @@ COPY opertypes (id, typename, alias) FROM stdin;
 
 
 --
--- TOC entry 2459 (class 0 OID 65602)
+-- TOC entry 2491 (class 0 OID 65602)
 -- Dependencies: 198
 -- Data for Name: orgs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4136,7 +4486,7 @@ COPY orgs (id, orgname, orgtype, ogrn, address_f, address_j, inn, fio_ruk, fio_g
 
 
 --
--- TOC entry 2521 (class 0 OID 0)
+-- TOC entry 2561 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: orgs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4145,7 +4495,7 @@ SELECT pg_catalog.setval('orgs_id_seq', 3, true);
 
 
 --
--- TOC entry 2461 (class 0 OID 65615)
+-- TOC entry 2493 (class 0 OID 65615)
 -- Dependencies: 200
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4157,7 +4507,7 @@ COPY paramtypes (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 2462 (class 0 OID 65619)
+-- TOC entry 2494 (class 0 OID 65619)
 -- Dependencies: 201
 -- Data for Name: relfortest; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4168,7 +4518,7 @@ COPY relfortest (id, testid) FROM stdin;
 
 
 --
--- TOC entry 2522 (class 0 OID 0)
+-- TOC entry 2562 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: relfortest_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4177,7 +4527,7 @@ SELECT pg_catalog.setval('relfortest_id_seq', 1, true);
 
 
 --
--- TOC entry 2464 (class 0 OID 65624)
+-- TOC entry 2496 (class 0 OID 65624)
 -- Dependencies: 203
 -- Data for Name: roles; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4188,18 +4538,19 @@ COPY roles (id, rolename, systema, hierarchy) FROM stdin;
 
 
 --
--- TOC entry 2465 (class 0 OID 65628)
+-- TOC entry 2497 (class 0 OID 65628)
 -- Dependencies: 204
 -- Data for Name: sess; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY sess (id, userid, created, killed) FROM stdin;
 877eceff-2d1f-027a-9042-17f9cd4a232a	1	2019-08-01 16:38:02.434831	\N
+3757a805-d05e-cf7c-bfbe-2ad65037dc10	1	2019-08-13 09:49:54.269118	\N
 \.
 
 
 --
--- TOC entry 2466 (class 0 OID 65632)
+-- TOC entry 2498 (class 0 OID 65632)
 -- Dependencies: 205
 -- Data for Name: spapi; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4237,20 +4588,21 @@ COPY spapi (id, methodname, procedurename, created, methodtype, roles) FROM stdi
 1	allviews	framework.fn_allviews	2019-02-04 22:54:58	1	[0]
 36	copyview	framework.fn_copyview	2019-07-12 13:33:10	2	[0]
 35	saveusersettings	framework.fn_saveusersettings	2019-06-07 21:55:14	2	[]
+37	menus	framework.fn_menus	2019-08-11 20:10:23	1	\N
 \.
 
 
 --
--- TOC entry 2523 (class 0 OID 0)
+-- TOC entry 2563 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: spapi_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('spapi_id_seq', 36, true);
+SELECT pg_catalog.setval('spapi_id_seq', 37, true);
 
 
 --
--- TOC entry 2468 (class 0 OID 65642)
+-- TOC entry 2500 (class 0 OID 65642)
 -- Dependencies: 207
 -- Data for Name: test; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4273,7 +4625,7 @@ de63ca93-340a-315d-cccf-ef648e1b8b09	1	хахахах	4	[{"filename": "resOWN.do
 
 
 --
--- TOC entry 2469 (class 0 OID 65648)
+-- TOC entry 2501 (class 0 OID 65648)
 -- Dependencies: 208
 -- Data for Name: trees; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4283,16 +4635,16 @@ COPY trees (id, title, url, descr, roles, created, userid, orgid, acts) FROM std
 
 
 --
--- TOC entry 2524 (class 0 OID 0)
+-- TOC entry 2564 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: trees_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('trees_id_seq', 9, true);
+SELECT pg_catalog.setval('trees_id_seq', 10, true);
 
 
 --
--- TOC entry 2471 (class 0 OID 65659)
+-- TOC entry 2503 (class 0 OID 65659)
 -- Dependencies: 210
 -- Data for Name: treesacts; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4302,7 +4654,7 @@ COPY treesacts (id, treesid, title, icon, classname, act, created) FROM stdin;
 
 
 --
--- TOC entry 2525 (class 0 OID 0)
+-- TOC entry 2565 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: treesacts_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4311,7 +4663,7 @@ SELECT pg_catalog.setval('treesacts_id_seq', 15, true);
 
 
 --
--- TOC entry 2473 (class 0 OID 65668)
+-- TOC entry 2505 (class 0 OID 65668)
 -- Dependencies: 212
 -- Data for Name: treesbranches; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4321,16 +4673,16 @@ COPY treesbranches (id, treesid, title, parentid, icon, created, treeviewtype, v
 
 
 --
--- TOC entry 2526 (class 0 OID 0)
+-- TOC entry 2566 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: treesbranches_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('treesbranches_id_seq', 220, true);
+SELECT pg_catalog.setval('treesbranches_id_seq', 221, true);
 
 
 --
--- TOC entry 2475 (class 0 OID 65678)
+-- TOC entry 2507 (class 0 OID 65678)
 -- Dependencies: 214
 -- Data for Name: treeviewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4342,18 +4694,18 @@ COPY treeviewtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 2476 (class 0 OID 65681)
+-- TOC entry 2508 (class 0 OID 65681)
 -- Dependencies: 215
 -- Data for Name: users; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY users (id, fam, im, ot, login, password, isactive, created, roles, roleid, photo, orgs, usersettings, orgid, userid) FROM stdin;
-1	admin	admin	admin	admin	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2018-12-28 12:57:07.76	[0]	0	[{"src": "http://localhost:8080/files/7546db5f-e10f-457e-b78a-aa65ba07e04b0acb3a1b-9071-4a54-b16d-94253d6364dbterminator_Hauptseite.jpg", "uri": "/files/7546db5f-e10f-457e-b78a-aa65ba07e04b0acb3a1b-9071-4a54-b16d-94253d6364dbterminator_Hauptseite.jpg", "size": 23993, "vwidth": null, "filename": "0acb3a1b-9071-4a54-b16d-94253d6364dbterminator_Hauptseite.jpg", "original": "http://localhost:8080/files/7546db5f-e10f-457e-b78a-aa65ba07e04b0acb3a1b-9071-4a54-b16d-94253d6364dbterminator_Hauptseite.jpg", "thumbnail": "http://localhost:8080/files/7546db5f-e10f-457e-b78a-aa65ba07e04b0acb3a1b-9071-4a54-b16d-94253d6364dbterminator_Hauptseite.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg"}]	[2]	{"logs": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "spapi": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "trees": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "users": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 209}, "colsOrder": [], "pagination": {"pagesize": 15}}, "compos": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "notifs": {"filters": {"isread": null, "issend": null}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "branches": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "treesacts": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "menusettings": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}}	2	1
+1	admin	admin	admin	admin	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2018-12-28 12:57:07.76	[0]	0	[]	[2]	{"logs": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "spapi": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "trees": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "users": {"filters": {"login": "", "isactive": null}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 209}, "colsOrder": [], "pagination": {"pagesize": 15}}, "compos": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "notifs": {"filters": {"isread": null, "issend": null}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "branches": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "treesacts": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "projectmenu": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "menusettings": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "projectmenus": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}}	2	1
 \.
 
 
 --
--- TOC entry 2527 (class 0 OID 0)
+-- TOC entry 2567 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4362,14 +4714,12 @@ SELECT pg_catalog.setval('users_id_seq', 2, true);
 
 
 --
--- TOC entry 2478 (class 0 OID 65697)
+-- TOC entry 2510 (class 0 OID 65697)
 -- Dependencies: 217
 -- Data for Name: views; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY views (id, title, descr, tablename, viewtype, pagination, config, path, created, groupby, filters, acts, roles, classname, orderby, ispagesize, pagecount, foundcount, subscrible, checker) FROM stdin;
-1026	Menu Edit	Menu Edit	framework.mainmenu	form full	f	[{"t": 1, "col": "id", "join": 0, "type": "label", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": 0, "type": "text", "roles": [], "title": "title", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "parentid", "join": 0, "type": "select", "input": 0, "roles": "[]", "title": "parentid", "width": "", "output": 0, "depency": null, "visible": 1, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "value": "id"}, {"label": "title", "value": "title"}]}, {"t": 4, "col": "roles", "join": 0, "type": "multiselect", "input": 0, "roles": "[]", "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 5, "col": "created", "join": 0, "type": "label", "input": 0, "roles": "[]", "title": "created", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "systemfield", "join": 0, "type": "checkbox", "input": 0, "roles": "[]", "title": "systemfield", "width": "", "output": 0, "depency": null, "visible": 0, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "orderby", "join": 0, "type": "number", "input": 0, "roles": "[]", "title": "orderby", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": 0, "type": "text", "input": 0, "roles": "[]", "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "test", "join": false, "type": "array", "roles": "[]", "title": "test", "width": "", "depency": true, "visible": false, "relation": "framework.test", "classname": null, "column_id": 10, "onetomany": true, "defaultval": null, "depencycol": "relat", "relationcolums": "[]"}, {"t": 9, "col": "icon", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menuedit	2018-11-30 14:23:09.53	[]	[]	[{"act": "/list/menusettings", "icon": "fa fa-thumbs-up", "type": "Link", "roles": [], "title": "ready", "classname": "btn btn-success", "parametrs": [], "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-1025	MainMenu	Menu list	framework.mainmenu	table	f	[{"t": 1, "col": "id", "join": 0, "type": "number", "input": 1, "roles": [], "title": "id", "width": "", "output": 1, "depency": null, "visible": 0, "relation": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": 0, "type": "text", "input": 0, "roles": [], "title": "title", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": 0, "type": "text", "input": 0, "roles": "[]", "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "roles", "join": 0, "type": "text", "input": 0, "roles": "[]", "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "systemfield", "join": 0, "type": "checkbox", "input": 0, "roles": "[]", "title": "systemfield", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "icon", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "parentid", "join": 0, "type": "select", "input": 0, "roles": "[]", "title": "parentid", "width": "", "output": 0, "depency": null, "visible": 1, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title_", "value": "title"}]}, {"t": 3, "col": "title", "type": "text", "input": 0, "roles": [], "table": "framework.mainmenu", "title": "parent", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "parentid", "relationcolums": "[]"}, {"t": 7, "col": "orderby", "join": 0, "type": "number", "input": 0, "roles": "[]", "title": "orderby", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "created", "join": 0, "type": "date", "input": 0, "roles": "[]", "title": "created", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menusettings	2018-11-30 12:50:20.173	[]	[{"t": 1, "type": "multiselect", "roles": [{"label": "developer", "value": 0}], "table": "framework.mainmenu", "title": "parent", "column": "parentid", "classname": null}]	[{"act": "/getone/menuedit?id=0", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add menu", "classname": null, "parametrs": [], "isforevery": 0}, {"act": "/getone/menuedit", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "редактировать", "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramtitle": "o", "paramcolumn": {"t": 1, "label": "title", "value": "title"}}], "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete menu", "classname": "btn", "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "isforevery": 1}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
 34	myorg	user org	framework.orgs	form full	f	[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "orgname", "join": false, "type": "label", "roles": "[]", "title": "orgname", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	myorg	2019-03-18 09:42:45.155502	[]	[]	[]	[]	\N	f	t	t	t	f	f
 57	test	test	framework.test	table	f	[{"t": 1, "col": "id", "join": false, "type": "text", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "num", "join": false, "type": "number", "roles": "[]", "title": "num", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "stroka", "join": false, "type": "text", "roles": "[]", "title": "stroka", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "relat", "join": false, "type": "number", "roles": "[]", "title": "relat", "width": "", "depency": false, "visible": true, "relation": "framework.mainmenu", "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "file", "join": false, "type": "text", "roles": "[]", "title": "file", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "pictures", "join": false, "type": "text", "roles": "[]", "title": "pictures", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "picture", "join": false, "type": "text", "roles": "[]", "title": "picture", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "files", "join": false, "type": "text", "roles": "[]", "title": "files", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "date", "join": false, "type": "date", "roles": "[]", "title": "date", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "time", "join": false, "type": "text", "roles": "[]", "title": "time", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "datetime", "join": false, "type": "date", "roles": "[]", "title": "datetime", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "bit", "join": false, "type": "checkbox", "roles": "[]", "title": "bit", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "relfortest", "join": false, "type": "array", "roles": "[]", "title": "relfortest", "width": "", "depency": true, "visible": false, "relation": "framework.relfortest", "classname": null, "column_id": 13, "onetomany": true, "defaultval": null, "depencycol": "testid", "relationcolums": "[]"}]	test	2019-03-20 16:35:48.666153	[]	[]	[]	[]	\N	f	t	t	t	f	f
 44	Notifications	Notifications	framework.viewsnotification	table	t	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "viewid", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": false, "relation": "framework.views", "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "col", "join": false, "type": "text", "roles": "[]", "title": "col", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "tableid", "join": false, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "notificationtext", "join": false, "type": "text", "roles": "[]", "title": "notificationtext", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "foruser", "join": false, "type": "number", "roles": "[]", "title": "foruser", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [{"act": {"label": "=", "value": "="}, "bool": {"label": "and", "value": "and"}, "value": "_userid_"}], "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "issend", "join": false, "type": "checkbox", "roles": "[]", "title": "issend", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "isread", "join": false, "type": "checkbox", "roles": "[]", "title": "isread", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "sended", "join": false, "type": "date", "roles": "[]", "title": "sended", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "readed", "join": false, "type": "date", "roles": "[]", "title": "readed", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	notifs	2019-03-19 16:03:31.904736	[]	[{"t": 1, "type": "check", "roles": [], "table": null, "title": "sended", "column": "issend", "classname": null}, {"t": 1, "type": "check", "roles": [], "table": null, "title": "readed", "column": "isread", "classname": null}]	[]	[]	\N	t	t	t	t	f	f
@@ -4387,20 +4737,24 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 28	tree from	tree from	framework.trees	form full	f	[{"t": 1, "col": "id", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "url", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "descr", "join": false, "type": "textarea", "chckd": true, "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "roles", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 6, "col": "created", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	treeform	2019-03-14 11:52:57.162249	[]	[]	[{"act": "/list/trees", "icon": "fa fa-thumbs-up", "type": "Link", "roles": [], "title": "ready", "classname": "btn btn-success", "parametrs": [], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
 26	trees	trees components	framework.trees	table	t	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "url", "join": false, "type": "text", "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "descr", "join": false, "type": "text", "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "roles", "join": false, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}]	trees	2019-03-14 11:21:06.460061	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "url", "value": "url"}, {"t": 1, "label": "descr", "value": "descr"}], "classname": null}]	[{"act": "/getone/treeform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": "btn btn", "parametrs": [{"paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "isforevery": false}, {"act": "/getone/treeform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-code-fork", "type": "Link", "roles": [], "title": "branches", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramt": null, "paramconst": "-1", "paramtitle": "bid", "paramcolumn": ""}], "paramtype": null, "isforevery": true}, {"act": "/composition/treesacts", "icon": "fa fa-asterisk", "type": "Link", "roles": [], "title": "actions", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}]	[{"label": "developer", "value": 0}]	\N	t	t	t	t	f	f
 30	branches	branches	framework.treesbranches	table	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "treesid", "join": false, "type": "number", "roles": "[]", "title": "treesid", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "title", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "parentid", "join": false, "type": "number", "roles": "[]", "title": "parentid", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "icon", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "treeviewtype", "join": false, "type": "number", "roles": "[]", "title": "treeviewtype", "width": "", "depency": false, "visible": true, "relation": "framework.treeviewtypes", "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "viewid", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": true, "relation": "framework.views", "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "compoid", "join": false, "type": "number", "roles": "[]", "title": "compoid", "width": "", "depency": false, "visible": false, "relation": "framework.compos", "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "orderby", "join": false, "type": "number", "roles": "[]", "title": "orderby", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	branches	2019-03-14 13:42:05.157003	[]	[]	[{"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn ", "parametrs": [], "paramtype": null, "isforevery": false}, {"act": "/composition/branches", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramconst": null, "paramtitle": "bid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}, {"paramconst": "treesid", "paramtitle": "relation", "paramcolumn": null}], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
+1026	Menu Edit	Menu Edit	framework.mainmenu	form full	f	[{"t": 1, "col": "id", "join": 0, "type": "label", "roles": [], "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "updatable": false, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 2, "col": "title", "join": 0, "type": "text", "roles": [], "title": "title", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 3, "col": "parentid", "join": 0, "type": "select", "input": 0, "roles": [], "title": "parent", "width": "", "output": 0, "depency": null, "visible": 1, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "value": "id"}, {"label": "title", "value": "title"}], "select_condition": [{"col": {"label": "menuid", "value": "menuid"}, "const": null, "value": {"t": 1, "label": "menuid", "value": "menuid"}, "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}], "visible_condition": [{"col": {"t": 1, "label": "id", "value": "id"}, "value": "0", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 4, "col": "roles", "join": 0, "type": "multiselect", "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": [], "multiselecttable": "framework.roles"}, {"t": 5, "col": "created", "join": 0, "type": "label", "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": false, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 6, "col": "systemfield", "join": 0, "type": "checkbox", "input": 0, "roles": [], "title": "system field", "width": "", "output": 0, "depency": null, "visible": 0, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 7, "col": "orderby", "join": 0, "type": "number", "input": 0, "roles": [], "title": "order by", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 8, "col": "path", "join": 0, "type": "text", "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 10, "col": "test", "join": false, "type": "array", "roles": [], "title": "test", "width": "", "depency": true, "visible": false, "relation": "framework.test", "classname": null, "column_id": 10, "onetomany": true, "defaultval": null, "depencycol": "relat", "relationcolums": []}, {"t": 9, "col": "icon", "join": false, "type": "text", "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 11, "col": "menuid", "join": false, "type": "number", "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menuedit	2018-11-30 14:23:09	[]	[]	[{"act": "/list/menusettings", "icon": "fa fa-thumbs-up", "type": "Link", "roles": [], "title": "ready", "classname": "btn btn-success", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "label": "menuid", "value": "menuid"}}], "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+1025	MainMenu	Menu list	framework.mainmenu	table	f	[{"t": 1, "col": "id", "key": "t4BbVjQsY", "join": 0, "type": "number", "input": 1, "roles": [], "title": "id", "width": "", "output": 1, "depency": null, "visible": 0, "relation": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 2, "col": "title", "key": "vKjcuEnPb", "join": 0, "type": "text", "input": 0, "roles": [], "title": "title", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 8, "col": "path", "key": "KVW2Jq1PP", "join": 0, "type": "text", "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 4, "col": "roles", "key": "XIjMawjA6", "join": 0, "type": "text", "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 6, "col": "systemfield", "key": "aT-Ebeh6a", "join": 0, "type": "checkbox", "input": 0, "roles": [], "title": "systemfield", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 9, "col": "icon", "key": "8jdaYaRwL", "join": false, "type": "text", "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 3, "col": "parentid", "key": "nUiL5SUGy", "join": 0, "type": "select", "input": 0, "roles": [], "title": "parentid", "width": "", "output": 0, "depency": null, "visible": false, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title_", "value": "title"}]}, {"t": 3, "col": "title", "key": "KlCD3IWZr", "type": "text", "input": 0, "roles": [], "table": "framework.mainmenu", "title": "parent", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "parentid", "relationcolums": []}, {"t": 7, "col": "orderby", "key": "UXlDs-BKM", "join": 0, "type": "number", "input": 0, "roles": [], "title": "orderby", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 5, "col": "created", "key": "tet1oLXwe", "join": 0, "type": "date", "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 10, "col": "menuid", "join": false, "type": "number", "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menusettings	2018-11-30 12:50:20	[]	[{"t": 1, "key": "4iwOLNx3K", "type": "multiselect", "roles": [{"label": "developer", "value": 0}], "table": "framework.mainmenu", "title": "parent", "column": "parentid", "classname": null}, {"type": "typehead", "roles": [], "title": "search", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/getone/menuedit", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramtitle": "o", "paramcolumn": {"t": 1, "label": "title", "value": "title"}}], "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete menu", "ismain": false, "classname": "btn", "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "isforevery": 1}, {"act": "/getone/menuedit", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add menu", "ismain": false, "classname": null, "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "menuid", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "label": "menuid", "value": "menuid"}}], "isforevery": 0}, {"act": "/list/projectmenus", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"key": 0, "label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+211	Project Menu		framework.menus	form full	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "menutitle", "join": false, "type": "text", "roles": "[]", "title": "menu title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "menutype", "join": false, "type": "select", "label": "menutype || menutype", "roles": "[]", "title": "menu type", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "framework.menutypes", "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "mtypename", "title": "mtypename", "value": "mtypename"}]}, {"t": 4, "col": "ismainmenu", "join": false, "type": "checkbox", "roles": "[]", "title": "is main menu", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	projectmenu	2019-08-11 18:33:52	[]	[]	[{"act": "/list/projectmenus", "icon": "fa fa-", "type": "Link", "roles": [], "title": "OK", "ismain": false, "classname": "btn btn", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
+150	Project menus	all menu settings	framework.menus	table	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "menutitle", "join": false, "type": "text", "roles": "[]", "title": "menu title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "mtypename", "type": "text", "input": 0, "roles": [], "table": "framework.menutypes", "title": "menu type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "menutype", "relationcolums": "[]"}, {"t": 4, "col": "ismainmenu", "join": false, "type": "checkbox", "roles": "[]", "title": "is main menu", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "menutype", "join": false, "type": "number", "label": "menutype || menutype", "roles": "[]", "title": "menutype", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menutypes", "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "mtypename", "title": "mtypename", "value": "mtypename"}]}]	projectmenus	2019-08-11 18:25:07	[]	[]	[{"act": "/getone/projectmenu", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/list/menusettings", "icon": "fa fa-list", "type": "Link", "roles": [], "title": "menu list", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/projectmenu", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "btn", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/projectmenu", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
 \.
 
 
 --
--- TOC entry 2528 (class 0 OID 0)
+-- TOC entry 2568 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: views_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('views_id_seq', 129, true);
+SELECT pg_catalog.setval('views_id_seq', 5042, true);
 
 
 --
--- TOC entry 2480 (class 0 OID 65719)
+-- TOC entry 2512 (class 0 OID 65719)
 -- Dependencies: 219
 -- Data for Name: viewsnotification; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4411,7 +4765,7 @@ COPY viewsnotification (id, viewid, col, tableid, notificationtext, foruser, iss
 
 
 --
--- TOC entry 2529 (class 0 OID 0)
+-- TOC entry 2569 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: viewsnotification_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -4420,7 +4774,7 @@ SELECT pg_catalog.setval('viewsnotification_id_seq', 1, true);
 
 
 --
--- TOC entry 2482 (class 0 OID 65731)
+-- TOC entry 2514 (class 0 OID 65731)
 -- Dependencies: 221
 -- Data for Name: viewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -4434,7 +4788,7 @@ COPY viewtypes (id, vtypename, viewlink) FROM stdin;
 
 
 --
--- TOC entry 2263 (class 2606 OID 65751)
+-- TOC entry 2284 (class 2606 OID 65751)
 -- Name: acttypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4443,7 +4797,7 @@ ALTER TABLE ONLY acttypes
 
 
 --
--- TOC entry 2265 (class 2606 OID 65753)
+-- TOC entry 2286 (class 2606 OID 65753)
 -- Name: apimethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4452,7 +4806,7 @@ ALTER TABLE ONLY apimethods
 
 
 --
--- TOC entry 2267 (class 2606 OID 65755)
+-- TOC entry 2288 (class 2606 OID 65755)
 -- Name: columntypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4461,7 +4815,7 @@ ALTER TABLE ONLY columntypes
 
 
 --
--- TOC entry 2269 (class 2606 OID 65757)
+-- TOC entry 2290 (class 2606 OID 65757)
 -- Name: compos_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4470,7 +4824,7 @@ ALTER TABLE ONLY compos
 
 
 --
--- TOC entry 2271 (class 2606 OID 65759)
+-- TOC entry 2292 (class 2606 OID 65759)
 -- Name: filtertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4479,7 +4833,7 @@ ALTER TABLE ONLY filtertypes
 
 
 --
--- TOC entry 2273 (class 2606 OID 65761)
+-- TOC entry 2294 (class 2606 OID 65761)
 -- Name: functions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4488,7 +4842,7 @@ ALTER TABLE ONLY functions
 
 
 --
--- TOC entry 2275 (class 2606 OID 65763)
+-- TOC entry 2296 (class 2606 OID 65763)
 -- Name: logtable_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4497,7 +4851,7 @@ ALTER TABLE ONLY logtable
 
 
 --
--- TOC entry 2277 (class 2606 OID 65765)
+-- TOC entry 2298 (class 2606 OID 65765)
 -- Name: mainmenu_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4506,7 +4860,34 @@ ALTER TABLE ONLY mainmenu
 
 
 --
--- TOC entry 2279 (class 2606 OID 65767)
+-- TOC entry 2335 (class 2606 OID 81593)
+-- Name: menus_manus_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY menus
+    ADD CONSTRAINT menus_manus_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2337 (class 2606 OID 81595)
+-- Name: menus_menutype_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY menus
+    ADD CONSTRAINT menus_menutype_key UNIQUE (menutype);
+
+
+--
+-- TOC entry 2333 (class 2606 OID 81556)
+-- Name: menutypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY menutypes
+    ADD CONSTRAINT menutypes_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2300 (class 2606 OID 65767)
 -- Name: methodtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4515,7 +4896,7 @@ ALTER TABLE ONLY methodtypes
 
 
 --
--- TOC entry 2281 (class 2606 OID 65769)
+-- TOC entry 2302 (class 2606 OID 65769)
 -- Name: opertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4524,7 +4905,7 @@ ALTER TABLE ONLY opertypes
 
 
 --
--- TOC entry 2283 (class 2606 OID 65771)
+-- TOC entry 2304 (class 2606 OID 65771)
 -- Name: orgs_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4533,7 +4914,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2285 (class 2606 OID 65773)
+-- TOC entry 2306 (class 2606 OID 65773)
 -- Name: paramtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4542,7 +4923,7 @@ ALTER TABLE ONLY paramtypes
 
 
 --
--- TOC entry 2287 (class 2606 OID 65775)
+-- TOC entry 2308 (class 2606 OID 65775)
 -- Name: relfortest_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4551,7 +4932,7 @@ ALTER TABLE ONLY relfortest
 
 
 --
--- TOC entry 2289 (class 2606 OID 65777)
+-- TOC entry 2310 (class 2606 OID 65777)
 -- Name: roles_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4560,7 +4941,7 @@ ALTER TABLE ONLY roles
 
 
 --
--- TOC entry 2291 (class 2606 OID 65779)
+-- TOC entry 2312 (class 2606 OID 65779)
 -- Name: spapi_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4569,7 +4950,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 2293 (class 2606 OID 65781)
+-- TOC entry 2314 (class 2606 OID 65781)
 -- Name: test_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4578,7 +4959,7 @@ ALTER TABLE ONLY test
 
 
 --
--- TOC entry 2295 (class 2606 OID 65783)
+-- TOC entry 2316 (class 2606 OID 65783)
 -- Name: trees_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4587,7 +4968,7 @@ ALTER TABLE ONLY trees
 
 
 --
--- TOC entry 2297 (class 2606 OID 65785)
+-- TOC entry 2318 (class 2606 OID 65785)
 -- Name: treesacts_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4596,7 +4977,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
--- TOC entry 2299 (class 2606 OID 65787)
+-- TOC entry 2320 (class 2606 OID 65787)
 -- Name: treesbranches_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4605,7 +4986,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2301 (class 2606 OID 65789)
+-- TOC entry 2322 (class 2606 OID 65789)
 -- Name: treeviewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4614,7 +4995,7 @@ ALTER TABLE ONLY treeviewtypes
 
 
 --
--- TOC entry 2304 (class 2606 OID 65791)
+-- TOC entry 2325 (class 2606 OID 65791)
 -- Name: views_path_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4623,7 +5004,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 2306 (class 2606 OID 65793)
+-- TOC entry 2327 (class 2606 OID 65793)
 -- Name: views_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4632,7 +5013,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 2308 (class 2606 OID 65795)
+-- TOC entry 2329 (class 2606 OID 65795)
 -- Name: viewsnotification_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4641,7 +5022,7 @@ ALTER TABLE ONLY viewsnotification
 
 
 --
--- TOC entry 2310 (class 2606 OID 65797)
+-- TOC entry 2331 (class 2606 OID 65797)
 -- Name: viewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4650,7 +5031,7 @@ ALTER TABLE ONLY viewtypes
 
 
 --
--- TOC entry 2302 (class 1259 OID 65798)
+-- TOC entry 2323 (class 1259 OID 65798)
 -- Name: users_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -4658,39 +5039,55 @@ CREATE UNIQUE INDEX users_id_key ON users USING btree (id);
 
 
 --
--- TOC entry 2326 (class 2620 OID 65799)
--- Name: orgs_tr; Type: TRIGGER; Schema: framework; Owner: postgres
+-- TOC entry 2360 (class 2620 OID 81601)
+-- Name: menus_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
-CREATE TRIGGER orgs_tr BEFORE INSERT OR UPDATE OF orgtype, ogrn, inn, parentid ON orgs FOR EACH ROW EXECUTE PROCEDURE public.tr_orgs();
+CREATE TRIGGER menus_tr BEFORE INSERT OR UPDATE OF menutype, ismainmenu ON menus FOR EACH ROW EXECUTE PROCEDURE tr_menu_tr();
 
 
 --
--- TOC entry 2327 (class 2620 OID 65800)
+-- TOC entry 2361 (class 2620 OID 81602)
+-- Name: menus_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
+--
+
+CREATE TRIGGER menus_tr_del BEFORE DELETE ON menus FOR EACH ROW EXECUTE PROCEDURE tr_menus_tr_del();
+
+
+--
+-- TOC entry 2357 (class 2620 OID 81584)
 -- Name: trees_add_org; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
-CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON trees FOR EACH ROW EXECUTE PROCEDURE public.fn_trees_add_org();
+CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON trees FOR EACH ROW EXECUTE PROCEDURE tr_trees_add_org();
 
 
 --
--- TOC entry 2328 (class 2620 OID 65801)
+-- TOC entry 2356 (class 2620 OID 73362)
+-- Name: trees_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
+--
+
+CREATE TRIGGER trees_tr_del BEFORE DELETE ON trees FOR EACH ROW EXECUTE PROCEDURE fn_trees_tr_del();
+
+
+--
+-- TOC entry 2358 (class 2620 OID 81579)
 -- Name: treesbranches_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
-CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, ismain ON treesbranches FOR EACH ROW EXECUTE PROCEDURE public.fn_treesbranch_check();
+CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, ismain ON treesbranches FOR EACH ROW EXECUTE PROCEDURE tr_treesbranch_check();
 
 
 --
--- TOC entry 2329 (class 2620 OID 65891)
+-- TOC entry 2359 (class 2620 OID 81581)
 -- Name: users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
-CREATE TRIGGER users_tr BEFORE UPDATE OF fam, im, ot, login, password, isactive, roles, photo, orgs, userid ON users FOR EACH ROW EXECUTE PROCEDURE public.fn_user_check();
+CREATE TRIGGER users_tr BEFORE UPDATE OF fam, im, ot, login, password, isactive, roles, photo, orgs, userid ON users FOR EACH ROW EXECUTE PROCEDURE tr_user_check();
 
 
 --
--- TOC entry 2320 (class 2606 OID 65803)
+-- TOC entry 2348 (class 2606 OID 65803)
 -- Name: compos_fk1; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4699,7 +5096,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2311 (class 2606 OID 65808)
+-- TOC entry 2338 (class 2606 OID 65808)
 -- Name: logtype_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4708,7 +5105,16 @@ ALTER TABLE ONLY logtable
 
 
 --
--- TOC entry 2318 (class 2606 OID 65813)
+-- TOC entry 2340 (class 2606 OID 81616)
+-- Name: mainmenu_fk_menuid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY mainmenu
+    ADD CONSTRAINT mainmenu_fk_menuid FOREIGN KEY (menuid) REFERENCES menus(id);
+
+
+--
+-- TOC entry 2346 (class 2606 OID 65813)
 -- Name: menu; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4717,7 +5123,16 @@ ALTER TABLE ONLY test
 
 
 --
--- TOC entry 2324 (class 2606 OID 65818)
+-- TOC entry 2355 (class 2606 OID 81596)
+-- Name: menus_fk_mt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY menus
+    ADD CONSTRAINT menus_fk_mt FOREIGN KEY (menutype) REFERENCES menutypes(id);
+
+
+--
+-- TOC entry 2353 (class 2606 OID 65818)
 -- Name: org_f; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4726,7 +5141,7 @@ ALTER TABLE ONLY users
 
 
 --
--- TOC entry 2313 (class 2606 OID 65823)
+-- TOC entry 2341 (class 2606 OID 65823)
 -- Name: orgs_fk_prnt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4735,7 +5150,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2314 (class 2606 OID 65828)
+-- TOC entry 2342 (class 2606 OID 65828)
 -- Name: orgs_fk_uid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4744,7 +5159,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2315 (class 2606 OID 65833)
+-- TOC entry 2343 (class 2606 OID 65833)
 -- Name: relfortest_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4753,7 +5168,7 @@ ALTER TABLE ONLY relfortest
 
 
 --
--- TOC entry 2317 (class 2606 OID 65838)
+-- TOC entry 2345 (class 2606 OID 65838)
 -- Name: spapi_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4762,7 +5177,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 2319 (class 2606 OID 65843)
+-- TOC entry 2347 (class 2606 OID 65843)
 -- Name: treesacts_fk_tr; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4771,7 +5186,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
--- TOC entry 2321 (class 2606 OID 65848)
+-- TOC entry 2349 (class 2606 OID 65848)
 -- Name: treesbranches_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4780,7 +5195,16 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2322 (class 2606 OID 65853)
+-- TOC entry 2352 (class 2606 OID 73354)
+-- Name: treesbranches_fk_tree; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY treesbranches
+    ADD CONSTRAINT treesbranches_fk_tree FOREIGN KEY (treesid) REFERENCES trees(id);
+
+
+--
+-- TOC entry 2350 (class 2606 OID 65853)
 -- Name: treeview; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4789,7 +5213,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2316 (class 2606 OID 65858)
+-- TOC entry 2344 (class 2606 OID 65858)
 -- Name: us_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4798,7 +5222,7 @@ ALTER TABLE ONLY sess
 
 
 --
--- TOC entry 2312 (class 2606 OID 65863)
+-- TOC entry 2339 (class 2606 OID 65863)
 -- Name: userid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4807,7 +5231,7 @@ ALTER TABLE ONLY logtable
 
 
 --
--- TOC entry 2325 (class 2606 OID 65868)
+-- TOC entry 2354 (class 2606 OID 65868)
 -- Name: viewid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4816,7 +5240,7 @@ ALTER TABLE ONLY viewsnotification
 
 
 --
--- TOC entry 2323 (class 2606 OID 65873)
+-- TOC entry 2351 (class 2606 OID 65873)
 -- Name: viewid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -4825,7 +5249,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2489 (class 0 OID 0)
+-- TOC entry 2525 (class 0 OID 0)
 -- Dependencies: 9
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -4836,7 +5260,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-08-01 17:29:59
+-- Completed on 2019-08-13 10:32:10
 
 --
 -- PostgreSQL database dump complete
