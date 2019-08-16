@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-08-13 10:32:08
+-- Started on 2019-08-16 15:27:41
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1532,7 +1532,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 316 (class 1255 OID 81573)
+-- TOC entry 315 (class 1255 OID 81573)
 -- Name: fn_menu_recurs(json, integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1572,7 +1572,7 @@ $$;
 ALTER FUNCTION framework.fn_menu_recurs(_roles json, _parentid integer, menu_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 317 (class 1255 OID 81574)
+-- TOC entry 316 (class 1255 OID 81574)
 -- Name: fn_menus(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1817,7 +1817,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
--- TOC entry 266 (class 1255 OID 65523)
+-- TOC entry 321 (class 1255 OID 65523)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1993,16 +1993,17 @@ BEGIN
       THEN
           perform raiserror('id of relation table can not be NULL');
       END IF;
-      
-      _squery = concat('
-          SELECT row_to_json(d) FROM	
-          (SELECT 
-            "',_col,'"
-          FROM ',_tablename,'
-          WHERE id = $1::',_id_type,' ) as d;');
-          
-      EXECUTE format(_squery) USING rel_id INTO _oldata;
-      
+      BEGIN
+        _squery = concat('
+            SELECT row_to_json(d) FROM	
+            (SELECT 
+              "',_col,'"
+            FROM ',_tablename,'
+            WHERE id = $1::',_id_type,' ) as d;');
+            
+        EXECUTE format(_squery) USING rel_id INTO _oldata;
+        
+      END;
       _squery = concat('SELECT row_to_json(d) FROM 
           (SELECT $1 as ',_col,') as d;');
       
@@ -2036,7 +2037,7 @@ BEGIN
       ');	
       EXECUTE format(_squery) USING rel_id,_value, _userid::int;
       ELSE
-	  	     _squery = concat('          
+	  	  _squery = concat('          
           UPDATE ', _tablename, ' 
           SET "',_col,'" = $2::',_col_type,'
           WHERE id::',_id_type,' = $1::',_id_type,'; 
@@ -2134,32 +2135,34 @@ BEGIN
     	IF trim(coalesce(_id,'')) = '' THEN
         	perform raiserror('id is null');
         END IF;
-     IF (SELECT count(t.*)
-      FROM information_schema.columns as t
-      WHERE concat(t.table_schema,'.',t.table_name) = _tablename and 
-           t.column_name = 'userid')>0 THEN
-         _squery = concat( ' UPDATE ', _tablename, ' 
-         					 SET "',_col,'" = $2::',_col_type,' , userid = $3
-                             WHERE id = $1::',_id_type,';                                
-                              ');
-							
-         EXECUTE format(_squery) USING _id,_value, _userid::int; 
-      ELSE
-        -- perform raiserror(_id_type::varchar);
-         _squery = concat( ' UPDATE ', _tablename, ' 
-         					 SET "',_col,'" = $2::',_col_type,' 
-                             WHERE id = $1::',_id_type,';                                
-                              ');
-		--PERFORM raiserror(_value::varchar);
-         EXECUTE format(_squery) USING _id,_value; 
-        -- commit;
-      END IF;   
+        
          _squery = concat('SELECT row_to_json(d) FROM	
                       (SELECT 
                         "',_col,'"
                       FROM ',_tablename,'
                       WHERE id = $1::',_id_type,') as d;');
-         EXECUTE format(_squery) USING _id INTO _oldata;    
+         EXECUTE format(_squery) USING _id INTO _oldata;  
+        IF (SELECT count(t.*)
+          FROM information_schema.columns as t
+          WHERE concat(t.table_schema,'.',t.table_name) = _tablename and 
+               t.column_name = 'userid')>0 THEN
+             _squery = concat( ' UPDATE ', _tablename, ' 
+                                 SET "',_col,'" = $2::',_col_type,' , userid = $3
+                                 WHERE id = $1::',_id_type,';                                
+                                  ');
+    							
+             EXECUTE format(_squery) USING _id,_value, _userid::int; 
+        ELSE
+            -- perform raiserror(_id_type::varchar);
+             _squery = concat( ' UPDATE ', _tablename, ' 
+                                 SET "',_col,'" = $2::',_col_type,' 
+                                 WHERE id = $1::',_id_type,';                                
+                                  ');
+            --PERFORM raiserror(_value::varchar);
+             EXECUTE format(_squery) USING _id,_value; 
+            -- commit;
+        END IF;   
+  
     
   
 
@@ -2207,7 +2210,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 267 (class 1255 OID 65525)
+-- TOC entry 266 (class 1255 OID 65525)
 -- Name: fn_sess(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2283,7 +2286,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 268 (class 1255 OID 65527)
+-- TOC entry 267 (class 1255 OID 65527)
 -- Name: fn_trees_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2361,7 +2364,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 283 (class 1255 OID 73361)
+-- TOC entry 282 (class 1255 OID 73361)
 -- Name: fn_trees_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2382,7 +2385,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 269 (class 1255 OID 65528)
+-- TOC entry 268 (class 1255 OID 65528)
 -- Name: fn_userjson(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2420,7 +2423,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 270 (class 1255 OID 65529)
+-- TOC entry 269 (class 1255 OID 65529)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2445,7 +2448,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 271 (class 1255 OID 65530)
+-- TOC entry 270 (class 1255 OID 65530)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2498,7 +2501,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 272 (class 1255 OID 65531)
+-- TOC entry 271 (class 1255 OID 65531)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2551,7 +2554,7 @@ $$;
 ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json) OWNER TO postgres;
 
 --
--- TOC entry 273 (class 1255 OID 65532)
+-- TOC entry 272 (class 1255 OID 65532)
 -- Name: fn_viewnotif_get(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2600,7 +2603,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 274 (class 1255 OID 65533)
+-- TOC entry 273 (class 1255 OID 65533)
 -- Name: fn_viewsave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2833,7 +2836,7 @@ $$;
 ALTER FUNCTION framework.fn_viewsave(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 275 (class 1255 OID 65534)
+-- TOC entry 274 (class 1255 OID 65534)
 -- Name: get_colcongif(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2882,7 +2885,7 @@ $$;
 ALTER FUNCTION framework.get_colcongif(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 320 (class 1255 OID 81577)
+-- TOC entry 319 (class 1255 OID 81577)
 -- Name: tr_mainmenu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2914,7 +2917,7 @@ $$;
 ALTER FUNCTION framework.tr_mainmenu_tr() OWNER TO postgres;
 
 --
--- TOC entry 319 (class 1255 OID 81576)
+-- TOC entry 318 (class 1255 OID 81576)
 -- Name: tr_menu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2943,7 +2946,7 @@ $$;
 ALTER FUNCTION framework.tr_menu_tr() OWNER TO postgres;
 
 --
--- TOC entry 318 (class 1255 OID 81575)
+-- TOC entry 317 (class 1255 OID 81575)
 -- Name: tr_menus_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2994,7 +2997,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_add_org() OWNER TO postgres;
 
 --
--- TOC entry 321 (class 1255 OID 81578)
+-- TOC entry 320 (class 1255 OID 81578)
 -- Name: tr_treesbranch_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3108,7 +3111,7 @@ ALTER FUNCTION framework.tr_user_check() OWNER TO postgres;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 276 (class 1255 OID 65538)
+-- TOC entry 275 (class 1255 OID 65538)
 -- Name: isnumeric(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3128,7 +3131,7 @@ $_$;
 ALTER FUNCTION public.isnumeric(text) OWNER TO postgres;
 
 --
--- TOC entry 277 (class 1255 OID 65539)
+-- TOC entry 276 (class 1255 OID 65539)
 -- Name: prettydate(date); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3144,7 +3147,7 @@ $$;
 ALTER FUNCTION public.prettydate(d date, OUT "do" character varying) OWNER TO postgres;
 
 --
--- TOC entry 278 (class 1255 OID 65540)
+-- TOC entry 277 (class 1255 OID 65540)
 -- Name: raiserror(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -5260,7 +5263,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-08-13 10:32:10
+-- Completed on 2019-08-16 15:27:44
 
 --
 -- PostgreSQL database dump complete
