@@ -24,6 +24,7 @@ if __name__ == '__main__':
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
+		(r"/(form.*)", MainHandler),
 		(r"/(projectsettings.*)", MainHandler),
 		(r"/(viewlist.*)", MainHandler),
 		(r"/(view.*)", MainHandler),
