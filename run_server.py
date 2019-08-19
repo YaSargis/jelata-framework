@@ -12,8 +12,6 @@ from schema import Schema
 from fapi import FApi
 from ws import WebSocket
 
-from rep import Reporter
-
 class MainHandler(web.RequestHandler):
     def get(self,url):
         self.render('../jelataframework/index.html')
@@ -26,7 +24,6 @@ if __name__ == '__main__':
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
-		(r"/(form.*)", MainHandler),
 		(r"/(projectsettings.*)", MainHandler),
 		(r"/(viewlist.*)", MainHandler),
 		(r"/(view.*)", MainHandler),
@@ -50,7 +47,6 @@ if __name__ == '__main__':
 		(r"/(panels.*)", MainHandler),
 		(r"/(data.*)", MainHandler),
 		(r"/(sample.*)", MainHandler),
-		(r"/(report.*)", MainHandler),
 		(r"/(forms.*)", MainHandler),
 		(r"/(printlist.*)", MainHandler),
 		(r"/(getoneprint.*)", MainHandler),
@@ -72,7 +68,6 @@ if __name__ == '__main__':
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r'/(api.*)', FApi),
-		(r'/(rep.*)', Reporter),
 		(r'/(auth.*)', Auth),
 		(r'/(schema.*)', Schema),
 		(r'/(admin.*)', Admin),
