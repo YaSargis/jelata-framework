@@ -108,6 +108,7 @@ class Schema(BaseHandler):
 								'classname':result.get('classname'),
 								'table':result.get('tablename'),
 								'title':result.get('title'),
+								'viewtype':result.get('viewtype'),
 								'pagination':result.get('pagination'),
 								'ispagecount':result.get('pagecount'),
 								'ispagesize':result.get('ispagesize'),
@@ -171,6 +172,7 @@ class Schema(BaseHandler):
 								'table':result.get('tablename'),
 								'subscrible':result.get('subscrible'),
 								'title':result.get('title'),
+								'viewtype':result.get('viewtype'),
 								'id':result.get('id')
 							}))
 		elif method == 'squery':

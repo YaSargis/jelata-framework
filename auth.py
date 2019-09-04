@@ -1,6 +1,7 @@
 from json import loads
 from hashlib import sha224
 from tornado import gen
+from psycopg2 import extras
 
 from basehandler import BaseHandler
 from service_functions import showError, default_headers, log
@@ -48,6 +49,19 @@ class Auth(BaseHandler):
 			squery = 'select * from framework.fn_sess(%s,%s);'
 			try:
 				result = yield self.db.execute(squery,(login,passw,))
+			except Exception as e:
+				showError(str(e), self)
+				log(url + '_Error',str(e))
+				return
+			result = result.fetchone()[0]
+			self.set_cookie("sesid", result)	
+			self.write('{"message":"OK"}')		
+		elif method == "auth_crypto":
+			body = loads(self.request.body.decode('utf-8'))
+				
+			squery = 'select * from framework.fn_cryptosess(%s);'
+			try:
+				result = yield self.db.execute(squery,(extras.Json(body),))
 			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error',str(e))

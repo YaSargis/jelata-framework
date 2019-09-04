@@ -296,7 +296,10 @@ def getList(result,body, userdetail=None):
 	else:
 		rownum += 't1.id'
 	rownum += ") as rownum "	
-	
+	if result.get('viewtype').find('form') != -1:
+		pagewhere = ' LIMIT 2 '
+	elif not result.get("pagination"):
+		pagewhere = ' LIMIT 300 '
 	if len(where)>0:
 		where = ' WHERE ' + where[3:]	
 	squery = (pageselect + 'SELECT ' + rownum + ', ' + squery[:len(squery)-2] + 
