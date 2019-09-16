@@ -42,8 +42,8 @@ def getList(result,body, userdetail=None):
 							squery += 't1."' + col.get("col") + '" as "' + col.get("title") + '", '
 							gropby += 't1."' + col.get("col") + '" ,' 
 						else:
-							squery += "'' as \"" + col.get("title") + "\", "
-							gropby += "'' ,"							
+							squery += "null as \"" + col.get("title") + "\", "
+							gropby += "null ,"							
 					else:
 						squery += "t" + str(col.get("t")) + '."' + col.get("col") + '" as "' + col.get("title") + '", '
 						gropby += "t" + str(col.get("t")) + '."' + col.get("col") + '",'

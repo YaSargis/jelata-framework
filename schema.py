@@ -199,8 +199,7 @@ class Schema(BaseHandler):
 			#self.write(dumps(result))
 			query = getList(result,body, userdetail=userdetail)	
 			squery = query[0]
-			scounquery = query[1]
-			self.write(dumps({'squery':squery + "; " + scounquery +";"}))
+			self.write(dumps({'squery':squery + "; "}))
 		else:
 			self.set_status(404,None)
 			self.write('{"message":"method not found"}')
