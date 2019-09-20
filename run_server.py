@@ -6,13 +6,13 @@ from tornado.options import parse_command_line
 from momoko import Pool
 from settings import poolsize, dsn, port
 
-from auth import Auth
-from admin import Admin, Logs, Log
-from schema import Schema
-from fapi import FApi
-from ws import WebSocket
+from libs.auth import Auth
+from libs.admin import Admin, Logs, Log
+from libs.schema import Schema
+from libs.fapi import FApi
+from libs.ws import WebSocket
 
-from rep import Reporter
+#from rep import Reporter
 
 class MainHandler(web.RequestHandler):
     def get(self,url):
@@ -38,20 +38,6 @@ if __name__ == '__main__':
 		(r"/(login.*)", MainHandler),
 		(r"/(logout.*)", MainHandler),
 		(r"/(newview.*)", MainHandler),
-		(r"/(documentation.*)", MainHandler),
-		(r"/(empty.*)", MainHandler),
-		(r"/(misc.*)", MainHandler),
-		(r"/(sigmasource.*)", MainHandler),
-		(r"/(charts.*)", MainHandler),
-		(r"/(messages.*)", MainHandler),
-		(r"/(menus.*)", MainHandler),
-		(r"/(overlays.*)", MainHandler),
-		(r"/(panels.*)", MainHandler),
-		(r"/(data.*)", MainHandler),
-		(r"/(sample.*)", MainHandler),
-		(r"/(forms.*)", MainHandler),
-		(r"/(printlist.*)", MainHandler),
-		(r"/(getoneprint.*)", MainHandler),
 		(r"/(compo.*)", MainHandler),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
@@ -70,7 +56,7 @@ if __name__ == '__main__':
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r'/(api.*)', FApi),
-		(r'/(rep.*)', Reporter),
+		#(r'/(rep.*)', Reporter),
 		(r'/(auth.*)', Auth),
 		(r'/(schema.*)', Schema),
 		(r'/(admin.*)', Admin),

@@ -2,8 +2,8 @@ from os import listdir
 from json import loads, dumps, load
 from tornado import gen
 
-from basehandler import BaseHandler
-from service_functions import showError, default_headers, log
+from libs.basehandler import BaseHandler
+from libs.service_functions import showError, default_headers, log
 from settings import primaryAuthorization, developerRole
 
 class Admin(BaseHandler):

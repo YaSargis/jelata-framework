@@ -3,9 +3,9 @@ from time import sleep
 from psycopg2 import extras
 from tornado import gen, websocket
 from tornado.ioloop import PeriodicCallback
-from basehandler import BaseHandler
+from libs.basehandler import BaseHandler
 from settings import maindomain, primaryAuthorization
-from service_functions import showError, log
+from libs.service_functions import showError, log
 
 class WebSocket(websocket.WebSocketHandler, BaseHandler):
 	def check_origin(self, origin):

@@ -1,8 +1,8 @@
 from json import loads, dumps
 from tornado import gen
-from basehandler import BaseHandler
-from sql_migration import getList
-from service_functions import showError, default_headers, curtojson, log
+from libs.basehandler import BaseHandler
+from libs.sql_migration import getList
+from libs.service_functions import showError, default_headers, curtojson, log
 from settings import primaryAuthorization, developerRole
 
 class Schema(BaseHandler):

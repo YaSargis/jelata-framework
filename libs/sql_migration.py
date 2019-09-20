@@ -1,6 +1,6 @@
 from json import loads, dumps
 from settings import developerRole
-from service_functions import log
+from libs.service_functions import log
 
 def formatInj(val):
 	if val is not None:
