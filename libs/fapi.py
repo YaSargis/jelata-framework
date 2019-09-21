@@ -30,6 +30,8 @@ def savefile(self):
 			value.append({'thumbnail':maindomain + '/files/' + bfname,
 				'original':maindomain + '/files/' + bfname,
 				'src':maindomain + '/files/' + bfname,
+				'thumbnailWidth':100,
+				'thumbnailHeight':100,
 				'uri':'/files/' + bfname,
 				'filename':file.filename, 
 				'content_type':file.content_type, 
