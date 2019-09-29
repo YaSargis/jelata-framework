@@ -5,7 +5,7 @@ from datetime import datetime, date, time
 from decimal import Decimal
 from pathlib import Path
 		
-def dateToFormat(dt):
+def datetimeToFormat(dt):
 	hour = str(dt.hour)
 	minute = str(dt.minute)
 	second = str(dt.second)
@@ -25,8 +25,18 @@ def dateToFormat(dt):
 	return (day + "." + month + 
 			"." + str(dt.year) + " " + hour+ ":" + 
 			minute + ":" + second)	
-	return 
 
+def dateToFormat(dt):
+	day = str(dt.day)
+	month = str(dt.month)
+
+	if len(day) == 1:
+		day = '0' + day
+	if len(month) == 1:
+		month = '0' + month	
+	return (day + "." + month + 
+			"." + str(dt.year) )	
+			
 def ifnull(s):
 	"""
 		if None return null
@@ -46,10 +56,12 @@ def curtojson(rows,cols):
 		ht = {}
 		for prop, val in zip(cols, row):
 			if (type(val) is UUID or type(val) is Decimal or 
-				type(val) is date or type(val) is time):
+				type(val) is dict or type(val) is time):
 				ht[prop] = str(val)
 			elif type(val) is datetime:
-				ht[prop] = dateToFormat(val)			
+				ht[prop] = datetimeToFormat(val)
+			elif type(val) is date:
+				ht[prop] = dateToFormat(val)
 			else:
 				ht[prop] = val
 				
