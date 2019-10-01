@@ -56,7 +56,7 @@ def curtojson(rows,cols):
 		ht = {}
 		for prop, val in zip(cols, row):
 			if (type(val) is UUID or type(val) is Decimal or 
-				type(val) is dict or type(val) is time):
+				type(val) is time):
 				ht[prop] = str(val)
 			elif type(val) is datetime:
 				ht[prop] = datetimeToFormat(val)
@@ -64,8 +64,6 @@ def curtojson(rows,cols):
 				ht[prop] = dateToFormat(val)
 			else:
 				ht[prop] = val
-				
-			
 		hts.append(ht)
 	rsl = dumps(hts , indent=1,  ensure_ascii=False)
 	rsl = loads(rsl)
