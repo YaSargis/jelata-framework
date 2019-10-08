@@ -39,13 +39,13 @@ def getList(result,body, userdetail=None):
 				if not col.get('depency'):
 					if 'related' not in col:	
 						if col.get('type') != 'password':
-							squery += 't1."' + col.get("col") + '" as "' + col.get("title") + '", '
+							squery += 't1."' + col.get("col") + '" as "' + (col.get("key") or col.get("title")) + '", ' # add key, for old versions title
 							gropby += 't1."' + col.get("col") + '" ,' 
 						else:
-							squery += "null as \"" + col.get("title") + "\", "
+							squery += "null as \"" + (col.get("key") or col.get("title")) + "\", " 
 							gropby += "null ,"							
 					else:
-						squery += "t" + str(col.get("t")) + '."' + col.get("col") + '" as "' + col.get("title") + '", '
+						squery += "t" + str(col.get("t")) + '."' + col.get("col") + '" as "' + (col.get("key") or col.get("title")) + '", '
 						gropby += "t" + str(col.get("t")) + '."' + col.get("col") + '",'
 				else:
 					relcols = ''
@@ -58,7 +58,7 @@ def getList(result,body, userdetail=None):
 								"(" + relcols + ") FROM " + col.get("relation") + 
 								" as t" + str(col.get("t")) + " WHERE t" + 
 								str(col.get("t")) + "." + col.get('depencycol') + 
-								' = t1.id  ) as "' + col.get("title") + '",')
+								' = t1.id  ) as "' + (col.get("key") or col.get("title")) + '",')
 							gropby += (" t1.id ,")
 						else:
 							for k in col.get("relationcolums"):
@@ -70,7 +70,7 @@ def getList(result,body, userdetail=None):
 								" as t" + str(col.get("t")) + 
 								" WHERE t" + str(col.get("t")) + 
 								"." + col.get('depencycol') + 
-								' = t1.id  )) as d),\'[]\') as "' + col.get("title") + 
+								' = t1.id  )) as d),\'[]\') as "' + (col.get("key") or col.get("title")) + 
 								'", ')
 							gropby += (" t1.id ,")
 			else:
@@ -86,7 +86,7 @@ def getList(result,body, userdetail=None):
 					if col.get("fn").get('label') == 'concat':
 						squery += "' ',"
 				squery = squery[:len(squery)-1]
-				squery += ') as "' + col.get("title") + '", ' 				
+				squery += ') as "' + (col.get("key") or col.get("title")) + '", ' 				
 
 		if col.get("relation") and not col.get('depency') and not col.get('related'):
 			if 'join' in col:
