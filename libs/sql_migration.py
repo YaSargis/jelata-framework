@@ -194,7 +194,7 @@ def getList(result,body, userdetail=None):
 				if 'related' not in col:
 					where += 'and t1."' + col.get("col") + '" = \'' + formatInj(body.get("inputs").get(col.get("title"))) + "' "
 				else:
-					where += 'and t' + str(col["t"]) + '."' + col["col"] + '" = \'' + formatInj(body.get("inputs").get(col.get("title"))) + "' "
+					where += 'and t' + str(col["t"]) + '."' + col.get("col") + '" = \'' + formatInj(body.get("inputs").get(col.get("title"))) + "' "
 				body.get("inputs")[col.get("title")] = None	
 				
 	if len(filters) > 0:

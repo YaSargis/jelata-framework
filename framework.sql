@@ -5,11 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.1
 
-<<<<<<< HEAD
--- Started on 2019-10-08 17:06:53
-=======
--- Started on 2019-09-29 15:16:07
->>>>>>> parent of e168945... start key
+-- Started on 2019-10-10 19:13:05
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -20,7 +16,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 8 (class 2615 OID 115428)
+-- TOC entry 8 (class 2615 OID 117434)
 -- Name: framework; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
@@ -30,7 +26,7 @@ CREATE SCHEMA framework;
 ALTER SCHEMA framework OWNER TO postgres;
 
 --
--- TOC entry 9 (class 2615 OID 115429)
+-- TOC entry 9 (class 2615 OID 117435)
 -- Name: test; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
@@ -48,7 +44,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2561 (class 0 OID 0)
+-- TOC entry 2563 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -57,7 +53,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- TOC entry 2 (class 3079 OID 115430)
+-- TOC entry 2 (class 3079 OID 117436)
 -- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -65,7 +61,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 2562 (class 0 OID 0)
+-- TOC entry 2564 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -76,7 +72,7 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 279 (class 1255 OID 115467)
+-- TOC entry 279 (class 1255 OID 117473)
 -- Name: fn_allviews(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -131,7 +127,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 280 (class 1255 OID 115468)
+-- TOC entry 280 (class 1255 OID 117474)
 -- Name: fn_allviews_sel(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -187,7 +183,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews_sel(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 281 (class 1255 OID 115469)
+-- TOC entry 281 (class 1255 OID 117475)
 -- Name: fn_apimethods(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -215,7 +211,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 283 (class 1255 OID 115470)
+-- TOC entry 283 (class 1255 OID 117476)
 -- Name: fn_autocomplete(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -267,7 +263,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 284 (class 1255 OID 115471)
+-- TOC entry 284 (class 1255 OID 117477)
 -- Name: fn_branchestree_recurs(integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -305,7 +301,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 285 (class 1255 OID 115472)
+-- TOC entry 285 (class 1255 OID 117478)
 -- Name: fn_compo(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -336,7 +332,7 @@ $$;
 ALTER FUNCTION framework.fn_compo(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 286 (class 1255 OID 115473)
+-- TOC entry 286 (class 1255 OID 117479)
 -- Name: fn_compo_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -367,7 +363,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 287 (class 1255 OID 115474)
+-- TOC entry 287 (class 1255 OID 117480)
 -- Name: fn_compo_save(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -476,7 +472,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_save(injson json, OUT _id integer) OWNER TO postgres;
 
 --
--- TOC entry 288 (class 1255 OID 115475)
+-- TOC entry 288 (class 1255 OID 117481)
 -- Name: fn_copyview(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -553,11 +549,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 289 (class 1255 OID 115476)
-=======
--- TOC entry 253 (class 1255 OID 16998)
->>>>>>> parent of e168945... start key
+-- TOC entry 290 (class 1255 OID 117482)
 -- Name: fn_createconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -576,11 +568,12 @@ BEGIN
                     *
            FROM (
                   SELECT distinct t.column_name as col,
-                         substring(coalesce(pgd.description, t.column_name), 1, 32) as title,
-                         --framework.fn_htmldatatype(t.data_type) 
-                         
+                         substring(coalesce(pgd.description, t.column_name), 1, 32) as title,                         
                          'label' as type,
                          true as visible,
+                         concat(t.column_name,'_',
+                         	SUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),
+                         	1,5)) as key,
                          (
                            SELECT concat(y.table_schema, '.', y.table_name)
                            FROM information_schema.table_constraints as c
@@ -629,6 +622,9 @@ BEGIN
                   UNION ALL
                   SELECT x.table_name as col,       
                          x.table_name as title,
+                         concat(x.table_name, '_',
+                         	SUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),
+                         	1,5)) as key,
                          'array' as type,
                          false as visible,
                          concat(x.table_schema, '.', x.table_name) as relation,
@@ -669,11 +665,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 291 (class 1255 OID 115477)
-=======
--- TOC entry 256 (class 1255 OID 16999)
->>>>>>> parent of e168945... start key
+-- TOC entry 291 (class 1255 OID 117483)
 -- Name: fn_cryptosess(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -730,11 +722,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, OUT sessid character) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 292 (class 1255 OID 115478)
-=======
--- TOC entry 257 (class 1255 OID 17000)
->>>>>>> parent of e168945... start key
+-- TOC entry 292 (class 1255 OID 117484)
 -- Name: fn_deleterow(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -835,11 +823,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 293 (class 1255 OID 115479)
-=======
--- TOC entry 258 (class 1255 OID 17001)
->>>>>>> parent of e168945... start key
+-- TOC entry 293 (class 1255 OID 117485)
 -- Name: fn_fapi(json, character varying, smallint, character, smallint); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -919,11 +903,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 294 (class 1255 OID 115480)
-=======
--- TOC entry 259 (class 1255 OID 17002)
->>>>>>> parent of e168945... start key
+-- TOC entry 294 (class 1255 OID 117486)
 -- Name: fn_formparams(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -979,11 +959,7 @@ $$;
 ALTER FUNCTION framework.fn_formparams(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 295 (class 1255 OID 115481)
-=======
--- TOC entry 260 (class 1255 OID 17003)
->>>>>>> parent of e168945... start key
+-- TOC entry 295 (class 1255 OID 117487)
 -- Name: fn_formselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1203,11 +1179,7 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 296 (class 1255 OID 115483)
-=======
--- TOC entry 261 (class 1255 OID 17005)
->>>>>>> parent of e168945... start key
+-- TOC entry 296 (class 1255 OID 117489)
 -- Name: fn_getacttypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1243,11 +1215,7 @@ $$;
 ALTER FUNCTION framework.fn_getacttypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 297 (class 1255 OID 115484)
-=======
--- TOC entry 262 (class 1255 OID 17006)
->>>>>>> parent of e168945... start key
+-- TOC entry 289 (class 1255 OID 117490)
 -- Name: fn_getfunctions(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1284,11 +1252,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 298 (class 1255 OID 115485)
-=======
--- TOC entry 263 (class 1255 OID 17007)
->>>>>>> parent of e168945... start key
+-- TOC entry 297 (class 1255 OID 117491)
 -- Name: fn_getselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1329,7 +1293,7 @@ $$;
 ALTER FUNCTION framework.fn_getselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 282 (class 1255 OID 115486)
+-- TOC entry 298 (class 1255 OID 117492)
 -- Name: fn_getusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1355,11 +1319,7 @@ $$;
 ALTER FUNCTION framework.fn_getusersettings(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 299 (class 1255 OID 115487)
-=======
--- TOC entry 264 (class 1255 OID 17009)
->>>>>>> parent of e168945... start key
+-- TOC entry 299 (class 1255 OID 117493)
 -- Name: fn_htmldatatype(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1411,11 +1371,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 300 (class 1255 OID 115488)
-=======
--- TOC entry 265 (class 1255 OID 17010)
->>>>>>> parent of e168945... start key
+-- TOC entry 300 (class 1255 OID 117494)
 -- Name: fn_logout(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1437,11 +1393,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 301 (class 1255 OID 115489)
-=======
--- TOC entry 266 (class 1255 OID 17011)
->>>>>>> parent of e168945... start key
+-- TOC entry 301 (class 1255 OID 117495)
 -- Name: fn_mainmenu(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1491,11 +1443,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 302 (class 1255 OID 115490)
-=======
--- TOC entry 267 (class 1255 OID 17012)
->>>>>>> parent of e168945... start key
+-- TOC entry 302 (class 1255 OID 117496)
 -- Name: fn_mainmenu_recurs(json, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1534,11 +1482,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu_recurs(_roles json, _parentid integer, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 303 (class 1255 OID 115491)
-=======
--- TOC entry 268 (class 1255 OID 17013)
->>>>>>> parent of e168945... start key
+-- TOC entry 303 (class 1255 OID 117497)
 -- Name: fn_mainmenusigma(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1624,11 +1568,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 304 (class 1255 OID 115492)
-=======
--- TOC entry 269 (class 1255 OID 17014)
->>>>>>> parent of e168945... start key
+-- TOC entry 304 (class 1255 OID 117498)
 -- Name: fn_menu_recurs(json, integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1668,11 +1608,7 @@ $$;
 ALTER FUNCTION framework.fn_menu_recurs(_roles json, _parentid integer, menu_id integer, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 305 (class 1255 OID 115493)
-=======
--- TOC entry 270 (class 1255 OID 17015)
->>>>>>> parent of e168945... start key
+-- TOC entry 305 (class 1255 OID 117499)
 -- Name: fn_menus(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1768,11 +1704,7 @@ $$;
 ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 306 (class 1255 OID 115494)
-=======
--- TOC entry 271 (class 1255 OID 17016)
->>>>>>> parent of e168945... start key
+-- TOC entry 306 (class 1255 OID 117500)
 -- Name: fn_notif_setsended(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1795,11 +1727,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 290 (class 1255 OID 115495)
-=======
--- TOC entry 254 (class 1255 OID 17017)
->>>>>>> parent of e168945... start key
+-- TOC entry 307 (class 1255 OID 117501)
 -- Name: fn_paramtypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1827,11 +1755,7 @@ $$;
 ALTER FUNCTION framework.fn_paramtypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 307 (class 1255 OID 115496)
-=======
--- TOC entry 272 (class 1255 OID 17018)
->>>>>>> parent of e168945... start key
+-- TOC entry 308 (class 1255 OID 117502)
 -- Name: fn_refreshconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1903,11 +1827,7 @@ $$;
 ALTER FUNCTION framework.fn_refreshconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 308 (class 1255 OID 115497)
-=======
--- TOC entry 332 (class 1255 OID 17552)
->>>>>>> parent of e168945... start key
+-- TOC entry 309 (class 1255 OID 117503)
 -- Name: fn_roles_getall(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1933,11 +1853,7 @@ $$;
 ALTER FUNCTION framework.fn_roles_getall(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 309 (class 1255 OID 115498)
-=======
--- TOC entry 273 (class 1255 OID 17019)
->>>>>>> parent of e168945... start key
+-- TOC entry 335 (class 1255 OID 117504)
 -- Name: fn_savestate(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1970,7 +1886,7 @@ _type varchar(150);
 _relation varchar;
 _relationobj json;
 _relationval varchar;
-_title varchar(150);
+_key varchar(150);
 _x varchar;
 _rv varchar;
 _config json;
@@ -2093,7 +2009,7 @@ BEGIN
   
   FOR _pv in (SELECT value FROM json_array_elements(_config))
   LOOP
-  	_value = _data->>(_pv->>'title');
+  	_value = _data->>(_pv->>'key');
     
     IF _value = '_userid_' THEN
     	_value = _userid;
@@ -2118,7 +2034,7 @@ BEGIN
 	_relatetable = _pv->>'table';
     _col = _pv->>'col';
     _type = _pv->>'type';
-    _title = _pv->>'title';
+    _key = _pv->>'key';
     
     IF (_pv->>'visible')::boolean and (_pv->>'type') not in ('label','color','link','filelist','gallery') THEN
       IF _relatetable is not null and _id is null
@@ -2155,18 +2071,18 @@ BEGIN
           _id_type = 'varchar'; 
         END IF;
         
-        _data = (_data::jsonb-(_pv->>'title'))::json;
-        _data = (jsonb_build_object((_pv->>'title'), _value) 
+        _data = (_data::jsonb-(_pv->>'key'))::json;
+        _data = (jsonb_build_object((_pv->>'key'), _value) 
         	|| _data::jsonb)::json;
         
         IF (injson->>'id') is null THEN
           IF _value is not null  THEN
             _squery = concat(_squery,',"',_col,'"');
-            _insertvalues = concat(_insertvalues,',($3->>''',_title,''')::',_col_type);
+            _insertvalues = concat(_insertvalues,',($3->>''',_key,''')::',_col_type);
           END IF;
         ELSE
           IF _pv->>'table' is null THEN
-              _squery = concat(_squery,'"',_col,'" = ($3->>''',_title,''')::',_col_type,', ');
+              _squery = concat(_squery,'"',_col,'" = ($3->>''',_key,''')::',_col_type,', ');
           END IF;
         END IF;
       ELSE
@@ -2183,7 +2099,7 @@ BEGIN
          IF _col_type is null THEN
              perform raiserror('can not find out the column type. check table and column names');
          END IF;
-		_rt_query = concat('UPDATE ',_pv->>'table',' SET "',_col,'" = ($2->>''',_title,''')::',_col_type,' FROM ',_tablename,' as t');
+		_rt_query = concat('UPDATE ',_pv->>'table',' SET "',_col,'" = ($2->>''',_key,''')::',_col_type,' FROM ',_tablename,' as t');
         _tpath = _pv->>'tpath';
         _tp = _tpath->0;
         _tpast = 't';
@@ -2296,13 +2212,8 @@ $_$;
 ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 2564 (class 0 OID 0)
--- Dependencies: 309
-=======
--- TOC entry 2563 (class 0 OID 0)
--- Dependencies: 273
->>>>>>> parent of e168945... start key
+-- TOC entry 2565 (class 0 OID 0)
+-- Dependencies: 335
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2310,11 +2221,7 @@ COMMENT ON FUNCTION fn_savestate(injson json, OUT outjson json) IS 'save all for
 
 
 --
-<<<<<<< HEAD
--- TOC entry 310 (class 1255 OID 115500)
-=======
--- TOC entry 274 (class 1255 OID 17021)
->>>>>>> parent of e168945... start key
+-- TOC entry 310 (class 1255 OID 117506)
 -- Name: fn_saveusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2340,11 +2247,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 311 (class 1255 OID 115501)
-=======
--- TOC entry 275 (class 1255 OID 17022)
->>>>>>> parent of e168945... start key
+-- TOC entry 311 (class 1255 OID 117507)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2737,11 +2640,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 312 (class 1255 OID 115503)
-=======
--- TOC entry 276 (class 1255 OID 17024)
->>>>>>> parent of e168945... start key
+-- TOC entry 312 (class 1255 OID 117509)
 -- Name: fn_sess(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2788,11 +2687,7 @@ $$;
 ALTER FUNCTION framework.fn_sess(_login character varying, pass character varying, OUT sessid character) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 313 (class 1255 OID 115504)
-=======
--- TOC entry 277 (class 1255 OID 17025)
->>>>>>> parent of e168945... start key
+-- TOC entry 313 (class 1255 OID 117510)
 -- Name: fn_tabcolumns(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2821,11 +2716,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 314 (class 1255 OID 115505)
-=======
--- TOC entry 278 (class 1255 OID 17026)
->>>>>>> parent of e168945... start key
+-- TOC entry 315 (class 1255 OID 117511)
 -- Name: fn_trees_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2903,11 +2794,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 315 (class 1255 OID 115506)
-=======
--- TOC entry 279 (class 1255 OID 17027)
->>>>>>> parent of e168945... start key
+-- TOC entry 316 (class 1255 OID 117512)
 -- Name: fn_userjson(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2945,11 +2832,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 316 (class 1255 OID 115507)
-=======
--- TOC entry 280 (class 1255 OID 17028)
->>>>>>> parent of e168945... start key
+-- TOC entry 317 (class 1255 OID 117513)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2974,11 +2857,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 317 (class 1255 OID 115508)
-=======
--- TOC entry 282 (class 1255 OID 17029)
->>>>>>> parent of e168945... start key
+-- TOC entry 318 (class 1255 OID 117514)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3031,11 +2910,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 318 (class 1255 OID 115509)
-=======
--- TOC entry 283 (class 1255 OID 17030)
->>>>>>> parent of e168945... start key
+-- TOC entry 319 (class 1255 OID 117515)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3088,8 +2963,7 @@ $$;
 ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 319 (class 1255 OID 115510)
+-- TOC entry 334 (class 1255 OID 117516)
 -- Name: fn_view_setKeys(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3113,6 +2987,42 @@ BEGIN
             		SUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),1,5)
                 )) )::jsonb as conf
     FROM json_array_elements(config)) ))->0;
+    
+    UPDATE framework.views as v
+	SET acts = 
+	jsonb_build_array(
+		ARRAY(
+          (SELECT
+            (a.value::jsonb - 'parametrs') ||
+            jsonb_build_object('parametrs',
+              jsonb_build_array(
+                ARRAY(
+                  SELECT
+                    CASE WHEN coalesce((p.value->>'paramconst'),'') = ''
+                    THEN
+
+                    jsonb_build_object('paramcolumn',
+                      (p.value->'paramcolumn')::jsonb ||
+                       test."fn_setParamsKey"(
+                            v.config,
+                            (p.value->>'paramcolumn')::jsonb
+                        )
+                      ) || p.value::jsonb - 'paramcolumn'
+                    ELSE
+                      (p.value)::jsonb
+                    END
+                  FROM json_array_elements(coalesce((a.value->>'parametrs')::json,'[]')) as p
+
+
+                )
+              )->0
+            )
+
+
+    	 FROM json_array_elements(v.acts) as a
+     	)
+   	 )
+	)->0;
 END;
 $$;
 
@@ -3120,10 +3030,7 @@ $$;
 ALTER FUNCTION framework."fn_view_setKeys"() OWNER TO postgres;
 
 --
--- TOC entry 320 (class 1255 OID 115511)
-=======
--- TOC entry 331 (class 1255 OID 17547)
->>>>>>> parent of e168945... start key
+-- TOC entry 320 (class 1255 OID 117517)
 -- Name: fn_view_title_link(integer, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3147,11 +3054,7 @@ $$;
 ALTER FUNCTION framework.fn_view_title_link(viewid integer, title character varying, OUT lnk json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 321 (class 1255 OID 115512)
-=======
--- TOC entry 284 (class 1255 OID 17031)
->>>>>>> parent of e168945... start key
+-- TOC entry 321 (class 1255 OID 117518)
 -- Name: fn_viewnotif_get(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3200,11 +3103,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 322 (class 1255 OID 115513)
-=======
--- TOC entry 285 (class 1255 OID 17032)
->>>>>>> parent of e168945... start key
+-- TOC entry 324 (class 1255 OID 117519)
 -- Name: fn_viewsave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3437,11 +3336,7 @@ $$;
 ALTER FUNCTION framework.fn_viewsave(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 323 (class 1255 OID 115514)
-=======
--- TOC entry 286 (class 1255 OID 17033)
->>>>>>> parent of e168945... start key
+-- TOC entry 325 (class 1255 OID 117520)
 -- Name: get_colcongif(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3490,11 +3385,7 @@ $$;
 ALTER FUNCTION framework.get_colcongif(injson json, OUT outjson json) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 324 (class 1255 OID 115515)
-=======
--- TOC entry 287 (class 1255 OID 17034)
->>>>>>> parent of e168945... start key
+-- TOC entry 326 (class 1255 OID 117521)
 -- Name: tr_mainmenu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3526,11 +3417,7 @@ $$;
 ALTER FUNCTION framework.tr_mainmenu_tr() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 325 (class 1255 OID 115516)
-=======
--- TOC entry 288 (class 1255 OID 17035)
->>>>>>> parent of e168945... start key
+-- TOC entry 327 (class 1255 OID 117522)
 -- Name: tr_menu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3559,11 +3446,7 @@ $$;
 ALTER FUNCTION framework.tr_menu_tr() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 326 (class 1255 OID 115517)
-=======
--- TOC entry 281 (class 1255 OID 17036)
->>>>>>> parent of e168945... start key
+-- TOC entry 328 (class 1255 OID 117523)
 -- Name: tr_menus_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3586,11 +3469,7 @@ $$;
 ALTER FUNCTION framework.tr_menus_tr_del() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 327 (class 1255 OID 115518)
-=======
--- TOC entry 289 (class 1255 OID 17037)
->>>>>>> parent of e168945... start key
+-- TOC entry 329 (class 1255 OID 117524)
 -- Name: tr_trees_add_org(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3618,11 +3497,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_add_org() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 328 (class 1255 OID 115519)
-=======
--- TOC entry 290 (class 1255 OID 17038)
->>>>>>> parent of e168945... start key
+-- TOC entry 330 (class 1255 OID 117525)
 -- Name: tr_trees_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3643,11 +3518,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_tr_del() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 329 (class 1255 OID 115520)
-=======
--- TOC entry 291 (class 1255 OID 17039)
->>>>>>> parent of e168945... start key
+-- TOC entry 331 (class 1255 OID 117526)
 -- Name: tr_treesbranch_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3676,11 +3547,7 @@ $$;
 ALTER FUNCTION framework.tr_treesbranch_check() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 330 (class 1255 OID 115521)
-=======
--- TOC entry 292 (class 1255 OID 17040)
->>>>>>> parent of e168945... start key
+-- TOC entry 332 (class 1255 OID 117527)
 -- Name: tr_user_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3763,11 +3630,7 @@ $$;
 ALTER FUNCTION framework.tr_user_check() OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 331 (class 1255 OID 115522)
-=======
--- TOC entry 333 (class 1255 OID 17041)
->>>>>>> parent of e168945... start key
+-- TOC entry 314 (class 1255 OID 117528)
 -- Name: tr_view_tr_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3897,11 +3760,7 @@ ALTER FUNCTION framework.tr_view_tr_check() OWNER TO postgres;
 SET search_path = public, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 332 (class 1255 OID 115523)
-=======
--- TOC entry 293 (class 1255 OID 17042)
->>>>>>> parent of e168945... start key
+-- TOC entry 322 (class 1255 OID 117529)
 -- Name: isnumeric(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3921,11 +3780,7 @@ $_$;
 ALTER FUNCTION public.isnumeric(text) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 333 (class 1255 OID 115524)
-=======
--- TOC entry 294 (class 1255 OID 17043)
->>>>>>> parent of e168945... start key
+-- TOC entry 323 (class 1255 OID 117530)
 -- Name: prettydate(date); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3941,11 +3796,7 @@ $$;
 ALTER FUNCTION public.prettydate(d date, OUT "do" character varying) OWNER TO postgres;
 
 --
-<<<<<<< HEAD
--- TOC entry 334 (class 1255 OID 115525)
-=======
--- TOC entry 295 (class 1255 OID 17044)
->>>>>>> parent of e168945... start key
+-- TOC entry 333 (class 1255 OID 117531)
 -- Name: raiserror(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3960,6 +3811,39 @@ $$;
 
 ALTER FUNCTION public.raiserror(_hint character varying) OWNER TO postgres;
 
+SET search_path = test, pg_catalog;
+
+--
+-- TOC entry 282 (class 1255 OID 118005)
+-- Name: fn_setParamsKey(json, jsonb); Type: FUNCTION; Schema: test; Owner: postgres
+--
+
+CREATE FUNCTION "fn_setParamsKey"(conf json, INOUT paramcol jsonb) RETURNS jsonb
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+
+   
+
+   	IF paramcol is not null THEN
+     SELECT	
+       paramcol::jsonb
+            || 
+       coalesce(jsonb_build_object('key', (
+          SELECT
+            c.value->>'key'
+          FROM json_array_elements(conf) as c
+          WHERE c.value->>'title' = (paramcol)->>'value'
+        )),'{}')
+     INTO paramcol;
+    END IF;
+
+END;
+$$;
+
+
+ALTER FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb) OWNER TO postgres;
+
 SET search_path = framework, pg_catalog;
 
 SET default_tablespace = '';
@@ -3967,7 +3851,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 184 (class 1259 OID 115526)
+-- TOC entry 184 (class 1259 OID 117532)
 -- Name: acttypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -3981,7 +3865,7 @@ CREATE TABLE acttypes (
 ALTER TABLE acttypes OWNER TO postgres;
 
 --
--- TOC entry 185 (class 1259 OID 115533)
+-- TOC entry 185 (class 1259 OID 117539)
 -- Name: apimethods; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -3995,7 +3879,7 @@ CREATE TABLE apimethods (
 ALTER TABLE apimethods OWNER TO postgres;
 
 --
--- TOC entry 2564 (class 0 OID 0)
+-- TOC entry 2566 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: TABLE apimethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4005,7 +3889,7 @@ Along with the type, a method must be added on the interface (front-end)';
 
 
 --
--- TOC entry 186 (class 1259 OID 115537)
+-- TOC entry 186 (class 1259 OID 117543)
 -- Name: columntypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4019,7 +3903,7 @@ CREATE TABLE columntypes (
 ALTER TABLE columntypes OWNER TO postgres;
 
 --
--- TOC entry 187 (class 1259 OID 115544)
+-- TOC entry 187 (class 1259 OID 117550)
 -- Name: columntypes_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4034,7 +3918,7 @@ CREATE SEQUENCE columntypes_id_seq
 ALTER TABLE columntypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 188 (class 1259 OID 115546)
+-- TOC entry 188 (class 1259 OID 117552)
 -- Name: columntypes_id_seq1; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4049,7 +3933,7 @@ CREATE SEQUENCE columntypes_id_seq1
 ALTER TABLE columntypes_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 2565 (class 0 OID 0)
+-- TOC entry 2567 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: columntypes_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4058,7 +3942,7 @@ ALTER SEQUENCE columntypes_id_seq1 OWNED BY columntypes.id;
 
 
 --
--- TOC entry 189 (class 1259 OID 115548)
+-- TOC entry 189 (class 1259 OID 117554)
 -- Name: compos; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4074,7 +3958,7 @@ CREATE TABLE compos (
 ALTER TABLE compos OWNER TO postgres;
 
 --
--- TOC entry 190 (class 1259 OID 115557)
+-- TOC entry 190 (class 1259 OID 117563)
 -- Name: compos_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4089,7 +3973,7 @@ CREATE SEQUENCE compos_id_seq
 ALTER TABLE compos_id_seq OWNER TO postgres;
 
 --
--- TOC entry 191 (class 1259 OID 115559)
+-- TOC entry 191 (class 1259 OID 117565)
 -- Name: filtertypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4102,7 +3986,7 @@ CREATE TABLE filtertypes (
 ALTER TABLE filtertypes OWNER TO postgres;
 
 --
--- TOC entry 192 (class 1259 OID 115562)
+-- TOC entry 192 (class 1259 OID 117568)
 -- Name: functions; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4116,7 +4000,7 @@ CREATE TABLE functions (
 ALTER TABLE functions OWNER TO postgres;
 
 --
--- TOC entry 193 (class 1259 OID 115565)
+-- TOC entry 193 (class 1259 OID 117571)
 -- Name: logtable; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4136,7 +4020,7 @@ CREATE TABLE logtable (
 ALTER TABLE logtable OWNER TO postgres;
 
 --
--- TOC entry 194 (class 1259 OID 115573)
+-- TOC entry 194 (class 1259 OID 117579)
 -- Name: logtable_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4151,7 +4035,7 @@ CREATE SEQUENCE logtable_id_seq
 ALTER TABLE logtable_id_seq OWNER TO postgres;
 
 --
--- TOC entry 195 (class 1259 OID 115575)
+-- TOC entry 195 (class 1259 OID 117581)
 -- Name: mainmenu; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4172,7 +4056,7 @@ CREATE TABLE mainmenu (
 ALTER TABLE mainmenu OWNER TO postgres;
 
 --
--- TOC entry 196 (class 1259 OID 115586)
+-- TOC entry 196 (class 1259 OID 117592)
 -- Name: mainmenu_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4187,7 +4071,7 @@ CREATE SEQUENCE mainmenu_id_seq
 ALTER TABLE mainmenu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2566 (class 0 OID 0)
+-- TOC entry 2568 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: mainmenu_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4196,7 +4080,7 @@ ALTER SEQUENCE mainmenu_id_seq OWNED BY mainmenu.id;
 
 
 --
--- TOC entry 197 (class 1259 OID 115588)
+-- TOC entry 197 (class 1259 OID 117594)
 -- Name: menus; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4211,7 +4095,7 @@ CREATE TABLE menus (
 ALTER TABLE menus OWNER TO postgres;
 
 --
--- TOC entry 198 (class 1259 OID 115592)
+-- TOC entry 198 (class 1259 OID 117598)
 -- Name: menus_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4226,7 +4110,7 @@ CREATE SEQUENCE menus_id_seq
 ALTER TABLE menus_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2567 (class 0 OID 0)
+-- TOC entry 2569 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: menus_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4235,7 +4119,7 @@ ALTER SEQUENCE menus_id_seq OWNED BY menus.id;
 
 
 --
--- TOC entry 199 (class 1259 OID 115594)
+-- TOC entry 199 (class 1259 OID 117600)
 -- Name: menutypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4248,7 +4132,7 @@ CREATE TABLE menutypes (
 ALTER TABLE menutypes OWNER TO postgres;
 
 --
--- TOC entry 200 (class 1259 OID 115600)
+-- TOC entry 200 (class 1259 OID 117606)
 -- Name: menutypes_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4263,7 +4147,7 @@ CREATE SEQUENCE menutypes_id_seq
 ALTER TABLE menutypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2568 (class 0 OID 0)
+-- TOC entry 2570 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: menutypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4272,7 +4156,7 @@ ALTER SEQUENCE menutypes_id_seq OWNED BY menutypes.id;
 
 
 --
--- TOC entry 201 (class 1259 OID 115602)
+-- TOC entry 201 (class 1259 OID 117608)
 -- Name: methodtypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4285,7 +4169,7 @@ CREATE TABLE methodtypes (
 ALTER TABLE methodtypes OWNER TO postgres;
 
 --
--- TOC entry 202 (class 1259 OID 115605)
+-- TOC entry 202 (class 1259 OID 117611)
 -- Name: opertypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4299,7 +4183,7 @@ CREATE TABLE opertypes (
 ALTER TABLE opertypes OWNER TO postgres;
 
 --
--- TOC entry 203 (class 1259 OID 115608)
+-- TOC entry 203 (class 1259 OID 117614)
 -- Name: orgs; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4325,7 +4209,7 @@ CREATE TABLE orgs (
 ALTER TABLE orgs OWNER TO postgres;
 
 --
--- TOC entry 2569 (class 0 OID 0)
+-- TOC entry 2571 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.orgname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4334,7 +4218,7 @@ COMMENT ON COLUMN orgs.orgname IS 'Наименование';
 
 
 --
--- TOC entry 2570 (class 0 OID 0)
+-- TOC entry 2572 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.ogrn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4343,7 +4227,7 @@ COMMENT ON COLUMN orgs.ogrn IS 'ОГРН';
 
 
 --
--- TOC entry 2571 (class 0 OID 0)
+-- TOC entry 2573 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.address_f; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4352,7 +4236,7 @@ COMMENT ON COLUMN orgs.address_f IS 'Фактический адрес';
 
 
 --
--- TOC entry 2572 (class 0 OID 0)
+-- TOC entry 2574 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.address_j; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4361,7 +4245,7 @@ COMMENT ON COLUMN orgs.address_j IS 'Юридический адрес';
 
 
 --
--- TOC entry 2573 (class 0 OID 0)
+-- TOC entry 2575 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.inn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4370,7 +4254,7 @@ COMMENT ON COLUMN orgs.inn IS 'ИНН';
 
 
 --
--- TOC entry 2574 (class 0 OID 0)
+-- TOC entry 2576 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.fio_ruk; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4379,7 +4263,7 @@ COMMENT ON COLUMN orgs.fio_ruk IS 'ФИО руководителя';
 
 
 --
--- TOC entry 2575 (class 0 OID 0)
+-- TOC entry 2577 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.fio_glbuh; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4388,7 +4272,7 @@ COMMENT ON COLUMN orgs.fio_glbuh IS 'ФИО гл. бухгалтера';
 
 
 --
--- TOC entry 2576 (class 0 OID 0)
+-- TOC entry 2578 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4397,7 +4281,7 @@ COMMENT ON COLUMN orgs.parentid IS 'Головная организация';
 
 
 --
--- TOC entry 2577 (class 0 OID 0)
+-- TOC entry 2579 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.shortname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4406,7 +4290,7 @@ COMMENT ON COLUMN orgs.shortname IS 'Короткое наименование';
 
 
 --
--- TOC entry 204 (class 1259 OID 115619)
+-- TOC entry 204 (class 1259 OID 117625)
 -- Name: orgs_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4421,7 +4305,7 @@ CREATE SEQUENCE orgs_id_seq
 ALTER TABLE orgs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 205 (class 1259 OID 115621)
+-- TOC entry 205 (class 1259 OID 117627)
 -- Name: paramtypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4435,7 +4319,7 @@ CREATE TABLE paramtypes (
 ALTER TABLE paramtypes OWNER TO postgres;
 
 --
--- TOC entry 206 (class 1259 OID 115625)
+-- TOC entry 206 (class 1259 OID 117631)
 -- Name: relfortest; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4448,7 +4332,7 @@ CREATE TABLE relfortest (
 ALTER TABLE relfortest OWNER TO postgres;
 
 --
--- TOC entry 207 (class 1259 OID 115628)
+-- TOC entry 207 (class 1259 OID 117634)
 -- Name: relfortest_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4463,7 +4347,7 @@ CREATE SEQUENCE relfortest_id_seq
 ALTER TABLE relfortest_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2578 (class 0 OID 0)
+-- TOC entry 2580 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: relfortest_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4472,7 +4356,7 @@ ALTER SEQUENCE relfortest_id_seq OWNED BY relfortest.id;
 
 
 --
--- TOC entry 208 (class 1259 OID 115630)
+-- TOC entry 208 (class 1259 OID 117636)
 -- Name: roles; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4487,7 +4371,7 @@ CREATE TABLE roles (
 ALTER TABLE roles OWNER TO postgres;
 
 --
--- TOC entry 2579 (class 0 OID 0)
+-- TOC entry 2581 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: COLUMN roles.systema; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4496,7 +4380,7 @@ COMMENT ON COLUMN roles.systema IS 'Система';
 
 
 --
--- TOC entry 2580 (class 0 OID 0)
+-- TOC entry 2582 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: COLUMN roles.hierarchy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4505,7 +4389,7 @@ COMMENT ON COLUMN roles.hierarchy IS 'иерархия ролей';
 
 
 --
--- TOC entry 209 (class 1259 OID 115634)
+-- TOC entry 209 (class 1259 OID 117640)
 -- Name: sess; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4520,7 +4404,7 @@ CREATE TABLE sess (
 ALTER TABLE sess OWNER TO postgres;
 
 --
--- TOC entry 210 (class 1259 OID 115638)
+-- TOC entry 210 (class 1259 OID 117644)
 -- Name: spapi; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4537,7 +4421,7 @@ CREATE TABLE spapi (
 ALTER TABLE spapi OWNER TO postgres;
 
 --
--- TOC entry 2581 (class 0 OID 0)
+-- TOC entry 2583 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN spapi.id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4546,7 +4430,7 @@ COMMENT ON COLUMN spapi.id IS '№';
 
 
 --
--- TOC entry 211 (class 1259 OID 115646)
+-- TOC entry 211 (class 1259 OID 117652)
 -- Name: spapi_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4561,7 +4445,7 @@ CREATE SEQUENCE spapi_id_seq
 ALTER TABLE spapi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2582 (class 0 OID 0)
+-- TOC entry 2584 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: spapi_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4570,7 +4454,7 @@ ALTER SEQUENCE spapi_id_seq OWNED BY spapi.id;
 
 
 --
--- TOC entry 212 (class 1259 OID 115648)
+-- TOC entry 212 (class 1259 OID 117654)
 -- Name: test; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4593,7 +4477,7 @@ CREATE TABLE test (
 ALTER TABLE test OWNER TO postgres;
 
 --
--- TOC entry 213 (class 1259 OID 115654)
+-- TOC entry 213 (class 1259 OID 117660)
 -- Name: trees; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4613,7 +4497,7 @@ CREATE TABLE trees (
 ALTER TABLE trees OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1259 OID 115663)
+-- TOC entry 214 (class 1259 OID 117669)
 -- Name: trees_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4628,7 +4512,7 @@ CREATE SEQUENCE trees_id_seq
 ALTER TABLE trees_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2583 (class 0 OID 0)
+-- TOC entry 2585 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: trees_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4637,7 +4521,7 @@ ALTER SEQUENCE trees_id_seq OWNED BY trees.id;
 
 
 --
--- TOC entry 215 (class 1259 OID 115665)
+-- TOC entry 215 (class 1259 OID 117671)
 -- Name: treesacts; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4655,7 +4539,7 @@ CREATE TABLE treesacts (
 ALTER TABLE treesacts OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1259 OID 115672)
+-- TOC entry 216 (class 1259 OID 117678)
 -- Name: treesacts_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4670,7 +4554,7 @@ CREATE SEQUENCE treesacts_id_seq
 ALTER TABLE treesacts_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2584 (class 0 OID 0)
+-- TOC entry 2586 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: treesacts_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4679,7 +4563,7 @@ ALTER SEQUENCE treesacts_id_seq OWNED BY treesacts.id;
 
 
 --
--- TOC entry 217 (class 1259 OID 115674)
+-- TOC entry 217 (class 1259 OID 117680)
 -- Name: treesbranches; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4701,7 +4585,7 @@ CREATE TABLE treesbranches (
 ALTER TABLE treesbranches OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 115682)
+-- TOC entry 218 (class 1259 OID 117688)
 -- Name: treesbranches_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4716,7 +4600,7 @@ CREATE SEQUENCE treesbranches_id_seq
 ALTER TABLE treesbranches_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2585 (class 0 OID 0)
+-- TOC entry 2587 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: treesbranches_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4725,7 +4609,7 @@ ALTER SEQUENCE treesbranches_id_seq OWNED BY treesbranches.id;
 
 
 --
--- TOC entry 219 (class 1259 OID 115684)
+-- TOC entry 219 (class 1259 OID 117690)
 -- Name: treeviewtypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4738,7 +4622,7 @@ CREATE TABLE treeviewtypes (
 ALTER TABLE treeviewtypes OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 115687)
+-- TOC entry 220 (class 1259 OID 117693)
 -- Name: users; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4765,7 +4649,7 @@ CREATE TABLE users (
 ALTER TABLE users OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 115701)
+-- TOC entry 221 (class 1259 OID 117707)
 -- Name: users_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4780,7 +4664,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2586 (class 0 OID 0)
+-- TOC entry 2588 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4789,7 +4673,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- TOC entry 222 (class 1259 OID 115703)
+-- TOC entry 222 (class 1259 OID 117709)
 -- Name: views; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4820,7 +4704,7 @@ CREATE TABLE views (
 ALTER TABLE views OWNER TO postgres;
 
 --
--- TOC entry 223 (class 1259 OID 115723)
+-- TOC entry 223 (class 1259 OID 117729)
 -- Name: views_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4835,7 +4719,7 @@ CREATE SEQUENCE views_id_seq
 ALTER TABLE views_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2587 (class 0 OID 0)
+-- TOC entry 2589 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: views_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4844,7 +4728,7 @@ ALTER SEQUENCE views_id_seq OWNED BY views.id;
 
 
 --
--- TOC entry 224 (class 1259 OID 115725)
+-- TOC entry 224 (class 1259 OID 117731)
 -- Name: viewsnotification; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4866,7 +4750,7 @@ CREATE TABLE viewsnotification (
 ALTER TABLE viewsnotification OWNER TO postgres;
 
 --
--- TOC entry 2588 (class 0 OID 0)
+-- TOC entry 2590 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: TABLE viewsnotification; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4876,7 +4760,7 @@ you can add here notification for different views on triggers';
 
 
 --
--- TOC entry 225 (class 1259 OID 115735)
+-- TOC entry 225 (class 1259 OID 117741)
 -- Name: viewsnotification_id_seq; Type: SEQUENCE; Schema: framework; Owner: postgres
 --
 
@@ -4891,7 +4775,7 @@ CREATE SEQUENCE viewsnotification_id_seq
 ALTER TABLE viewsnotification_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2589 (class 0 OID 0)
+-- TOC entry 2591 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: viewsnotification_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4900,7 +4784,7 @@ ALTER SEQUENCE viewsnotification_id_seq OWNED BY viewsnotification.id;
 
 
 --
--- TOC entry 226 (class 1259 OID 115737)
+-- TOC entry 226 (class 1259 OID 117743)
 -- Name: viewtypes; Type: TABLE; Schema: framework; Owner: postgres
 --
 
@@ -4916,7 +4800,7 @@ ALTER TABLE viewtypes OWNER TO postgres;
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 227 (class 1259 OID 115743)
+-- TOC entry 227 (class 1259 OID 117749)
 -- Name: dictionary_for_select; Type: TABLE; Schema: test; Owner: postgres
 --
 
@@ -4929,7 +4813,7 @@ CREATE TABLE dictionary_for_select (
 ALTER TABLE dictionary_for_select OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 115746)
+-- TOC entry 228 (class 1259 OID 117752)
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE; Schema: test; Owner: postgres
 --
 
@@ -4944,7 +4828,7 @@ CREATE SEQUENCE dictionary_for_select_id_seq
 ALTER TABLE dictionary_for_select_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2590 (class 0 OID 0)
+-- TOC entry 2592 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -4953,7 +4837,7 @@ ALTER SEQUENCE dictionary_for_select_id_seq OWNED BY dictionary_for_select.id;
 
 
 --
--- TOC entry 229 (class 1259 OID 115748)
+-- TOC entry 229 (class 1259 OID 117754)
 -- Name: major_table; Type: TABLE; Schema: test; Owner: postgres
 --
 
@@ -4993,7 +4877,7 @@ CREATE TABLE major_table (
 ALTER TABLE major_table OWNER TO postgres;
 
 --
--- TOC entry 230 (class 1259 OID 115754)
+-- TOC entry 230 (class 1259 OID 117760)
 -- Name: major_table_id_seq; Type: SEQUENCE; Schema: test; Owner: postgres
 --
 
@@ -5008,7 +4892,7 @@ CREATE SEQUENCE major_table_id_seq
 ALTER TABLE major_table_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2591 (class 0 OID 0)
+-- TOC entry 2593 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: major_table_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -5019,11 +4903,7 @@ ALTER SEQUENCE major_table_id_seq OWNED BY major_table.id;
 SET search_path = framework, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2242 (class 2604 OID 115756)
-=======
--- TOC entry 2241 (class 2604 OID 17275)
->>>>>>> parent of e168945... start key
+-- TOC entry 2243 (class 2604 OID 117762)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5031,11 +4911,7 @@ ALTER TABLE ONLY columntypes ALTER COLUMN id SET DEFAULT nextval('columntypes_id
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2253 (class 2604 OID 115757)
-=======
--- TOC entry 2252 (class 2604 OID 17276)
->>>>>>> parent of e168945... start key
+-- TOC entry 2254 (class 2604 OID 117763)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5043,11 +4919,7 @@ ALTER TABLE ONLY mainmenu ALTER COLUMN id SET DEFAULT nextval('mainmenu_id_seq':
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2255 (class 2604 OID 115758)
-=======
--- TOC entry 2254 (class 2604 OID 17277)
->>>>>>> parent of e168945... start key
+-- TOC entry 2256 (class 2604 OID 117764)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5055,11 +4927,7 @@ ALTER TABLE ONLY menus ALTER COLUMN id SET DEFAULT nextval('menus_id_seq'::regcl
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2256 (class 2604 OID 115759)
-=======
--- TOC entry 2255 (class 2604 OID 17278)
->>>>>>> parent of e168945... start key
+-- TOC entry 2257 (class 2604 OID 117765)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5067,11 +4935,7 @@ ALTER TABLE ONLY menutypes ALTER COLUMN id SET DEFAULT nextval('menutypes_id_seq
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2263 (class 2604 OID 115760)
-=======
--- TOC entry 2262 (class 2604 OID 17279)
->>>>>>> parent of e168945... start key
+-- TOC entry 2264 (class 2604 OID 117766)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5079,11 +4943,7 @@ ALTER TABLE ONLY relfortest ALTER COLUMN id SET DEFAULT nextval('relfortest_id_s
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2268 (class 2604 OID 115761)
-=======
--- TOC entry 2267 (class 2604 OID 17280)
->>>>>>> parent of e168945... start key
+-- TOC entry 2269 (class 2604 OID 117767)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5091,11 +4951,7 @@ ALTER TABLE ONLY spapi ALTER COLUMN id SET DEFAULT nextval('spapi_id_seq'::regcl
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2272 (class 2604 OID 115762)
-=======
--- TOC entry 2271 (class 2604 OID 17281)
->>>>>>> parent of e168945... start key
+-- TOC entry 2273 (class 2604 OID 117768)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5103,11 +4959,7 @@ ALTER TABLE ONLY trees ALTER COLUMN id SET DEFAULT nextval('trees_id_seq'::regcl
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2274 (class 2604 OID 115763)
-=======
--- TOC entry 2273 (class 2604 OID 17282)
->>>>>>> parent of e168945... start key
+-- TOC entry 2275 (class 2604 OID 117769)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5115,11 +4967,7 @@ ALTER TABLE ONLY treesacts ALTER COLUMN id SET DEFAULT nextval('treesacts_id_seq
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2277 (class 2604 OID 115764)
-=======
--- TOC entry 2276 (class 2604 OID 17283)
->>>>>>> parent of e168945... start key
+-- TOC entry 2278 (class 2604 OID 117770)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5127,11 +4975,7 @@ ALTER TABLE ONLY treesbranches ALTER COLUMN id SET DEFAULT nextval('treesbranche
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2286 (class 2604 OID 115765)
-=======
--- TOC entry 2285 (class 2604 OID 17284)
->>>>>>> parent of e168945... start key
+-- TOC entry 2287 (class 2604 OID 117771)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5139,11 +4983,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2301 (class 2604 OID 115766)
-=======
--- TOC entry 2300 (class 2604 OID 17285)
->>>>>>> parent of e168945... start key
+-- TOC entry 2302 (class 2604 OID 117772)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5151,11 +4991,7 @@ ALTER TABLE ONLY views ALTER COLUMN id SET DEFAULT nextval('views_id_seq'::regcl
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2306 (class 2604 OID 115767)
-=======
--- TOC entry 2305 (class 2604 OID 17286)
->>>>>>> parent of e168945... start key
+-- TOC entry 2307 (class 2604 OID 117773)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5165,11 +5001,7 @@ ALTER TABLE ONLY viewsnotification ALTER COLUMN id SET DEFAULT nextval('viewsnot
 SET search_path = test, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2307 (class 2604 OID 115768)
-=======
--- TOC entry 2306 (class 2604 OID 17287)
->>>>>>> parent of e168945... start key
+-- TOC entry 2308 (class 2604 OID 117774)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -5177,11 +5009,7 @@ ALTER TABLE ONLY dictionary_for_select ALTER COLUMN id SET DEFAULT nextval('dict
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2308 (class 2604 OID 115769)
-=======
--- TOC entry 2307 (class 2604 OID 17288)
->>>>>>> parent of e168945... start key
+-- TOC entry 2309 (class 2604 OID 117775)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -5191,11 +5019,7 @@ ALTER TABLE ONLY major_table ALTER COLUMN id SET DEFAULT nextval('major_table_id
 SET search_path = framework, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2508 (class 0 OID 115526)
-=======
--- TOC entry 2507 (class 0 OID 17045)
->>>>>>> parent of e168945... start key
+-- TOC entry 2509 (class 0 OID 117532)
 -- Dependencies: 184
 -- Data for Name: acttypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5210,11 +5034,7 @@ COPY acttypes (id, actname, viewtypes) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2509 (class 0 OID 115533)
-=======
--- TOC entry 2508 (class 0 OID 17052)
->>>>>>> parent of e168945... start key
+-- TOC entry 2510 (class 0 OID 117539)
 -- Dependencies: 185
 -- Data for Name: apimethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5226,11 +5046,7 @@ COPY apimethods (id, val, created) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2510 (class 0 OID 115537)
-=======
--- TOC entry 2509 (class 0 OID 17056)
->>>>>>> parent of e168945... start key
+-- TOC entry 2511 (class 0 OID 117543)
 -- Dependencies: 186
 -- Data for Name: columntypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5271,7 +5087,7 @@ COPY columntypes (id, typename, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 2592 (class 0 OID 0)
+-- TOC entry 2594 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: columntypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5280,7 +5096,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 
 
 --
--- TOC entry 2593 (class 0 OID 0)
+-- TOC entry 2595 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5289,11 +5105,7 @@ SELECT pg_catalog.setval('columntypes_id_seq1', 1, false);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2513 (class 0 OID 115548)
-=======
--- TOC entry 2512 (class 0 OID 17067)
->>>>>>> parent of e168945... start key
+-- TOC entry 2514 (class 0 OID 117554)
 -- Dependencies: 189
 -- Data for Name: compos; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5305,7 +5117,7 @@ COPY compos (id, title, path, config, created) FROM stdin;
 
 
 --
--- TOC entry 2594 (class 0 OID 0)
+-- TOC entry 2596 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: compos_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5314,11 +5126,7 @@ SELECT pg_catalog.setval('compos_id_seq', 8, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2515 (class 0 OID 115559)
-=======
--- TOC entry 2514 (class 0 OID 17078)
->>>>>>> parent of e168945... start key
+-- TOC entry 2516 (class 0 OID 117565)
 -- Dependencies: 191
 -- Data for Name: filtertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5335,11 +5143,7 @@ COPY filtertypes (id, ftname) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2516 (class 0 OID 115562)
-=======
--- TOC entry 2515 (class 0 OID 17081)
->>>>>>> parent of e168945... start key
+-- TOC entry 2517 (class 0 OID 117568)
 -- Dependencies: 192
 -- Data for Name: functions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5354,11 +5158,7 @@ COPY functions (id, funcname, functype) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2517 (class 0 OID 115565)
-=======
--- TOC entry 2516 (class 0 OID 17084)
->>>>>>> parent of e168945... start key
+-- TOC entry 2518 (class 0 OID 117571)
 -- Dependencies: 193
 -- Data for Name: logtable; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5824,26 +5624,51 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 456	framework.views	5048	2	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	2019-09-22 12:21:41.922947	\N	1
 457	framework.views	5048	2	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	2019-09-22 12:23:22.652124	\N	1
 458	framework.views	5048	2	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	2019-09-22 12:24:16.546936	\N	1
+485	framework.trees	18	3	{"id":18,"title":"44","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:04:08.471757","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:22.271475	\N	1
+486	framework.trees	17	3	{"id":17,"title":"1","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:02:50.415193","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:23.980302	\N	1
+487	framework.trees	16	3	{"id":16,"title":"1","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:02:39.141351","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:25.384898	\N	1
 461	framework.views	5048	2	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	2019-09-29 14:32:35.266272	\N	1
 462	framework.views	5048	2	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	{"id":5048,"title":"VIews","descr":"Views administration","tablename":"framework.views","viewtype":"table","pagination":false,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}],"path":"views","created":"2019-09-22T11:39:01.726301","groupby":[],"filters":[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}],"acts":[{"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":true,"ispagesize":false,"pagecount":false,"foundcount":false,"subscrible":false,"checker":false}	2019-09-29 14:33:03.318915	\N	1
+463	framework.views	5044	2	{"id":5044,"title":"Test","descr":"Test","tablename":"test.major_table","viewtype":"table","pagination":true,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 9, "col": "file", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "typehead", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "join": false, "type": "label", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "join": false, "type": "colorrow", "roles": "[]", "title": "color row", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "select_api", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 29, "col": "datetime", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}, {"label": "id", "title": "id_", "value": "id"}]}, {"t": 22, "col": "dname", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "dname", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}],"path":"test","created":"2019-09-18T13:31:50.251692","groupby":[],"filters":[{"t": 1, "type": "substr", "roles": [], "table": {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "SUBSTR TEXT", "column": "text", "classname": ""}, {"type": "typehead", "roles": [], "title": "TYPEHEAD TEXT NUMBER COLOR", "column": [{"t": 1, "label": "text", "value": "text"}, {"t": 1, "label": "number", "value": "number"}, {"t": 1, "label": "color", "value": "color"}], "classname": ""}, {"t": 1, "type": "check", "roles": [], "table": {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "check", "column": "check", "classname": ""}, {"t": 1, "type": "period", "roles": [], "table": {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "PERIOD", "column": "data", "classname": ""}, {"t": 1, "type": "select", "roles": [], "table": {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}, "title": "select filter", "column": "select", "classname": ""}, {"t": 1, "type": "multiselect", "roles": [], "table": {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi", "column": "multiselect", "classname": ""}, {"t": 1, "type": "multijson", "roles": [], "table": {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi json", "column": "multitypehead", "classname": ""}],"acts":[{"act": "/getone/testform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/testform", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "query", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[],"classname":null,"orderby":true,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":true}	{"id":5044,"title":"Test","descr":"Test","tablename":"test.major_table","viewtype":"table","pagination":true,"config":[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 9, "col": "file", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "typehead", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "join": false, "type": "label", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "join": false, "type": "colorrow", "roles": "[]", "title": "color row", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "select_api", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 29, "col": "datetime", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}, {"label": "id", "title": "id_", "value": "id"}]}, {"t": 22, "col": "dname", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "dname", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}],"path":"test","created":"2019-09-18T13:31:50.251692","groupby":[],"filters":[{"t": 1, "type": "substr", "roles": [], "table": {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "SUBSTR TEXT", "column": "text", "classname": ""}, {"type": "typehead", "roles": [], "title": "TYPEHEAD TEXT NUMBER COLOR", "column": [{"t": 1, "label": "text", "value": "text"}, {"t": 1, "label": "number", "value": "number"}, {"t": 1, "label": "color", "value": "color"}], "classname": ""}, {"t": 1, "type": "check", "roles": [], "table": {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "check", "column": "check", "classname": ""}, {"t": 1, "type": "period", "roles": [], "table": {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "PERIOD", "column": "data", "classname": ""}, {"t": 1, "type": "select", "roles": [], "table": {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}, "title": "select filter", "column": "select", "classname": ""}, {"t": 1, "type": "multiselect", "roles": [], "table": {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi", "column": "multiselect", "classname": ""}, {"t": 1, "type": "multijson", "roles": [], "table": {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi json", "column": "multitypehead", "classname": ""}],"acts":[{"act": "/getone/testform", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "query", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/testform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}],"roles":[],"classname":null,"orderby":true,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":true}	2019-10-02 23:40:30.935275	\N	1
+464	framework.trees	12	1	{}	{"id":12,"title":null,"url":null,"descr":null,"roles":[0],"created":"2019-10-10T18:21:26.09512","userid":1,"orgid":2,"acts":[]}	2019-10-10 18:21:26.09512	\N	1
+465	framework.trees	12	2	{"id":12,"title":null,"url":null,"descr":null,"roles":[0],"created":"2019-10-10T18:21:26.09512","userid":1,"orgid":2,"acts":[]}	{"id":12,"title":null,"url":null,"descr":null,"roles":[0],"created":"2019-10-10T18:21:26.09512","userid":1,"orgid":2,"acts":[]}	2019-10-10 18:44:12.216356	\N	1
+466	framework.trees	12	2	{"id":12,"title":null,"url":null,"descr":null,"roles":[0],"created":"2019-10-10T18:21:26.09512","userid":1,"orgid":2,"acts":[]}	{"id":12,"title":null,"url":null,"descr":null,"roles":[],"created":"2019-10-10T18:21:26.09512","userid":1,"orgid":2,"acts":[]}	2019-10-10 18:44:19.799523	\N	1
+467	framework.trees	13	1	{}	{"id":13,"title":"123","url":null,"descr":null,"roles":[],"created":"2019-10-10T18:59:11.228216","userid":1,"orgid":2,"acts":[]}	2019-10-10 18:59:11.228216	\N	1
+468	framework.trees	14	1	{}	{"id":14,"title":"123","url":null,"descr":null,"roles":[],"created":"2019-10-10T18:59:55.843457","userid":1,"orgid":2,"acts":[]}	2019-10-10 18:59:55.843457	\N	1
+469	framework.trees	15	1	{}	{"id":15,"title":"1","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:00:02.632295","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:00:02.632295	\N	1
+470	framework.trees	16	1	{}	{"id":16,"title":"1","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:02:39.141351","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:02:39.141351	\N	1
+471	framework.trees	17	1	{}	{"id":17,"title":"1","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:02:50.415193","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:02:50.415193	\N	1
+472	framework.trees	18	1	{}	{"id":18,"title":"44","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:04:08.471757","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:04:08.471757	\N	1
+473	framework.trees	19	1	{}	{"id":19,"title":"11","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:04:16.321955","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:04:16.321955	\N	1
+474	framework.trees	20	1	{}	{"id":20,"title":"12","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:04:37.656184","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:04:37.656184	\N	1
+475	framework.trees	21	1	{}	{"id":21,"title":"12","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:06:25.345931	\N	1
+476	framework.trees	21	2	{"id":21,"title":"12","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	{"id":21,"title":"12","url":"123","descr":null,"roles":[],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:06:45.164545	\N	1
+477	framework.trees	21	2	{"id":21,"title":"12","url":"123","descr":null,"roles":[],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	{"id":21,"title":"12","url":"123","descr":"asfsdf","roles":[],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:06:48.832514	\N	1
+478	framework.trees	21	2	{"id":21,"title":"12","url":"123","descr":"asfsdf","roles":[],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	{"id":21,"title":"12","url":"123","descr":"asfsdf","roles":[0],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:08:48.17508	\N	1
+479	framework.trees	22	1	{}	{"id":22,"title":null,"url":null,"descr":null,"roles":[0],"created":"2019-10-10T19:08:52.560486","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:08:52.560486	\N	1
+480	framework.trees	22	2	{"id":22,"title":null,"url":null,"descr":null,"roles":[0],"created":"2019-10-10T19:08:52.560486","userid":1,"orgid":2,"acts":[]}	{"id":22,"title":"dfsd","url":null,"descr":null,"roles":[0],"created":"2019-10-10T19:08:52.560486","userid":1,"orgid":2,"acts":[]}	2019-10-10 19:08:55.25335	\N	1
+481	framework.trees	22	3	{"id":22,"title":"dfsd","url":null,"descr":null,"roles":[0],"created":"2019-10-10T19:08:52.560486","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:11.13575	\N	1
+482	framework.trees	21	3	{"id":21,"title":"12","url":"123","descr":"asfsdf","roles":[0],"created":"2019-10-10T19:06:25.345931","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:13.998918	\N	1
+483	framework.trees	20	3	{"id":20,"title":"12","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:04:37.656184","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:19.23941	\N	1
+484	framework.trees	19	3	{"id":19,"title":"11","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:04:16.321955","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:20.738622	\N	1
+488	framework.trees	15	3	{"id":15,"title":"1","url":null,"descr":null,"roles":[],"created":"2019-10-10T19:00:02.632295","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:27.66214	\N	1
+490	framework.trees	13	3	{"id":13,"title":"123","url":null,"descr":null,"roles":[],"created":"2019-10-10T18:59:11.228216","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:30.988466	\N	1
+489	framework.trees	14	3	{"id":14,"title":"123","url":null,"descr":null,"roles":[],"created":"2019-10-10T18:59:55.843457","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:29.226391	\N	1
+491	framework.trees	12	3	{"id":12,"title":null,"url":null,"descr":null,"roles":[],"created":"2019-10-10T18:21:26.09512","userid":1,"orgid":2,"acts":[]}	\N	2019-10-10 19:11:32.797556	\N	1
 \.
 
 
 --
--- TOC entry 2595 (class 0 OID 0)
+-- TOC entry 2597 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 462, true);
+SELECT pg_catalog.setval('logtable_id_seq', 491, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2519 (class 0 OID 115575)
-=======
--- TOC entry 2518 (class 0 OID 17094)
->>>>>>> parent of e168945... start key
+-- TOC entry 2520 (class 0 OID 117581)
 -- Dependencies: 195
 -- Data for Name: mainmenu; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5875,7 +5700,7 @@ COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, 
 
 
 --
--- TOC entry 2596 (class 0 OID 0)
+-- TOC entry 2598 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: mainmenu_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5884,11 +5709,7 @@ SELECT pg_catalog.setval('mainmenu_id_seq', 78, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2521 (class 0 OID 115588)
-=======
--- TOC entry 2520 (class 0 OID 17107)
->>>>>>> parent of e168945... start key
+-- TOC entry 2522 (class 0 OID 117594)
 -- Dependencies: 197
 -- Data for Name: menus; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5899,7 +5720,7 @@ COPY menus (id, menutype, menutitle, ismainmenu) FROM stdin;
 
 
 --
--- TOC entry 2597 (class 0 OID 0)
+-- TOC entry 2599 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: menus_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5908,11 +5729,7 @@ SELECT pg_catalog.setval('menus_id_seq', 1, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2523 (class 0 OID 115594)
-=======
--- TOC entry 2522 (class 0 OID 17113)
->>>>>>> parent of e168945... start key
+-- TOC entry 2524 (class 0 OID 117600)
 -- Dependencies: 199
 -- Data for Name: menutypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5925,7 +5742,7 @@ COPY menutypes (id, mtypename) FROM stdin;
 
 
 --
--- TOC entry 2598 (class 0 OID 0)
+-- TOC entry 2600 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: menutypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5934,11 +5751,7 @@ SELECT pg_catalog.setval('menutypes_id_seq', 3, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2525 (class 0 OID 115602)
-=======
--- TOC entry 2524 (class 0 OID 17121)
->>>>>>> parent of e168945... start key
+-- TOC entry 2526 (class 0 OID 117608)
 -- Dependencies: 201
 -- Data for Name: methodtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5952,11 +5765,7 @@ COPY methodtypes (id, methotypename) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2526 (class 0 OID 115605)
-=======
--- TOC entry 2525 (class 0 OID 17124)
->>>>>>> parent of e168945... start key
+-- TOC entry 2527 (class 0 OID 117611)
 -- Dependencies: 202
 -- Data for Name: opertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5969,11 +5778,7 @@ COPY opertypes (id, typename, alias) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2527 (class 0 OID 115608)
-=======
--- TOC entry 2526 (class 0 OID 17127)
->>>>>>> parent of e168945... start key
+-- TOC entry 2528 (class 0 OID 117614)
 -- Dependencies: 203
 -- Data for Name: orgs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5985,7 +5790,7 @@ COPY orgs (id, orgname, orgtype, ogrn, address_f, address_j, inn, fio_ruk, fio_g
 
 
 --
--- TOC entry 2599 (class 0 OID 0)
+-- TOC entry 2601 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: orgs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5994,11 +5799,7 @@ SELECT pg_catalog.setval('orgs_id_seq', 3, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2529 (class 0 OID 115621)
-=======
--- TOC entry 2528 (class 0 OID 17140)
->>>>>>> parent of e168945... start key
+-- TOC entry 2530 (class 0 OID 117627)
 -- Dependencies: 205
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6010,11 +5811,7 @@ COPY paramtypes (id, val, created) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2530 (class 0 OID 115625)
-=======
--- TOC entry 2529 (class 0 OID 17144)
->>>>>>> parent of e168945... start key
+-- TOC entry 2531 (class 0 OID 117631)
 -- Dependencies: 206
 -- Data for Name: relfortest; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6025,7 +5822,7 @@ COPY relfortest (id, testid) FROM stdin;
 
 
 --
--- TOC entry 2600 (class 0 OID 0)
+-- TOC entry 2602 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: relfortest_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6034,11 +5831,7 @@ SELECT pg_catalog.setval('relfortest_id_seq', 1, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2532 (class 0 OID 115630)
-=======
--- TOC entry 2531 (class 0 OID 17149)
->>>>>>> parent of e168945... start key
+-- TOC entry 2533 (class 0 OID 117636)
 -- Dependencies: 208
 -- Data for Name: roles; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6049,11 +5842,7 @@ COPY roles (id, rolename, systema, hierarchy) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2533 (class 0 OID 115634)
-=======
--- TOC entry 2532 (class 0 OID 17153)
->>>>>>> parent of e168945... start key
+-- TOC entry 2534 (class 0 OID 117640)
 -- Dependencies: 209
 -- Data for Name: sess; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6074,24 +5863,17 @@ f7c4c25f-d4fd-1d2a-2ce8-30247e268afe	1	2019-09-22 11:35:21.179634	\N
 d51361dd-bb29-f1a4-1299-f9e2b55568c6	1	2019-09-25 22:53:03.684783	\N
 96856f45-81b7-a0e0-0e99-b57df729e2a5	1	2019-09-29 14:20:20.239654	\N
 171e38a5-9027-82bd-0cbd-8809d545ce77	1	2019-09-29 14:20:50.660419	\N
-<<<<<<< HEAD
 5f0c228c-fe61-dd55-f25e-af38a006c484	1	2019-10-01 20:11:11.067489	\N
 1c59dac8-1339-7594-5a86-0acc2e97d835	1	2019-10-02 21:02:29.342719	\N
 0039efc7-0b33-5953-4f06-74cd088ddab1	1	2019-10-04 19:59:41.120202	\N
 ce643b0a-424d-0956-76b2-e3ea28cd2156	1	2019-10-06 21:08:02.909987	\N
 1103d324-600d-a643-7a69-29fa03af25f5	1	2019-10-07 20:08:14.98983	\N
-2ad3d85a-c728-c5f7-ddd2-7e85b0892f42	1	2019-10-08 15:30:00.273388	\N
-=======
->>>>>>> parent of e168945... start key
+34387e63-c404-7b8a-8341-08784c8ab28c	1	2019-10-10 17:48:02.007734	\N
 \.
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2534 (class 0 OID 115638)
-=======
--- TOC entry 2533 (class 0 OID 17157)
->>>>>>> parent of e168945... start key
+-- TOC entry 2535 (class 0 OID 117644)
 -- Dependencies: 210
 -- Data for Name: spapi; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6136,7 +5918,7 @@ COPY spapi (id, methodname, procedurename, created, methodtype, roles) FROM stdi
 
 
 --
--- TOC entry 2601 (class 0 OID 0)
+-- TOC entry 2603 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: spapi_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6145,11 +5927,7 @@ SELECT pg_catalog.setval('spapi_id_seq', 39, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2536 (class 0 OID 115648)
-=======
--- TOC entry 2535 (class 0 OID 17167)
->>>>>>> parent of e168945... start key
+-- TOC entry 2537 (class 0 OID 117654)
 -- Dependencies: 212
 -- Data for Name: test; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6172,11 +5950,7 @@ de63ca93-340a-315d-cccf-ef648e1b8b09	1	хахахах	4	[{"filename": "resOWN.do
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2537 (class 0 OID 115654)
-=======
--- TOC entry 2536 (class 0 OID 17173)
->>>>>>> parent of e168945... start key
+-- TOC entry 2538 (class 0 OID 117660)
 -- Dependencies: 213
 -- Data for Name: trees; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6187,20 +5961,16 @@ COPY trees (id, title, url, descr, roles, created, userid, orgid, acts) FROM std
 
 
 --
--- TOC entry 2602 (class 0 OID 0)
+-- TOC entry 2604 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: trees_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('trees_id_seq', 11, true);
+SELECT pg_catalog.setval('trees_id_seq', 22, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2539 (class 0 OID 115665)
-=======
--- TOC entry 2538 (class 0 OID 17184)
->>>>>>> parent of e168945... start key
+-- TOC entry 2540 (class 0 OID 117671)
 -- Dependencies: 215
 -- Data for Name: treesacts; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6210,7 +5980,7 @@ COPY treesacts (id, treesid, title, icon, classname, act, created) FROM stdin;
 
 
 --
--- TOC entry 2603 (class 0 OID 0)
+-- TOC entry 2605 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: treesacts_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6219,11 +5989,7 @@ SELECT pg_catalog.setval('treesacts_id_seq', 15, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2541 (class 0 OID 115674)
-=======
--- TOC entry 2540 (class 0 OID 17193)
->>>>>>> parent of e168945... start key
+-- TOC entry 2542 (class 0 OID 117680)
 -- Dependencies: 217
 -- Data for Name: treesbranches; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6234,7 +6000,7 @@ COPY treesbranches (id, treesid, title, parentid, icon, created, treeviewtype, v
 
 
 --
--- TOC entry 2604 (class 0 OID 0)
+-- TOC entry 2606 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: treesbranches_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6243,11 +6009,7 @@ SELECT pg_catalog.setval('treesbranches_id_seq', 222, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2543 (class 0 OID 115684)
-=======
--- TOC entry 2542 (class 0 OID 17203)
->>>>>>> parent of e168945... start key
+-- TOC entry 2544 (class 0 OID 117690)
 -- Dependencies: 219
 -- Data for Name: treeviewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6259,22 +6021,18 @@ COPY treeviewtypes (id, typename) FROM stdin;
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2544 (class 0 OID 115687)
-=======
--- TOC entry 2543 (class 0 OID 17206)
->>>>>>> parent of e168945... start key
+-- TOC entry 2545 (class 0 OID 117693)
 -- Dependencies: 220
 -- Data for Name: users; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY users (id, fam, im, ot, login, password, isactive, created, roles, roleid, photo, orgs, usersettings, orgid, userid, thumbprint) FROM stdin;
-1	admin	admin	admin	admin	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2018-12-28 12:57:07.76	[0]	0	[{"thumbnail": "http://localhost:8080/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "original": "http://localhost:8080/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "src": "http://localhost:8080/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "uri": "/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "filename": "ter.jpg", "content_type": "image/jpeg", "size": 52509}]	[2]	{"logs": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 50}}, "test": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244, "gallery": 59}, "colsOrder": [], "pagination": {"pagesize": 5}}, "spapi": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "trees": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "users": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 209}, "colsOrder": [], "pagination": {"pagesize": 15}}, "views": {"filters": {}, "colsSize": {"id": 61}, "colsOrder": [], "pagination": {"pagesize": 15}}, "compos": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "notifs": {"filters": {"isread": null, "issend": null}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "branches": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "treesacts": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "{'link': '": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "projectmenu": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "menusettings": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "projectmenus": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}}	2	1	\N
+1	admin	admin	admin	admin	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2018-12-28 12:57:07.76	[0]	0	[{"thumbnail": "http://localhost:8080/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "original": "http://localhost:8080/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "src": "http://localhost:8080/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "uri": "/files/2773093b-43ff-47b3-981b-a78400ab3a90ter.jpg", "filename": "ter.jpg", "content_type": "image/jpeg", "size": 52509}]	[2]	{"logs": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 50}}, "test": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "images": 98, "created": 244, "gallery": 78}, "colsOrder": [], "pagination": {"pagesize": 5}}, "spapi": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "trees": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "users": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 209}, "colsOrder": [], "pagination": {"pagesize": 15}}, "views": {"filters": {}, "colsSize": {"id": 61}, "colsOrder": [], "pagination": {"pagesize": 15}}, "compos": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "notifs": {"filters": {"isread": null, "issend": null}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "branches": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "treesacts": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "{'link': '": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "projectmenu": {"filters": {}, "colsSize": {}, "colsOrder": [], "pagination": {"pagesize": 15}}, "menusettings": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}, "projectmenus": {"filters": {}, "colsSize": {"id": 81, "url": 114, "descr": 106, "roles": 115, "title": 173, "created": 244}, "colsOrder": [], "pagination": {"pagesize": 15}}}	2	1	\N
 \.
 
 
 --
--- TOC entry 2605 (class 0 OID 0)
+-- TOC entry 2607 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6283,57 +6041,49 @@ SELECT pg_catalog.setval('users_id_seq', 2, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2546 (class 0 OID 115703)
-=======
--- TOC entry 2545 (class 0 OID 17222)
->>>>>>> parent of e168945... start key
+-- TOC entry 2547 (class 0 OID 117709)
 -- Dependencies: 222
 -- Data for Name: views; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY views (id, title, descr, tablename, viewtype, pagination, config, path, created, groupby, filters, acts, roles, classname, orderby, ispagesize, pagecount, foundcount, subscrible, checker) FROM stdin;
-44	Notifications	Notifications	framework.viewsnotification	table	t	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "viewid", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": false, "relation": "framework.views", "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "col", "join": false, "type": "text", "roles": "[]", "title": "col", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "tableid", "join": false, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "notificationtext", "join": false, "type": "text", "roles": "[]", "title": "notificationtext", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "foruser", "join": false, "type": "number", "roles": "[]", "title": "foruser", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [{"act": {"label": "=", "value": "="}, "bool": {"label": "and", "value": "and"}, "value": "_userid_"}], "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "issend", "join": false, "type": "checkbox", "roles": "[]", "title": "issend", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "isread", "join": false, "type": "checkbox", "roles": "[]", "title": "isread", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "sended", "join": false, "type": "date", "roles": "[]", "title": "sended", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "readed", "join": false, "type": "date", "roles": "[]", "title": "readed", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	notifs	2019-03-19 16:03:31.904736	[]	[{"t": 1, "type": "check", "roles": [], "table": null, "title": "sended", "column": "issend", "classname": null}, {"t": 1, "type": "check", "roles": [], "table": null, "title": "readed", "column": "isread", "classname": null}]	[]	[]	\N	t	t	t	t	f	f
-55	account	account	framework.users	form full	f	[{"t": 1, "col": "id", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "fam", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "fam", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "im", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "im", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "ot", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "ot", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "login", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "login", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "join": false, "type": "password", "chckd": true, "roles": "[]", "title": "password", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "isactive", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "isactive", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "created", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "roles", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "roleid", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "roleid", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "orgs", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "orgs", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "usersettings", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "usersettings", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "orgid", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "orgid", "width": "", "depency": false, "visible": false, "relation": "framework.orgs", "classname": "col-md-11 form-group row", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "orgname", "title": "orgname", "value": "orgname"}]}, {"t": 14, "col": "orgname", "type": "label", "chckd": true, "input": 0, "roles": [], "table": "framework.orgs", "title": "orgname", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": "col-md-11 form-group row", "notaddable": false, "relatecolumn": "orgid", "relationcolums": "[]"}, {"t": 11, "col": "photo", "join": false, "type": "image", "chckd": true, "roles": "[]", "title": "photo", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	account	2019-03-19 16:09:24.896608	[]	[]	[]	[]	card	f	t	t	t	f	f
-34	My organization	user org	framework.orgs	form full	f	[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "orgname", "join": false, "type": "label", "roles": "[]", "title": "orgname", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	myorg	2019-03-18 09:42:45.155502	[]	[]	[]	[]	\N	f	t	t	t	f	f
-32	branches form	branches form	framework.treesbranches	form full	f	[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "bid", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 2, "col": "treesid", "join": false, "type": "label", "roles": "[]", "title": "treesid", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 3, "col": "title", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 3, "onetomany": false, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 5, "col": "parentid", "join": false, "type": "select", "roles": "[]", "title": "parentid", "width": "", "depency": null, "visible": true, "relation": "framework.treesbranches", "classname": "col-md-12", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}], "select_condition": [{"col": {"label": "treesid", "value": "treesid"}, "value": {"t": 1, "label": "treesid", "value": "treesid"}, "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"label": "id", "value": "id"}, "const": null, "value": {"t": 1, "label": "id", "value": "bid"}, "operation": {"js": "!==", "label": "!=", "value": "<>", "python": "!="}}], "visible_condition": [{"col": {"t": 1, "label": "treesid", "value": "treesid"}, "const": null, "value": "0", "operation": {"js": "!==null", "label": "is not null", "value": "is not null", "python": "is not None"}}]}, {"t": 6, "col": "icon", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 7, "col": "created", "join": false, "type": "label", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 15, "col": "treeviewtype", "join": false, "type": "select", "roles": "[]", "title": "treeviewtype", "width": "", "depency": null, "visible": true, "relation": "framework.treeviewtypes", "classname": "col-md-12", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "typename", "title": "typename", "value": "typename"}], "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 23, "col": "viewid", "join": false, "type": "select", "roles": "[]", "title": "viewid", "width": "", "depency": null, "visible": true, "relation": "framework.views", "classname": "col-md-12", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}, {"label": "path", "title": "path", "value": "path"}], "visible_condition": [{"col": {"t": 1, "label": "treeviewtype", "value": "treeviewtype"}, "value": "1", "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 14, "col": "compoid", "join": false, "type": "select", "roles": "[]", "title": "compoid", "width": "", "depency": false, "visible": true, "relation": "framework.compos", "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}], "visible_condition": [{"col": {"t": 1, "label": "treeviewtype", "value": "treeviewtype"}, "value": "2", "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 10, "col": "orderby", "join": false, "type": "number", "roles": "[]", "title": "orderby", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 11, "col": "ismain", "join": false, "type": "checkbox", "roles": "[]", "title": "ismain", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	branchesform	2019-03-14 13:46:57.627417	[]	[]	[{"act": "/composition/branches", "icon": "fa fa-refresh", "type": "Link", "roles": [], "title": "click twice", "classname": "btn btn-success", "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramt": null, "paramconst": "-1", "paramtitle": "bid", "paramcolumn": ""}], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-101	Trees Act	Trees Act	framework.treesacts	form full	f	[{"t": 1, "col": "id", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "bid", "width": "30%", "depency": false, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 2, "col": "treesid", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "treesid", "width": "30%", "depency": false, "visible": false, "relation": "framework.trees", "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 3, "col": "title", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "title", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 4, "col": "icon", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "icon", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 5, "col": "classname", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "classname", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 6, "col": "act", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "act", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 7, "col": "created", "join": false, "type": "date", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	treesact	2019-04-17 10:09:08.709204	[]	[]	[{"act": "/composition/treesacts", "icon": "fa fa-check", "type": "Link", "roles": [], "title": "ok", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramconst": "-1", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-4038	sp api form	sp api form	framework.spapi	form full	f	[{"t": 1, "col": "id", "join": 0, "type": "number", "roles": "[]", "title": "N", "width": "", "depency": null, "visible": 0, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "procedurename", "join": 0, "type": "text", "roles": "[]", "title": "procedure name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "methodname", "join": 0, "type": "text", "roles": "[]", "title": "method name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "methodtype", "join": 0, "type": "select", "roles": "[]", "title": "methodtype", "width": "", "depency": null, "visible": true, "relation": "framework.methodtypes", "classname": "col-md-11", "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "methotypename", "value": "methotypename"}]}, {"t": 4, "col": "roles", "join": 0, "type": "multiselect", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 5, "col": "created", "join": 0, "type": "label", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	spapiform	2018-12-21 15:40:13.427	[]	[]	[{"act": "/list/spapi", "icon": "fa  fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn btn-outline-secondary", "parametrs": [], "paramtype": "query", "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-3027	Views compositions	Views compositions	framework.compos	table	t	[{"t": 1, "col": "id", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": 0, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "path", "join": 0, "type": "text", "roles": "[]", "title": "path", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "config", "join": 0, "type": "text", "roles": "[]", "title": "config", "width": "", "depency": null, "visible": 0, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "created", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	compos	2018-12-11 08:37:44.077	[]	[{"type": "typehead", "roles": [{"label": "developer", "value": 0}], "title": "found", "column": [{"t": 1, "label": "path", "value": "path"}, {"t": 1, "label": "title", "value": "title"}], "classname": null}]	[{"act": "/compo/l?id=0", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": null, "parametrs": [], "isforevery": 0}, {"act": "/compo/l", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "isforevery": 1}, {"act": "/composition", "icon": "fa fa-link", "type": "Link", "roles": [], "title": ", to compo", "ismain": false, "classname": null, "parametrs": [{"paramtype": "link", "paramconst": null, "paramtitle": "path", "paramcolumn": {"t": 1, "label": "path", "value": "path"}}], "paramtype": "link", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "ismain": false, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}]	[{"label": "developer", "value": 0}]	\N	t	t	t	t	f	f
-100	Trees Acts	Trees Acts	framework.treesacts	table	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "treesid", "join": false, "type": "number", "roles": "[]", "title": "treesid", "width": "", "depency": false, "visible": false, "relation": "framework.trees", "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "title", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "icon", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "classname", "join": false, "type": "text", "roles": "[]", "title": "classname", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "act", "join": false, "type": "text", "roles": "[]", "title": "act", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	treesacts	2019-04-17 10:05:28.002163	[]	[]	[{"act": "/composition/treesacts", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/composition/treesacts", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": null, "parametrs": [{"paramconst": "treesid", "paramtitle": "relation", "paramcolumn": null}, {"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false}, {"act": "/getone/treesact", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "go back", "classname": null, "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	f	f	f	f	f
-56	log	log	framework.logtable	form full	f	[{"t": 1, "col": "id", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "userid", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "userid", "width": "", "depency": false, "visible": false, "relation": "framework.users", "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "login", "title": "login", "value": "login"}]}, {"t": 2, "col": "tablename", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "tablename", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "tableid", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "tableid", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "opertype", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "opertype", "width": "", "depency": false, "visible": false, "relation": "framework.opertypes", "classname": "col-md-12", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "typename", "title": "typename", "value": "typename"}]}, {"t": 10, "col": "login", "type": "label", "chckd": true, "input": 0, "roles": [], "table": "framework.users", "title": "login", "tpath": [], "width": "", "output": 0, "related": true, "visible": 1, "relation": null, "classname": "col-md-12", "notaddable": false, "relatecolumn": "userid", "relationcolums": "[]"}, {"t": 6, "col": "oldata", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "oldata", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "newdata", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "newdata", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "created", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	log	2019-03-19 16:34:03.67124	[]	[]	[{"act": "/list/logs", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
-5038	profile detail	profile detail	framework.users	form full	f	[{"t": 2, "col": "fam", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "fam", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": 0, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "im", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "im", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "ot", "join": 0, "type": "text", "chckd": true, "roles": "[]", "title": "ot", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "login", "join": 0, "type": "text", "chckd": true, "roles": "[]", "title": "login", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "join": 0, "type": "password", "chckd": true, "roles": "[]", "title": "password", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "isactive", "join": 0, "type": "checkbox", "chckd": true, "roles": "[]", "title": "isactive", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "created", "join": 0, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 9, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "roles", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 12, "col": "orgs", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "orgs", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "orgname", "value": "orgname"}], "relationcolums": "[]", "multiselecttable": "framework.orgs"}, {"t": 1, "col": "id", "join": 0, "type": "number", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 0, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "roleid", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "roleid", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "photo", "join": false, "type": "image", "chckd": true, "roles": "[]", "title": "photo", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	userone	2018-12-28 13:19:10.513	[]	[]	[{"act": "/list/users", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "назад", "classname": "btn btn-success", "parametrs": [], "paramtype": null, "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-5037	users	users list	framework.users	table	f	[{"t": 1, "col": "id", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "fam", "join": 0, "type": "text", "roles": "[]", "title": "fam", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "im", "join": 0, "type": "text", "roles": "[]", "title": "im", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "ot", "join": 0, "type": "text", "roles": "[]", "title": "ot", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "photo", "join": false, "type": "image", "roles": "[]", "title": "photo", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "login", "join": 0, "type": "text", "roles": "[]", "title": "login", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "roles", "join": false, "type": "multiselect", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 12, "col": "orgs", "join": false, "type": "multiselect", "roles": "[]", "title": "orgs", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "orgname", "value": "orgname"}], "relationcolums": "[]", "multiselecttable": "framework.orgs"}, {"t": 8, "col": "isactive", "join": 0, "type": "checkbox", "roles": "[]", "title": "isactive", "width": "", "depency": null, "visible": 0, "relation": null, "classname": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "created", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 9, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	users	2018-12-28 13:10:45.637	[]	[{"t": 1, "type": "check", "roles": [], "table": null, "title": "isactive", "column": "isactive", "classname": null}, {"t": 1, "type": "substr", "roles": [], "table": null, "title": "login", "column": "login", "classname": "form-control"}, {"t": 1, "type": "multijson", "roles": [], "table": null, "title": "roles", "column": "roles", "classname": null}]	[{"act": "/getone/userone", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit user", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "query", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}, {"act": "/getone/userone", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-3036	Logs	logs	framework.logtable	table	t	[{"t": 1, "col": "id", "join": 0, "type": "number", "roles": [{"label": "developer", "value": 0}], "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "tablename", "join": 0, "type": "text", "roles": "[]", "title": "tablename", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "tableid", "join": 0, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "typename", "type": "text", "input": 0, "roles": [], "table": "framework.opertypes", "title": "typename", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "opertype", "relationcolums": "[]"}, {"t": 10, "col": "userid", "join": false, "type": "number", "roles": "[]", "title": "userid", "width": "", "depency": false, "visible": false, "relation": "framework.users", "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "login", "title": "login", "value": "login"}]}, {"t": 4, "col": "opertype", "join": 0, "type": "select", "roles": "[]", "title": "opertype", "width": "", "depency": null, "visible": 0, "relation": "framework.opertypes", "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "typename", "value": "typename"}]}, {"t": 10, "col": "login", "type": "text", "input": 0, "roles": [], "table": "framework.users", "title": "login", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "userid", "relationcolums": "[]"}, {"t": 6, "col": "oldata", "join": 0, "type": "text", "roles": "[]", "title": "oldata", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "newdata", "join": 0, "type": "text", "roles": "[]", "title": "newdata", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "created", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	logs	2018-12-17 16:10:52.48	[]	[{"t": 1, "type": "substr", "roles": [], "table": null, "title": "table name", "column": "tablename", "classname": null}, {"t": 1, "type": "select", "roles": [], "table": {"t": 4, "col": "opertype", "join": 0, "type": "select", "roles": "[]", "title": "opertype", "width": "", "depency": null, "visible": 0, "relation": "framework.opertypes", "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "typename", "value": "typename"}]}, "title": "operation type", "column": "opertype", "classname": null}, {"t": 1, "type": "period", "roles": [], "table": null, "title": "created", "column": "created", "classname": null}, {"t": 1, "type": "substr", "roles": [], "table": {"t": 3, "col": "tableid", "join": 0, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "table id", "column": "tableid", "classname": "form-control"}]	[{"act": "/getone/log", "icon": "fa fa-eye", "type": "Link", "roles": [], "title": "look", "ismain": true, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true}]	[{"label": "developer", "value": 0}]	\N	t	t	f	t	f	f
-26	trees	trees components	framework.trees	table	t	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "url", "join": false, "type": "text", "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "descr", "join": false, "type": "text", "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "roles", "join": false, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}]	trees	2019-03-14 11:21:06.460061	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "url", "value": "url"}, {"t": 1, "label": "descr", "value": "descr"}], "classname": null}]	[{"act": "/getone/treeform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": "btn btn", "parametrs": [{"paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "isforevery": false}, {"act": "/getone/treeform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-code-fork", "type": "Link", "roles": [], "title": "branches", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramt": null, "paramconst": "-1", "paramtitle": "bid", "paramcolumn": ""}], "paramtype": null, "isforevery": true}, {"act": "/composition/treesacts", "icon": "fa fa-asterisk", "type": "Link", "roles": [], "title": "actions", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}]	[{"label": "developer", "value": 0}]	\N	t	t	t	t	f	f
-30	branches	branches	framework.treesbranches	table	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "treesid", "join": false, "type": "number", "roles": "[]", "title": "treesid", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "title", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "parentid", "join": false, "type": "number", "roles": "[]", "title": "parentid", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "icon", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "created", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "treeviewtype", "join": false, "type": "number", "roles": "[]", "title": "treeviewtype", "width": "", "depency": false, "visible": true, "relation": "framework.treeviewtypes", "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "viewid", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": true, "relation": "framework.views", "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "compoid", "join": false, "type": "number", "roles": "[]", "title": "compoid", "width": "", "depency": false, "visible": false, "relation": "framework.compos", "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "orderby", "join": false, "type": "number", "roles": "[]", "title": "orderby", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	branches	2019-03-14 13:42:05.157003	[]	[]	[{"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn ", "parametrs": [], "paramtype": null, "isforevery": false}, {"act": "/composition/branches", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramconst": null, "paramtitle": "bid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "label": "treesid", "value": "treesid"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}, {"paramconst": "treesid", "paramtitle": "relation", "paramcolumn": null}], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
-1025	MainMenu	Menu list	framework.mainmenu	table	f	[{"t": 1, "col": "id", "key": "t4BbVjQsY", "join": 0, "type": "number", "input": 1, "roles": [], "title": "id", "width": "", "output": 1, "depency": null, "visible": 0, "relation": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 2, "col": "title", "key": "vKjcuEnPb", "join": 0, "type": "text", "input": 0, "roles": [], "title": "title", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 8, "col": "path", "key": "KVW2Jq1PP", "join": 0, "type": "text", "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 4, "col": "roles", "key": "XIjMawjA6", "join": 0, "type": "text", "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 6, "col": "systemfield", "key": "aT-Ebeh6a", "join": 0, "type": "checkbox", "input": 0, "roles": [], "title": "systemfield", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 9, "col": "icon", "key": "8jdaYaRwL", "join": false, "type": "text", "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 3, "col": "parentid", "key": "nUiL5SUGy", "join": 0, "type": "select", "input": 0, "roles": [], "title": "parentid", "width": "", "output": 0, "depency": null, "visible": false, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title_", "value": "title"}]}, {"t": 3, "col": "title", "key": "KlCD3IWZr", "type": "text", "input": 0, "roles": [], "table": "framework.mainmenu", "title": "parent", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "parentid", "relationcolums": []}, {"t": 7, "col": "orderby", "key": "UXlDs-BKM", "join": 0, "type": "number", "input": 0, "roles": [], "title": "orderby", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 5, "col": "created", "key": "tet1oLXwe", "join": 0, "type": "date", "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 10, "col": "menuid", "join": false, "type": "number", "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menusettings	2018-11-30 12:50:20	[]	[{"t": 1, "key": "4iwOLNx3K", "type": "multiselect", "roles": [{"label": "developer", "value": 0}], "table": "framework.mainmenu", "title": "parent", "column": "parentid", "classname": null}, {"type": "typehead", "roles": [], "title": "search", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/getone/menuedit", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}, {"paramtitle": "o", "paramcolumn": {"t": 1, "label": "title", "value": "title"}}], "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete menu", "ismain": false, "classname": "btn", "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "isforevery": 1}, {"act": "/getone/menuedit", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add menu", "ismain": false, "classname": null, "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "menuid", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "label": "menuid", "value": "menuid"}}], "isforevery": 0}, {"act": "/list/projectmenus", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"key": 0, "label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-211	Project Menu		framework.menus	form full	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "menutitle", "join": false, "type": "text", "roles": "[]", "title": "menu title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "menutype", "join": false, "type": "select", "label": "menutype || menutype", "roles": "[]", "title": "menu type", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "framework.menutypes", "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "mtypename", "title": "mtypename", "value": "mtypename"}]}, {"t": 4, "col": "ismainmenu", "join": false, "type": "checkbox", "roles": "[]", "title": "is main menu", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	projectmenu	2019-08-11 18:33:52	[]	[]	[{"act": "/list/projectmenus", "icon": "fa fa-", "type": "Link", "roles": [], "title": "OK", "ismain": false, "classname": "btn btn", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
-150	Project menus	all menu settings	framework.menus	table	f	[{"t": 1, "col": "id", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "menutitle", "join": false, "type": "text", "roles": "[]", "title": "menu title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "mtypename", "type": "text", "input": 0, "roles": [], "table": "framework.menutypes", "title": "menu type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "menutype", "relationcolums": "[]"}, {"t": 4, "col": "ismainmenu", "join": false, "type": "checkbox", "roles": "[]", "title": "is main menu", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "menutype", "join": false, "type": "number", "label": "menutype || menutype", "roles": "[]", "title": "menutype", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menutypes", "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "mtypename", "title": "mtypename", "value": "mtypename"}]}]	projectmenus	2019-08-11 18:25:07	[]	[]	[{"act": "/getone/projectmenu", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/list/menusettings", "icon": "fa fa-list", "type": "Link", "roles": [], "title": "menu list", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/projectmenu", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "btn", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/projectmenu", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
-28	tree from	tree from	framework.trees	form not mutable	f	[{"t": 1, "col": "id", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "url", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "descr", "join": false, "type": "textarea", "chckd": true, "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "roles", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 6, "col": "created", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	treeform	2019-03-14 11:52:57.162249	[]	[]	[{"act": "/", "icon": "", "type": "Save", "roles": [], "title": "save", "ismain": false, "classname": "btn btn-outline-success", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn", "parametrs": [], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-4037	SP API	API methods Storage procedures	framework.spapi	table	t	[{"t": 1, "col": "id", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "methodtype", "join": 0, "type": "select", "roles": "[]", "title": "methodtype", "width": "", "depency": null, "visible": 0, "relation": "framework.methodtypes", "classname": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "methotypename", "value": "methotypename"}]}, {"t": 2, "col": "methodname", "join": 0, "type": "text", "roles": "[]", "title": "method name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "procedurename", "join": 0, "type": "text", "roles": "[]", "title": "procedure name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "methotypename", "type": "text", "input": 0, "roles": [], "table": "framework.methodtypes", "title": "methotypename", "tpath": [], "output": 0, "related": 1, "visible": true, "relation": null, "classname": null, "notaddable": 0, "relatecolumn": "methodtype", "relationcolums": "[]"}, {"t": 4, "col": "roles", "join": 0, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "created", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	spapi	2018-12-21 14:27:50.79	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "methodname", "value": "methodname"}, {"t": 1, "label": "procedurename", "value": "procedure name"}], "classname": "form-control"}]	[{"act": "/getone/spapiform?N=0", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": null, "parametrs": [], "paramtype": null, "isforevery": 0}, {"act": "/getone/spapiform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "N", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "query", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	t	f
-1026	Menu Edit	Menu Edit	framework.mainmenu	form full	f	[{"t": 1, "col": "id", "join": 0, "type": "label", "chckd": true, "roles": [], "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-12", "column_id": 1, "onetomany": 0, "updatable": false, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 2, "col": "title", "join": 0, "type": "text", "chckd": true, "roles": [], "title": "title", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": 0, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 3, "col": "parentid", "join": 0, "type": "select", "chckd": true, "input": 0, "roles": [], "title": "parent", "width": "", "output": 0, "depency": null, "visible": 1, "relation": "framework.mainmenu", "classname": "col-md-12", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "value": "id"}, {"label": "title", "value": "title"}], "select_condition": [{"col": {"label": "menuid", "value": "menuid"}, "const": null, "value": {"t": 1, "label": "menuid", "value": "menuid"}, "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}], "visible_condition": [{"col": {"t": 1, "label": "id", "value": "id"}, "value": "0", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 4, "col": "roles", "join": 0, "type": "multiselect", "chckd": true, "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": [], "multiselecttable": "framework.roles"}, {"t": 5, "col": "created", "join": 0, "type": "label", "chckd": true, "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": false, "relation": null, "classname": "col-md-12", "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 6, "col": "systemfield", "join": 0, "type": "checkbox", "chckd": true, "input": 0, "roles": [], "title": "system field", "width": "", "output": 0, "depency": null, "visible": 0, "relation": null, "classname": "col-md-12", "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 7, "col": "orderby", "join": 0, "type": "number", "chckd": true, "input": 0, "roles": [], "title": "order by", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 8, "col": "path", "join": 0, "type": "text", "chckd": true, "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 10, "col": "test", "join": false, "type": "array", "chckd": true, "roles": [], "title": "test", "width": "", "depency": true, "visible": false, "relation": "framework.test", "classname": "col-md-12", "column_id": 10, "onetomany": true, "defaultval": null, "depencycol": "relat", "relationcolums": []}, {"t": 9, "col": "icon", "join": false, "type": "text", "chckd": true, "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []}, {"t": 11, "col": "menuid", "join": false, "type": "number", "chckd": true, "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menuedit	2018-11-30 14:23:09	[]	[]	[{"act": "/list/menusettings", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "label": "menuid", "value": "menuid"}}], "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
-5044	Test	Test	test.major_table	table	t	[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 9, "col": "file", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "typehead", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "join": false, "type": "label", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "join": false, "type": "colorrow", "roles": "[]", "title": "color row", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "select_api", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 29, "col": "datetime", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}, {"label": "id", "title": "id_", "value": "id"}]}, {"t": 22, "col": "dname", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "dname", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}]	test	2019-09-18 13:31:50.251692	[]	[{"t": 1, "type": "substr", "roles": [], "table": {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "SUBSTR TEXT", "column": "text", "classname": ""}, {"type": "typehead", "roles": [], "title": "TYPEHEAD TEXT NUMBER COLOR", "column": [{"t": 1, "label": "text", "value": "text"}, {"t": 1, "label": "number", "value": "number"}, {"t": 1, "label": "color", "value": "color"}], "classname": ""}, {"t": 1, "type": "check", "roles": [], "table": {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "check", "column": "check", "classname": ""}, {"t": 1, "type": "period", "roles": [], "table": {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "PERIOD", "column": "data", "classname": ""}, {"t": 1, "type": "select", "roles": [], "table": {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}, "title": "select filter", "column": "select", "classname": ""}, {"t": 1, "type": "multiselect", "roles": [], "table": {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi", "column": "multiselect", "classname": ""}, {"t": 1, "type": "multijson", "roles": [], "table": {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi json", "column": "multitypehead", "classname": ""}]	[{"act": "/getone/testform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/testform", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "query", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	t	t	t	t	f	t
-5046	Test Form	Test Form	test.major_table	form full	f	[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "p-col", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "typehead", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "join": false, "type": "link", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorrow", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "select_api", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "select", "join": false, "type": "select", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}]}, {"t": 30, "col": "texteditor", "join": false, "type": "texteditor", "label": "texteditor || texteditor", "roles": "[]", "title": "texteditor_2", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "updatable": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "id", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "id_", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": false, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}]	testform	2019-09-19 14:19:49.995003	[]	[]	[{"act": "/list/test", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "go back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
-5048	VIews	Views administration	framework.views	table	f	[{"t": 1, "col": "id", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}]	views	2019-09-22 11:39:01.726301	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
+100	Trees Acts	Trees Acts	framework.treesacts	table	f	[{"t": 1, "col": "id", "key": "id_a639b", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "treesid", "key": "treesid_1d756", "join": false, "type": "number", "roles": "[]", "title": "treesid", "width": "", "depency": false, "visible": false, "relation": "framework.trees", "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "title", "key": "title_1556d", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "icon", "key": "icon_69668", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "classname", "key": "classname_12bbd", "join": false, "type": "text", "roles": "[]", "title": "classname", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "act", "key": "act_3f5aa", "join": false, "type": "text", "roles": "[]", "title": "act", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "created", "key": "created_e51e6", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	treesacts	2019-04-17 10:05:28.002163	[]	[]	[{"act": "/composition/treesacts", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_a639b", "label": "id", "value": "id"}}, {"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "treesid_1d756", "label": "treesid", "value": "treesid"}}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/composition/treesacts", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": null, "parametrs": [{"paramconst": "treesid", "paramtitle": "relation", "paramcolumn": null}, {"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "treesid_1d756", "label": "treesid", "value": "treesid"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false}, {"act": "/getone/treesact", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_a639b", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "go back", "classname": null, "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	f	f	f	f	f
+44	Notifications	Notifications	framework.viewsnotification	table	t	[{"t": 1, "col": "id", "key": "id_d4be3", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "viewid", "key": "viewid_f2004", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": false, "relation": "framework.views", "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "col", "key": "col_186f8", "join": false, "type": "text", "roles": "[]", "title": "col", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "tableid", "key": "tableid_aa778", "join": false, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "notificationtext", "key": "notificationtext_3e718", "join": false, "type": "text", "roles": "[]", "title": "notificationtext", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "foruser", "key": "foruser_91970", "join": false, "type": "number", "roles": "[]", "title": "foruser", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [{"act": {"label": "=", "value": "="}, "bool": {"label": "and", "value": "and"}, "value": "_userid_"}], "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "issend", "key": "issend_a7456", "join": false, "type": "checkbox", "roles": "[]", "title": "issend", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "isread", "key": "isread_f1224", "join": false, "type": "checkbox", "roles": "[]", "title": "isread", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "created", "key": "created_ebdeb", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "sended", "key": "sended_d9382", "join": false, "type": "date", "roles": "[]", "title": "sended", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 11, "col": "readed", "key": "readed_ee0ca", "join": false, "type": "date", "roles": "[]", "title": "readed", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	notifs	2019-03-19 16:03:31.904736	[]	[{"t": 1, "type": "check", "roles": [], "table": null, "title": "sended", "column": "issend", "classname": null}, {"t": 1, "type": "check", "roles": [], "table": null, "title": "readed", "column": "isread", "classname": null}]	[]	[]	\N	t	t	t	t	f	f
+55	account	account	framework.users	form full	f	[{"t": 1, "col": "id", "key": "id_29869", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "fam", "key": "fam_4c0c1", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "fam", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "im", "key": "im_7cba0", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "im", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "ot", "key": "ot_c76fa", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "ot", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "login", "key": "login_d1b0a", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "login", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "password", "key": "password_ba841", "join": false, "type": "password", "chckd": true, "roles": "[]", "title": "password", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "isactive", "key": "isactive_aff55", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "isactive", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "created", "key": "created_262dc", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "roles", "key": "roles_edfa4", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "roleid", "key": "roleid_40f86", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "roleid", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 12, "col": "orgs", "key": "orgs_054a9", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "orgs", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 13, "col": "usersettings", "key": "usersettings_2d728", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "usersettings", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11 form-group row", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 14, "col": "orgid", "key": "orgid_922b4", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "orgid", "width": "", "depency": false, "visible": false, "relation": "framework.orgs", "classname": "col-md-11 form-group row", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "orgname", "title": "orgname", "value": "orgname"}]},{"t": 14, "col": "orgname", "key": "orgname_d1896", "type": "label", "chckd": true, "input": 0, "roles": [], "table": "framework.orgs", "title": "orgname", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": "col-md-11 form-group row", "notaddable": false, "relatecolumn": "orgid", "relationcolums": "[]"},{"t": 11, "col": "photo", "key": "photo_6dda5", "join": false, "type": "image", "chckd": true, "roles": "[]", "title": "photo", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11 form-group row", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	account	2019-03-19 16:09:24.896608	[]	[]	[]	[]	card	f	t	t	t	f	f
+56	log	log	framework.logtable	form full	f	[{"t": 1, "col": "id", "key": "id_7f4b6", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "userid", "key": "userid_c3ff5", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "userid", "width": "", "depency": false, "visible": false, "relation": "framework.users", "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "login", "title": "login", "value": "login"}]},{"t": 2, "col": "tablename", "key": "tablename_35983", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "tablename", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "tableid", "key": "tableid_0c4b4", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "tableid", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "opertype", "key": "opertype_19d0d", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "opertype", "width": "", "depency": false, "visible": false, "relation": "framework.opertypes", "classname": "col-md-12", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "typename", "title": "typename", "value": "typename"}]},{"t": 10, "col": "login", "key": "login_60bb9", "type": "label", "chckd": true, "input": 0, "roles": [], "table": "framework.users", "title": "login", "tpath": [], "width": "", "output": 0, "related": true, "visible": 1, "relation": null, "classname": "col-md-12", "notaddable": false, "relatecolumn": "userid", "relationcolums": "[]"},{"t": 6, "col": "oldata", "key": "oldata_6bcc6", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "oldata", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "newdata", "key": "newdata_402ca", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "newdata", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "created", "key": "created_9ad7e", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	log	2019-03-19 16:34:03.67124	[]	[]	[{"act": "/list/logs", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
+4038	sp api form	sp api form	framework.spapi	form full	f	[{"t": 1, "col": "id", "key": "id_2f194", "join": 0, "type": "number", "roles": "[]", "title": "N", "width": "", "depency": null, "visible": 0, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "procedurename", "key": "procedurename_f7596", "join": 0, "type": "text", "roles": "[]", "title": "procedure name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "methodname", "key": "methodname_d29f9", "join": 0, "type": "text", "roles": "[]", "title": "method name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "methodtype", "key": "methodtype_0f8c0", "join": 0, "type": "select", "roles": "[]", "title": "methodtype", "width": "", "depency": null, "visible": true, "relation": "framework.methodtypes", "classname": "col-md-11", "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "methotypename", "value": "methotypename"}]},{"t": 4, "col": "roles", "key": "roles_11b3a", "join": 0, "type": "multiselect", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"},{"t": 5, "col": "created", "key": "created_cea86", "join": 0, "type": "label", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	spapiform	2018-12-21 15:40:13.427	[]	[]	[{"act": "/list/spapi", "icon": "fa  fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn btn-outline-secondary", "parametrs": [], "paramtype": "query", "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+101	Trees Act	Trees Act	framework.treesacts	form full	f	[{"t": 1, "col": "id", "key": "id_f1f88", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "bid", "width": "30%", "depency": false, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 2, "col": "treesid", "key": "treesid_d4c60", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "treesid", "width": "30%", "depency": false, "visible": false, "relation": "framework.trees", "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 3, "col": "title", "key": "title_ce0aa", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "title", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 4, "col": "icon", "key": "icon_a2376", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "icon", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 5, "col": "classname", "key": "classname_dfafe", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "classname", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 6, "col": "act", "key": "act_78fbc", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "act", "width": "30%", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 7, "col": "created", "key": "created_5855a", "join": false, "type": "date", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": false, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	treesact	2019-04-17 10:09:08.709204	[]	[]	[{"act": "/composition/treesacts", "icon": "fa fa-check", "type": "Link", "roles": [], "title": "ok", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "treesid_d4c60", "label": "treesid", "value": "treesid"}}, {"paramconst": "-1", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+5038	profile detail	profile detail	framework.users	form full	f	[{"t": 2, "col": "fam", "key": "fam_1fdd0", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "fam", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": 0, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "im", "key": "im_97e79", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "im", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "ot", "key": "ot_3dc36", "join": 0, "type": "text", "chckd": true, "roles": "[]", "title": "ot", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "login", "key": "login_668a5", "join": 0, "type": "text", "chckd": true, "roles": "[]", "title": "login", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "password", "key": "password_e8a55", "join": 0, "type": "password", "chckd": true, "roles": "[]", "title": "password", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "isactive", "key": "isactive_4fd3c", "join": 0, "type": "checkbox", "chckd": true, "roles": "[]", "title": "isactive", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "created", "key": "created_6eef3", "join": 0, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-11", "column_id": 9, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "roles", "key": "roles_38fa7", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"},{"t": 12, "col": "orgs", "key": "orgs_a0379", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "orgs", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "orgname", "value": "orgname"}], "relationcolums": "[]", "multiselecttable": "framework.orgs"},{"t": 1, "col": "id", "key": "id_e5b0b", "join": 0, "type": "number", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 0, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 11, "col": "roleid", "key": "roleid_b85e3", "join": false, "type": "number", "chckd": true, "roles": "[]", "title": "roleid", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 12, "col": "photo", "key": "photo_89f6d", "join": false, "type": "image", "chckd": true, "roles": "[]", "title": "photo", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	userone	2018-12-28 13:19:10.513	[]	[]	[{"act": "/list/users", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "назад", "classname": "btn btn-success", "parametrs": [], "paramtype": null, "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+28	tree from	tree from	framework.trees	form not mutable	f	[{"t": 1, "col": "id", "key": "id_70eda", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "title", "key": "title_0cc41", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "url", "key": "url_12622", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "descr", "key": "descr_06b13", "join": false, "type": "textarea", "chckd": true, "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "roles", "key": "roles_8bfcc", "join": false, "type": "multiselect", "chckd": true, "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"},{"t": 6, "col": "created", "key": "created_fca84", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-11", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	treeform	2019-03-14 11:52:57.162249	[]	[]	[{"act": "/", "icon": "", "type": "Save", "roles": [], "title": "save", "ismain": false, "classname": "btn btn-outline-success", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn", "parametrs": [], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+34	My organization	user org	framework.orgs	form full	f	[{"t": 1, "col": "id", "key": "id_71c9c", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "orgname", "key": "orgname_d3ca6", "join": false, "type": "label", "roles": "[]", "title": "orgname", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	myorg	2019-03-18 09:42:45.155502	[]	[]	[]	[]	\N	f	t	t	t	f	f
+3027	Views compositions	Views compositions	framework.compos	table	t	[{"t": 1, "col": "id", "key": "id_4403a", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "title", "key": "title_8020b", "join": 0, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "path", "key": "path_67f8c", "join": 0, "type": "text", "roles": "[]", "title": "path", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "config", "key": "config_8368c", "join": 0, "type": "text", "roles": "[]", "title": "config", "width": "", "depency": null, "visible": 0, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "created", "key": "created_d5ec8", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	compos	2018-12-11 08:37:44.077	[]	[{"type": "typehead", "roles": [{"label": "developer", "value": 0}], "title": "found", "column": [{"t": 1, "label": "path", "value": "path"}, {"t": 1, "label": "title", "value": "title"}], "classname": null}]	[{"act": "/compo/l?id=0", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": null, "parametrs": [], "isforevery": 0}, {"act": "/compo/l", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_4403a", "label": "id", "value": "id"}}], "isforevery": 1}, {"act": "/composition", "icon": "fa fa-link", "type": "Link", "roles": [], "title": ", to compo", "ismain": false, "classname": null, "parametrs": [{"paramtype": "link", "paramconst": null, "paramtitle": "path", "paramcolumn": {"t": 1, "key": "path_67f8c", "label": "path", "value": "path"}}], "paramtype": "link", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "ismain": false, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_4403a", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}]	[{"label": "developer", "value": 0}]	\N	t	t	t	t	f	f
+5037	users	users list	framework.users	table	f	[{"t": 1, "col": "id", "key": "id_ed49e", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "fam", "key": "fam_42544", "join": 0, "type": "text", "roles": "[]", "title": "fam", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "im", "key": "im_89205", "join": 0, "type": "text", "roles": "[]", "title": "im", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "ot", "key": "ot_89652", "join": 0, "type": "text", "roles": "[]", "title": "ot", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 11, "col": "photo", "key": "photo_87018", "join": false, "type": "image", "roles": "[]", "title": "photo", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "login", "key": "login_98129", "join": 0, "type": "text", "roles": "[]", "title": "login", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "roles", "key": "roles_8ad47", "join": false, "type": "multiselect", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"},{"t": 12, "col": "orgs", "key": "orgs_48bbe", "join": false, "type": "multiselect", "roles": "[]", "title": "orgs", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "orgname", "value": "orgname"}], "relationcolums": "[]", "multiselecttable": "framework.orgs"},{"t": 8, "col": "isactive", "key": "isactive_5bf30", "join": 0, "type": "checkbox", "roles": "[]", "title": "isactive", "width": "", "depency": null, "visible": 0, "relation": null, "classname": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "created", "key": "created_ec664", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 9, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	users	2018-12-28 13:10:45.637	[]	[{"t": 1, "type": "check", "roles": [], "table": null, "title": "isactive", "column": "isactive", "classname": null}, {"t": 1, "type": "substr", "roles": [], "table": null, "title": "login", "column": "login", "classname": "form-control"}, {"t": 1, "type": "multijson", "roles": [], "table": null, "title": "roles", "column": "roles", "classname": null}]	[{"act": "/getone/userone", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit user", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_ed49e", "label": "id", "value": "id"}}], "paramtype": "query", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_ed49e", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}, {"act": "/getone/userone", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+3036	Logs	logs	framework.logtable	table	t	[{"t": 1, "col": "id", "key": "id_34b32", "join": 0, "type": "number", "roles": [{"label": "developer", "value": 0}], "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "tablename", "key": "tablename_ebb38", "join": 0, "type": "text", "roles": "[]", "title": "tablename", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "tableid", "key": "tableid_fde82", "join": 0, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "typename", "key": "typename_5e1dd", "type": "text", "input": 0, "roles": [], "table": "framework.opertypes", "title": "typename", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "opertype", "relationcolums": "[]"},{"t": 10, "col": "userid", "key": "userid_ef191", "join": false, "type": "number", "roles": "[]", "title": "userid", "width": "", "depency": false, "visible": false, "relation": "framework.users", "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "login", "title": "login", "value": "login"}]},{"t": 4, "col": "opertype", "key": "opertype_fd401", "join": 0, "type": "select", "roles": "[]", "title": "opertype", "width": "", "depency": null, "visible": 0, "relation": "framework.opertypes", "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "typename", "value": "typename"}]},{"t": 10, "col": "login", "key": "login_a0df0", "type": "text", "input": 0, "roles": [], "table": "framework.users", "title": "login", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "userid", "relationcolums": "[]"},{"t": 6, "col": "oldata", "key": "oldata_0d446", "join": 0, "type": "text", "roles": "[]", "title": "oldata", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "newdata", "key": "newdata_19fbf", "join": 0, "type": "text", "roles": "[]", "title": "newdata", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "created", "key": "created_2e98e", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	logs	2018-12-17 16:10:52.48	[]	[{"t": 1, "type": "substr", "roles": [], "table": null, "title": "table name", "column": "tablename", "classname": null}, {"t": 1, "type": "select", "roles": [], "table": {"t": 4, "col": "opertype", "join": 0, "type": "select", "roles": "[]", "title": "opertype", "width": "", "depency": null, "visible": 0, "relation": "framework.opertypes", "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "typename", "value": "typename"}]}, "title": "operation type", "column": "opertype", "classname": null}, {"t": 1, "type": "period", "roles": [], "table": null, "title": "created", "column": "created", "classname": null}, {"t": 1, "type": "substr", "roles": [], "table": {"t": 3, "col": "tableid", "join": 0, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "table id", "column": "tableid", "classname": "form-control"}]	[{"act": "/getone/log", "icon": "fa fa-eye", "type": "Link", "roles": [], "title": "look", "ismain": true, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_34b32", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true}]	[{"label": "developer", "value": 0}]	\N	t	t	f	t	f	f
+26	trees	trees components	framework.trees	table	t	[{"t": 1, "col": "id", "key": "id_4725c", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "title", "key": "title_f9eb1", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "url", "key": "url_1baec", "join": false, "type": "text", "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "descr", "key": "descr_5ba2c", "join": false, "type": "text", "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "roles", "key": "roles_027bc", "join": false, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "created", "key": "created_071e8", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}]	trees	2019-03-14 11:21:06.460061	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "url", "value": "url"}, {"t": 1, "label": "descr", "value": "descr"}], "classname": null}]	[{"act": "/getone/treeform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": "btn btn", "parametrs": [{"paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "isforevery": false}, {"act": "/getone/treeform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-code-fork", "type": "Link", "roles": [], "title": "branches", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}, {"paramt": null, "paramconst": "-1", "paramtitle": "bid", "paramcolumn": ""}], "paramtype": null, "isforevery": true}, {"act": "/composition/treesacts", "icon": "fa fa-asterisk", "type": "Link", "roles": [], "title": "actions", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}]	[{"label": "developer", "value": 0}]	\N	t	t	t	t	f	f
+30	branches	branches	framework.treesbranches	table	f	[{"t": 1, "col": "id", "key": "id_7d0e6", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "treesid", "key": "treesid_35a0d", "join": false, "type": "number", "roles": "[]", "title": "treesid", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "title", "key": "title_9a870", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "parentid", "key": "parentid_5194a", "join": false, "type": "number", "roles": "[]", "title": "parentid", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "icon", "key": "icon_c8818", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "created", "key": "created_bff2e", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "treeviewtype", "key": "treeviewtype_dd1c1", "join": false, "type": "number", "roles": "[]", "title": "treeviewtype", "width": "", "depency": false, "visible": true, "relation": "framework.treeviewtypes", "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "viewid", "key": "viewid_0bba1", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": true, "relation": "framework.views", "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "compoid", "key": "compoid_0f0ca", "join": false, "type": "number", "roles": "[]", "title": "compoid", "width": "", "depency": false, "visible": false, "relation": "framework.compos", "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "orderby", "key": "orderby_5f587", "join": false, "type": "number", "roles": "[]", "title": "orderby", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	branches	2019-03-14 13:42:05.157003	[]	[]	[{"act": "/list/trees", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn ", "parametrs": [], "paramtype": null, "isforevery": false}, {"act": "/composition/branches", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "treesid_35a0d", "label": "treesid", "value": "treesid"}}, {"paramconst": null, "paramtitle": "bid", "paramcolumn": {"t": 1, "key": "id_7d0e6", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_7d0e6", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "treesid_35a0d", "label": "treesid", "value": "treesid"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}, {"paramconst": "treesid", "paramtitle": "relation", "paramcolumn": null}], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
+1025	MainMenu	Menu list	framework.mainmenu	table	f	[{"t": 1, "col": "id", "key": "id_735c4", "join": 0, "type": "number", "input": 1, "roles": [], "title": "id", "width": "", "output": 1, "depency": null, "visible": 0, "relation": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 2, "col": "title", "key": "title_89c08", "join": 0, "type": "text", "input": 0, "roles": [], "title": "title", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 8, "col": "path", "key": "path_7a002", "join": 0, "type": "text", "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 4, "col": "roles", "key": "roles_a4e0d", "join": 0, "type": "text", "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 6, "col": "systemfield", "key": "systemfield_0fd10", "join": 0, "type": "checkbox", "input": 0, "roles": [], "title": "systemfield", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 9, "col": "icon", "key": "icon_96cd7", "join": false, "type": "text", "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 3, "col": "parentid", "key": "parentid_a25dc", "join": 0, "type": "select", "input": 0, "roles": [], "title": "parentid", "width": "", "output": 0, "depency": null, "visible": false, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title_", "value": "title"}]},{"t": 3, "col": "title", "key": "title_d0cd9", "type": "text", "input": 0, "roles": [], "table": "framework.mainmenu", "title": "parent", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "parentid", "relationcolums": []},{"t": 7, "col": "orderby", "key": "orderby_8b3ef", "join": 0, "type": "number", "input": 0, "roles": [], "title": "orderby", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 5, "col": "created", "key": "created_01666", "join": 0, "type": "date", "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 10, "col": "menuid", "key": "menuid_ac20c", "join": false, "type": "number", "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menusettings	2018-11-30 12:50:20	[]	[{"t": 1, "key": "4iwOLNx3K", "type": "multiselect", "roles": [{"label": "developer", "value": 0}], "table": "framework.mainmenu", "title": "parent", "column": "parentid", "classname": null}, {"type": "typehead", "roles": [], "title": "search", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/getone/menuedit", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_735c4", "label": "id", "value": "id"}}, {"paramtitle": "o", "paramcolumn": {"t": 1, "key": "title_89c08", "label": "title", "value": "title"}}], "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete menu", "ismain": false, "classname": "btn", "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_735c4", "label": "id", "value": "id"}}], "isforevery": 1}, {"act": "/getone/menuedit", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add menu", "ismain": false, "classname": null, "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "menuid", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "key": "menuid_ac20c", "label": "menuid", "value": "menuid"}}], "isforevery": 0}, {"act": "/list/projectmenus", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"key": 0, "label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+211	Project Menu		framework.menus	form full	f	[{"t": 1, "col": "id", "key": "id_99b37", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "menutitle", "key": "menutitle_e554e", "join": false, "type": "text", "roles": "[]", "title": "menu title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "menutype", "key": "menutype_5dde7", "join": false, "type": "select", "label": "menutype || menutype", "roles": "[]", "title": "menu type", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "framework.menutypes", "classname": "col-md-11", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "mtypename", "title": "mtypename", "value": "mtypename"}]},{"t": 4, "col": "ismainmenu", "key": "ismainmenu_bc120", "join": false, "type": "checkbox", "roles": "[]", "title": "is main menu", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "col-md-11", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	projectmenu	2019-08-11 18:33:52	[]	[]	[{"act": "/list/projectmenus", "icon": "fa fa-", "type": "Link", "roles": [], "title": "OK", "ismain": false, "classname": "btn btn", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
+150	Project menus	all menu settings	framework.menus	table	f	[{"t": 1, "col": "id", "key": "id_45b9e", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "menutitle", "key": "menutitle_dbef5", "join": false, "type": "text", "roles": "[]", "title": "menu title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "mtypename", "key": "mtypename_c7b5a", "type": "text", "input": 0, "roles": [], "table": "framework.menutypes", "title": "menu type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "menutype", "relationcolums": "[]"},{"t": 4, "col": "ismainmenu", "key": "ismainmenu_6f900", "join": false, "type": "checkbox", "roles": "[]", "title": "is main menu", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "menutype", "key": "menutype_08fc0", "join": false, "type": "number", "label": "menutype || menutype", "roles": "[]", "title": "menutype", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menutypes", "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "mtypename", "title": "mtypename", "value": "mtypename"}]}]	projectmenus	2019-08-11 18:25:07	[]	[]	[{"act": "/getone/projectmenu", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_45b9e", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/list/menusettings", "icon": "fa fa-list", "type": "Link", "roles": [], "title": "menu list", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "key": "id_45b9e", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/projectmenu", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "btn", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/projectmenu", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
+4037	SP API	API methods Storage procedures	framework.spapi	table	t	[{"t": 1, "col": "id", "key": "id_64329", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "methodtype", "key": "methodtype_2e0fc", "join": 0, "type": "select", "roles": "[]", "title": "methodtype", "width": "", "depency": null, "visible": 0, "relation": "framework.methodtypes", "classname": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "methotypename", "value": "methotypename"}]},{"t": 2, "col": "methodname", "key": "methodname_06743", "join": 0, "type": "text", "roles": "[]", "title": "method name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "procedurename", "key": "procedurename_a1796", "join": 0, "type": "text", "roles": "[]", "title": "procedure name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "methotypename", "key": "methotypename_4f63d", "type": "text", "input": 0, "roles": [], "table": "framework.methodtypes", "title": "methotypename", "tpath": [], "output": 0, "related": 1, "visible": true, "relation": null, "classname": null, "notaddable": 0, "relatecolumn": "methodtype", "relationcolums": "[]"},{"t": 4, "col": "roles", "key": "roles_391ac", "join": 0, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "created", "key": "created_72941", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	spapi	2018-12-21 14:27:50.79	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "methodname", "value": "methodname"}, {"t": 1, "label": "procedurename", "value": "procedure name"}], "classname": "form-control"}]	[{"act": "/getone/spapiform?N=0", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": null, "parametrs": [], "paramtype": null, "isforevery": 0}, {"act": "/getone/spapiform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "N", "paramcolumn": {"t": 1, "key": "id_64329", "label": "id", "value": "id"}}], "paramtype": "query", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_64329", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	t	f
+1026	Menu Edit	Menu Edit	framework.mainmenu	form full	f	[{"t": 1, "col": "id", "key": "id_b1f05", "join": 0, "type": "label", "chckd": true, "roles": [], "title": "id", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-12", "column_id": 1, "onetomany": 0, "updatable": false, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 2, "col": "title", "key": "title_869f2", "join": 0, "type": "text", "chckd": true, "roles": [], "title": "title", "width": "", "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": 0, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 3, "col": "parentid", "key": "parentid_d6e3d", "join": 0, "type": "select", "chckd": true, "input": 0, "roles": [], "title": "parent", "width": "", "output": 0, "depency": null, "visible": 1, "relation": "framework.mainmenu", "classname": "col-md-12", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "value": "id"}, {"label": "title", "value": "title"}], "select_condition": [{"col": {"label": "menuid", "value": "menuid"}, "const": null, "value": {"t": 1, "label": "menuid", "value": "menuid"}, "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}], "visible_condition": [{"col": {"t": 1, "label": "id", "value": "id"}, "value": "0", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 4, "col": "roles", "key": "roles_05141", "join": 0, "type": "multiselect", "chckd": true, "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": [], "multiselecttable": "framework.roles"},{"t": 5, "col": "created", "key": "created_2f597", "join": 0, "type": "label", "chckd": true, "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": false, "relation": null, "classname": "col-md-12", "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 6, "col": "systemfield", "key": "systemfield_56127", "join": 0, "type": "checkbox", "chckd": true, "input": 0, "roles": [], "title": "system field", "width": "", "output": 0, "depency": null, "visible": 0, "relation": null, "classname": "col-md-12", "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 7, "col": "orderby", "key": "orderby_703f8", "join": 0, "type": "number", "chckd": true, "input": 0, "roles": [], "title": "order by", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 8, "col": "path", "key": "path_0a221", "join": 0, "type": "text", "chckd": true, "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "classname": "col-md-12", "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 10, "col": "test", "key": "test_dda44", "join": false, "type": "array", "chckd": true, "roles": [], "title": "test", "width": "", "depency": true, "visible": false, "relation": "framework.test", "classname": "col-md-12", "column_id": 10, "onetomany": true, "defaultval": null, "depencycol": "relat", "relationcolums": []},{"t": 9, "col": "icon", "key": "icon_eb99f", "join": false, "type": "text", "chckd": true, "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 11, "col": "menuid", "key": "menuid_d4276", "join": false, "type": "number", "chckd": true, "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menuedit	2018-11-30 14:23:09	[]	[]	[{"act": "/list/menusettings", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "classname": "btn", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "key": "menuid_d4276", "label": "menuid", "value": "menuid"}}], "isforevery": 0}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+5044	Test	Test	test.major_table	table	t	[{"t": 1, "col": "id", "key": "id_3a31e", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "text", "key": "text_84820", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "data", "key": "data_9ef12", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "check", "key": "check_c0adb", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "time", "key": "time_8c9c9", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "password", "key": "password_3cd1a", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "color", "key": "color_70c0b", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "multiselect", "key": "multiselect_3da94", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"},{"t": 9, "col": "file", "key": "file_5d459", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "typehead", "key": "typehead_e6558", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 11, "col": "image", "key": "image_a483e", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 12, "col": "images", "key": "images_4e4d0", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 13, "col": "gallery", "key": "gallery_1cbc1", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 14, "col": "label", "key": "label_b8274", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 15, "col": "number", "key": "number_5a12a", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 16, "col": "link", "key": "link_e7018", "join": false, "type": "label", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 17, "col": "texteditor", "key": "texteditor_377da", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 18, "col": "colorrow", "key": "colorrow_b394b", "join": false, "type": "colorrow", "roles": "[]", "title": "color row", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_c7189", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 20, "col": "multi_select_api", "key": "multi_select_api_2c6b3", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 21, "col": "colorpicker", "key": "colorpicker_d4763", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 23, "col": "autocomplete", "key": "autocomplete_9bde0", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 24, "col": "textarea", "key": "textarea_b7429", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 25, "col": "files", "key": "files_68ff8", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 26, "col": "typehead_api", "key": "typehead_api_6730b", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 27, "col": "select_api", "key": "select_api_762ba", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 28, "col": "multitypehead", "key": "multitypehead_0a55e", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"},{"t": 29, "col": "datetime", "key": "datetime_388e5", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 22, "col": "select", "key": "select_b1405", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}, {"label": "id", "title": "id_", "value": "id"}]},{"t": 22, "col": "dname", "key": "dname_c5340", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "dname", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}]	test	2019-09-18 13:31:50.251692	[]	[{"t": 1, "type": "substr", "roles": [], "table": {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "SUBSTR TEXT", "column": "text", "classname": ""}, {"type": "typehead", "roles": [], "title": "TYPEHEAD TEXT NUMBER COLOR", "column": [{"t": 1, "label": "text", "value": "text"}, {"t": 1, "label": "number", "value": "number"}, {"t": 1, "label": "color", "value": "color"}], "classname": ""}, {"t": 1, "type": "check", "roles": [], "table": {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "check", "column": "check", "classname": ""}, {"t": 1, "type": "period", "roles": [], "table": {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "PERIOD", "column": "data", "classname": ""}, {"t": 1, "type": "select", "roles": [], "table": {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}, "title": "select filter", "column": "select", "classname": ""}, {"t": 1, "type": "multiselect", "roles": [], "table": {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi", "column": "multiselect", "classname": ""}, {"t": 1, "type": "multijson", "roles": [], "table": {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi json", "column": "multitypehead", "classname": ""}]	[{"act": "/getone/testform", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_3a31e", "label": "id", "value": "id"}}], "paramtype": "query", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/testform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	t	t	t	t	f	t
+5046	Test Form	Test Form	test.major_table	form full	f	[{"t": 1, "col": "id", "key": "id_5ae13", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "text", "key": "text_2235c", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "p-col", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "data", "key": "data_16fc2", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "check", "key": "check_c999b", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "time", "key": "time_be601", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "password", "key": "password_4a5e0", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "color", "key": "color_c258a", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "multiselect", "key": "multiselect_88f91", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "file", "key": "file_9f134", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "typehead", "key": "typehead_e8a71", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 11, "col": "image", "key": "image_fda70", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 12, "col": "images", "key": "images_bd04f", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 13, "col": "gallery", "key": "gallery_4d577", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 14, "col": "label", "key": "label_89012", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 15, "col": "number", "key": "number_ca9ce", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 16, "col": "link", "key": "link_b3e7c", "join": false, "type": "link", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 18, "col": "colorrow", "key": "colorrow_ab3cf", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorrow", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_2792a", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 20, "col": "multi_select_api", "key": "multi_select_api_39633", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 21, "col": "colorpicker", "key": "colorpicker_d5624", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 23, "col": "autocomplete", "key": "autocomplete_8ac0b", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 24, "col": "textarea", "key": "textarea_93946", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 25, "col": "files", "key": "files_2f3fb", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 26, "col": "typehead_api", "key": "typehead_api_bcbbb", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 27, "col": "select_api", "key": "select_api_ea57c", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 28, "col": "multitypehead", "key": "multitypehead_7919f", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 29, "col": "datetime", "key": "datetime_68c0b", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 22, "col": "select", "key": "select_bd4e5", "join": false, "type": "select", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}]},{"t": 30, "col": "texteditor", "key": "texteditor_c0af3", "join": false, "type": "texteditor", "label": "texteditor || texteditor", "roles": "[]", "title": "texteditor_2", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "updatable": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 22, "col": "id", "key": "id_092a5", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "id_", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": false, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}]	testform	2019-09-19 14:19:49.995003	[]	[]	[{"act": "/list/test", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "go back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	f	t	t	t	f	f
+32	branches form	branches form	framework.treesbranches	form full	f	[{"t": 1, "col": "id", "key": "id_512cb", "join": false, "type": "label", "roles": "[]", "title": "bid", "width": "", "depency": null, "visible": false, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 2, "col": "treesid", "key": "treesid_9766c", "join": false, "type": "label", "roles": "[]", "title": "treesid", "width": "", "depency": null, "visible": false, "relation": null, "classname": "col-md-12", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 3, "col": "title", "key": "title_2598c", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 3, "onetomany": false, "updatable": true, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 5, "col": "parentid", "key": "parentid_953d6", "join": false, "type": "select", "roles": "[]", "title": "parentid", "width": "", "depency": null, "visible": true, "relation": "framework.treesbranches", "classname": "col-md-12", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}], "select_condition": [{"col": {"label": "treesid", "value": "treesid"}, "value": {"t": 1, "label": "treesid", "value": "treesid"}, "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"label": "id", "value": "id"}, "const": null, "value": {"t": 1, "label": "id", "value": "bid"}, "operation": {"js": "!==", "label": "!=", "value": "<>", "python": "!="}}], "visible_condition": [{"col": {"t": 1, "label": "treesid", "value": "treesid"}, "const": null, "value": "0", "operation": {"js": "!==null", "label": "is not null", "value": "is not null", "python": "is not None"}}]},{"t": 6, "col": "icon", "key": "icon_aa86a", "join": false, "type": "text", "roles": "[]", "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 7, "col": "created", "key": "created_f5070", "join": false, "type": "label", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 15, "col": "treeviewtype", "key": "treeviewtype_5b5be", "join": false, "type": "select", "roles": "[]", "title": "treeviewtype", "width": "", "depency": null, "visible": true, "relation": "framework.treeviewtypes", "classname": "col-md-12", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "typename", "title": "typename", "value": "typename"}], "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 23, "col": "viewid", "key": "viewid_ffae0", "join": false, "type": "select", "roles": "[]", "title": "viewid", "width": "", "depency": null, "visible": true, "relation": "framework.views", "classname": "col-md-12", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}, {"label": "path", "title": "path", "value": "path"}], "visible_condition": [{"col": {"t": 1, "label": "treeviewtype", "value": "treeviewtype"}, "value": "1", "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 14, "col": "compoid", "key": "compoid_50bd6", "join": false, "type": "select", "roles": "[]", "title": "compoid", "width": "", "depency": false, "visible": true, "relation": "framework.compos", "classname": "col-md-12", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}], "visible_condition": [{"col": {"t": 1, "label": "treeviewtype", "value": "treeviewtype"}, "value": "2", "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 10, "col": "orderby", "key": "orderby_0bae7", "join": false, "type": "number", "roles": "[]", "title": "orderby", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]},{"t": 11, "col": "ismain", "key": "ismain_9701e", "join": false, "type": "checkbox", "roles": "[]", "title": "ismain", "width": "", "depency": false, "visible": true, "relation": null, "classname": "col-md-12", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "label": "id", "value": "bid"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	branchesform	2019-03-14 13:46:57.627417	[]	[]	[{"act": "/composition/branches", "icon": "fa fa-refresh", "type": "Link", "roles": [], "title": "click twice", "classname": "btn btn-success", "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "treesid_9766c", "label": "treesid", "value": "treesid"}}, {"paramt": null, "paramconst": "-1", "paramtitle": "bid", "paramcolumn": ""}], "paramtype": null, "isforevery": false}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f
+5048	VIews	Views administration	framework.views	table	f	[{"t": 1, "col": "id", "key": "id_fc1f2", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "title", "key": "title_76a90", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "key": "tit_9f5cb", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"},{"t": 4, "col": "tablename", "key": "tablename_3bb96", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "vtypename", "key": "vtypename_d11aa", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"},{"t": 3, "col": "descr", "key": "descr_fbb10", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "path", "key": "path_7ce49", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "viewtype", "key": "viewtype_96c4f", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}]	views	2019-09-22 11:39:01.726301	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f
 \.
 
 
 --
--- TOC entry 2606 (class 0 OID 0)
+-- TOC entry 2608 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: views_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('views_id_seq', 5048, true);
+SELECT pg_catalog.setval('views_id_seq', 5050, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2548 (class 0 OID 115725)
-=======
--- TOC entry 2547 (class 0 OID 17244)
->>>>>>> parent of e168945... start key
+-- TOC entry 2549 (class 0 OID 117731)
 -- Dependencies: 224
 -- Data for Name: viewsnotification; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6344,7 +6094,7 @@ COPY viewsnotification (id, viewid, col, tableid, notificationtext, foruser, iss
 
 
 --
--- TOC entry 2607 (class 0 OID 0)
+-- TOC entry 2609 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: viewsnotification_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6353,11 +6103,7 @@ SELECT pg_catalog.setval('viewsnotification_id_seq', 1, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2550 (class 0 OID 115737)
-=======
--- TOC entry 2549 (class 0 OID 17256)
->>>>>>> parent of e168945... start key
+-- TOC entry 2551 (class 0 OID 117743)
 -- Dependencies: 226
 -- Data for Name: viewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6367,19 +6113,13 @@ COPY viewtypes (id, vtypename, viewlink) FROM stdin;
 2	tiles	\N
 3	form full	/getone/
 4	form not mutable	\N
-5	form api	/formapi
-6	table api	\N
 \.
 
 
 SET search_path = test, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2551 (class 0 OID 115743)
-=======
--- TOC entry 2550 (class 0 OID 17262)
->>>>>>> parent of e168945... start key
+-- TOC entry 2552 (class 0 OID 117749)
 -- Dependencies: 227
 -- Data for Name: dictionary_for_select; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -6394,7 +6134,7 @@ COPY dictionary_for_select (id, dname) FROM stdin;
 
 
 --
--- TOC entry 2608 (class 0 OID 0)
+-- TOC entry 2610 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -6403,11 +6143,7 @@ SELECT pg_catalog.setval('dictionary_for_select_id_seq', 5, true);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2553 (class 0 OID 115748)
-=======
--- TOC entry 2552 (class 0 OID 17267)
->>>>>>> parent of e168945... start key
+-- TOC entry 2554 (class 0 OID 117754)
 -- Dependencies: 229
 -- Data for Name: major_table; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -6421,7 +6157,7 @@ COPY major_table (id, text, data, "check", "time", password, color, multiselect,
 
 
 --
--- TOC entry 2609 (class 0 OID 0)
+-- TOC entry 2611 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: major_table_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -6432,11 +6168,7 @@ SELECT pg_catalog.setval('major_table_id_seq', 4, true);
 SET search_path = framework, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2310 (class 2606 OID 115834)
-=======
--- TOC entry 2309 (class 2606 OID 17329)
->>>>>>> parent of e168945... start key
+-- TOC entry 2311 (class 2606 OID 117840)
 -- Name: acttypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6445,11 +6177,7 @@ ALTER TABLE ONLY acttypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2312 (class 2606 OID 115836)
-=======
--- TOC entry 2311 (class 2606 OID 17331)
->>>>>>> parent of e168945... start key
+-- TOC entry 2313 (class 2606 OID 117842)
 -- Name: apimethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6458,11 +6186,7 @@ ALTER TABLE ONLY apimethods
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2314 (class 2606 OID 115838)
-=======
--- TOC entry 2313 (class 2606 OID 17333)
->>>>>>> parent of e168945... start key
+-- TOC entry 2315 (class 2606 OID 117844)
 -- Name: columntypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6471,11 +6195,7 @@ ALTER TABLE ONLY columntypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2316 (class 2606 OID 115840)
-=======
--- TOC entry 2315 (class 2606 OID 17335)
->>>>>>> parent of e168945... start key
+-- TOC entry 2317 (class 2606 OID 117846)
 -- Name: compos_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6484,11 +6204,7 @@ ALTER TABLE ONLY compos
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2318 (class 2606 OID 115842)
-=======
--- TOC entry 2317 (class 2606 OID 17337)
->>>>>>> parent of e168945... start key
+-- TOC entry 2319 (class 2606 OID 117848)
 -- Name: filtertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6497,11 +6213,7 @@ ALTER TABLE ONLY filtertypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2320 (class 2606 OID 115844)
-=======
--- TOC entry 2319 (class 2606 OID 17339)
->>>>>>> parent of e168945... start key
+-- TOC entry 2321 (class 2606 OID 117850)
 -- Name: functions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6510,11 +6222,7 @@ ALTER TABLE ONLY functions
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2322 (class 2606 OID 115846)
-=======
--- TOC entry 2321 (class 2606 OID 17341)
->>>>>>> parent of e168945... start key
+-- TOC entry 2323 (class 2606 OID 117852)
 -- Name: logtable_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6523,11 +6231,7 @@ ALTER TABLE ONLY logtable
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2324 (class 2606 OID 115848)
-=======
--- TOC entry 2323 (class 2606 OID 17343)
->>>>>>> parent of e168945... start key
+-- TOC entry 2325 (class 2606 OID 117854)
 -- Name: mainmenu_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6536,11 +6240,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2326 (class 2606 OID 115850)
-=======
--- TOC entry 2325 (class 2606 OID 17345)
->>>>>>> parent of e168945... start key
+-- TOC entry 2327 (class 2606 OID 117856)
 -- Name: menus_manus_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6549,11 +6249,7 @@ ALTER TABLE ONLY menus
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2328 (class 2606 OID 115852)
-=======
--- TOC entry 2327 (class 2606 OID 17347)
->>>>>>> parent of e168945... start key
+-- TOC entry 2329 (class 2606 OID 117858)
 -- Name: menus_menutype_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6562,11 +6258,7 @@ ALTER TABLE ONLY menus
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2330 (class 2606 OID 115854)
-=======
--- TOC entry 2329 (class 2606 OID 17349)
->>>>>>> parent of e168945... start key
+-- TOC entry 2331 (class 2606 OID 117860)
 -- Name: menutypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6575,11 +6267,7 @@ ALTER TABLE ONLY menutypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2332 (class 2606 OID 115856)
-=======
--- TOC entry 2331 (class 2606 OID 17351)
->>>>>>> parent of e168945... start key
+-- TOC entry 2333 (class 2606 OID 117862)
 -- Name: methodtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6588,11 +6276,7 @@ ALTER TABLE ONLY methodtypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2334 (class 2606 OID 115858)
-=======
--- TOC entry 2333 (class 2606 OID 17353)
->>>>>>> parent of e168945... start key
+-- TOC entry 2335 (class 2606 OID 117864)
 -- Name: opertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6601,11 +6285,7 @@ ALTER TABLE ONLY opertypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2336 (class 2606 OID 115860)
-=======
--- TOC entry 2335 (class 2606 OID 17355)
->>>>>>> parent of e168945... start key
+-- TOC entry 2337 (class 2606 OID 117866)
 -- Name: orgs_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6614,11 +6294,7 @@ ALTER TABLE ONLY orgs
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2338 (class 2606 OID 115862)
-=======
--- TOC entry 2337 (class 2606 OID 17357)
->>>>>>> parent of e168945... start key
+-- TOC entry 2339 (class 2606 OID 117868)
 -- Name: paramtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6627,11 +6303,7 @@ ALTER TABLE ONLY paramtypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2340 (class 2606 OID 115864)
-=======
--- TOC entry 2339 (class 2606 OID 17359)
->>>>>>> parent of e168945... start key
+-- TOC entry 2341 (class 2606 OID 117870)
 -- Name: relfortest_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6640,11 +6312,7 @@ ALTER TABLE ONLY relfortest
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2342 (class 2606 OID 115866)
-=======
--- TOC entry 2341 (class 2606 OID 17361)
->>>>>>> parent of e168945... start key
+-- TOC entry 2343 (class 2606 OID 117872)
 -- Name: roles_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6653,11 +6321,7 @@ ALTER TABLE ONLY roles
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2344 (class 2606 OID 115868)
-=======
--- TOC entry 2343 (class 2606 OID 17363)
->>>>>>> parent of e168945... start key
+-- TOC entry 2345 (class 2606 OID 117874)
 -- Name: spapi_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6666,11 +6330,7 @@ ALTER TABLE ONLY spapi
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2346 (class 2606 OID 115870)
-=======
--- TOC entry 2345 (class 2606 OID 17365)
->>>>>>> parent of e168945... start key
+-- TOC entry 2347 (class 2606 OID 117876)
 -- Name: test_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6679,11 +6339,7 @@ ALTER TABLE ONLY test
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2348 (class 2606 OID 115872)
-=======
--- TOC entry 2347 (class 2606 OID 17367)
->>>>>>> parent of e168945... start key
+-- TOC entry 2349 (class 2606 OID 117878)
 -- Name: trees_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6692,11 +6348,7 @@ ALTER TABLE ONLY trees
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2350 (class 2606 OID 115874)
-=======
--- TOC entry 2349 (class 2606 OID 17369)
->>>>>>> parent of e168945... start key
+-- TOC entry 2351 (class 2606 OID 117880)
 -- Name: treesacts_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6705,11 +6357,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2352 (class 2606 OID 115876)
-=======
--- TOC entry 2351 (class 2606 OID 17371)
->>>>>>> parent of e168945... start key
+-- TOC entry 2353 (class 2606 OID 117882)
 -- Name: treesbranches_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6718,11 +6366,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2354 (class 2606 OID 115878)
-=======
--- TOC entry 2353 (class 2606 OID 17373)
->>>>>>> parent of e168945... start key
+-- TOC entry 2355 (class 2606 OID 117884)
 -- Name: treeviewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6731,11 +6375,7 @@ ALTER TABLE ONLY treeviewtypes
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2357 (class 2606 OID 115880)
-=======
--- TOC entry 2356 (class 2606 OID 17375)
->>>>>>> parent of e168945... start key
+-- TOC entry 2358 (class 2606 OID 117886)
 -- Name: views_path_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6744,11 +6384,7 @@ ALTER TABLE ONLY views
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2359 (class 2606 OID 115882)
-=======
--- TOC entry 2358 (class 2606 OID 17377)
->>>>>>> parent of e168945... start key
+-- TOC entry 2360 (class 2606 OID 117888)
 -- Name: views_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6757,11 +6393,7 @@ ALTER TABLE ONLY views
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2361 (class 2606 OID 115884)
-=======
--- TOC entry 2360 (class 2606 OID 17379)
->>>>>>> parent of e168945... start key
+-- TOC entry 2362 (class 2606 OID 117890)
 -- Name: viewsnotification_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6770,11 +6402,7 @@ ALTER TABLE ONLY viewsnotification
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2363 (class 2606 OID 115886)
-=======
--- TOC entry 2362 (class 2606 OID 17381)
->>>>>>> parent of e168945... start key
+-- TOC entry 2364 (class 2606 OID 117892)
 -- Name: viewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6785,11 +6413,7 @@ ALTER TABLE ONLY viewtypes
 SET search_path = test, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2366 (class 2606 OID 115888)
-=======
--- TOC entry 2365 (class 2606 OID 17383)
->>>>>>> parent of e168945... start key
+-- TOC entry 2367 (class 2606 OID 117894)
 -- Name: dictionary_for_select_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -6800,11 +6424,7 @@ ALTER TABLE ONLY dictionary_for_select
 SET search_path = framework, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2355 (class 1259 OID 115889)
-=======
--- TOC entry 2354 (class 1259 OID 17384)
->>>>>>> parent of e168945... start key
+-- TOC entry 2356 (class 1259 OID 117895)
 -- Name: users_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -6812,11 +6432,7 @@ CREATE UNIQUE INDEX users_id_key ON users USING btree (id);
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2364 (class 1259 OID 115890)
-=======
--- TOC entry 2363 (class 1259 OID 17540)
->>>>>>> parent of e168945... start key
+-- TOC entry 2365 (class 1259 OID 117896)
 -- Name: viewtypes_vtypename_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -6824,11 +6440,7 @@ CREATE UNIQUE INDEX viewtypes_vtypename_key ON viewtypes USING btree (vtypename)
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2387 (class 2620 OID 115891)
-=======
--- TOC entry 2386 (class 2620 OID 17385)
->>>>>>> parent of e168945... start key
+-- TOC entry 2388 (class 2620 OID 117897)
 -- Name: menus_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6836,11 +6448,7 @@ CREATE TRIGGER menus_tr BEFORE INSERT OR UPDATE OF menutype, ismainmenu ON menus
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2388 (class 2620 OID 115892)
-=======
--- TOC entry 2387 (class 2620 OID 17386)
->>>>>>> parent of e168945... start key
+-- TOC entry 2389 (class 2620 OID 117898)
 -- Name: menus_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6848,11 +6456,7 @@ CREATE TRIGGER menus_tr_del BEFORE DELETE ON menus FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2389 (class 2620 OID 115893)
-=======
--- TOC entry 2388 (class 2620 OID 17387)
->>>>>>> parent of e168945... start key
+-- TOC entry 2390 (class 2620 OID 117899)
 -- Name: trees_add_org; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6860,11 +6464,7 @@ CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON trees FOR EACH 
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2390 (class 2620 OID 115894)
-=======
--- TOC entry 2389 (class 2620 OID 17388)
->>>>>>> parent of e168945... start key
+-- TOC entry 2391 (class 2620 OID 117900)
 -- Name: trees_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6872,11 +6472,7 @@ CREATE TRIGGER trees_tr_del BEFORE DELETE ON trees FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2391 (class 2620 OID 115895)
-=======
--- TOC entry 2390 (class 2620 OID 17389)
->>>>>>> parent of e168945... start key
+-- TOC entry 2392 (class 2620 OID 117901)
 -- Name: treesbranches_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6884,11 +6480,7 @@ CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, isma
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2392 (class 2620 OID 115896)
-=======
--- TOC entry 2391 (class 2620 OID 17390)
->>>>>>> parent of e168945... start key
+-- TOC entry 2393 (class 2620 OID 117902)
 -- Name: users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6896,11 +6488,7 @@ CREATE TRIGGER users_tr BEFORE UPDATE OF fam, im, ot, login, password, isactive,
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2393 (class 2620 OID 115897)
-=======
--- TOC entry 2392 (class 2620 OID 17391)
->>>>>>> parent of e168945... start key
+-- TOC entry 2394 (class 2620 OID 117903)
 -- Name: views_tr_check; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6908,11 +6496,7 @@ CREATE TRIGGER views_tr_check BEFORE INSERT OR UPDATE ON views FOR EACH ROW EXEC
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2378 (class 2606 OID 115898)
-=======
--- TOC entry 2377 (class 2606 OID 17392)
->>>>>>> parent of e168945... start key
+-- TOC entry 2379 (class 2606 OID 117904)
 -- Name: compos_fk1; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6921,11 +6505,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2367 (class 2606 OID 115903)
-=======
--- TOC entry 2366 (class 2606 OID 17397)
->>>>>>> parent of e168945... start key
+-- TOC entry 2368 (class 2606 OID 117909)
 -- Name: logtype_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6934,11 +6514,7 @@ ALTER TABLE ONLY logtable
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2369 (class 2606 OID 115908)
-=======
--- TOC entry 2368 (class 2606 OID 17402)
->>>>>>> parent of e168945... start key
+-- TOC entry 2370 (class 2606 OID 117914)
 -- Name: mainmenu_fk_menuid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6947,11 +6523,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2376 (class 2606 OID 115913)
-=======
--- TOC entry 2375 (class 2606 OID 17407)
->>>>>>> parent of e168945... start key
+-- TOC entry 2377 (class 2606 OID 117919)
 -- Name: menu; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6960,11 +6532,7 @@ ALTER TABLE ONLY test
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2370 (class 2606 OID 115918)
-=======
--- TOC entry 2369 (class 2606 OID 17412)
->>>>>>> parent of e168945... start key
+-- TOC entry 2371 (class 2606 OID 117924)
 -- Name: menus_fk_mt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6973,11 +6541,7 @@ ALTER TABLE ONLY menus
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2383 (class 2606 OID 115923)
-=======
--- TOC entry 2382 (class 2606 OID 17417)
->>>>>>> parent of e168945... start key
+-- TOC entry 2384 (class 2606 OID 117929)
 -- Name: org_f; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6986,11 +6550,7 @@ ALTER TABLE ONLY users
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2371 (class 2606 OID 115928)
-=======
--- TOC entry 2370 (class 2606 OID 17422)
->>>>>>> parent of e168945... start key
+-- TOC entry 2372 (class 2606 OID 117934)
 -- Name: orgs_fk_prnt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6999,11 +6559,7 @@ ALTER TABLE ONLY orgs
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2372 (class 2606 OID 115933)
-=======
--- TOC entry 2371 (class 2606 OID 17427)
->>>>>>> parent of e168945... start key
+-- TOC entry 2373 (class 2606 OID 117939)
 -- Name: orgs_fk_uid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7012,11 +6568,7 @@ ALTER TABLE ONLY orgs
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2373 (class 2606 OID 115938)
-=======
--- TOC entry 2372 (class 2606 OID 17432)
->>>>>>> parent of e168945... start key
+-- TOC entry 2374 (class 2606 OID 117944)
 -- Name: relfortest_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7025,11 +6577,7 @@ ALTER TABLE ONLY relfortest
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2375 (class 2606 OID 115943)
-=======
--- TOC entry 2374 (class 2606 OID 17437)
->>>>>>> parent of e168945... start key
+-- TOC entry 2376 (class 2606 OID 117949)
 -- Name: spapi_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7038,11 +6586,7 @@ ALTER TABLE ONLY spapi
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2377 (class 2606 OID 115948)
-=======
--- TOC entry 2376 (class 2606 OID 17442)
->>>>>>> parent of e168945... start key
+-- TOC entry 2378 (class 2606 OID 117954)
 -- Name: treesacts_fk_tr; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7051,11 +6595,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2379 (class 2606 OID 115953)
-=======
--- TOC entry 2378 (class 2606 OID 17447)
->>>>>>> parent of e168945... start key
+-- TOC entry 2380 (class 2606 OID 117959)
 -- Name: treesbranches_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7064,11 +6604,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2380 (class 2606 OID 115958)
-=======
--- TOC entry 2379 (class 2606 OID 17452)
->>>>>>> parent of e168945... start key
+-- TOC entry 2381 (class 2606 OID 117964)
 -- Name: treesbranches_fk_tree; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7077,11 +6613,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2381 (class 2606 OID 115963)
-=======
--- TOC entry 2380 (class 2606 OID 17457)
->>>>>>> parent of e168945... start key
+-- TOC entry 2382 (class 2606 OID 117969)
 -- Name: treeview; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7090,11 +6622,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2374 (class 2606 OID 115968)
-=======
--- TOC entry 2373 (class 2606 OID 17462)
->>>>>>> parent of e168945... start key
+-- TOC entry 2375 (class 2606 OID 117974)
 -- Name: us_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7103,11 +6631,7 @@ ALTER TABLE ONLY sess
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2368 (class 2606 OID 115973)
-=======
--- TOC entry 2367 (class 2606 OID 17467)
->>>>>>> parent of e168945... start key
+-- TOC entry 2369 (class 2606 OID 117979)
 -- Name: userid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7116,11 +6640,7 @@ ALTER TABLE ONLY logtable
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2385 (class 2606 OID 115978)
-=======
--- TOC entry 2384 (class 2606 OID 17472)
->>>>>>> parent of e168945... start key
+-- TOC entry 2386 (class 2606 OID 117984)
 -- Name: viewid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7129,11 +6649,7 @@ ALTER TABLE ONLY viewsnotification
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2382 (class 2606 OID 115983)
-=======
--- TOC entry 2381 (class 2606 OID 17477)
->>>>>>> parent of e168945... start key
+-- TOC entry 2383 (class 2606 OID 117989)
 -- Name: viewid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7142,11 +6658,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
-<<<<<<< HEAD
--- TOC entry 2384 (class 2606 OID 115988)
-=======
--- TOC entry 2383 (class 2606 OID 17541)
->>>>>>> parent of e168945... start key
+-- TOC entry 2385 (class 2606 OID 117994)
 -- Name: views_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7157,11 +6669,7 @@ ALTER TABLE ONLY views
 SET search_path = test, pg_catalog;
 
 --
-<<<<<<< HEAD
--- TOC entry 2386 (class 2606 OID 115993)
-=======
--- TOC entry 2385 (class 2606 OID 17482)
->>>>>>> parent of e168945... start key
+-- TOC entry 2387 (class 2606 OID 117999)
 -- Name: major_table_seldic; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -7170,7 +6678,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 2560 (class 0 OID 0)
+-- TOC entry 2562 (class 0 OID 0)
 -- Dependencies: 10
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -7181,11 +6689,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
-<<<<<<< HEAD
--- Completed on 2019-10-08 17:06:57
-=======
--- Completed on 2019-09-29 15:16:14
->>>>>>> parent of e168945... start key
+-- Completed on 2019-10-10 19:13:08
 
 --
 -- PostgreSQL database dump complete
