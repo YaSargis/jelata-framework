@@ -53,6 +53,7 @@ def getList(result,body, userdetail=None):
 	joins = ''
 	orderby = ''
 	where = ''
+	defaultOrderBy = ''
 	for col in config:
 		roles = []
 		if col.get('roles'):
@@ -206,7 +207,9 @@ def getList(result,body, userdetail=None):
 			
 		if col.get('required'):
 			where += 'and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null')
-
+		
+		if col.get('orderby'):
+			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '",'
 		if 'inputs' in body:
 			order_by = body.get('inputs').get('orderby') or []
 			if body.get('inputs').get(col.get('title')):
@@ -313,8 +316,10 @@ def getList(result,body, userdetail=None):
 				rownum = rownum[:len(rownum) - 1] 	
 				rownum += ') ' + col.get('desc') + ','
 		rownum = rownum[:len(rownum) - 1]
+	elif len(defaultOrderBy) > 0:
+		rownum += defaultOrderBy[:len(defaultOrderBy) - 1]
 	else:
-		rownum += 't1.id'
+		rownum += 't1.id desc'
 	rownum += ') as rownum '	
 	if result.get('viewtype').find('form') != -1:
 		pagewhere = ' LIMIT 2 '
