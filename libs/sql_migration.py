@@ -209,7 +209,10 @@ def getList(result,body, userdetail=None):
 			where += 'and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null')
 		
 		if col.get('orderby'):
-			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '",'
+			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '"'
+			if col.get('orderbydesc'):
+				defaultOrderBy += ' desc'
+			defaultOrderBy += ','
 		if 'inputs' in body:
 			order_by = body.get('inputs').get('orderby') or []
 			if body.get('inputs').get(col.get('title')):
