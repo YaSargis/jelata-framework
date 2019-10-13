@@ -75,8 +75,12 @@ def getList(result,body, userdetail=None):
 				sColT = '1'
 			if not col.get('fn'):
 				if not col.get('depency'):
-					squery += 't' +	sColT + '."' + col.get('col') + '" as "' + (col.get('key') or col.get('title')) + '", '
-					gropby += 't' + sColT + '."' + col.get('col') + '",'
+					if col.get('type') != 'password':
+						squery += 't' +	sColT + '."' + col.get('col') + '" as "' + (col.get('key') or col.get('title')) + '", '
+						gropby += 't' + sColT + '."' + col.get('col') + '",'
+					else:
+						squery += "'' as \"" + col.get("title") + "\", "
+						gropby += "'' ,"	
 				else:
 					relcols = ''
 					if str(col.get('relationcolums')) != '[]':	

@@ -35,7 +35,8 @@ def savefile(self):
 				'uri':'/files/' + bfname,
 				'filename':file.filename, 
 				'content_type':file.content_type, 
-				'size':len(bfile)})
+				'size':len(bfile)
+			})
 			xf = open('./files/' + bfname,'wb')
 			xf.write(bfile)
 			xf.close()
@@ -67,7 +68,7 @@ def onRequest(self, url, type):
 		args[k] = args.get(k)[0].decode('utf-8')
 		
 	if type in (2,4):
-		files = self.request.files#.get("files") #get request files	
+		files = self.request.files
 		body = {}
 
 		if files:
@@ -75,6 +76,10 @@ def onRequest(self, url, type):
 			if not value:
 				value = '[]'
 			value = loads(value)
+			if loads(args.get('config')).get('type') in ('file','image') and len(value) > 0:
+				showError('for type file/image can not be more then 1 file',self)
+				return
+				
 			value = value + savefile(self)
 			args['value'] = dumps(value)
 		else:	
@@ -106,7 +111,7 @@ def onRequest(self, url, type):
 
 class FApi(BaseHandler):
 	"""
-		Universal API for all methods except authentication
+		Universal API for methods
 	"""
 	def set_default_headers(self):
 		default_headers(self)

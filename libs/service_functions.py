@@ -99,7 +99,10 @@ def showError(err,self):
 		transforming postgres error and send right error text and status
 		err - error text, self - context
 	"""
-	err = (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0]
+	if err.find('HINT:') > -1:
+		err = (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0]
+	else:
+		err = err.split("\n")[0]
 	self.set_header("Content-Type",'application/json charset="utf-8"')
 	if err.find('m404err') != -1:
 		self.write('{"message":"method not found"}')

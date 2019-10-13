@@ -100,25 +100,25 @@ class Schema(BaseHandler):
 			count = count.fetchone()[0]
 
 			self.write(dumps({
-								'foundcount':count, 
-								'data':data, 
-								'config':result.get('config'), 
-								'filters':result.get('filters'),
-								'acts':result.get('acts'),
-								'classname':result.get('classname'),
-								'table':result.get('tablename'),
-								'title':result.get('title'),
-								'viewtype':result.get('viewtype'),
-								'pagination':result.get('pagination'),
-								'ispagecount':result.get('pagecount'),
-								'ispagesize':result.get('ispagesize'),
-								'isfoundcount':result.get('foundcount'),
-								'subscrible':result.get('subscrible'),
-								'isorderby':result.get('orderby'),
-								'viewid':result.get('id'),
-								'checker':result.get('checker'),
-								'user':user
-							}))
+				'foundcount':count, 
+				'data':data, 
+				'config':result.get('config'), 
+				'filters':result.get('filters'),
+				'acts':result.get('acts'),
+				'classname':result.get('classname'),
+				'table':result.get('tablename'),
+				'title':result.get('title'),
+				'viewtype':result.get('viewtype'),
+				'pagination':result.get('pagination'),
+				'ispagecount':result.get('pagecount'),
+				'ispagesize':result.get('ispagesize'),
+				'isfoundcount':result.get('foundcount'),
+				'subscrible':result.get('subscrible'),
+				'isorderby':result.get('orderby'),
+				'viewid':result.get('id'),
+				'checker':result.get('checker'),
+				'user':user
+			}))
 			
 		elif method == 'getone':
 			squery = """SELECT row_to_json (d) FROM (select * 
@@ -165,16 +165,16 @@ class Schema(BaseHandler):
 			#count = count.fetchone()[0]
 			self.set_status(200,None)
 			self.write(dumps({
-								'data':data, 
-								'config':result.get('config'), 
-								'acts':result.get('acts'),
-								'classname':result.get('classname'),
-								'table':result.get('tablename'),
-								'subscrible':result.get('subscrible'),
-								'title':result.get('title'),
-								'viewtype':result.get('viewtype'),
-								'id':result.get('id')
-							}))
+				'data':data, 
+				'config':result.get('config'), 
+				'acts':result.get('acts'),
+				'classname':result.get('classname'),
+				'table':result.get('tablename'),
+				'subscrible':result.get('subscrible'),
+				'title':result.get('title'),
+				'viewtype':result.get('viewtype'),
+				'id':result.get('id')
+			}))
 		elif method == 'squery':
 			squery = """SELECT row_to_json (d) FROM (select * 
 						from framework.views where path = %s) as d"""			
