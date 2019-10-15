@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-10-14 18:00:52
+-- Started on 2019-10-15 19:41:21
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -53,7 +53,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- TOC entry 2 (class 3079 OID 120228)
+-- TOC entry 2 (class 3079 OID 120308)
 -- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -72,7 +72,7 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 279 (class 1255 OID 118063)
+-- TOC entry 243 (class 1255 OID 118063)
 -- Name: fn_allviews(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -127,7 +127,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 280 (class 1255 OID 118064)
+-- TOC entry 244 (class 1255 OID 118064)
 -- Name: fn_allviews_sel(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -183,7 +183,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews_sel(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 281 (class 1255 OID 118065)
+-- TOC entry 245 (class 1255 OID 118065)
 -- Name: fn_apimethods(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -211,7 +211,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 283 (class 1255 OID 118066)
+-- TOC entry 247 (class 1255 OID 118066)
 -- Name: fn_autocomplete(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -263,7 +263,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 284 (class 1255 OID 118067)
+-- TOC entry 248 (class 1255 OID 118067)
 -- Name: fn_branchestree_recurs(integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -301,7 +301,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 285 (class 1255 OID 118068)
+-- TOC entry 249 (class 1255 OID 118068)
 -- Name: fn_compo(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -332,7 +332,7 @@ $$;
 ALTER FUNCTION framework.fn_compo(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 286 (class 1255 OID 118069)
+-- TOC entry 250 (class 1255 OID 118069)
 -- Name: fn_compo_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -363,7 +363,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 287 (class 1255 OID 118070)
+-- TOC entry 251 (class 1255 OID 118070)
 -- Name: fn_compo_save(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -472,7 +472,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_save(injson json, OUT _id integer) OWNER TO postgres;
 
 --
--- TOC entry 288 (class 1255 OID 118071)
+-- TOC entry 252 (class 1255 OID 118071)
 -- Name: fn_copyview(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -549,7 +549,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
--- TOC entry 289 (class 1255 OID 118072)
+-- TOC entry 253 (class 1255 OID 118072)
 -- Name: fn_createconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -678,7 +678,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 291 (class 1255 OID 118073)
+-- TOC entry 255 (class 1255 OID 118073)
 -- Name: fn_cryptosess(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -735,7 +735,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 292 (class 1255 OID 118074)
+-- TOC entry 256 (class 1255 OID 118074)
 -- Name: fn_deleterow(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -836,7 +836,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
--- TOC entry 293 (class 1255 OID 118075)
+-- TOC entry 257 (class 1255 OID 118075)
 -- Name: fn_fapi(json, character varying, smallint, character, smallint); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -916,7 +916,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 294 (class 1255 OID 118076)
+-- TOC entry 258 (class 1255 OID 118076)
 -- Name: fn_formparams(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1229,7 +1229,7 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 295 (class 1255 OID 118079)
+-- TOC entry 259 (class 1255 OID 118079)
 -- Name: fn_getacttypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1265,7 +1265,7 @@ $$;
 ALTER FUNCTION framework.fn_getacttypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 296 (class 1255 OID 118080)
+-- TOC entry 260 (class 1255 OID 118080)
 -- Name: fn_getfunctions(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1302,7 +1302,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 297 (class 1255 OID 118081)
+-- TOC entry 261 (class 1255 OID 118081)
 -- Name: fn_getselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1343,7 +1343,7 @@ $$;
 ALTER FUNCTION framework.fn_getselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 282 (class 1255 OID 118082)
+-- TOC entry 246 (class 1255 OID 118082)
 -- Name: fn_getusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1369,7 +1369,7 @@ $$;
 ALTER FUNCTION framework.fn_getusersettings(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 298 (class 1255 OID 118083)
+-- TOC entry 262 (class 1255 OID 118083)
 -- Name: fn_htmldatatype(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1421,7 +1421,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
--- TOC entry 299 (class 1255 OID 118084)
+-- TOC entry 263 (class 1255 OID 118084)
 -- Name: fn_logout(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1443,7 +1443,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 300 (class 1255 OID 118085)
+-- TOC entry 264 (class 1255 OID 118085)
 -- Name: fn_mainmenu(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1493,7 +1493,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 301 (class 1255 OID 118086)
+-- TOC entry 265 (class 1255 OID 118086)
 -- Name: fn_mainmenu_recurs(json, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1532,7 +1532,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu_recurs(_roles json, _parentid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 302 (class 1255 OID 118087)
+-- TOC entry 266 (class 1255 OID 118087)
 -- Name: fn_mainmenusigma(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1618,7 +1618,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 303 (class 1255 OID 118088)
+-- TOC entry 267 (class 1255 OID 118088)
 -- Name: fn_menu_recurs(json, integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1658,7 +1658,7 @@ $$;
 ALTER FUNCTION framework.fn_menu_recurs(_roles json, _parentid integer, menu_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 304 (class 1255 OID 118089)
+-- TOC entry 268 (class 1255 OID 118089)
 -- Name: fn_menus(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1754,7 +1754,7 @@ $$;
 ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 305 (class 1255 OID 118090)
+-- TOC entry 269 (class 1255 OID 118090)
 -- Name: fn_notif_setsended(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1777,7 +1777,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 290 (class 1255 OID 118091)
+-- TOC entry 254 (class 1255 OID 118091)
 -- Name: fn_paramtypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1805,7 +1805,7 @@ $$;
 ALTER FUNCTION framework.fn_paramtypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 306 (class 1255 OID 118092)
+-- TOC entry 270 (class 1255 OID 118092)
 -- Name: fn_refreshconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1881,7 +1881,7 @@ $$;
 ALTER FUNCTION framework.fn_refreshconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 307 (class 1255 OID 118093)
+-- TOC entry 271 (class 1255 OID 118093)
 -- Name: fn_roles_getall(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1907,7 +1907,7 @@ $$;
 ALTER FUNCTION framework.fn_roles_getall(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 308 (class 1255 OID 118094)
+-- TOC entry 272 (class 1255 OID 118094)
 -- Name: fn_savestate(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2267,7 +2267,7 @@ ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO po
 
 --
 -- TOC entry 2570 (class 0 OID 0)
--- Dependencies: 308
+-- Dependencies: 272
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2275,7 +2275,7 @@ COMMENT ON FUNCTION fn_savestate(injson json, OUT outjson json) IS 'save all for
 
 
 --
--- TOC entry 309 (class 1255 OID 118096)
+-- TOC entry 273 (class 1255 OID 118096)
 -- Name: fn_saveusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2301,7 +2301,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
--- TOC entry 310 (class 1255 OID 118097)
+-- TOC entry 274 (class 1255 OID 118097)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2694,7 +2694,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 311 (class 1255 OID 118099)
+-- TOC entry 275 (class 1255 OID 118099)
 -- Name: fn_sess(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2741,7 +2741,7 @@ $$;
 ALTER FUNCTION framework.fn_sess(_login character varying, pass character varying, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 312 (class 1255 OID 118100)
+-- TOC entry 276 (class 1255 OID 118100)
 -- Name: fn_tabcolumns(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2770,7 +2770,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 313 (class 1255 OID 118101)
+-- TOC entry 277 (class 1255 OID 118101)
 -- Name: fn_trees_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2848,7 +2848,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 314 (class 1255 OID 118102)
+-- TOC entry 278 (class 1255 OID 118102)
 -- Name: fn_userjson(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2886,7 +2886,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 315 (class 1255 OID 118103)
+-- TOC entry 279 (class 1255 OID 118103)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2911,7 +2911,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 316 (class 1255 OID 118104)
+-- TOC entry 280 (class 1255 OID 118104)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2964,7 +2964,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 317 (class 1255 OID 118105)
+-- TOC entry 281 (class 1255 OID 118105)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3018,7 +3018,7 @@ $$;
 ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json) OWNER TO postgres;
 
 --
--- TOC entry 318 (class 1255 OID 118106)
+-- TOC entry 282 (class 1255 OID 118106)
 -- Name: fn_view_setKeys(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3085,7 +3085,7 @@ $$;
 ALTER FUNCTION framework."fn_view_setKeys"() OWNER TO postgres;
 
 --
--- TOC entry 319 (class 1255 OID 118107)
+-- TOC entry 283 (class 1255 OID 118107)
 -- Name: fn_view_title_link(integer, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3109,7 +3109,7 @@ $$;
 ALTER FUNCTION framework.fn_view_title_link(viewid integer, title character varying, OUT lnk json) OWNER TO postgres;
 
 --
--- TOC entry 320 (class 1255 OID 118108)
+-- TOC entry 284 (class 1255 OID 118108)
 -- Name: fn_viewnotif_get(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3158,7 +3158,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 321 (class 1255 OID 118109)
+-- TOC entry 285 (class 1255 OID 118109)
 -- Name: fn_viewsave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3391,7 +3391,7 @@ $$;
 ALTER FUNCTION framework.fn_viewsave(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 322 (class 1255 OID 118110)
+-- TOC entry 286 (class 1255 OID 118110)
 -- Name: get_colcongif(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3440,7 +3440,7 @@ $$;
 ALTER FUNCTION framework.get_colcongif(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 323 (class 1255 OID 118111)
+-- TOC entry 287 (class 1255 OID 118111)
 -- Name: tr_mainmenu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3472,7 +3472,7 @@ $$;
 ALTER FUNCTION framework.tr_mainmenu_tr() OWNER TO postgres;
 
 --
--- TOC entry 324 (class 1255 OID 118112)
+-- TOC entry 288 (class 1255 OID 118112)
 -- Name: tr_menu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3501,7 +3501,7 @@ $$;
 ALTER FUNCTION framework.tr_menu_tr() OWNER TO postgres;
 
 --
--- TOC entry 325 (class 1255 OID 118113)
+-- TOC entry 289 (class 1255 OID 118113)
 -- Name: tr_menus_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3524,7 +3524,7 @@ $$;
 ALTER FUNCTION framework.tr_menus_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 326 (class 1255 OID 118114)
+-- TOC entry 290 (class 1255 OID 118114)
 -- Name: tr_trees_add_org(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3552,7 +3552,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_add_org() OWNER TO postgres;
 
 --
--- TOC entry 327 (class 1255 OID 118115)
+-- TOC entry 291 (class 1255 OID 118115)
 -- Name: tr_trees_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3573,7 +3573,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 328 (class 1255 OID 118116)
+-- TOC entry 292 (class 1255 OID 118116)
 -- Name: tr_treesbranch_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3602,7 +3602,7 @@ $$;
 ALTER FUNCTION framework.tr_treesbranch_check() OWNER TO postgres;
 
 --
--- TOC entry 329 (class 1255 OID 118117)
+-- TOC entry 293 (class 1255 OID 118117)
 -- Name: tr_user_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3685,7 +3685,7 @@ $$;
 ALTER FUNCTION framework.tr_user_check() OWNER TO postgres;
 
 --
--- TOC entry 330 (class 1255 OID 118118)
+-- TOC entry 294 (class 1255 OID 118118)
 -- Name: tr_view_tr_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3873,7 +3873,7 @@ ALTER FUNCTION framework.tr_view_tr_check() OWNER TO postgres;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 331 (class 1255 OID 118119)
+-- TOC entry 295 (class 1255 OID 118119)
 -- Name: isnumeric(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3893,7 +3893,7 @@ $_$;
 ALTER FUNCTION public.isnumeric(text) OWNER TO postgres;
 
 --
--- TOC entry 332 (class 1255 OID 118120)
+-- TOC entry 296 (class 1255 OID 118120)
 -- Name: prettydate(date); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3909,7 +3909,7 @@ $$;
 ALTER FUNCTION public.prettydate(d date, OUT "do" character varying) OWNER TO postgres;
 
 --
--- TOC entry 333 (class 1255 OID 118121)
+-- TOC entry 297 (class 1255 OID 118121)
 -- Name: raiserror(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3941,9 +3941,14 @@ CREATE FUNCTION fn_select_api(injson json, OUT outjson json) RETURNS json
 */
 DECLARE 
 	_substr varchar(150);
+    _data json; -- from data  
+    _inputs json; -- query params
 
 BEGIN
 	_substr = injson->>'substr';
+    _data = injson->'data';
+    _inputs = injson->'inputs';
+    
     
     _substr = concat('%',lower(_substr),'%');
 
@@ -3967,7 +3972,7 @@ $$;
 ALTER FUNCTION test.fn_select_api(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 334 (class 1255 OID 118122)
+-- TOC entry 298 (class 1255 OID 118122)
 -- Name: fn_setParamsKey(json, jsonb); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -3998,7 +4003,7 @@ $$;
 ALTER FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb) OWNER TO postgres;
 
 --
--- TOC entry 335 (class 1255 OID 118123)
+-- TOC entry 299 (class 1255 OID 118123)
 -- Name: tr_major_table_tr(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -6157,8 +6162,22 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 801	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":null,"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":false,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":null,"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-14 14:58:05.940825	\N	1
 808	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":null,"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[2],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-14 17:56:52.90775	\N	1
 809	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[2],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[2],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-14 17:57:17.01203	\N	1
+816	test.major_table	5	2	{"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}]}	{"image":"[{\\"src\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"uri\\": \\"/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"\\", \\"height\\": \\"1\\", \\"vwidth\\": null, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": null, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": null, \\"thumbnailHeight\\": 1}]"}	2019-10-15 13:30:19.819739	image	1
+817	test.major_table	5	2	{"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "1", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": 1}]}	{"image":"[{\\"src\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"uri\\": \\"/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"\\", \\"height\\": \\"10\\", \\"vwidth\\": 0, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 0, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": null, \\"thumbnailHeight\\": 10}]"}	2019-10-15 13:30:19.998181	image	1
+818	test.major_table	5	2	{"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "10", "vwidth": 0, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 0, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": 10}]}	{"image":"[{\\"src\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"uri\\": \\"/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"\\", \\"height\\": \\"100\\", \\"vwidth\\": 0, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 0, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": null, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:20.135553	image	1
+825	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "height": "100", "vwidth": 296, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": -752, "scaletwidth": 1800, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"1\\", \\"height\\": \\"100\\", \\"vwidth\\": 180, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 180, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 1, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:26.450582	images	1
+826	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "1", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 1, "thumbnailHeight": 100}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"10\\", \\"height\\": \\"100\\", \\"vwidth\\": 1, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 1, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 10, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:26.618403	images	1
 813	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 2],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-14 17:58:17.75813	\N	1
 815	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-14 17:58:37.339713	\N	1
+819	test.major_table	5	2	{"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "100", "vwidth": 0, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 0, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": 100}]}	{"image":"[{\\"src\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"uri\\": \\"/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"1\\", \\"height\\": \\"100\\", \\"vwidth\\": 0, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 0, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 1, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:21.997399	image	1
+820	test.major_table	5	2	{"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "1", "height": "100", "vwidth": 0, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 0, "content_type": "image/jpeg", "thumbnailWidth": 1, "thumbnailHeight": 100}]}	{"image":"[{\\"src\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"uri\\": \\"/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"10\\", \\"height\\": \\"100\\", \\"vwidth\\": 1, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 1, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 10, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:22.220065	image	1
+821	test.major_table	5	2	{"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "10", "height": "100", "vwidth": 1, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 1, "content_type": "image/jpeg", "thumbnailWidth": 10, "thumbnailHeight": 100}]}	{"image":"[{\\"src\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"uri\\": \\"/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"100\\", \\"height\\": \\"100\\", \\"vwidth\\": 18, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 18, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 100, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:22.389562	image	1
+822	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"height\\": \\"1\\", \\"vwidth\\": 180, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 180, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 100, \\"thumbnailHeight\\": 1}]"}	2019-10-15 13:30:24.499978	images	1
+823	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "height": "1", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 1}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"height\\": \\"10\\", \\"vwidth\\": 296, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": -8852, \\"scaletwidth\\": 18000, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 100, \\"thumbnailHeight\\": 10}]"}	2019-10-15 13:30:24.693095	images	1
+824	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "height": "10", "vwidth": 296, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": -8852, "scaletwidth": 18000, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 10}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"height\\": \\"100\\", \\"vwidth\\": 296, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": -752, \\"scaletwidth\\": 1800, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 100, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:24.855687	images	1
+827	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "10", "height": "100", "vwidth": 1, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 1, "content_type": "image/jpeg", "thumbnailWidth": 10, "thumbnailHeight": 100}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"100\\", \\"height\\": \\"100\\", \\"vwidth\\": 18, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 18, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 100, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:26.778705	images	1
+828	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 18, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 18, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 18, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 18, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 18, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 18, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-15 13:30:28.756706	\N	1
+829	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1, 2, 3],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-15 14:35:50.633987	\N	1
 \.
 
 
@@ -6168,7 +6187,7 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 815, true);
+SELECT pg_catalog.setval('logtable_id_seq', 829, true);
 
 
 --
@@ -6667,7 +6686,7 @@ COPY major_table (id, text, data, "check", "time", password, color, multiselect,
 2	12345	2019-09-22	t	12:00:00	cf605bb477c1500fa2afb6486eb52e35a277431ddd19d504b505fb93	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	1	#4025c4	\N	\N	5767cf	\N	\N	\N	\N	\N	\N	\N	\N	\N
 1	12345	2019-09-12	\N	00:00:00	\N	\N	\N	\N	\N	[]	\N	\N	\N	123	\N	<p>123</p>	#923f3f	\N	\N	b8b4ed	\N	\N	123	\N	\N	\N	\N	\N	\N
 4	sdasd	2019-09-12	\N	04:30:00	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	\N	\N	[]	\N	[]	[]	\N	\N	4	\N	<p><a href="mmm.ru" target="_blank">mnxc,mznvc</a></p>	#655a5a	\N	\N	5e495d	1	xcxcvxc	n c,mn ,	[]	\N	\N	\N	0205-09-25 02:29:21	\N
-5	111	2019-10-05	t	12:10:00	\N	#3fa698	[1, 2, 3]	[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	1	[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "", "height": "", "vwidth": null, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": null, "content_type": "image/jpeg", "thumbnailWidth": null, "thumbnailHeight": null}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	111	11	{"title" : "111", "link" : "/view/11"}	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>	#3fa698	[1, 2]	[1, 3]	3fa698	1	xcxcvxc	kuku	[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	2	3	[1]	2020-11-10 00:00:00	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>
+5	111	2019-10-05	t	12:10:00	\N	#3fa698	[1, 2, 3]	[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	1	[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	111	11	{"title" : "111", "link" : "/view/11"}	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>	#3fa698	[1, 2]	[1, 3]	3fa698	1	xcxcvxc	kuku	[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	2	3	[1, 2, 3]	2020-11-10 00:00:00	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>
 \.
 
 
@@ -7225,7 +7244,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-10-14 18:00:55
+-- Completed on 2019-10-15 19:41:28
 
 --
 -- PostgreSQL database dump complete
