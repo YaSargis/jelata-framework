@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2019-10-15 19:41:21
+-- Started on 2019-10-16 17:01:37
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -44,7 +44,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2568 (class 0 OID 0)
+-- TOC entry 2569 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -53,7 +53,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- TOC entry 2 (class 3079 OID 120308)
+-- TOC entry 2 (class 3079 OID 122569)
 -- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -61,7 +61,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 2569 (class 0 OID 0)
+-- TOC entry 2570 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -972,7 +972,7 @@ $$;
 ALTER FUNCTION framework.fn_formparams(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json) OWNER TO postgres;
 
 --
--- TOC entry 337 (class 1255 OID 118077)
+-- TOC entry 338 (class 1255 OID 118077)
 -- Name: fn_formselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2266,7 +2266,7 @@ $_$;
 ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 2570 (class 0 OID 0)
+-- TOC entry 2571 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3927,7 +3927,53 @@ ALTER FUNCTION public.raiserror(_hint character varying) OWNER TO postgres;
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 336 (class 1255 OID 118676)
+-- TOC entry 301 (class 1255 OID 122558)
+-- Name: fn_getmethodtest_setcolorblack(json); Type: FUNCTION; Schema: test; Owner: postgres
+--
+
+CREATE FUNCTION fn_getmethodtest_setcolorblack(injson json) RETURNS void
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+	_id int;
+BEGIN
+	/*
+      TEST GET API METHOD 
+      CHANGE test.major_table
+      colorpicker COLOR    
+    */
+	
+	_id = injson->>'id';
+    
+    IF _id is null THEN
+    	PERFORM raiserror('id is null');
+    END IF;
+    
+    UPDATE test.major_table
+    SET colorpicker = 'red'
+    WHERE id = _id;
+
+
+
+END;
+$$;
+
+
+ALTER FUNCTION test.fn_getmethodtest_setcolorblack(injson json) OWNER TO postgres;
+
+--
+-- TOC entry 2572 (class 0 OID 0)
+-- Dependencies: 301
+-- Name: FUNCTION fn_getmethodtest_setcolorblack(injson json); Type: COMMENT; Schema: test; Owner: postgres
+--
+
+COMMENT ON FUNCTION fn_getmethodtest_setcolorblack(injson json) IS 'TEST GET API METHOD 
+CHANGE test.major_table
+colorpicker COLOR';
+
+
+--
+-- TOC entry 300 (class 1255 OID 118676)
 -- Name: fn_select_api(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -4013,8 +4059,8 @@ CREATE FUNCTION tr_major_table_tr() RETURNS trigger
 BEGIN
 
 	NEW.gallery = NEW.images;
-    NEW.color = concat('#',NEW.colorpicker);
-    NEW.colorrow = concat('#',NEW.colorpicker);
+    NEW.color = concat(NEW.colorpicker);
+    NEW.colorrow = concat(NEW.colorpicker);
     NEW.link = json_build_object('title', NEW.text, 'link', concat('/view/',NEW.number));
     NEW.label = NEW.text;
     NEW.html = NEW.texteditor;
@@ -4061,7 +4107,7 @@ CREATE TABLE apimethods (
 ALTER TABLE apimethods OWNER TO postgres;
 
 --
--- TOC entry 2571 (class 0 OID 0)
+-- TOC entry 2573 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: TABLE apimethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4115,7 +4161,7 @@ CREATE SEQUENCE columntypes_id_seq1
 ALTER TABLE columntypes_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 2572 (class 0 OID 0)
+-- TOC entry 2574 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: columntypes_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4253,7 +4299,7 @@ CREATE SEQUENCE mainmenu_id_seq
 ALTER TABLE mainmenu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2573 (class 0 OID 0)
+-- TOC entry 2575 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: mainmenu_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4292,7 +4338,7 @@ CREATE SEQUENCE menus_id_seq
 ALTER TABLE menus_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2574 (class 0 OID 0)
+-- TOC entry 2576 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: menus_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4329,7 +4375,7 @@ CREATE SEQUENCE menutypes_id_seq
 ALTER TABLE menutypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2575 (class 0 OID 0)
+-- TOC entry 2577 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: menutypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4391,7 +4437,7 @@ CREATE TABLE orgs (
 ALTER TABLE orgs OWNER TO postgres;
 
 --
--- TOC entry 2576 (class 0 OID 0)
+-- TOC entry 2578 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.orgname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4400,7 +4446,7 @@ COMMENT ON COLUMN orgs.orgname IS 'Наименование';
 
 
 --
--- TOC entry 2577 (class 0 OID 0)
+-- TOC entry 2579 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.ogrn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4409,7 +4455,7 @@ COMMENT ON COLUMN orgs.ogrn IS 'ОГРН';
 
 
 --
--- TOC entry 2578 (class 0 OID 0)
+-- TOC entry 2580 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.address_f; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4418,7 +4464,7 @@ COMMENT ON COLUMN orgs.address_f IS 'Фактический адрес';
 
 
 --
--- TOC entry 2579 (class 0 OID 0)
+-- TOC entry 2581 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.address_j; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4427,7 +4473,7 @@ COMMENT ON COLUMN orgs.address_j IS 'Юридический адрес';
 
 
 --
--- TOC entry 2580 (class 0 OID 0)
+-- TOC entry 2582 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.inn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4436,7 +4482,7 @@ COMMENT ON COLUMN orgs.inn IS 'ИНН';
 
 
 --
--- TOC entry 2581 (class 0 OID 0)
+-- TOC entry 2583 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.fio_ruk; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4445,7 +4491,7 @@ COMMENT ON COLUMN orgs.fio_ruk IS 'ФИО руководителя';
 
 
 --
--- TOC entry 2582 (class 0 OID 0)
+-- TOC entry 2584 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.fio_glbuh; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4454,7 +4500,7 @@ COMMENT ON COLUMN orgs.fio_glbuh IS 'ФИО гл. бухгалтера';
 
 
 --
--- TOC entry 2583 (class 0 OID 0)
+-- TOC entry 2585 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4463,7 +4509,7 @@ COMMENT ON COLUMN orgs.parentid IS 'Головная организация';
 
 
 --
--- TOC entry 2584 (class 0 OID 0)
+-- TOC entry 2586 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: COLUMN orgs.shortname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4529,7 +4575,7 @@ CREATE SEQUENCE relfortest_id_seq
 ALTER TABLE relfortest_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2585 (class 0 OID 0)
+-- TOC entry 2587 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: relfortest_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4553,7 +4599,7 @@ CREATE TABLE roles (
 ALTER TABLE roles OWNER TO postgres;
 
 --
--- TOC entry 2586 (class 0 OID 0)
+-- TOC entry 2588 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: COLUMN roles.systema; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4562,7 +4608,7 @@ COMMENT ON COLUMN roles.systema IS 'Система';
 
 
 --
--- TOC entry 2587 (class 0 OID 0)
+-- TOC entry 2589 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: COLUMN roles.hierarchy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4603,7 +4649,7 @@ CREATE TABLE spapi (
 ALTER TABLE spapi OWNER TO postgres;
 
 --
--- TOC entry 2588 (class 0 OID 0)
+-- TOC entry 2590 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN spapi.id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4627,7 +4673,7 @@ CREATE SEQUENCE spapi_id_seq
 ALTER TABLE spapi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2589 (class 0 OID 0)
+-- TOC entry 2591 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: spapi_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4694,7 +4740,7 @@ CREATE SEQUENCE trees_id_seq
 ALTER TABLE trees_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2590 (class 0 OID 0)
+-- TOC entry 2592 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: trees_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4736,7 +4782,7 @@ CREATE SEQUENCE treesacts_id_seq
 ALTER TABLE treesacts_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2591 (class 0 OID 0)
+-- TOC entry 2593 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: treesacts_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4782,7 +4828,7 @@ CREATE SEQUENCE treesbranches_id_seq
 ALTER TABLE treesbranches_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2592 (class 0 OID 0)
+-- TOC entry 2594 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: treesbranches_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4846,7 +4892,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2593 (class 0 OID 0)
+-- TOC entry 2595 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4902,7 +4948,7 @@ CREATE SEQUENCE views_id_seq
 ALTER TABLE views_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2594 (class 0 OID 0)
+-- TOC entry 2596 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: views_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -4933,7 +4979,7 @@ CREATE TABLE viewsnotification (
 ALTER TABLE viewsnotification OWNER TO postgres;
 
 --
--- TOC entry 2595 (class 0 OID 0)
+-- TOC entry 2597 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: TABLE viewsnotification; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4958,7 +5004,7 @@ CREATE SEQUENCE viewsnotification_id_seq
 ALTER TABLE viewsnotification_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2596 (class 0 OID 0)
+-- TOC entry 2598 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: viewsnotification_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -5011,7 +5057,7 @@ CREATE SEQUENCE dictionary_for_select_id_seq
 ALTER TABLE dictionary_for_select_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2597 (class 0 OID 0)
+-- TOC entry 2599 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -5076,7 +5122,7 @@ CREATE SEQUENCE major_table_id_seq
 ALTER TABLE major_table_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2598 (class 0 OID 0)
+-- TOC entry 2600 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: major_table_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -5087,7 +5133,7 @@ ALTER SEQUENCE major_table_id_seq OWNED BY major_table.id;
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2245 (class 2604 OID 118355)
+-- TOC entry 2246 (class 2604 OID 118355)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5095,7 +5141,7 @@ ALTER TABLE ONLY columntypes ALTER COLUMN id SET DEFAULT nextval('columntypes_id
 
 
 --
--- TOC entry 2256 (class 2604 OID 118356)
+-- TOC entry 2257 (class 2604 OID 118356)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5103,7 +5149,7 @@ ALTER TABLE ONLY mainmenu ALTER COLUMN id SET DEFAULT nextval('mainmenu_id_seq':
 
 
 --
--- TOC entry 2258 (class 2604 OID 118357)
+-- TOC entry 2259 (class 2604 OID 118357)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5111,7 +5157,7 @@ ALTER TABLE ONLY menus ALTER COLUMN id SET DEFAULT nextval('menus_id_seq'::regcl
 
 
 --
--- TOC entry 2259 (class 2604 OID 118358)
+-- TOC entry 2260 (class 2604 OID 118358)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5119,7 +5165,7 @@ ALTER TABLE ONLY menutypes ALTER COLUMN id SET DEFAULT nextval('menutypes_id_seq
 
 
 --
--- TOC entry 2266 (class 2604 OID 118359)
+-- TOC entry 2267 (class 2604 OID 118359)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5127,7 +5173,7 @@ ALTER TABLE ONLY relfortest ALTER COLUMN id SET DEFAULT nextval('relfortest_id_s
 
 
 --
--- TOC entry 2271 (class 2604 OID 118360)
+-- TOC entry 2272 (class 2604 OID 118360)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5135,7 +5181,7 @@ ALTER TABLE ONLY spapi ALTER COLUMN id SET DEFAULT nextval('spapi_id_seq'::regcl
 
 
 --
--- TOC entry 2275 (class 2604 OID 118361)
+-- TOC entry 2276 (class 2604 OID 118361)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5143,7 +5189,7 @@ ALTER TABLE ONLY trees ALTER COLUMN id SET DEFAULT nextval('trees_id_seq'::regcl
 
 
 --
--- TOC entry 2277 (class 2604 OID 118362)
+-- TOC entry 2278 (class 2604 OID 118362)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5151,7 +5197,7 @@ ALTER TABLE ONLY treesacts ALTER COLUMN id SET DEFAULT nextval('treesacts_id_seq
 
 
 --
--- TOC entry 2280 (class 2604 OID 118363)
+-- TOC entry 2281 (class 2604 OID 118363)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5159,7 +5205,7 @@ ALTER TABLE ONLY treesbranches ALTER COLUMN id SET DEFAULT nextval('treesbranche
 
 
 --
--- TOC entry 2289 (class 2604 OID 118364)
+-- TOC entry 2290 (class 2604 OID 118364)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5167,7 +5213,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
--- TOC entry 2305 (class 2604 OID 118365)
+-- TOC entry 2306 (class 2604 OID 118365)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5175,7 +5221,7 @@ ALTER TABLE ONLY views ALTER COLUMN id SET DEFAULT nextval('views_id_seq'::regcl
 
 
 --
--- TOC entry 2310 (class 2604 OID 118366)
+-- TOC entry 2311 (class 2604 OID 118366)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -5185,7 +5231,7 @@ ALTER TABLE ONLY viewsnotification ALTER COLUMN id SET DEFAULT nextval('viewsnot
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2311 (class 2604 OID 118367)
+-- TOC entry 2312 (class 2604 OID 118367)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -5193,7 +5239,7 @@ ALTER TABLE ONLY dictionary_for_select ALTER COLUMN id SET DEFAULT nextval('dict
 
 
 --
--- TOC entry 2312 (class 2604 OID 118368)
+-- TOC entry 2313 (class 2604 OID 118368)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -5203,7 +5249,7 @@ ALTER TABLE ONLY major_table ALTER COLUMN id SET DEFAULT nextval('major_table_id
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2514 (class 0 OID 118124)
+-- TOC entry 2515 (class 0 OID 118124)
 -- Dependencies: 184
 -- Data for Name: acttypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5218,7 +5264,7 @@ COPY acttypes (id, actname, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 2515 (class 0 OID 118131)
+-- TOC entry 2516 (class 0 OID 118131)
 -- Dependencies: 185
 -- Data for Name: apimethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5230,7 +5276,7 @@ COPY apimethods (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 2516 (class 0 OID 118135)
+-- TOC entry 2517 (class 0 OID 118135)
 -- Dependencies: 186
 -- Data for Name: columntypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5272,7 +5318,7 @@ COPY columntypes (id, typename, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 2599 (class 0 OID 0)
+-- TOC entry 2601 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: columntypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5281,7 +5327,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 
 
 --
--- TOC entry 2600 (class 0 OID 0)
+-- TOC entry 2602 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5290,7 +5336,7 @@ SELECT pg_catalog.setval('columntypes_id_seq1', 1, true);
 
 
 --
--- TOC entry 2519 (class 0 OID 118146)
+-- TOC entry 2520 (class 0 OID 118146)
 -- Dependencies: 189
 -- Data for Name: compos; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5302,7 +5348,7 @@ COPY compos (id, title, path, config, created) FROM stdin;
 
 
 --
--- TOC entry 2601 (class 0 OID 0)
+-- TOC entry 2603 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: compos_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -5311,7 +5357,7 @@ SELECT pg_catalog.setval('compos_id_seq', 8, true);
 
 
 --
--- TOC entry 2521 (class 0 OID 118157)
+-- TOC entry 2522 (class 0 OID 118157)
 -- Dependencies: 191
 -- Data for Name: filtertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5328,7 +5374,7 @@ COPY filtertypes (id, ftname) FROM stdin;
 
 
 --
--- TOC entry 2522 (class 0 OID 118160)
+-- TOC entry 2523 (class 0 OID 118160)
 -- Dependencies: 192
 -- Data for Name: functions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -5343,7 +5389,7 @@ COPY functions (id, funcname, functype) FROM stdin;
 
 
 --
--- TOC entry 2523 (class 0 OID 118163)
+-- TOC entry 2524 (class 0 OID 118163)
 -- Dependencies: 193
 -- Data for Name: logtable; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6178,20 +6224,33 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 827	test.major_table	5	2	{"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "10", "height": "100", "vwidth": 1, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 1, "content_type": "image/jpeg", "thumbnailWidth": 10, "thumbnailHeight": 100}]}	{"images":"[{\\"src\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"uri\\": \\"/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"size\\": 23993, \\"width\\": \\"100\\", \\"height\\": \\"100\\", \\"vwidth\\": 18, \\"filename\\": \\"ter.jpg\\", \\"original\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"thumbnail\\": \\"http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg\\", \\"marginLeft\\": 0, \\"scaletwidth\\": 18, \\"content_type\\": \\"image/jpeg\\", \\"thumbnailWidth\\": 100, \\"thumbnailHeight\\": 100}]"}	2019-10-15 13:30:26.778705	images	1
 828	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 18, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 18, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 18, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 18, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 18, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 18, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-15 13:30:28.756706	\N	1
 829	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"#3fa698","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"#3fa698","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"3fa698","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1, 2, 3],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-15 14:35:50.633987	\N	1
+830	framework.spapi	41	1	\N	{"procedurename":"test.fn_getmethodtest_setcolorblack"}	2019-10-16 14:27:52.008995	procedurename	1
+831	framework.spapi	41	2	{"methodname":null}	{"methodname":"gettest"}	2019-10-16 14:27:56.093338	methodname	1
+832	framework.spapi	41	2	{"methodtype":1}	{"methodtype":"1"}	2019-10-16 14:27:56.708766	methodtype	1
+833	framework.spapi	41	2	{"roles":null}	{"roles":"[null]"}	2019-10-16 14:27:57.643617	roles	1
+834	framework.views	5053	2	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	2019-10-16 14:28:58.886318	\N	1
+835	framework.views	5053	2	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	2019-10-16 14:32:10.810918	\N	1
+836	framework.views	5053	2	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "o", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	2019-10-16 14:53:37.224142	\N	1
+837	framework.spapi	41	2	{"roles":[null]}	{"roles":"[]"}	2019-10-16 15:54:01.127012	roles	1
+838	framework.spapi	41	2	{"roles":[]}	{"roles":"[null]"}	2019-10-16 15:54:02.335267	roles	1
+839	framework.spapi	41	2	{"roles":[null]}	{"roles":"[null]"}	2019-10-16 15:54:05.454542	roles	1
+840	framework.spapi	41	2	{"roles":[null]}	{"roles":"[]"}	2019-10-16 15:54:11.047672	roles	1
+841	test.major_table	5	2	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"red","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"red","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"red","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1, 2, 3],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	{"id":5,"text":"111","data":"2019-10-05","check":true,"time":"12:10:00","password":null,"color":"520f52","multiselect":[1, 2, 3],"file":[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead":1,"image":[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"images":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"gallery":[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}],"label":"111","number":11,"link":{"title" : "111", "link" : "/view/11"},"texteditor":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>","colorrow":"520f52","multitypehead_api":[1, 2],"multi_select_api":[1, 3],"colorpicker":"520f52","select":1,"autocomplete":"xcxcvxc","textarea":"kuku","files":[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}],"typehead_api":2,"select_api":3,"multitypehead":[1, 2, 3],"datetime":"2020-11-10T00:00:00","html":"<p><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);\\"><em><u>blablbla</u></em></strong><strong style=\\"color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);\\"><em><u><span class=\\"ql-cursor\\">﻿</span></u></em></strong></p>"}	2019-10-16 15:55:16.252712	\N	1
+842	framework.views	5053	2	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "o", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	{"id":5053,"title":"Edit Test","descr":"Test edit form","tablename":"test.major_table","viewtype":"form not mutable","pagination":false,"config":[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}],"path":"test_edit","created":"2019-10-13T18:23:51.793956","groupby":[],"filters":[],"acts":[{"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "o", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}],"roles":[{"label": "developer", "value": 0}],"classname":null,"orderby":false,"ispagesize":true,"pagecount":true,"foundcount":true,"subscrible":false,"checker":false,"api":{}}	2019-10-16 15:55:35.427858	\N	1
 \.
 
 
 --
--- TOC entry 2602 (class 0 OID 0)
+-- TOC entry 2604 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 829, true);
+SELECT pg_catalog.setval('logtable_id_seq', 842, true);
 
 
 --
--- TOC entry 2525 (class 0 OID 118173)
+-- TOC entry 2526 (class 0 OID 118173)
 -- Dependencies: 195
 -- Data for Name: mainmenu; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6223,7 +6282,7 @@ COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, 
 
 
 --
--- TOC entry 2603 (class 0 OID 0)
+-- TOC entry 2605 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: mainmenu_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6232,7 +6291,7 @@ SELECT pg_catalog.setval('mainmenu_id_seq', 78, true);
 
 
 --
--- TOC entry 2527 (class 0 OID 118186)
+-- TOC entry 2528 (class 0 OID 118186)
 -- Dependencies: 197
 -- Data for Name: menus; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6243,7 +6302,7 @@ COPY menus (id, menutype, menutitle, ismainmenu) FROM stdin;
 
 
 --
--- TOC entry 2604 (class 0 OID 0)
+-- TOC entry 2606 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: menus_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6252,7 +6311,7 @@ SELECT pg_catalog.setval('menus_id_seq', 1, true);
 
 
 --
--- TOC entry 2529 (class 0 OID 118192)
+-- TOC entry 2530 (class 0 OID 118192)
 -- Dependencies: 199
 -- Data for Name: menutypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6265,7 +6324,7 @@ COPY menutypes (id, mtypename) FROM stdin;
 
 
 --
--- TOC entry 2605 (class 0 OID 0)
+-- TOC entry 2607 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: menutypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6274,7 +6333,7 @@ SELECT pg_catalog.setval('menutypes_id_seq', 3, true);
 
 
 --
--- TOC entry 2531 (class 0 OID 118200)
+-- TOC entry 2532 (class 0 OID 118200)
 -- Dependencies: 201
 -- Data for Name: methodtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6288,7 +6347,7 @@ COPY methodtypes (id, methotypename) FROM stdin;
 
 
 --
--- TOC entry 2532 (class 0 OID 118203)
+-- TOC entry 2533 (class 0 OID 118203)
 -- Dependencies: 202
 -- Data for Name: opertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6301,7 +6360,7 @@ COPY opertypes (id, typename, alias) FROM stdin;
 
 
 --
--- TOC entry 2533 (class 0 OID 118206)
+-- TOC entry 2534 (class 0 OID 118206)
 -- Dependencies: 203
 -- Data for Name: orgs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6313,7 +6372,7 @@ COPY orgs (id, orgname, orgtype, ogrn, address_f, address_j, inn, fio_ruk, fio_g
 
 
 --
--- TOC entry 2606 (class 0 OID 0)
+-- TOC entry 2608 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: orgs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6322,7 +6381,7 @@ SELECT pg_catalog.setval('orgs_id_seq', 3, true);
 
 
 --
--- TOC entry 2535 (class 0 OID 118219)
+-- TOC entry 2536 (class 0 OID 118219)
 -- Dependencies: 205
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6334,7 +6393,7 @@ COPY paramtypes (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 2536 (class 0 OID 118223)
+-- TOC entry 2537 (class 0 OID 118223)
 -- Dependencies: 206
 -- Data for Name: relfortest; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6345,7 +6404,7 @@ COPY relfortest (id, testid) FROM stdin;
 
 
 --
--- TOC entry 2607 (class 0 OID 0)
+-- TOC entry 2609 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: relfortest_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6354,7 +6413,7 @@ SELECT pg_catalog.setval('relfortest_id_seq', 1, true);
 
 
 --
--- TOC entry 2538 (class 0 OID 118228)
+-- TOC entry 2539 (class 0 OID 118228)
 -- Dependencies: 208
 -- Data for Name: roles; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6365,7 +6424,7 @@ COPY roles (id, rolename, systema, hierarchy) FROM stdin;
 
 
 --
--- TOC entry 2539 (class 0 OID 118232)
+-- TOC entry 2540 (class 0 OID 118232)
 -- Dependencies: 209
 -- Data for Name: sess; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6398,11 +6457,12 @@ a9b57fc6-f678-c50f-06b5-906f967eb68f	1	2019-10-12 13:27:14.542679	\N
 b602099d-2ea4-b2da-5e69-af04fe1d3b71	1	2019-10-12 21:18:37.153095	\N
 c1252cfb-7c1a-587c-42b2-3fd8563047a0	1	2019-10-12 23:12:58.03639	\N
 0f034964-85ad-edfd-5411-3509ee76ffa8	1	2019-10-13 18:05:46.523484	\N
+850300a0-9a82-be52-2955-c93dd0d9b8aa	1	2019-10-16 13:31:57.543244	\N
 \.
 
 
 --
--- TOC entry 2540 (class 0 OID 118236)
+-- TOC entry 2541 (class 0 OID 118236)
 -- Dependencies: 210
 -- Data for Name: spapi; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6444,20 +6504,21 @@ COPY spapi (id, methodname, procedurename, created, methodtype, roles) FROM stdi
 39	allroles	framework.fn_roles_getall	2019-09-22 13:51:55	1	[0]
 40	select_api_test	test.fn_select_api	2019-10-14 09:37:37.771814	2	[]
 10	select	framework.fn_formselect	2019-02-21 16:02:11	2	\N
+41	gettest	test.fn_getmethodtest_setcolorblack	2019-10-16 14:27:52.008995	1	[]
 \.
 
 
 --
--- TOC entry 2608 (class 0 OID 0)
+-- TOC entry 2610 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: spapi_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('spapi_id_seq', 40, true);
+SELECT pg_catalog.setval('spapi_id_seq', 41, true);
 
 
 --
--- TOC entry 2542 (class 0 OID 118246)
+-- TOC entry 2543 (class 0 OID 118246)
 -- Dependencies: 212
 -- Data for Name: test; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6480,7 +6541,7 @@ de63ca93-340a-315d-cccf-ef648e1b8b09	1	хахахах	4	[{"filename": "resOWN.do
 
 
 --
--- TOC entry 2543 (class 0 OID 118252)
+-- TOC entry 2544 (class 0 OID 118252)
 -- Dependencies: 213
 -- Data for Name: trees; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6491,7 +6552,7 @@ COPY trees (id, title, url, descr, roles, created, userid, orgid, acts) FROM std
 
 
 --
--- TOC entry 2609 (class 0 OID 0)
+-- TOC entry 2611 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: trees_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6500,7 +6561,7 @@ SELECT pg_catalog.setval('trees_id_seq', 22, true);
 
 
 --
--- TOC entry 2545 (class 0 OID 118263)
+-- TOC entry 2546 (class 0 OID 118263)
 -- Dependencies: 215
 -- Data for Name: treesacts; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6510,7 +6571,7 @@ COPY treesacts (id, treesid, title, icon, classname, act, created) FROM stdin;
 
 
 --
--- TOC entry 2610 (class 0 OID 0)
+-- TOC entry 2612 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: treesacts_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6519,7 +6580,7 @@ SELECT pg_catalog.setval('treesacts_id_seq', 15, true);
 
 
 --
--- TOC entry 2547 (class 0 OID 118272)
+-- TOC entry 2548 (class 0 OID 118272)
 -- Dependencies: 217
 -- Data for Name: treesbranches; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6530,7 +6591,7 @@ COPY treesbranches (id, treesid, title, parentid, icon, created, treeviewtype, v
 
 
 --
--- TOC entry 2611 (class 0 OID 0)
+-- TOC entry 2613 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: treesbranches_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6539,7 +6600,7 @@ SELECT pg_catalog.setval('treesbranches_id_seq', 222, true);
 
 
 --
--- TOC entry 2549 (class 0 OID 118282)
+-- TOC entry 2550 (class 0 OID 118282)
 -- Dependencies: 219
 -- Data for Name: treeviewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6551,7 +6612,7 @@ COPY treeviewtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 2550 (class 0 OID 118285)
+-- TOC entry 2551 (class 0 OID 118285)
 -- Dependencies: 220
 -- Data for Name: users; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6562,7 +6623,7 @@ COPY users (id, fam, im, ot, login, password, isactive, created, roles, roleid, 
 
 
 --
--- TOC entry 2612 (class 0 OID 0)
+-- TOC entry 2614 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6571,7 +6632,7 @@ SELECT pg_catalog.setval('users_id_seq', 2, true);
 
 
 --
--- TOC entry 2552 (class 0 OID 118301)
+-- TOC entry 2553 (class 0 OID 118301)
 -- Dependencies: 222
 -- Data for Name: views; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6600,12 +6661,12 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 26	trees	trees components	framework.trees	table	t	[{"t": 1, "col": "id", "key": "id_4725c", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "title", "key": "title_f9eb1", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "url", "key": "url_1baec", "join": false, "type": "text", "roles": "[]", "title": "url", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "descr", "key": "descr_5ba2c", "join": false, "type": "text", "roles": "[]", "title": "descr", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "roles", "key": "roles_027bc", "join": false, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "created", "key": "created_071e8", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [], "depencycol": null, "relationcolums": "[]"}]	trees	2019-03-14 11:21:06.460061	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "url", "value": "url"}, {"t": 1, "label": "descr", "value": "descr"}], "classname": null}]	[{"act": "/getone/treeform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "classname": "btn btn", "parametrs": [{"paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "isforevery": false}, {"act": "/getone/treeform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}, {"act": "/composition/branches", "icon": "fa fa-code-fork", "type": "Link", "roles": [], "title": "branches", "classname": null, "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "isforevery": true}, {"act": "/composition/treesacts", "icon": "fa fa-asterisk", "type": "Link", "roles": [], "title": "actions", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "treesid", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}, {"paramconst": "0", "paramtitle": "bid", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete", "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_4725c", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": true}]	[{"label": "developer", "value": 0}]	\N	t	t	t	t	f	f	{}
 5048	VIews	Views administration	framework.views	table	f	[{"t": 1, "col": "id", "key": "id_fc1f2", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "orderbydesc": false, "relationcolums": "[]"}, {"t": 2, "col": "title", "key": "title_76a90", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "orderby": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "orderbydesc": false, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "key": "tit_9f5cb", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "key": "tablename_3bb96", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "key": "vtypename_d11aa", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "key": "descr_fbb10", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "key": "path_7ce49", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "key": "viewtype_96c4f", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}]	views	2019-09-22 11:39:01.726301	[]	[{"type": "typehead", "roles": [{"label": "developer", "value": 0}], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true, "act_visible_condition": [{"col": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}, "value": "0", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "cope", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	t	f	f	f	f	f	{}
 5044	Test	Test	test.major_table	table	t	[{"t": 1, "col": "id", "key": "id_3a31e", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_84820", "join": false, "type": "text", "roles": "[]", "title": "text title long text for check long title here must be a very long text for check title ", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_9ef12", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_c0adb", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_8c9c9", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_3cd1a", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_70c0b", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "multiselect", "key": "multiselect_3da94", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 9, "col": "file", "key": "file_5d459", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "typehead", "key": "typehead_e6558", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_a483e", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_4e4d0", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_1cbc1", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_b8274", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_5a12a", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_e7018", "join": false, "type": "label", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_377da", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_b394b", "join": false, "type": "colorrow", "roles": "[]", "title": "color row", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_c7189", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_2c6b3", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_d4763", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_9bde0", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_b7429", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_68ff8", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_6730b", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "select_api", "key": "select_api_762ba", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_0a55e", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 29, "col": "datetime", "key": "datetime_388e5", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "select", "key": "select_b1405", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}, {"label": "id", "title": "id_", "value": "id"}]}, {"t": 22, "col": "dname", "key": "dname_c5340", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "dname", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}]	test	2019-09-18 13:31:50.251692	[]	[{"t": 1, "type": "substr", "roles": [], "table": {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "SUBSTR TEXT", "column": "text", "classname": ""}, {"type": "typehead", "roles": [], "title": "TYPEHEAD TEXT NUMBER COLOR", "column": [{"t": 1, "label": "text", "value": "text"}, {"t": 1, "label": "number", "value": "number"}, {"t": 1, "label": "color", "value": "color"}], "classname": ""}, {"t": 1, "type": "check", "roles": [], "table": {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "check", "column": "check", "classname": ""}, {"t": 1, "type": "period", "roles": [], "table": {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "PERIOD", "column": "data", "classname": ""}, {"t": 1, "type": "select", "roles": [], "table": {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}, "title": "select filter", "column": "select", "classname": ""}, {"t": 1, "type": "multiselect", "roles": [], "table": {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi", "column": "multiselect", "classname": ""}, {"t": 1, "type": "multijson", "roles": [], "table": {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi json", "column": "multitypehead", "classname": ""}]	[{"act": "/getone/test_edit", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_3a31e", "label": "id", "value": "id"}}], "paramtype": "query", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/testform", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[]	\N	t	t	t	t	f	t	{}
-5053	Edit Test	Test edit form	test.major_table	form not mutable	f	[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	test_edit	2019-10-13 18:23:51.793956	[]	[]	[{"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f	{}
+5053	Edit Test	Test edit form	test.major_table	form not mutable	f	[{"t": 1, "col": "id", "key": "id_8ddb9", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_1b65e", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_991fb", "join": false, "type": "number", "chckd": false, "roles": "[]", "title": "number title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_a366d", "join": false, "type": "date", "roles": "[]", "title": "date title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 29, "col": "datetime", "key": "datetime_2a4ce", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_9e903", "join": false, "type": "time", "roles": "[]", "title": "time title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_21497", "join": false, "type": "checkbox", "roles": "[]", "title": "check title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_ba7eb", "join": false, "type": "password", "roles": "[]", "title": "password title visible check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"t": 10, "col": "typehead", "key": "typehead_32a4a", "join": false, "type": "typehead", "label": "typehead || typehead", "roles": "[]", "title": "typehead title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "select_condition": [{"col": {"label": "dname", "value": "dname"}, "const": "T", "value": null, "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}, {"col": {"label": "id", "value": "id"}, "const": "3", "value": null, "operation": {"js": "", "label": "not in", "value": "not in", "python": "in"}}]}, {"t": 22, "col": "select", "key": "select_9c133", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "select title", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "test.dictionary_for_select", "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}]}, {"t": 8, "col": "multiselect", "key": "multiselect_71f34", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "dname", "title": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_2f343", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 27, "col": "select_api", "key": "select_api_a0d95", "join": false, "type": "select_api", "roles": "[]", "title": "select_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_1a8a1", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_990f5", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_dc5d0", "join": false, "type": "multitypehead_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/select_api_test", "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_963d3", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_a992a", "join": false, "type": "link", "chckd": false, "roles": "[]", "title": "link title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_c82e8", "join": false, "type": "label", "roles": "[]", "title": "label title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_185bd", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "html", "key": "html_9f66a", "join": false, "type": "innerHtml", "label": "html || html", "roles": "[]", "title": "html title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 30, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_0425d", "join": false, "type": "textarea", "roles": "[]", "title": "textarea title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_daa19", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_1fd98", "join": false, "type": "color", "roles": "[]", "title": "color title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_27de8", "join": false, "type": "color", "chckd": false, "roles": "[]", "title": "colorrow title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "file", "key": "file_ee82c", "join": false, "type": "file", "roles": "[]", "title": "file title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_c1997", "join": false, "type": "files", "roles": "[]", "title": "files title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 30, "col": "files", "key": "files_d18ec", "join": false, "type": "filelist", "label": "files || files", "roles": "[]", "title": "filelist title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_b7bd1", "join": false, "type": "image", "roles": "[]", "title": "image title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_fda10", "join": false, "type": "images", "roles": "[]", "title": "images title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_39fb0", "join": false, "type": "gallery", "roles": "[]", "title": "gallery title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	test_edit	2019-10-13 18:23:51.793956	[]	[]	[{"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/test", "type": "Link", "title": "go back", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "o", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "isforevery": false}, {"act": "/", "type": "Link", "title": "visible check", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "text_1b65e", "label": "text", "value": "text title"}, "const": null, "value": "1", "operation": {"js": "indexOf", "label": "like", "value": "like", "python": "find"}}]}, {"act": "/api/gettest", "type": "API", "title": "set color red (GET TEST)", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_8ddb9", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}]	[{"label": "developer", "value": 0}]	\N	f	t	t	t	f	f	{}
 \.
 
 
 --
--- TOC entry 2613 (class 0 OID 0)
+-- TOC entry 2615 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: views_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6614,7 +6675,7 @@ SELECT pg_catalog.setval('views_id_seq', 5053, true);
 
 
 --
--- TOC entry 2554 (class 0 OID 118324)
+-- TOC entry 2555 (class 0 OID 118324)
 -- Dependencies: 224
 -- Data for Name: viewsnotification; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6625,7 +6686,7 @@ COPY viewsnotification (id, viewid, col, tableid, notificationtext, foruser, iss
 
 
 --
--- TOC entry 2614 (class 0 OID 0)
+-- TOC entry 2616 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: viewsnotification_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -6634,7 +6695,7 @@ SELECT pg_catalog.setval('viewsnotification_id_seq', 1, true);
 
 
 --
--- TOC entry 2556 (class 0 OID 118336)
+-- TOC entry 2557 (class 0 OID 118336)
 -- Dependencies: 226
 -- Data for Name: viewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -6652,7 +6713,7 @@ COPY viewtypes (id, vtypename, viewlink) FROM stdin;
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2557 (class 0 OID 118342)
+-- TOC entry 2558 (class 0 OID 118342)
 -- Dependencies: 227
 -- Data for Name: dictionary_for_select; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -6667,7 +6728,7 @@ COPY dictionary_for_select (id, dname) FROM stdin;
 
 
 --
--- TOC entry 2615 (class 0 OID 0)
+-- TOC entry 2617 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -6676,7 +6737,7 @@ SELECT pg_catalog.setval('dictionary_for_select_id_seq', 5, true);
 
 
 --
--- TOC entry 2559 (class 0 OID 118347)
+-- TOC entry 2560 (class 0 OID 118347)
 -- Dependencies: 229
 -- Data for Name: major_table; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -6686,12 +6747,12 @@ COPY major_table (id, text, data, "check", "time", password, color, multiselect,
 2	12345	2019-09-22	t	12:00:00	cf605bb477c1500fa2afb6486eb52e35a277431ddd19d504b505fb93	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	1	#4025c4	\N	\N	5767cf	\N	\N	\N	\N	\N	\N	\N	\N	\N
 1	12345	2019-09-12	\N	00:00:00	\N	\N	\N	\N	\N	[]	\N	\N	\N	123	\N	<p>123</p>	#923f3f	\N	\N	b8b4ed	\N	\N	123	\N	\N	\N	\N	\N	\N
 4	sdasd	2019-09-12	\N	04:30:00	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	\N	\N	[]	\N	[]	[]	\N	\N	4	\N	<p><a href="mmm.ru" target="_blank">mnxc,mznvc</a></p>	#655a5a	\N	\N	5e495d	1	xcxcvxc	n c,mn ,	[]	\N	\N	\N	0205-09-25 02:29:21	\N
-5	111	2019-10-05	t	12:10:00	\N	#3fa698	[1, 2, 3]	[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	1	[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	111	11	{"title" : "111", "link" : "/view/11"}	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>	#3fa698	[1, 2]	[1, 3]	3fa698	1	xcxcvxc	kuku	[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	2	3	[1, 2, 3]	2020-11-10 00:00:00	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>
+5	111	2019-10-05	t	12:10:00	\N	520f52	[1, 2, 3]	[{"src": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "uri": "/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "size": 645, "label": "", "filename": "701.xml", "original": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "thumbnail": "http://localhost:8080/files/fc326277-0a82-43f4-9bd0-9d4b666c845e701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	1	[{"src": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "uri": "/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "thumbnail": "http://localhost:8080/files/633c1daf-a8f8-4a1a-8f02-7adcc6deab53ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[{"src": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "uri": "/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "size": 23993, "width": "100", "height": "100", "vwidth": 180, "filename": "ter.jpg", "original": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "thumbnail": "http://localhost:8080/files/847d846a-850d-452b-8963-c8a74169f1c5ter.jpg", "marginLeft": 0, "scaletwidth": 180, "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	111	11	{"title" : "111", "link" : "/view/11"}	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>	520f52	[1, 2]	[1, 3]	520f52	1	xcxcvxc	kuku	[{"src": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "uri": "/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "size": 23993, "filename": "ter.jpg", "original": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "thumbnail": "http://localhost:8080/files/0dc1fbfd-160f-4524-9231-a5e8528b2abfter.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}, {"src": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "uri": "/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "size": 645, "filename": "701.xml", "original": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "thumbnail": "http://localhost:8080/files/d427a6d0-1006-45e5-8213-e7070cb7e466701.xml", "content_type": "text/xml", "thumbnailWidth": 100, "thumbnailHeight": 100}]	2	3	[1, 2, 3]	2020-11-10 00:00:00	<p><strong style="color: rgb(255, 194, 102); background-color: rgb(0, 41, 102);"><em><u>blablbla</u></em></strong><strong style="color: rgb(255, 194, 102); background-color: rgb(178, 178, 0);"><em><u><span class="ql-cursor">﻿</span></u></em></strong></p>
 \.
 
 
 --
--- TOC entry 2616 (class 0 OID 0)
+-- TOC entry 2618 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: major_table_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -6702,7 +6763,7 @@ SELECT pg_catalog.setval('major_table_id_seq', 5, true);
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2314 (class 2606 OID 118505)
+-- TOC entry 2315 (class 2606 OID 118505)
 -- Name: acttypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6711,7 +6772,7 @@ ALTER TABLE ONLY acttypes
 
 
 --
--- TOC entry 2316 (class 2606 OID 118507)
+-- TOC entry 2317 (class 2606 OID 118507)
 -- Name: apimethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6720,7 +6781,7 @@ ALTER TABLE ONLY apimethods
 
 
 --
--- TOC entry 2318 (class 2606 OID 118509)
+-- TOC entry 2319 (class 2606 OID 118509)
 -- Name: columntypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6729,7 +6790,7 @@ ALTER TABLE ONLY columntypes
 
 
 --
--- TOC entry 2320 (class 2606 OID 118511)
+-- TOC entry 2321 (class 2606 OID 118511)
 -- Name: compos_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6738,7 +6799,7 @@ ALTER TABLE ONLY compos
 
 
 --
--- TOC entry 2322 (class 2606 OID 118513)
+-- TOC entry 2323 (class 2606 OID 118513)
 -- Name: filtertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6747,7 +6808,7 @@ ALTER TABLE ONLY filtertypes
 
 
 --
--- TOC entry 2324 (class 2606 OID 118515)
+-- TOC entry 2325 (class 2606 OID 118515)
 -- Name: functions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6756,7 +6817,7 @@ ALTER TABLE ONLY functions
 
 
 --
--- TOC entry 2326 (class 2606 OID 118517)
+-- TOC entry 2327 (class 2606 OID 118517)
 -- Name: logtable_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6765,7 +6826,7 @@ ALTER TABLE ONLY logtable
 
 
 --
--- TOC entry 2328 (class 2606 OID 118519)
+-- TOC entry 2329 (class 2606 OID 118519)
 -- Name: mainmenu_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6774,7 +6835,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
--- TOC entry 2330 (class 2606 OID 118521)
+-- TOC entry 2331 (class 2606 OID 118521)
 -- Name: menus_manus_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6783,7 +6844,7 @@ ALTER TABLE ONLY menus
 
 
 --
--- TOC entry 2332 (class 2606 OID 118523)
+-- TOC entry 2333 (class 2606 OID 118523)
 -- Name: menus_menutype_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6792,7 +6853,7 @@ ALTER TABLE ONLY menus
 
 
 --
--- TOC entry 2334 (class 2606 OID 118525)
+-- TOC entry 2335 (class 2606 OID 118525)
 -- Name: menutypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6801,7 +6862,7 @@ ALTER TABLE ONLY menutypes
 
 
 --
--- TOC entry 2336 (class 2606 OID 118527)
+-- TOC entry 2337 (class 2606 OID 118527)
 -- Name: methodtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6810,7 +6871,7 @@ ALTER TABLE ONLY methodtypes
 
 
 --
--- TOC entry 2338 (class 2606 OID 118529)
+-- TOC entry 2339 (class 2606 OID 118529)
 -- Name: opertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6819,7 +6880,7 @@ ALTER TABLE ONLY opertypes
 
 
 --
--- TOC entry 2340 (class 2606 OID 118531)
+-- TOC entry 2341 (class 2606 OID 118531)
 -- Name: orgs_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6828,7 +6889,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2342 (class 2606 OID 118533)
+-- TOC entry 2343 (class 2606 OID 118533)
 -- Name: paramtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6837,7 +6898,7 @@ ALTER TABLE ONLY paramtypes
 
 
 --
--- TOC entry 2344 (class 2606 OID 118535)
+-- TOC entry 2345 (class 2606 OID 118535)
 -- Name: relfortest_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6846,7 +6907,7 @@ ALTER TABLE ONLY relfortest
 
 
 --
--- TOC entry 2346 (class 2606 OID 118537)
+-- TOC entry 2347 (class 2606 OID 118537)
 -- Name: roles_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6855,7 +6916,7 @@ ALTER TABLE ONLY roles
 
 
 --
--- TOC entry 2348 (class 2606 OID 118539)
+-- TOC entry 2349 (class 2606 OID 118539)
 -- Name: spapi_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6864,7 +6925,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 2350 (class 2606 OID 118541)
+-- TOC entry 2351 (class 2606 OID 118541)
 -- Name: test_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6873,7 +6934,7 @@ ALTER TABLE ONLY test
 
 
 --
--- TOC entry 2352 (class 2606 OID 118543)
+-- TOC entry 2353 (class 2606 OID 118543)
 -- Name: trees_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6882,7 +6943,7 @@ ALTER TABLE ONLY trees
 
 
 --
--- TOC entry 2354 (class 2606 OID 118545)
+-- TOC entry 2355 (class 2606 OID 118545)
 -- Name: treesacts_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6891,7 +6952,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
--- TOC entry 2356 (class 2606 OID 118547)
+-- TOC entry 2357 (class 2606 OID 118547)
 -- Name: treesbranches_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6900,7 +6961,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2358 (class 2606 OID 118549)
+-- TOC entry 2359 (class 2606 OID 118549)
 -- Name: treeviewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6909,7 +6970,7 @@ ALTER TABLE ONLY treeviewtypes
 
 
 --
--- TOC entry 2361 (class 2606 OID 118551)
+-- TOC entry 2362 (class 2606 OID 118551)
 -- Name: views_path_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6918,7 +6979,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 2363 (class 2606 OID 118553)
+-- TOC entry 2364 (class 2606 OID 118553)
 -- Name: views_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6927,7 +6988,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 2365 (class 2606 OID 118555)
+-- TOC entry 2366 (class 2606 OID 118555)
 -- Name: viewsnotification_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6936,7 +6997,7 @@ ALTER TABLE ONLY viewsnotification
 
 
 --
--- TOC entry 2367 (class 2606 OID 118557)
+-- TOC entry 2368 (class 2606 OID 118557)
 -- Name: viewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -6947,7 +7008,7 @@ ALTER TABLE ONLY viewtypes
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2370 (class 2606 OID 118559)
+-- TOC entry 2371 (class 2606 OID 118559)
 -- Name: dictionary_for_select_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -6958,7 +7019,7 @@ ALTER TABLE ONLY dictionary_for_select
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2359 (class 1259 OID 118560)
+-- TOC entry 2360 (class 1259 OID 118560)
 -- Name: users_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -6966,7 +7027,7 @@ CREATE UNIQUE INDEX users_id_key ON users USING btree (id);
 
 
 --
--- TOC entry 2368 (class 1259 OID 118561)
+-- TOC entry 2369 (class 1259 OID 118561)
 -- Name: viewtypes_vtypename_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -6974,7 +7035,7 @@ CREATE UNIQUE INDEX viewtypes_vtypename_key ON viewtypes USING btree (vtypename)
 
 
 --
--- TOC entry 2392 (class 2620 OID 118562)
+-- TOC entry 2393 (class 2620 OID 118562)
 -- Name: menus_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6982,7 +7043,7 @@ CREATE TRIGGER menus_tr BEFORE INSERT OR UPDATE OF menutype, ismainmenu ON menus
 
 
 --
--- TOC entry 2393 (class 2620 OID 118563)
+-- TOC entry 2394 (class 2620 OID 118563)
 -- Name: menus_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6990,7 +7051,7 @@ CREATE TRIGGER menus_tr_del BEFORE DELETE ON menus FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
--- TOC entry 2394 (class 2620 OID 118564)
+-- TOC entry 2395 (class 2620 OID 118564)
 -- Name: trees_add_org; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -6998,7 +7059,7 @@ CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON trees FOR EACH 
 
 
 --
--- TOC entry 2395 (class 2620 OID 118565)
+-- TOC entry 2396 (class 2620 OID 118565)
 -- Name: trees_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -7006,7 +7067,7 @@ CREATE TRIGGER trees_tr_del BEFORE DELETE ON trees FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
--- TOC entry 2396 (class 2620 OID 118566)
+-- TOC entry 2397 (class 2620 OID 118566)
 -- Name: treesbranches_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -7014,7 +7075,7 @@ CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, isma
 
 
 --
--- TOC entry 2397 (class 2620 OID 118567)
+-- TOC entry 2398 (class 2620 OID 118567)
 -- Name: users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -7022,7 +7083,7 @@ CREATE TRIGGER users_tr BEFORE UPDATE OF fam, im, ot, login, password, isactive,
 
 
 --
--- TOC entry 2398 (class 2620 OID 118568)
+-- TOC entry 2399 (class 2620 OID 118568)
 -- Name: views_tr_check; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -7032,7 +7093,7 @@ CREATE TRIGGER views_tr_check BEFORE INSERT OR UPDATE ON views FOR EACH ROW EXEC
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2399 (class 2620 OID 118569)
+-- TOC entry 2400 (class 2620 OID 118569)
 -- Name: major_table_tr; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -7042,7 +7103,7 @@ CREATE TRIGGER major_table_tr BEFORE INSERT OR UPDATE ON major_table FOR EACH RO
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2382 (class 2606 OID 118570)
+-- TOC entry 2383 (class 2606 OID 118570)
 -- Name: compos_fk1; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7051,7 +7112,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2371 (class 2606 OID 118575)
+-- TOC entry 2372 (class 2606 OID 118575)
 -- Name: logtype_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7060,7 +7121,7 @@ ALTER TABLE ONLY logtable
 
 
 --
--- TOC entry 2373 (class 2606 OID 118580)
+-- TOC entry 2374 (class 2606 OID 118580)
 -- Name: mainmenu_fk_menuid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7069,7 +7130,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
--- TOC entry 2380 (class 2606 OID 118585)
+-- TOC entry 2381 (class 2606 OID 118585)
 -- Name: menu; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7078,7 +7139,7 @@ ALTER TABLE ONLY test
 
 
 --
--- TOC entry 2374 (class 2606 OID 118590)
+-- TOC entry 2375 (class 2606 OID 118590)
 -- Name: menus_fk_mt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7087,7 +7148,7 @@ ALTER TABLE ONLY menus
 
 
 --
--- TOC entry 2387 (class 2606 OID 118595)
+-- TOC entry 2388 (class 2606 OID 118595)
 -- Name: org_f; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7096,7 +7157,7 @@ ALTER TABLE ONLY users
 
 
 --
--- TOC entry 2375 (class 2606 OID 118600)
+-- TOC entry 2376 (class 2606 OID 118600)
 -- Name: orgs_fk_prnt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7105,7 +7166,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2376 (class 2606 OID 118605)
+-- TOC entry 2377 (class 2606 OID 118605)
 -- Name: orgs_fk_uid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7114,7 +7175,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2377 (class 2606 OID 118610)
+-- TOC entry 2378 (class 2606 OID 118610)
 -- Name: relfortest_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7123,7 +7184,7 @@ ALTER TABLE ONLY relfortest
 
 
 --
--- TOC entry 2379 (class 2606 OID 118615)
+-- TOC entry 2380 (class 2606 OID 118615)
 -- Name: spapi_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7132,7 +7193,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 2381 (class 2606 OID 118620)
+-- TOC entry 2382 (class 2606 OID 118620)
 -- Name: treesacts_fk_tr; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7141,7 +7202,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
--- TOC entry 2383 (class 2606 OID 118625)
+-- TOC entry 2384 (class 2606 OID 118625)
 -- Name: treesbranches_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7150,7 +7211,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2384 (class 2606 OID 118630)
+-- TOC entry 2385 (class 2606 OID 118630)
 -- Name: treesbranches_fk_tree; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7159,7 +7220,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2385 (class 2606 OID 118635)
+-- TOC entry 2386 (class 2606 OID 118635)
 -- Name: treeview; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7168,7 +7229,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2378 (class 2606 OID 118640)
+-- TOC entry 2379 (class 2606 OID 118640)
 -- Name: us_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7177,7 +7238,7 @@ ALTER TABLE ONLY sess
 
 
 --
--- TOC entry 2372 (class 2606 OID 118645)
+-- TOC entry 2373 (class 2606 OID 118645)
 -- Name: userid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7186,7 +7247,7 @@ ALTER TABLE ONLY logtable
 
 
 --
--- TOC entry 2389 (class 2606 OID 118650)
+-- TOC entry 2390 (class 2606 OID 118650)
 -- Name: viewid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7195,7 +7256,7 @@ ALTER TABLE ONLY viewsnotification
 
 
 --
--- TOC entry 2386 (class 2606 OID 118655)
+-- TOC entry 2387 (class 2606 OID 118655)
 -- Name: viewid_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7204,7 +7265,7 @@ ALTER TABLE ONLY treesbranches
 
 
 --
--- TOC entry 2388 (class 2606 OID 118660)
+-- TOC entry 2389 (class 2606 OID 118660)
 -- Name: views_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -7215,7 +7276,7 @@ ALTER TABLE ONLY views
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2390 (class 2606 OID 118665)
+-- TOC entry 2391 (class 2606 OID 118665)
 -- Name: major_table_seldic; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -7224,7 +7285,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 2391 (class 2606 OID 118670)
+-- TOC entry 2392 (class 2606 OID 118670)
 -- Name: major_table_th; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -7233,7 +7294,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 2567 (class 0 OID 0)
+-- TOC entry 2568 (class 0 OID 0)
 -- Dependencies: 10
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -7244,7 +7305,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-10-15 19:41:28
+-- Completed on 2019-10-16 17:01:41
 
 --
 -- PostgreSQL database dump complete
