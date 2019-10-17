@@ -15,17 +15,17 @@ class Schema(BaseHandler):
 	def options(self,url):
 		self.set_status(200,None)
 		self.finish()
-				
-	@gen.coroutine	
+
+	@gen.coroutine
 	def post(self, url):
-		args = self.request.arguments 
+		args = self.request.arguments
 		for k in args:
-			args[k] = args.get(k)[0].decode('utf-8') 
+			args[k] = args.get(k)[0].decode('utf-8')
 		path = args.get('path')
 		if path is None:
 			showError("HINT:path not specified +++___", self)
 			return
-		body = loads(self.request.body.decode('utf-8')) 
+		body = loads(self.request.body.decode('utf-8'))
 
 		method = url[7:].replace('/','').lower()
 		sesid = self.get_cookie("sesid") or ''	#get session id cookie
@@ -39,19 +39,19 @@ class Schema(BaseHandler):
 		userdetail = []
 		try:
 			userdetail = yield self.db.execute(squery,(sesid,))
-		except Exception as e:				
+		except Exception as e:
 			showError(str(e), self)
-			return	
+			return
 		userdetail = userdetail.fetchone()[0]
-		#userdetail = userdetail.get('outjson')	
+		#userdetail = userdetail.get('outjson')
 		if method == 'list':
-			squery = """SELECT row_to_json (d) FROM (select * 
-						from framework.views 
-						where path = %s and viewtype in ('table', 'tiles') ) as d"""			
+			squery = """SELECT row_to_json (d) FROM (select *
+						from framework.views
+						where path = %s and viewtype in ('table', 'tiles') ) as d"""
 			result = []
 			try:
 				result = yield self.db.execute(squery,(path,))
-			except Exception as e:				
+			except Exception as e:
 				showError(str(e), self)
 				return
 			result = result.fetchone()
@@ -59,7 +59,7 @@ class Schema(BaseHandler):
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
-			result = result[0]	
+			result = result[0]
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
@@ -67,42 +67,42 @@ class Schema(BaseHandler):
 			for col in result.get('roles'):
 				if col.get("value") in userdetail.get('roles') and not x:
 					x = True
-			if not x:	
+			if not x:
 				self.set_status(403,None)
 				self.write('{"message":"access denied"}')
-				return	
+				return
 			user = {}
 			if body.get('print'):
 				result['pagination'] = False
 				user['fam'] = userdetail.get('fam')
 				user['im'] = userdetail.get('im')
 				user['ot'] = userdetail.get('ot')
-			query = getList(result,body, userdetail=userdetail)	
+			query = getList(result,body, userdetail=userdetail)
 			squery = query[0]
 			scounquery = query[1]
 			data = []
 			try:
 				data = yield self.db.execute(squery)
-			except Exception as e:				
+			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error', str(e))
 				return
-			
-			data = curtojson([x for x in data],[x[0] for x in data.description])	
+
+			data = curtojson([x for x in data],[x[0] for x in data.description])
 			count = 0
 			try:
 				count = yield self.db.execute(scounquery)
-			except Exception as e:				
+			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error_count', str(e))
 				return
-			
+
 			count = count.fetchone()[0]
 
 			self.write(dumps({
-				'foundcount':count, 
-				'data':data, 
-				'config':result.get('config'), 
+				'foundcount':count,
+				'data':data,
+				'config':result.get('config'),
 				'filters':result.get('filters'),
 				'acts':result.get('acts'),
 				'classname':result.get('classname'),
@@ -119,15 +119,15 @@ class Schema(BaseHandler):
 				'checker':result.get('checker'),
 				'user':user
 			}))
-			
+
 		elif method == 'getone':
-			squery = """SELECT row_to_json (d) FROM (select * 
-						from framework.views 
-						where path = %s and viewtype in ('form full', 'form not mutable') ) as d"""			
+			squery = """SELECT row_to_json (d) FROM (select *
+						from framework.views
+						where path = %s and viewtype in ('form full', 'form not mutable') ) as d"""
 			result = []
 			try:
 				result = yield self.db.execute(squery,(path,))
-			except Exception as e:				
+			except Exception as e:
 				showError(str(e), self)
 				return
 			result = result.fetchone()
@@ -143,21 +143,21 @@ class Schema(BaseHandler):
 			for col in result.get('roles'):
 				if col.get("value") in userdetail.get('roles') and not x:
 					x = True
-			if not x:	
+			if not x:
 				self.set_status(403,None)
 				self.write('{"message":"access denied"}')
-				return	
-			query = getList(result,body, userdetail=userdetail)	
+				return
+			query = getList(result,body, userdetail=userdetail)
 			squery = query[0]
 			data = []
 			try:
 				data = yield self.db.execute(squery)
-			except Exception as e:				
+			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error', str(e))
 				return
-			
-			data = curtojson([x for x in data],[x[0] for x in data.description])	
+
+			data = curtojson([x for x in data],[x[0] for x in data.description])
 			if len(data)>1:
 				self.set_status(500,None)
 				self.write('{"message":"getone can\'t return more then 1 row"}')
@@ -165,8 +165,8 @@ class Schema(BaseHandler):
 			#count = count.fetchone()[0]
 			self.set_status(200,None)
 			self.write(dumps({
-				'data':data, 
-				'config':result.get('config'), 
+				'data':data,
+				'config':result.get('config'),
 				'acts':result.get('acts'),
 				'classname':result.get('classname'),
 				'table':result.get('tablename'),
@@ -176,8 +176,8 @@ class Schema(BaseHandler):
 				'id':result.get('id')
 			}))
 		elif method == 'squery':
-			squery = """SELECT row_to_json (d) FROM (select * 
-						from framework.views where path = %s) as d"""			
+			squery = """SELECT row_to_json (d) FROM (select *
+						from framework.views where path = %s) as d"""
 			result = []
 			roles = userdetail.get('roles')
 			if int(developerRole) not in roles:
@@ -186,7 +186,7 @@ class Schema(BaseHandler):
 				return
 			try:
 				result = yield self.db.execute(squery,(path,))
-			except Exception as e:				
+			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error', str(e))
 				return
@@ -197,7 +197,7 @@ class Schema(BaseHandler):
 				return
 			result = result[0]
 			#self.write(dumps(result))
-			query = getList(result,body, userdetail=userdetail)	
+			query = getList(result,body, userdetail=userdetail)
 			squery = query[0]
 			self.write(dumps({'squery':squery + "; "}))
 		else:
