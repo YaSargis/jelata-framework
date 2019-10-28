@@ -179,30 +179,30 @@ def getList(result,body, userdetail=None):
 						if col.get('type') == 'array':
 							defv += bool_v + " (select count(*) from json_array_elements_text('" + userorgs + "') as j1" + ' join json_array_elements_text("' + colname + '") as j2 on j1.value::varchar=j2.value::varchar)>0 '
 						else:
-							defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + "(select value::varchar from json_array_elements_text('" + userorgs + "')) "
+							defv += bool_v + ' ' + colname +  '::varchar ' + act_v + "(select value::varchar from json_array_elements_text('" + userorgs + "')) "
 					elif def_v == '_userid_':
 						userid = str(userdetail.get('id'))	
-						defv += bool_v + ' "' + colname + '"::varchar ' + act_v + " ('" + userid + "') "	
+						defv += bool_v + ' ' + colname + '::varchar ' + act_v + " ('" + userid + "') "	
 					elif def_v == bool_v + '_orgid_':
 						orgid = str(userdetail.get('orgid'))	
-						defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + " ('" + orgid + "') "		
+						defv += bool_v + ' ' + colname +  '::varchar ' + act_v + " ('" + orgid + "') "		
 					elif def_v.find(',') != -1:	
-						defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + " (select value::varchar from json_array_elements_text('[" + def_v + "]')) "
+						defv += bool_v + ' ' + colname +  '::varchar ' + act_v + " (select value::varchar from json_array_elements_text('[" + def_v + "]')) "
 						defv = defv.replace('[','["').replace(',','","').replace(']','"]')		
 					else :
-						defv += bool_v + ' "' + colname +  '"::varchar ' + act_v + " ('" + def_v + "') "
+						defv += bool_v + ' ' + colname +  '::varchar ' + act_v + " ('" + def_v + "') "
 				else:
 					if def_v == '_orgs_':
 						userorgs = str(userdetail.get('orgs'))
 						defv += bool_v + ' ' + colname + '::varchar ' + act_v + " (select value::varchar from json_array_elements_text('" + userorgs + "')) "
 					elif def_v == '_userid_':
 						userid = str(userdetail.get('id'))	
-						defv += bool_v + ' "' + colname + '" ' + act_v + " '" + userid + "' "	
+						defv += bool_v + ' ' + colname + ' ' + act_v + " '" + userid + "' "	
 					elif def_v == '_orgid_':
 						orgid = str(userdetail.get('orgid'))	
-						defv += bool_v + ' "' + colname +  '" ' + act_v + " '" + orgid + "' "		
+						defv += bool_v + ' ' + colname +  ' ' + act_v + " '" + orgid + "' "		
 					else :
-						defv += bool_v + ' "' + colname + '" ' + act_v + " '" + def_v + "' "
+						defv += bool_v + ' ' + colname + ' ' + act_v + " '" + def_v + "' "
 			if len(defv) > 0:
 				defv = defv.replace('(or','( ')
 				defv = defv.replace('(and','( ')
