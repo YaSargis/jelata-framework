@@ -73,7 +73,7 @@ def getList(result,body, userdetail=None):
 			sColT = str(col.get('t'))
 			if 'table' not in col or col.get('table') is None:
 				sColT = '1'
-			if not col.get('fn'):
+			if col.get('fn') is None:
 				if not col.get('depency'):
 					if col.get('type') != 'password':
 						squery += 't' +	sColT + '."' + col.get('col') + '" as "' + (col.get('key') or col.get('title')) + '", '
@@ -113,6 +113,7 @@ def getList(result,body, userdetail=None):
 					sgroupby = gropby
 					squery += ' distinct '
 				else:
+					print('fncols:',col.get('fncolumns'))
 					for cl in col.get('fncolumns'):
 						gropby += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
 				for cl in col.get('fncolumns'):
@@ -147,7 +148,7 @@ def getList(result,body, userdetail=None):
 		
 		if col.get('defaultval'):
 			colname = ''
-			if 'fn' not in col:	
+			if col.get('fn') is None:	
 				colname = 't' + sColT + '."' + col.get("col") + '"'
 			else:
 				colname =  col.get('fn').get('label') + '( '
@@ -314,7 +315,7 @@ def getList(result,body, userdetail=None):
 			t = '1'
 			if col.get('related'):
 				t = str(col.get('t'))
-			if not col.get('fn'):	
+			if col.get('fn') is None:	
 				rownum += 't' + t + '."' + col.get('col') + '" ' + col.get('desc') + ','
 			else:
 				rownum += col.get('fn').get('value') + '('

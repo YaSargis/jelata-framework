@@ -45,21 +45,22 @@ class Schema(BaseHandler):
 		userdetail = userdetail.fetchone()[0]
 		#userdetail = userdetail.get('outjson')
 		if method == 'list':
-			squery = """SELECT row_to_json (d) FROM (select *
-						from framework.views
-						where path = %s and viewtype in ('table', 'tiles') ) as d"""
+			"""SELECT row_to_json (d) FROM (select *
+				from framework.views
+				where path = %s and viewtype in ('table', 'tiles') ) as d"""
+			squery = 'SELECT framework."fn_view_getByPath"(%s)'
 			result = []
 			try:
 				result = yield self.db.execute(squery,(path,))
 			except Exception as e:
 				showError(str(e), self)
 				return
-			result = result.fetchone()
+			result = result.fetchone()[0]
 			if not result:
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
-			result = result[0]
+			#result = result[0]
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
@@ -106,7 +107,7 @@ class Schema(BaseHandler):
 				'filters':result.get('filters'),
 				'acts':result.get('acts'),
 				'classname':result.get('classname'),
-				'table':result.get('tablename'),
+				#'table':result.get('tablename'),
 				'title':result.get('title'),
 				'viewtype':result.get('viewtype'),
 				'pagination':result.get('pagination'),
@@ -121,21 +122,22 @@ class Schema(BaseHandler):
 			}))
 
 		elif method == 'getone':
-			squery = """SELECT row_to_json (d) FROM (select *
-						from framework.views
-						where path = %s and viewtype in ('form full', 'form not mutable') ) as d"""
+			"""SELECT row_to_json (d) FROM (select *
+				FROM framework.views
+				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d"""
+			squery = 'SELECT framework."fn_view_getByPath"(%s)' 
 			result = []
 			try:
 				result = yield self.db.execute(squery,(path,))
 			except Exception as e:
 				showError(str(e), self)
 				return
-			result = result.fetchone()
+			result = result.fetchone()[0]
 			if not result:
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
-			result = result[0]
+			#result = result[0]
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
