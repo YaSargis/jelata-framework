@@ -8,7 +8,7 @@ def formatInj(val):
 		val = val.replace("'","''")
 	return val
 
-def getList(result,body, userdetail=None):
+def getList(result, body, userdetail=None):
 	squery = ' '
 	gropby = ' '
 	sgroupby = None
@@ -113,7 +113,6 @@ def getList(result,body, userdetail=None):
 					sgroupby = gropby
 					squery += ' distinct '
 				else:
-					print('fncols:',col.get('fncolumns'))
 					for cl in col.get('fncolumns'):
 						gropby += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
 				for cl in col.get('fncolumns'):
@@ -219,6 +218,7 @@ def getList(result,body, userdetail=None):
 				defaultOrderBy += ' desc'
 			defaultOrderBy += ','
 		if 'inputs' in body:
+			print('inputS:',body['inputs'])
 			order_by = body.get('inputs').get('orderby') or []
 			if body.get('inputs').get(col.get('title')):
 				if body.get('inputs').get(col.get('title')) == '_orgs_':
@@ -228,7 +228,7 @@ def getList(result,body, userdetail=None):
 				elif body.get('inputs').get(col.get('title')) == '_orgid_':
 					body['inputs'][col.get('title')] = userdetail.get('orgid')	
 
-
+				print('inputs:',body['inputs'][col.get('title')])
 				where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
 				
@@ -270,7 +270,7 @@ def getList(result,body, userdetail=None):
 							if len(v.split(' '))>2:
 								i = 0
 								v = v.split(' ')
-								cols = col.get('column')
+								cols = col.get('columns')
 								while i < len(cols):
 									if len(v) >= i+1:
 										where += ' and '
@@ -281,7 +281,7 @@ def getList(result,body, userdetail=None):
 									i += 1	
 								where = where.replace('( and','(') + ' ) '	
 							else:
-								for x in col.get('column'):	
+								for x in col.get('columns'):	
 									where += ' or '
 									if x.get('t'):
 										where += ' lower(t' + str(x.get('t') or '1') + '."' + x.get('label') + '"' + "::varchar) like lower('%" + str(v).strip() + "%') "

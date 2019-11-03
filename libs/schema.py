@@ -23,13 +23,13 @@ class Schema(BaseHandler):
 			args[k] = args.get(k)[0].decode('utf-8')
 		path = args.get('path')
 		if path is None:
-			showError("HINT:path not specified +++___", self)
+			showError('HINT:path not specified +++___', self)
 			return
 		body = loads(self.request.body.decode('utf-8'))
 
 		method = url[7:].replace('/','').lower()
-		sesid = self.get_cookie("sesid") or ''	#get session id cookie
-		log(url, 'path: '+ path + '; body: ' +str(body) + ' sessid:' + str(sesid) )
+		sesid = self.get_cookie('sesid') or ''	#get session id cookie
+		log(url, 'path: '+ path + '; body: ' + str(body) + ' sessid:' + str(sesid) )
 
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
@@ -66,19 +66,19 @@ class Schema(BaseHandler):
 			else:
 				x = True
 			for col in result.get('roles'):
-				if col.get("value") in userdetail.get('roles') and not x:
+				if col.get('value') in userdetail.get('roles') and not x:
 					x = True
 			if not x:
 				self.set_status(403,None)
 				self.write('{"message":"access denied"}')
 				return
 			user = {}
-			if body.get('print'):
+			'''if body.get('print'):
 				result['pagination'] = False
 				user['fam'] = userdetail.get('fam')
 				user['im'] = userdetail.get('im')
-				user['ot'] = userdetail.get('ot')
-			query = getList(result,body, userdetail=userdetail)
+				user['ot'] = userdetail.get('ot')'''
+			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
 			scounquery = query[1]
 			data = []
@@ -122,9 +122,9 @@ class Schema(BaseHandler):
 			}))
 
 		elif method == 'getone':
-			"""SELECT row_to_json (d) FROM (select *
+			'''SELECT row_to_json (d) FROM (select *
 				FROM framework.views
-				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d"""
+				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d'''
 			squery = 'SELECT framework."fn_view_getByPath"(%s)' 
 			result = []
 			try:
@@ -138,6 +138,7 @@ class Schema(BaseHandler):
 				self.write('{"message":"view is not found"}')
 				return
 			#result = result[0]
+			
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
@@ -149,7 +150,8 @@ class Schema(BaseHandler):
 				self.set_status(403,None)
 				self.write('{"message":"access denied"}')
 				return
-			query = getList(result,body, userdetail=userdetail)
+			
+			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
 			data = []
 			try:
@@ -199,7 +201,7 @@ class Schema(BaseHandler):
 				return
 			result = result[0]
 			#self.write(dumps(result))
-			query = getList(result,body, userdetail=userdetail)
+			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
 			self.write(dumps({'squery':squery + "; "}))
 		else:
