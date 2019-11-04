@@ -6,9 +6,9 @@ from libs.service_functions import showError, default_headers, curtojson, log
 from settings import primaryAuthorization, developerRole
 
 class Schema(BaseHandler):
-	"""
+	'''
 		for SQL query build methods
-	"""
+	'''
 	def set_default_headers(self):
 		default_headers(self)
 
@@ -48,10 +48,10 @@ class Schema(BaseHandler):
 			"""SELECT row_to_json (d) FROM (select *
 				from framework.views
 				where path = %s and viewtype in ('table', 'tiles') ) as d"""
-			squery = 'SELECT framework."fn_view_getByPath"(%s)'
+			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)'
 			result = []
 			try:
-				result = yield self.db.execute(squery,(path,))
+				result = yield self.db.execute(squery,(path,'list',))
 			except Exception as e:
 				showError(str(e), self)
 				return
@@ -125,10 +125,10 @@ class Schema(BaseHandler):
 			'''SELECT row_to_json (d) FROM (select *
 				FROM framework.views
 				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d'''
-			squery = 'SELECT framework."fn_view_getByPath"(%s)' 
+			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)' 
 			result = []
 			try:
-				result = yield self.db.execute(squery,(path,))
+				result = yield self.db.execute(squery,(path,'getone',))
 			except Exception as e:
 				showError(str(e), self)
 				return
