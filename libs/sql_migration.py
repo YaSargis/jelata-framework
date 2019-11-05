@@ -108,15 +108,16 @@ def getList(result, body, userdetail=None):
 								'", ')
 							gropby += ' t1.id ,'
 			else:
+				print(col)
 				squery += col.get('fn').get('label') + '( ' 
 				if col.get('fn').get('functype') == 'groupby':
 					sgroupby = gropby
 					squery += ' distinct '
 				else:
 					for cl in col.get('fncolumns'):
-						gropby += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+						gropby += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 				for cl in col.get('fncolumns'):
-					squery += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+					squery += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 					if col.get('fn').get('label') == 'concat':
 						squery += "' ',"
 				squery = squery[:len(squery)-1]
