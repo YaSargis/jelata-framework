@@ -2,6 +2,7 @@ from psycopg2 import connect
 from settings import maindomain, dsn
 from libs.service_functions import curtojson
 from requests import post
+from datetime import datetime
 
 def test_view_call():
 	'''
@@ -35,8 +36,14 @@ def test_view_call():
 	cols = [x[0] for x in cur.description]
 	sessions = curtojson(rows,cols)
 	sessid = sessions[0].get('id')
+	con.close()
 	
-	
+	# for log file title
+	nowstr = (str(datetime.today().year) + '-' + str(datetime.today().month) + '-' +
+		str(datetime.today().day) + '-' + str(datetime.today().hour) + '-' +
+		str(datetime.today().minute) + '-' + str(datetime.today().second))
+	filetitle = './tests/test_' + nowstr + '.txt'
+		
 	for view in views:
 		view_path = maindomain
 		body = {'inputs':{}}
@@ -53,9 +60,14 @@ def test_view_call():
 		# if authetification failed status
 		headers = {'Cookie':'sesid=' + sessid} 
 		request_res = post(view_path, json=body, headers=headers) 
-		
-		print(view_path, request_res.status_code )
-	
-
+		print(view_path, request_res.status_code)
+		if request_res.status_code == 200:
+			f = open(filetitle,'at')
+			f.write(view_path + ' | 200\n')
+			f.close()
+		else:
+			f = open(filetitle,'at')
+			f.write(view_path + ' | ' + request_res.status_code + ' | ' + request_res.text + '\n')
+			f.close()
 
 test_view_call()
