@@ -63,7 +63,8 @@ def getList(result, body, userdetail=None):
 		newroles = []	
 		if roles:
 			for obj in roles:
-				newroles.append(obj.get('value'))	
+				#newroles.append(obj.get('value'))	
+				newroles.append(obj)	
 				newroles.append(developerRole)	
 		if (newroles is None or len(newroles) == 0 or (len(newroles)>0 
 			and len(list(set(newroles) & set(useroles)))>0)):
@@ -143,9 +144,9 @@ def getList(result, body, userdetail=None):
 					if joins.find(tpath[i].get('t')) == -1:
 						joins += ' LEFT JOIN ' + tpath[i].get('table') + ' as ' + tpath[i].get('t') + ' on ' + tpath[i-1].get('t') + '."' + tpath[i].get('col') + '" = ' + tpath[i].get('t') + '."' + (col.get('relcol') or 'id') + '"'
 				i += 1
-			if 	joins.find(' as t' + colT) == -1:
-				joins += ' LEFT JOIN ' + col.get('table') + ' as t' + colT + ' on t' + colT + '."' + (col.get('relcol') or 'id') + '" = ' + tpath[i-1].get('t') + '."' + col.get('relatecolumn') + '"'  
-		
+			if joins.find(" as t" + str(col.get("t"))) == -1:
+				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '" = ' + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
+			
 		if col.get('defaultval'):
 			colname = ''
 			if col.get('fn') is None:	

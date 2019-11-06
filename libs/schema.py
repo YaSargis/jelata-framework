@@ -15,7 +15,62 @@ class Schema(BaseHandler):
 	def options(self,url):
 		self.set_status(200,None)
 		self.finish()
-
+	
+	@gen.coroutine	
+	def get(self, url):
+		args = self.request.arguments
+		
+		for k in args:
+			args[k] = args.get(k)[0].decode('utf-8')
+		
+		path = args.get('path')
+		if path is None:
+			showError('HINT:path not specified +++___', self)
+			return
+		
+		method = url[7:].replace('/','').lower()
+		
+		sesid = self.get_cookie('sesid') or ''	#get session id cookie
+		if primaryAuthorization == "1" and sesid is None:
+			self.set_status(401,None)
+			self.write('{"message":"No session"}')
+			return
+		squery = 'select * from framework.fn_userjson(%s)'
+		userdetail = []
+		
+		try:
+			userdetail = yield self.db.execute(squery,(sesid,))
+		except Exception as e:
+			showError(str(e), self)
+			return
+			
+		userdetail = userdetail.fetchone()[0]
+		
+		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
+		'''SELECT row_to_json (d) FROM (select *
+					from framework.views where path = %s) as d'''
+		result = []
+		roles = userdetail.get('roles')
+		if int(developerRole) not in roles:
+			self.set_status(403,None)
+			self.write('{"message":"access denied"}')
+			return
+		try:
+			result = yield self.db.execute(squery,(path,))
+		except Exception as e:
+			showError(str(e), self)
+			log(url + '_Error', str(e))
+			return
+		result = result.fetchone()
+		if not result:
+			self.set_status(500,None)
+			self.write('{"message":"view is not found"}')
+			return
+		result = result[0]
+		#self.write(dumps(result))
+		query = getList(result, body, userdetail=userdetail)
+		squery = query[0]
+		self.write(self.write(squery))		
 	@gen.coroutine
 	def post(self, url):
 		args = self.request.arguments
