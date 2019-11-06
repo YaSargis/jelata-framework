@@ -19,7 +19,8 @@ def test_view_call():
 			 WHERE 
 				viewid = v.id and 
 				c.col = 'id' and not c.related and 
-				c.fn is null) as id_title 		
+				c.fn is null
+				LIMIT 1) as id_title 		
 		FROM framework.views as v;''')
 	rows = [x for x in cur]
 	cols = [x[0] for x in cur.description]
@@ -67,7 +68,7 @@ def test_view_call():
 			f.close()
 		else:
 			f = open(filetitle,'at')
-			f.write(view_path + ' | ' + request_res.status_code + ' | ' + request_res.text + '\n')
+			f.write(view_path + ' | ' + str(request_res.status_code) + ' | ' + request_res.text + '\n')
 			f.close()
 
 test_view_call()
