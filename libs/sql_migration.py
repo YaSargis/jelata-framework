@@ -80,7 +80,7 @@ def getList(result, body, userdetail=None):
 						squery += 't' +	sColT + '."' + col.get('col') + '" as "' + (col.get('key') or col.get('title')) + '", '
 						gropby += 't' + sColT + '."' + col.get('col') + '",'
 					else:
-						squery += "'' as \"" + col.get("title") + "\", "
+						squery += "'' as \"" + (col.get('key') or col.get('title')) + "\", "
 						gropby += "'' ,"	
 				else:
 					relcols = ''
