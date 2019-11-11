@@ -212,7 +212,7 @@ def getList(result, body, userdetail=None):
 			where += 'and ' + defv + ' ' 			
 			
 		if col.get('required'):
-			where += ' and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null')
+			where += 'and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null') + ' '
 		
 		if col.get('orderby'):
 			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '"'
