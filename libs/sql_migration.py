@@ -211,11 +211,7 @@ def getList(result, body, userdetail=None):
 				defv += ')'
 			where += 'and ' + defv + ' ' 			
 			
-<<<<<<< HEAD
 		if col.get('required') and body.get('inputs'):
-=======
-		if col.get('required'):
->>>>>>> 942e199e4fe3db20158ba303b06eb14826826b20
 			where += 'and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null') + ' '
 		
 		if col.get('orderby'):
