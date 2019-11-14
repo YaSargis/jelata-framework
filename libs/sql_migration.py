@@ -211,8 +211,8 @@ def getList(result, body, userdetail=None):
 				defv += ')'
 			where += 'and ' + defv + ' ' 			
 			
-		if col.get('required'):
-			where += 'and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null')
+		if col.get('required') and body.get('inputs'):
+			where += 'and t' + sColT + '."' + col.get('col') + '" = ' + (body.get('inputs').get(col.get('title')) or 'null') + ' '
 		
 		if col.get('orderby'):
 			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '"'
@@ -319,7 +319,7 @@ def getList(result, body, userdetail=None):
 			if col.get('related'):
 				t = str(col.get('t'))
 			if col.get('fn') is None:	
-				rownum += 't' + t + '."' + col.get('col') + '" ' + col.get('desc') + ','
+				rownum += 't' + t + '."' + col.get('col') + '"::varchar ' + col.get('desc') + ','
 			else:
 				rownum += col.get('fn').get('value') + '('
 				for x in col.get('fncols'):
