@@ -43,7 +43,7 @@ class Schema(BaseHandler):
 		except Exception as e:
 			showError(str(e), self)
 			return
-			
+		
 		userdetail = userdetail.fetchone()[0]
 		
 		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
@@ -68,9 +68,9 @@ class Schema(BaseHandler):
 			return
 		result = result[0]
 		#self.write(dumps(result))
-		query = getList(result, body, userdetail=userdetail)
+		query = getList(result, {}, userdetail=userdetail)
 		squery = query[0]
-		self.write(self.write(squery))		
+		self.write(squery)		
 	@gen.coroutine
 	def post(self, url):
 		args = self.request.arguments
@@ -92,11 +92,13 @@ class Schema(BaseHandler):
 			return
 		squery = 'select * from framework.fn_userjson(%s)'
 		userdetail = []
+		
 		try:
 			userdetail = yield self.db.execute(squery,(sesid,))
 		except Exception as e:
 			showError(str(e), self)
 			return
+
 		userdetail = userdetail.fetchone()[0]
 		#userdetail = userdetail.get('outjson')
 		if method == 'list':
@@ -110,6 +112,7 @@ class Schema(BaseHandler):
 			except Exception as e:
 				showError(str(e), self)
 				return
+	
 			result = result.fetchone()[0]
 			if not result:
 				self.set_status(500,None)

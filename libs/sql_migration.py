@@ -109,7 +109,6 @@ def getList(result, body, userdetail=None):
 								'", ')
 							gropby += ' t1.id ,'
 			else:
-				print(col)
 				squery += col.get('fn').get('label') + '( ' 
 				if col.get('fn').get('functype') == 'groupby':
 					sgroupby = gropby
@@ -220,7 +219,6 @@ def getList(result, body, userdetail=None):
 				defaultOrderBy += ' desc'
 			defaultOrderBy += ','
 		if 'inputs' in body:
-			print('inputS:',body['inputs'])
 			order_by = body.get('inputs').get('orderby') or []
 			if body.get('inputs').get(col.get('title')):
 				if body.get('inputs').get(col.get('title')) == '_orgs_':
@@ -230,7 +228,6 @@ def getList(result, body, userdetail=None):
 				elif body.get('inputs').get(col.get('title')) == '_orgid_':
 					body['inputs'][col.get('title')] = userdetail.get('orgid')	
 
-				print('inputs:',body['inputs'][col.get('title')])
 				where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
 				
