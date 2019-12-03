@@ -12,7 +12,7 @@ from libs.schema import Schema
 from libs.fapi import FApi
 from libs.ws import WebSocket
 
-#from rep import Reporter
+from libs.rep import Reporter
 
 class MainHandler(web.RequestHandler):
     def get(self,url):
@@ -26,10 +26,12 @@ if __name__ == '__main__':
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
+		(r"/(calendar.*)", MainHandler),
 		(r"/(projectsettings.*)", MainHandler),
 		(r"/(viewlist.*)", MainHandler),
 		(r"/(view.*)", MainHandler),
 		(r"/(home.*)", MainHandler),
+		(r"/(report.*)", MainHandler),
 		(r"/(jdocumentation.*)", MainHandler),
 		(r"/(jdocumentation_rus.*)", MainHandler),
 		(r"/(trees.*)", MainHandler),
@@ -51,17 +53,18 @@ if __name__ == '__main__':
 		(r"/(.*.doc)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.xls)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.xlsx)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
+		(r"/(.*.txt)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpeg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.gif)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r'/(api.*)', FApi),
-		#(r'/(rep.*)', Reporter),
 		(r'/(auth.*)', Auth),
 		(r'/(schema.*)', Schema),
 		(r'/(admin.*)', Admin),
 		(r'/(logs.*)', Logs),
 		(r'/(log.*)', Log),
+		(r'/(rep.*)', Reporter),
 		(r'/(ws.*)', WebSocket)
 	], debug=True)
 
