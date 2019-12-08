@@ -10,7 +10,7 @@ from libs.auth import Auth
 from libs.admin import Admin, Logs, Log
 from libs.schema import Schema
 from libs.fapi import FApi
-from libs.ws import WebSocket
+from libs.ws import WebSocket, WebSocketMessages
 
 from libs.rep import Reporter
 
@@ -65,7 +65,8 @@ if __name__ == '__main__':
 		(r'/(logs.*)', Logs),
 		(r'/(log.*)', Log),
 		(r'/(rep.*)', Reporter),
-		(r'/(ws.*)', WebSocket)
+		(r'/(ws.*)', WebSocket),
+		(r'/(chats.*)', WebSocketMessages)
 	], debug=True)
 
 	ioloop = IOLoop.instance()
@@ -81,7 +82,7 @@ if __name__ == '__main__':
 	future = application.db.connect()
 	ioloop.add_future(future, lambda f: ioloop.stop())
 	ioloop.start()
-	future.result() # raises exception on connection error
+	future.result() 
 
 	http_server = HTTPServer(application)
 	http_server.listen(port, '')
