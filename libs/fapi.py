@@ -18,7 +18,7 @@ def savefile(self):
 	if 'file_0' not in files:
 		self.set_status(500,None)
 		self.write('{"message":"file not found (file_0)"}')
-		return
+		return value
 	while x:
 		file = files.get('file_'+str(i))
 		if not file:
