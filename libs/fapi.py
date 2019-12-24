@@ -76,7 +76,7 @@ def onRequest(self, url, type):
 			if not value:
 				value = '[]'
 			value = loads(value)
-			if loads(args.get('config')).get('type') in ('file','image') and len(value) > 0:
+			if args.get('config') and loads(args.get('config')).get('type') in ('file','image') and len(value) > 0:
 				showError('for type file/image can not be more then 1 file',self)
 				return
 				
