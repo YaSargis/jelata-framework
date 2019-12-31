@@ -10,7 +10,7 @@ from libs.auth import Auth
 from libs.admin import Admin, Logs, Log
 from libs.schema import Schema
 from libs.fapi import FApi
-from libs.ws import WebSocket, WebSocketMessages
+from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications
 
 from libs.rep import Reporter
 
@@ -25,6 +25,7 @@ if __name__ == '__main__':
 	application = web.Application([
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
+		(r"/(chat.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
 		(r"/(calendar.*)", MainHandler),
 		(r"/(projectsettings.*)", MainHandler),
@@ -41,6 +42,16 @@ if __name__ == '__main__':
 		(r"/(logout.*)", MainHandler),
 		(r"/(newview.*)", MainHandler),
 		(r"/(compo.*)", MainHandler),
+		(r'/(api.*)', FApi),
+		(r'/(auth.*)', Auth),
+		(r'/(schema.*)', Schema),
+		(r'/(admin.*)', Admin),
+		(r'/(logs.*)', Logs),
+		(r'/(log.*)', Log),
+		(r'/(rep.*)', Reporter),
+		(r'/(ws.*)', WebSocket),
+		(r'/(chats.*)', WebSocketMessages),
+		(r'/(messages.*)', WebSocketMessageNotifications),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.png)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
@@ -57,16 +68,8 @@ if __name__ == '__main__':
 		(r"/(.*.jpeg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.gif)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
-		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
-		(r'/(api.*)', FApi),
-		(r'/(auth.*)', Auth),
-		(r'/(schema.*)', Schema),
-		(r'/(admin.*)', Admin),
-		(r'/(logs.*)', Logs),
-		(r'/(log.*)', Log),
-		(r'/(rep.*)', Reporter),
-		(r'/(ws.*)', WebSocket),
-		(r'/(chats.*)', WebSocketMessages)
+		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} )
+
 	], debug=True)
 
 	ioloop = IOLoop.instance()

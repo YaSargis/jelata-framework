@@ -115,9 +115,25 @@ def getList(result, body, userdetail=None):
 					squery += ' distinct '
 				else:
 					for cl in col.get('fncolumns'):
-						gropby += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
+						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+							gropby += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
+						else:
+							if str(cl.get('label')) == '_userid_':
+								gropby += str(userdetail.get('id')) + ','
+							if str(cl.get('label')) == '_orgid_':
+								gropby += str(userdetail.get('orgid')) + ','	
+							if str(cl.get('label')) == '_orgs_':
+								gropby += "'" + str(userdetail.get('orgs')) + "',"		
 				for cl in col.get('fncolumns'):
-					squery += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
+					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+						squery += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
+					else:
+						if str(cl.get('label')) == '_userid_':
+							squery += str(userdetail.get('id')) + ','
+						if str(cl.get('label')) == '_orgid_':
+							squery += str(userdetail.get('orgid')) + ','	
+						if str(cl.get('label')) == '_orgs_':
+							squery += "'" + str(userdetail.get('orgs')) + "',"		
 					if col.get('fn').get('label') == 'concat':
 						squery += "' ',"
 				squery = squery[:len(squery)-1]
@@ -153,7 +169,15 @@ def getList(result, body, userdetail=None):
 			else:
 				colname =  col.get('fn').get('label') + '( '
 				for cl in col.get('fncolumns'):
-					colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+						colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+					else:
+						if str(cl.get('label')) == '_userid_':
+							colname += str(userdetail.get('id')) + ','
+						if str(cl.get('label')) == '_orgid_':
+							colname += str(userdetail.get('orgid')) + ','	
+						if str(cl.get('label')) == '_orgs_':
+							colname += "'" + str(userdetail.get('orgs')) + "',"		
 				colname = colname[:len(colname)-1]
 				colname += ')'
 			defv = ''
@@ -320,9 +344,10 @@ def getList(result, body, userdetail=None):
 			if col.get('fn') is None:	
 				rownum += 't' + t + '."' + col.get('col') + '"::varchar ' + col.get('desc') + ','
 			else:
-				rownum += col.get('fn').get('value') + '('
-				for x in col.get('fncols'):
-					rownum += 't' + str(x.get('t')) + '."' + x.get('label') + '",'
+				rownum += col.get('fn').get('value') + '( '
+				if col.get('fncols'):
+					for x in col.get('fncols'):
+						rownum += 't' + str(x.get('t')) + '."' + x.get('label') + '",'
 				rownum = rownum[:len(rownum) - 1] 	
 				rownum += ') ' + col.get('desc') + ','
 		rownum = rownum[:len(rownum) - 1]
