@@ -1,6 +1,7 @@
 from os import listdir
 from json import loads, dumps, load
 from tornado import gen
+from psycopg2 import extras
 
 from libs.basehandler import BaseHandler
 from libs.service_functions import showError, default_headers, log
@@ -79,16 +80,13 @@ class Admin(BaseHandler):
 				self.write('{"message":"access denied"}')
 				return
 			body = loads(self.request.body.decode('utf-8')) 
-			settingsFile = body.get('settings')
-			sesid = self.get_cookie("sesid") or ''	#get session id cookie
-			if primaryAuthorization == "1" and sesid is None:
-				self.set_status(401,None)
-				self.write('{"message":"No session"}')
-				return
-			squery = 'select * from framework.fn_userjson(%s)'
-			userdetail = []
+			#settingsFile = body.get('settings')
+			settingsFile = body
+
+			squery = 'select * from framework.fn_mainsettings_save(%s)'
+			
 			try:
-				userdetail = yield self.db.execute(squery,(sesid,))
+				userdetail = yield self.db.execute(squery,(extras.Json(settingsFile),))
 			except Exception as e:				
 				showError(str(e), self)
 				return	
@@ -225,3 +223,4 @@ class Log(BaseHandler):
 		
 		self.write(dumps(res_json))
 		return
+	

@@ -94,8 +94,9 @@ def onRequest(self, url, type):
 				args[k] = None
 	squery = "select * from framework.fn_fapi(injson:=%s,apititle:=%s,apitype:=%s,sessid:=%s,primaryauthorization:=%s)"
 	result = None
+	print(extras.Json(args),method,str(type),sesid,primaryAuthorization)
 	try:
-		result = yield self.db.execute(squery,(extras.Json(args),method,str(type),sesid,primaryAuthorization,))
+		result = yield self.db.execute(squery,(extras.Json(args),method,str(type),sesid,str(primaryAuthorization),))
 	except Exception as e:
 		log(url + '_Error',' args: ' + 
 			str(extras.Json(args)) + '; sess: ' + 

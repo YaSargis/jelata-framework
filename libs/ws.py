@@ -65,9 +65,9 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
 		result = None
-		oldresult = []
+		oldresult = None
 		while True:
-			yield gen.sleep(5)			
+			yield gen.sleep(2)			
 			try:
 				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
 			except Exception as err:
@@ -103,9 +103,9 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats_messages',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
 		result = None
-		oldresult = []
+		oldresult = None
 		while True:
-			yield gen.sleep(5)			
+			yield gen.sleep(2)			
 			try:
 				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
 			except Exception as err:
