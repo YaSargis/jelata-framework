@@ -5,7 +5,7 @@ from datetime import datetime, date, time
 from decimal import Decimal
 from pathlib import Path
 		
-def dateToFormat(dt):
+def datetimeToFormat(dt):
 	hour = str(dt.hour)
 	minute = str(dt.minute)
 	second = str(dt.second)
@@ -25,8 +25,18 @@ def dateToFormat(dt):
 	return (day + "." + month + 
 			"." + str(dt.year) + " " + hour+ ":" + 
 			minute + ":" + second)	
-	return 
 
+def dateToFormat(dt):
+	day = str(dt.day)
+	month = str(dt.month)
+
+	if len(day) == 1:
+		day = '0' + day
+	if len(month) == 1:
+		month = '0' + month	
+	return (day + "." + month + 
+			"." + str(dt.year) )	
+			
 def ifnull(s):
 	"""
 		if None return null
@@ -46,14 +56,14 @@ def curtojson(rows,cols):
 		ht = {}
 		for prop, val in zip(cols, row):
 			if (type(val) is UUID or type(val) is Decimal or 
-				type(val) is dict or type(val) is date or type(val) is time):
+				type(val) is time):
 				ht[prop] = str(val)
 			elif type(val) is datetime:
-				ht[prop] = dateToFormat(val)			
+				ht[prop] = datetimeToFormat(val)
+			elif type(val) is date:
+				ht[prop] = dateToFormat(val)
 			else:
 				ht[prop] = val
-				
-			
 		hts.append(ht)
 	rsl = dumps(hts , indent=1,  ensure_ascii=False)
 	rsl = loads(rsl)
@@ -89,7 +99,10 @@ def showError(err,self):
 		transforming postgres error and send right error text and status
 		err - error text, self - context
 	"""
-	err = (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0]
+	if err.find('HINT:') > -1:
+		err = (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0]
+	else:
+		err = err.split("\n")[0]
 	self.set_header("Content-Type",'application/json charset="utf-8"')
 	if err.find('m404err') != -1:
 		self.write('{"message":"method not found"}')

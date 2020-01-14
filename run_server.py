@@ -6,13 +6,13 @@ from tornado.options import parse_command_line
 from momoko import Pool
 from settings import poolsize, dsn, port
 
-from auth import Auth
-from admin import Admin, Logs, Log
-from schema import Schema
-from fapi import FApi
-from ws import WebSocket
+from libs.auth import Auth
+from libs.admin import Admin, Logs, Log
+from libs.schema import Schema
+from libs.fapi import FApi
+from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications
 
-from rep import Reporter
+from libs.rep import Reporter
 
 class MainHandler(web.RequestHandler):
     def get(self,url):
@@ -25,11 +25,14 @@ if __name__ == '__main__':
 	application = web.Application([
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
+		(r"/(chat.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
+		(r"/(calendar.*)", MainHandler),
 		(r"/(projectsettings.*)", MainHandler),
 		(r"/(viewlist.*)", MainHandler),
 		(r"/(view.*)", MainHandler),
 		(r"/(home.*)", MainHandler),
+		(r"/(report.*)", MainHandler),
 		(r"/(jdocumentation.*)", MainHandler),
 		(r"/(jdocumentation_rus.*)", MainHandler),
 		(r"/(trees.*)", MainHandler),
@@ -38,21 +41,17 @@ if __name__ == '__main__':
 		(r"/(login.*)", MainHandler),
 		(r"/(logout.*)", MainHandler),
 		(r"/(newview.*)", MainHandler),
-		(r"/(documentation.*)", MainHandler),
-		(r"/(empty.*)", MainHandler),
-		(r"/(misc.*)", MainHandler),
-		(r"/(sigmasource.*)", MainHandler),
-		(r"/(charts.*)", MainHandler),
-		(r"/(messages.*)", MainHandler),
-		(r"/(menus.*)", MainHandler),
-		(r"/(overlays.*)", MainHandler),
-		(r"/(panels.*)", MainHandler),
-		(r"/(data.*)", MainHandler),
-		(r"/(sample.*)", MainHandler),
-		(r"/(forms.*)", MainHandler),
-		(r"/(printlist.*)", MainHandler),
-		(r"/(getoneprint.*)", MainHandler),
 		(r"/(compo.*)", MainHandler),
+		(r'/(api.*)', FApi),
+		(r'/(auth.*)', Auth),
+		(r'/(schema.*)', Schema),
+		(r'/(admin.*)', Admin),
+		(r'/(logs.*)', Logs),
+		(r'/(log.*)', Log),
+		(r'/(rep.*)', Reporter),
+		(r'/(ws.*)', WebSocket),
+		(r'/(chats.*)', WebSocketMessages),
+		(r'/(messages.*)', WebSocketMessageNotifications),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.png)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
@@ -65,18 +64,12 @@ if __name__ == '__main__':
 		(r"/(.*.doc)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.xls)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.xlsx)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
+		(r"/(.*.txt)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpeg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.gif)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
-		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
-		(r'/(api.*)', FApi),
-		(r'/(rep.*)', Reporter),
-		(r'/(auth.*)', Auth),
-		(r'/(schema.*)', Schema),
-		(r'/(admin.*)', Admin),
-		(r'/(logs.*)', Logs),
-		(r'/(log.*)', Log),
-		(r'/(ws.*)', WebSocket)
+		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} )
+
 	], debug=True)
 
 	ioloop = IOLoop.instance()
@@ -92,7 +85,7 @@ if __name__ == '__main__':
 	future = application.db.connect()
 	ioloop.add_future(future, lambda f: ioloop.stop())
 	ioloop.start()
-	future.result() # raises exception on connection error
+	future.result() 
 
 	http_server = HTTPServer(application)
 	http_server.listen(port, '')

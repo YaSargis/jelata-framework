@@ -3,8 +3,8 @@ from json import loads, dumps
 from psycopg2 import extras
 from tornado import gen
 
-from basehandler import BaseHandler
-from service_functions import showError, default_headers, log
+from libs.basehandler import BaseHandler
+from libs.service_functions import showError, default_headers, log
 from settings import maindomain, primaryAuthorization
 
 def savefile(self):
@@ -18,7 +18,7 @@ def savefile(self):
 	if 'file_0' not in files:
 		self.set_status(500,None)
 		self.write('{"message":"file not found (file_0)"}')
-		return
+		return value
 	while x:
 		file = files.get('file_'+str(i))
 		if not file:
@@ -30,10 +30,13 @@ def savefile(self):
 			value.append({'thumbnail':maindomain + '/files/' + bfname,
 				'original':maindomain + '/files/' + bfname,
 				'src':maindomain + '/files/' + bfname,
+				'thumbnailWidth':100,
+				'thumbnailHeight':100,
 				'uri':'/files/' + bfname,
 				'filename':file.filename, 
 				'content_type':file.content_type, 
-				'size':len(bfile)})
+				'size':len(bfile)
+			})
 			xf = open('./files/' + bfname,'wb')
 			xf.write(bfile)
 			xf.close()
@@ -65,7 +68,7 @@ def onRequest(self, url, type):
 		args[k] = args.get(k)[0].decode('utf-8')
 		
 	if type in (2,4):
-		files = self.request.files#.get("files") #get request files	
+		files = self.request.files
 		body = {}
 
 		if files:
@@ -73,6 +76,10 @@ def onRequest(self, url, type):
 			if not value:
 				value = '[]'
 			value = loads(value)
+			if args.get('config') and loads(args.get('config')).get('type') in ('file','image') and len(value) > 0:
+				showError('for type file/image can not be more then 1 file',self)
+				return
+				
 			value = value + savefile(self)
 			args['value'] = dumps(value)
 		else:	
@@ -87,8 +94,9 @@ def onRequest(self, url, type):
 				args[k] = None
 	squery = "select * from framework.fn_fapi(injson:=%s,apititle:=%s,apitype:=%s,sessid:=%s,primaryauthorization:=%s)"
 	result = None
+	print(extras.Json(args),method,str(type),sesid,primaryAuthorization)
 	try:
-		result = yield self.db.execute(squery,(extras.Json(args),method,str(type),sesid,primaryAuthorization,))
+		result = yield self.db.execute(squery,(extras.Json(args),method,str(type),sesid,str(primaryAuthorization),))
 	except Exception as e:
 		log(url + '_Error',' args: ' + 
 			str(extras.Json(args)) + '; sess: ' + 
@@ -104,7 +112,7 @@ def onRequest(self, url, type):
 
 class FApi(BaseHandler):
 	"""
-		Universal API for all methods except authentication
+		Universal API for methods
 	"""
 	def set_default_headers(self):
 		default_headers(self)

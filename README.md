@@ -1,5 +1,5 @@
 # Current Version
-Jelata Framework v. 0.0.4
+Jelata Framework v. 0.0.5
 
 # Getting Started
 Jelata Framework is a tool combining a framework and development environment that you can use in your browser. 
