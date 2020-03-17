@@ -25,6 +25,7 @@ if __name__ == '__main__':
 	application = web.Application([
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
+		(r'/(chats.*)', WebSocketMessages),
 		(r"/(chat.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
 		(r"/(calendar.*)", MainHandler),
@@ -50,7 +51,6 @@ if __name__ == '__main__':
 		(r'/(log.*)', Log),
 		(r'/(rep.*)', Reporter),
 		(r'/(ws.*)', WebSocket),
-		(r'/(chats.*)', WebSocketMessages),
 		(r'/(messages.*)', WebSocketMessageNotifications),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),

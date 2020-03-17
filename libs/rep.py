@@ -1,12 +1,16 @@
 from json import loads, dumps
 import urllib.request, urllib.error
 from psycopg2 import extras
+from uuid import uuid4
 from tornado import gen
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient, HTTPError
 
 from libs.basehandler import BaseHandler
 from libs.service_functions import showError, default_headers, log
-from settings import primaryAuthorization
+from settings import primaryAuthorization, reports_url
+from io import StringIO
+from xlsx2html import xlsx2html
+
 
 
 @gen.coroutine		
@@ -46,11 +50,11 @@ def Report(self, url):
 	res = result.fetchone()[0]	
 	data = res.get('outjson')
 
-	reqBody = {'template':".." + res.get("template_path"),'data':dumps(data), 'filename':args.get('filename')}
+	reqBody = {'template':".." + res.get('template_path'),'data':dumps(data), 'filename':args.get('filename')}
 	
 	http_client =  AsyncHTTPClient();
 	req = HTTPRequest(
-		url="http://127.0.0.1:12317/report",
+		url=reports_url,
 		method='POST',
 		headers={'Content-Type':'application/json'},
 		body=dumps(reqBody),
@@ -67,11 +71,29 @@ def Report(self, url):
 			sesid + '; type: 1; Error:' + str(e))
 		showError(str(e), self)
 		return
-	self.set_header('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-	self.set_header('Cache-Control', 'public')
-	self.set_header('Content-Disposition', 'attachment; filename=' + args.get('filename') + '.xlsx')
-	self.set_header('Content-Description', 'File Transfer')
-	self.write(req.body)
+		
+	if res.get('ishtml'):
+		html_report = StringIO()
+		reportFilePath = './files/' + str(uuid4()) + '.xlsx'
+		reportFile = open(reportFilePath, 'wb')
+		reportFile.write(req.buffer.read())
+		reportFile.close()
+		html = xlsx2html(reportFilePath, html_report)
+		html_report.seek(0)
+		html_report = html_report.read()
+		self.set_header('Content-Type', 'text/html')
+		html_report += (
+			'<script>window.print()</script>' + 
+			'<style type="text/css" media="print">' +
+			'@page { size: auto;  margin: 0mm; } </style>'
+		)
+		self.write(html_report)
+	else:
+		self.set_header('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+		self.set_header('Cache-Control', 'public')
+		self.set_header('Content-Disposition', 'attachment; filename=' + args.get('filename') + '.xlsx')
+		self.set_header('Content-Description', 'File Transfer')
+		self.write(req.body)
 	self.set_status(200)
 	self.finish()
 

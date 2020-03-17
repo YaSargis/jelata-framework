@@ -1,10 +1,14 @@
 from json import loads, dumps
 from tornado import gen
+from tornado.httpclient import HTTPError, HTTPRequest, AsyncHTTPClient
 from libs.basehandler import BaseHandler
 from libs.sql_migration import getList
 from libs.service_functions import showError, default_headers, curtojson, log
-from settings import primaryAuthorization, developerRole
+from settings import primaryAuthorization, developerRole, maindomain
 
+
+AsyncHTTPClient.configure("tornado.simple_httpclient.SimpleAsyncHTTPClient", max_clients=1000)
+http_client =  AsyncHTTPClient()
 class Schema(BaseHandler):
 	'''
 		for SQL query build methods
@@ -131,11 +135,51 @@ class Schema(BaseHandler):
 				self.write('{"message":"access denied"}')
 				return
 			user = {}
-			'''if body.get('print'):
-				result['pagination'] = False
-				user['fam'] = userdetail.get('fam')
-				user['im'] = userdetail.get('im')
-				user['ot'] = userdetail.get('ot')'''
+			
+			# if exist initial action onLoad
+			actions = result.get('acts')
+			onLoad = None
+
+			for act in actions:
+				if act.get('type') == 'onLoad':
+					onLoad = act
+			
+			if onLoad:
+				req_url = onLoad.get('act')
+				if 'inputs' in body and onLoad.get('parametrs'):
+					req_url += '?'
+					for param in onLoad.get('parametrs'):
+						req_url += param.get('paramtitle') + '=' + (str(body.get('inputs').get(param.get('paraminput')) or '') ) + '&'
+				if req_url[:4] != 'http':
+					req_url = maindomain + req_url
+					
+				if onLoad.get('actapitype').lower() == 'get':
+					req = HTTPRequest(
+						url = req_url,
+						method = onLoad.get('actapitype'),
+						headers = {'Cookie':'sesid=' + sesid}
+					)
+				else:
+					req_body = {}
+					for param in onLoad.get('parametrs'):
+						req_body[param.get('paramtitle')] = body.get('inputs').get(param.get('paraminput'))
+					req = HTTPRequest(
+						url = req_url,
+						body = dumps(req_body),
+						method = onLoad.get('actapitype'),
+						headers = {'Cookie':'sesid=' + sesid}
+					)
+				try:
+					response = yield http_client.fetch(req)
+				except HTTPError as e:
+					if e.response and e.response.body:
+						e = e.response.body.decode("utf-8")
+					showError(str(e), self)
+					log(req_url + '_Error_onLoad', str(e))
+					log(req_url + '_Error_act', str(onLoad))
+					return
+			# if exist initial action onLoad
+	
 			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
 			scounquery = query[1]
@@ -154,29 +198,20 @@ class Schema(BaseHandler):
 			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error_count', str(e))
+				
 				return
 
 			count = count.fetchone()[0]
 
 			self.write(dumps({
-				'foundcount':count,
-				'data':data,
-				'config':result.get('config'),
-				'filters':result.get('filters'),
-				'acts':result.get('acts'),
-				'classname':result.get('classname'),
-				#'table':result.get('tablename'),
-				'title':result.get('title'),
-				'viewtype':result.get('viewtype'),
-				'pagination':result.get('pagination'),
-				'ispagecount':result.get('pagecount'),
-				'ispagesize':result.get('ispagesize'),
-				'isfoundcount':result.get('foundcount'),
-				'subscrible':result.get('subscrible'),
-				'isorderby':result.get('orderby'),
-				'viewid':result.get('id'),
-				'checker':result.get('checker'),
-				'user':user
+				'foundcount':count, 'data':data, 'config':result.get('config'),
+				'filters':result.get('filters'), 'acts':result.get('acts'),
+				'classname':result.get('classname'), 'title':result.get('title'),
+				'viewtype':result.get('viewtype'), 'pagination':result.get('pagination'),
+				'ispagecount':result.get('pagecount'), 'ispagesize':result.get('ispagesize'),
+				'isfoundcount':result.get('foundcount'), 'subscrible':result.get('subscrible'),
+				'isorderby':result.get('orderby'), 'viewid':result.get('id'),
+				'checker':result.get('checker'), 'user':user
 			}))
 
 		elif method == 'getone':
@@ -208,7 +243,51 @@ class Schema(BaseHandler):
 				self.set_status(403,None)
 				self.write('{"message":"access denied"}')
 				return
+				
+			# if exist initial action onLoad
+			actions = result.get('acts')
+			onLoad = None
+
+			for act in actions:
+				if act.get('type') == 'onLoad':
+					onLoad = act
 			
+			if onLoad:
+				req_url = onLoad.get('act')
+				if 'inputs' in body and onLoad.get('parametrs'):
+					req_url += '?'
+					for param in onLoad.get('parametrs'):
+						req_url += param.get('paramtitle') + '=' + (str(body.get('inputs').get(param.get('paraminput')) or '') ) + '&'
+				if req_url[:4] != 'http':
+					req_url = maindomain + req_url
+					
+				if onLoad.get('actapitype').lower() == 'get':
+					req = HTTPRequest(
+						url = req_url,
+						method = onLoad.get('actapitype'),
+						headers = {'Cookie':'sesid=' + sesid}
+					)
+				else:
+					req_body = {}
+					for param in onLoad.get('parametrs'):
+						req_body[param.get('paramtitle')] = body.get('inputs').get(param.get('paraminput'))
+					req = HTTPRequest(
+						url = req_url,
+						body = dumps(req_body),
+						method = onLoad.get('actapitype'),
+						headers = {'Cookie':'sesid=' + sesid}
+					)
+				try:
+					response = yield http_client.fetch(req)
+				except HTTPError as e:
+					if e.response and e.response.body:
+						e = e.response.body.decode("utf-8")
+					showError(str(e), self)
+					log(req_url + '_Error_onLoad', str(e))
+					log(url + '_Error_act', str(onLoad))
+					return
+			# if exist initial action onLoad
+				
 			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
 			data = []
@@ -227,14 +306,10 @@ class Schema(BaseHandler):
 			#count = count.fetchone()[0]
 			self.set_status(200,None)
 			self.write(dumps({
-				'data':data,
-				'config':result.get('config'),
-				'acts':result.get('acts'),
-				'classname':result.get('classname'),
-				'table':result.get('tablename'),
-				'subscrible':result.get('subscrible'),
-				'title':result.get('title'),
-				'viewtype':result.get('viewtype'),
+				'data':data, 'config':result.get('config'),
+				'acts':result.get('acts'), 'classname':result.get('classname'),
+				'table':result.get('tablename'), 'subscrible':result.get('subscrible'),
+				'title':result.get('title'), 'viewtype':result.get('viewtype'),
 				'id':result.get('id')
 			}))
 		elif method == 'squery':

@@ -1,0 +1,104 @@
+.list_table {
+
+}
+
+.list_table td, th {
+	background: inherit;
+	border: 1px solid #c8c8c8;
+	padding: 5px;
+	padding: .429em .857em;
+}
+
+
+.test_table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1rem;
+	background-color: transparent;
+	border-collapse: collapse;
+}
+.test_table thead {
+	  display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.test_table tr {
+	  display: table-row;
+	  vertical-align: inherit;
+	  border-color: inherit;
+}
+
+.test_table th, td {
+	vertical-align: bottom;
+	border-bottom: 2px solid #dee2e6;
+	border: 1px solid #dee2e6;
+	padding: .75rem;
+	padding: .75rem;
+
+}
+
+
+.test_table tbody {
+	display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.test_table tr:hover {
+	background-color: #e69d3c30;
+	cursor:pointer;
+}
+
+.btable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.btable td, th {
+	border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.red {
+	color:red;
+}
+
+.config_table {
+	font-size: 9pt;
+	width: 100%;
+	border-collapse: unset;
+	border-spacing: 1px;
+	white-space: nowrap;
+	vertical-align: baseline;
+
+}
+
+
+.config_table th, td {
+	padding:1px;
+}
+
+.config_table th {
+	background: black;
+	color: white;
+
+
+}
+
+.config_table td {
+	word-break: break-all;
+
+}
+
+.config_table tr:hover {
+	background: #646464b3;
+	color: white;
+	cursor: pointer;
+}
+
+.break_word {
+	word-wrap: break-word;
+	white-space: break-spaces;
+}

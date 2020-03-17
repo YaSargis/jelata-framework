@@ -55,12 +55,14 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 
 	@gen.coroutine		
 	def on_message(self, message):
+		
 		try:
 			message = loads(message)
 		except Exception as e:
 			self.write_message('{"error":"wrong data"}')
 			return		
-		log('ws_messages', 'message:' + str(message))
+
+		log('ws_messages_chats', 'message:' + str(message))
 		sesid = self.get_cookie("sesid") or ''
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
@@ -76,7 +78,7 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 				return
 
 			result = result.fetchone()[0].get('outjson')
-			if len(oldresult) != len(result):
+			if str(oldresult) != str(result):
 				oldresult = result
 				self.write_message(dumps(result))
 		return
