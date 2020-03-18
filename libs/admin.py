@@ -223,4 +223,98 @@ class Log(BaseHandler):
 		
 		self.write(dumps(res_json))
 		return
+
+class CSS(BaseHandler):
+	def set_default_headers(self):
+		default_headers(self)
+
+	def options(self,url):
+		self.set_status(200,None)
+		self.finish()
+					
+	@gen.coroutine
+	def post(self, url):
+		sesid = self.get_cookie("sesid") or ''	#get session id cookie
+		if primaryAuthorization == "1" and sesid is None:
+			self.set_status(401,None)
+			self.write('{"message":"No session"}')
+			return
+		squery = 'select * from framework.fn_userjson(%s)'
+		userdetail = []
+		try:
+			userdetail = yield self.db.execute(squery,(sesid,))
+		except Exception as e:				
+			showError(str(e), self)
+			return	
+		userdetail = userdetail.fetchone()[0]	
+		if userdetail is None:
+			self.set_status(401,None)
+			self.write('{"message":"no session or session was killed"}')
+			return
+		roles = userdetail.get('roles')
+		if int(developerRole) not in roles:
+			self.set_status(403,None)
+			self.write('{"message":"access denied"}')
+			return
+			
+		css_file = open('./user.css','rt')	
+		css_text = css_file.read()
+		css_file.close()
+		squery = 'select * from framework.fn_mainsettings_usercss(%s)'
+		result = None
+		try:
+			result = yield self.db.execute(squery,(css_text,))
+		except Exception as e:				
+			showError(str(e), self)
+			return	
+		
+		self.write('{"message":"OK"}')
+		return
 	
+	@gen.coroutine
+	def put(self, url):
+		sesid = self.get_cookie("sesid") or ''	#get session id cookie
+		if primaryAuthorization == "1" and sesid is None:
+			self.set_status(401,None)
+			self.write('{"message":"No session"}')
+			return
+		squery = 'select * from framework.fn_userjson(%s)'
+		userdetail = []
+		try:
+			userdetail = yield self.db.execute(squery,(sesid,))
+		except Exception as e:				
+			showError(str(e), self)
+			return	
+		userdetail = userdetail.fetchone()[0]	
+		if userdetail is None:
+			self.set_status(401,None)
+			self.write('{"message":"no session or session was killed"}')
+			return
+		roles = userdetail.get('roles')
+		if int(developerRole) not in roles:
+			self.set_status(403,None)
+			self.write('{"message":"access denied"}')
+			return
+			
+		body = loads(self.request.body.decode('utf-8')) 
+		css_text = body.get('usercss')
+		
+		if css_text is None:
+			self.set_status(500,None)
+			self.write('{"message":"text is empty"}')
+			return
+		
+		css_file = open('./user.css','wt')	
+		css_text = css_file.write(css_text)
+		css_file.close()
+		
+		'''squery = 'select * from framework.fn_mainsettings_usercss(%s)'
+		result = None
+		try:
+			result = yield self.db.execute(squery,(css_text,))
+		except Exception as e:				
+			showError(str(e), self)
+			return	'''
+		
+		self.write('{"message":"OK"}')
+		return

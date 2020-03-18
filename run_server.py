@@ -7,7 +7,7 @@ from momoko import Pool
 from settings import poolsize, dsn, port
 
 from libs.auth import Auth
-from libs.admin import Admin, Logs, Log
+from libs.admin import Admin, Logs, Log, CSS
 from libs.schema import Schema
 from libs.fapi import FApi
 from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications
@@ -47,6 +47,7 @@ if __name__ == '__main__':
 		(r'/(auth.*)', Auth),
 		(r'/(schema.*)', Schema),
 		(r'/(admin.*)', Admin),
+		(r'/(usercss.*)', CSS),
 		(r'/(logs.*)', Logs),
 		(r'/(log.*)', Log),
 		(r'/(rep.*)', Reporter),

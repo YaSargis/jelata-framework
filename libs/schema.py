@@ -146,7 +146,7 @@ class Schema(BaseHandler):
 			
 			if onLoad:
 				req_url = onLoad.get('act')
-				if 'inputs' in body and onLoad.get('parametrs'):
+				if 'inputs' in body and onLoad.get('parametrs') is not None:
 					req_url += '?'
 					for param in onLoad.get('parametrs'):
 						req_url += param.get('paramtitle') + '=' + (str(body.get('inputs').get(param.get('paraminput')) or '') ) + '&'
@@ -161,8 +161,9 @@ class Schema(BaseHandler):
 					)
 				else:
 					req_body = {}
-					for param in onLoad.get('parametrs'):
-						req_body[param.get('paramtitle')] = body.get('inputs').get(param.get('paraminput'))
+					if onLoad.get('parametrs') is not None:
+						for param in onLoad.get('parametrs'):
+							req_body[param.get('paramtitle')] = body.get('inputs').get(param.get('paraminput'))
 					req = HTTPRequest(
 						url = req_url,
 						body = dumps(req_body),
@@ -254,7 +255,7 @@ class Schema(BaseHandler):
 			
 			if onLoad:
 				req_url = onLoad.get('act')
-				if 'inputs' in body and onLoad.get('parametrs'):
+				if 'inputs' in body and onLoad.get('parametrs') is not None:
 					req_url += '?'
 					for param in onLoad.get('parametrs'):
 						req_url += param.get('paramtitle') + '=' + (str(body.get('inputs').get(param.get('paraminput')) or '') ) + '&'
@@ -269,8 +270,10 @@ class Schema(BaseHandler):
 					)
 				else:
 					req_body = {}
-					for param in onLoad.get('parametrs'):
-						req_body[param.get('paramtitle')] = body.get('inputs').get(param.get('paraminput'))
+					if onLoad.get('parametrs') is not None:
+						for param in onLoad.get('parametrs'):
+							req_body[param.get('paramtitle')] = body.get('inputs').get(param.get('paraminput'))
+
 					req = HTTPRequest(
 						url = req_url,
 						body = dumps(req_body),

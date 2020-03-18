@@ -102,3 +102,191 @@
 	word-wrap: break-word;
 	white-space: break-spaces;
 }
+
+.success {
+	margin: 5px 5px 5px 0;
+	background-color: #bafdaf;
+	color: #000;
+}
+
+
+.danger {
+	color: #fff;
+	background-color: #ff4d4f;
+	border-color: #ff4d4f;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+	-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.primary {
+	color: #fff;
+	background-color: #1890ff;
+	border-color: #1890ff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+	-webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.fm-btn {
+    line-height: 1.499;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,.015);
+    box-shadow: 0 2px 0 rgba(0,0,0,.015);
+    cursor: pointer;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    height: 32px;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+		margin: 5px 5px 5px 0;
+    border: 1px solid #d9d9d9
+}
+
+    .fm-btn > .anticon {
+        line-height: 1
+    }
+
+    .fm-btn, .fm-btn:active, .fm-btn:focus {
+        outline: 0
+    }
+
+        .fm-btn:not([disabled]):hover {
+            text-decoration: none
+        }
+
+        .fm-btn:not([disabled]):active {
+            outline: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none
+        }
+
+        .fm-btn.disabled, .fm-btn[disabled] {
+            cursor: not-allowed
+        }
+
+            .fm-btn.disabled > *, .fm-btn[disabled] > * {
+                pointer-events: none
+            }
+
+.fm-btn-lg {
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 4px
+}
+
+.fm-btn-sm {
+    height: 24px;
+    padding: 0 7px;
+    font-size: 14px;
+    border-radius: 4px
+}
+
+.fm-btn > a:only-child {
+    color: currentColor
+}
+
+    .fm-btn > a:only-child:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0);
+        content: ""
+    }
+
+.fm-btn:focus, .fm-btn:hover {
+    color: #40a9ff;
+    border-color: #40a9ff
+}
+
+    .fm-btn:focus > a:only-child, .fm-btn:hover > a:only-child {
+        color: currentColor
+    }
+
+        .fm-btn:focus > a:only-child:after, .fm-btn:hover > a:only-child:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0);
+            content: ""
+        }
+
+.fm-btn.active, .fm-btn:active {
+    color: #096dd9;
+    background-color: #fff;
+    border-color: #096dd9
+}
+
+    .fm-btn.active > a:only-child, .fm-btn:active > a:only-child {
+        color: currentColor
+    }
+
+        .fm-btn.active > a:only-child:after, .fm-btn:active > a:only-child:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0);
+            content: ""
+        }
+
+.fm-btn-disabled, .fm-btn-disabled.active, .fm-btn-disabled:active, .fm-btn-disabled:focus, .fm-btn-disabled:hover, .fm-btn.disabled, .fm-btn.disabled.active, .fm-btn.disabled:active, .fm-btn.disabled:focus, .fm-btn.disabled:hover, .fm-btn[disabled], .fm-btn[disabled].active, .fm-btn[disabled]:active, .fm-btn[disabled]:focus, .fm-btn[disabled]:hover {
+    color: rgba(0,0,0,.25);
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+    .fm-btn-disabled.active > a:only-child, .fm-btn-disabled:active > a:only-child, .fm-btn-disabled:focus > a:only-child, .fm-btn-disabled:hover > a:only-child, .fm-btn-disabled > a:only-child, .fm-btn.disabled.active > a:only-child, .fm-btn.disabled:active > a:only-child, .fm-btn.disabled:focus > a:only-child, .fm-btn.disabled:hover > a:only-child, .fm-btn.disabled > a:only-child, .fm-btn[disabled].active > a:only-child, .fm-btn[disabled]:active > a:only-child, .fm-btn[disabled]:focus > a:only-child, .fm-btn[disabled]:hover > a:only-child, .fm-btn[disabled] > a:only-child {
+        color: currentColor
+    }
+
+        .fm-btn-disabled.active > a:only-child:after, .fm-btn-disabled:active > a:only-child:after, .fm-btn-disabled:focus > a:only-child:after, .fm-btn-disabled:hover > a:only-child:after, .fm-btn-disabled > a:only-child:after, .fm-btn.disabled.active > a:only-child:after, .fm-btn.disabled:active > a:only-child:after, .fm-btn.disabled:focus > a:only-child:after, .fm-btn.disabled:hover > a:only-child:after, .fm-btn.disabled > a:only-child:after, .fm-btn[disabled].active > a:only-child:after, .fm-btn[disabled]:active > a:only-child:after, .fm-btn[disabled]:focus > a:only-child:after, .fm-btn[disabled]:hover > a:only-child:after, .fm-btn[disabled] > a:only-child:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0);
+            content: ""
+        }
+
+.fm-btn.active, .fm-btn:active, .fm-btn:focus, .fm-btn:hover {
+    text-decoration: none;
+    background: #fff
+}
+
+.fm-btn > i, .fm-btn > span {
+    display: inline-block;
+    -webkit-transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+    transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+    pointer-events: none
+}
+
+.fm-btn > span {
+    display: inline-block;
+    -webkit-transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+    transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+    pointer-events: none;
+		margin-left: 8px;
+}
