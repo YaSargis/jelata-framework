@@ -9,6 +9,14 @@
 	padding: .429em .857em;
 }
 
+.fr_tiles {
+
+}
+
+.tiles_actions {
+	position: absolute;
+	right: 0px;
+}
 
 .test_table {
 	width: 100%;
@@ -289,4 +297,12 @@
     transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
     pointer-events: none;
 		margin-left: 8px;
+}
+
+
+.f_content_app {
+	position: relative;
+	/*padding: 10px;*/
+	margin: 10px;
+	background: #fff;
 }

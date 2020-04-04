@@ -10,7 +10,7 @@ from libs.auth import Auth
 from libs.admin import Admin, Logs, Log, CSS
 from libs.schema import Schema
 from libs.fapi import FApi
-from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications
+from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications, WebSocketGlobal
 
 from libs.rep import Reporter
 
@@ -29,9 +29,6 @@ if __name__ == '__main__':
 		(r"/(chat.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
 		(r"/(calendar.*)", MainHandler),
-		(r"/(projectsettings.*)", MainHandler),
-		(r"/(viewlist.*)", MainHandler),
-		(r"/(view.*)", MainHandler),
 		(r"/(home.*)", MainHandler),
 		(r"/(report.*)", MainHandler),
 		(r"/(jdocumentation.*)", MainHandler),
@@ -41,7 +38,6 @@ if __name__ == '__main__':
 		(r"/(userorgs.*)", MainHandler),
 		(r"/(login.*)", MainHandler),
 		(r"/(logout.*)", MainHandler),
-		(r"/(newview.*)", MainHandler),
 		(r"/(compo.*)", MainHandler),
 		(r'/(api.*)', FApi),
 		(r'/(auth.*)', Auth),
@@ -52,6 +48,7 @@ if __name__ == '__main__':
 		(r'/(log.*)', Log),
 		(r'/(rep.*)', Reporter),
 		(r'/(ws.*)', WebSocket),
+		(r'/(global_ws.*)', WebSocketGlobal),
 		(r'/(messages.*)', WebSocketMessageNotifications),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
@@ -69,7 +66,8 @@ if __name__ == '__main__':
 		(r"/(.*.jpeg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.gif)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
-		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} )
+		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
+		(r"/(.*.ttf)", web.StaticFileHandler, {'path':'../jelataframework/'} )
 
 	], debug=True)
 

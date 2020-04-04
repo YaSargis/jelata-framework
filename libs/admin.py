@@ -45,14 +45,21 @@ class Admin(BaseHandler):
 			settingsFile = {}
 			try:
 				df = open('./settings.json') 
-				settingsFile = dumps(load(df))
+				settingsFile = load(df)
 				df.close()
 			except Exception as e:
 				showError(str(e), self)
 				log('/admin/getsettings_Error',str(e))
 				return
+			squery = 'select * from framework.fn_mainsettings_save(%s)'
+			try:
+				userdetail = yield self.db.execute(squery,(extras.Json(settingsFile),))
+			except Exception as e:				
+				showError(str(e), self)
+				return	
+			
 			log('/admin/getsettings','settingsFile: ' + str(settingsFile) + '; userdetail: ' + str(userdetail))	
-			self.write(settingsFile)
+			self.write('{"message":"OK"}')
 			
 		@gen.coroutine	
 		def post(self, url):
@@ -99,7 +106,7 @@ class Admin(BaseHandler):
 					showError(str(e), self)
 					return
 			log('/admin/savesettings',' settingsFile:' + str(settingsFile) + '; userdetail: ' + str(userdetail))		
-			self.write(settingsFile)
+			self.write('{"message":"OK"}')
 
 class Logs(BaseHandler):
 	def set_default_headers(self):
@@ -318,3 +325,4 @@ class CSS(BaseHandler):
 		
 		self.write('{"message":"OK"}')
 		return
+		

@@ -161,25 +161,25 @@ def getList(result, body, userdetail=None):
 				i += 1
 			if joins.find(" as t" + str(col.get("t"))) == -1:
 				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '" = ' + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
-			
+		colname = ''
+		if col.get('fn') is None:	
+			colname = 't' + sColT + '."' + col.get("col") + '"'
+		else:
+			colname =  col.get('fn').get('label') + '( '
+			for cl in col.get('fncolumns'):
+				if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+					colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+				else:
+					if str(cl.get('label')) == '_userid_':
+						colname += str(userdetail.get('id')) + ','
+					if str(cl.get('label')) == '_orgid_':
+						colname += str(userdetail.get('orgid')) + ','	
+					if str(cl.get('label')) == '_orgs_':
+						colname += "'" + str(userdetail.get('orgs')) + "',"		
+			colname = colname[:len(colname)-1]
+			colname += ')'	
 		if col.get('defaultval'):
-			colname = ''
-			if col.get('fn') is None:	
-				colname = 't' + sColT + '."' + col.get("col") + '"'
-			else:
-				colname =  col.get('fn').get('label') + '( '
-				for cl in col.get('fncolumns'):
-					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
-						colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
-					else:
-						if str(cl.get('label')) == '_userid_':
-							colname += str(userdetail.get('id')) + ','
-						if str(cl.get('label')) == '_orgid_':
-							colname += str(userdetail.get('orgid')) + ','	
-						if str(cl.get('label')) == '_orgs_':
-							colname += "'" + str(userdetail.get('orgs')) + "',"		
-				colname = colname[:len(colname)-1]
-				colname += ')'
+
 			defv = ''
 			if len(col.get('defaultval'))>0: 
 				defv = '('
@@ -254,7 +254,8 @@ def getList(result, body, userdetail=None):
 				elif body.get('inputs').get(col.get('title')) == '_orgid_':
 					body['inputs'][col.get('title')] = userdetail.get('orgid')	
 
-				where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
+				#where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
+				where += 'and ' + colname + ' = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
 				
 	if len(filters) > 0:
