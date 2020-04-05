@@ -31,8 +31,6 @@ if __name__ == '__main__':
 		(r"/(calendar.*)", MainHandler),
 		(r"/(home.*)", MainHandler),
 		(r"/(report.*)", MainHandler),
-		(r"/(jdocumentation.*)", MainHandler),
-		(r"/(jdocumentation_rus.*)", MainHandler),
 		(r"/(trees.*)", MainHandler),
 		(r"/(composition.*)", MainHandler),
 		(r"/(userorgs.*)", MainHandler),
