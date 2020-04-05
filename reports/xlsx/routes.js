@@ -4,15 +4,17 @@ var bodyParser = require('body-parser')
 
 app.use(bodyParser.json({limit: '100mb'}))
 app.use(bodyParser.urlencoded({limit: '100mb', extended: true}))
-function log(mes){
-	var gd = new Date();
-	ff.appendFile(rootFolder + '/log.txt','\r\n' + gd+mes, function(err){console.log(err)})
-};
 
-/* Perform substitution */
+function log(mes){
+	// log requests
+	var gd = new Date()
+	ff.appendFile(rootFolder + '/log.txt','\r\n' + gd+mes, function(err){console.log(err)})
+}
+
+// Perform substitution 
 var jsonParser = bodyParser.json() 
 
-/* create application/x-www-form-urlencoded parser */ 
+// create application/x-www-form-urlencoded parser 
 var urlencodedParser = bodyParser.urlencoded({ extended: false }) 
 
 app.post( '/report', urlencodedParser,
@@ -26,7 +28,6 @@ app.post( '/report', urlencodedParser,
 			return
 		}
 		
-		console.log("FILENAME:", filename)
 		try {	
 			ff.readFile(template, function(err, dat) {
 				if ( err ) {
@@ -35,23 +36,32 @@ app.post( '/report', urlencodedParser,
 				}
 				var XlsxTemplate = require('xlsx-template')
 				var tmp = new XlsxTemplate(dat)
+				
 				var sheetNumber = 1
 		
 				data = JSON.parse(data)
 				var values = data || {}
-				/*if (values == null) {
-					values = {}
-				}*/
+				if ('outjson' in values) { 
+					// for not multipages template				
+					tmp.substitute(sheetNumber, values) 
+				}
 					
-				//values.pr = data
-				tmp.substitute(sheetNumber, values) // Perform substitution
+				else if ('page1' in values) {
+					// for multipages templates
+					key = 'page1'
+					while (key in values) {
+						tmp.substitute(sheetNumber, values[key]) 
+						sheetNumber += 1
+						key = 'page' + sheetNumber
+					}
+				}
 
-				/* Get binary data */
+				// Get binary data 
 				var dat = tmp.generate(),
 					dt = require('docxtemplater'),
 					doc = new dt(dat)
 				
-				doc.render() //apply them
+				doc.render()
 				output = doc.getZip().generate({type:"nodebuffer"})
 
 				response.setHeader('Cache-Control', 'public')
@@ -62,7 +72,8 @@ app.post( '/report', urlencodedParser,
 				response.header('Content-Transfer-Encoding', 'binary')
 				response.header("Content-Length" , dat.length)
 				response.send(output)
-				delete dt, XlsxTemplate, tmp, /*doc,*/ dat, output
+				
+				delete dt, XlsxTemplate, tmp, dat, output
 			});	
 		} catch (e) {
 			console.error(e.message)

@@ -69,7 +69,7 @@ def getList(result, body, userdetail=None):
 		if (newroles is None or len(newroles) == 0 or (len(newroles)>0 
 			and len(list(set(newroles) & set(useroles)))>0)):
 			colT = str(col.get('t'))
-			if 'relation' not in col or col.get('relation') is None:
+			if ('relation' not in col or col.get('relation') is None) and col.get('related')==False:
 				colT = '1'
 			sColT = str(col.get('t'))
 			if 'table' not in col or col.get('table') is None:
@@ -161,25 +161,25 @@ def getList(result, body, userdetail=None):
 				i += 1
 			if joins.find(" as t" + str(col.get("t"))) == -1:
 				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '" = ' + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
-			
+		colname = ''
+		if col.get('fn') is None:	
+			colname = 't' + sColT + '."' + col.get("col") + '"'
+		else:
+			colname =  col.get('fn').get('label') + '( '
+			for cl in col.get('fncolumns'):
+				if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+					colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+				else:
+					if str(cl.get('label')) == '_userid_':
+						colname += str(userdetail.get('id')) + ','
+					if str(cl.get('label')) == '_orgid_':
+						colname += str(userdetail.get('orgid')) + ','	
+					if str(cl.get('label')) == '_orgs_':
+						colname += "'" + str(userdetail.get('orgs')) + "',"		
+			colname = colname[:len(colname)-1]
+			colname += ')'	
 		if col.get('defaultval'):
-			colname = ''
-			if col.get('fn') is None:	
-				colname = 't' + sColT + '."' + col.get("col") + '"'
-			else:
-				colname =  col.get('fn').get('label') + '( '
-				for cl in col.get('fncolumns'):
-					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
-						colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
-					else:
-						if str(cl.get('label')) == '_userid_':
-							colname += str(userdetail.get('id')) + ','
-						if str(cl.get('label')) == '_orgid_':
-							colname += str(userdetail.get('orgid')) + ','	
-						if str(cl.get('label')) == '_orgs_':
-							colname += "'" + str(userdetail.get('orgs')) + "',"		
-				colname = colname[:len(colname)-1]
-				colname += ')'
+
 			defv = ''
 			if len(col.get('defaultval'))>0: 
 				defv = '('
@@ -208,7 +208,7 @@ def getList(result, body, userdetail=None):
 					elif def_v == '_userid_':
 						userid = str(userdetail.get('id'))	
 						defv += bool_v + ' ' + colname + '::varchar ' + act_v + " ('" + userid + "') "	
-					elif def_v == bool_v + '_orgid_':
+					elif def_v == '_orgid_':
 						orgid = str(userdetail.get('orgid'))	
 						defv += bool_v + ' ' + colname +  '::varchar ' + act_v + " ('" + orgid + "') "		
 					elif def_v.find(',') != -1:	
@@ -254,7 +254,8 @@ def getList(result, body, userdetail=None):
 				elif body.get('inputs').get(col.get('title')) == '_orgid_':
 					body['inputs'][col.get('title')] = userdetail.get('orgid')	
 
-				where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
+				#where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
+				where += 'and ' + colname + ' = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
 				
 	if len(filters) > 0:
@@ -265,7 +266,24 @@ def getList(result, body, userdetail=None):
 						if body.get("filters").get(col.get("column")):
 							where += "and t" + str(col.get("t") or '1') + "." + col.get("column") + " = '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
 					elif col.get("type") == "substr":
-						where += "and upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + "::varchar,'')) like upper('%" + formatInj(body.get("filters").get(col.get("column"))) + "%') "
+						where += (
+							"and (upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + 
+							"::varchar,'')) like upper('%" + formatInj(body.get("filters").get(col.get("column"))) + 
+							"%') OR upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + 
+							"::varchar,'')) like substring(upper('" + formatInj(body.get("filters").get(col.get("column"))) + 
+							"'),3,length('" + formatInj(body.get("filters").get(col.get("column"))) + 
+							"')) OR upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + 
+							"::varchar,'')) like upper(concat(substring('" + formatInj(body.get("filters").get(col.get("column"))) + 
+							"',3,14),substring('" + formatInj(body.get("filters").get(col.get("column"))) + "',19,13)))) "
+						)
+						'''(
+							"and upper(coalesce(t" + 
+							str(col.get("t") or '1') + "." + 
+							col.get("column") + 
+							"::varchar,'')) like upper('%" + 
+							formatInj(body.get("filters").get(col.get("column"))) + 
+							"%') "
+						)'''
 					elif col.get("type") == "period":
 						if formatInj(body.get("filters").get(col.get("column")).get("date1")) is not None and formatInj(body.get("filters").get(col.get("column")).get("date2")) is not None:
 							where += ("and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 

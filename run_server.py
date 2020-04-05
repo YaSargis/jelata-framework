@@ -7,10 +7,10 @@ from momoko import Pool
 from settings import poolsize, dsn, port
 
 from libs.auth import Auth
-from libs.admin import Admin, Logs, Log
+from libs.admin import Admin, Logs, Log, CSS
 from libs.schema import Schema
 from libs.fapi import FApi
-from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications
+from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications, WebSocketGlobal
 
 from libs.rep import Reporter
 
@@ -25,32 +25,28 @@ if __name__ == '__main__':
 	application = web.Application([
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
+		(r'/(chats.*)', WebSocketMessages),
 		(r"/(chat.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
 		(r"/(calendar.*)", MainHandler),
-		(r"/(projectsettings.*)", MainHandler),
-		(r"/(viewlist.*)", MainHandler),
-		(r"/(view.*)", MainHandler),
 		(r"/(home.*)", MainHandler),
 		(r"/(report.*)", MainHandler),
-		(r"/(jdocumentation.*)", MainHandler),
-		(r"/(jdocumentation_rus.*)", MainHandler),
 		(r"/(trees.*)", MainHandler),
 		(r"/(composition.*)", MainHandler),
 		(r"/(userorgs.*)", MainHandler),
 		(r"/(login.*)", MainHandler),
 		(r"/(logout.*)", MainHandler),
-		(r"/(newview.*)", MainHandler),
 		(r"/(compo.*)", MainHandler),
 		(r'/(api.*)', FApi),
 		(r'/(auth.*)', Auth),
 		(r'/(schema.*)', Schema),
 		(r'/(admin.*)', Admin),
+		(r'/(usercss.*)', CSS),
 		(r'/(logs.*)', Logs),
 		(r'/(log.*)', Log),
 		(r'/(rep.*)', Reporter),
 		(r'/(ws.*)', WebSocket),
-		(r'/(chats.*)', WebSocketMessages),
+		(r'/(global_ws.*)', WebSocketGlobal),
 		(r'/(messages.*)', WebSocketMessageNotifications),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
@@ -68,7 +64,8 @@ if __name__ == '__main__':
 		(r"/(.*.jpeg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.gif)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.js)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
-		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} )
+		(r"/(.*.css)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
+		(r"/(.*.ttf)", web.StaticFileHandler, {'path':'../jelataframework/'} )
 
 	], debug=True)
 

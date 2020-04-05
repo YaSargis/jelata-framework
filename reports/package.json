@@ -1,14 +1,14 @@
 {
   "name": "jreports",
   "version": "0.0.1",
-  "description": "project for jelata.tech reports",
+  "description": "project for jelataframework reports",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "convertapi": "^1.4.0",
     "docxtemplater": "^1.0.8",
     "express": "^4.13.4",
     "path": "^0.12.7",
-    "xlsx-populate": "^0.2.0",
     "xlsx-template": "^0.3.1"
   },
   "devDependencies": {},
@@ -16,5 +16,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kazaryan Sargis",
-  "license": "ISC"
+  "license": "Jelata"
 }

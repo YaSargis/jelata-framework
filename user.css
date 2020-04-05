@@ -1,0 +1,119 @@
+/* YOU CAN ADD YOUR CLASSES HERE  */
+
+.flex_tiles {
+  display: flex;
+  overflow-x: auto;
+}
+.test_test {
+	cursor:pointer;
+	color:black;
+}
+
+.aa {}
+
+.resizable, div[id^="ace-editor"] {
+  overflow: hidden;
+  resize: both;
+}
+
+@font-face {
+  font-family: RMIASFont;
+  src: url('build/17487.ttf');
+}
+
+@font-face {
+  font-family: RM2;
+  src: url('build/17493.otf');
+}
+
+@font-face {
+  font-family: RM3;
+  src: url('build/17428.ttf');
+}
+
+@font-face {
+  font-family: RM4;
+  src: url('build/16864.ttf');
+}
+
+@font-face {
+  font-family: RM5;
+  src: url('build/16658.otf');
+}
+
+@font-face {
+  font-family: RM6;
+  src: url('build/16198.ttf');
+}
+
+
+@font-face {
+  font-family: RM7;
+  src: url('build/17338.otf');
+}
+
+
+
+
+/*
+span {
+	font-size: 16px;
+}
+div, span {
+  font-family: RM7;
+  
+}*/
+
+
+
+.green-shadow input:hover {
+  background-color: yellow;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 8px #bafdaf, 0 0 0 4px rgba(136,252,116,0.25) inset;
+  transition-duration: 0.3s;
+}
+
+div[class^=" css-1y6pza6-control"]:hover {
+  background-color: rgba(210,254,203,1);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 8px #bafdaf, 0 0 0 4px rgba(121,251,98,0.5);
+  transition-duration: 0.3s;
+}
+
+td:hover {
+  background-color: rgba(221, 254, 216, 0.5);
+  color: black;
+}
+
+thead {
+  background-color: rgba(219, 219, 219, 0.5);
+}
+
+div[class^="ant-collapse-header"] {
+  background-color: rgba(221, 254, 216, 0.5);
+}
+*/
+
+.content_app {
+  padding:2px;
+ }
+ 
+ .paleturquoise{
+background-color:#AFEEEE;
+ }
+ 
+ .title22 {
+ font-size: 22px;
+ }
+
+ .title22 b {
+ display:none;
+ }
+ 
+ .nob {
+ 
+ }
+ 
+ .nob b {
+  display:none;
+ }

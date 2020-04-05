@@ -1,5 +1,5 @@
 # Current Version
-Jelata Framework v. 0.0.5
+Jelata Framework v. 0.0.6
 
 # Getting Started
 Jelata Framework is a tool combining a framework and development environment that you can use in your browser. 
@@ -8,14 +8,23 @@ To start using you will need:
                         <ul>
 							<li>python 3 (recommended to use python versions older than 3.4)</li>
 							<li>PostgreSQL DBMS (PostgreSQL version 9.5 is recommended)</li>
+							<li>node js </li>
 						</ul>
 						<p>For python, you must install the following libraries:</p>
                         <ul>
 							<li>tornado v. 4.5.3</li>
 							<li>momoko</li>
+							<li>xlsx2html</li>
 						</ul>
+						
 <pre>pip install -Iv tornado==4.5.3 
 pip install momoko
+pip install xlsx2html
+</pre>
+
+<p>For start report service go to the path ./reports and install all modules and start node server (or use pm2 deamon).</p>
+<pre>npm i
+node index.js
 </pre>
 
 Next, you need to create the project database by running the script from the framework.sql file (If you already have a database to which you want to connect, you need to create all the objects from the framework.sql script in your database).
@@ -30,9 +39,10 @@ After starting the server, in the browser, go to http://127.0.0.1:8080 and in th
 <p><b>login:</b> admin</p>
 <p><b>password:</b> 123</p>
 <p>PS Be sure to change the administrator password before release.</p>
-More detail instructions you can get after starting the server followink link http://127.0.0.1:8080/jdocumentation	
+More detail instructions you can get after starting the server followink link http://127.0.0.1:8080/list/jdocumentations. In version 0.0.6 it may be not available for some time.
+<p>For see template components	follow the link  http://127.0.0.1:8080/list/test</p>
 
-You can write your own front-end for framework using <a href="https://github.com/YaSargis/jelata-framework-main-frontend">main frontent project</a>				
+You can write your own front-end for framework using <a href="https://github.com/YaSargis/jelata-framework-ant-frontend">main frontent project</a>				
 
 ## Authors
 

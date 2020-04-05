@@ -1,0 +1,10 @@
+{
+  "api": {
+    "url": "/",
+    "_url": "/",
+    "ws": "/ws"
+  },
+  "chat": true,
+  "profile": true,
+  "userorg": "/getone/user_account"
+}
