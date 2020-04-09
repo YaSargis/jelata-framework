@@ -31,7 +31,7 @@ class WebSocket(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(5)			
 			try:
-				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,str(primaryAuthorization),))
 			except Exception as err:
 				err = str(err)
 				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
@@ -74,7 +74,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 		return
 
 	def on_close(self):
-		print('Connection closed global')
+		print("Connection closed")
 		
 class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 	'''
@@ -101,10 +101,10 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(2)			
 			try:
-				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,str(primaryAuthorization),))
 			except Exception as err:
 				err = str(err)
-				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
+				self.write_message('{"error":"chats' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
 				return
 
 			result = result.fetchone()[0].get('outjson')
@@ -139,10 +139,10 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(2)			
 			try:
-				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,str(primaryAuthorization),))
 			except Exception as err:
 				err = str(err)
-				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
+				self.write_message('{"error":"chats_messages' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
 				return
 
 			result = result.fetchone()[0].get('outjson')
