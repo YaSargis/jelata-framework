@@ -234,10 +234,7 @@ def getList(result, body, userdetail=None):
 				defv += ')'
 			where += 'and ' + defv + ' ' 			
 			
-		if col.get('required') and body.get('inputs'):
-			where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + (body.get('inputs').get(col.get('title')) ) + '\' '
-		if col.get('required') and not body.get('inputs'):
-			where += 'and t' + sColT + '."' + col.get('col') + '" = null '
+
 			
 		if col.get('orderby'):
 			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '"'
@@ -257,7 +254,8 @@ def getList(result, body, userdetail=None):
 				#where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				where += 'and ' + colname + ' = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
-				
+		if col.get('required') and not body.get('inputs'):
+			where += 'and t' + sColT + '."' + col.get('col') + '" = null '			
 	if len(filters) > 0:
 		for col in filters:
 			if 'filters' in body:
