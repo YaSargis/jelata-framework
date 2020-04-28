@@ -39,6 +39,7 @@ class Auth(BaseHandler):
 			
 			login = body.get('login')
 			passw = body.get('pass')
+			sesid = self.request.headers.get('Auth')
 			passw = sha224(passw.encode('utf-8')).hexdigest()
 			
 			if login is None or passw is None:
@@ -46,9 +47,9 @@ class Auth(BaseHandler):
 				self.set_status(500,None)
 				return
 				
-			squery = 'select * from framework.fn_sess(%s,%s);'
+			squery = 'select * from framework.fn_sess(%s,%s,%s);'
 			try:
-				result = yield self.db.execute(squery,(login,passw,))
+				result = yield self.db.execute(squery,(login,passw,sesid))
 			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error',str(e))
@@ -58,10 +59,10 @@ class Auth(BaseHandler):
 			self.write('{"message":"OK"}')		
 		elif method == "auth_crypto":
 			body = loads(self.request.body.decode('utf-8'))
-				
+			sesid = self.request.headers.get('Auth')	
 			squery = 'select * from framework.fn_cryptosess(%s);'
 			try:
-				result = yield self.db.execute(squery,(extras.Json(body),))
+				result = yield self.db.execute(squery,(extras.Json(body),sesid,))
 			except Exception as e:
 				showError(str(e), self)
 				log(url + '_Error',str(e))

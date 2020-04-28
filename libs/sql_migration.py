@@ -115,7 +115,7 @@ def getList(result, body, userdetail=None):
 					squery += ' distinct '
 				else:
 					for cl in col.get('fncolumns'):
-						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_'):
 							gropby += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 						else:
 							if str(cl.get('label')) == '_userid_':
@@ -124,8 +124,10 @@ def getList(result, body, userdetail=None):
 								gropby += str(userdetail.get('orgid')) + ','	
 							if str(cl.get('label')) == '_orgs_':
 								gropby += "'" + str(userdetail.get('orgs')) + "',"		
+							if str(cl.get('label')) == '_sesid_':
+								gropby += "'" + str(userdetail.get('sessid')) + "',"		
 				for cl in col.get('fncolumns'):
-					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_'):
 						squery += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 					else:
 						if str(cl.get('label')) == '_userid_':
@@ -134,6 +136,8 @@ def getList(result, body, userdetail=None):
 							squery += str(userdetail.get('orgid')) + ','	
 						if str(cl.get('label')) == '_orgs_':
 							squery += "'" + str(userdetail.get('orgs')) + "',"		
+						if str(cl.get('label')) == '_sesid_':
+							squery += "'" + str(userdetail.get('sessid')) + "',"			
 					if col.get('fn').get('label') == 'concat':
 						squery += "' ',"
 				squery = squery[:len(squery)-1]
@@ -167,15 +171,17 @@ def getList(result, body, userdetail=None):
 		else:
 			colname =  col.get('fn').get('label') + '( '
 			for cl in col.get('fncolumns'):
-				if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
-					colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+				if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_','_sesid_'):
+					colname += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 				else:
 					if str(cl.get('label')) == '_userid_':
 						colname += str(userdetail.get('id')) + ','
 					if str(cl.get('label')) == '_orgid_':
 						colname += str(userdetail.get('orgid')) + ','	
 					if str(cl.get('label')) == '_orgs_':
-						colname += "'" + str(userdetail.get('orgs')) + "',"		
+						colname += "'" + str(userdetail.get('orgs')) + "',"	
+					if str(cl.get('label')) == '_sesid_':
+						colname += "'" + str(userdetail.get('sessid')) + "',"							
 			colname = colname[:len(colname)-1]
 			colname += ')'	
 		if col.get('defaultval'):
@@ -254,8 +260,10 @@ def getList(result, body, userdetail=None):
 				#where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				where += 'and ' + colname + ' = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
+		#if col.get('required') and body.get('inputs'):
+		#	where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + (body.get('inputs').get(col.get('title')) ) + '\' '
 		if col.get('required') and not body.get('inputs'):
-			where += 'and t' + sColT + '."' + col.get('col') + '" = null '			
+			where += 'and t' + sColT + '."' + col.get('col') + '" = null '		
 	if len(filters) > 0:
 		for col in filters:
 			if 'filters' in body:

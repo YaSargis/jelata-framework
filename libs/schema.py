@@ -54,7 +54,7 @@ class Schema(BaseHandler):
 		'''SELECT row_to_json (d) FROM (select *
 					from framework.views where path = %s) as d'''
 		result = []
-		roles = userdetail.get('roles')
+		roles = (userdetail.get('roles') or [])
 		if int(developerRole) not in roles:
 			self.set_status(403,None)
 			self.write('{"message":"access denied"}')
@@ -128,7 +128,7 @@ class Schema(BaseHandler):
 			else:
 				x = True
 			for col in result.get('roles'):
-				if col.get('value') in userdetail.get('roles') and not x:
+				if col.get('value') in (userdetail.get('roles') or []) and not x:
 					x = True
 			if not x:
 				self.set_status(403,None)
@@ -238,7 +238,7 @@ class Schema(BaseHandler):
 			else:
 				x = True
 			for col in result.get('roles'):
-				if col.get("value") in userdetail.get('roles') and not x:
+				if col.get("value") in (userdetail.get('roles') or []) and not x:
 					x = True
 			if not x:
 				self.set_status(403,None)
