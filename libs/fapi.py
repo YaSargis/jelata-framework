@@ -55,10 +55,10 @@ def onRequest(self, url, type):
 	sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 	if type != 1 and self.request.headers.get('Content-Type').find('multipart/form-data') == -1:
 		log(url, 'args: ' + str(self.request.arguments) + '; body: ' + str(self.request.body.decode('utf-8')) + 
-			'; sess: ' + sesid + '; type: ' + str(type))
+			'; sess: ' + str(sesid) + '; type: ' + str(type))
 	else:
 		log(url, 'args: ' + str(self.request.arguments) + 
-			'; sess: ' + sesid + '; type: ' + str(type))		
+			'; sess: ' + str(sesid) + '; type: ' + str(type))		
 	if primaryAuthorization == "1" and sesid == '':
 		self.set_status(401,None)
 		self.write('{"message":"No session"}')
