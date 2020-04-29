@@ -49,7 +49,7 @@ class Schema(BaseHandler):
 			return
 		
 		userdetail = userdetail.fetchone()[0]
-		
+		userdetail['sessid'] = sesid
 		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
 		'''SELECT row_to_json (d) FROM (select *
 					from framework.views where path = %s) as d'''
@@ -104,6 +104,7 @@ class Schema(BaseHandler):
 			return
 
 		userdetail = userdetail.fetchone()[0]
+		userdetail['sessid'] = sesid
 		#userdetail = userdetail.get('outjson')
 		if method == 'list':
 			"""SELECT row_to_json (d) FROM (select *
