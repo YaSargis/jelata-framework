@@ -115,25 +115,29 @@ def getList(result, body, userdetail=None):
 					squery += ' distinct '
 				else:
 					for cl in col.get('fncolumns'):
-						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_'):
 							gropby += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 						else:
 							if str(cl.get('label')) == '_userid_':
-								gropby += str(userdetail.get('id')) + ','
+								gropby += str(userdetail.get('id') or 'null') + ','
 							if str(cl.get('label')) == '_orgid_':
-								gropby += str(userdetail.get('orgid')) + ','	
+								gropby += str(userdetail.get('orgid') or 'null') + ','	
 							if str(cl.get('label')) == '_orgs_':
-								gropby += "'" + str(userdetail.get('orgs')) + "',"		
+								gropby += "'" + str(userdetail.get('orgs') or 'null') + "',"		
+							if str(cl.get('label')) == '_sesid_':
+								gropby += "'" + str(userdetail.get('sessid') or 'null') + "',"		
 				for cl in col.get('fncolumns'):
-					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
+					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_'):
 						squery += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 					else:
 						if str(cl.get('label')) == '_userid_':
-							squery += str(userdetail.get('id')) + ','
+							squery += str(userdetail.get('id') or 'null') + ','
 						if str(cl.get('label')) == '_orgid_':
-							squery += str(userdetail.get('orgid')) + ','	
+							squery += str(userdetail.get('orgid') or 'null') + ','	
 						if str(cl.get('label')) == '_orgs_':
-							squery += "'" + str(userdetail.get('orgs')) + "',"		
+							squery += "'" + str(userdetail.get('orgs') or 'null') + "',"		
+						if str(cl.get('label')) == '_sesid_':
+							squery += "'" + str(userdetail.get('sessid') or 'null') + "',"			
 					if col.get('fn').get('label') == 'concat':
 						squery += "' ',"
 				squery = squery[:len(squery)-1]
@@ -167,15 +171,17 @@ def getList(result, body, userdetail=None):
 		else:
 			colname =  col.get('fn').get('label') + '( '
 			for cl in col.get('fncolumns'):
-				if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_'):
-					colname += 't' + str(cl.get('t')) + '."' + cl.get('label') + '",'
+				if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_','_sesid_'):
+					colname += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 				else:
 					if str(cl.get('label')) == '_userid_':
-						colname += str(userdetail.get('id')) + ','
+						colname += str(userdetail.get('id') or 'null') + ','
 					if str(cl.get('label')) == '_orgid_':
-						colname += str(userdetail.get('orgid')) + ','	
+						colname += str(userdetail.get('orgid') or 'null') + ','	
 					if str(cl.get('label')) == '_orgs_':
-						colname += "'" + str(userdetail.get('orgs')) + "',"		
+						colname += "'" + str(userdetail.get('orgs') or 'null') + "',"	
+					if str(cl.get('label')) == '_sesid_':
+						colname += "'" + str(userdetail.get('sessid') or 'null') + "',"							
 			colname = colname[:len(colname)-1]
 			colname += ')'	
 		if col.get('defaultval'):
@@ -234,10 +240,7 @@ def getList(result, body, userdetail=None):
 				defv += ')'
 			where += 'and ' + defv + ' ' 			
 			
-		if col.get('required') and body.get('inputs'):
-			where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + (body.get('inputs').get(col.get('title')) ) + '\' '
-		if col.get('required') and not body.get('inputs'):
-			where += 'and t' + sColT + '."' + col.get('col') + '" = null '
+
 			
 		if col.get('orderby'):
 			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '"'
@@ -257,9 +260,13 @@ def getList(result, body, userdetail=None):
 				#where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				where += 'and ' + colname + ' = \'' + formatInj(body.get('inputs').get(col.get('title'))) + "' "
 				body['inputs'][col.get('title')] = None	
-				
+		#if col.get('required') and body.get('inputs'):
+		#	where += 'and t' + sColT + '."' + col.get('col') + '" = \'' + (body.get('inputs').get(col.get('title')) ) + '\' '
+		if col.get('required') and not body.get('inputs'):
+			where += 'and t' + sColT + '."' + col.get('col') + '" = null '		
 	if len(filters) > 0:
 		for col in filters:
+			print('col:',col)
 			if 'filters' in body:
 				if (col.get("type") == "typehead" and col.get("title") in body.get("filters")) or str(col.get("column")) in body.get("filters"): 
 					if col.get("type") == "select":
@@ -285,11 +292,19 @@ def getList(result, body, userdetail=None):
 							"%') "
 						)'''
 					elif col.get("type") == "period":
-						if formatInj(body.get("filters").get(col.get("column")).get("date1")) is not None and formatInj(body.get("filters").get(col.get("column")).get("date2")) is not None:
+						if ('date1' in body.get("filters").get(col.get("column"))) and ('date2' in body.get("filters").get(col.get("column"))):
 							where += ("and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 
 								formatInj(body.get("filters").get(col.get("column")).get("date1")) + 
 								"' and t" + str(col.get("t") or '1') + "." + col.get("column") + 
 								"::date <= '" + formatInj(body.get("filters").get(col.get("column")).get("date2")) + "' ")									
+					elif col.get("type") == "date_between":
+						if formatInj(body.get("filters").get(col.get("column"))) is not None:
+							where += (
+								"and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 
+								formatInj(body.get("filters").get(col.get("column"))) + 
+								"' and t" + str(col.get("t") or '1') + "." + col.get("column") + 
+								"::date <= '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
+							)	
 					elif col.get("type") == "multiselect":
 						if len(body.get("filters").get(col.get("column"))) > 0 :
 							where += ("and (t" + str(col.get("t") or '1') + "." + col.get("column") + 

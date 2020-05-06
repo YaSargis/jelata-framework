@@ -11,6 +11,7 @@
 
 .aa {}
 
+
 .resizable, div[id^="ace-editor"] {
   overflow: hidden;
   resize: both;
@@ -61,59 +62,211 @@ span {
 }
 div, span {
   font-family: RM7;
-  
+
 }*/
 
 
 
-.green-shadow input:hover {
-  background-color: yellow;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 8px #bafdaf, 0 0 0 4px rgba(136,252,116,0.25) inset;
-  transition-duration: 0.3s;
-}
-
-div[class^=" css-1y6pza6-control"]:hover {
-  background-color: rgba(210,254,203,1);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 8px #bafdaf, 0 0 0 4px rgba(121,251,98,0.5);
-  transition-duration: 0.3s;
-}
-
-td:hover {
-  background-color: rgba(221, 254, 216, 0.5);
-  color: black;
-}
-
-thead {
-  background-color: rgba(219, 219, 219, 0.5);
-}
-
-div[class^="ant-collapse-header"] {
-  background-color: rgba(221, 254, 216, 0.5);
-}
-*/
-
 .content_app {
   padding:2px;
  }
- 
- .paleturquoise{
-background-color:#AFEEEE;
+
+ .paleturquoise {
+  background-color:#AFEEEE;
  }
- 
+
  .title22 {
- font-size: 22px;
+  font-size: 22px;
  }
 
  .title22 b {
- display:none;
+  display:none;
  }
- 
+
  .nob {
- 
+
  }
- 
+
  .nob b {
   display:none;
  }
+
+ .lil_list_text {
+   font-size: 10px;
+ }
+
+ .lil_list_text span {
+    color: #557c9e;
+ }
+
+
+ .green_prety_b {
+
+ }
+
+ .green_prety_b b {
+   color: #2be242;
+ }
+
+ .green_prety_b span {
+    color: #0824ec;
+    font-size: 17px;
+ }
+
+
+ .bigtitle25 {
+    font-size: 25px;
+    color: #06a7b7d9;
+ }
+
+ .basket {
+    background: #fff705;
+    width: 300px;
+ }
+
+ .basket i {
+  font-size: 20px;
+  color: #ca3e09;
+ }
+
+ .contents {
+  display:contents;
+ }
+
+ .smaller {
+  font-size: smaller;
+ }
+
+ .food_table {
+  width:100%;
+ }
+
+
+
+.food_table th, td {
+   border:none;
+}
+
+.food_table th:hover {
+   background:#ffff002e;
+   cursor:pointer;
+}
+
+.food_table td:hover {
+   background:#f5eff5;
+   cursor:pointer;
+}
+
+body {
+  background:black;
+}
+
+.food_table tr{
+    border-style: groove;
+    border-width: thin;
+    border-color: #b3aace8c;
+    text-align: center;
+
+}
+
+.food_table thead {
+    background:#f0fff28a;
+}
+
+.food_table tbody tr:hover {
+    background:#cffdcf;
+}
+
+.del_color {
+    background: #000652;
+    color: aliceblue;
+    text-align: center;
+    font-size: 17px;
+    font-family: cursive;
+}
+
+.big_s_button {
+    min-height: 40px;
+    min-width: 40px;
+    font-size: 20px;
+    color: #fdfdfd;
+    background: #0cbf22;
+}
+
+.notitle {
+
+}
+
+.notitle label {
+  display:none;
+}
+
+
+@media screen
+  and (max-device-width: 1080px)
+  and (max-device-height: 1920px)
+
+ {
+  span, b, label, .ant-col, .ant-collapse-header {
+    font-size:25px;
+   /* margin-left:72px;*/
+  }
+
+  .css-1kdo2r7 {
+    font-size:25px;
+  }
+
+
+  .get_one_form .ant-form-item-label>label {
+      font-size:25px;
+  }
+
+  .ant-form-item-control input {
+      font-size:25px;
+      height:45px;
+  }
+
+  li, a, i, icon, tr, .ant-popover-message-title {
+    font-size:25px;
+  }
+
+  .ant-form label {
+    font-size:25px;
+  }
+
+  .fr_tiles .ant-card {
+
+      margin-bottom:25px;
+
+  }
+
+  /*.nob span {
+    padding-left:40px;
+  }
+
+  .lil_list_text span, b {
+    padding-left:40px;
+  }*/
+
+  button {
+    min-width:100px;
+    min-height:55px;
+
+  }
+  img {
+    width:170px;
+    height:170px;
+  }
+
+
+}
+
+
+.p11 {
+    font-size: 11px;
+}
+
+
+.p11 span {
+    font-size: 11px;
+}

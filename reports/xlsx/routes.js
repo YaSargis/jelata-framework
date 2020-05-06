@@ -40,7 +40,9 @@ app.post( '/report', urlencodedParser,
 				var sheetNumber = 1
 		
 				data = JSON.parse(data)
-				var values = data || {}
+				
+				var values = data 
+				console.log('values',values)
 				if ('outjson' in values) { 
 					// for not multipages template				
 					tmp.substitute(sheetNumber, values) 
@@ -54,6 +56,8 @@ app.post( '/report', urlencodedParser,
 						sheetNumber += 1
 						key = 'page' + sheetNumber
 					}
+				} else {
+					tmp.substitute(sheetNumber, values) 
 				}
 
 				// Get binary data 

@@ -20,7 +20,7 @@ class WebSocket(websocket.WebSocketHandler, BaseHandler):
 			return		
 		log('ws', 'message:' + str(message))
 		viewpath = message.get('viewpath')
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		if viewpath is None:
 			self.write_message('{"error":"view path is None"}')
 			return
@@ -31,7 +31,7 @@ class WebSocket(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(5)			
 			try:
-				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,str(primaryAuthorization),))
 			except Exception as err:
 				err = str(err)
 				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
@@ -53,7 +53,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 	@gen.coroutine		
 	def on_message(self, message):
 		log('ws_global', 'message:' + str(message))
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_notifications_bysess(_sess:=%s)"
 		result = None
@@ -74,7 +74,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 		return
 
 	def on_close(self):
-		print('Connection closed global')
+		print("Connection closed")
 		
 class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 	'''
@@ -93,7 +93,7 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 			return		
 
 		log('ws_messages_chats', 'message:' + str(message))
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
 		result = None
@@ -101,10 +101,10 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(2)			
 			try:
-				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,str(primaryAuthorization),))
 			except Exception as err:
 				err = str(err)
-				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
+				self.write_message('{"error":"chats' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
 				return
 
 			result = result.fetchone()[0].get('outjson')
@@ -131,7 +131,7 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 			self.write_message('{"error":"wrong data"}')
 			return		
 		log('ws_messages', 'message:' + str(message))
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats_messages',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
 		result = None
@@ -139,10 +139,10 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 		while True:
 			yield gen.sleep(2)			
 			try:
-				result = yield self.db.execute(squery,( extras.Json(message),sesid,primaryAuthorization,))
+				result = yield self.db.execute(squery,( extras.Json(message),sesid,str(primaryAuthorization),))
 			except Exception as err:
 				err = str(err)
-				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
+				self.write_message('{"error":"chats_messages' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
 				return
 
 			result = result.fetchone()[0].get('outjson')

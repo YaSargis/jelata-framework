@@ -34,7 +34,7 @@ class Schema(BaseHandler):
 		
 		method = url[7:].replace('/','').lower()
 		
-		sesid = self.get_cookie('sesid') or ''	#get session id cookie
+		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
@@ -49,12 +49,12 @@ class Schema(BaseHandler):
 			return
 		
 		userdetail = userdetail.fetchone()[0]
-		
+		userdetail['sessid'] = sesid
 		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
 		'''SELECT row_to_json (d) FROM (select *
 					from framework.views where path = %s) as d'''
 		result = []
-		roles = userdetail.get('roles')
+		roles = (userdetail.get('roles') or [])
 		if int(developerRole) not in roles:
 			self.set_status(403,None)
 			self.write('{"message":"access denied"}')
@@ -87,7 +87,7 @@ class Schema(BaseHandler):
 		body = loads(self.request.body.decode('utf-8'))
 
 		method = url[7:].replace('/','').lower()
-		sesid = self.get_cookie('sesid') or ''	#get session id cookie
+		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
 		log(url, 'path: '+ path + '; body: ' + str(body) + ' sessid:' + str(sesid) )
 
 		if primaryAuthorization == "1" and sesid is None:
@@ -104,6 +104,7 @@ class Schema(BaseHandler):
 			return
 
 		userdetail = userdetail.fetchone()[0]
+		userdetail['sessid'] = sesid
 		#userdetail = userdetail.get('outjson')
 		if method == 'list':
 			"""SELECT row_to_json (d) FROM (select *
@@ -128,7 +129,7 @@ class Schema(BaseHandler):
 			else:
 				x = True
 			for col in result.get('roles'):
-				if col.get('value') in userdetail.get('roles') and not x:
+				if col.get('value') in (userdetail.get('roles') or []) and not x:
 					x = True
 			if not x:
 				self.set_status(403,None)
@@ -238,7 +239,7 @@ class Schema(BaseHandler):
 			else:
 				x = True
 			for col in result.get('roles'):
-				if col.get("value") in userdetail.get('roles') and not x:
+				if col.get("value") in (userdetail.get('roles') or []) and not x:
 					x = True
 			if not x:
 				self.set_status(403,None)
