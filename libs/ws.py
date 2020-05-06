@@ -20,7 +20,7 @@ class WebSocket(websocket.WebSocketHandler, BaseHandler):
 			return		
 		log('ws', 'message:' + str(message))
 		viewpath = message.get('viewpath')
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		if viewpath is None:
 			self.write_message('{"error":"view path is None"}')
 			return
@@ -53,7 +53,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 	@gen.coroutine		
 	def on_message(self, message):
 		log('ws_global', 'message:' + str(message))
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_notifications_bysess(_sess:=%s)"
 		result = None
@@ -93,7 +93,7 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 			return		
 
 		log('ws_messages_chats', 'message:' + str(message))
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
 		result = None
@@ -131,7 +131,7 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 			self.write_message('{"error":"wrong data"}')
 			return		
 		log('ws_messages', 'message:' + str(message))
-		sesid = self.get_cookie("sesid") or ''
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats_messages',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
 		result = None

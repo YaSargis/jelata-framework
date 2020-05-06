@@ -99,7 +99,7 @@ def onRequest(self, url, type):
 	except Exception as e:
 		log(url + '_Error',' args: ' + 
 			str(extras.Json(args)) + '; sess: ' + 
-			sesid + '; type: ' + str(type) + '; Error:' + str(e))
+			str(sesid) + '; type: ' + str(type) + '; Error:' + str(e))
 		showError(str(e), self)
 		return
 

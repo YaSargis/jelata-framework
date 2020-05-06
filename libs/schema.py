@@ -34,7 +34,7 @@ class Schema(BaseHandler):
 		
 		method = url[7:].replace('/','').lower()
 		
-		sesid = self.get_cookie('sesid') or ''	#get session id cookie
+		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
@@ -87,7 +87,7 @@ class Schema(BaseHandler):
 		body = loads(self.request.body.decode('utf-8'))
 
 		method = url[7:].replace('/','').lower()
-		sesid = self.get_cookie('sesid') or ''	#get session id cookie
+		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
 		log(url, 'path: '+ path + '; body: ' + str(body) + ' sessid:' + str(sesid) )
 
 		if primaryAuthorization == "1" and sesid is None:

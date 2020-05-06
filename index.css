@@ -3,7 +3,7 @@
 }
 
 .list_table td, th {
-	background: inherit;
+	/*background: inherit;*/
 	border: 1px solid #c8c8c8;
 	padding: 5px;
 	padding: .429em .857em;
@@ -16,6 +16,11 @@
 .tiles_actions {
 	position: absolute;
 	right: 0px;
+}
+
+.tiles_el {
+
+	margin-bottom:25px;
 }
 
 .test_table {
@@ -305,4 +310,29 @@
 	/*padding: 10px;*/
 	margin: 10px;
 	background: #fff;
+}
+
+.editable {
+
+}
+
+.editable div {
+	border-style: outset;
+	border-width: thin;
+	border-color: #f0fffe8c;
+	display: flex;
+	background: #f0fdff7d;
+	min-height: 23px;
+	cursor: pointer;
+
+}
+
+
+.tab_actions {
+	background: #ffe8c9;
+	color: black;
+	paddingLeft: .857em;
+	position: sticky;
+	right: 0;
+
 }

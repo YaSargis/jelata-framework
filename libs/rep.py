@@ -20,7 +20,7 @@ def Report(self, url):
 	"""
 	args = {} #variable for arguments or body
 	report_path = url[4:] #cut 4 symbols from url start, work only if it will be rep/
-	sesid = self.get_cookie("sesid") or ''	#get session id cookie
+	sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 
 	log(url, 'args: ' + str(self.request.arguments) + 
 			'; sess: ' + sesid + '; type: 1')		

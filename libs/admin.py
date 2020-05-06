@@ -17,7 +17,7 @@ class Admin(BaseHandler):
 					
 		@gen.coroutine
 		def get(self, url): 
-			sesid = self.get_cookie("sesid") or ''	#get session id cookie
+			sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 			if primaryAuthorization == "1" and sesid is None:
 				self.set_status(401,None)
 				self.write('{"message":"No session"}')
@@ -63,7 +63,7 @@ class Admin(BaseHandler):
 			
 		@gen.coroutine	
 		def post(self, url):
-			sesid = self.get_cookie("sesid") or ''	#get session id cookie
+			sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 			if primaryAuthorization == "1" and sesid is None:
 				self.set_status(401,None)
 				self.write('{"message":"No session"}')
@@ -118,7 +118,7 @@ class Logs(BaseHandler):
 					
 	@gen.coroutine
 	def get(self, url):
-		sesid = self.get_cookie("sesid") or ''	#get session id cookie
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
@@ -174,7 +174,7 @@ class Log(BaseHandler):
 					
 	@gen.coroutine
 	def get(self, url):
-		sesid = self.get_cookie("sesid") or ''	#get session id cookie
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
@@ -241,7 +241,7 @@ class CSS(BaseHandler):
 					
 	@gen.coroutine
 	def post(self, url):
-		sesid = self.get_cookie("sesid") or ''	#get session id cookie
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
@@ -280,7 +280,7 @@ class CSS(BaseHandler):
 	
 	@gen.coroutine
 	def put(self, url):
-		sesid = self.get_cookie("sesid") or ''	#get session id cookie
+		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
 		if primaryAuthorization == "1" and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
