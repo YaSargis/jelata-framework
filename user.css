@@ -9,6 +9,62 @@
 	color:black;
 }
 
+/* SQL MANAGER */
+.schema_table {
+  font-size: 11px;
+}
+
+.schema_table tbody {
+  color: #1c92ff;
+}
+
+.schema_table td, th {
+  border-style: none;
+}
+
+.t_table {
+  font-size: 11px;
+}
+
+.t_table tbody {
+  color: #1c92ff;
+}
+
+.t_table tr {
+  border-style: outset;
+  border-color: #68ff00;
+  border-width: 1px;
+  cursor: pointer;
+
+}
+
+.et_table tr:hover {
+  background:#b5d9db;
+}
+
+.et_table {
+  font-size: 11px;
+}
+
+.et_table tbody {
+  color: #170653;
+}
+
+.et_table td {
+  border-style: outset;
+  border-color: #626262;
+  border-width: 1px;
+  cursor: pointer;
+  padding: 5px;
+
+}
+
+.t_table tr:hover {
+  background:#b5d9db;
+}
+
+/* SQL MANAGER */
+
 .aa {}
 
 
