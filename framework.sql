@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2020-05-13 22:10:54
+-- Started on 2020-05-14 17:27:47
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -26,7 +26,7 @@ CREATE SCHEMA framework;
 ALTER SCHEMA framework OWNER TO postgres;
 
 --
--- TOC entry 3211 (class 0 OID 0)
+-- TOC entry 3226 (class 0 OID 0)
 -- Dependencies: 8
 -- Name: SCHEMA framework; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -45,7 +45,7 @@ CREATE SCHEMA reports;
 ALTER SCHEMA reports OWNER TO postgres;
 
 --
--- TOC entry 3214 (class 0 OID 0)
+-- TOC entry 3229 (class 0 OID 0)
 -- Dependencies: 9
 -- Name: SCHEMA reports; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -64,7 +64,7 @@ CREATE SCHEMA sqlmanager;
 ALTER SCHEMA sqlmanager OWNER TO postgres;
 
 --
--- TOC entry 3215 (class 0 OID 0)
+-- TOC entry 3230 (class 0 OID 0)
 -- Dependencies: 10
 -- Name: SCHEMA sqlmanager; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -83,7 +83,7 @@ CREATE SCHEMA test;
 ALTER SCHEMA test OWNER TO postgres;
 
 --
--- TOC entry 3216 (class 0 OID 0)
+-- TOC entry 3231 (class 0 OID 0)
 -- Dependencies: 12
 -- Name: SCHEMA test; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -100,7 +100,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 3217 (class 0 OID 0)
+-- TOC entry 3232 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -117,7 +117,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 3218 (class 0 OID 0)
+-- TOC entry 3233 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -171,7 +171,7 @@ $$;
 ALTER FUNCTION framework.fn_action_add_untitle(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3219 (class 0 OID 0)
+-- TOC entry 3234 (class 0 OID 0)
 -- Dependencies: 347
 -- Name: FUNCTION fn_action_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -248,7 +248,7 @@ $$;
 ALTER FUNCTION framework.fn_action_copy(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3220 (class 0 OID 0)
+-- TOC entry 3235 (class 0 OID 0)
 -- Dependencies: 348
 -- Name: FUNCTION fn_action_copy(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -309,7 +309,7 @@ $$;
 ALTER FUNCTION framework.fn_allviews_sel(injson json, OUT outjson json, OUT foundcount bigint) OWNER TO postgres;
 
 --
--- TOC entry 3221 (class 0 OID 0)
+-- TOC entry 3236 (class 0 OID 0)
 -- Dependencies: 349
 -- Name: FUNCTION fn_allviews_sel(injson json, OUT outjson json, OUT foundcount bigint); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -348,7 +348,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3222 (class 0 OID 0)
+-- TOC entry 3237 (class 0 OID 0)
 -- Dependencies: 350
 -- Name: FUNCTION fn_apimethods(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -411,7 +411,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3223 (class 0 OID 0)
+-- TOC entry 3238 (class 0 OID 0)
 -- Dependencies: 351
 -- Name: FUNCTION fn_autocomplete(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -452,7 +452,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3224 (class 0 OID 0)
+-- TOC entry 3239 (class 0 OID 0)
 -- Dependencies: 352
 -- Name: FUNCTION fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -502,7 +502,7 @@ $$;
 ALTER FUNCTION framework.fn_col_add_select_condition(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3225 (class 0 OID 0)
+-- TOC entry 3240 (class 0 OID 0)
 -- Dependencies: 353
 -- Name: FUNCTION fn_col_add_select_condition(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -542,7 +542,7 @@ $$;
 ALTER FUNCTION framework.fn_compo(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3226 (class 0 OID 0)
+-- TOC entry 3241 (class 0 OID 0)
 -- Dependencies: 354
 -- Name: FUNCTION fn_compo(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -582,7 +582,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3227 (class 0 OID 0)
+-- TOC entry 3242 (class 0 OID 0)
 -- Dependencies: 355
 -- Name: FUNCTION fn_compo_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -690,7 +690,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_save(injson json, OUT _id integer) OWNER TO postgres;
 
 --
--- TOC entry 3228 (class 0 OID 0)
+-- TOC entry 3243 (class 0 OID 0)
 -- Dependencies: 356
 -- Name: FUNCTION fn_compo_save(injson json, OUT _id integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -742,7 +742,7 @@ $$;
 ALTER FUNCTION framework.fn_config_fncol_add(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3229 (class 0 OID 0)
+-- TOC entry 3244 (class 0 OID 0)
 -- Dependencies: 357
 -- Name: FUNCTION fn_config_fncol_add(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -918,7 +918,7 @@ $$;
 ALTER FUNCTION framework.fn_config_inscol(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3230 (class 0 OID 0)
+-- TOC entry 3245 (class 0 OID 0)
 -- Dependencies: 359
 -- Name: FUNCTION fn_config_inscol(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -965,7 +965,7 @@ $$;
 ALTER FUNCTION framework.fn_config_relation(_id integer, OUT _relation character varying) OWNER TO postgres;
 
 --
--- TOC entry 3231 (class 0 OID 0)
+-- TOC entry 3246 (class 0 OID 0)
 -- Dependencies: 360
 -- Name: FUNCTION fn_config_relation(_id integer, OUT _relation character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1018,7 +1018,7 @@ $$;
 ALTER FUNCTION framework.fn_config_relationcolumns(_id integer, OUT relation_columns character varying) OWNER TO postgres;
 
 --
--- TOC entry 3232 (class 0 OID 0)
+-- TOC entry 3247 (class 0 OID 0)
 -- Dependencies: 361
 -- Name: FUNCTION fn_config_relationcolumns(_id integer, OUT relation_columns character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1090,7 +1090,7 @@ $$;
 ALTER FUNCTION framework.fn_config_selectapi(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3233 (class 0 OID 0)
+-- TOC entry 3248 (class 0 OID 0)
 -- Dependencies: 362
 -- Name: FUNCTION fn_config_selectapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1126,7 +1126,7 @@ $$;
 ALTER FUNCTION framework.fn_config_settings_apply(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3234 (class 0 OID 0)
+-- TOC entry 3249 (class 0 OID 0)
 -- Dependencies: 363
 -- Name: FUNCTION fn_config_settings_apply(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1320,7 +1320,7 @@ $$;
 ALTER FUNCTION framework.fn_config_to_json(_viewid integer, OUT _config json) OWNER TO postgres;
 
 --
--- TOC entry 3235 (class 0 OID 0)
+-- TOC entry 3250 (class 0 OID 0)
 -- Dependencies: 364
 -- Name: FUNCTION fn_config_to_json(_viewid integer, OUT _config json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1359,7 +1359,7 @@ $$;
 ALTER FUNCTION framework.fn_configsettings_selectapi(insjon json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3236 (class 0 OID 0)
+-- TOC entry 3251 (class 0 OID 0)
 -- Dependencies: 365
 -- Name: FUNCTION fn_configsettings_selectapi(insjon json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1596,7 +1596,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
--- TOC entry 3237 (class 0 OID 0)
+-- TOC entry 3252 (class 0 OID 0)
 -- Dependencies: 366
 -- Name: FUNCTION fn_copyview(injson json, OUT _newid integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1737,7 +1737,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3238 (class 0 OID 0)
+-- TOC entry 3253 (class 0 OID 0)
 -- Dependencies: 367
 -- Name: FUNCTION fn_createconfig(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1917,7 +1917,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 3239 (class 0 OID 0)
+-- TOC entry 3254 (class 0 OID 0)
 -- Dependencies: 369
 -- Name: FUNCTION fn_cryptosess(injson json, OUT sessid character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1980,7 +1980,7 @@ $$;
 ALTER FUNCTION framework.fn_deleteconfig_checked(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3240 (class 0 OID 0)
+-- TOC entry 3255 (class 0 OID 0)
 -- Dependencies: 370
 -- Name: FUNCTION fn_deleteconfig_checked(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2090,7 +2090,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3241 (class 0 OID 0)
+-- TOC entry 3256 (class 0 OID 0)
 -- Dependencies: 371
 -- Name: FUNCTION fn_deleterow(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2213,7 +2213,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_addadmin(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3242 (class 0 OID 0)
+-- TOC entry 3257 (class 0 OID 0)
 -- Dependencies: 373
 -- Name: FUNCTION fn_dialog_addadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2328,7 +2328,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_adduser(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3243 (class 0 OID 0)
+-- TOC entry 3258 (class 0 OID 0)
 -- Dependencies: 374
 -- Name: FUNCTION fn_dialog_adduser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2431,7 +2431,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_edit(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3244 (class 0 OID 0)
+-- TOC entry 3259 (class 0 OID 0)
 -- Dependencies: 375
 -- Name: FUNCTION fn_dialog_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2505,7 +2505,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_group_create(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3245 (class 0 OID 0)
+-- TOC entry 3260 (class 0 OID 0)
 -- Dependencies: 376
 -- Name: FUNCTION fn_dialog_group_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2617,7 +2617,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_leave(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3246 (class 0 OID 0)
+-- TOC entry 3261 (class 0 OID 0)
 -- Dependencies: 377
 -- Name: FUNCTION fn_dialog_leave(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2785,7 +2785,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_bydialog(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3247 (class 0 OID 0)
+-- TOC entry 3262 (class 0 OID 0)
 -- Dependencies: 379
 -- Name: FUNCTION fn_dialog_message_bydialog(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2880,7 +2880,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_delete(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3248 (class 0 OID 0)
+-- TOC entry 3263 (class 0 OID 0)
 -- Dependencies: 380
 -- Name: FUNCTION fn_dialog_message_delete(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3020,7 +3020,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_edit(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3249 (class 0 OID 0)
+-- TOC entry 3264 (class 0 OID 0)
 -- Dependencies: 381
 -- Name: FUNCTION fn_dialog_message_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3191,7 +3191,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_send(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3250 (class 0 OID 0)
+-- TOC entry 3265 (class 0 OID 0)
 -- Dependencies: 382
 -- Name: FUNCTION fn_dialog_message_send(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3258,7 +3258,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_setread(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3251 (class 0 OID 0)
+-- TOC entry 3266 (class 0 OID 0)
 -- Dependencies: 383
 -- Name: FUNCTION fn_dialog_message_setread(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3343,7 +3343,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_personal_create(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3252 (class 0 OID 0)
+-- TOC entry 3267 (class 0 OID 0)
 -- Dependencies: 385
 -- Name: FUNCTION fn_dialog_personal_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3465,7 +3465,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_removeadmin(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3253 (class 0 OID 0)
+-- TOC entry 3268 (class 0 OID 0)
 -- Dependencies: 386
 -- Name: FUNCTION fn_dialog_removeadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3601,7 +3601,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_removeuser(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3254 (class 0 OID 0)
+-- TOC entry 3269 (class 0 OID 0)
 -- Dependencies: 387
 -- Name: FUNCTION fn_dialog_removeuser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3760,7 +3760,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_byuser(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3255 (class 0 OID 0)
+-- TOC entry 3270 (class 0 OID 0)
 -- Dependencies: 388
 -- Name: FUNCTION fn_dialogs_byuser(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3916,7 +3916,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_chats_ws(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3256 (class 0 OID 0)
+-- TOC entry 3271 (class 0 OID 0)
 -- Dependencies: 389
 -- Name: FUNCTION fn_dialogs_chats_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4046,7 +4046,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_chatsmessages_ws(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3257 (class 0 OID 0)
+-- TOC entry 3272 (class 0 OID 0)
 -- Dependencies: 390
 -- Name: FUNCTION fn_dialogs_chatsmessages_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4085,7 +4085,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3258 (class 0 OID 0)
+-- TOC entry 3273 (class 0 OID 0)
 -- Dependencies: 372
 -- Name: FUNCTION fn_dialogs_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4141,7 +4141,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_usersearch(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3259 (class 0 OID 0)
+-- TOC entry 3274 (class 0 OID 0)
 -- Dependencies: 384
 -- Name: FUNCTION fn_dialogs_usersearch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4240,7 +4240,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3260 (class 0 OID 0)
+-- TOC entry 3275 (class 0 OID 0)
 -- Dependencies: 391
 -- Name: FUNCTION fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4288,7 +4288,7 @@ $$;
 ALTER FUNCTION framework.fn_filter_add_untitle(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3261 (class 0 OID 0)
+-- TOC entry 3276 (class 0 OID 0)
 -- Dependencies: 392
 -- Name: FUNCTION fn_filter_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4358,7 +4358,7 @@ $$;
 ALTER FUNCTION framework."fn_formparams_V004"(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json) OWNER TO postgres;
 
 --
--- TOC entry 529 (class 1255 OID 197525)
+-- TOC entry 528 (class 1255 OID 197525)
 -- Name: fn_formselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4626,8 +4626,8 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3262 (class 0 OID 0)
--- Dependencies: 529
+-- TOC entry 3277 (class 0 OID 0)
+-- Dependencies: 528
 -- Name: FUNCTION fn_formselect(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4683,7 +4683,7 @@ $$;
 ALTER FUNCTION framework.fn_functions_getall_spapi(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3263 (class 0 OID 0)
+-- TOC entry 3278 (class 0 OID 0)
 -- Dependencies: 394
 -- Name: FUNCTION fn_functions_getall_spapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4767,7 +4767,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3264 (class 0 OID 0)
+-- TOC entry 3279 (class 0 OID 0)
 -- Dependencies: 396
 -- Name: FUNCTION fn_getfunctions(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4858,7 +4858,7 @@ $$;
 ALTER FUNCTION framework.fn_gettables_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3265 (class 0 OID 0)
+-- TOC entry 3280 (class 0 OID 0)
 -- Dependencies: 399
 -- Name: FUNCTION fn_gettables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4945,7 +4945,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
--- TOC entry 3266 (class 0 OID 0)
+-- TOC entry 3281 (class 0 OID 0)
 -- Dependencies: 401
 -- Name: FUNCTION fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4976,7 +4976,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3267 (class 0 OID 0)
+-- TOC entry 3282 (class 0 OID 0)
 -- Dependencies: 402
 -- Name: FUNCTION fn_logout(sesid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5263,7 +5263,7 @@ $$;
 ALTER FUNCTION framework.fn_logtable_rollback(injson json, OUT message character varying) OWNER TO postgres;
 
 --
--- TOC entry 3268 (class 0 OID 0)
+-- TOC entry 3283 (class 0 OID 0)
 -- Dependencies: 403
 -- Name: FUNCTION fn_logtable_rollback(injson json, OUT message character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5495,7 +5495,7 @@ $$;
 ALTER FUNCTION framework.fn_mainsettings_save(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3269 (class 0 OID 0)
+-- TOC entry 3284 (class 0 OID 0)
 -- Dependencies: 397
 -- Name: FUNCTION fn_mainsettings_save(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5523,7 +5523,7 @@ $$;
 ALTER FUNCTION framework.fn_mainsettings_usercss(_css text) OWNER TO postgres;
 
 --
--- TOC entry 3270 (class 0 OID 0)
+-- TOC entry 3285 (class 0 OID 0)
 -- Dependencies: 358
 -- Name: FUNCTION fn_mainsettings_usercss(_css text); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5590,7 +5590,7 @@ $$;
 ALTER FUNCTION framework.fn_menu_recurs(_userid integer, _roles json, _parentid integer, menu_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3271 (class 0 OID 0)
+-- TOC entry 3286 (class 0 OID 0)
 -- Dependencies: 407
 -- Name: FUNCTION fn_menu_recurs(_userid integer, _roles json, _parentid integer, menu_id integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5753,7 +5753,7 @@ $$;
 ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3272 (class 0 OID 0)
+-- TOC entry 3287 (class 0 OID 0)
 -- Dependencies: 409
 -- Name: FUNCTION fn_menus(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5785,7 +5785,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3273 (class 0 OID 0)
+-- TOC entry 3288 (class 0 OID 0)
 -- Dependencies: 410
 -- Name: FUNCTION fn_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5843,7 +5843,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_bysess(_sess character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3274 (class 0 OID 0)
+-- TOC entry 3289 (class 0 OID 0)
 -- Dependencies: 411
 -- Name: FUNCTION fn_notifications_bysess(_sess character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5881,7 +5881,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_setreaded_by_userid(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3275 (class 0 OID 0)
+-- TOC entry 3290 (class 0 OID 0)
 -- Dependencies: 412
 -- Name: FUNCTION fn_notifications_setreaded_by_userid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5923,7 +5923,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_setsended(_sess character) OWNER TO postgres;
 
 --
--- TOC entry 3276 (class 0 OID 0)
+-- TOC entry 3291 (class 0 OID 0)
 -- Dependencies: 413
 -- Name: FUNCTION fn_notifications_setsended(_sess character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6124,7 +6124,7 @@ $$;
 ALTER FUNCTION framework.fn_roles_fetch(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3277 (class 0 OID 0)
+-- TOC entry 3292 (class 0 OID 0)
 -- Dependencies: 416
 -- Name: FUNCTION fn_roles_fetch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6530,7 +6530,7 @@ $_$;
 ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3278 (class 0 OID 0)
+-- TOC entry 3293 (class 0 OID 0)
 -- Dependencies: 417
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6565,7 +6565,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
--- TOC entry 528 (class 1255 OID 197555)
+-- TOC entry 527 (class 1255 OID 197555)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7002,8 +7002,8 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3279 (class 0 OID 0)
--- Dependencies: 528
+-- TOC entry 3294 (class 0 OID 0)
+-- Dependencies: 527
 -- Name: FUNCTION fn_savevalue(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7192,7 +7192,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_filters(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3280 (class 0 OID 0)
+-- TOC entry 3295 (class 0 OID 0)
 -- Dependencies: 422
 -- Name: FUNCTION fn_tabcolumns_for_filters(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7257,7 +7257,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_filters_arr(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3281 (class 0 OID 0)
+-- TOC entry 3296 (class 0 OID 0)
 -- Dependencies: 423
 -- Name: FUNCTION fn_tabcolumns_for_filters_arr(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7304,7 +7304,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_sc(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3282 (class 0 OID 0)
+-- TOC entry 3297 (class 0 OID 0)
 -- Dependencies: 424
 -- Name: FUNCTION fn_tabcolumns_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7523,7 +7523,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3283 (class 0 OID 0)
+-- TOC entry 3298 (class 0 OID 0)
 -- Dependencies: 428
 -- Name: FUNCTION fn_trees_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7571,7 +7571,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3284 (class 0 OID 0)
+-- TOC entry 3299 (class 0 OID 0)
 -- Dependencies: 429
 -- Name: FUNCTION fn_userjson(sessid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7669,7 +7669,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3285 (class 0 OID 0)
+-- TOC entry 3300 (class 0 OID 0)
 -- Dependencies: 430
 -- Name: FUNCTION fn_userorgs(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7722,7 +7722,7 @@ $$;
 ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json) OWNER TO postgres;
 
 --
--- TOC entry 3286 (class 0 OID 0)
+-- TOC entry 3301 (class 0 OID 0)
 -- Dependencies: 431
 -- Name: FUNCTION fn_view_byid(injson json, OUT outjson json, OUT roles json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7780,7 +7780,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_fn(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3287 (class 0 OID 0)
+-- TOC entry 3302 (class 0 OID 0)
 -- Dependencies: 432
 -- Name: FUNCTION fn_view_cols_for_fn(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7837,7 +7837,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_param(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3288 (class 0 OID 0)
+-- TOC entry 3303 (class 0 OID 0)
 -- Dependencies: 433
 -- Name: FUNCTION fn_view_cols_for_param(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7893,7 +7893,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_sc(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3289 (class 0 OID 0)
+-- TOC entry 3304 (class 0 OID 0)
 -- Dependencies: 434
 -- Name: FUNCTION fn_view_cols_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8032,7 +8032,7 @@ $$;
 ALTER FUNCTION framework.fn_view_deletebyid(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3290 (class 0 OID 0)
+-- TOC entry 3305 (class 0 OID 0)
 -- Dependencies: 435
 -- Name: FUNCTION fn_view_deletebyid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8273,7 +8273,7 @@ $$;
 ALTER FUNCTION framework."fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3291 (class 0 OID 0)
+-- TOC entry 3306 (class 0 OID 0)
 -- Dependencies: 436
 -- Name: FUNCTION "fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8457,7 +8457,7 @@ $$;
 ALTER FUNCTION framework."fn_view_getByPath_showSQL"(_path character varying, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3292 (class 0 OID 0)
+-- TOC entry 3307 (class 0 OID 0)
 -- Dependencies: 438
 -- Name: FUNCTION "fn_view_getByPath_showSQL"(_path character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8571,7 +8571,7 @@ $$;
 ALTER FUNCTION framework.fn_view_json_for_copy(_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3293 (class 0 OID 0)
+-- TOC entry 3308 (class 0 OID 0)
 -- Dependencies: 439
 -- Name: FUNCTION fn_view_json_for_copy(_id integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8766,7 +8766,7 @@ $$;
 ALTER FUNCTION framework.fn_view_json_parse(injson json, _n integer) OWNER TO postgres;
 
 --
--- TOC entry 3294 (class 0 OID 0)
+-- TOC entry 3309 (class 0 OID 0)
 -- Dependencies: 440
 -- Name: FUNCTION fn_view_json_parse(injson json, _n integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8802,7 +8802,7 @@ $$;
 ALTER FUNCTION framework.fn_view_link_showsql(_path character varying, OUT _link json) OWNER TO postgres;
 
 --
--- TOC entry 3295 (class 0 OID 0)
+-- TOC entry 3310 (class 0 OID 0)
 -- Dependencies: 441
 -- Name: FUNCTION fn_view_link_showsql(_path character varying, OUT _link json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8986,7 +8986,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3296 (class 0 OID 0)
+-- TOC entry 3311 (class 0 OID 0)
 -- Dependencies: 437
 -- Name: FUNCTION fn_viewnotif_get(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9459,7 +9459,7 @@ $$;
 ALTER FUNCTION framework."fn_viewsave_V004"(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3297 (class 0 OID 0)
+-- TOC entry 3312 (class 0 OID 0)
 -- Dependencies: 446
 -- Name: FUNCTION "fn_viewsave_V004"(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9577,7 +9577,7 @@ $$;
 ALTER FUNCTION framework."get_colcongif_V004"(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3298 (class 0 OID 0)
+-- TOC entry 3313 (class 0 OID 0)
 -- Dependencies: 448
 -- Name: FUNCTION "get_colcongif_V004"(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -11416,7 +11416,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_tables"(_schema character varying) OWNER TO postgres;
 
 --
--- TOC entry 3299 (class 0 OID 0)
+-- TOC entry 3314 (class 0 OID 0)
 -- Dependencies: 484
 -- Name: FUNCTION "fn_withoutDesc_tables"(_schema character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11458,7 +11458,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_triggers"(_schemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 3300 (class 0 OID 0)
+-- TOC entry 3315 (class 0 OID 0)
 -- Dependencies: 485
 -- Name: FUNCTION "fn_withoutDesc_triggers"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11495,7 +11495,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_triggers_test"(_schemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 3301 (class 0 OID 0)
+-- TOC entry 3316 (class 0 OID 0)
 -- Dependencies: 486
 -- Name: FUNCTION "fn_withoutDesc_triggers_test"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11668,7 +11668,7 @@ $_$;
 ALTER FUNCTION reports.fn_call_report(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3302 (class 0 OID 0)
+-- TOC entry 3317 (class 0 OID 0)
 -- Dependencies: 490
 -- Name: FUNCTION fn_call_report(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11711,7 +11711,7 @@ $$;
 ALTER FUNCTION reports.fn_getmethod_info(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3303 (class 0 OID 0)
+-- TOC entry 3318 (class 0 OID 0)
 -- Dependencies: 491
 -- Name: FUNCTION fn_getmethod_info(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11757,7 +11757,7 @@ $$;
 ALTER FUNCTION reports.fn_getreports_fn(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3304 (class 0 OID 0)
+-- TOC entry 3319 (class 0 OID 0)
 -- Dependencies: 493
 -- Name: FUNCTION fn_getreports_fn(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11833,7 +11833,7 @@ $$;
 ALTER FUNCTION reports.fn_report_copy(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3305 (class 0 OID 0)
+-- TOC entry 3320 (class 0 OID 0)
 -- Dependencies: 494
 -- Name: FUNCTION fn_report_copy(injson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11926,7 +11926,7 @@ $$;
 ALTER FUNCTION reports.fn_report_getone(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3306 (class 0 OID 0)
+-- TOC entry 3321 (class 0 OID 0)
 -- Dependencies: 495
 -- Name: FUNCTION fn_report_getone(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -12111,7 +12111,187 @@ ALTER FUNCTION reports.tr_reportparams_tr() OWNER TO postgres;
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 525 (class 1255 OID 197639)
+-- TOC entry 542 (class 1255 OID 220909)
+-- Name: fn_function_add(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION fn_function_add(injson json, OUT _redirect character varying) RETURNS character varying
+    LANGUAGE plpgsql
+    AS $_$
+DECLARE 
+  schemaname varchar(350);	
+  squery varchar;
+  fn_title varchar(150);
+  _userid int;
+  _id int;
+  _nw json;
+BEGIN
+	schemaname = injson->>'schemaname';
+    _userid =injson->>'userid';
+    IF COALESCE(schemaname,'') = ''
+    THEN
+    	PERFORM raiserror('schema name is empty');
+    END IF;
+    
+    fn_title = CONCAT('"',schemaname ,'"."fn_untitle_', (
+      SELECT 
+          COUNT(p.oid)::varchar
+      FROM pg_proc as p
+          JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
+      WHERE ns.nspname = fn_title
+    ), '"');
+    
+    squery = CONCAT('
+      CREATE FUNCTION ',fn_title,' ()
+      RETURNS void AS
+      $body$
+      DECLARE BEGIN END;
+      $body$
+      LANGUAGE ''plpgsql'' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;
+    ');
+    
+    
+    EXECUTE squery;
+    SELECT 
+        p.oid
+    FROM pg_proc as p
+        JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
+    WHERE concat('"',ns.nspname,'"."',p.proname,'"') = fn_title
+    	and p.oid not in (
+        	SELECT id FROM sqlmanager.functionslist 
+        )
+    INTO _id;
+    
+    INSERT INTO sqlmanager.functionslist(
+      id, functionschema,
+      functiontitle,
+      fullname, descr,
+      userid, functionfulltitle, 
+      dll
+    )
+    SELECT 
+        p.oid, ns.nspname, p.proname, 
+        concat(ns.nspname,'.', p.proname,'(', (
+          	SELECT 
+            	string_agg(
+                	CONCAT(
+                    	an.arg,' ', (
+                        	CASE WHEN 
+                            am.mode = 'o'
+                            THEN 'out'
+                            ELSE ''
+                            END
+                        ),' ',p.typname
+                    ),','
+                ) 
+           	FROM (
+              SELECT 
+                  row_number() over (order by 0) as rownum, c.typname
+              FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proallargtypes)
+              ) as a
+                  JOIN pg_type  as c on c.oid = a.value::varchar::int
+            
+            ) as p
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as arg 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargnames)
+              ) as vv
+            ) as an on an.rownum = p.rownum
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as mode 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargmodes)
+              ) as vv
+            ) as am on am.rownum = p.rownum
+          ),')'),
+        COALESCE(pg_catalog.obj_description(p.oid),'<NO TITLE>'),
+        _userid, concat( p.proname,'(', (
+          	SELECT 
+            	string_agg(
+                	CONCAT(
+                    	an.arg,' ', (
+                        	CASE WHEN 
+                            am.mode = 'o'
+                            THEN 'out'
+                            ELSE ''
+                            END
+                        ),' ',p.typname
+                    ),','
+                ) 
+           	FROM (
+              SELECT 
+                  row_number() over (order by 0) as rownum, c.typname
+              FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proallargtypes)
+              ) as a
+                  JOIN pg_type  as c on c.oid = a.value::varchar::int
+            
+            ) as p
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as arg 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargnames)
+              ) as vv
+            ) as an on an.rownum = p.rownum
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as mode 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargmodes)
+              ) as vv
+            ) as am on am.rownum = p.rownum
+          ),')'), 
+          pg_get_functiondef(p.oid)
+    FROM pg_proc as p
+        JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
+    WHERE p.oid = _id
+    ;
+    
+    SELECT
+    	row_to_json(d)
+    FROM (
+    	SELECT *
+        FROM sqlmanager.functionslist
+        WHERE id = _id
+    ) as d
+    INTO _nw;
+    
+    _redirect = CONCAT('/trees/function?id=', _id::varchar);
+    
+    INSERT INTO framework.logtable (
+      tablename, tableid, opertype,
+      oldata, newdata, userid
+    ) VALUES (
+      'sqlmanager.functionslist', _id::varchar, '1',
+      '{}'::json, _nw, _userid
+    );
+    
+    
+    
+	
+
+END;
+$_$;
+
+
+ALTER FUNCTION sqlmanager.fn_function_add(injson json, OUT _redirect character varying) OWNER TO postgres;
+
+--
+-- TOC entry 3322 (class 0 OID 0)
+-- Dependencies: 542
+-- Name: FUNCTION fn_function_add(injson json, OUT _redirect character varying); Type: COMMENT; Schema: sqlmanager; Owner: postgres
+--
+
+COMMENT ON FUNCTION fn_function_add(injson json, OUT _redirect character varying) IS 'add function';
+
+
+--
+-- TOC entry 547 (class 1255 OID 197639)
 -- Name: fn_functions_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12129,26 +12309,175 @@ BEGIN
     SET
 		functiontitle = p.proname,
         functionschema = ns.nspname, 
-        fullname = concat(ns.nspname,'.', p.proname),
+        fullname = concat(ns.nspname,'.', p.proname,'(', (
+          	SELECT 
+            	string_agg(
+                	CONCAT(
+                    	an.arg,' ', (
+                        	CASE WHEN 
+                            am.mode = 'o'
+                            THEN 'out'
+                            ELSE ''
+                            END
+                        ),' ',p.typname
+                    ),','
+                ) 
+           	FROM (
+              SELECT 
+                  row_number() over (order by 0) as rownum, c.typname
+              FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proallargtypes)
+              ) as a
+                  JOIN pg_type  as c on c.oid = a.value::varchar::int
+            
+            ) as p
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as arg 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargnames)
+              ) as vv
+            ) as an on an.rownum = p.rownum
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as mode 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargmodes)
+              ) as vv
+            ) as am on am.rownum = p.rownum
+          ),')'
+        ),
         descr = COALESCE(pg_catalog.obj_description(p.oid),'<NO TITLE>'),
-        userid = _userid
+        userid = _userid,
+        functionfulltitle = concat( p.proname,'(', (
+          	SELECT 
+            	string_agg(
+                	CONCAT(
+                    	an.arg,' ', (
+                        	CASE WHEN 
+                            am.mode = 'o'
+                            THEN 'out'
+                            ELSE ''
+                            END
+                        ),' ',p.typname
+                    ),','
+                ) 
+           	FROM (
+              SELECT 
+                  row_number() over (order by 0) as rownum, c.typname
+              FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proallargtypes)
+              ) as a
+                  JOIN pg_type  as c on c.oid = a.value::varchar::int
+            
+            ) as p
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as arg 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargnames)
+              ) as vv
+            ) as an on an.rownum = p.rownum
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as mode 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargmodes)
+              ) as vv
+            ) as am on am.rownum = p.rownum
+          ),')'),
+          dll = pg_get_functiondef(p.oid)
     FROM pg_proc as p
-    	INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
+    	JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
     WHERE p.oid = f.id and ns.nspname not in ('pg_catalog','information_schema');
     
     INSERT INTO sqlmanager.functionslist(
       id, functionschema,
       functiontitle,
       fullname, descr,
-      userid
+      userid, functionfulltitle, 
+      dll
     )
     SELECT 
         p.oid, ns.nspname, p.proname, 
-        concat(ns.nspname,'.', p.proname),
+        concat(ns.nspname,'.', p.proname,'(', (
+          	SELECT 
+            	string_agg(
+                	CONCAT(
+                    	an.arg,' ', (
+                        	CASE WHEN 
+                            am.mode = 'o'
+                            THEN 'out'
+                            ELSE ''
+                            END
+                        ),' ',p.typname
+                    ),','
+                ) 
+           	FROM (
+              SELECT 
+                  row_number() over (order by 0) as rownum, c.typname
+              FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proallargtypes)
+              ) as a
+                  JOIN pg_type  as c on c.oid = a.value::varchar::int
+            
+            ) as p
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as arg 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargnames)
+              ) as vv
+            ) as an on an.rownum = p.rownum
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as mode 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargmodes)
+              ) as vv
+            ) as am on am.rownum = p.rownum
+          ),')'),
         COALESCE(pg_catalog.obj_description(p.oid),'<NO TITLE>'),
-        _userid
+        _userid, concat( p.proname,'(', (
+          	SELECT 
+            	string_agg(
+                	CONCAT(
+                    	an.arg,' ', (
+                        	CASE WHEN 
+                            am.mode = 'o'
+                            THEN 'out'
+                            ELSE ''
+                            END
+                        ),' ',p.typname
+                    ),','
+                ) 
+           	FROM (
+              SELECT 
+                  row_number() over (order by 0) as rownum, c.typname
+              FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proallargtypes)
+              ) as a
+                  JOIN pg_type  as c on c.oid = a.value::varchar::int
+            
+            ) as p
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as arg 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargnames)
+              ) as vv
+            ) as an on an.rownum = p.rownum
+            JOIN (
+            	SELECT 
+                  row_number() over (order by 0) as rownum, vv.value as mode 
+                FROM json_array_elements_text(
+                  ARRAY_TO_JSON(p.proargmodes)
+              ) as vv
+            ) as am on am.rownum = p.rownum
+          ),')'), 
+          pg_get_functiondef(p.oid)
     FROM pg_proc as p
-        INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
+        JOIN pg_namespace ns ON (p.pronamespace = ns.oid)
     WHERE ns.nspname not in ('pg_catalog','information_schema')
     	and p.oid not in (
         	SELECT id FROM sqlmanager.functionslist 
@@ -12172,16 +12501,16 @@ $$;
 ALTER FUNCTION sqlmanager.fn_functions_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3307 (class 0 OID 0)
--- Dependencies: 525
+-- TOC entry 3323 (class 0 OID 0)
+-- Dependencies: 547
 -- Name: FUNCTION fn_functions_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
-COMMENT ON FUNCTION fn_functions_onload(injson json) IS 'functions_onload';
+COMMENT ON FUNCTION fn_functions_onload(injson json) IS 'functions_onload ';
 
 
 --
--- TOC entry 526 (class 1255 OID 197640)
+-- TOC entry 525 (class 1255 OID 197640)
 -- Name: fn_schemalist_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12264,8 +12593,8 @@ $$;
 ALTER FUNCTION sqlmanager.fn_schemalist_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3308 (class 0 OID 0)
--- Dependencies: 526
+-- TOC entry 3324 (class 0 OID 0)
+-- Dependencies: 525
 -- Name: FUNCTION fn_schemalist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12273,7 +12602,7 @@ COMMENT ON FUNCTION fn_schemalist_onload(injson json) IS 'load schemas';
 
 
 --
--- TOC entry 504 (class 1255 OID 197641)
+-- TOC entry 503 (class 1255 OID 197641)
 -- Name: fn_tablecols_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12398,8 +12727,8 @@ $$;
 ALTER FUNCTION sqlmanager.fn_tablecols_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3309 (class 0 OID 0)
--- Dependencies: 504
+-- TOC entry 3325 (class 0 OID 0)
+-- Dependencies: 503
 -- Name: FUNCTION fn_tablecols_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12407,7 +12736,7 @@ COMMENT ON FUNCTION fn_tablecols_onload(injson json) IS 'table columns onload';
 
 
 --
--- TOC entry 502 (class 1255 OID 197642)
+-- TOC entry 501 (class 1255 OID 197642)
 -- Name: fn_tablelist_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12464,8 +12793,8 @@ $$;
 ALTER FUNCTION sqlmanager.fn_tablelist_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3310 (class 0 OID 0)
--- Dependencies: 502
+-- TOC entry 3326 (class 0 OID 0)
+-- Dependencies: 501
 -- Name: FUNCTION fn_tablelist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12473,7 +12802,7 @@ COMMENT ON FUNCTION fn_tablelist_onload(injson json) IS 'table list';
 
 
 --
--- TOC entry 534 (class 1255 OID 198606)
+-- TOC entry 533 (class 1255 OID 198606)
 -- Name: fn_types_sel(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12515,8 +12844,8 @@ $$;
 ALTER FUNCTION sqlmanager.fn_types_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3311 (class 0 OID 0)
--- Dependencies: 534
+-- TOC entry 3327 (class 0 OID 0)
+-- Dependencies: 533
 -- Name: FUNCTION fn_types_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12524,7 +12853,145 @@ COMMENT ON FUNCTION fn_types_sel(injson json, OUT outjson json) IS 'ALL TYPES';
 
 
 --
--- TOC entry 539 (class 1255 OID 198687)
+-- TOC entry 543 (class 1255 OID 198771)
+-- Name: tr_functionslist_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION tr_functionslist_tr_del() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    squery varchar;
+BEGIN
+
+  IF not OLD.noscript 
+  THEN
+    squery = concat('	
+        DROP FUNCTION ',OLD.fullname,' ;
+    ');
+    
+     EXECUTE format(squery) ;
+    
+  END IF;
+  RETURN OLD;
+
+END;
+$$;
+
+
+ALTER FUNCTION sqlmanager.tr_functionslist_tr_del() OWNER TO postgres;
+
+--
+-- TOC entry 546 (class 1255 OID 204529)
+-- Name: tr_functionslist_tr_desc(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION tr_functionslist_tr_desc() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    squery varchar;
+BEGIN
+	
+  IF not NEW.noscript and COALESCE(NEW.descr,'') <> ''
+  THEN
+    squery = concat('	
+        COMMENT ON FUNCTION ', NEW.fullname ,'
+        IS ''', NEW.descr ,''';
+    ');
+    
+     EXECUTE format(squery) ;
+    
+  END IF;
+  RETURN NEW;
+
+END;
+$$;
+
+
+ALTER FUNCTION sqlmanager.tr_functionslist_tr_desc() OWNER TO postgres;
+
+--
+-- TOC entry 544 (class 1255 OID 198823)
+-- Name: tr_functionslist_tr_dll(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION tr_functionslist_tr_dll() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+  IF not NEW.noscript and OLD.dll <> NEW.dll
+  THEN    
+     EXECUTE format(NEW.dll) ;
+  END IF;
+  RETURN OLD;
+END;
+$$;
+
+
+ALTER FUNCTION sqlmanager.tr_functionslist_tr_dll() OWNER TO postgres;
+
+--
+-- TOC entry 549 (class 1255 OID 220935)
+-- Name: tr_functionslist_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION tr_functionslist_tr_ins() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $_$
+DECLARE
+    squery varchar;
+BEGIN
+	
+  IF not NEW.noscript
+  THEN
+  	IF COALESCE(NEW.functionschema, '') = ''
+    THEN
+    	PERFORM raiserror('function schema is empty');
+    END IF;
+    
+  	IF COALESCE(NEW.functiontitle, '') = ''
+    THEN
+    	PERFORM raiserror('title is empty');
+    END IF;
+    NEW.fullname = CONCAT(NEW.functionschema,'.',NEW.functiontitle,'()');
+    NEW.functionfulltitle = CONCAT(NEW.functiontitle,'()');
+    squery = CONCAT('
+      CREATE FUNCTION "', NEW.functionschema, '"."',
+      	NEW.functiontitle, '"()
+      RETURNS void AS
+      $body$
+      DECLARE BEGIN END;
+      $body$
+      LANGUAGE ''plpgsql'' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;
+    ');
+    
+    NEW.dll = squery;
+    
+    EXECUTE format(squery) ;
+    
+  END IF;
+  
+  NEW.dll = CONCAT(
+  	'/*
+    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS
+    DROP FUNCTION 
+', NEW.fullname ,' 
+*/
+', 
+NEW.dll
+  );
+
+  RETURN NEW;
+
+END;
+$_$;
+
+
+ALTER FUNCTION sqlmanager.tr_functionslist_tr_ins() OWNER TO postgres;
+
+--
+-- TOC entry 538 (class 1255 OID 198687)
 -- Name: tr_schemalist_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12535,8 +13002,7 @@ DECLARE
     squery varchar;
 BEGIN
 
-  IF not NEW.noscript and 
-  	 NEW.schemaname <> OLD.schemaname
+  IF not OLD.noscript 
   THEN
     squery = concat('	
         DROP SCHEMA ',OLD.schemaname,';
@@ -12554,7 +13020,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 531 (class 1255 OID 198589)
+-- TOC entry 530 (class 1255 OID 198589)
 -- Name: tr_schemalist_tr_descr(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12582,7 +13048,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_descr() OWNER TO postgres;
 
 --
--- TOC entry 538 (class 1255 OID 198683)
+-- TOC entry 537 (class 1255 OID 198683)
 -- Name: tr_schemalist_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12626,7 +13092,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 527 (class 1255 OID 198591)
+-- TOC entry 526 (class 1255 OID 198591)
 -- Name: tr_schemalist_tr_name(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12687,7 +13153,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_accur() OWNER TO postgres;
 
 --
--- TOC entry 530 (class 1255 OID 198604)
+-- TOC entry 529 (class 1255 OID 198604)
 -- Name: tr_tablecolumns_tr_coldesc(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12714,7 +13180,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_coldesc() OWNER TO postgres;
 
 --
--- TOC entry 533 (class 1255 OID 198602)
+-- TOC entry 532 (class 1255 OID 198602)
 -- Name: tr_tablecolumns_tr_colname(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12741,7 +13207,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_colname() OWNER TO postgres;
 
 --
--- TOC entry 506 (class 1255 OID 198640)
+-- TOC entry 505 (class 1255 OID 198640)
 -- Name: tr_tablecolumns_tr_defval(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12786,7 +13252,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_defval() OWNER TO postgres;
 
 --
--- TOC entry 540 (class 1255 OID 198679)
+-- TOC entry 539 (class 1255 OID 198679)
 -- Name: tr_tablecolumns_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12817,7 +13283,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 537 (class 1255 OID 198661)
+-- TOC entry 536 (class 1255 OID 198661)
 -- Name: tr_tablecolumns_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12891,7 +13357,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 503 (class 1255 OID 198629)
+-- TOC entry 502 (class 1255 OID 198629)
 -- Name: tr_tablecolumns_tr_notnull(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12926,7 +13392,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_notnull() OWNER TO postgres;
 
 --
--- TOC entry 535 (class 1255 OID 198615)
+-- TOC entry 534 (class 1255 OID 198615)
 -- Name: tr_tablecolumns_tr_size(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12955,7 +13421,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_size() OWNER TO postgres;
 
 --
--- TOC entry 536 (class 1255 OID 198607)
+-- TOC entry 535 (class 1255 OID 198607)
 -- Name: tr_tablecolumns_tr_type(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12983,7 +13449,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_type() OWNER TO postgres;
 
 --
--- TOC entry 505 (class 1255 OID 198635)
+-- TOC entry 504 (class 1255 OID 198635)
 -- Name: tr_tablecolumns_tr_uniq(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13030,7 +13496,36 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_uniq() OWNER TO postgres;
 
 --
--- TOC entry 532 (class 1255 OID 198597)
+-- TOC entry 541 (class 1255 OID 198752)
+-- Name: tr_tablelist_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION tr_tablelist_tr_del() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+    squery varchar;
+BEGIN
+
+  IF not OLD.noscript 
+  THEN
+    squery = concat('	
+        DROP TABLE ',OLD.fullname,';
+    ');
+    
+     EXECUTE format(squery) ;
+    
+  END IF;
+  RETURN OLD;
+
+END;
+$$;
+
+
+ALTER FUNCTION sqlmanager.tr_tablelist_tr_del() OWNER TO postgres;
+
+--
+-- TOC entry 531 (class 1255 OID 198597)
 -- Name: tr_tablelist_tr_descr(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13062,6 +13557,60 @@ $$;
 
 
 ALTER FUNCTION sqlmanager.tr_tablelist_tr_descr() OWNER TO postgres;
+
+--
+-- TOC entry 540 (class 1255 OID 198691)
+-- Name: tr_tablelist_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION tr_tablelist_tr_ins() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+  squery varchar;
+BEGIN
+  IF not NEW.noscript 
+  THEN
+  
+  	IF COALESCE(NEW.tableschemaname, '') = ''
+    THEN
+    	PERFORM raiserror('Schema name is empty');
+    END IF;
+    
+  	IF COALESCE(NEW.tablename, '') = ''
+    THEN
+    	PERFORM raiserror('Table name is empty');
+    END IF;
+    
+    NEW.fullname = concat('"', NEW.tableschemaname, '"."', NEW.tablename,'"');
+    
+    squery = concat('	
+        CREATE TABLE "', NEW.tableschemaname, '"."', NEW.tablename, '" (
+          id SERIAL NOT NULL,
+          PRIMARY KEY(id)
+        ) 
+        WITH (oids = false);
+    ');
+    
+    IF COALESCE(NEW.descr,'') <> ''
+    THEN
+    	squery = concat(squery,'
+          COMMENT ON TABLE "', NEW.tableschemaname, '"."', NEW.tablename, '"
+          IS ''', NEW.descr, ''';'
+        );
+    END IF;  
+    
+    EXECUTE format(squery) ;
+    
+  END IF;
+  
+  RETURN NEW;
+  
+END;
+$$;
+
+
+ALTER FUNCTION sqlmanager.tr_tablelist_tr_ins() OWNER TO postgres;
 
 --
 -- TOC entry 524 (class 1255 OID 198595)
@@ -13104,7 +13653,7 @@ ALTER FUNCTION sqlmanager.tr_tablelist_tr_name() OWNER TO postgres;
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 500 (class 1255 OID 197643)
+-- TOC entry 506 (class 1255 OID 197643)
 -- Name: fn_act_visible_conditions_intable(json, integer, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -13114,21 +13663,17 @@ CREATE FUNCTION fn_act_visible_conditions_intable(_vs json, act_id integer, INOU
 BEGIN
 	
   INSERT INTO framework.act_visible_condions (
-    actionid,
-    val_desc,
-    col,
-    title,
-    operation,
-    value
+    actionid, val_desc,
+    col, title,
+    operation, value
   )
   SELECT
-  	act_id,
-    (SELECT
+  	act_id, (
+  	 SELECT
        	c.id
      FROM framework.config as c
      WHERE c.viewid = _vid and c.title = (value->'col')->>'value'
-    ) as val_desc,
-    (v.value->'col')->>'col' as col,
+    ) as val_desc, (v.value->'col')->>'col' as col,
     (v.value->'col')->>'title' as title,
     (v.value->'operation')->>'value' as operation,
     v.value->>'value'
@@ -13141,8 +13686,8 @@ $$;
 ALTER FUNCTION test.fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3312 (class 0 OID 0)
--- Dependencies: 500
+-- TOC entry 3328 (class 0 OID 0)
+-- Dependencies: 506
 -- Name: FUNCTION fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -13326,7 +13871,7 @@ $$;
 ALTER FUNCTION test.fn_actions_in_table(_actions json, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3313 (class 0 OID 0)
+-- TOC entry 3329 (class 0 OID 0)
 -- Dependencies: 507
 -- Name: FUNCTION fn_actions_in_table(_actions json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13467,7 +14012,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3314 (class 0 OID 0)
+-- TOC entry 3330 (class 0 OID 0)
 -- Dependencies: 508
 -- Name: FUNCTION fn_config_in_table(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13511,7 +14056,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3315 (class 0 OID 0)
+-- TOC entry 3331 (class 0 OID 0)
 -- Dependencies: 509
 -- Name: FUNCTION fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13544,7 +14089,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3316 (class 0 OID 0)
+-- TOC entry 3332 (class 0 OID 0)
 -- Dependencies: 510
 -- Name: FUNCTION fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13588,7 +14133,7 @@ $$;
 ALTER FUNCTION test.fn_defaultval_intable(INOUT _colid integer, _dv json) OWNER TO postgres;
 
 --
--- TOC entry 3317 (class 0 OID 0)
+-- TOC entry 3333 (class 0 OID 0)
 -- Dependencies: 511
 -- Name: FUNCTION fn_defaultval_intable(INOUT _colid integer, _dv json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13647,7 +14192,7 @@ $$;
 ALTER FUNCTION test.fn_filters_in_table(filtrs json, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3318 (class 0 OID 0)
+-- TOC entry 3334 (class 0 OID 0)
 -- Dependencies: 512
 -- Name: FUNCTION fn_filters_in_table(filtrs json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13691,7 +14236,7 @@ $$;
 ALTER FUNCTION test.fn_getmethodtest_setcolorblack(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3319 (class 0 OID 0)
+-- TOC entry 3335 (class 0 OID 0)
 -- Dependencies: 513
 -- Name: FUNCTION fn_getmethodtest_setcolorblack(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13725,7 +14270,7 @@ $$;
 ALTER FUNCTION test.fn_gettest_setallcolor_red(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3320 (class 0 OID 0)
+-- TOC entry 3336 (class 0 OID 0)
 -- Dependencies: 514
 -- Name: FUNCTION fn_gettest_setallcolor_red(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13782,7 +14327,7 @@ $$;
 ALTER FUNCTION test.fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer) OWNER TO postgres;
 
 --
--- TOC entry 3321 (class 0 OID 0)
+-- TOC entry 3337 (class 0 OID 0)
 -- Dependencies: 515
 -- Name: FUNCTION fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13826,7 +14371,7 @@ $$;
 ALTER FUNCTION test.fn_postmethodtest_setcolorblue(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3322 (class 0 OID 0)
+-- TOC entry 3338 (class 0 OID 0)
 -- Dependencies: 516
 -- Name: FUNCTION fn_postmethodtest_setcolorblue(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13876,7 +14421,7 @@ $$;
 ALTER FUNCTION test.fn_postmethodtest_setselectedcolor_black(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3323 (class 0 OID 0)
+-- TOC entry 3339 (class 0 OID 0)
 -- Dependencies: 517
 -- Name: FUNCTION fn_postmethodtest_setselectedcolor_black(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13932,7 +14477,7 @@ $$;
 ALTER FUNCTION test.fn_select_api(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3324 (class 0 OID 0)
+-- TOC entry 3340 (class 0 OID 0)
 -- Dependencies: 518
 -- Name: FUNCTION fn_select_api(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -13991,7 +14536,7 @@ $$;
 ALTER FUNCTION test.fn_select_condition_intable(INOUT _colid integer, _sc json) OWNER TO postgres;
 
 --
--- TOC entry 3325 (class 0 OID 0)
+-- TOC entry 3341 (class 0 OID 0)
 -- Dependencies: 519
 -- Name: FUNCTION fn_select_condition_intable(INOUT _colid integer, _sc json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -14031,7 +14576,7 @@ $$;
 ALTER FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb) OWNER TO postgres;
 
 --
--- TOC entry 3326 (class 0 OID 0)
+-- TOC entry 3342 (class 0 OID 0)
 -- Dependencies: 520
 -- Name: FUNCTION "fn_setParamsKey"(conf json, INOUT paramcol jsonb); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -14072,6 +14617,46 @@ $$;
 ALTER FUNCTION test.fn_tel_save(injson json) OWNER TO postgres;
 
 --
+-- TOC entry 545 (class 1255 OID 198843)
+-- Name: fn_test(); Type: FUNCTION; Schema: test; Owner: postgres
+--
+
+CREATE FUNCTION fn_test() RETURNS void
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+BEGIN
+
+END;
+$$;
+
+
+ALTER FUNCTION test.fn_test() OWNER TO postgres;
+
+--
+-- TOC entry 3343 (class 0 OID 0)
+-- Dependencies: 545
+-- Name: FUNCTION fn_test(); Type: COMMENT; Schema: test; Owner: postgres
+--
+
+COMMENT ON FUNCTION fn_test() IS 'test22';
+
+
+--
+-- TOC entry 548 (class 1255 OID 220941)
+-- Name: fn_test3_t(); Type: FUNCTION; Schema: test; Owner: postgres
+--
+
+CREATE FUNCTION fn_test3_t() RETURNS void
+    LANGUAGE plpgsql
+    AS $$
+      DECLARE BEGIN END;
+      $$;
+
+
+ALTER FUNCTION test.fn_test3_t() OWNER TO postgres;
+
+--
 -- TOC entry 522 (class 1255 OID 197659)
 -- Name: fn_views_in_table(); Type: FUNCTION; Schema: test; Owner: postgres
 --
@@ -14108,7 +14693,7 @@ $$;
 ALTER FUNCTION test.fn_views_in_table() OWNER TO postgres;
 
 --
--- TOC entry 3327 (class 0 OID 0)
+-- TOC entry 3344 (class 0 OID 0)
 -- Dependencies: 522
 -- Name: FUNCTION fn_views_in_table(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -14164,7 +14749,7 @@ $$;
 ALTER FUNCTION test.fn_visible_condition_intable(INOUT _colid integer, _vs json) OWNER TO postgres;
 
 --
--- TOC entry 3328 (class 0 OID 0)
+-- TOC entry 3345 (class 0 OID 0)
 -- Dependencies: 523
 -- Name: FUNCTION fn_visible_condition_intable(INOUT _colid integer, _vs json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -14202,7 +14787,7 @@ $$;
 ALTER FUNCTION test.tr_major_table_tr() OWNER TO postgres;
 
 --
--- TOC entry 3329 (class 0 OID 0)
+-- TOC entry 3346 (class 0 OID 0)
 -- Dependencies: 492
 -- Name: FUNCTION tr_major_table_tr(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -14211,7 +14796,7 @@ COMMENT ON FUNCTION tr_major_table_tr() IS 'test major table trigger';
 
 
 --
--- TOC entry 501 (class 1255 OID 197662)
+-- TOC entry 500 (class 1255 OID 197662)
 -- Name: tr_major_table_tr1(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -14256,7 +14841,7 @@ CREATE TABLE act_parametrs (
 ALTER TABLE act_parametrs OWNER TO postgres;
 
 --
--- TOC entry 3330 (class 0 OID 0)
+-- TOC entry 3347 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: TABLE act_parametrs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14280,7 +14865,7 @@ CREATE SEQUENCE act_parametrs_id_seq
 ALTER TABLE act_parametrs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3331 (class 0 OID 0)
+-- TOC entry 3348 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: act_parametrs_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14308,7 +14893,7 @@ CREATE TABLE act_visible_condions (
 ALTER TABLE act_visible_condions OWNER TO postgres;
 
 --
--- TOC entry 3332 (class 0 OID 0)
+-- TOC entry 3349 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: TABLE act_visible_condions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14317,7 +14902,7 @@ COMMENT ON TABLE act_visible_condions IS 'action visible condition';
 
 
 --
--- TOC entry 3333 (class 0 OID 0)
+-- TOC entry 3350 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: COLUMN act_visible_condions.val_desc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14326,7 +14911,7 @@ COMMENT ON COLUMN act_visible_condions.val_desc IS 'column id in config';
 
 
 --
--- TOC entry 3334 (class 0 OID 0)
+-- TOC entry 3351 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: COLUMN act_visible_condions.operation; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14335,7 +14920,7 @@ COMMENT ON COLUMN act_visible_condions.operation IS 'bool operation ';
 
 
 --
--- TOC entry 3335 (class 0 OID 0)
+-- TOC entry 3352 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: COLUMN act_visible_condions.value; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14359,7 +14944,7 @@ CREATE SEQUENCE act_visible_condions_id_seq
 ALTER TABLE act_visible_condions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3336 (class 0 OID 0)
+-- TOC entry 3353 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: act_visible_condions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14395,7 +14980,7 @@ CREATE TABLE actions (
 ALTER TABLE actions OWNER TO postgres;
 
 --
--- TOC entry 3337 (class 0 OID 0)
+-- TOC entry 3354 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: TABLE actions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14419,7 +15004,7 @@ CREATE SEQUENCE actions_id_seq
 ALTER TABLE actions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3338 (class 0 OID 0)
+-- TOC entry 3355 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: actions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14441,7 +15026,7 @@ CREATE TABLE actparam_querytypes (
 ALTER TABLE actparam_querytypes OWNER TO postgres;
 
 --
--- TOC entry 3339 (class 0 OID 0)
+-- TOC entry 3356 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: TABLE actparam_querytypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14465,7 +15050,7 @@ CREATE SEQUENCE actparam_querytypes_id_seq
 ALTER TABLE actparam_querytypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3340 (class 0 OID 0)
+-- TOC entry 3357 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: actparam_querytypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14488,7 +15073,7 @@ CREATE TABLE acttypes (
 ALTER TABLE acttypes OWNER TO postgres;
 
 --
--- TOC entry 3341 (class 0 OID 0)
+-- TOC entry 3358 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: TABLE acttypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14510,7 +15095,7 @@ CREATE TABLE apicallingmethods (
 ALTER TABLE apicallingmethods OWNER TO postgres;
 
 --
--- TOC entry 3342 (class 0 OID 0)
+-- TOC entry 3359 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: TABLE apicallingmethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14535,7 +15120,7 @@ CREATE SEQUENCE apicallingmethods_id_seq
 ALTER TABLE apicallingmethods_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3343 (class 0 OID 0)
+-- TOC entry 3360 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: apicallingmethods_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14558,7 +15143,7 @@ CREATE TABLE apimethods (
 ALTER TABLE apimethods OWNER TO postgres;
 
 --
--- TOC entry 3344 (class 0 OID 0)
+-- TOC entry 3361 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: TABLE apimethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14581,7 +15166,7 @@ CREATE TABLE booloper (
 ALTER TABLE booloper OWNER TO postgres;
 
 --
--- TOC entry 3345 (class 0 OID 0)
+-- TOC entry 3362 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: TABLE booloper; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14605,7 +15190,7 @@ CREATE SEQUENCE booloper_id_seq
 ALTER TABLE booloper_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3346 (class 0 OID 0)
+-- TOC entry 3363 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: booloper_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14632,7 +15217,7 @@ CREATE TABLE calendar_actions (
 ALTER TABLE calendar_actions OWNER TO postgres;
 
 --
--- TOC entry 3347 (class 0 OID 0)
+-- TOC entry 3364 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: TABLE calendar_actions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14643,7 +15228,7 @@ delete';
 
 
 --
--- TOC entry 3348 (class 0 OID 0)
+-- TOC entry 3365 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: COLUMN calendar_actions.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14652,7 +15237,7 @@ COMMENT ON COLUMN calendar_actions.title IS 'title';
 
 
 --
--- TOC entry 3349 (class 0 OID 0)
+-- TOC entry 3366 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: COLUMN calendar_actions.start; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14661,7 +15246,7 @@ COMMENT ON COLUMN calendar_actions.start IS 'start date';
 
 
 --
--- TOC entry 3350 (class 0 OID 0)
+-- TOC entry 3367 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: COLUMN calendar_actions."end"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14670,7 +15255,7 @@ COMMENT ON COLUMN calendar_actions."end" IS 'enddate';
 
 
 --
--- TOC entry 3351 (class 0 OID 0)
+-- TOC entry 3368 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: COLUMN calendar_actions."desc"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14694,7 +15279,7 @@ CREATE SEQUENCE calendar_actions_id_seq
 ALTER TABLE calendar_actions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3352 (class 0 OID 0)
+-- TOC entry 3369 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: calendar_actions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14717,7 +15302,7 @@ CREATE TABLE calendar_test (
 ALTER TABLE calendar_test OWNER TO postgres;
 
 --
--- TOC entry 3353 (class 0 OID 0)
+-- TOC entry 3370 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: TABLE calendar_test; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14728,7 +15313,7 @@ delete';
 
 
 --
--- TOC entry 3354 (class 0 OID 0)
+-- TOC entry 3371 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: COLUMN calendar_test.calendar_date; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14737,7 +15322,7 @@ COMMENT ON COLUMN calendar_test.calendar_date IS 'calendar date';
 
 
 --
--- TOC entry 3355 (class 0 OID 0)
+-- TOC entry 3372 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: COLUMN calendar_test.month; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14761,7 +15346,7 @@ CREATE SEQUENCE calendar_test_id_seq
 ALTER TABLE calendar_test_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3356 (class 0 OID 0)
+-- TOC entry 3373 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: calendar_test_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14784,7 +15369,7 @@ CREATE TABLE columntypes (
 ALTER TABLE columntypes OWNER TO postgres;
 
 --
--- TOC entry 3357 (class 0 OID 0)
+-- TOC entry 3374 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: TABLE columntypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14823,7 +15408,7 @@ CREATE SEQUENCE columntypes_id_seq1
 ALTER TABLE columntypes_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 3358 (class 0 OID 0)
+-- TOC entry 3375 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: columntypes_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14848,7 +15433,7 @@ CREATE TABLE compos (
 ALTER TABLE compos OWNER TO postgres;
 
 --
--- TOC entry 3359 (class 0 OID 0)
+-- TOC entry 3376 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: TABLE compos; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14857,7 +15442,7 @@ COMMENT ON TABLE compos IS 'compositions';
 
 
 --
--- TOC entry 3360 (class 0 OID 0)
+-- TOC entry 3377 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: COLUMN compos.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14866,7 +15451,7 @@ COMMENT ON COLUMN compos.title IS 'compositions title';
 
 
 --
--- TOC entry 3361 (class 0 OID 0)
+-- TOC entry 3378 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: COLUMN compos.path; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14875,7 +15460,7 @@ COMMENT ON COLUMN compos.path IS 'path';
 
 
 --
--- TOC entry 3362 (class 0 OID 0)
+-- TOC entry 3379 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: COLUMN compos.config; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14914,7 +15499,7 @@ CREATE SEQUENCE compos_id_seq1
 ALTER TABLE compos_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 3363 (class 0 OID 0)
+-- TOC entry 3380 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: compos_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -14968,7 +15553,7 @@ CREATE TABLE config (
 ALTER TABLE config OWNER TO postgres;
 
 --
--- TOC entry 3364 (class 0 OID 0)
+-- TOC entry 3381 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: TABLE config; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14977,7 +15562,7 @@ COMMENT ON TABLE config IS 'view columns config';
 
 
 --
--- TOC entry 3365 (class 0 OID 0)
+-- TOC entry 3382 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.viewid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14986,7 +15571,7 @@ COMMENT ON COLUMN config.viewid IS 'view';
 
 
 --
--- TOC entry 3366 (class 0 OID 0)
+-- TOC entry 3383 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.t; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -14995,7 +15580,7 @@ COMMENT ON COLUMN config.t IS 'column allias in query';
 
 
 --
--- TOC entry 3367 (class 0 OID 0)
+-- TOC entry 3384 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.col; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15004,7 +15589,7 @@ COMMENT ON COLUMN config.col IS 'column title';
 
 
 --
--- TOC entry 3368 (class 0 OID 0)
+-- TOC entry 3385 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.column_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15014,7 +15599,7 @@ use in createconfig function';
 
 
 --
--- TOC entry 3369 (class 0 OID 0)
+-- TOC entry 3386 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15023,7 +15608,7 @@ COMMENT ON COLUMN config.title IS 'title';
 
 
 --
--- TOC entry 3370 (class 0 OID 0)
+-- TOC entry 3387 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.type; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15032,7 +15617,7 @@ COMMENT ON COLUMN config.type IS 'type';
 
 
 --
--- TOC entry 3371 (class 0 OID 0)
+-- TOC entry 3388 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15041,7 +15626,7 @@ COMMENT ON COLUMN config.roles IS 'roles accessed to this column';
 
 
 --
--- TOC entry 3372 (class 0 OID 0)
+-- TOC entry 3389 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.visible; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15050,7 +15635,7 @@ COMMENT ON COLUMN config.visible IS 'is required in WHERE (query)';
 
 
 --
--- TOC entry 3373 (class 0 OID 0)
+-- TOC entry 3390 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.required; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15059,7 +15644,7 @@ COMMENT ON COLUMN config.required IS 'is required column value in WHERE';
 
 
 --
--- TOC entry 3374 (class 0 OID 0)
+-- TOC entry 3391 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.width; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15068,7 +15653,7 @@ COMMENT ON COLUMN config.width IS 'column width CSS';
 
 
 --
--- TOC entry 3375 (class 0 OID 0)
+-- TOC entry 3392 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config."join"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15078,7 +15663,7 @@ LEFT JOIN if false';
 
 
 --
--- TOC entry 3376 (class 0 OID 0)
+-- TOC entry 3393 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.classname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15087,7 +15672,7 @@ COMMENT ON COLUMN config.classname IS 'className CSS';
 
 
 --
--- TOC entry 3377 (class 0 OID 0)
+-- TOC entry 3394 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.updatable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15096,7 +15681,7 @@ COMMENT ON COLUMN config.updatable IS 'refresh data on this column change';
 
 
 --
--- TOC entry 3378 (class 0 OID 0)
+-- TOC entry 3395 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.relation; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15105,7 +15690,7 @@ COMMENT ON COLUMN config.relation IS 'relation table';
 
 
 --
--- TOC entry 3379 (class 0 OID 0)
+-- TOC entry 3396 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.select_api; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15114,7 +15699,7 @@ COMMENT ON COLUMN config.select_api IS 'api method path for type *_api';
 
 
 --
--- TOC entry 3380 (class 0 OID 0)
+-- TOC entry 3397 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.multiselecttable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15123,7 +15708,7 @@ COMMENT ON COLUMN config.multiselecttable IS 'tablename for type multiselect';
 
 
 --
--- TOC entry 3381 (class 0 OID 0)
+-- TOC entry 3398 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.orderby; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15132,7 +15717,7 @@ COMMENT ON COLUMN config.orderby IS 'order by this column by default';
 
 
 --
--- TOC entry 3382 (class 0 OID 0)
+-- TOC entry 3399 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.orderbydesc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15141,7 +15726,7 @@ COMMENT ON COLUMN config.orderbydesc IS 'order by desc or asc';
 
 
 --
--- TOC entry 3383 (class 0 OID 0)
+-- TOC entry 3400 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.depency; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15150,7 +15735,7 @@ COMMENT ON COLUMN config.depency IS 'this column is depency table';
 
 
 --
--- TOC entry 3384 (class 0 OID 0)
+-- TOC entry 3401 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.relationcolums; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15161,7 +15746,7 @@ for select filters in lists';
 
 
 --
--- TOC entry 3385 (class 0 OID 0)
+-- TOC entry 3402 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.multicolums; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15170,7 +15755,7 @@ COMMENT ON COLUMN config.multicolums IS 'columns array for multiselect type';
 
 
 --
--- TOC entry 3386 (class 0 OID 0)
+-- TOC entry 3403 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.column_order; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15179,7 +15764,7 @@ COMMENT ON COLUMN config.column_order IS 'column order in config';
 
 
 --
--- TOC entry 3387 (class 0 OID 0)
+-- TOC entry 3404 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.fn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15188,7 +15773,7 @@ COMMENT ON COLUMN config.fn IS 'function is SELECT';
 
 
 --
--- TOC entry 3388 (class 0 OID 0)
+-- TOC entry 3405 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.fncolumns; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15197,7 +15782,7 @@ COMMENT ON COLUMN config.fncolumns IS 'Function input parametrs';
 
 
 --
--- TOC entry 3389 (class 0 OID 0)
+-- TOC entry 3406 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config."table"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15206,7 +15791,7 @@ COMMENT ON COLUMN config."table" IS 'table name for related col';
 
 
 --
--- TOC entry 3390 (class 0 OID 0)
+-- TOC entry 3407 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.related; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15215,7 +15800,7 @@ COMMENT ON COLUMN config.related IS 'is related';
 
 
 --
--- TOC entry 3391 (class 0 OID 0)
+-- TOC entry 3408 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.tpath; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15224,7 +15809,7 @@ COMMENT ON COLUMN config.tpath IS 'join path';
 
 
 --
--- TOC entry 3392 (class 0 OID 0)
+-- TOC entry 3409 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.editable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15233,7 +15818,7 @@ COMMENT ON COLUMN config.editable IS 'is editable cell';
 
 
 --
--- TOC entry 3393 (class 0 OID 0)
+-- TOC entry 3410 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: COLUMN config.copy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15257,7 +15842,7 @@ CREATE SEQUENCE config_id_seq
 ALTER TABLE config_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3394 (class 0 OID 0)
+-- TOC entry 3411 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: config_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15279,7 +15864,7 @@ CREATE TABLE configsettings (
 ALTER TABLE configsettings OWNER TO postgres;
 
 --
--- TOC entry 3395 (class 0 OID 0)
+-- TOC entry 3412 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: TABLE configsettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15303,7 +15888,7 @@ CREATE SEQUENCE configsettings_id_seq
 ALTER TABLE configsettings_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3396 (class 0 OID 0)
+-- TOC entry 3413 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: configsettings_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15329,7 +15914,7 @@ CREATE TABLE defaultval (
 ALTER TABLE defaultval OWNER TO postgres;
 
 --
--- TOC entry 3397 (class 0 OID 0)
+-- TOC entry 3414 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: TABLE defaultval; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15338,7 +15923,7 @@ COMMENT ON TABLE defaultval IS 'defaultval configs property';
 
 
 --
--- TOC entry 3398 (class 0 OID 0)
+-- TOC entry 3415 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: COLUMN defaultval.configid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15347,7 +15932,7 @@ COMMENT ON COLUMN defaultval.configid IS 'id from config table';
 
 
 --
--- TOC entry 3399 (class 0 OID 0)
+-- TOC entry 3416 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: COLUMN defaultval.bool; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15356,7 +15941,7 @@ COMMENT ON COLUMN defaultval.bool IS 'bool operator';
 
 
 --
--- TOC entry 3400 (class 0 OID 0)
+-- TOC entry 3417 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: COLUMN defaultval.act; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15365,7 +15950,7 @@ COMMENT ON COLUMN defaultval.act IS 'action';
 
 
 --
--- TOC entry 3401 (class 0 OID 0)
+-- TOC entry 3418 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: COLUMN defaultval.value; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15389,7 +15974,7 @@ CREATE SEQUENCE defaultval_id_seq
 ALTER TABLE defaultval_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3402 (class 0 OID 0)
+-- TOC entry 3419 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: defaultval_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15421,7 +16006,7 @@ CREATE TABLE dialog_messages (
 ALTER TABLE dialog_messages OWNER TO postgres;
 
 --
--- TOC entry 3403 (class 0 OID 0)
+-- TOC entry 3420 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15430,7 +16015,7 @@ COMMENT ON COLUMN dialog_messages.userid IS 'who send';
 
 
 --
--- TOC entry 3404 (class 0 OID 0)
+-- TOC entry 3421 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.message_text; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15439,7 +16024,7 @@ COMMENT ON COLUMN dialog_messages.message_text IS 'message';
 
 
 --
--- TOC entry 3405 (class 0 OID 0)
+-- TOC entry 3422 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.reply_to; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15448,7 +16033,7 @@ COMMENT ON COLUMN dialog_messages.reply_to IS 'reply to message id';
 
 
 --
--- TOC entry 3406 (class 0 OID 0)
+-- TOC entry 3423 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.forwarded_from; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15457,7 +16042,7 @@ COMMENT ON COLUMN dialog_messages.forwarded_from IS 'forward from message';
 
 
 --
--- TOC entry 3407 (class 0 OID 0)
+-- TOC entry 3424 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.dialog_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15466,7 +16051,7 @@ COMMENT ON COLUMN dialog_messages.dialog_id IS 'dialog';
 
 
 --
--- TOC entry 3408 (class 0 OID 0)
+-- TOC entry 3425 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.files; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15475,7 +16060,7 @@ COMMENT ON COLUMN dialog_messages.files IS 'files';
 
 
 --
--- TOC entry 3409 (class 0 OID 0)
+-- TOC entry 3426 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.images; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15484,7 +16069,7 @@ COMMENT ON COLUMN dialog_messages.images IS 'images';
 
 
 --
--- TOC entry 3410 (class 0 OID 0)
+-- TOC entry 3427 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.isread; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15493,7 +16078,7 @@ COMMENT ON COLUMN dialog_messages.isread IS 'when user read message';
 
 
 --
--- TOC entry 3411 (class 0 OID 0)
+-- TOC entry 3428 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.isupdated; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15502,7 +16087,7 @@ COMMENT ON COLUMN dialog_messages.isupdated IS 'when user update the message';
 
 
 --
--- TOC entry 3412 (class 0 OID 0)
+-- TOC entry 3429 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN dialog_messages.user_reads; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15526,7 +16111,7 @@ CREATE SEQUENCE dialog_messages_id_seq
 ALTER TABLE dialog_messages_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3413 (class 0 OID 0)
+-- TOC entry 3430 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: dialog_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15555,7 +16140,7 @@ CREATE TABLE dialog_notifications (
 ALTER TABLE dialog_notifications OWNER TO postgres;
 
 --
--- TOC entry 3414 (class 0 OID 0)
+-- TOC entry 3431 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: TABLE dialog_notifications; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15564,7 +16149,7 @@ COMMENT ON TABLE dialog_notifications IS 'ws notifications for dialogs';
 
 
 --
--- TOC entry 3415 (class 0 OID 0)
+-- TOC entry 3432 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_notifications.dialog_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15573,7 +16158,7 @@ COMMENT ON COLUMN dialog_notifications.dialog_id IS 'dialog';
 
 
 --
--- TOC entry 3416 (class 0 OID 0)
+-- TOC entry 3433 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_notifications.issend; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15597,7 +16182,7 @@ CREATE SEQUENCE dialog_notifications_id_seq
 ALTER TABLE dialog_notifications_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3417 (class 0 OID 0)
+-- TOC entry 3434 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: dialog_notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15619,7 +16204,7 @@ CREATE TABLE dialog_statuses (
 ALTER TABLE dialog_statuses OWNER TO postgres;
 
 --
--- TOC entry 3418 (class 0 OID 0)
+-- TOC entry 3435 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: TABLE dialog_statuses; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15643,7 +16228,7 @@ CREATE SEQUENCE dialog_statuses_id_seq
 ALTER TABLE dialog_statuses_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3419 (class 0 OID 0)
+-- TOC entry 3436 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: dialog_statuses_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15665,7 +16250,7 @@ CREATE TABLE dialog_types (
 ALTER TABLE dialog_types OWNER TO postgres;
 
 --
--- TOC entry 3420 (class 0 OID 0)
+-- TOC entry 3437 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: TABLE dialog_types; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15697,7 +16282,7 @@ CREATE TABLE dialogs (
 ALTER TABLE dialogs OWNER TO postgres;
 
 --
--- TOC entry 3421 (class 0 OID 0)
+-- TOC entry 3438 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: TABLE dialogs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15706,7 +16291,7 @@ COMMENT ON TABLE dialogs IS 'USERS CHAT DIALOGS';
 
 
 --
--- TOC entry 3422 (class 0 OID 0)
+-- TOC entry 3439 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15715,7 +16300,7 @@ COMMENT ON COLUMN dialogs.title IS 'title of dialog';
 
 
 --
--- TOC entry 3423 (class 0 OID 0)
+-- TOC entry 3440 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.users; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15724,7 +16309,7 @@ COMMENT ON COLUMN dialogs.users IS 'users of dialog';
 
 
 --
--- TOC entry 3424 (class 0 OID 0)
+-- TOC entry 3441 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.dtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15733,7 +16318,7 @@ COMMENT ON COLUMN dialogs.dtype IS 'type of dialog';
 
 
 --
--- TOC entry 3425 (class 0 OID 0)
+-- TOC entry 3442 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15742,7 +16327,7 @@ COMMENT ON COLUMN dialogs.userid IS 'user who create dialog';
 
 
 --
--- TOC entry 3426 (class 0 OID 0)
+-- TOC entry 3443 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.created; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15751,7 +16336,7 @@ COMMENT ON COLUMN dialogs.created IS 'create date';
 
 
 --
--- TOC entry 3427 (class 0 OID 0)
+-- TOC entry 3444 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.status; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15760,7 +16345,7 @@ COMMENT ON COLUMN dialogs.status IS 'status of dialog';
 
 
 --
--- TOC entry 3428 (class 0 OID 0)
+-- TOC entry 3445 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.first_message; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15769,7 +16354,7 @@ COMMENT ON COLUMN dialogs.first_message IS 'first message in dialog';
 
 
 --
--- TOC entry 3429 (class 0 OID 0)
+-- TOC entry 3446 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.last_message_date; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15778,7 +16363,7 @@ COMMENT ON COLUMN dialogs.last_message_date IS 'last mesage date';
 
 
 --
--- TOC entry 3430 (class 0 OID 0)
+-- TOC entry 3447 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.photo; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15788,7 +16373,7 @@ only for groups';
 
 
 --
--- TOC entry 3431 (class 0 OID 0)
+-- TOC entry 3448 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.dialog_admins; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15797,7 +16382,7 @@ COMMENT ON COLUMN dialogs.dialog_admins IS 'admin users';
 
 
 --
--- TOC entry 3432 (class 0 OID 0)
+-- TOC entry 3449 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: COLUMN dialogs.creator; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15821,7 +16406,7 @@ CREATE SEQUENCE dialogs_id_seq
 ALTER TABLE dialogs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3433 (class 0 OID 0)
+-- TOC entry 3450 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: dialogs_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15845,7 +16430,7 @@ CREATE SEQUENCE dialogs_status_seq
 ALTER TABLE dialogs_status_seq OWNER TO postgres;
 
 --
--- TOC entry 3434 (class 0 OID 0)
+-- TOC entry 3451 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: dialogs_status_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -15878,7 +16463,7 @@ CREATE TABLE filters (
 ALTER TABLE filters OWNER TO postgres;
 
 --
--- TOC entry 3435 (class 0 OID 0)
+-- TOC entry 3452 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: TABLE filters; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15887,7 +16472,7 @@ COMMENT ON TABLE filters IS 'view''s filters';
 
 
 --
--- TOC entry 3436 (class 0 OID 0)
+-- TOC entry 3453 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.column_order; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15896,7 +16481,7 @@ COMMENT ON COLUMN filters.column_order IS 'order by';
 
 
 --
--- TOC entry 3437 (class 0 OID 0)
+-- TOC entry 3454 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.viewid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15905,7 +16490,7 @@ COMMENT ON COLUMN filters.viewid IS 'view';
 
 
 --
--- TOC entry 3438 (class 0 OID 0)
+-- TOC entry 3455 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15914,7 +16499,7 @@ COMMENT ON COLUMN filters.title IS 'title';
 
 
 --
--- TOC entry 3439 (class 0 OID 0)
+-- TOC entry 3456 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.type; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15923,7 +16508,7 @@ COMMENT ON COLUMN filters.type IS 'filter type';
 
 
 --
--- TOC entry 3440 (class 0 OID 0)
+-- TOC entry 3457 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.classname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15932,7 +16517,7 @@ COMMENT ON COLUMN filters.classname IS 'css classname';
 
 
 --
--- TOC entry 3441 (class 0 OID 0)
+-- TOC entry 3458 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters."column"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15941,7 +16526,7 @@ COMMENT ON COLUMN filters."column" IS 'congig columns title';
 
 
 --
--- TOC entry 3442 (class 0 OID 0)
+-- TOC entry 3459 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.columns; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15950,7 +16535,7 @@ COMMENT ON COLUMN filters.columns IS 'config id json array';
 
 
 --
--- TOC entry 3443 (class 0 OID 0)
+-- TOC entry 3460 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15959,7 +16544,7 @@ COMMENT ON COLUMN filters.roles IS 'roles access';
 
 
 --
--- TOC entry 3444 (class 0 OID 0)
+-- TOC entry 3461 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: COLUMN filters.val_desc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -15983,7 +16568,7 @@ CREATE SEQUENCE filters_id_seq
 ALTER TABLE filters_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3445 (class 0 OID 0)
+-- TOC entry 3462 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: filters_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16005,7 +16590,7 @@ CREATE TABLE filtertypes (
 ALTER TABLE filtertypes OWNER TO postgres;
 
 --
--- TOC entry 3446 (class 0 OID 0)
+-- TOC entry 3463 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: TABLE filtertypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16048,7 +16633,7 @@ CREATE TABLE logtable (
 ALTER TABLE logtable OWNER TO postgres;
 
 --
--- TOC entry 3447 (class 0 OID 0)
+-- TOC entry 3464 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.tablename; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16057,7 +16642,7 @@ COMMENT ON COLUMN logtable.tablename IS 'table name';
 
 
 --
--- TOC entry 3448 (class 0 OID 0)
+-- TOC entry 3465 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.tableid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16066,7 +16651,7 @@ COMMENT ON COLUMN logtable.tableid IS 'id columns value';
 
 
 --
--- TOC entry 3449 (class 0 OID 0)
+-- TOC entry 3466 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.opertype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16075,7 +16660,7 @@ COMMENT ON COLUMN logtable.opertype IS 'operations type';
 
 
 --
--- TOC entry 3450 (class 0 OID 0)
+-- TOC entry 3467 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.oldata; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16084,7 +16669,7 @@ COMMENT ON COLUMN logtable.oldata IS 'old data in json object';
 
 
 --
--- TOC entry 3451 (class 0 OID 0)
+-- TOC entry 3468 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.newdata; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16093,7 +16678,7 @@ COMMENT ON COLUMN logtable.newdata IS 'new data after operation. json object';
 
 
 --
--- TOC entry 3452 (class 0 OID 0)
+-- TOC entry 3469 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.colname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16102,7 +16687,7 @@ COMMENT ON COLUMN logtable.colname IS 'colname, if changed just one column in ta
 
 
 --
--- TOC entry 3453 (class 0 OID 0)
+-- TOC entry 3470 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: COLUMN logtable.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16150,7 +16735,7 @@ CREATE TABLE mainmenu (
 ALTER TABLE mainmenu OWNER TO postgres;
 
 --
--- TOC entry 3454 (class 0 OID 0)
+-- TOC entry 3471 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: COLUMN mainmenu.icon; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16159,7 +16744,7 @@ COMMENT ON COLUMN mainmenu.icon IS 'icon';
 
 
 --
--- TOC entry 3455 (class 0 OID 0)
+-- TOC entry 3472 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: COLUMN mainmenu.nosession; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16168,7 +16753,7 @@ COMMENT ON COLUMN mainmenu.nosession IS 'only if not session';
 
 
 --
--- TOC entry 3456 (class 0 OID 0)
+-- TOC entry 3473 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: COLUMN mainmenu.ws; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16177,7 +16762,7 @@ COMMENT ON COLUMN mainmenu.ws IS 'ws message';
 
 
 --
--- TOC entry 3457 (class 0 OID 0)
+-- TOC entry 3474 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: COLUMN mainmenu.istitle; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16201,7 +16786,7 @@ CREATE SEQUENCE mainmenu_id_seq
 ALTER TABLE mainmenu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3458 (class 0 OID 0)
+-- TOC entry 3475 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: mainmenu_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16233,7 +16818,7 @@ CREATE TABLE mainsettings (
 ALTER TABLE mainsettings OWNER TO postgres;
 
 --
--- TOC entry 3459 (class 0 OID 0)
+-- TOC entry 3476 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: TABLE mainsettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16243,7 +16828,7 @@ Must be the same as settings.json file';
 
 
 --
--- TOC entry 3460 (class 0 OID 0)
+-- TOC entry 3477 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.dsn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16252,7 +16837,7 @@ COMMENT ON COLUMN mainsettings.dsn IS 'db connection string';
 
 
 --
--- TOC entry 3461 (class 0 OID 0)
+-- TOC entry 3478 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.port; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16261,7 +16846,7 @@ COMMENT ON COLUMN mainsettings.port IS 'project server port';
 
 
 --
--- TOC entry 3462 (class 0 OID 0)
+-- TOC entry 3479 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings."developerRole"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16270,7 +16855,7 @@ COMMENT ON COLUMN mainsettings."developerRole" IS 'developer role id';
 
 
 --
--- TOC entry 3463 (class 0 OID 0)
+-- TOC entry 3480 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.maindomain; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16279,7 +16864,7 @@ COMMENT ON COLUMN mainsettings.maindomain IS 'main domain';
 
 
 --
--- TOC entry 3464 (class 0 OID 0)
+-- TOC entry 3481 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings."primaryAuthorization"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16288,7 +16873,7 @@ COMMENT ON COLUMN mainsettings."primaryAuthorization" IS 'primary authorization'
 
 
 --
--- TOC entry 3465 (class 0 OID 0)
+-- TOC entry 3482 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.redirect401; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16297,7 +16882,7 @@ COMMENT ON COLUMN mainsettings.redirect401 IS 'redirect when status 401';
 
 
 --
--- TOC entry 3466 (class 0 OID 0)
+-- TOC entry 3483 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.usercss; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16306,7 +16891,7 @@ COMMENT ON COLUMN mainsettings.usercss IS 'css file';
 
 
 --
--- TOC entry 3467 (class 0 OID 0)
+-- TOC entry 3484 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.homepage; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16315,7 +16900,7 @@ COMMENT ON COLUMN mainsettings.homepage IS 'home page';
 
 
 --
--- TOC entry 3468 (class 0 OID 0)
+-- TOC entry 3485 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: COLUMN mainsettings.reports_url; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16339,7 +16924,7 @@ CREATE TABLE menus (
 ALTER TABLE menus OWNER TO postgres;
 
 --
--- TOC entry 3469 (class 0 OID 0)
+-- TOC entry 3486 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: TABLE menus; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16363,7 +16948,7 @@ CREATE SEQUENCE menus_id_seq
 ALTER TABLE menus_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3470 (class 0 OID 0)
+-- TOC entry 3487 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: menus_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16385,7 +16970,7 @@ CREATE TABLE menutypes (
 ALTER TABLE menutypes OWNER TO postgres;
 
 --
--- TOC entry 3471 (class 0 OID 0)
+-- TOC entry 3488 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: TABLE menutypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16409,7 +16994,7 @@ CREATE SEQUENCE menutypes_id_seq
 ALTER TABLE menutypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3472 (class 0 OID 0)
+-- TOC entry 3489 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: menutypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16431,7 +17016,7 @@ CREATE TABLE methodtypes (
 ALTER TABLE methodtypes OWNER TO postgres;
 
 --
--- TOC entry 3473 (class 0 OID 0)
+-- TOC entry 3490 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: TABLE methodtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16459,7 +17044,7 @@ CREATE TABLE notifications (
 ALTER TABLE notifications OWNER TO postgres;
 
 --
--- TOC entry 3474 (class 0 OID 0)
+-- TOC entry 3491 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: TABLE notifications; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16468,7 +17053,7 @@ COMMENT ON TABLE notifications IS 'Global notifications for dashboard menu type'
 
 
 --
--- TOC entry 3475 (class 0 OID 0)
+-- TOC entry 3492 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN notifications.message; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16477,7 +17062,7 @@ COMMENT ON COLUMN notifications.message IS 'notifications message';
 
 
 --
--- TOC entry 3476 (class 0 OID 0)
+-- TOC entry 3493 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN notifications.messagetype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16486,7 +17071,7 @@ COMMENT ON COLUMN notifications.messagetype IS 'notifications message types';
 
 
 --
--- TOC entry 3477 (class 0 OID 0)
+-- TOC entry 3494 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN notifications.for_userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16495,7 +17080,7 @@ COMMENT ON COLUMN notifications.for_userid IS 'for user';
 
 
 --
--- TOC entry 3478 (class 0 OID 0)
+-- TOC entry 3495 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN notifications.sended_sessions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16504,7 +17089,7 @@ COMMENT ON COLUMN notifications.sended_sessions IS 'what sessions are already ge
 
 
 --
--- TOC entry 3479 (class 0 OID 0)
+-- TOC entry 3496 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: COLUMN notifications.isread; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16528,7 +17113,7 @@ CREATE SEQUENCE notifications_id_seq
 ALTER TABLE notifications_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3480 (class 0 OID 0)
+-- TOC entry 3497 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16553,7 +17138,7 @@ CREATE TABLE operations (
 ALTER TABLE operations OWNER TO postgres;
 
 --
--- TOC entry 3481 (class 0 OID 0)
+-- TOC entry 3498 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: TABLE operations; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16577,7 +17162,7 @@ CREATE SEQUENCE operations_id_seq
 ALTER TABLE operations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3482 (class 0 OID 0)
+-- TOC entry 3499 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: operations_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16600,7 +17185,7 @@ CREATE TABLE opertypes (
 ALTER TABLE opertypes OWNER TO postgres;
 
 --
--- TOC entry 3483 (class 0 OID 0)
+-- TOC entry 3500 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: TABLE opertypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16628,7 +17213,7 @@ CREATE TABLE orgs (
 ALTER TABLE orgs OWNER TO postgres;
 
 --
--- TOC entry 3484 (class 0 OID 0)
+-- TOC entry 3501 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: TABLE orgs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16637,7 +17222,7 @@ COMMENT ON TABLE orgs IS 'ORGS';
 
 
 --
--- TOC entry 3485 (class 0 OID 0)
+-- TOC entry 3502 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN orgs.orgname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16646,7 +17231,7 @@ COMMENT ON COLUMN orgs.orgname IS 'org title';
 
 
 --
--- TOC entry 3486 (class 0 OID 0)
+-- TOC entry 3503 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN orgs.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16655,7 +17240,7 @@ COMMENT ON COLUMN orgs.parentid IS 'major org';
 
 
 --
--- TOC entry 3487 (class 0 OID 0)
+-- TOC entry 3504 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN orgs.shortname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16692,7 +17277,7 @@ CREATE TABLE orgtypes (
 ALTER TABLE orgtypes OWNER TO postgres;
 
 --
--- TOC entry 3488 (class 0 OID 0)
+-- TOC entry 3505 (class 0 OID 0)
 -- Dependencies: 247
 -- Name: TABLE orgtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16715,7 +17300,7 @@ CREATE TABLE paramtypes (
 ALTER TABLE paramtypes OWNER TO postgres;
 
 --
--- TOC entry 3489 (class 0 OID 0)
+-- TOC entry 3506 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: TABLE paramtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16738,7 +17323,7 @@ CREATE TABLE roles (
 ALTER TABLE roles OWNER TO postgres;
 
 --
--- TOC entry 3490 (class 0 OID 0)
+-- TOC entry 3507 (class 0 OID 0)
 -- Dependencies: 249
 -- Name: TABLE roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16747,7 +17332,7 @@ COMMENT ON TABLE roles IS 'project roles';
 
 
 --
--- TOC entry 3491 (class 0 OID 0)
+-- TOC entry 3508 (class 0 OID 0)
 -- Dependencies: 249
 -- Name: COLUMN roles.hierarchy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16775,7 +17360,7 @@ CREATE TABLE select_condition (
 ALTER TABLE select_condition OWNER TO postgres;
 
 --
--- TOC entry 3492 (class 0 OID 0)
+-- TOC entry 3509 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: TABLE select_condition; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16799,7 +17384,7 @@ CREATE SEQUENCE select_condition_id_seq
 ALTER TABLE select_condition_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3493 (class 0 OID 0)
+-- TOC entry 3510 (class 0 OID 0)
 -- Dependencies: 251
 -- Name: select_condition_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16823,7 +17408,7 @@ CREATE TABLE sess (
 ALTER TABLE sess OWNER TO postgres;
 
 --
--- TOC entry 3494 (class 0 OID 0)
+-- TOC entry 3511 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: TABLE sess; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16850,7 +17435,7 @@ CREATE TABLE spapi (
 ALTER TABLE spapi OWNER TO postgres;
 
 --
--- TOC entry 3495 (class 0 OID 0)
+-- TOC entry 3512 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: TABLE spapi; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16861,7 +17446,7 @@ always pass in function injson JSON parametr';
 
 
 --
--- TOC entry 3496 (class 0 OID 0)
+-- TOC entry 3513 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: COLUMN spapi.methodname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16870,7 +17455,7 @@ COMMENT ON COLUMN spapi.methodname IS 'API method name (call like this /api/{met
 
 
 --
--- TOC entry 3497 (class 0 OID 0)
+-- TOC entry 3514 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: COLUMN spapi.procedurename; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16881,7 +17466,7 @@ pass all parametrs in injson type of JSON
 
 
 --
--- TOC entry 3498 (class 0 OID 0)
+-- TOC entry 3515 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: COLUMN spapi.methodtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16890,7 +17475,7 @@ COMMENT ON COLUMN spapi.methodtype IS 'rest method type';
 
 
 --
--- TOC entry 3499 (class 0 OID 0)
+-- TOC entry 3516 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: COLUMN spapi.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16914,7 +17499,7 @@ CREATE SEQUENCE spapi_id_seq
 ALTER TABLE spapi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3500 (class 0 OID 0)
+-- TOC entry 3517 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: spapi_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16943,7 +17528,7 @@ CREATE TABLE trees (
 ALTER TABLE trees OWNER TO postgres;
 
 --
--- TOC entry 3501 (class 0 OID 0)
+-- TOC entry 3518 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: TABLE trees; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16952,7 +17537,7 @@ COMMENT ON TABLE trees IS 'Trees menus';
 
 
 --
--- TOC entry 3502 (class 0 OID 0)
+-- TOC entry 3519 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: COLUMN trees.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16961,7 +17546,7 @@ COMMENT ON COLUMN trees.title IS 'page title';
 
 
 --
--- TOC entry 3503 (class 0 OID 0)
+-- TOC entry 3520 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: COLUMN trees.url; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16985,7 +17570,7 @@ CREATE SEQUENCE trees_id_seq
 ALTER TABLE trees_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3504 (class 0 OID 0)
+-- TOC entry 3521 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: trees_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17012,7 +17597,7 @@ CREATE TABLE treesacts (
 ALTER TABLE treesacts OWNER TO postgres;
 
 --
--- TOC entry 3505 (class 0 OID 0)
+-- TOC entry 3522 (class 0 OID 0)
 -- Dependencies: 257
 -- Name: TABLE treesacts; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17036,7 +17621,7 @@ CREATE SEQUENCE treesacts_id_seq
 ALTER TABLE treesacts_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3506 (class 0 OID 0)
+-- TOC entry 3523 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: treesacts_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17067,7 +17652,7 @@ CREATE TABLE treesbranches (
 ALTER TABLE treesbranches OWNER TO postgres;
 
 --
--- TOC entry 3507 (class 0 OID 0)
+-- TOC entry 3524 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: TABLE treesbranches; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17076,7 +17661,7 @@ COMMENT ON TABLE treesbranches IS 'trees branches';
 
 
 --
--- TOC entry 3508 (class 0 OID 0)
+-- TOC entry 3525 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: COLUMN treesbranches.treesid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17085,7 +17670,7 @@ COMMENT ON COLUMN treesbranches.treesid IS 'tree';
 
 
 --
--- TOC entry 3509 (class 0 OID 0)
+-- TOC entry 3526 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: COLUMN treesbranches.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17094,7 +17679,7 @@ COMMENT ON COLUMN treesbranches.title IS 'menu item title';
 
 
 --
--- TOC entry 3510 (class 0 OID 0)
+-- TOC entry 3527 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: COLUMN treesbranches.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17103,7 +17688,7 @@ COMMENT ON COLUMN treesbranches.parentid IS 'parent';
 
 
 --
--- TOC entry 3511 (class 0 OID 0)
+-- TOC entry 3528 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: COLUMN treesbranches.treeviewtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17127,7 +17712,7 @@ CREATE SEQUENCE treesbranches_id_seq
 ALTER TABLE treesbranches_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3512 (class 0 OID 0)
+-- TOC entry 3529 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: treesbranches_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17149,7 +17734,7 @@ CREATE TABLE treeviewtypes (
 ALTER TABLE treeviewtypes OWNER TO postgres;
 
 --
--- TOC entry 3513 (class 0 OID 0)
+-- TOC entry 3530 (class 0 OID 0)
 -- Dependencies: 261
 -- Name: TABLE treeviewtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17186,7 +17771,7 @@ CREATE TABLE users (
 ALTER TABLE users OWNER TO postgres;
 
 --
--- TOC entry 3514 (class 0 OID 0)
+-- TOC entry 3531 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: TABLE users; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17195,7 +17780,7 @@ COMMENT ON TABLE users IS 'USER';
 
 
 --
--- TOC entry 3515 (class 0 OID 0)
+-- TOC entry 3532 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.fam; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17204,7 +17789,7 @@ COMMENT ON COLUMN users.fam IS 'lastname';
 
 
 --
--- TOC entry 3516 (class 0 OID 0)
+-- TOC entry 3533 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.im; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17213,7 +17798,7 @@ COMMENT ON COLUMN users.im IS 'firstname';
 
 
 --
--- TOC entry 3517 (class 0 OID 0)
+-- TOC entry 3534 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.ot; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17222,7 +17807,7 @@ COMMENT ON COLUMN users.ot IS 'secondname';
 
 
 --
--- TOC entry 3518 (class 0 OID 0)
+-- TOC entry 3535 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.login; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17231,7 +17816,7 @@ COMMENT ON COLUMN users.login IS 'login';
 
 
 --
--- TOC entry 3519 (class 0 OID 0)
+-- TOC entry 3536 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.password; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17240,7 +17825,7 @@ COMMENT ON COLUMN users.password IS 'userpas';
 
 
 --
--- TOC entry 3520 (class 0 OID 0)
+-- TOC entry 3537 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.isactive; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17249,7 +17834,7 @@ COMMENT ON COLUMN users.isactive IS 'is active';
 
 
 --
--- TOC entry 3521 (class 0 OID 0)
+-- TOC entry 3538 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17258,7 +17843,7 @@ COMMENT ON COLUMN users.roles IS 'roles';
 
 
 --
--- TOC entry 3522 (class 0 OID 0)
+-- TOC entry 3539 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.photo; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17267,7 +17852,7 @@ COMMENT ON COLUMN users.photo IS 'avatar';
 
 
 --
--- TOC entry 3523 (class 0 OID 0)
+-- TOC entry 3540 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.orgs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17276,7 +17861,7 @@ COMMENT ON COLUMN users.orgs IS 'user orgs';
 
 
 --
--- TOC entry 3524 (class 0 OID 0)
+-- TOC entry 3541 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.usersettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17285,7 +17870,7 @@ COMMENT ON COLUMN users.usersettings IS 'this is views interface settings';
 
 
 --
--- TOC entry 3525 (class 0 OID 0)
+-- TOC entry 3542 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN users.thumbprint; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17309,7 +17894,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3526 (class 0 OID 0)
+-- TOC entry 3543 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17351,7 +17936,7 @@ CREATE TABLE views (
 ALTER TABLE views OWNER TO postgres;
 
 --
--- TOC entry 3527 (class 0 OID 0)
+-- TOC entry 3544 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: TABLE views; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17375,7 +17960,7 @@ CREATE SEQUENCE views_id_seq
 ALTER TABLE views_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3528 (class 0 OID 0)
+-- TOC entry 3545 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: views_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17406,7 +17991,7 @@ CREATE TABLE viewsnotification (
 ALTER TABLE viewsnotification OWNER TO postgres;
 
 --
--- TOC entry 3529 (class 0 OID 0)
+-- TOC entry 3546 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: TABLE viewsnotification; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17416,7 +18001,7 @@ you can add here notification for different views on triggers';
 
 
 --
--- TOC entry 3530 (class 0 OID 0)
+-- TOC entry 3547 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN viewsnotification.tableid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17425,7 +18010,7 @@ COMMENT ON COLUMN viewsnotification.tableid IS 'id from table';
 
 
 --
--- TOC entry 3531 (class 0 OID 0)
+-- TOC entry 3548 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN viewsnotification.notificationtext; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17434,7 +18019,7 @@ COMMENT ON COLUMN viewsnotification.notificationtext IS 'message';
 
 
 --
--- TOC entry 3532 (class 0 OID 0)
+-- TOC entry 3549 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN viewsnotification.foruser; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17458,7 +18043,7 @@ CREATE SEQUENCE viewsnotification_id_seq
 ALTER TABLE viewsnotification_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3533 (class 0 OID 0)
+-- TOC entry 3550 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: viewsnotification_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17481,7 +18066,7 @@ CREATE TABLE viewtypes (
 ALTER TABLE viewtypes OWNER TO postgres;
 
 --
--- TOC entry 3534 (class 0 OID 0)
+-- TOC entry 3551 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: TABLE viewtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17509,7 +18094,7 @@ CREATE TABLE visible_condition (
 ALTER TABLE visible_condition OWNER TO postgres;
 
 --
--- TOC entry 3535 (class 0 OID 0)
+-- TOC entry 3552 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: TABLE visible_condition; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17533,7 +18118,7 @@ CREATE SEQUENCE visible_condition_id_seq
 ALTER TABLE visible_condition_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3536 (class 0 OID 0)
+-- TOC entry 3553 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: visible_condition_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17580,7 +18165,7 @@ CREATE TABLE reportlist (
 ALTER TABLE reportlist OWNER TO postgres;
 
 --
--- TOC entry 3537 (class 0 OID 0)
+-- TOC entry 3554 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: TABLE reportlist; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17589,7 +18174,7 @@ COMMENT ON TABLE reportlist IS 'reportslist';
 
 
 --
--- TOC entry 3538 (class 0 OID 0)
+-- TOC entry 3555 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.title; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17598,7 +18183,7 @@ COMMENT ON COLUMN reportlist.title IS 'Название';
 
 
 --
--- TOC entry 3539 (class 0 OID 0)
+-- TOC entry 3556 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.roles; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17607,7 +18192,7 @@ COMMENT ON COLUMN reportlist.roles IS 'Роли';
 
 
 --
--- TOC entry 3540 (class 0 OID 0)
+-- TOC entry 3557 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.path; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17616,7 +18201,7 @@ COMMENT ON COLUMN reportlist.path IS 'Путь';
 
 
 --
--- TOC entry 3541 (class 0 OID 0)
+-- TOC entry 3558 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.template; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17625,7 +18210,7 @@ COMMENT ON COLUMN reportlist.template IS 'Файл шаблона';
 
 
 --
--- TOC entry 3542 (class 0 OID 0)
+-- TOC entry 3559 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.functitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17634,7 +18219,7 @@ COMMENT ON COLUMN reportlist.functitle IS 'Название функции';
 
 
 --
--- TOC entry 3543 (class 0 OID 0)
+-- TOC entry 3560 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.section; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17643,7 +18228,7 @@ COMMENT ON COLUMN reportlist.section IS 'Секция';
 
 
 --
--- TOC entry 3544 (class 0 OID 0)
+-- TOC entry 3561 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: COLUMN reportlist.ishtml; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17667,7 +18252,7 @@ CREATE SEQUENCE reportlist_id_seq
 ALTER TABLE reportlist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3545 (class 0 OID 0)
+-- TOC entry 3562 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: reportlist_id_seq; Type: SEQUENCE OWNED BY; Schema: reports; Owner: postgres
 --
@@ -17696,7 +18281,7 @@ CREATE TABLE reportparams (
 ALTER TABLE reportparams OWNER TO postgres;
 
 --
--- TOC entry 3546 (class 0 OID 0)
+-- TOC entry 3563 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: COLUMN reportparams.ptitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17705,7 +18290,7 @@ COMMENT ON COLUMN reportparams.ptitle IS 'parametr title';
 
 
 --
--- TOC entry 3547 (class 0 OID 0)
+-- TOC entry 3564 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: COLUMN reportparams.func_paramtitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17714,7 +18299,7 @@ COMMENT ON COLUMN reportparams.func_paramtitle IS 'param in function';
 
 
 --
--- TOC entry 3548 (class 0 OID 0)
+-- TOC entry 3565 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: COLUMN reportparams.ptype; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -17738,7 +18323,7 @@ CREATE SEQUENCE reportparams_id_seq
 ALTER TABLE reportparams_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3549 (class 0 OID 0)
+-- TOC entry 3566 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: reportparams_id_seq; Type: SEQUENCE OWNED BY; Schema: reports; Owner: postgres
 --
@@ -17761,14 +18346,16 @@ CREATE TABLE functionslist (
     descr character varying(350) DEFAULT '<NO TITLE>'::character varying NOT NULL,
     created timestamp without time zone DEFAULT now() NOT NULL,
     userid integer NOT NULL,
-    noscript boolean DEFAULT true NOT NULL
+    noscript boolean DEFAULT true NOT NULL,
+    functionfulltitle character varying(150) NOT NULL,
+    dll text NOT NULL
 );
 
 
 ALTER TABLE functionslist OWNER TO postgres;
 
 --
--- TOC entry 3550 (class 0 OID 0)
+-- TOC entry 3567 (class 0 OID 0)
 -- Dependencies: 276
 -- Name: TABLE functionslist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -17792,7 +18379,7 @@ CREATE SEQUENCE functionslist_id_seq
 ALTER TABLE functionslist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3551 (class 0 OID 0)
+-- TOC entry 3568 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: functionslist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -17818,7 +18405,7 @@ CREATE TABLE schemalist (
 ALTER TABLE schemalist OWNER TO postgres;
 
 --
--- TOC entry 3552 (class 0 OID 0)
+-- TOC entry 3569 (class 0 OID 0)
 -- Dependencies: 278
 -- Name: TABLE schemalist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -17842,7 +18429,7 @@ CREATE SEQUENCE schemalist_id_seq
 ALTER TABLE schemalist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3553 (class 0 OID 0)
+-- TOC entry 3570 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: schemalist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -17866,7 +18453,7 @@ CREATE TABLE schemaobjects (
 ALTER TABLE schemaobjects OWNER TO postgres;
 
 --
--- TOC entry 3554 (class 0 OID 0)
+-- TOC entry 3571 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: TABLE schemaobjects; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -17890,7 +18477,7 @@ CREATE SEQUENCE schemaobjects_id_seq
 ALTER TABLE schemaobjects_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3555 (class 0 OID 0)
+-- TOC entry 3572 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: schemaobjects_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -17923,7 +18510,7 @@ CREATE TABLE tablecolumns (
 ALTER TABLE tablecolumns OWNER TO postgres;
 
 --
--- TOC entry 3556 (class 0 OID 0)
+-- TOC entry 3573 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: TABLE tablecolumns; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -17947,7 +18534,7 @@ CREATE SEQUENCE tablecolumns_id_seq
 ALTER TABLE tablecolumns_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3557 (class 0 OID 0)
+-- TOC entry 3574 (class 0 OID 0)
 -- Dependencies: 283
 -- Name: tablecolumns_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -17990,7 +18577,7 @@ CREATE SEQUENCE tableindexes_id_seq
 ALTER TABLE tableindexes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3558 (class 0 OID 0)
+-- TOC entry 3575 (class 0 OID 0)
 -- Dependencies: 285
 -- Name: tableindexes_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -18018,7 +18605,7 @@ CREATE TABLE tablelist (
 ALTER TABLE tablelist OWNER TO postgres;
 
 --
--- TOC entry 3559 (class 0 OID 0)
+-- TOC entry 3576 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: TABLE tablelist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -18042,7 +18629,7 @@ CREATE SEQUENCE tablelist_id_seq
 ALTER TABLE tablelist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3560 (class 0 OID 0)
+-- TOC entry 3577 (class 0 OID 0)
 -- Dependencies: 287
 -- Name: tablelist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -18067,7 +18654,7 @@ CREATE TABLE dictionary_for_select (
 ALTER TABLE dictionary_for_select OWNER TO postgres;
 
 --
--- TOC entry 3561 (class 0 OID 0)
+-- TOC entry 3578 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: TABLE dictionary_for_select; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18091,7 +18678,7 @@ CREATE SEQUENCE dictionary_for_select_id_seq
 ALTER TABLE dictionary_for_select_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3562 (class 0 OID 0)
+-- TOC entry 3579 (class 0 OID 0)
 -- Dependencies: 289
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -18114,7 +18701,7 @@ CREATE TABLE fel (
 ALTER TABLE fel OWNER TO postgres;
 
 --
--- TOC entry 3563 (class 0 OID 0)
+-- TOC entry 3580 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: TABLE fel; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18138,7 +18725,7 @@ CREATE SEQUENCE fel_id_seq
 ALTER TABLE fel_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3564 (class 0 OID 0)
+-- TOC entry 3581 (class 0 OID 0)
 -- Dependencies: 291
 -- Name: fel_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -18189,7 +18776,7 @@ CREATE TABLE major_table (
 ALTER TABLE major_table OWNER TO postgres;
 
 --
--- TOC entry 3565 (class 0 OID 0)
+-- TOC entry 3582 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: TABLE major_table; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18198,7 +18785,7 @@ COMMENT ON TABLE major_table IS 'table for testing framework interface';
 
 
 --
--- TOC entry 3566 (class 0 OID 0)
+-- TOC entry 3583 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: COLUMN major_table.id; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18207,7 +18794,7 @@ COMMENT ON COLUMN major_table.id IS 'iddd';
 
 
 --
--- TOC entry 3567 (class 0 OID 0)
+-- TOC entry 3584 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: COLUMN major_table.text; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18231,7 +18818,7 @@ CREATE SEQUENCE major_table_id_seq
 ALTER TABLE major_table_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3568 (class 0 OID 0)
+-- TOC entry 3585 (class 0 OID 0)
 -- Dependencies: 293
 -- Name: major_table_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -18253,7 +18840,7 @@ CREATE TABLE onemorerelation (
 ALTER TABLE onemorerelation OWNER TO postgres;
 
 --
--- TOC entry 3569 (class 0 OID 0)
+-- TOC entry 3586 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: TABLE onemorerelation; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18277,7 +18864,7 @@ CREATE SEQUENCE onemorerelation_id_seq
 ALTER TABLE onemorerelation_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3570 (class 0 OID 0)
+-- TOC entry 3587 (class 0 OID 0)
 -- Dependencies: 295
 -- Name: onemorerelation_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -18301,7 +18888,7 @@ CREATE TABLE relate_with_major (
 ALTER TABLE relate_with_major OWNER TO postgres;
 
 --
--- TOC entry 3571 (class 0 OID 0)
+-- TOC entry 3588 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: TABLE relate_with_major; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18325,7 +18912,7 @@ CREATE SEQUENCE relate_with_major_id_seq
 ALTER TABLE relate_with_major_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3572 (class 0 OID 0)
+-- TOC entry 3589 (class 0 OID 0)
 -- Dependencies: 297
 -- Name: relate_with_major_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -18350,7 +18937,7 @@ CREATE TABLE testmanager (
 ALTER TABLE testmanager OWNER TO postgres;
 
 --
--- TOC entry 3573 (class 0 OID 0)
+-- TOC entry 3590 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: COLUMN testmanager.col5; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18359,7 +18946,7 @@ COMMENT ON COLUMN testmanager.col5 IS 'column';
 
 
 --
--- TOC entry 3574 (class 0 OID 0)
+-- TOC entry 3591 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: COLUMN testmanager.textfield1; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18368,7 +18955,7 @@ COMMENT ON COLUMN testmanager.textfield1 IS '<NO TITLE>';
 
 
 --
--- TOC entry 3575 (class 0 OID 0)
+-- TOC entry 3592 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: COLUMN testmanager.intfield; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18377,7 +18964,7 @@ COMMENT ON COLUMN testmanager.intfield IS 'intfield';
 
 
 --
--- TOC entry 3576 (class 0 OID 0)
+-- TOC entry 3593 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: COLUMN testmanager."boolField"; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -18388,7 +18975,7 @@ COMMENT ON COLUMN testmanager."boolField" IS 'bool';
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2602 (class 2604 OID 198214)
+-- TOC entry 2611 (class 2604 OID 198214)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18396,7 +18983,7 @@ ALTER TABLE ONLY act_parametrs ALTER COLUMN id SET DEFAULT nextval('act_parametr
 
 
 --
--- TOC entry 2604 (class 2604 OID 198215)
+-- TOC entry 2613 (class 2604 OID 198215)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18404,7 +18991,7 @@ ALTER TABLE ONLY act_visible_condions ALTER COLUMN id SET DEFAULT nextval('act_v
 
 
 --
--- TOC entry 2612 (class 2604 OID 198216)
+-- TOC entry 2621 (class 2604 OID 198216)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18412,7 +18999,7 @@ ALTER TABLE ONLY actions ALTER COLUMN id SET DEFAULT nextval('actions_id_seq'::r
 
 
 --
--- TOC entry 2613 (class 2604 OID 198217)
+-- TOC entry 2622 (class 2604 OID 198217)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18420,7 +19007,7 @@ ALTER TABLE ONLY actparam_querytypes ALTER COLUMN id SET DEFAULT nextval('actpar
 
 
 --
--- TOC entry 2615 (class 2604 OID 198218)
+-- TOC entry 2624 (class 2604 OID 198218)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18428,7 +19015,7 @@ ALTER TABLE ONLY apicallingmethods ALTER COLUMN id SET DEFAULT nextval('apicalli
 
 
 --
--- TOC entry 2617 (class 2604 OID 198219)
+-- TOC entry 2626 (class 2604 OID 198219)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18436,7 +19023,7 @@ ALTER TABLE ONLY booloper ALTER COLUMN id SET DEFAULT nextval('booloper_id_seq':
 
 
 --
--- TOC entry 2620 (class 2604 OID 198220)
+-- TOC entry 2629 (class 2604 OID 198220)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18444,7 +19031,7 @@ ALTER TABLE ONLY calendar_actions ALTER COLUMN id SET DEFAULT nextval('calendar_
 
 
 --
--- TOC entry 2622 (class 2604 OID 198221)
+-- TOC entry 2631 (class 2604 OID 198221)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18452,7 +19039,7 @@ ALTER TABLE ONLY calendar_test ALTER COLUMN id SET DEFAULT nextval('calendar_tes
 
 
 --
--- TOC entry 2624 (class 2604 OID 198222)
+-- TOC entry 2633 (class 2604 OID 198222)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18460,7 +19047,7 @@ ALTER TABLE ONLY columntypes ALTER COLUMN id SET DEFAULT nextval('columntypes_id
 
 
 --
--- TOC entry 2627 (class 2604 OID 198223)
+-- TOC entry 2636 (class 2604 OID 198223)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18468,7 +19055,7 @@ ALTER TABLE ONLY compos ALTER COLUMN id SET DEFAULT nextval('compos_id_seq1'::re
 
 
 --
--- TOC entry 2646 (class 2604 OID 198224)
+-- TOC entry 2655 (class 2604 OID 198224)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18476,7 +19063,7 @@ ALTER TABLE ONLY config ALTER COLUMN id SET DEFAULT nextval('config_id_seq'::reg
 
 
 --
--- TOC entry 2647 (class 2604 OID 198225)
+-- TOC entry 2656 (class 2604 OID 198225)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18484,7 +19071,7 @@ ALTER TABLE ONLY configsettings ALTER COLUMN id SET DEFAULT nextval('configsetti
 
 
 --
--- TOC entry 2649 (class 2604 OID 198226)
+-- TOC entry 2658 (class 2604 OID 198226)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18492,7 +19079,7 @@ ALTER TABLE ONLY defaultval ALTER COLUMN id SET DEFAULT nextval('defaultval_id_s
 
 
 --
--- TOC entry 2656 (class 2604 OID 198227)
+-- TOC entry 2665 (class 2604 OID 198227)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18500,7 +19087,7 @@ ALTER TABLE ONLY dialog_messages ALTER COLUMN id SET DEFAULT nextval('dialog_mes
 
 
 --
--- TOC entry 2660 (class 2604 OID 198228)
+-- TOC entry 2669 (class 2604 OID 198228)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18508,7 +19095,7 @@ ALTER TABLE ONLY dialog_notifications ALTER COLUMN id SET DEFAULT nextval('dialo
 
 
 --
--- TOC entry 2661 (class 2604 OID 198229)
+-- TOC entry 2670 (class 2604 OID 198229)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18516,7 +19103,7 @@ ALTER TABLE ONLY dialog_statuses ALTER COLUMN id SET DEFAULT nextval('dialog_sta
 
 
 --
--- TOC entry 2670 (class 2604 OID 198230)
+-- TOC entry 2679 (class 2604 OID 198230)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18524,7 +19111,7 @@ ALTER TABLE ONLY dialogs ALTER COLUMN id SET DEFAULT nextval('dialogs_id_seq'::r
 
 
 --
--- TOC entry 2677 (class 2604 OID 198231)
+-- TOC entry 2686 (class 2604 OID 198231)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18532,7 +19119,7 @@ ALTER TABLE ONLY filters ALTER COLUMN id SET DEFAULT nextval('filters_id_seq'::r
 
 
 --
--- TOC entry 2687 (class 2604 OID 198232)
+-- TOC entry 2696 (class 2604 OID 198232)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18540,7 +19127,7 @@ ALTER TABLE ONLY mainmenu ALTER COLUMN id SET DEFAULT nextval('mainmenu_id_seq':
 
 
 --
--- TOC entry 2701 (class 2604 OID 198233)
+-- TOC entry 2710 (class 2604 OID 198233)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18548,7 +19135,7 @@ ALTER TABLE ONLY menus ALTER COLUMN id SET DEFAULT nextval('menus_id_seq'::regcl
 
 
 --
--- TOC entry 2702 (class 2604 OID 198234)
+-- TOC entry 2711 (class 2604 OID 198234)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18556,7 +19143,7 @@ ALTER TABLE ONLY menutypes ALTER COLUMN id SET DEFAULT nextval('menutypes_id_seq
 
 
 --
--- TOC entry 2707 (class 2604 OID 198235)
+-- TOC entry 2716 (class 2604 OID 198235)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18564,7 +19151,7 @@ ALTER TABLE ONLY notifications ALTER COLUMN id SET DEFAULT nextval('notification
 
 
 --
--- TOC entry 2708 (class 2604 OID 198236)
+-- TOC entry 2717 (class 2604 OID 198236)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18572,7 +19159,7 @@ ALTER TABLE ONLY operations ALTER COLUMN id SET DEFAULT nextval('operations_id_s
 
 
 --
--- TOC entry 2715 (class 2604 OID 198237)
+-- TOC entry 2724 (class 2604 OID 198237)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18580,7 +19167,7 @@ ALTER TABLE ONLY select_condition ALTER COLUMN id SET DEFAULT nextval('select_co
 
 
 --
--- TOC entry 2719 (class 2604 OID 198238)
+-- TOC entry 2728 (class 2604 OID 198238)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18588,7 +19175,7 @@ ALTER TABLE ONLY spapi ALTER COLUMN id SET DEFAULT nextval('spapi_id_seq'::regcl
 
 
 --
--- TOC entry 2723 (class 2604 OID 198239)
+-- TOC entry 2732 (class 2604 OID 198239)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18596,7 +19183,7 @@ ALTER TABLE ONLY trees ALTER COLUMN id SET DEFAULT nextval('trees_id_seq'::regcl
 
 
 --
--- TOC entry 2725 (class 2604 OID 198240)
+-- TOC entry 2734 (class 2604 OID 198240)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18604,7 +19191,7 @@ ALTER TABLE ONLY treesacts ALTER COLUMN id SET DEFAULT nextval('treesacts_id_seq
 
 
 --
--- TOC entry 2728 (class 2604 OID 198241)
+-- TOC entry 2737 (class 2604 OID 198241)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18612,7 +19199,7 @@ ALTER TABLE ONLY treesbranches ALTER COLUMN id SET DEFAULT nextval('treesbranche
 
 
 --
--- TOC entry 2737 (class 2604 OID 198242)
+-- TOC entry 2746 (class 2604 OID 198242)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18620,7 +19207,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
--- TOC entry 2754 (class 2604 OID 198243)
+-- TOC entry 2763 (class 2604 OID 198243)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18628,7 +19215,7 @@ ALTER TABLE ONLY views ALTER COLUMN id SET DEFAULT nextval('views_id_seq'::regcl
 
 
 --
--- TOC entry 2759 (class 2604 OID 198244)
+-- TOC entry 2768 (class 2604 OID 198244)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18636,7 +19223,7 @@ ALTER TABLE ONLY viewsnotification ALTER COLUMN id SET DEFAULT nextval('viewsnot
 
 
 --
--- TOC entry 2761 (class 2604 OID 198245)
+-- TOC entry 2770 (class 2604 OID 198245)
 -- Name: id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -18646,7 +19233,7 @@ ALTER TABLE ONLY visible_condition ALTER COLUMN id SET DEFAULT nextval('visible_
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 2766 (class 2604 OID 198246)
+-- TOC entry 2775 (class 2604 OID 198246)
 -- Name: id; Type: DEFAULT; Schema: reports; Owner: postgres
 --
 
@@ -18654,7 +19241,7 @@ ALTER TABLE ONLY reportlist ALTER COLUMN id SET DEFAULT nextval('reportlist_id_s
 
 
 --
--- TOC entry 2770 (class 2604 OID 198247)
+-- TOC entry 2779 (class 2604 OID 198247)
 -- Name: id; Type: DEFAULT; Schema: reports; Owner: postgres
 --
 
@@ -18664,7 +19251,7 @@ ALTER TABLE ONLY reportparams ALTER COLUMN id SET DEFAULT nextval('reportparams_
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 2773 (class 2604 OID 198248)
+-- TOC entry 2782 (class 2604 OID 198248)
 -- Name: id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -18672,7 +19259,7 @@ ALTER TABLE ONLY functionslist ALTER COLUMN id SET DEFAULT nextval('functionslis
 
 
 --
--- TOC entry 2777 (class 2604 OID 198249)
+-- TOC entry 2786 (class 2604 OID 198249)
 -- Name: id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -18680,7 +19267,7 @@ ALTER TABLE ONLY schemalist ALTER COLUMN id SET DEFAULT nextval('schemalist_id_s
 
 
 --
--- TOC entry 2780 (class 2604 OID 198250)
+-- TOC entry 2789 (class 2604 OID 198250)
 -- Name: id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -18688,7 +19275,7 @@ ALTER TABLE ONLY schemaobjects ALTER COLUMN id SET DEFAULT nextval('schemaobject
 
 
 --
--- TOC entry 2785 (class 2604 OID 198251)
+-- TOC entry 2794 (class 2604 OID 198251)
 -- Name: id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -18696,7 +19283,7 @@ ALTER TABLE ONLY tablecolumns ALTER COLUMN id SET DEFAULT nextval('tablecolumns_
 
 
 --
--- TOC entry 2789 (class 2604 OID 198252)
+-- TOC entry 2798 (class 2604 OID 198252)
 -- Name: id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -18704,7 +19291,7 @@ ALTER TABLE ONLY tableindexes ALTER COLUMN id SET DEFAULT nextval('tableindexes_
 
 
 --
--- TOC entry 2793 (class 2604 OID 198253)
+-- TOC entry 2802 (class 2604 OID 198253)
 -- Name: id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -18714,7 +19301,7 @@ ALTER TABLE ONLY tablelist ALTER COLUMN id SET DEFAULT nextval('tablelist_id_seq
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2795 (class 2604 OID 198254)
+-- TOC entry 2804 (class 2604 OID 198254)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -18722,7 +19309,7 @@ ALTER TABLE ONLY dictionary_for_select ALTER COLUMN id SET DEFAULT nextval('dict
 
 
 --
--- TOC entry 2798 (class 2604 OID 198255)
+-- TOC entry 2807 (class 2604 OID 198255)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -18730,7 +19317,7 @@ ALTER TABLE ONLY fel ALTER COLUMN id SET DEFAULT nextval('fel_id_seq'::regclass)
 
 
 --
--- TOC entry 2799 (class 2604 OID 198256)
+-- TOC entry 2808 (class 2604 OID 198256)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -18738,7 +19325,7 @@ ALTER TABLE ONLY major_table ALTER COLUMN id SET DEFAULT nextval('major_table_id
 
 
 --
--- TOC entry 2800 (class 2604 OID 198257)
+-- TOC entry 2809 (class 2604 OID 198257)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -18746,7 +19333,7 @@ ALTER TABLE ONLY onemorerelation ALTER COLUMN id SET DEFAULT nextval('onemorerel
 
 
 --
--- TOC entry 2802 (class 2604 OID 198258)
+-- TOC entry 2811 (class 2604 OID 198258)
 -- Name: id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -18756,7 +19343,7 @@ ALTER TABLE ONLY relate_with_major ALTER COLUMN id SET DEFAULT nextval('relate_w
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3093 (class 0 OID 197663)
+-- TOC entry 3108 (class 0 OID 197663)
 -- Dependencies: 186
 -- Data for Name: act_parametrs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19079,20 +19666,31 @@ COPY act_parametrs (id, actionid, paramtitle, paramt, paramconst, paraminput, pa
 35	12068	id	\N	0	\N	\N	\N	query	2020-05-13 18:40:43.258033	0
 36	12068	relation	\N	noscript	\N	\N	\N	query	2020-05-13 18:40:55.038547	0
 37	12068	noscript	\N	false	\N	\N	\N	query	2020-05-13 18:41:07.213041	0
+39	12085	noscript	\N	false	\N	\N	\N	query	2020-05-14 09:55:20.860129	0
+41	12085	id	\N	0	\N	\N	\N	query	2020-05-14 09:56:32.67067	0
+38	12085	relation	\N	noscript,tableschemaname	\N	\N	\N	query	2020-05-14 09:55:08.329629	0
+40	12085	tableschemaname	\N	\N	\N	\N	601877	query	2020-05-14 09:56:10.388105	0
+43	12090	id	\N	\N	\N	\N	601883	query	2020-05-14 13:27:17.405756	0
+44	12093	id	\N	0	\N	\N	\N	query	2020-05-14 15:15:26.343177	0
+45	12093	schemaname	\N	\N	\N	\N	601884	query	2020-05-14 16:06:43.505634	0
+46	12093	_sub_title	\N	\N	\N	\N	601884	query	2020-05-14 17:04:03.393626	0
+47	12093	relation	\N	functionschema,noscript	\N	\N	\N	query	2020-05-14 17:04:38.277188	0
+48	12093	noscript	\N	false	\N	\N	\N	query	2020-05-14 17:04:45.979686	0
+49	12093	functionschema	\N	\N	\N	\N	601884	query	2020-05-14 17:05:09.923975	0
 \.
 
 
 --
--- TOC entry 3577 (class 0 OID 0)
+-- TOC entry 3594 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: act_parametrs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('act_parametrs_id_seq', 37, true);
+SELECT pg_catalog.setval('act_parametrs_id_seq', 49, true);
 
 
 --
--- TOC entry 3095 (class 0 OID 197674)
+-- TOC entry 3110 (class 0 OID 197674)
 -- Dependencies: 188
 -- Data for Name: act_visible_condions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19130,7 +19728,7 @@ COPY act_visible_condions (id, actionid, val_desc, col, title, operation, value,
 
 
 --
--- TOC entry 3578 (class 0 OID 0)
+-- TOC entry 3595 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: act_visible_condions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19139,7 +19737,7 @@ SELECT pg_catalog.setval('act_visible_condions_id_seq', 1363, true);
 
 
 --
--- TOC entry 3097 (class 0 OID 197683)
+-- TOC entry 3112 (class 0 OID 197683)
 -- Dependencies: 190
 -- Data for Name: actions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19302,31 +19900,42 @@ COPY actions (id, column_order, title, viewid, icon, classname, act_url, api_met
 12072	1	onload	50788	default	success	/api/tablelist_onload	\N	get	f	f	[]	f	f	2020-05-11 18:44:12.919324	onLoad
 12071	1	table expand	50786	default	danger	/list/tables	\N	\N	f	f	[]	t	f	2020-05-11 17:07:49.076118	Expand
 12073	2	function expand	50786	default	danger	/list/functions	\N	\N	f	f	[]	t	f	2020-05-11 18:47:08.383659	Expand
+12094	1	add	50796	plus	success	/	\N	\N	f	f	[]	f	f	2020-05-14 17:01:36.34593	Save
+12093	4	add	50789	plus	success	/getone/functionadd	\N	get	f	f	[]	f	f	2020-05-14 15:14:48.299739	Link
 12074	2	edit	50788	edit	primary	/trees/table	\N	\N	f	f	[]	t	t	2020-05-13 13:26:16.084261	Link
 12081	1	Save	50792	save	succes	/list/schemas	\N	\N	f	f	[]	f	f	2020-05-13 18:39:00.739946	Save&Redirect
 12082	2	go back	50792	arrow-left	\N	/list/schemas	\N	\N	f	f	[]	f	f	2020-05-13 18:39:45.555553	Link
 12068	1	add	50785	plus	success	/getone/schema	\N	put	f	f	[]	f	f	2020-05-11 16:46:47.181031	Link
+12095	2	go back	50796	arrow-left	\N	/list/schemas	\N	\N	f	f	[]	f	f	2020-05-14 17:06:15.786139	Link
 12083	4	delete	50785	delete	danger	/	\N	\N	f	f	[]	t	f	2020-05-13 18:48:06.418904	Delete
 12075	1	onLoad	50790	default	success	/api/tablecols_onload	\N	get	f	f	[]	f	f	2020-05-13 13:53:02.354262	onLoad
+12088	3	delete	50789	delete	danger	/	\N	\N	f	f	[]	t	f	2020-05-14 13:08:40.062802	Delete
 12076	2	add	50790	plus	\N	/getone/tablecolumn	\N	\N	f	f	[]	f	f	2020-05-13 17:56:31.458088	Link
+12091	2	go back	50794	arrow-left	\N	/list/schemas	\N	\N	f	f	[]	f	f	2020-05-14 13:33:19.948565	Link
 12077	1	Save	50791	save	success	/trees/table	\N	\N	f	f	[]	f	f	2020-05-13 18:00:04.96208	Save&Redirect
+12085	3	add	50788	plus	\N	/getone/table	\N	\N	f	f	[]	f	f	2020-05-14 09:54:07.598884	Link
 12078	2	go back	50791	arrow-left	\N	/trees/table	\N	\N	f	f	[]	f	f	2020-05-13 18:07:04.665218	Link
+12084	1	Save	50793	save	success	/list/schemas	\N	\N	f	f	[]	f	f	2020-05-14 09:51:25.999614	Save&Redirect
 12079	3	delete	50790	delete	danger	/	\N	\N	f	f	[]	t	f	2020-05-13 18:30:16.306305	Delete
+12089	1	Commit	50794	thunderbolt	success	/	\N	\N	f	t	[]	f	f	2020-05-14 13:23:51.005116	Save
+12086	4	delete	50788	delete	danger	/	\N	\N	f	f	[]	t	f	2020-05-14 10:36:59.854916	Delete
 12080	4	go back	50790	arrow-left	\N	/list/schemas	\N	\N	f	f	[]	f	f	2020-05-13 18:34:41.158067	Link
+12087	1	onLoad	50789	default	success	/api/functions_onload	\N	get	f	f	[]	f	f	2020-05-14 10:40:01.986578	onLoad
+12090	2	edit	50789	edit	\N	/trees/function	\N	\N	f	f	[]	t	t	2020-05-14 13:26:40.36604	Link
 \.
 
 
 --
--- TOC entry 3579 (class 0 OID 0)
+-- TOC entry 3596 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: actions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('actions_id_seq', 12083, true);
+SELECT pg_catalog.setval('actions_id_seq', 12095, true);
 
 
 --
--- TOC entry 3099 (class 0 OID 197698)
+-- TOC entry 3114 (class 0 OID 197698)
 -- Dependencies: 192
 -- Data for Name: actparam_querytypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19338,7 +19947,7 @@ COPY actparam_querytypes (id, aqname) FROM stdin;
 
 
 --
--- TOC entry 3580 (class 0 OID 0)
+-- TOC entry 3597 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: actparam_querytypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19347,7 +19956,7 @@ SELECT pg_catalog.setval('actparam_querytypes_id_seq', 2, true);
 
 
 --
--- TOC entry 3101 (class 0 OID 197703)
+-- TOC entry 3116 (class 0 OID 197703)
 -- Dependencies: 194
 -- Data for Name: acttypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19367,7 +19976,7 @@ COPY acttypes (id, actname, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 3102 (class 0 OID 197710)
+-- TOC entry 3117 (class 0 OID 197710)
 -- Dependencies: 195
 -- Data for Name: apicallingmethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19379,7 +19988,7 @@ COPY apicallingmethods (id, aname) FROM stdin;
 
 
 --
--- TOC entry 3581 (class 0 OID 0)
+-- TOC entry 3598 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: apicallingmethods_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19388,7 +19997,7 @@ SELECT pg_catalog.setval('apicallingmethods_id_seq', 2, true);
 
 
 --
--- TOC entry 3104 (class 0 OID 197715)
+-- TOC entry 3119 (class 0 OID 197715)
 -- Dependencies: 197
 -- Data for Name: apimethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19400,7 +20009,7 @@ COPY apimethods (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 3105 (class 0 OID 197719)
+-- TOC entry 3120 (class 0 OID 197719)
 -- Dependencies: 198
 -- Data for Name: booloper; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19412,7 +20021,7 @@ COPY booloper (id, bname) FROM stdin;
 
 
 --
--- TOC entry 3582 (class 0 OID 0)
+-- TOC entry 3599 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: booloper_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19421,7 +20030,7 @@ SELECT pg_catalog.setval('booloper_id_seq', 2, true);
 
 
 --
--- TOC entry 3107 (class 0 OID 197724)
+-- TOC entry 3122 (class 0 OID 197724)
 -- Dependencies: 200
 -- Data for Name: calendar_actions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19431,7 +20040,7 @@ COPY calendar_actions (id, type, title, start, "end", "desc", current_day) FROM 
 
 
 --
--- TOC entry 3583 (class 0 OID 0)
+-- TOC entry 3600 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: calendar_actions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19440,7 +20049,7 @@ SELECT pg_catalog.setval('calendar_actions_id_seq', 1, false);
 
 
 --
--- TOC entry 3109 (class 0 OID 197734)
+-- TOC entry 3124 (class 0 OID 197734)
 -- Dependencies: 202
 -- Data for Name: calendar_test; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19450,7 +20059,7 @@ COPY calendar_test (id, calendar_date, month) FROM stdin;
 
 
 --
--- TOC entry 3584 (class 0 OID 0)
+-- TOC entry 3601 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: calendar_test_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19459,7 +20068,7 @@ SELECT pg_catalog.setval('calendar_test_id_seq', 1, false);
 
 
 --
--- TOC entry 3111 (class 0 OID 197740)
+-- TOC entry 3126 (class 0 OID 197740)
 -- Dependencies: 204
 -- Data for Name: columntypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19507,7 +20116,7 @@ COPY columntypes (id, typename, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 3585 (class 0 OID 0)
+-- TOC entry 3602 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: columntypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19516,7 +20125,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 
 
 --
--- TOC entry 3586 (class 0 OID 0)
+-- TOC entry 3603 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19525,7 +20134,7 @@ SELECT pg_catalog.setval('columntypes_id_seq1', 2, true);
 
 
 --
--- TOC entry 3114 (class 0 OID 197751)
+-- TOC entry 3129 (class 0 OID 197751)
 -- Dependencies: 207
 -- Data for Name: compos; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -19544,7 +20153,7 @@ COPY compos (id, title, path, config, created) FROM stdin;
 
 
 --
--- TOC entry 3587 (class 0 OID 0)
+-- TOC entry 3604 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: compos_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19553,7 +20162,7 @@ SELECT pg_catalog.setval('compos_id_seq', 246, true);
 
 
 --
--- TOC entry 3588 (class 0 OID 0)
+-- TOC entry 3605 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: compos_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -19562,7 +20171,7 @@ SELECT pg_catalog.setval('compos_id_seq1', 1, false);
 
 
 --
--- TOC entry 3117 (class 0 OID 197763)
+-- TOC entry 3132 (class 0 OID 197763)
 -- Dependencies: 210
 -- Data for Name: config; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20220,11 +20829,8 @@ COPY config (id, viewid, t, col, column_id, title, type, roles, visible, require
 601873	50786	2	oname	2	 	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
 601875	50786	4	schemaname	4	schemaname	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-11 17:36:42.392127	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f
 601876	50788	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601887	50789	5	descr	5	descr	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
 601884	50789	2	functionschema	2	functionschema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
 601883	50789	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601885	50789	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601886	50789	4	fullname	4	fullname	label	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
 601867	50785	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
 601868	50785	2	schemaname	2	schemaname	text	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f
 601877	50788	2	tableschemaname	2	tableschemaname	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
@@ -20255,20 +20861,42 @@ COPY config (id, viewid, t, col, column_id, title, type, roles, visible, require
 601899	50790	10	defval	10	Default	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	100	\N	\N	\N	\N	f	[]	t	f
 601906	50791	4	coldesc	4	Description	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
 601916	50792	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
+601930	50793	4	fullname	4	fullname	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-14 10:32:19.679899	[]	[]	\N	81	\N	\N	\N	\N	f	[]	f	f
+601922	50793	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
+601923	50793	2	tableschemaname	2	tableschemaname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
+601929	50793	8	noscript	8	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
+601924	50793	3	tablename	3	Table name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
+601931	50789	9	functionfulltitle	9	title	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-14 12:10:53.300908	[]	[]	\N	45	\N	\N	\N	\N	f	[]	f	f
+601926	50793	5	descr	5	Description	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
+601886	50789	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
+601885	50789	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
+601932	50794	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
+601934	50794	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
+601933	50794	2	functionschema	2	functionschema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
+601935	50794	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
+601936	50794	5	descr	5	descr	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
+601940	50794	9	functionfulltitle	9	functionfulltitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
+601887	50789	5	descr	5	descr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f
+601941	50794	10	dll	10	DLL	codeEditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
+601943	50796	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
+601946	50796	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
+601944	50796	2	functionschema	2	schema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
+601947	50796	5	descr	5	descr	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
+601945	50796	3	functiontitle	3	title	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
 \.
 
 
 --
--- TOC entry 3589 (class 0 OID 0)
+-- TOC entry 3606 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: config_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('config_id_seq', 601921, true);
+SELECT pg_catalog.setval('config_id_seq', 601952, true);
 
 
 --
--- TOC entry 3119 (class 0 OID 197789)
+-- TOC entry 3134 (class 0 OID 197789)
 -- Dependencies: 212
 -- Data for Name: configsettings; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20288,7 +20916,7 @@ COPY configsettings (id, sname) FROM stdin;
 
 
 --
--- TOC entry 3590 (class 0 OID 0)
+-- TOC entry 3607 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: configsettings_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20297,7 +20925,7 @@ SELECT pg_catalog.setval('configsettings_id_seq', 10, true);
 
 
 --
--- TOC entry 3121 (class 0 OID 197794)
+-- TOC entry 3136 (class 0 OID 197794)
 -- Dependencies: 214
 -- Data for Name: defaultval; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20316,7 +20944,7 @@ COPY defaultval (id, configid, bool, act, value, created) FROM stdin;
 
 
 --
--- TOC entry 3591 (class 0 OID 0)
+-- TOC entry 3608 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: defaultval_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20325,7 +20953,7 @@ SELECT pg_catalog.setval('defaultval_id_seq', 726, true);
 
 
 --
--- TOC entry 3123 (class 0 OID 197800)
+-- TOC entry 3138 (class 0 OID 197800)
 -- Dependencies: 216
 -- Data for Name: dialog_messages; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20335,7 +20963,7 @@ COPY dialog_messages (id, userid, message_text, reply_to, forwarded_from, dialog
 
 
 --
--- TOC entry 3592 (class 0 OID 0)
+-- TOC entry 3609 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: dialog_messages_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20344,7 +20972,7 @@ SELECT pg_catalog.setval('dialog_messages_id_seq', 1, false);
 
 
 --
--- TOC entry 3125 (class 0 OID 197814)
+-- TOC entry 3140 (class 0 OID 197814)
 -- Dependencies: 218
 -- Data for Name: dialog_notifications; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20354,7 +20982,7 @@ COPY dialog_notifications (id, dialog_id, sender_userid, userid, message_text, c
 
 
 --
--- TOC entry 3593 (class 0 OID 0)
+-- TOC entry 3610 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: dialog_notifications_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20363,7 +20991,7 @@ SELECT pg_catalog.setval('dialog_notifications_id_seq', 1, false);
 
 
 --
--- TOC entry 3127 (class 0 OID 197825)
+-- TOC entry 3142 (class 0 OID 197825)
 -- Dependencies: 220
 -- Data for Name: dialog_statuses; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20373,7 +21001,7 @@ COPY dialog_statuses (id, sname) FROM stdin;
 
 
 --
--- TOC entry 3594 (class 0 OID 0)
+-- TOC entry 3611 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: dialog_statuses_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20382,7 +21010,7 @@ SELECT pg_catalog.setval('dialog_statuses_id_seq', 1, false);
 
 
 --
--- TOC entry 3129 (class 0 OID 197830)
+-- TOC entry 3144 (class 0 OID 197830)
 -- Dependencies: 222
 -- Data for Name: dialog_types; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20392,7 +21020,7 @@ COPY dialog_types (id, tname) FROM stdin;
 
 
 --
--- TOC entry 3130 (class 0 OID 197833)
+-- TOC entry 3145 (class 0 OID 197833)
 -- Dependencies: 223
 -- Data for Name: dialogs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20402,7 +21030,7 @@ COPY dialogs (id, title, users, dtype, userid, created, status, first_message, l
 
 
 --
--- TOC entry 3595 (class 0 OID 0)
+-- TOC entry 3612 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: dialogs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20411,7 +21039,7 @@ SELECT pg_catalog.setval('dialogs_id_seq', 1, false);
 
 
 --
--- TOC entry 3596 (class 0 OID 0)
+-- TOC entry 3613 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: dialogs_status_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20420,7 +21048,7 @@ SELECT pg_catalog.setval('dialogs_status_seq', 1, false);
 
 
 --
--- TOC entry 3133 (class 0 OID 197851)
+-- TOC entry 3148 (class 0 OID 197851)
 -- Dependencies: 226
 -- Data for Name: filters; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20466,7 +21094,7 @@ COPY filters (id, column_order, viewid, title, type, classname, "column", column
 
 
 --
--- TOC entry 3597 (class 0 OID 0)
+-- TOC entry 3614 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: filters_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20475,7 +21103,7 @@ SELECT pg_catalog.setval('filters_id_seq', 6035, true);
 
 
 --
--- TOC entry 3135 (class 0 OID 197865)
+-- TOC entry 3150 (class 0 OID 197865)
 -- Dependencies: 228
 -- Data for Name: filtertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20493,7 +21121,7 @@ COPY filtertypes (id, ftname) FROM stdin;
 
 
 --
--- TOC entry 3136 (class 0 OID 197868)
+-- TOC entry 3151 (class 0 OID 197868)
 -- Dependencies: 229
 -- Data for Name: functions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20508,7 +21136,7 @@ COPY functions (id, funcname, functype) FROM stdin;
 
 
 --
--- TOC entry 3137 (class 0 OID 197871)
+-- TOC entry 3152 (class 0 OID 197871)
 -- Dependencies: 230
 -- Data for Name: logtable; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20518,16 +21146,16 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 
 
 --
--- TOC entry 3598 (class 0 OID 0)
+-- TOC entry 3615 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 1331, true);
+SELECT pg_catalog.setval('logtable_id_seq', 1501, true);
 
 
 --
--- TOC entry 3139 (class 0 OID 197881)
+-- TOC entry 3154 (class 0 OID 197881)
 -- Dependencies: 232
 -- Data for Name: mainmenu; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20558,7 +21186,7 @@ COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, 
 
 
 --
--- TOC entry 3599 (class 0 OID 0)
+-- TOC entry 3616 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: mainmenu_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20567,7 +21195,7 @@ SELECT pg_catalog.setval('mainmenu_id_seq', 265, true);
 
 
 --
--- TOC entry 3141 (class 0 OID 197896)
+-- TOC entry 3156 (class 0 OID 197896)
 -- Dependencies: 234
 -- Data for Name: mainsettings; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20578,7 +21206,7 @@ COPY mainsettings (id, dsn, port, "developerRole", maindomain, "primaryAuthoriza
 
 
 --
--- TOC entry 3142 (class 0 OID 197914)
+-- TOC entry 3157 (class 0 OID 197914)
 -- Dependencies: 235
 -- Data for Name: menus; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20590,7 +21218,7 @@ COPY menus (id, menutype, menutitle, ismainmenu) FROM stdin;
 
 
 --
--- TOC entry 3600 (class 0 OID 0)
+-- TOC entry 3617 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: menus_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20599,7 +21227,7 @@ SELECT pg_catalog.setval('menus_id_seq', 3, true);
 
 
 --
--- TOC entry 3144 (class 0 OID 197920)
+-- TOC entry 3159 (class 0 OID 197920)
 -- Dependencies: 237
 -- Data for Name: menutypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20612,7 +21240,7 @@ COPY menutypes (id, mtypename) FROM stdin;
 
 
 --
--- TOC entry 3601 (class 0 OID 0)
+-- TOC entry 3618 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: menutypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20621,7 +21249,7 @@ SELECT pg_catalog.setval('menutypes_id_seq', 4, true);
 
 
 --
--- TOC entry 3146 (class 0 OID 197928)
+-- TOC entry 3161 (class 0 OID 197928)
 -- Dependencies: 239
 -- Data for Name: methodtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20635,7 +21263,7 @@ COPY methodtypes (id, methotypename) FROM stdin;
 
 
 --
--- TOC entry 3147 (class 0 OID 197931)
+-- TOC entry 3162 (class 0 OID 197931)
 -- Dependencies: 240
 -- Data for Name: notifications; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20646,7 +21274,7 @@ COPY notifications (id, message, messagetype, for_userid, sended_sessions, isrea
 
 
 --
--- TOC entry 3602 (class 0 OID 0)
+-- TOC entry 3619 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: notifications_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20655,7 +21283,7 @@ SELECT pg_catalog.setval('notifications_id_seq', 5, true);
 
 
 --
--- TOC entry 3149 (class 0 OID 197943)
+-- TOC entry 3164 (class 0 OID 197943)
 -- Dependencies: 242
 -- Data for Name: operations; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20679,7 +21307,7 @@ COPY operations (id, value, js, python, sql) FROM stdin;
 
 
 --
--- TOC entry 3603 (class 0 OID 0)
+-- TOC entry 3620 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: operations_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20688,7 +21316,7 @@ SELECT pg_catalog.setval('operations_id_seq', 14, true);
 
 
 --
--- TOC entry 3151 (class 0 OID 197948)
+-- TOC entry 3166 (class 0 OID 197948)
 -- Dependencies: 244
 -- Data for Name: opertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20702,7 +21330,7 @@ COPY opertypes (id, typename, alias) FROM stdin;
 
 
 --
--- TOC entry 3152 (class 0 OID 197951)
+-- TOC entry 3167 (class 0 OID 197951)
 -- Dependencies: 245
 -- Data for Name: orgs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20713,7 +21341,7 @@ COPY orgs (id, orgname, orgtype, parentid, shortname, created, userid, photo) FR
 
 
 --
--- TOC entry 3604 (class 0 OID 0)
+-- TOC entry 3621 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: orgs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20722,7 +21350,7 @@ SELECT pg_catalog.setval('orgs_id_seq', 11, true);
 
 
 --
--- TOC entry 3154 (class 0 OID 197963)
+-- TOC entry 3169 (class 0 OID 197963)
 -- Dependencies: 247
 -- Data for Name: orgtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20733,7 +21361,7 @@ COPY orgtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3155 (class 0 OID 197966)
+-- TOC entry 3170 (class 0 OID 197966)
 -- Dependencies: 248
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20745,7 +21373,7 @@ COPY paramtypes (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 3156 (class 0 OID 197970)
+-- TOC entry 3171 (class 0 OID 197970)
 -- Dependencies: 249
 -- Data for Name: roles; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20756,7 +21384,7 @@ COPY roles (id, rolename, hierarchy) FROM stdin;
 
 
 --
--- TOC entry 3157 (class 0 OID 197973)
+-- TOC entry 3172 (class 0 OID 197973)
 -- Dependencies: 250
 -- Data for Name: select_condition; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20774,7 +21402,7 @@ COPY select_condition (id, configid, col, operation, const, value, created, val_
 
 
 --
--- TOC entry 3605 (class 0 OID 0)
+-- TOC entry 3622 (class 0 OID 0)
 -- Dependencies: 251
 -- Name: select_condition_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20783,7 +21411,7 @@ SELECT pg_catalog.setval('select_condition_id_seq', 1197, true);
 
 
 --
--- TOC entry 3159 (class 0 OID 197982)
+-- TOC entry 3174 (class 0 OID 197982)
 -- Dependencies: 252
 -- Data for Name: sess; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20799,11 +21427,12 @@ cbd7b547-6c97-43dd-89fb-ec310b7c475c	1	2020-05-06 20:50:27.147316	\N
 37c9e6f6-1332-4c32-960a-dbeec0c848bf	1	2020-05-11 16:21:44.09523	\N
 b862b41d-4cd5-426b-a8f1-f7210da3c9d6	1	2020-05-13 08:16:23.797262	\N
 594f402a-1892-4bd0-8863-f74ad52483d3	1	2020-05-13 17:41:07.721227	\N
+26ee178b-5932-4c64-92a8-81e151056b66	1	2020-05-14 15:23:47.294085	\N
 \.
 
 
 --
--- TOC entry 3160 (class 0 OID 197986)
+-- TOC entry 3175 (class 0 OID 197986)
 -- Dependencies: 253
 -- Data for Name: spapi; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20903,40 +21532,43 @@ COPY spapi (id, methodname, procedurename, created, methodtype, roles) FROM stdi
 59	report	reports.fn_report_getone	2019-07-29 17:23:49	1	\N
 795	tablecols_onload	sqlmanager.fn_tablecols_onload	2020-05-13 14:12:07	1	[0]
 797	types_sel	sqlmanager.fn_types_sel	2020-05-13 14:37:27	2	[0]
+798	functions_onload	sqlmanager.fn_functions_onload	2020-05-14 10:43:08	1	[0]
+799	function_add	sqlmanager.fn_function_add	2020-05-14 16:42:06	1	[0]
 \.
 
 
 --
--- TOC entry 3606 (class 0 OID 0)
+-- TOC entry 3623 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: spapi_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('spapi_id_seq', 797, true);
+SELECT pg_catalog.setval('spapi_id_seq', 799, true);
 
 
 --
--- TOC entry 3162 (class 0 OID 197996)
+-- TOC entry 3177 (class 0 OID 197996)
 -- Dependencies: 255
 -- Data for Name: trees; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY trees (id, title, url, descr, roles, created, userid, orgid, acts) FROM stdin;
 2	Table	table	table properties	[0]	2020-05-13 13:20:25.042661	1	1	[]
+3	Function	function	function	[0]	2020-05-14 14:42:37.130439	1	1	[]
 \.
 
 
 --
--- TOC entry 3607 (class 0 OID 0)
+-- TOC entry 3624 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: trees_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('trees_id_seq', 2, true);
+SELECT pg_catalog.setval('trees_id_seq', 3, true);
 
 
 --
--- TOC entry 3164 (class 0 OID 198007)
+-- TOC entry 3179 (class 0 OID 198007)
 -- Dependencies: 257
 -- Data for Name: treesacts; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20946,7 +21578,7 @@ COPY treesacts (id, treesid, title, icon, classname, act, created) FROM stdin;
 
 
 --
--- TOC entry 3608 (class 0 OID 0)
+-- TOC entry 3625 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: treesacts_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -20955,27 +21587,28 @@ SELECT pg_catalog.setval('treesacts_id_seq', 1, false);
 
 
 --
--- TOC entry 3166 (class 0 OID 198016)
+-- TOC entry 3181 (class 0 OID 198016)
 -- Dependencies: 259
 -- Data for Name: treesbranches; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY treesbranches (id, treesid, title, parentid, icon, created, treeviewtype, viewid, compoid, orderby, ismain) FROM stdin;
 1	2	Fields	\N	menu	2020-05-13 13:23:31.366732	1	50790	\N	1	t
+2	3	Code	\N	code	2020-05-14 14:43:06.897803	1	50794	\N	1	t
 \.
 
 
 --
--- TOC entry 3609 (class 0 OID 0)
+-- TOC entry 3626 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: treesbranches_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('treesbranches_id_seq', 1, true);
+SELECT pg_catalog.setval('treesbranches_id_seq', 2, true);
 
 
 --
--- TOC entry 3168 (class 0 OID 198026)
+-- TOC entry 3183 (class 0 OID 198026)
 -- Dependencies: 261
 -- Data for Name: treeviewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20987,7 +21620,7 @@ COPY treeviewtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3169 (class 0 OID 198029)
+-- TOC entry 3184 (class 0 OID 198029)
 -- Dependencies: 262
 -- Data for Name: users; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -20998,7 +21631,7 @@ COPY users (id, fam, im, ot, login, password, isactive, created, roles, roleid, 
 
 
 --
--- TOC entry 3610 (class 0 OID 0)
+-- TOC entry 3627 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21007,7 +21640,7 @@ SELECT pg_catalog.setval('users_id_seq', 6, true);
 
 
 --
--- TOC entry 3171 (class 0 OID 198045)
+-- TOC entry 3186 (class 0 OID 198045)
 -- Dependencies: 264
 -- Data for Name: views; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21025,6 +21658,7 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 234	MainMenu	Menu list	framework.mainmenu	table	f	[{"t": 1, "col": "id", "key": "id_735c4", "join": 0, "type": "number", "input": 1, "roles": [], "title": "id", "width": "", "output": 1, "depency": null, "visible": 0, "relation": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 2, "col": "title", "key": "title_89c08", "join": 0, "type": "text", "input": 0, "roles": [], "title": "title", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 8, "col": "path", "key": "path_7a002", "join": 0, "type": "text", "input": 0, "roles": [], "title": "path", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 8, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 4, "col": "roles", "key": "roles_a4e0d", "join": 0, "type": "text", "input": 0, "roles": [], "title": "roles", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 6, "col": "systemfield", "key": "systemfield_0fd10", "join": 0, "type": "checkbox", "input": 0, "roles": [], "title": "systemfield", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 9, "col": "icon", "key": "icon_96cd7", "join": false, "type": "text", "roles": [], "title": "icon", "width": "", "depency": null, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 3, "col": "parentid", "key": "parentid_a25dc", "join": 0, "type": "select", "input": 0, "roles": [], "title": "parentid", "width": "", "output": 0, "depency": null, "visible": false, "relation": "framework.mainmenu", "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title_", "value": "title"}]},{"t": 3, "col": "title", "key": "title_d0cd9", "type": "text", "input": 0, "roles": [], "table": "framework.mainmenu", "title": "parent", "tpath": [], "output": 0, "related": true, "visible": 1, "relation": null, "classname": null, "notaddable": false, "relatecolumn": "parentid", "relationcolums": []},{"t": 7, "col": "orderby", "key": "orderby_8b3ef", "join": 0, "type": "number", "input": 0, "roles": [], "title": "orderby", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 7, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 5, "col": "created", "key": "created_01666", "join": 0, "type": "date", "input": 0, "roles": [], "title": "created", "width": "", "output": 0, "depency": null, "visible": 1, "relation": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": []},{"t": 10, "col": "menuid", "key": "menuid_ac20c", "join": false, "type": "number", "label": "menuid || menuid", "roles": "[]", "title": "menuid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.menus", "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	menusettings	2018-11-30 12:50:20	[]	[{"t": 1, "key": "4iwOLNx3K", "type": "multiselect", "roles": [{"label": "developer", "value": 0}], "table": "framework.mainmenu", "title": "parent", "column": "parentid", "classname": null}, {"type": "typehead", "roles": [], "title": "search", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/getone/menuedit", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_735c4", "label": "id", "value": "id"}}, {"paramtitle": "o", "paramcolumn": {"t": 1, "key": "title_89c08", "label": "title", "value": "title"}}], "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "delete menu", "ismain": false, "classname": "btn", "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_735c4", "label": "id", "value": "id"}}], "isforevery": 1}, {"act": "/getone/menuedit", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add menu", "ismain": false, "classname": null, "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "menuid", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paramtitle": "menuid", "paramcolumn": {"t": 1, "key": "menuid_ac20c", "label": "menuid", "value": "menuid"}}], "isforevery": 0}, {"act": "/list/projectmenus", "icon": "fa fa-arrow-left", "type": "Link", "roles": [], "title": "back", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[0]	\N	f	t	t	t	f	f	{}	f
 242	filter	filter edit/add	framework.filters	form not mutable	f	[{"t": 1, "col": "id", "key": "id_06102", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "fl_id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 12, "col": "column_order", "key": "column_order_ca9cc", "join": false, "type": "number", "label": "column_order || column_order", "roles": "[]", "title": "column_order", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "const": null, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 2, "col": "viewid", "key": "viewid_04c9d", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "id", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.views", "required": true, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 3, "col": "title", "key": "title_769d5", "join": false, "type": "text", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 4, "col": "type", "key": "type_6ac01", "join": false, "type": "select", "chckd": false, "roles": "[]", "title": "type", "width": "", "relcol": "ftname", "depency": false, "visible": true, "relation": "framework.filtertypes", "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "ftname", "title": "ftname", "value": "ftname"}], "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 5, "col": "classname", "key": "classname_fa186", "join": false, "type": "text", "chckd": false, "roles": "[]", "title": "classname", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 6, "col": "column", "key": "column_a844c", "join": false, "type": "select_api", "chckd": false, "roles": "[]", "title": "column", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/tabcolumns_for_filters", "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}, {"col": {"t": 1, "key": "type_6ac01", "label": "type", "value": "type"}, "const": null, "value": "typehead", "operation": {"js": "!==", "label": "!=", "value": "<>", "python": "!="}}]}, {"t": 7, "col": "columns", "key": "columns_3048c", "join": false, "type": "multiselect_api", "chckd": false, "roles": "[]", "title": "columns", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/tabcolumns_for_filters_arr", "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}, {"col": {"t": 1, "key": "type_6ac01", "label": "type", "value": "type"}, "const": null, "value": "typehead", "operation": {"js": "===", "label": "=", "value": "=", "python": "=="}}]}, {"t": 8, "col": "roles", "key": "roles_628d8", "join": false, "type": "multiselect", "chckd": false, "roles": "[]", "title": "roles", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 9, "col": "t", "key": "t_ed9da", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "t", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 10, "col": "table", "key": "table_49b09", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "table", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 11, "col": "created", "key": "created_9dfd6", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "created", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	filter	2019-10-28 15:41:00.635	[]	[]	[{"act": "/", "icon": "pi pi-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "const": null, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"act": "/composition/view", "icon": "fa fa-cross", "type": "Link", "title": "close", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "N", "paramtitle": "N", "paramcolumn": null}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "fl_id", "paramcolumn": null}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "act_id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "id_06102", "label": "id", "value": "fl_id"}, "const": null, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	[0]	\N	f	t	t	t	f	f	{}	f
 50785	schemas	schemas list	sqlmanager.schemalist	table	f	[]	schemas	2020-05-11 16:45:27.915281	[]	[]	[]	[0]	schema_table	f	t	t	t	f	f	{}	f
+50793	Table Add	Table Add	sqlmanager.tablelist	form not mutable	f	[]	table	2020-05-14 09:50:06.44016	[]	[]	[]	[0]	\N	f	t	t	t	f	f	{}	f
 244	act visible condition	act visible condition	framework.act_visible_condions	form not mutable	f	[{"t": 1, "col": "id", "key": "id_99ad9", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "vs_id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 2, "col": "actionid", "key": "actionid_79ee8", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "actionid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.actions", "required": true, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 3, "col": "val_desc", "key": "val_desc_241f6", "join": false, "type": "select", "chckd": true, "roles": "[]", "title": "val_desc", "width": "", "relcol": "id", "depency": false, "visible": true, "relation": "framework.config", "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id", "value": "id"}, {"label": "title", "title": "title_", "value": "title"}], "visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 6, "col": "operation", "key": "operation_b171e", "join": false, "type": "select", "chckd": true, "roles": "[]", "title": "operation", "width": "", "relcol": "value", "depency": false, "visible": true, "relation": "framework.operations", "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "value", "title": "value_", "value": "value"}], "visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 7, "col": "value", "key": "value_2cf11", "join": false, "type": "text", "chckd": true, "roles": "[]", "title": "value", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"t": 8, "col": "created", "key": "created_dcab2", "join": false, "type": "label", "chckd": true, "roles": "[]", "title": "created", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	act_visible	2019-10-29 18:07:07.283	[]	[]	[{"act": "/", "icon": "fa fa-check", "type": "Save", "title": "save", "classname": "p-button-success", "parametrs": [], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"act": "/composition/act_visible_conditions", "icon": "fa fa-cros", "type": "Link", "title": "close", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "actionid", "paramtitle": "actionid", "paramcolumn": null}, {"paramt": null, "paramconst": "actionid", "paraminput": "", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "vs_id", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "act_id", "paramtitle": "act_id", "paramcolumn": null}], "isforevery": false, "act_visible_condition": [{"col": {"t": 1, "key": "id_99ad9", "label": "id", "value": "vs_id"}, "const": null, "value": "-1", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}]	[0]	\N	f	t	t	t	f	f	{}	f
 217	SP API	API methods Storage procedures	framework.spapi	table	t	[{"t": 1, "col": "id", "key": "id_64329", "join": 0, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 1, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "methodtype", "key": "methodtype_2e0fc", "join": 0, "type": "select", "roles": "[]", "title": "methodtype", "width": "", "depency": null, "visible": 0, "relation": "framework.methodtypes", "classname": null, "column_id": 6, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "methotypename", "value": "methotypename"}]},{"t": 2, "col": "methodname", "key": "methodname_06743", "join": 0, "type": "text", "roles": "[]", "title": "method name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 2, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "procedurename", "key": "procedurename_a1796", "join": 0, "type": "text", "roles": "[]", "title": "procedure name", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 3, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "methotypename", "key": "methotypename_4f63d", "type": "text", "input": 0, "roles": [], "table": "framework.methodtypes", "title": "methotypename", "tpath": [], "output": 0, "related": 1, "visible": true, "relation": null, "classname": null, "notaddable": 0, "relatecolumn": "methodtype", "relationcolums": "[]"},{"t": 4, "col": "roles", "key": "roles_391ac", "join": 0, "type": "text", "roles": "[]", "title": "roles", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 4, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "created", "key": "created_72941", "join": 0, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": null, "visible": 1, "relation": null, "classname": null, "column_id": 5, "onetomany": 0, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	spapi	2018-12-21 14:27:50.79	[]	[{"type": "typehead", "roles": [], "title": "found", "column": [{"t": 1, "label": "methodname", "value": "methodname"}, {"t": 1, "label": "procedurename", "value": "procedure name"}], "classname": "form-control"}]	[{"act": "/getone/spapiform?N=0", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": null, "parametrs": [], "paramtype": null, "isforevery": 0}, {"act": "/getone/spapiform", "icon": "fa fa-pencil", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "N", "paramcolumn": {"t": 1, "key": "id_64329", "label": "id", "value": "id"}}], "paramtype": "query", "isforevery": 1}, {"act": "/schema/deleterow", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": null, "parametrs": [{"paramconst": null, "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_64329", "label": "id", "value": "id"}}], "paramtype": null, "isforevery": 1}]	[0]	\N	f	t	t	t	f	f	{}	f
 44	Notifications	Notifications	framework.viewsnotification	table	t	[{"t": 1, "col": "id", "key": "id_d4be3", "join": false, "type": "number", "roles": "[]", "title": "id", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 2, "col": "viewid", "key": "viewid_f2004", "join": false, "type": "number", "roles": "[]", "title": "viewid", "width": "", "depency": false, "visible": false, "relation": "framework.views", "classname": null, "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 3, "col": "col", "key": "col_186f8", "join": false, "type": "text", "roles": "[]", "title": "col", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 4, "col": "tableid", "key": "tableid_aa778", "join": false, "type": "text", "roles": "[]", "title": "tableid", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 5, "col": "notificationtext", "key": "notificationtext_3e718", "join": false, "type": "text", "roles": "[]", "title": "notificationtext", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 6, "col": "foruser", "key": "foruser_91970", "join": false, "type": "number", "roles": "[]", "title": "foruser", "width": "", "depency": false, "visible": false, "relation": null, "classname": null, "column_id": 6, "onetomany": false, "defaultval": [{"act": {"label": "=", "value": "="}, "bool": {"label": "and", "value": "and"}, "value": "_userid_"}], "depencycol": null, "relationcolums": "[]"},{"t": 7, "col": "issend", "key": "issend_a7456", "join": false, "type": "checkbox", "roles": "[]", "title": "issend", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 8, "col": "isread", "key": "isread_f1224", "join": false, "type": "checkbox", "roles": "[]", "title": "isread", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 9, "col": "created", "key": "created_ebdeb", "join": false, "type": "date", "roles": "[]", "title": "created", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 10, "col": "sended", "key": "sended_d9382", "join": false, "type": "date", "roles": "[]", "title": "sended", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"},{"t": 11, "col": "readed", "key": "readed_ee0ca", "join": false, "type": "date", "roles": "[]", "title": "readed", "width": "", "depency": false, "visible": true, "relation": null, "classname": null, "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	notifs	2019-03-19 16:03:31.905	[]	[{"t": 1, "type": "check", "roles": [], "table": null, "title": "sended", "column": "issend", "classname": null}, {"t": 1, "type": "check", "roles": [], "table": null, "title": "readed", "column": "isread", "classname": null}]	[]	[0]	\N	t	t	t	t	f	f	{}	f
@@ -21056,6 +21690,7 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 245	Create view	this is for admins views add	framework.views	form not mutable	f	[{"t": 1, "col": "id", "key": "id_4e813", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "tablename", "key": "tablename_75be5", "join": false, "type": "select_api", "roles": "[]", "title": "table name", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/gettables", "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_4e813", "label": "id", "value": "id"}, "value": null, "operation": {"js": "===null", "label": "is null", "value": "is null", "python": "is None"}}]}, {"t": 21, "col": "tablename", "key": "tablename_5238b", "join": false, "type": "label", "label": "tablename || tablename", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_4e813", "label": "id", "value": "id"}, "const": null, "value": null, "operation": {"js": "!==null", "label": "is not null", "value": "is not null", "python": "is not None"}}]}, {"t": 2, "col": "title", "key": "title_efe1b", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "descr", "key": "descr_9d5d9", "join": false, "type": "textarea", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "key": "path_98923", "join": false, "type": "text", "chckd": false, "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "key": "viewtype_421ce", "join": false, "type": "select", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": true, "relation": "framework.viewtypes", "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}, {"t": 13, "col": "roles", "key": "roles_ebaac", "join": false, "type": "multiselect", "chckd": false, "roles": "[]", "title": "roles", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 14, "col": "classname", "key": "classname_859e2", "join": false, "type": "text", "chckd": false, "roles": "[]", "title": "classname", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "pagination", "key": "pagination_d6ad4", "join": false, "type": "checkbox", "roles": "[]", "title": "pagination", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 15, "col": "orderby", "key": "orderby_d2011", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "orderby", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 16, "col": "ispagesize", "key": "ispagesize_ea575", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "ispagesize", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 17, "col": "pagecount", "key": "pagecount_be57f", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "pagecount", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 18, "col": "foundcount", "key": "foundcount_4bd77", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "foundcount", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 19, "col": "subscrible", "key": "subscrible_d08b5", "join": false, "type": "checkbox", "chckd": false, "roles": "[]", "title": "subscrible", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": []}, {"t": 20, "col": "checker", "key": "checker_6add0", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "checker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}]	viewadd	2019-11-04 21:30:34.377	[]	[]	[{"act": "/", "icon": "fa fa-check", "type": "Save", "title": "save main info", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/views", "icon": "fa fa-arrow-left", "type": "Link", "title": "back to list", "parametrs": [], "isforevery": false}]	[0]	\N	f	t	t	t	f	f	{}	f
 240	select condition	select condition	framework.select_condition	table	f	[{"t": 1, "col": "id", "key": "id_e7177", "join": false, "type": "label", "roles": "[]", "title": "cni", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "configid", "key": "configid_ac752", "join": false, "type": "label", "roles": "[]", "title": "N", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.config", "required": true, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "viewid", "title": "viewid", "value": "viewid"}]}, {"t": 3, "col": "col", "key": "col_c07f8", "join": false, "type": "label", "roles": "[]", "title": "col", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "operation", "key": "operation_367de", "join": false, "type": "label", "roles": "[]", "title": "operation", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "val_desc", "key": "val_desc_04300", "join": false, "type": "label", "label": "val_desc || val_desc", "roles": "[]", "title": "val_desc", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.config", "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title", "value": "title"}]}, {"t": 6, "col": "const", "key": "const_6d101", "join": false, "type": "label", "roles": "[]", "title": "const", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "value", "key": "value_f930f", "join": false, "type": "label", "roles": "[]", "title": "val", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "created", "key": "created_e5c66", "join": false, "type": "label", "roles": "[]", "title": "created", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "title", "key": "title_0.9293152534345108", "join": false, "type": "label", "input": 0, "roles": [], "table": "framework.config", "title": "value", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": true, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "val_desc", "relationcolums": "[]"}, {"t": 2, "col": "viewid", "key": "viewid_0.4255203251949675", "join": false, "type": "label", "input": 0, "roles": [], "table": "framework.config", "title": "viewid", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": false, "relation": "framework.views", "classname": "", "notaddable": true, "relatecolumn": "configid", "relationcolums": "[]"}]	select_condition	2019-10-27 13:20:11.361	[]	[]	[{"act": "/composition/view", "icon": "arrow-left", "type": "Link", "title": "go back", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "N", "paramtitle": "N", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "viewid", "paramtitle": "id", "paramcolumn": null}], "isforevery": false}, {"act": "/composition/select_condition", "icon": "pi pi-pencil", "type": "Link", "title": "edit", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "N", "paramtitle": "N", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "CN", "paramcolumn": {"t": 1, "key": "id_e7177", "label": "id", "value": "cni"}}, {"paramt": null, "paramconst": "", "paraminput": "configid", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "configid", "paramtitle": "configid", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "table", "paramtitle": "table", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "_sub_title", "paramtitle": "_sub_title", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "viewid", "paramtitle": "viewid", "paramcolumn": null}], "isforevery": true}, {"act": "/", "icon": "pi pi-trash", "type": "Delete", "title": "delete", "classname": "p-button-danger", "parametrs": [], "isforevery": true}, {"act": "/composition/select_condition", "icon": "pi pi-plus", "type": "Link", "title": "add", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "N", "paramtitle": "N", "paramcolumn": null}, {"paramt": null, "paramconst": "0", "paraminput": "", "paramtitle": "CN", "paramcolumn": null}, {"paramt": null, "paramconst": "configid", "paraminput": "", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "configid", "paramtitle": "configid", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "table", "paramtitle": "table", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "_sub_title", "paramtitle": "_sub_title", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "viewid", "paramtitle": "viewid", "paramcolumn": null}], "isforevery": false}]	[0]	config_table	f	t	t	t	f	f	{}	f
 50791	Table Column	Table Column	sqlmanager.tablecolumns	form not mutable	f	[]	tablecolumn	2020-05-13 17:58:34.996501	[]	[]	[]	[0]	\N	f	t	t	t	f	f	{}	f
+50794	Function	Function	sqlmanager.functionslist	form not mutable	f	[]	function	2020-05-14 13:19:40.032952	[]	[]	[]	[0]	\N	f	t	t	t	f	f	{}	f
 220	Test	Test	test.major_table	table	t	[{"t": 1, "col": "id", "key": "id_3a31e", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 1, "onetomany": false, "defaultval": [{"act": {"label": ">", "value": ">"}, "bool": {"label": "and", "value": "and"}, "value": "0"}], "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "text", "key": "text_84820", "join": false, "type": "text", "roles": "[]", "title": "text title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "data", "key": "data_9ef12", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "check", "key": "check_c0adb", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "time", "key": "time_8c9c9", "join": false, "type": "time", "roles": "[]", "title": "time", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "password", "key": "password_3cd1a", "join": false, "type": "password", "roles": "[]", "title": "password", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "color", "key": "color_70c0b", "join": false, "type": "color", "roles": "[]", "title": "color", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "multiselect", "key": "multiselect_3da94", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 9, "col": "file", "key": "file_5d459", "join": false, "type": "file", "roles": "[]", "title": "file", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "typehead", "key": "typehead_e6558", "join": false, "type": "typehead", "roles": "[]", "title": "typehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "image", "key": "image_a483e", "join": false, "type": "image", "roles": "[]", "title": "image", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "images", "key": "images_4e4d0", "join": false, "type": "images", "roles": "[]", "title": "images", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "gallery", "key": "gallery_1cbc1", "join": false, "type": "gallery", "roles": "[]", "title": "gallery", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "label", "key": "label_b8274", "join": false, "type": "label", "roles": "[]", "title": "label", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 15, "col": "number", "key": "number_5a12a", "join": false, "type": "number", "roles": "[]", "title": "number", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 16, "col": "link", "key": "link_e7018", "join": false, "type": "link", "roles": "[]", "title": "link", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 17, "col": "texteditor", "key": "texteditor_377da", "join": false, "type": "texteditor", "roles": "[]", "title": "texteditor", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "colorrow", "key": "colorrow_b394b", "join": false, "type": "colorrow", "roles": "[]", "title": "color row", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "multitypehead_api", "key": "multitypehead_api_c7189", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multitypehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 20, "col": "multi_select_api", "key": "multi_select_api_2c6b3", "join": false, "type": "multiselect_api", "roles": "[]", "title": "multi_select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "colorpicker", "key": "colorpicker_d4763", "join": false, "type": "colorpicker", "roles": "[]", "title": "colorpicker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 23, "col": "autocomplete", "key": "autocomplete_9bde0", "join": false, "type": "autocomplete", "roles": "[]", "title": "autocomplete", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 23, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 24, "col": "textarea", "key": "textarea_b7429", "join": false, "type": "textarea", "roles": "[]", "title": "textarea", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 24, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "files", "key": "files_68ff8", "join": false, "type": "files", "roles": "[]", "title": "files", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 26, "col": "typehead_api", "key": "typehead_api_6730b", "join": false, "type": "typehead_api", "roles": "[]", "title": "typehead_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "select_api", "key": "select_api_762ba", "join": false, "type": "select_api", "roles": "[]", "title": "select_api", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 27, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 28, "col": "multitypehead", "key": "multitypehead_0a55e", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, {"t": 29, "col": "datetime", "key": "datetime_388e5", "join": false, "type": "datetime", "roles": "[]", "title": "datetime", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 29, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 31, "col": "relate_with_major", "key": "relate_with_major_f4f4c", "join": false, "type": "array", "label": "relate_with_major || relate_with_major", "roles": "[]", "title": "relate_with_major", "width": "", "relcol": null, "depency": true, "visible": true, "relation": "test.relate_with_major", "required": false, "classname": "", "column_id": 31, "onetomany": true, "defaultval": null, "depencycol": "major_table_id", "relationcolums": [{"label": "id", "value": "id"}, {"label": "somecolumn", "value": "somecolumn"}, {"label": "major_table_id", "value": "major_table_id"}, {"label": "created", "value": "created"}]}, {"t": 22, "col": "select", "key": "select_b1405", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}, {"label": "id", "title": "id_", "value": "id"}]}, {"t": 22, "col": "dname", "key": "dname_c5340", "type": "text", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "dname", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}, {"t": 22, "col": "id", "key": "id_0.16492845318532945", "type": "label", "input": 0, "roles": [], "table": "test.dictionary_for_select", "title": "id_", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": true, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "select", "relationcolums": "[]"}, {"t": null, "fn": {"label": "concat", "value": "concat", "functype": "concat"}, "col": "func test", "type": "text", "input": 0, "roles": [], "table": null, "title": "func test", "tpath": null, "output": 0, "related": true, "visible": true, "relation": null, "fncolumns": [{"t": 1, "key": "text_84820", "label": "text", "value": "text title"}, {"t": 1, "key": "number_5a12a", "label": "number", "value": "number"}], "relatecolumn": "", "relationcolums": "[]"}]	test	2019-09-18 13:31:50.252	[]	[{"t": 1, "type": "substr", "roles": [], "table": {"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "SUBSTR TEXT", "column": "text", "classname": ""}, {"type": "typehead", "roles": [], "title": "TYPEHEAD TEXT NUMBER COLOR", "column": [{"t": 1, "label": "text", "value": "text"}, {"t": 1, "label": "number", "value": "number"}, {"t": 1, "label": "color", "value": "color"}], "classname": ""}, {"t": 1, "type": "check", "roles": [], "table": {"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "check", "column": "check", "classname": ""}, {"t": 1, "type": "period", "roles": [], "table": {"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, "title": "PERIOD", "column": "data", "classname": ""}, {"t": 1, "type": "select", "roles": [], "table": {"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}, "title": "select filter", "column": "select", "classname": ""}, {"t": 1, "type": "multiselect", "roles": [], "table": {"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi", "column": "multiselect", "classname": ""}, {"t": 1, "type": "multijson", "roles": [], "table": {"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}, "title": "multi json", "column": "multitypehead", "classname": ""}]	[{"act": "/trees/treetest", "type": "Link", "title": "show tree", "parametrs": [], "isforevery": false}, {"act": "/api/postmethodtest_setselectedcolor_black", "type": "API", "title": "set checke black (POST TEST CHECKED)", "parametrs": [{"paramt": null, "paramconst": "_checked_", "paraminput": "", "paramtitle": "checked", "paramcolumn": null}], "actapitype": "POST", "isforevery": false, "actapiconfirm": true, "actapirefresh": true}, {"act": "/getone/test_add", "icon": "pi pi-plus", "type": "Link", "title": "add with relations", "parametrs": [{"paramt": null, "paramconst": "0", "paraminput": "", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "number,check", "paraminput": "", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "55", "paraminput": "", "paramtitle": "number", "paramcolumn": null}, {"paramt": null, "paramconst": "true", "paraminput": "", "paramtitle": "check", "paramcolumn": null}], "isforevery": false}, {"act": "/getone/test_edit", "icon": "fa fa-edit", "type": "Link", "roles": [], "title": "edit", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_3a31e", "label": "id", "value": "id"}}], "paramtype": "query", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/gettest", "icon": "pi pi-star-o", "type": "API", "title": "set red", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_3a31e", "label": "id", "value": "id"}}], "actapitype": "GET", "isforevery": true, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/posttest", "icon": "pi pi-star", "type": "API", "title": "set blue", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_3a31e", "label": "id", "value": "id"}}], "actapitype": "POST", "isforevery": true, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "title": "delete", "classname": "p-button-danger", "parametrs": [], "isforevery": true}, {"act": "/getone/test_add", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "add", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "0", "paramtitle": "id", "paramcolumn": null}], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[0]	test_table	t	t	t	t	f	t	{}	f
 5542	Accounts Settings	Accounts Settings	framework.users	form full	f	[]	user_account	2019-12-09 18:09:00.445033	[]	[]	[]	[]	\N	f	t	t	t	f	f	{}	f
 239	Columns config	View's column's configuration	framework.config	table	f	[{"t": 26, "col": "column_order", "key": "column_order_8fa6b", "join": false, "type": "label", "roles": "[]", "title": "column order", "width": "", "relcol": null, "depency": false, "orderby": true, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 26, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 1, "col": "id", "key": "id_af424", "join": false, "type": "label", "roles": "[]", "title": "key", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "viewid", "key": "viewid_93377", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.views", "required": true, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "t", "key": "t_d8775", "join": false, "type": "label", "roles": "[]", "title": "t", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "col", "key": "col_0aabc", "join": false, "type": "label", "roles": "[]", "title": "column title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "column_id", "key": "column_id_02c19", "join": false, "type": "label", "roles": "[]", "title": "column_id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "title", "key": "title_d3062", "join": false, "type": "label", "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 7, "col": "type", "key": "type_1a65e", "join": false, "type": "label", "roles": "[]", "title": "type", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 7, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "roles", "key": "roles_cfce1", "join": false, "type": "label", "roles": "[]", "title": "roles", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 9, "col": "visible", "key": "visible_b3377", "join": false, "type": "label", "roles": "[]", "title": "visible", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 10, "col": "required", "key": "required_174be", "join": false, "type": "label", "roles": "[]", "title": "is required", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 10, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 11, "col": "width", "key": "width_4cdc6", "join": false, "type": "label", "roles": "[]", "title": "width", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 11, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 12, "col": "join", "key": "join_db8e8", "join": false, "type": "label", "roles": "[]", "title": "join", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 12, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 13, "col": "classname", "key": "classname_8671b", "join": false, "type": "label", "roles": "[]", "title": "classname", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 14, "col": "updatable", "key": "updatable_f2028", "join": false, "type": "label", "roles": "[]", "title": "updatable", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 18, "col": "orderby", "key": "orderby_84229", "join": false, "type": "checkbox", "roles": "[]", "title": "orderby", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 19, "col": "orderbydesc", "key": "orderbydesc_4b59b", "join": false, "type": "checkbox", "roles": "[]", "title": "orderby desc", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_config_relation", "value": "framework.fn_config_relation", "functype": "user"}, "col": "relation", "key": "relation_relation", "type": "text", "input": 0, "roles": [], "table": null, "title": "relation", "tpath": null, "output": 0, "related": true, "visible": true, "relation": null, "fncolumns": [{"t": 1, "key": "id_af424", "label": "id", "value": "#"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_config_relationcolumns", "value": "framework.fn_config_relationcolumns", "functype": "user"}, "col": "relationcolums", "key": "relationcolums_relationcolums_1", "type": "text", "input": 0, "roles": [], "table": null, "title": "relationcolums_1", "tpath": null, "output": 0, "related": true, "visible": true, "relation": null, "fncolumns": [{"t": 1, "key": "id_af424", "label": "id", "value": "#"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 28, "col": "select_condition", "key": "select_condition_f0b20", "join": false, "type": "array", "roles": "[]", "title": "select_condition", "width": "", "relcol": null, "depency": true, "visible": true, "relation": "framework.select_condition", "required": false, "classname": "", "column_id": 27, "onetomany": true, "defaultval": null, "depencycol": "configid", "relationcolums": "[]"}, {"t": 29, "col": "visible_condition", "key": "visible_condition_9cdff", "join": false, "type": "array", "roles": "[]", "title": "visible_condition", "width": "", "relcol": null, "depency": true, "visible": true, "relation": "framework.visible_condition", "required": false, "classname": "", "column_id": 27, "onetomany": true, "defaultval": null, "depencycol": "configid", "relationcolums": "[]"}, {"t": 20, "col": "relcol", "key": "relcol_bb41e", "join": false, "type": "label", "roles": "[]", "title": "relcol", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 21, "col": "depency", "key": "depency_3bf4a", "join": false, "type": "label", "roles": "[]", "title": "depency", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 21, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 22, "col": "created", "key": "created_1b940", "join": false, "type": "label", "roles": "[]", "title": "created", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 25, "col": "depencycol", "key": "depencycol_44a89", "join": false, "type": "label", "roles": "[]", "title": "depencycol", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 25, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 27, "col": "defaultval", "key": "defaultval_273b1", "join": false, "type": "array", "roles": "[]", "title": "defaultval", "width": "", "relcol": null, "depency": true, "visible": true, "relation": "framework.defaultval", "required": false, "classname": "", "column_id": 27, "onetomany": true, "defaultval": null, "depencycol": "configid", "relationcolums": "[]"}]	configs	2019-10-24 16:33:24.168	[]	[{"type": "typehead", "roles": [], "title": "seach", "column": [{"t": 1, "key": "col_0aabc", "label": "col", "value": "column title"}, {"t": 1, "key": "title_d3062", "label": "title", "value": "title"}]}]	[{"act": "/composition/view", "icon": "pi pi-pencil", "type": "Link", "title": "edit", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "id", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "N", "paramcolumn": {"t": 1, "key": "id_af424", "label": "id", "value": "key"}}, {"paramt": null, "paramconst": "", "paraminput": "fl_id", "paramtitle": "fl_id", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "act_id", "paramtitle": "act_id", "paramcolumn": null}], "isforevery": true}, {"act": "/", "icon": "pi pi-trash", "type": "Delete", "title": "delete", "classname": "p-button-danger", "parametrs": [], "isforevery": true}]	[0]	config_table	f	f	f	f	f	t	{}	f
@@ -21063,6 +21698,7 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 243	parametrs	ACTIONS PARAMETERS	framework.act_parametrs	table	f	[{"t": 1, "col": "id", "key": "id_7989b", "join": false, "type": "label", "roles": "[]", "title": "p_id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "actionid", "key": "actionid_06ea1", "join": false, "type": "label", "roles": "[]", "title": "act_id", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.actions", "required": true, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "paramtitle", "key": "paramtitle_5ce20", "join": false, "type": "label", "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "title", "key": "title_0.25783669260001485", "join": false, "type": "label", "input": 0, "roles": [], "table": "framework.config", "title": "column", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": true, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "val_desc", "relationcolums": "[]"}, {"t": 5, "col": "paramconst", "key": "paramconst_0ddc7", "join": false, "type": "label", "roles": "[]", "title": "const", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "paraminput", "key": "paraminput_6fde9", "join": false, "type": "label", "roles": "[]", "title": "input", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "paramt", "key": "paramt_66c60", "join": false, "type": "label", "roles": "[]", "title": "method type", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "val_desc", "key": "val_desc_912b4", "join": false, "type": "label", "label": "val_desc || val_desc", "roles": "[]", "title": "val_desc", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.config", "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "title", "title": "title_", "value": "title"}]}, {"t": 9, "col": "query_type", "key": "query_type_8c815", "join": false, "type": "label", "label": "query_type || query_type", "roles": "[]", "title": "query type", "width": "", "relcol": "aqname", "depency": false, "visible": true, "relation": "framework.actparam_querytypes", "required": false, "classname": "", "column_id": 9, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	parametrs	2019-10-29 16:33:55.778	[]	[]	[{"act": "/composition/act_params", "icon": "pi pi-pencil", "type": "Link", "title": "edit", "ismain": true, "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "actionid", "paramtitle": "actionid", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "paramid", "paramcolumn": {"t": 1, "key": "id_7989b", "label": "id", "value": "p_id"}}, {"paramt": null, "paramconst": "actionid", "paraminput": "", "paramtitle": "relation", "paramcolumn": null}], "isforevery": true}, {"act": "/", "type": "Delete", "title": "delete", "parametrs": [], "isforevery": true}, {"act": "/composition/act_params", "icon": "pi pi-plus", "type": "Link", "title": "add", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "actionid", "paramtitle": "actionid", "paramcolumn": null}, {"paramt": null, "paramconst": "actionid", "paraminput": "", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "0", "paraminput": "", "paramtitle": "paramid", "paramcolumn": null}], "isforevery": false}]	[0]	config_table	f	t	t	t	f	f	{}	f
 225	default values	default values	framework.defaultval	table	f	[{"t": 1, "col": "id", "key": "id_24be4", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 2, "col": "configid", "key": "configid_0c694", "join": false, "type": "label", "roles": "[]", "title": "configid", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "framework.config", "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "bool", "key": "bool_c1bb5", "join": false, "type": "select", "roles": "[]", "title": "bool operator", "width": "", "relcol": "bname", "depency": false, "visible": true, "relation": "framework.booloper", "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "bname", "title": "bname", "value": "bname"}]}, {"t": 4, "col": "act", "key": "act_1ae13", "join": false, "type": "select", "roles": "[]", "title": "action", "width": "", "relcol": "value", "depency": false, "visible": true, "relation": "framework.operations", "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "id", "title": "id_", "value": "id"}, {"label": "value", "title": "value_", "value": "value"}]}, {"t": 5, "col": "value", "key": "value_25aea", "join": false, "type": "text", "roles": "[]", "title": "value", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "created", "key": "created_946c2", "join": false, "type": "label", "roles": "[]", "title": "created", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}]	default_values	2019-10-27 21:23:52.258	[]	[]	[{"act": "/composition/defaultval", "icon": "pi pi-plus", "type": "Link", "title": "add", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "relation", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "configid", "paramtitle": "configid", "paramcolumn": null}, {"paramt": null, "paramconst": "0", "paraminput": "", "paramtitle": "CN", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "viewid", "paramtitle": "viewid", "paramcolumn": null}], "isforevery": false}, {"act": "/composition/defaultval", "icon": "pi pi-pencil", "type": "Link", "title": "edit", "ismain": true, "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "relation", "paramtitle": "relation", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "configid", "paramtitle": "configid", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "CN", "paramcolumn": {"t": 1, "key": "id_24be4", "label": "id", "value": "id"}}, {"paramt": null, "paramconst": "", "paraminput": "viewid", "paramtitle": "viewid", "paramcolumn": null}], "isforevery": true}, {"act": "/composition/view", "type": "Link", "title": "go back", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "viewid", "paramtitle": "id", "paramcolumn": null}, {"paramt": null, "paramconst": "", "paraminput": "configid", "paramtitle": "N", "paramcolumn": null}], "isforevery": false}, {"act": "/", "icon": "pi pi-trash", "type": "Delete", "title": "delete", "parametrs": [], "isforevery": true}]	[0]	config_table	f	t	t	t	f	f	{}	f
 50792	Schema Add	Schema Add	sqlmanager.schemalist	form not mutable	f	[]	schema	2020-05-13 18:38:40.005858	[]	[]	[]	[0]	\N	f	t	t	t	f	f	{}	f
+50796	Function Add	Function Add	sqlmanager.functionslist	form not mutable	f	[]	functionadd	2020-05-14 17:00:53.37245	[]	[]	[]	[0]	\N	f	t	t	t	f	f	{}	f
 238	View Main Info	this is for admins views main information.	framework.views	form not mutable	f	[{"t": 1, "col": "id", "key": "id_4e813", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 4, "col": "tablename", "key": "tablename_75be5", "join": false, "type": "select_api", "roles": "[]", "title": "table name", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "select_api": "/api/gettables", "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_4e813", "label": "id", "value": "id"}, "value": null, "operation": {"js": "===null", "label": "is null", "value": "is null", "python": "is None"}}]}, {"t": 21, "col": "tablename", "key": "tablename_5238b", "join": false, "type": "label", "label": "tablename || tablename", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "id_4e813", "label": "id", "value": "id"}, "const": null, "value": null, "operation": {"js": "!==null", "label": "is not null", "value": "is not null", "python": "is not None"}}]}, {"t": 2, "col": "title", "key": "title_efe1b", "join": false, "type": "text", "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 3, "col": "descr", "key": "descr_9d5d9", "join": false, "type": "textarea", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "key": "path_98923", "join": false, "type": "text", "chckd": false, "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "key": "viewtype_421ce", "join": false, "type": "select", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": true, "relation": "framework.viewtypes", "required": false, "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}, {"t": 13, "col": "roles", "key": "roles_ebaac", "join": false, "type": "multiselect", "chckd": false, "roles": "[]", "title": "roles", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 13, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "id", "value": "id"}, {"label": "rolename", "value": "rolename"}], "relationcolums": "[]", "multiselecttable": "framework.roles"}, {"t": 14, "col": "classname", "key": "classname_859e2", "join": false, "type": "text", "chckd": false, "roles": "[]", "title": "classname", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 14, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 6, "col": "pagination", "key": "pagination_d6ad4", "join": false, "type": "checkbox", "roles": "[]", "title": "pagination", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 6, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 15, "col": "orderby", "key": "orderby_d2011", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "orderby", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 15, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 16, "col": "ispagesize", "key": "ispagesize_ea575", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "ispagesize", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 16, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 17, "col": "pagecount", "key": "pagecount_be57f", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "pagecount", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 17, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 18, "col": "foundcount", "key": "foundcount_4bd77", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "foundcount", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 18, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}, {"t": 19, "col": "subscrible", "key": "subscrible_d08b5", "join": false, "type": "checkbox", "chckd": false, "roles": "[]", "title": "subscrible", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 19, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": []}, {"t": 20, "col": "checker", "key": "checker_6add0", "join": false, "type": "checkbox", "chckd": true, "roles": "[]", "title": "checker", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 20, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]", "visible_condition": [{"col": {"t": 1, "key": "viewtype_421ce", "label": "viewtype", "value": "viewtype"}, "const": null, "value": "tiles,table", "operation": {"js": "", "label": "in", "value": "in", "python": "in"}}]}]	view	2019-10-24 16:07:07.223	[]	[]	[{"act": "/", "icon": "fa fa-check", "type": "Save", "title": "save main info", "classname": "p-button-success", "parametrs": [], "isforevery": false}, {"act": "/list/views", "icon": "fa fa-arrow-left", "type": "Link", "title": "back to list", "parametrs": [], "isforevery": false}]	[0]	\N	f	t	t	t	f	f	{}	f
 6424	User Css	User Css	framework.mainsettings	form not mutable	f	[]	usercss	2020-03-18 11:03:14.765649	[]	[]	[]	[0]	\N	f	t	t	t	f	f	{}	f
 237	VIews	Views administration	framework.views	table	t	[{"t": 1, "col": "id", "key": "id_fc1f2", "join": false, "type": "label", "roles": "[]", "title": "id", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "required": false, "classname": "", "column_id": 1, "onetomany": false, "defaultval": null, "depencycol": null, "orderbydesc": false, "relationcolums": "[]"}, {"t": 2, "col": "title", "key": "title_76a90", "join": false, "type": "label", "chckd": false, "roles": "[]", "title": "title", "width": "", "relcol": null, "depency": false, "orderby": false, "visible": false, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "orderbydesc": false, "relationcolums": "[]"}, {"t": null, "fn": {"label": "framework.fn_view_title_link", "value": "framework.fn_view_title_link", "functype": "user"}, "col": "tit", "key": "tit_9f5cb", "type": "link", "input": 0, "roles": [], "table": null, "title": "view title", "tpath": null, "output": 0, "related": true, "visible": 1, "relation": null, "fncolumns": [{"t": 1, "label": "id", "value": "id"}, {"t": 1, "label": "title", "value": "title"}], "relatecolumn": "", "relationcolums": "[]"}, {"t": 4, "col": "tablename", "key": "tablename_3bb96", "join": false, "type": "label", "roles": "[]", "title": "tablename", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "vtypename", "key": "vtypename_d11aa", "type": "text", "input": 0, "roles": [], "table": "framework.viewtypes", "title": "view type", "tpath": [], "output": 0, "relcol": null, "related": true, "visible": 1, "relation": null, "classname": "", "notaddable": false, "relatecolumn": "viewtype", "relationcolums": "[]"}, {"t": 3, "col": "descr", "key": "descr_fbb10", "join": false, "type": "label", "roles": "[]", "title": "descr", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 8, "col": "path", "key": "path_7ce49", "join": false, "type": "link", "roles": "[]", "title": "path", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}, {"t": 5, "col": "viewtype", "key": "viewtype_96c4f", "join": false, "type": "label", "label": "viewtype || viewtype", "roles": "[]", "title": "viewtype", "width": "", "relcol": "vtypename", "depency": false, "visible": false, "relation": "framework.viewtypes", "classname": "", "column_id": 5, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "vtypename", "title": "vtypename", "value": "vtypename"}]}]	views	2019-09-22 11:39:01.726	[]	[{"type": "typehead", "roles": [{"label": "developer", "value": 0}], "title": "found", "column": [{"t": 1, "label": "title", "value": "title"}, {"t": 1, "label": "tablename", "value": "tablename"}, {"t": 1, "label": "path", "value": "path"}], "classname": ""}]	[{"act": "/composition/view", "icon": "fa fa-check", "type": "LinkTo", "title": "view edit", "parametrs": [{"paramt": null, "paramconst": "", "paraminput": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "N", "paramcolumn": null}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "fl_id", "paramcolumn": null}, {"paramt": null, "paramconst": "-1", "paraminput": "", "paramtitle": "act_id", "paramcolumn": null}], "isforevery": true}, {"act": "/view", "icon": "fa fa-link", "type": "LinkTo", "roles": [{"label": "developer", "value": 0}], "title": "go to link", "ismain": true, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}], "paramtype": "link", "actapitype": "GET", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true, "act_visible_condition": [{"col": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}, "value": "0", "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]}, {"act": "/newview", "icon": "fa fa-plus", "type": "Link", "roles": [], "title": "create view", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "GET", "isforevery": false, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/api/copyview", "icon": "fa fa-copy", "type": "API", "roles": [{"label": "developer", "value": 0}], "title": "copy", "ismain": false, "classname": "", "parametrs": [{"paramt": null, "paramconst": "", "paramtitle": "id", "paramcolumn": {"t": 1, "key": "id_fc1f2", "label": "id", "value": "id"}}], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}, {"act": "/", "icon": "fa fa-trash", "type": "Delete", "roles": [], "title": "del", "ismain": false, "classname": "", "parametrs": [], "paramtype": null, "actapitype": "POST", "isforevery": true, "actapimethod": null, "actapiconfirm": true, "actapirefresh": true}]	[0]	\N	t	t	t	t	f	f	{}	f
@@ -21078,16 +21714,16 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 
 
 --
--- TOC entry 3611 (class 0 OID 0)
+-- TOC entry 3628 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: views_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('views_id_seq', 50792, true);
+SELECT pg_catalog.setval('views_id_seq', 50796, true);
 
 
 --
--- TOC entry 3173 (class 0 OID 198069)
+-- TOC entry 3188 (class 0 OID 198069)
 -- Dependencies: 266
 -- Data for Name: viewsnotification; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21097,7 +21733,7 @@ COPY viewsnotification (id, viewid, col, tableid, notificationtext, foruser, iss
 
 
 --
--- TOC entry 3612 (class 0 OID 0)
+-- TOC entry 3629 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: viewsnotification_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21106,7 +21742,7 @@ SELECT pg_catalog.setval('viewsnotification_id_seq', 1, false);
 
 
 --
--- TOC entry 3175 (class 0 OID 198081)
+-- TOC entry 3190 (class 0 OID 198081)
 -- Dependencies: 268
 -- Data for Name: viewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21121,7 +21757,7 @@ COPY viewtypes (id, vtypename, viewlink) FROM stdin;
 
 
 --
--- TOC entry 3176 (class 0 OID 198087)
+-- TOC entry 3191 (class 0 OID 198087)
 -- Dependencies: 269
 -- Data for Name: visible_condition; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21271,7 +21907,7 @@ COPY visible_condition (id, configid, val_desc, col, title, operation, value, cr
 
 
 --
--- TOC entry 3613 (class 0 OID 0)
+-- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: visible_condition_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21282,7 +21918,7 @@ SELECT pg_catalog.setval('visible_condition_id_seq', 5959, true);
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 3178 (class 0 OID 198096)
+-- TOC entry 3193 (class 0 OID 198096)
 -- Dependencies: 271
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -21292,7 +21928,7 @@ COPY paramtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3179 (class 0 OID 198099)
+-- TOC entry 3194 (class 0 OID 198099)
 -- Dependencies: 272
 -- Data for Name: reportlist; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -21302,7 +21938,7 @@ COPY reportlist (id, title, roles, path, template, template_path, functitle, cre
 
 
 --
--- TOC entry 3614 (class 0 OID 0)
+-- TOC entry 3631 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: reportlist_id_seq; Type: SEQUENCE SET; Schema: reports; Owner: postgres
 --
@@ -21311,7 +21947,7 @@ SELECT pg_catalog.setval('reportlist_id_seq', 1, false);
 
 
 --
--- TOC entry 3181 (class 0 OID 198111)
+-- TOC entry 3196 (class 0 OID 198111)
 -- Dependencies: 274
 -- Data for Name: reportparams; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -21321,7 +21957,7 @@ COPY reportparams (id, reportlistid, ptitle, func_paramtitle, ptype, created, ap
 
 
 --
--- TOC entry 3615 (class 0 OID 0)
+-- TOC entry 3632 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: reportparams_id_seq; Type: SEQUENCE SET; Schema: reports; Owner: postgres
 --
@@ -21332,26 +21968,265 @@ SELECT pg_catalog.setval('reportparams_id_seq', 1, false);
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3183 (class 0 OID 198119)
+-- TOC entry 3198 (class 0 OID 198119)
 -- Dependencies: 276
 -- Data for Name: functionslist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
 
-COPY functionslist (id, functionschema, functiontitle, fullname, descr, created, userid, noscript) FROM stdin;
+COPY functionslist (id, functionschema, functiontitle, fullname, descr, created, userid, noscript, functionfulltitle, dll) FROM stdin;
+197486	framework	fn_compo	framework.fn_compo(injson  json,outjson out json)	GET COMPO	2020-05-14 17:26:34.600103	1	f	fn_compo(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_compo(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_compo(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _id int;\r\nBEGIN\r\n\t-- GET COMPO\r\n    \r\n\t_id = injson->>'id';\r\n    \r\n    SELECT row_to_json(d)\r\n    FROM (\r\n     \tSELECT *\r\n     \tFROM framework.compos as c\r\n     \tWHERE c.id = _id\r\n    ) as d\r\n    INTO outjson;\r\n    \r\n\toutjson = coalesce(outjson,'{}');\r\n\r\nEND;\r\n$function$\n
+197492	framework	fn_config_relationcolumns	framework.fn_config_relationcolumns(_id  int4,relation_columns out varchar)	FOR CONFIG RELATIONCOLUMNS COLUMN	2020-05-14 17:26:34.600103	1	f	fn_config_relationcolumns(_id  int4,relation_columns out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_relationcolumns(_id  int4,relation_columns out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_relationcolumns(_id integer, OUT relation_columns character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_relationcolums JSON;\r\n    _multicolums JSON;\r\n    \r\nBEGIN\r\n\t-- FOR CONFIG RELATIONCOLUMNS COLUMN\r\n\r\n\tSELECT\r\n    \tc.relationcolums,\r\n        c.multicolums\r\n    FROM framework.config as c\r\n    WHERE c.id = _id\r\n    INTO _relationcolums, _multicolums;\r\n    \r\n    IF coalesce(_relationcolums::varchar,'[]') <> '[]'\r\n    THEN\r\n    \tSELECT\r\n        \tstring_agg((value->>'label'),', ')\r\n        FROM json_array_elements(_relationcolums)\r\n        INTO relation_columns;\r\n    ELSE\r\n    \tIF coalesce(_multicolums::varchar,'[]') <> '[]'\r\n        THEN\r\n          SELECT\r\n              string_agg((value->>'label'),', ')\r\n          FROM json_array_elements(_multicolums)\r\n          INTO relation_columns;\r\n        END IF;\r\n    END IF;\r\n\r\nEND;\r\n$function$\n
+197497	framework	fn_copyview	framework.fn_copyview(injson  int4,_newid out json)	COPY VIEW 	2020-05-14 17:26:34.600103	1	f	fn_copyview(injson  int4,_newid out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_copyview(injson  int4,_newid out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_copyview(injson json, OUT _newid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id int;  \r\n    _title varchar(150);\r\n    _path varchar(150);\r\nBEGIN\r\n\t-- COPY VIEW \r\n\r\n\r\n\t_id = injson->>'id';\r\n    \r\n    SELECT \r\n    \tv.title,\r\n        v."path"\r\n    FROM framework.views as v\r\n    WHERE v.id = _id\r\n    INTO _title, _path;\r\n    \r\n    _newid = nextval('framework.views_id_seq'::regclass);\r\n    \r\n    _title = concat(_title,'_copy_',_newid);\r\n    _path = concat(_path,'_copy_',_newid);\r\n    \r\n    INSERT INTO framework.views (\r\n      id, title, descr, tablename,\r\n      viewtype, pagination, config,\r\n      "path", groupby, filters,\r\n      acts, roles, classname,\r\n      orderby, ispagesize, pagecount,\r\n      foundcount, subscrible, checker,\r\n      "copy"\r\n    )\r\n    SELECT \r\n    \t_newid, _title, descr, tablename,\r\n        viewtype, pagination, config,\r\n        _path, groupby, filters,\r\n        acts, roles, classname,\r\n        orderby, ispagesize, pagecount, \r\n        foundcount, subscrible, checker,\r\n        true \r\n    FROM framework.views  \r\n    WHERE id = _id;\r\n    \r\n    \r\n    INSERT INTO framework.config (\r\n      viewid, t, col, column_id,\r\n      title, type, roles,\r\n      visible, required, width,\r\n      "join", classname, updatable,\r\n      relation, select_api, multiselecttable,\r\n      orderby, orderbydesc, relcol,\r\n      depency, relationcolums, multicolums,\r\n      depencycol, column_order, fn,\r\n      fncolumns, relatecolumn, "table",\r\n      related, tpath, copy\r\n   )\r\n   SELECT\r\n      _newid, t, col, column_id,\r\n      title, type, roles,\r\n      visible, required, width,\r\n      "join", classname, updatable,\r\n      relation, select_api, multiselecttable,\r\n      orderby, orderbydesc, relcol,\r\n      depency, relationcolums, multicolums,\r\n      depencycol, column_order, fn,\r\n      fncolumns, relatecolumn, "table" ,\r\n      related, tpath, true\r\n   FROM framework.config\r\n   WHERE viewid =_id and fn is null;\r\n   \r\n    INSERT INTO framework.config (\r\n      viewid, t, col, column_id,\r\n      title, type, roles,\r\n      visible, required, width,\r\n      "join", classname, updatable,\r\n      relation, select_api, multiselecttable,\r\n      orderby, orderbydesc, relcol,\r\n      depency, relationcolums, multicolums,\r\n      depencycol, column_order, fn,\r\n      fncolumns, relatecolumn, "table",\r\n      related, tpath, copy\r\n   )\r\n   SELECT\r\n      _newid, cv.t, cv.col, cv.column_id,\r\n      cv.title, cv.type, cv.roles,\r\n      cv.visible, cv.required, cv.width,\r\n      cv."join", cv.classname, cv.updatable,\r\n      cv.relation, cv.select_api, cv.multiselecttable,\r\n      cv.orderby, cv.orderbydesc, cv.relcol,\r\n      cv.depency, cv.relationcolums, cv.multicolums,\r\n      cv.depencycol, cv.column_order, cv.fn, (array_to_json(ARRAY(\r\n        SELECT cc.id\r\n        FROM framework.config as cc  \r\n            JOIN framework.config as c on c.viewid = _id and cc.title = c.title\r\n            JOIN json_array_elements_text(cv.fncolumns) as j on j.value::varchar::int = c.id \r\n        WHERE  cc.viewid = _newid \r\n      ))), cv.relatecolumn, cv."table" ,\r\n      cv.related, cv.tpath, true\r\n   FROM framework.config as cv\r\n   WHERE cv.viewid =_id and cv.fn is not null;\r\n  \r\n   INSERT INTO framework.visible_condition (\r\n    configid,\r\n    val_desc,\r\n    col, title,\r\n    operation, value \r\n  ) \r\n  SELECT\r\n    cc.id,\r\n    (\r\n     SELECT \r\n     \tcccc.id\r\n     FROM framework.config as ccc \r\n     JOIN framework.config as cccc on cccc.viewid = _newid and cccc.title = ccc.title\r\n     WHERE  ccc.id = vs.val_desc\r\n    ),\r\n    vs.col, vs.title,\r\n    vs.operation, vs.value \r\n  FROM framework.visible_condition as vs\r\n  \tJOIN framework.config as c on c.viewid = _id and c.id = vs.configid\r\n    JOIN framework.config as cc on cc.viewid = _newid and cc.title = c.title;\r\n    \r\n  INSERT INTO framework.select_condition (\r\n    configid, col,\r\n    operation, const,\r\n    value, val_desc \r\n  )\r\n  SELECT\r\n  \tDISTINCT\r\n    cc.id, sc.col,\r\n    sc.operation, sc.const,\r\n    sc.value, sc.val_desc \r\n  FROM framework.select_condition as sc\r\n  \tJOIN framework.config as c on c.viewid = _id and c.id = sc.configid\r\n    JOIN framework.config as cc on cc.viewid = _newid and cc.title = c.title;\r\n  \r\n  \r\n  INSERT INTO framework.defaultval (\r\n    configid, bool,\r\n    act, value \r\n  )\r\n  SELECT \r\n  \tDISTINCT\r\n      cc.id, df.bool,\r\n      df.act, df.value \r\n  FROM framework.defaultval as df\r\n      JOIN framework.config as c on c.viewid = _id and c.id = df.configid\r\n      JOIN framework.config as cc on cc.viewid = _newid and cc.title = c.title;\r\n    \r\n  \r\n  INSERT INTO framework.actions (\r\n    column_order, title,viewid,\r\n    icon,classname, act_url, api_method,\r\n    api_type, refresh_data, ask_confirm,\r\n    roles, forevery, main_action, act_type\r\n  ) \r\n  SELECT\r\n    a.column_order, a.title,_newid,\r\n    a.icon, a.classname, a.act_url, a.api_method,\r\n    a.api_type, a.refresh_data, a.ask_confirm,\r\n    a.roles, a.forevery,\r\n    a.main_action,\r\n    a.act_type\r\n  FROM framework.actions as a\r\n  WHERE a.viewid = _id;\r\n  \r\n  INSERT INTO framework.act_visible_condions (\r\n    actionid, val_desc, col,\r\n    title, operation, value\r\n  ) \r\n  SELECT\r\n  \tDISTINCT\r\n    ac2.id, a.val_desc, a.col,\r\n    a.title, a.operation, a.value\r\n  FROM framework.act_visible_condions as a\r\n  \tJOIN framework.actions as ac on ac.id = a.actionid and ac.viewid = _id\r\n    JOIN framework.actions as ac2 on ac2.viewid = _newid and ac2.title = ac.title;\r\n  \r\n  INSERT INTO framework.act_parametrs (\r\n    actionid, paramtitle, paramt,\r\n    paramconst, paraminput, paramcolumn,\r\n    val_desc, query_type\r\n  )\r\n  SELECT\r\n  \tDISTINCT\r\n  \tac2.id, paramtitle, paramt,\r\n    paramconst, paraminput, paramcolumn,\r\n    val_desc, query_type\r\n  FROM framework.act_parametrs as a\r\n  \tJOIN framework.actions as ac on ac.id = a.actionid and ac.viewid = _id\r\n    JOIN framework.actions as ac2 on ac2.viewid = _newid and ac2.title = ac.title;\r\n  \r\n  INSERT INTO framework.filters (\r\n    column_order, viewid, title,\r\n    type, classname, "column",\r\n    columns, roles, t, "table" \r\n  )\r\n  SELECT\r\n    column_order, _newid, title,\r\n    type, classname, "column",\r\n    columns, roles, t, "table" \r\n  FROM framework.filters\r\n  WHERE viewid = _id;\r\n  \r\n  UPDATE framework.views\r\n  SET copy = FALSE\r\n  WHERE id = _id;\r\n  \r\n  UPDATE framework.config\r\n  SET copy = FALSE\r\n  WHERE viewid = _id;\r\n  \r\n  UPDATE framework.config\r\n  SET copy = FALSE\r\n  WHERE viewid = _newid;\r\nEND;\r\n$function$\n
+197520	framework	fn_dialogs_notif_setsended	framework.fn_dialogs_notif_setsended()	SET DIALOGS NOTIFICATION STATUS SENDED	2020-05-14 17:26:34.600103	1	f	fn_dialogs_notif_setsended()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialogs_notif_setsended() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialogs_notif_setsended(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _id int;\r\n  _ses char(36);\r\nBEGIN\r\n  _userid = injson->>'userid';\r\n  _id = injson->>'id';\r\n  _ses = injson->>'sessid';\r\n  IF _id is NULL THEN\r\n     PERFORM raiserror('id is null');\r\n  END IF;\r\n  \r\n  UPDATE framework.dialog_notifications\r\n  SET\r\n     issend = TRUE\r\n  WHERE message_id = _id and (userid = _userid or sessid = _ses);\r\nEND;\r\n$function$\n
+197532	framework	fn_getusersettings	framework.fn_getusersettings(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_getusersettings(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_getusersettings(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_getusersettings(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_userid int;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    \r\n    SELECT \r\n    \tu.usersettings\r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n    INTO outjson;\r\n\r\n\toutjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197535	framework	fn_logtable_rollback	framework.fn_logtable_rollback(injson  json,message out varchar)	rollback row from framework.logtable	2020-05-14 17:26:34.600103	1	f	fn_logtable_rollback(injson  json,message out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_logtable_rollback(injson  json,message out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_logtable_rollback(injson json, OUT message character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id\t\t\tint;\t\t\t\r\n    _schemetable varchar;\t\t\r\n\t_scheme\t\tvarchar;\t\t\r\n\t_table\t\tvarchar;\t\t\r\n    _rowid\t\tint;\t\t\t\r\n\t_opertype\tint;\t\t\t\r\n    _oldata\t\tjson;\t\t\t\r\n    _newdata\tjson;\t\t\t\r\n    _new_actions json;\t\t\t\r\n    _new_filters json;\t\t\t\r\n    _new_config json;\t\t\t\r\n    _new_visible_condition json;\t\r\n    _new_select_condition json;\t\t\r\n    _new_defaultval json;\t\t\r\n    _i\t\t\tjson;\t\t\t\r\n    _filters\tjson;\t\t\t\r\n    _col_id\t\tjson;\t\t\t\r\n    _colname\tvarchar;\t\t\r\n    _oldata_log\t\tjson;\t\t\r\n    _newdata_log\tjson;\t\t\r\n    _new_cols_from_config json;\t\r\n    _cols\t\tvarchar[];\t\t\r\n    _cols_str\tvarchar;\t\t\r\n    _cols_str_id\tvarchar;\t\r\n    _strpos\t\tint;\t\t\t\r\n    _query_str\tvarchar;\t\t\r\n    _user_id\tint;\t\t\t\r\n    _new_id\t\tint;\t\t\t\r\n    _new_actions_id int;\t\t\r\n    _new_filters_id int;\t\t\r\n    _new_config_id int;\t\t\t\r\n    _new_visible_condition_id int;\t\r\n    _new_select_condition_id int;\t\r\n    _new_defaultval_id int;\t\t\r\nBEGIN\r\n\t_id = injson->>'id';\r\n    _user_id = injson->>'userid';\r\n\r\n    SELECT\r\n    \tlt.tablename,\r\n        lt.tableid,\r\n        lt.opertype,\r\n        lt.oldata,\r\n        lt.newdata,\r\n        lt.colname\r\n    FROM\r\n    \tframework.logtable lt\r\n    WHERE\r\n    \tlt.id = _id\r\n    INTO\r\n    \t_schemetable, _rowid, _opertype, _oldata, _newdata, _colname;\r\n        \r\n    _strpos = strpos(_schemetable, '.') - 1;\r\n\r\n    _scheme = left(_schemetable, _strpos);\r\n    _table = right(_schemetable, length(_schemetable) - _strpos - 1);\r\n\r\n    SELECT \r\n    \tarray_agg(column_name::TEXT)\r\n    FROM\r\n    \tinformation_schema.columns\r\n    WHERE\r\n    \ttable_schema = _scheme AND\r\n        table_name = _table\r\n    INTO\r\n    \t_cols;\r\n\r\n\r\n    _cols_str_id = array_to_string(_cols, ',', '*');\r\n\r\n\t_oldata = _oldata::jsonb - 'id';\r\n\t_cols = array_remove(_cols, _cols[1]);\r\n\t_cols_str = array_to_string(_cols, ',', '*');\r\n    \r\n\r\n    _cols_str = replace(_cols_str, ',join', ',"join"');\r\n    _cols_str = replace(_cols_str, ',table,', ',"table",');\r\n    _cols_str = replace(_cols_str, ',table)', ',"table")');\r\n    _cols_str = replace(_cols_str, ',order by', ',"order by"');\r\n\r\n\r\n    IF _opertype = 2 THEN\r\n        IF _oldata IS NULL THEN\r\n        \tperform raiserror('can not rollback');\r\n        END IF;\r\n    \r\n\r\n    \tIF _colname IS NOT NULL AND _colname <> '' THEN\r\n        \t_cols_str = _colname;\r\n            _cols_str_id = _colname;\r\n        END IF;\r\n\r\n        EXECUTE format('\r\n        SELECT row_to_json(row)\r\n        FROM (\r\n            SELECT\r\n                %s\r\n            FROM\r\n                %s\r\n            WHERE\r\n                %s.id = %s\r\n        ) row;\r\n        ',\r\n        _cols_str_id,\r\n        _schemetable,\r\n        _table,\r\n        _rowid\r\n        ) INTO _oldata_log;\r\n\r\n        IF _oldata_log IS NULL THEN\r\n            perform raiserror(format('eow not fount (%s: %s)', _schemetable, _rowid));\r\n        END IF;\r\n\r\n        EXECUTE format('\r\n            UPDATE %s set(%s)=(SELECT %s FROM json_populate_record(null::%s, ''%s'')) WHERE %s.id = %s',\r\n            _schemetable, \r\n            _cols_str, \r\n            _cols_str, \r\n            _schemetable, \r\n            _oldata, \r\n            _table,\r\n            _rowid);\r\n        _oldata = _oldata_log;\t\t\r\n\r\n        EXECUTE format('\r\n        SELECT row_to_json(row)\r\n        FROM (\r\n            SELECT\r\n                %s\r\n            FROM\r\n                %s\r\n            WHERE\r\n                %s.id = %s\r\n        ) row;\r\n        ',\r\n        _cols_str_id,\r\n        _schemetable,\r\n        _table,\r\n        _rowid\r\n        ) INTO _newdata_log;\r\n        _newdata = _newdata_log;\r\n    ELSEIF _opertype = 3 THEN\r\n        \r\n    \tEXECUTE format('\r\n\t\t\tINSERT INTO %s(%s) SELECT %s FROM json_populate_record(null::%s, ''%s'') RETURNING id',\r\n            _schemetable, \r\n            _cols_str, \r\n            _cols_str, \r\n            _schemetable, \r\n            _oldata)\r\n        INTO _new_id;\r\n\t\t\r\n\r\n        _newdata = _oldata;\r\n        _newdata = _newdata::jsonb || ('{"id":' || _new_id || '}')::jsonb;\r\n\r\n\r\n\r\n\r\n        IF _schemetable = 'framework.views' THEN\r\n--        \tperform raiserror(_oldata->>'actions'::varchar); -- restoring removed view\r\n\r\n            IF _oldata->'actions' IS NOT NULL AND _oldata->>'actions' <> '[]' THEN\r\n            \tEXECUTE format('\r\n                INSERT INTO framework.actions(column_order, title, viewid, icon, classname, act_url, api_method, api_type, refresh_data, ask_confirm, roles, forevery, main_action, act_type)\r\n            \tSELECT \tx.column_order, x.title, %s, x.icon, x.classname, x.act_url, x.api_method, x.api_type, x.refresh_data, x.ask_confirm, x.roles, x.forevery, x.main_action, x.act_type\r\n                FROM json_to_recordset(''%s'') AS x(column_order int, title varchar, icon varchar, classname varchar, act_url varchar, api_method varchar, api_type varchar, refresh_data boolean, ask_confirm boolean, roles json, forevery boolean, main_action boolean, act_type varchar)\r\n                RETURNING id', _new_id, _oldata->>'actions')\r\n                INTO _new_actions_id;\r\n                \r\n                SELECT row_to_json(d)\r\n                FROM (\r\n                \tSELECT *\r\n                    FROM framework.actions\r\n                    WHERE id = _new_actions_id\r\n                ) as d \r\n                INTO _new_actions;\r\n                \r\n                _newdata = _newdata::jsonb || ('{"actions":[' || _new_actions || ']}')::jsonb;\r\n            END IF;\r\n            \r\n            SELECT array_to_json(array_agg(row_to_json(d)))\r\n            FROM (\r\n            SELECT id, col\r\n            FROM\r\n            \tframework.config\r\n            WHERE\r\n            \tviewid = _new_id\r\n            ) AS d\r\n            INTO _new_cols_from_config;\r\n            \r\n            IF _oldata->'filters' IS NOT NULL AND _oldata->>'filters' <> '[]' THEN\r\n            \r\n            \t_filters = _oldata->'filters';\r\n\r\n                FOR _i IN SELECT * FROM json_array_elements(_filters)\r\n                LOOP\r\n                    SELECT row_to_json(d)\r\n                        FROM (\r\n                          SELECT\r\n                              value->>'id' as fid\r\n                          FROM\r\n                              json_array_elements(_new_cols_from_config) as value\r\n                          WHERE\r\n                              value->>'col' LIKE _i->>'column') d\r\n                    INTO\r\n                    \t_col_id;\r\n                        \r\n\r\n                    _filters = jsonb_set(_i::jsonb, '{0,val_desc}', (_col_id->>'fid')::jsonb, false);\r\n\r\n                    IF _i->>'column' = 'korob_id' THEN\r\n\t\t\t\t\t\tperform raiserror(format('_col_id=(%s),\t\t_new_cols=(%s),\t\t\t_filters=(%s)', _col_id->>'fid', _filters, _new_cols_from_config));\r\n                    END IF;                    \r\n                END LOOP;\r\n\r\n                _oldata = _oldata::jsonb || ('{"filters":' || _filters || '}')::jsonb;                \r\n\r\n                perform raiserror(format('inserted cols (%s), _filters(%s), oldata (%s)', _new_cols_from_config, _filters, _oldata));\r\n\r\n            \tEXECUTE format('\r\n                INSERT INTO framework.filters(column_order, viewid, title, type, classname, "column", columns, roles, t, "table", val_desc)\r\n            \tSELECT x.column_order, %s, x.title, x.type, x.classname, x.column, x.columns, x.roles, x.t, x.table, x.val_desc\r\n                FROM json_to_recordset(''%s'') AS x(column_order smallint, title varchar, type varchar, classname varchar, "column" varchar, columns json, roles json, t varchar, "table" json, val_desc int)\r\n                RETURNING id', _new_id, _oldata->>'filters')\r\n                INTO _new_filters_id;\r\n                \r\n                SELECT row_to_json(d)\r\n                FROM (\r\n                \tSELECT *\r\n                    FROM framework.filters\r\n                    WHERE id = _new_filters_id\r\n                ) as d \r\n                INTO _new_filters;\r\n\r\n\t\t\t\t_newdata = _newdata::jsonb || ('{"filters":[' || _new_filters || ']}')::jsonb;\r\n\r\n            END IF;            \r\n        \t\r\n        END IF;\r\n    END IF;\r\n\r\n\tIF _colname IS NOT NULL THEN\r\n    \t_colname = '''' || _colname || '''';\r\n    ELSE\r\n    \t_colname = 'NULL';\r\n    END IF;\r\n\r\n\tIF _opertype = 2 or _opertype = 3 THEN\r\n      EXECUTE format('\r\n          INSERT INTO \r\n              framework.logtable(tablename, tableid, opertype, oldata, newdata, colname, userid) \r\n          VALUES(''%s'', ''%s'', 4, ''%s'', ''%s'', %s, %s)',\r\n          _schemetable,\r\n          _rowid,\r\n          _oldata,\r\n          _newdata,\r\n          NULLIF(_colname,''),  -- _colname,\r\n          _user_id);\r\n    END IF;\r\n\r\n\tmessage = 'OK';\r\n                             \r\nEND;\r\n$function$\n
+197552	framework	fn_savestate	framework.fn_savestate(injson  json,outjson out json)	save all form state	2020-05-14 17:26:34.600103	1	f	fn_savestate(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_savestate(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_savestate(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n_squery varchar;\r\n_tablename varchar(300);\r\n_col varchar(350);\r\n_value varchar;\r\n_id varchar(300);\r\n_userid int;\r\n_relatecolumn varchar(150);\r\n_relatetable varchar(350);\r\n--_squery varchar;\r\n_err varchar;\r\n_oldata json;\r\n_newdata json;\r\n_id_int int;\r\n_id_seq varchar(200);\r\n_col_type varchar(300);\r\nrel_id varchar(36);\r\n_id_type varchar(150);\r\nrel_id_type varchar(150);\r\n_viewid int;\r\n_userroles json;\r\n_viewroles json;\r\n_type varchar(150);\r\n_relation varchar;\r\n_relationobj json;\r\n_relationval varchar;\r\n_key varchar(150);\r\n_x varchar;\r\n_rv varchar;\r\n_config json;\r\n_pv json;\r\n_data json;\r\n_insertvalues varchar;\r\n_rt_query varchar;\r\n_tpath json;\r\n_tp json;\r\n_tpast VARCHAR(150);\r\nBEGIN\r\n  _id = injson->>'id';\r\n  _userid = injson->>'userid';\r\n  _viewid = injson->>'viewid';\r\n  _data = injson->>'data';\r\n  _relation = injson->>'relation';\r\n  _relationobj = injson->>'relationobj';\r\n  \r\n  SELECT\r\n  \tv.tablename,\r\n    --v.config,\r\n    v.roles\r\n  FROM framework.views as v\r\n  WHERE v.id = _viewid\r\n  INTO _tablename, _viewroles;\r\n  \r\n  _config = framework.fn_config_to_json(_viewid);\r\n  \r\n  IF _viewid is NULL\r\n  THEN\r\n     PERFORM raiserror('view id is null');\r\n  END IF; \r\n\r\n  SELECT \r\n  \troles\r\n  FROM framework.users \r\n  WHERE id = _userid\r\n  INTO _userroles;\r\n  \r\n  --PERFORM raiserror(_relationval::varchar);\r\n    \r\n  IF _viewroles is null THEN\r\n      PERFORM raiserror('view is not found');\r\n  END IF;\r\n  \r\n  IF (SELECT count(*) FROM json_array_elements_text(_viewroles)) > 0 and \r\n    (SELECT count(*) \r\n     FROM json_array_elements_text(_viewroles) as v\r\n     \tJOIN json_array_elements_text(_userroles) as r on \r\n        ((v.value::json->>'value')::varchar = r.value::varchar\r\n        \tOR\r\n          v.value::varchar = r.value::varchar\r\n        )\r\n     ) = 0 THEN\r\n    \tPERFORM raiserror('m403err');\r\n  END IF;\r\n  \r\n  SELECT \r\n        t.data_type, t.column_default\r\n  FROM information_schema.columns as t                                         \r\n  WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n      upper(t.column_name) = 'ID'\r\n  INTO _id_type, _id_seq;\r\n  \r\n  IF _relation is not null  THEN\r\n  \tFOR _x in (SELECT regexp_split_to_table FROM regexp_split_to_table(_relation,','))\r\n    LOOP\r\n    \tIF _relationobj->>_x is not null THEN\r\n        \t_rv = _relationobj->>_x;\r\n            IF _rv = '_userid_' and \r\n               _tablename not in (\r\n                    'framework.defaultval',\r\n                    'framework.actions',\r\n                    'framework.act_parametrs',\r\n                    'framework.select_condition'\r\n               )  \r\n            THEN\r\n               \t_rv = _userid;\r\n            END IF;\r\n            IF _rv = '_orgs_' and \r\n               _tablename  not in (\r\n                    'framework.defaultval',\r\n                    'framework.actions',\r\n                    'framework.act_parametrs',\r\n                    'framework.select_condition'\r\n               )   \r\n            THEN\r\n               \tSELECT\r\n                   \tu.orgs::varchar \r\n                FROM framework.users as u\r\n                WHERE u.id = _userid::int\r\n                INTO _rv;\r\n            END IF;\r\n        \tIF _rv = '_orgid_' and \r\n               _tablename not in (\r\n                    'framework.defaultval',\r\n                    'framework.actions',\r\n                    'framework.act_parametrs',\r\n                    'framework.select_condition'\r\n               )  \r\n            THEN\r\n              SELECT\r\n                  u.orgid::varchar \r\n              FROM framework.users as u\r\n              WHERE u.id = _userid::int\r\n              INTO _rv;\r\n      \t\tEND IF;            \r\n      \t\t_relationval = concat(_relationval,',''',_rv,'''');\r\n            \r\n      END IF;\r\n  \tEND LOOP;\r\n    SELECT\r\n    \tstring_agg(concat('"',regexp_split_to_table,'"'),',')\r\n    FROM regexp_split_to_table(_relation,',')\r\n    INTO _relation;    \r\n  \t_relation = concat(',',_relation);  \r\n  ELSE\r\n  \t_relation = '';\r\n    _relationval = '';\r\n  END IF;\r\n  \r\n  IF _id is NULL THEN\r\n      IF _id_type in ( 'character','varchar','char') \r\n      THEN\r\n      \t_id = upper(uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36));\r\n      ELSE\r\n      \tEXECUTE format(concat('SELECT ',_id_seq,';')) INTO _id_int ;\r\n      \t_id = _id_int::varchar;\r\n      END IF;\r\n      _squery = concat('INSERT INTO ', _tablename, '(id',_relation);\r\n      _insertvalues = concat('VALUES ($1::',_id_type,_relationval);\r\n      \r\n      IF \r\n      \t(SELECT count(t.*)\r\n         FROM information_schema.columns as t\r\n         WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n             t.column_name = 'userid')>0 \r\n      THEN\r\n          _squery = concat(_squery,',userid');\r\n          _insertvalues = concat(_insertvalues,',$2'); \r\n      END IF;\r\n  ELSE\r\n      _squery = concat('UPDATE ', _tablename, ' SET ');\r\n      IF \r\n      \t(SELECT count(t.*)\r\n         FROM information_schema.columns as t\r\n         WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n             t.column_name = 'userid')>0 \r\n      THEN\r\n          _squery = concat(_squery,'userid = $2, ');\r\n      END IF;\r\n  END IF;\r\n  \r\n  FOR _pv in (SELECT value FROM json_array_elements(_config))\r\n  LOOP\r\n  \t_value = _data->>(_pv->>'key');\r\n    \r\n    IF _value = '_userid_' and \r\n       _tablename not in (\r\n       \t\t'framework.defaultval',\r\n            'framework.actions',\r\n            'framework.act_parametrs',\r\n            'framework.select_condition'\r\n       ) \r\n    THEN\r\n    \t_value = _userid;\r\n    END IF;\r\n    \r\n    IF _value = '_orgs_' and \r\n       _tablename not in (\r\n       \t\t'framework.defaultval',\r\n            'framework.actions',\r\n            'framework.act_parametrs',\r\n            'framework.select_condition'\r\n       )  \r\n    THEN\r\n    \tSELECT\r\n        \tu.orgs::varchar \r\n        FROM framework.users as u\r\n    \tWHERE u.id = _userid::int\r\n        INTO _value;\r\n    END IF;\r\n    \r\n    IF _value = '_orgid_' and \r\n       _tablename not in (\r\n       \t\t'framework.defaultval',\r\n            'framework.actions',\r\n            'framework.act_parametrs',\r\n            'framework.select_condition'\r\n       )  \r\n    THEN\r\n    \tSELECT\r\n        \tu.orgid::varchar \r\n        FROM framework.users as u\r\n    \tWHERE u.id = _userid::int\r\n        INTO _value;\r\n    END IF;\r\n    \r\n\t_relatetable = _pv->>'table';\r\n    _col = _pv->>'col';\r\n    _type = _pv->>'type';\r\n    _key = _pv->>'key';\r\n    \r\n    IF (_pv->>'visible')::boolean and (_pv->>'type') not in ('label','color','link','filelist','gallery') THEN\r\n      IF _relatetable is not null and _id is null\r\n      THEN\r\n        PERFORM raiserror('id can`t be null if relation');\r\n      END IF;\r\n      \r\n      \r\n      \r\n      \r\n      \r\n      IF _type = 'password' THEN\r\n         drop extension pgcrypto;\r\n         create extension pgcrypto;\r\n         SELECT encode(digest(_value, 'sha224'),'hex') INTO _value;\r\n      END IF;\r\n      IF _type <> 'array' THEN\r\n        IF _pv->>'table' is null THEN\r\n          SELECT t.data_type\r\n          FROM information_schema.columns as t\r\n          WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n                t.column_name = _col\r\n          INTO _col_type; \t\r\n           \r\n          IF _col_type = 'character' THEN\r\n            _col_type = 'varchar'; \r\n          END IF;\r\n         \r\n          IF _col_type is null THEN\r\n             perform raiserror('can not find out the column type. check table and column names');\r\n          END IF;\r\n        \r\n          IF _id_type = 'character' THEN\r\n            _id_type = 'varchar'; \r\n          END IF;\r\n          \r\n          _data = (_data::jsonb-(_pv->>'key'))::json;\r\n          _data = (jsonb_build_object((_pv->>'key'), _value) \r\n              || _data::jsonb)::json;\r\n          \r\n          IF (injson->>'id') is null THEN\r\n            IF _value is not null  THEN\r\n              _squery = concat(_squery,',"',_col,'"');\r\n              _insertvalues = concat(_insertvalues,',($3->>''',_key,''')::',_col_type);\r\n            END IF;\r\n          ELSE\r\n            IF _pv->>'table' is null THEN\r\n                _squery = concat(_squery,'"',_col,'" = ($3->>''',_key,''')::',_col_type,', ');\r\n            END IF;\r\n          END IF;\r\n        ELSE\r\n           SELECT t.data_type\r\n           FROM information_schema.columns as t\r\n           WHERE concat(t.table_schema,'.',t.table_name) = (_pv->>'table') and \r\n                 t.column_name = _col\r\n           INTO _col_type; \t\r\n             \r\n           IF _col_type = 'character' THEN\r\n              _col_type = 'varchar'; \r\n           END IF;\r\n           \r\n           IF _col_type is null THEN\r\n               perform raiserror('can not find out the column type. check table and column names');\r\n           END IF;\r\n          _rt_query = concat('UPDATE ',_pv->>'table',' SET "',_col,'" = ($2->>''',_key,''')::',_col_type,' FROM ',_tablename,' as t');\r\n          _tpath = _pv->>'tpath';\r\n          _tp = _tpath->0;\r\n          _tpast = 't';\r\n          FOR _tp in (SELECT value FROM json_array_elements(_tpath))\r\n          LOOP\r\n              _rt_query = concat(_rt_query,' JOIN ', _tp->>'table',' as ',_tp->>'t',' on ',_tpast,'."',_tp->>'col','" = ',_tp->>'t','.id');\r\n          END LOOP;\r\n          \r\n          _rt_query = concat(_rt_query,' WHERE t.id = $1::',_id_type);   \r\n          \r\n          EXECUTE format(_rt_query) USING _id,_data;\r\n        END IF;\r\n      END IF; \r\n\tEND IF;\r\n  END LOOP;\r\n  \r\n  IF injson->>'id' is null THEN\r\n  \t_squery = concat(_squery,') ',_insertvalues,'); ');\r\n    EXECUTE format(_squery) USING _id,_userid,_data;\r\n        \r\n    _squery = concat('\r\n      SElECT\r\n        row_to_json(d)\r\n      FROM (\r\n        SELECT *\r\n        FROM ',_tablename,'\r\n        WHERE id = $1::',_id_type,'\r\n      ) as d\r\n    ');\r\n    \r\n    EXECUTE format(_squery) USING _id INTO _newdata;\r\n    \r\n\tINSERT INTO framework.logtable (\r\n      \ttablename, tableid, opertype,\r\n        userid, oldata, newdata\r\n    ) VALUES (\r\n      \t_tablename, _id, 1,\r\n        _userid::int, '{}'::json, _newdata\r\n    );    \r\n  ELSE\r\n  \r\n    EXECUTE format(concat('\r\n      SElECT\r\n        row_to_json(d)\r\n      FROM (\r\n        SELECT *\r\n        FROM ',_tablename,'\r\n        WHERE id = $1::',_id_type,'\r\n      ) as d\r\n    ')) USING _id INTO _oldata;\r\n    \r\n  \t_squery = concat(substring(_squery,1,length(_squery) - 2),' WHERE id = $1::',_id_type);\r\n    EXECUTE format(_squery) USING _id,_userid,_data;\r\n    \r\n    EXECUTE format(concat('\r\n      SElECT\r\n        row_to_json(d)\r\n      FROM (\r\n        SELECT *\r\n        FROM ',_tablename,'\r\n        WHERE id = $1::',_id_type,'\r\n      ) as d\r\n    ')) USING _id INTO _newdata;\r\n    \r\n\tINSERT INTO framework.logtable (\r\n    \ttablename, tableid, opertype,\r\n        userid, oldata, newdata\r\n    ) VALUES (\r\n    \t_tablename, _id, 2,\r\n        _userid::int, _oldata, _newdata\r\n    );\r\n  END IF;\r\n  \r\n  SElECT\r\n    row_to_json(d)\r\n  FROM (\r\n      SELECT _id as id\r\n    ) as d\r\n  INTO outjson;\r\n  /*SElECT\r\n  \trow_to_json(d)\r\n  FROM (\r\n  \tSELECT _id as id,\r\n    \t_value as value\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'{}');*/\r\n  \r\nEND;\r\n$function$\n
+197574	framework	fn_view_deletebyid	framework.fn_view_deletebyid()	delete view	2020-05-14 17:26:34.600103	1	f	fn_view_deletebyid()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_deletebyid() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_deletebyid(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\tolddata json;\r\n    view_headerdata json;\r\n    _vid int;\r\n    _user_id int;\r\nBEGIN\r\n\t_vid = injson->>'id';\r\n    _user_id = injson->>'userid';\r\n    \r\n    SELECT row_to_json(d)\r\n    FROM\r\n    (SELECT\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.actions\r\n          WHERE viewid = _vid \r\n      ) as d) as actions,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.visible_condition\r\n          WHERE configid in (\r\n              SELECT id FROM framework.config WHERE viewid = _vid\r\n            )\r\n      ) as d) as visible_condition,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.select_condition\r\n          WHERE configid in (\r\n              SELECT id FROM framework.config WHERE viewid = _vid\r\n            )\r\n      ) as d) as select_condition,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.defaultval\r\n          WHERE configid in (\r\n             SELECT id FROM framework.config WHERE viewid = _vid\r\n          )\r\n      ) as d) as defaultval,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.filters\r\n          WHERE viewid = _vid \r\n      ) as d) as filters,      \r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.config\r\n          WHERE viewid = _vid \r\n      ) as d) as config\r\n    ) as d\r\n    INTO olddata;\r\n\r\n\tIF olddata->>'filters' IS NULL THEN\r\n    \tolddata = olddata::jsonb - 'filters' || '{"filters":"[]"}';\r\n    END IF;\r\n\tIF olddata->>'actions' IS NULL THEN\r\n    \tolddata = olddata::jsonb - 'actions' || '{"actions":"[]"}';\r\n    END IF;\r\n\tIF olddata->>'config' IS NULL THEN\r\n    \tolddata = olddata::jsonb - 'config' || '{"config":"[]"}';\r\n    END IF;\r\n\tIF olddata->>'defaultval' IS NULL THEN\r\n    \tolddata = olddata::jsonb - 'defaultval' || '{"defaultval":"[]"}';\r\n    END IF;\r\n\tIF olddata->>'visible_condition' IS NULL THEN\r\n    \tolddata = olddata::jsonb - 'visible_condition' || '{"visible_condition":"[]"}';\r\n    END IF;\r\n\tIF olddata->>'select_condition' IS NULL THEN\r\n    \tolddata = olddata::jsonb - 'select_condition' || '{"select_condition":"[]"}';\r\n    END IF;\r\n    \r\n--\tperform raiserror(olddata::varchar);\r\n\r\n    SELECT row_to_json(d)\r\n    FROM (\r\n    \tSELECT *\r\n        FROM framework.views\r\n\t    WHERE id = _vid\r\n        ) AS d\r\n    INTO view_headerdata;\r\n    \r\n    olddata = view_headerdata::jsonb || olddata::jsonb;\r\n    \r\n    DELETE FROM framework.views\r\n    WHERE id = _vid;\r\n    \r\n    INSERT INTO framework.logtable(\r\n      tablename, tableid, \r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n    \t'framework.views', _vid::varchar,\r\n        '3', olddata, '[]'::json,\r\n        _user_id\r\n    );\r\n     \r\n    \r\n    --PERFORM raiserror(format('fn_view_deletebyid, id=(%s), userid=(%s), olddata=(%s)', _vid, _user_id, olddata));\r\n\r\nEND;\r\n$function$\n
+197580	framework	fn_view_link_showsql	framework.fn_view_link_showsql(_path  json,_link out varchar)	-- SQL SHOW LINK GENERATOR	2020-05-14 17:26:34.600103	1	f	fn_view_link_showsql(_path  json,_link out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_link_showsql(_path  json,_link out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_link_showsql(_path character varying, OUT _link json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\n-- SQL SHOW LINK GENERATOR\r\nBEGIN\r\n\t_link = json_build_object(\r\n    \t'link', (\r\n\t\t   SELECT\r\n\t\t\t  concat(maindomain,'/schema?path=', _path)\r\n\t\t   FROM framework.mainsettings\r\n\t\t   WHERE isactiv\r\n\t\t ),\r\n        'title',\r\n        'show sql'\r\n\t);\r\nEND;\r\n$function$\n
+197582	framework	fn_view_title_link	framework.fn_view_title_link(viewid  int4,title  json,lnk out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_view_title_link(viewid  int4,title  json,lnk out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_title_link(viewid  int4,title  json,lnk out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_title_link(viewid integer, title character varying, OUT lnk json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n/*\r\n\tOLD V004\r\n    NEED TO REMOVE AFTER TESTS\r\n\r\n*/\r\n\tSELECT\r\n    \trow_to_json(d)\r\n    FROM\r\n\t(SELECT \r\n    \tconcat('/composition/view?id=',viewid,'&act_id=-1&fl_id=-1&N=-1&_doctitle_=View: ', title) as link,\r\n        title as title) as d\r\n    INTO lnk;\r\n\r\nEND;\r\n$function$\n
+197585	framework	fn_viewsave_V004	framework.fn_viewsave_V004(injson  json,outjson out json)	/*\r\n\tOLD V004\r\n    NEED TO REMOVE AFTER TESTS\r\n\r\n*/	2020-05-14 17:26:34.600103	1	f	fn_viewsave_V004(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_viewsave_V004(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework."fn_viewsave_V004"(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _id int ;\r\n  _title varchar(150) ;\r\n  _descr varchar(1500) ;\r\n  _tablename varchar(350) ;\r\n  _viewtype varchar(200) ;\r\n  _pagination boolean ;\r\n  _config JSON ;\r\n  _path varchar(150) ;\r\n  _orderby boolean ;\r\n  _pagesize boolean ;\r\n  _pagecount boolean ;\r\n  _foundcount boolean ;\r\n  _subscrible boolean;\r\n  _checker boolean;  \r\n  _groupby JSON ;\r\n  _filters JSON ;\r\n  _acts JSON ;\r\n  _roles JSON ;\r\n  _classname varchar(400) ;\r\n  _userid varchar(250) ;\r\n  _newdata json;\r\n  _oldata json;\r\nBEGIN\r\n  _id  = injson->>'id';\r\n  _title  = injson->>'title';\r\n  _descr  = injson->>'descr';\r\n  _tablename  = injson->>'tablename';\r\n  _viewtype  = injson->>'viewtype';\r\n  _pagination  = injson->>'pagination';\r\n  _config = injson->>'config';\r\n  _path = injson->>'path';\r\n  _orderby = injson->>'orderby';\r\n  _groupby = injson->>'groupby';\r\n  _filters = injson->>'filters';\r\n  _acts = injson->>'acts';\r\n  _roles = injson->>'roles';\r\n  _classname = injson->>'classname';\r\n  _userid = injson->>'userid';\r\n  _pagesize = injson->>'ispagesize';\r\n  _pagecount = injson->>'pagecount';\r\n  _foundcount = injson->>'foundcount';\r\n  _subscrible = injson->>'subscrible';\r\n  _checker = injson->>'checker';\r\n IF _id is null THEN\r\n/*\r\n\tOLD V004\r\n    NEED TO REMOVE AFTER TESTS\r\n\r\n*/\r\n    IF coalesce(_title,'') = '' THEN\r\n        PERFORM raiserror('title is null');\r\n    END IF;\r\n      \r\n    IF coalesce(_descr,'') = '' THEN\r\n        PERFORM raiserror('descr is null');\r\n    END IF;\r\n      \r\n    IF coalesce(_tablename,'') = '' THEN\r\n        perform raiserror('tablename is null');  \r\n    END IF;\r\n      \r\n    IF coalesce(_viewtype,'') = '' THEN\r\n        perform raiserror('viewtype is null');\r\n    END IF;    \r\n\r\n    _pagination = coalesce(_pagination,false);\r\n\r\n    IF coalesce(_config::varchar,'[]') = '[]' THEN\r\n    \tperform raiserror('config is null');\t\r\n    END IF;\r\n    \r\n    IF _path is null THEN\r\n    \tperform raiserror('path is null');\r\n    END IF;  \r\n    \r\n    _orderby = coalesce(_orderby,false);\r\n    _pagesize = coalesce(_pagesize,true);\r\n    _pagecount = coalesce(_pagecount,true);\r\n    _foundcount = coalesce(_foundcount,true);\r\n    _subscrible = coalesce(_subscrible,false);\r\n    \r\n    _groupby = coalesce(_groupby,'[]');\r\n    _roles = coalesce(_roles,'[]');\r\n    _filters = coalesce(_filters,'[]');\r\n\t_acts = coalesce(_acts,'[]');\r\n    \r\n    IF (SELECT \r\n        count(*)\r\n    FROM INFORMATION_SCHEMA.TABLES\r\n    WHERE concat('',TABLE_SCHEMA,'.', TABLE_NAME) = _tablename) = 0\r\n    THEN\r\n      perform raiserror('table is not exist');\r\n    END IF;\r\n    \r\n    _id = nextval('framework.views_id_seq'::regclass);\r\n\t   \r\n\r\n    INSERT INTO framework.views (\r\n    \tid,\r\n      title ,\r\n      descr ,\r\n      tablename ,\r\n      viewtype ,\r\n      pagination ,\r\n      config ,\r\n      "path" ,\r\n      orderby ,\r\n      groupby ,\r\n      filters ,\r\n      acts,\r\n      roles,\r\n      classname,\r\n      ispagesize,\r\n      pagecount,\r\n      foundcount,\r\n      subscrible,\r\n      checker\r\n    )\r\n    VALUES (\r\n      _id,\t\r\n      _title ,\r\n      _descr ,\r\n      _tablename ,\r\n      _viewtype ,\r\n      _pagination ,\r\n      _config ,\r\n      _path ,\r\n      _orderby ,\r\n      _groupby ,\r\n      _filters ,\r\n      _acts,\r\n      _roles,\r\n      _classname,\r\n      _pagesize,\r\n      _pagecount,\r\n      _foundcount ,\r\n      _subscrible   ,\r\n      coalesce(_checker,false)  \r\n    );\r\n    \r\n\r\n    _newdata  = (\r\n      SELECT row_to_json(d) \r\n      FROM \r\n      (SELECT *\r\n      FROM framework.views  \r\n      WHERE id = _id) as d\r\n    );\r\n  \tINSERT INTO framework.logtable (\r\n      tablename,\r\n      tableid,\r\n      opertype,\r\n      userid,\r\n      newdata\r\n    ) VALUES (\r\n      'framework.views',\r\n      _id::varchar(150),\r\n      '1',\r\n      _userid::int ,\r\n     _newdata   \r\n    );\r\n\toutjson = (select row_to_json(d) from ( select _id as id) as d);\r\n  ELSE\r\n     _oldata = (\r\n        SELECT row_to_json(d)\r\n        FROM\r\n        (SELECT * \r\n        FROM framework.views  \r\n        WHERE id = _id) as d\r\n\r\n      );\r\n\r\n      \r\n      UPDATE framework.views \r\n      SET\r\n        title = coalesce(_title,title),\r\n        descr = coalesce(_descr,descr),\r\n        viewtype = coalesce(_viewtype,viewtype),\r\n        pagination = coalesce(_pagination,pagination),\r\n        config = coalesce(_config,config),\r\n        "path" = coalesce(_path,"path"),\r\n        orderby = coalesce(_orderby,orderby),\r\n        groupby = coalesce(_groupby,'[]'),\r\n        filters = coalesce(_filters,'[]'),\r\n        acts = coalesce(_acts,'[]'),\r\n        roles = coalesce(_roles,'[]'),\r\n        classname = _classname,\r\n        ispagesize = coalesce(_pagesize,ispagesize),\r\n        pagecount = coalesce(_pagecount,pagecount),  \r\n        foundcount = coalesce(_foundcount,foundcount),\r\n        subscrible = coalesce(_subscrible,subscrible) ,\r\n        checker = coalesce(_checker,checker)\r\n      WHERE id = _id;\r\n      \r\n      _newdata = (\r\n      \tSELECT\r\n        \trow_to_json(d)\r\n        FROM\r\n        (SELECT * \r\n        FROM framework.views  \r\n        WHERE id = _id) as d\r\n       \r\n      );\r\n      \r\n      IF _oldata::varchar <> _newdata::varchar THEN\r\n        INSERT INTO framework.logtable (\r\n          tablename,\r\n          tableid,\r\n          opertype,\r\n          userid,\r\n          oldata,\r\n          newdata\r\n        ) VALUES (\r\n          'framework.views',\r\n          _id::varchar(150),\r\n          '2',\r\n          _userid::int ,\r\n         _oldata,\r\n         _newdata   \r\n        );\r\n    END IF;\r\n  END IF; \r\nEND;\r\n$function$\n
+197592	framework	tr_config_tr	framework.tr_config_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_config_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_config_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_config_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_col varchar(150);\r\n\t_title varchar(150);\r\n    _tablename varchar(350); -- view major table name\r\n    _tpath json;\r\n    _tt varchar(150);\r\nBEGIN\r\n\r\n\tSELECT\r\n    \tv.tablename\r\n    FROM framework.views as v\r\n    WHERE v.id = NEW.viewid\r\n    INTO _tablename;\r\n    \r\n    -- if related column from other table\r\n    IF NEW.table is not null \r\n    THEN\r\n    \t_tablename = NEW.table;\r\n    END IF;\r\n    \r\n    -- check multi type columns data_type in table\r\n    IF NEW.type like 'multi%' \r\n    THEN\r\n        -- data_type must be JSON\r\n        IF (\r\n          SELECT \r\n              data_type\r\n          FROM information_schema.columns\r\n          WHERE concat(table_schema,'.',table_name) = _tablename AND\r\n                column_name = NEW.col\r\n        ) <> 'json'\r\n        THEN\r\n        \tPERFORM raiserror('for type multi(select, typehead), column type must be JSON');\r\n        END IF;    \t\r\n    END IF;\r\n    \r\n    -- check relaition and type\r\n    IF NEW.relation is not null THEN\r\n      -- for multiselect, mu;titypehead types\t\r\n      -- only not api types\r\n      IF NEW.type like 'multi%' AND \r\n      \t NEW.type not like '%_api'\r\n      THEN\r\n      \tIF (\r\n        \tSELECT \r\n              count(table_name)\r\n            FROM information_schema.columns\r\n            WHERE concat(table_schema,'.',table_name) = NEW.relation\r\n        ) = 0 THEN\r\n        \tPERFORM raiserror(concat('table ',NEW.relation,' is not found'));\r\n        END IF;\r\n        \r\n        NEW.multiselecttable = NEW.relation;      \r\n        NEW.multicolums = NEW.relationcolums;\r\n        NEW.relationcolums = '[]';\r\n      END IF;\r\n      \r\n      -- if type _api\r\n      IF NEW.type like '%_api' AND \r\n      \t COALESCE(OLD.select_api,'') <> NEW.relation \r\n         and COALESCE(OLD.relation,'')<>NEW.relation\r\n      THEN    \r\n        NEW.select_api = NEW.relation;      \r\n      END IF;\r\n      \r\n      -- do not change relation\r\n      IF OLD.relation is null OR OLD.relation <> NEW.relation \r\n      THEN\r\n          NEW.relation = OLD.relation;\r\n      END IF;\r\n    END IF;\r\n    \r\n    \r\n\t-- add relation columns to config \r\n    -- only if not "array" type \r\n\tIF NEW.relationcolums is not null AND \r\n    \r\n       NOT NEW.copy AND\r\n       \r\n       NEW.type<>'array' AND\r\n       NOT NEW.depency AND\r\n       NEW.relation is not null AND\r\n       \r\n      (SELECT count(*) FROM json_array_elements(NEW.relationcolums)) > 0 AND \r\n      \r\n      (SELECT count(r.value) \r\n       FROM json_array_elements_text(NEW.relationcolums) as r\r\n       WHERE r.value::varchar not in (\r\n\t\t\tSELECT r2.value::varchar \t\r\n       \t\tFROM json_array_elements_text(coalesce(OLD.relationcolums,'[]'::json)) as r2\r\n       )) > 0\r\n       \r\n    THEN\r\n    \t_tt = NEW.t;\r\n    \tIF NEW.related = true \r\n        THEN\r\n            /*[\r\n            \t{"t": "t2", "col": "region_id", "table": "nsi.ros_j5phs5f9ra"}, \r\n                {"t": "t7", "col": "addressTypeId", "table": "nsi.ros_n4rellrh3d"}\r\n            ]*/\r\n            --IF (SELECT FROM ) \r\n            SELECT\r\n            \tarray_to_json(array_agg(row_to_json(d)))\r\n            FROM (\r\n              SELECT\r\n                   concat('t',NEW.t) as t, \r\n                   NEW.relatecolumn as col, \r\n                   NEW.table as table\r\n              UNION \r\n              SELECT\t\r\n                  concat(NEW.col,'_', NEW.t) as t, \r\n                  NEW.col, \r\n                  NEW.relation as table\r\n            ) as d\r\n            INTO _tpath;\r\n            \r\n            _tt = concat(NEW.col,'_', NEW.t);\r\n        \t--PERFORM raiserror('There is not realized yet!');\r\n        END IF;\r\n        _tpath = coalesce(_tpath,'[]');\r\n        \r\n    \tFOR _col in (\r\n        \tSELECT \r\n            \tVALUE::varchar \r\n            FROM json_array_elements_text(NEW.relationcolums)\r\n            WHERE value::varchar not in (\r\n              SELECT value::varchar\r\n              FROM json_array_elements_text(OLD.relationcolums)\r\n          )\r\n        )\r\n        LOOP\r\n        \t_title = _col;\r\n            \r\n        \tIF \r\n             (SELECT \r\n            \tcount(c.id)\r\n              FROM framework.config as c\r\n              WHERE c.viewid = NEW.viewid and c.col = _col) >0\r\n            THEN\r\n            \t_title = concat(_col,'_',NEW.id);\r\n            END IF;\r\n        \t\r\n            \r\n        \tINSERT INTO framework.config (\r\n               col, title, type, visible,\r\n               related, roles, relatecolumn,\r\n               relation,\r\n               relcol,\r\n               classname, "join", t,\r\n               "table", viewid,\r\n               column_order, tpath\r\n            )\r\n        \tSELECT\r\n              _col as col, _title as title, 'label' as type, true as visible,\r\n              true as related, '[]'::json as roles, NEW.col as relatecolumn,\r\n              (\r\n                SELECT \r\n                  \tconcat(y.table_schema, '.', y.table_name)\r\n                FROM information_schema.table_constraints as c\r\n                   \tJOIN information_schema.key_column_usage AS x ON\r\n                       \tc.constraint_name = x.constraint_name and\r\n                        x.column_name = _col\r\n                    JOIN information_schema.constraint_column_usage AS y ON \r\n                       \ty.constraint_name = c.constraint_name and\r\n                        y.constraint_schema = c.constraint_schema\r\n                WHERE concat(c.table_schema ,'.',c.table_name) = NEW.relation \r\n                    \tand\r\n                      c.constraint_type = 'FOREIGN KEY'\r\n                LIMIT 1                \r\n                \r\n              ) as relation,\r\n              COALESCE((\r\n                SELECT \r\n                  \tconcat(y.column_name)\r\n                FROM information_schema.table_constraints as c\r\n                  \tJOIN information_schema.key_column_usage AS x ON\r\n                         c.constraint_name = x.constraint_name and\r\n                         x.column_name = _col\r\n                    JOIN information_schema.constraint_column_usage AS y ON \r\n                      \ty.constraint_name = c.constraint_name and\r\n                        y.constraint_schema = c.constraint_schema\r\n                WHERE concat(c.table_schema ,'.',c.table_name) = NEW.relation \r\n                   \t  and\r\n                     c.constraint_type = 'FOREIGN KEY'\r\n                LIMIT 1\r\n              ),NEW.relcol) as relcol,\r\n              '' as classname, false as "join", _tt as t,\r\n              NEW.relation as "table", NEW.viewid,\r\n              coalesce((\r\n              \tSELECT \r\n                 max(c.column_order) \r\n            \tFROM framework.config as c\r\n            \tWHERE c.viewid = NEW.viewid),0\r\n              ) + 1, _tpath;\r\n        END LOOP;\r\n    END IF;\r\n    \r\n    -- check function changing \r\n    IF (OLD.fn is null and NEW.fn is not null) OR\r\n       (OLD.fn is not null and NEW.fn is null)\r\n    THEN\r\n    \tPERFORM raiserror('You can not change simple column to function column');\r\n    END IF;\r\n\t\r\n    IF NEW.depency and NEW.depencycol is null \r\n    THEN\r\n    \tPERFORM raiserror('depencycol can not be empty (null) when depency=TRUE!');\r\n    END IF;\r\n    \r\n\t-- change column order in all config\r\n\t/*IF OLD.column_order<>NEW.column_order and \r\n\t  (SELECT\r\n\t     count(id)\r\n\t   FROM framework.config\r\n\t   WHERE viewid = NEW.viewid and column_order = NEW.column_order) > 0 \r\n\tTHEN\r\n\t   UPDATE framework.config\r\n\t   SET\r\n\t      column_order = column_order + 1\r\n\t   WHERE viewid = NEW.viewid AND column_order >= NEW.column_order;\r\n\tEND IF;*/\r\n\r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+197617	public	fn_completed_color	public.fn_completed_color(c  bool,color out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_completed_color(c  bool,color out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_completed_color(c  bool,color out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_completed_color(c boolean, OUT color character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tcolor = 'red';\r\n\r\n\tIF c THEN\r\n    \tcolor = 'green';\r\n    END IF;     \r\n\r\nEND;\r\n$function$\n
+197627	public	fn_yesorno	public.fn_yesorno(b  bool,y out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_yesorno(b  bool,y out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_yesorno(b  bool,y out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_yesorno(b boolean, OUT y character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tIF b THEN\r\n    \ty = 'ДА';\r\n    ELSE\r\n    \ty = 'НЕТ';\r\n    END IF;\r\n\r\nEND;\r\n$function$\n
+197662	test	tr_major_table_tr1	test.tr_major_table_tr1()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_major_table_tr1()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.tr_major_table_tr1() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.tr_major_table_tr1()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t--PERFORM raiserror(TG_TAG::varchar);\r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+197651	test	fn_gettest_setallcolor_red	test.fn_gettest_setallcolor_red()	set color red for test action in view	2020-05-14 17:26:34.600103	1	f	fn_gettest_setallcolor_red()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_gettest_setallcolor_red() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_gettest_setallcolor_red(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _id int;\r\nBEGIN\r\n\r\n\t_id = injson->>'id';\r\n    \r\n    UPDATE test.major_table\r\n    SET color = 'red';\r\n\r\nEND;\r\n$function$\n
+197555	framework	fn_savevalue	framework.fn_savevalue(injson  json,outjson out json)	SAVE ONE COLUMN VALUE FOR TYPE form full	2020-05-14 17:26:34.600103	1	f	fn_savevalue(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_savevalue(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_savevalue(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n_tablename varchar(300);\r\n_col varchar(350);\r\n_value varchar;\r\n_id varchar(300);\r\n_userid varchar(150);\r\n_relatecolumn varchar(150);\r\n_relatetable varchar(350);\r\n_squery varchar;\r\n_err varchar;\r\n_oldata json;\r\n_newdata json;\r\n_id_int int;\r\n_col_type varchar(300);\r\nrel_id varchar(36);\r\n_id_type varchar(150);\r\nrel_id_type varchar(150);\r\n_viewid int;\r\n_userroles json;\r\n_viewroles json;\r\n_type varchar(150);\r\n_relation varchar;\r\n_relationobj json;\r\n_relationval varchar;\r\n_x varchar;\r\n_rv varchar;\r\nBEGIN\r\n  -- SAVE ONE COLUMN VALUE FOR TYPE form full\r\n  \r\n -- _tablename = injson->>'tablename';\r\n  _col = (injson->>'config')::json->>'col';\r\n  _value = injson->>'value';\r\n  _id = injson->>'id';\r\n  _userid = injson->>'userid';\r\n  _relatecolumn = (injson->>'config')::json->>'relatecolumn';\r\n  _relatetable = injson->>'relatetable';\r\n  _viewid = injson->>'viewid';\r\n  _type = (injson->>'config')::json->>'type';\r\n  _relation = injson->>'relation';\r\n  _relationobj = injson->>'relationobj';\r\n  \r\n\r\n    \r\n    IF _viewid is NULL\r\n    THEN\r\n      perform raiserror('view id is null');\r\n    END IF; \r\n    \r\n    SELECT \r\n    \troles,\r\n        tablename\r\n    FROM framework.views \r\n    WHERE id = _viewid\r\n    INTO _viewroles, _tablename;\r\n    \r\n   IF _tablename <> 'framework.defaultval'\r\n   THEN\r\n    IF _value = '_userid_' and\r\n       _tablename in (\r\n       \t\t'framework.defaultval',\r\n            'framework.actions',\r\n            'framework.act_parametrs',\r\n            'framework.select_condition'\r\n       )  \r\n    THEN\r\n    \t_value = _userid;\r\n    END IF;\r\n    IF _value = '_orgs_' and \r\n       _tablename in (\r\n       \t\t'framework.defaultval',\r\n            'framework.actions',\r\n            'framework.act_parametrs',\r\n            'framework.select_condition'\r\n       ) \r\n    THEN\r\n    \tSELECT\r\n        \tu.orgs::varchar \r\n        FROM framework.users as u\r\n    \tWHERE u.id = _userid::int\r\n        INTO _value;\r\n    END IF;\r\n    IF _value = '_orgid_' and \r\n       _tablename in (\r\n       \t\t'framework.defaultval',\r\n            'framework.actions',\r\n            'framework.act_parametrs',\r\n            'framework.select_condition'\r\n       ) \r\n    THEN\r\n    \tSELECT\r\n        \tu.orgid::varchar \r\n        FROM framework.users as u\r\n    \tWHERE u.id = _userid::int\r\n        INTO _value;\r\n    END IF;\r\n   END IF;\r\n    SELECT \r\n    \troles\r\n    FROM framework.users \r\n    WHERE id::varchar = _userid\r\n    INTO _userroles;\r\n    \r\n    IF _viewroles is null THEN\r\n    \tperform raiserror('view is not found');\r\n    END IF;\r\n    \r\n    IF (SELECT count(*) FROM json_array_elements_text(_viewroles)) > 0 and \r\n    (SELECT count(*) \r\n     FROM json_array_elements_text(_viewroles) as v\r\n     \tJOIN json_array_elements_text(_userroles) as r on  (\r\n        \t\t(v.value::json->>'value')::varchar = r.value::varchar\r\n                OR\r\n                v.value::varchar = r.value::varchar\r\n            )\r\n     ) = 0 THEN\r\n    \tPERFORM raiserror('m403err');\r\n    END IF;\r\n    \r\n    IF _tablename is NULL\r\n    THEN\r\n      perform raiserror('table is null');\r\n    END IF; \r\n    \r\n    IF _col is NULL\r\n    THEN\r\n      perform raiserror('col is null');\r\n    END IF;\r\n      \r\n    IF _relatetable is not null and _id is null\r\n    THEN\r\n      perform raiserror('id can`t be null if relation');\r\n    END IF;\r\n   \r\n   SELECT t.data_type\r\n   FROM information_schema.columns as t\r\n   WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n   \t\t t.column_name = _col\r\n   INTO _col_type; \t\r\n   \r\n   IF _col_type = 'character' THEN\r\n  \t_col_type = 'varchar'; \r\n   END IF;\r\n   \r\n   IF _col_type is null THEN\r\n   \t perform raiserror('can not find out the column type. check table and column names');\r\n   END IF;\r\n  \r\n  SELECT \r\n     t.data_type\r\n  FROM information_schema.columns as t                                         \r\n  WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n  upper(t.column_name) = 'ID'\r\n  INTO _id_type;\r\n  \r\n  IF _id_type = 'character' THEN\r\n  \t_id_type = 'varchar'; \r\n  END IF;\r\n  \r\n  IF _type = 'password' THEN\r\n     drop extension pgcrypto;\r\n     create extension pgcrypto;\r\n     SELECT encode(digest(_value, 'sha224'),'hex') INTO _value;\r\n  END IF;\r\n  \r\n  IF _relatetable is not null\r\n  THEN    \r\n  \t\r\n  \t IF _relatecolumn is null THEN\r\n     \tperform raiserror('can''t find relate column');\r\n     END IF;\t\r\n      \r\n     SELECT \r\n         t.data_type\r\n     FROM information_schema.columns as t                                         \r\n     WHERE concat(t.table_schema,'.',t.table_name) = _relatetable and \r\n     upper(t.column_name) = 'ID'\r\n     INTO rel_id_type;\r\n     \r\n     IF rel_id_type = 'character' THEN\r\n     \trel_id_type = 'varchar'; \r\n     END IF;\r\n     \r\n     IF rel_id_type is null THEN\r\n       perform raiserror('can not find out the relation ID type. check table and column names');\r\n     END IF;\r\n     \r\n      _squery = concat(_squery,'\r\n          SELECT \r\n               ',_relatecolumn,'::',_id_type,'\r\n          FROM ',_relatetable,'\r\n          WHERE id::',rel_id_type,' = $1::',rel_id_type,';\r\n      ');\r\n      \r\n      EXECUTE format(_squery) USING _id INTO rel_id;\r\n      \r\n      IF trim(coalesce(rel_id,'')) = ''\r\n      THEN\r\n          perform raiserror('id of relation table can not be NULL');\r\n      END IF;\r\n      BEGIN\r\n        _squery = concat('\r\n            SELECT row_to_json(d) FROM\t\r\n            (SELECT \r\n              "',_col,'"\r\n            FROM ',_tablename,'\r\n            WHERE id = $1::',_id_type,' ) as d;');\r\n            \r\n        EXECUTE format(_squery) USING rel_id INTO _oldata;\r\n        \r\n      END;\r\n      _squery = concat('SELECT row_to_json(d) FROM \r\n          (SELECT $1 as ',_col,') as d;');\r\n      \r\n      EXECUTE format(_squery) USING _value INTO _newdata; \r\n     \r\n      INSERT INTO framework.logtable (\r\n         tablename, tableid, opertype,\r\n         userid, oldata, newdata, colname\r\n      ) VALUES (\r\n         _tablename, rel_id, 2,\r\n         _userid::int, _oldata, _newdata, _col      \r\n      ); \r\n     IF (SELECT count(t.*)\r\n      FROM information_schema.columns as t\r\n      WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n           t.column_name = 'userid')>0 THEN\r\n     _squery = concat('          \r\n          UPDATE ', _tablename, ' \r\n          SET "',_col,'" = $2::',_col_type,' , userid = $3 \r\n          WHERE id::',_id_type,' = $1::',_id_type,'; \r\n      ');\t\r\n      EXECUTE format(_squery) USING rel_id,_value, _userid::int;\r\n      ELSE\r\n\t  \t  _squery = concat('          \r\n          UPDATE ', _tablename, ' \r\n          SET "',_col,'" = $2::',_col_type,'\r\n          WHERE id::',_id_type,' = $1::',_id_type,'; \r\n      ');\r\n      EXECUTE format(_squery) USING rel_id,_value;\r\n     END IF; \r\n  ELSE  \r\n\r\n    IF _id is NULL\r\n    THEN\r\n      IF _value is null \r\n      THEN\r\n        perform raiserror('value is null');\r\n      END IF;\r\n      IF _relation is not null THEN\r\n         FOR _x in (SELECT regexp_split_to_table FROM regexp_split_to_table(_relation,','))\r\n         LOOP\r\n            IF _relationobj->>_x is not null THEN\r\n  \t\t\t\t_rv = _relationobj->>_x;\r\n                IF _rv = '_userid_' and \r\n                   _tablename not in (\r\n                    'framework.defaultval',\r\n                    'framework.actions',\r\n                    'framework.act_parametrs',\r\n                    'framework.select_condition'\r\n                   )  \r\n                THEN\r\n                    _rv = _userid;\r\n                END IF;\r\n                IF _rv = '_orgs_' and \r\n                   _tablename not in (\r\n                      'framework.defaultval',\r\n                      'framework.actions',\r\n                      'framework.act_parametrs',\r\n                      'framework.select_condition'\r\n                   )  \r\n                THEN\r\n                    SELECT\r\n                        u.orgs::varchar \r\n                    FROM framework.users as u\r\n                    WHERE u.id = _userid::int\r\n                    INTO _rv;\r\n                END IF;\r\n                IF _rv = '_orgid_' and \r\n                   _tablename not in (\r\n                      'framework.defaultval',\r\n                      'framework.actions',\r\n                      'framework.act_parametrs',\r\n                      'framework.select_condition'\r\n                   )  \r\n                THEN\r\n                    SELECT\r\n                        u.orgid::varchar \r\n                    FROM framework.users as u\r\n                    WHERE u.id = _userid::int\r\n                    INTO _rv;\r\n                END IF;\r\n    \r\n                _relationval = concat(_relationval,',''',_rv,'''');\r\n            END IF;\r\n         END LOOP;\r\n         \r\n        SELECT\r\n            string_agg(concat('"',regexp_split_to_table,'"'),',')\r\n        FROM regexp_split_to_table(_relation,',')\r\n        INTO _relation;           \r\n        \r\n        _relation = concat(',',_relation);  \r\n      ELSE\r\n      \t_relation = '';\r\n        _relationval = '';\r\n      END IF; \r\n      \r\n      IF _id_type in ( 'character','varchar','char') \r\n      THEN\r\n      \t   _id = upper(uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36));\r\n      ELSE\r\n      \t   EXECUTE format(concat('SELECT nextval(''',_tablename,'_id_seq''::regclass);')) INTO _id_int ;\r\n           _id = _id_int::varchar;\r\n      END IF;   \r\n     IF \r\n      (SELECT count(t.*)\r\n       FROM information_schema.columns as t\r\n       WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n            t.column_name = 'userid') > 0 \r\n     THEN\r\n        _squery = concat(\r\n        \t'INSERT INTO ', \r\n            _tablename, \r\n            '(id,"',_col,'"',_relation,', userid) \r\n            VALUES ($1::',\r\n            _id_type,',$2::',\r\n            _col_type,_relationval,\r\n            ',$3); '\r\n        );  \r\n                            \r\n        EXECUTE format(_squery) USING _id,_value, _userid::int;\r\n     ELSE\r\n        _squery = concat(\r\n        \t'INSERT INTO ', \r\n            _tablename, \r\n            '(id,"',_col,'"',\r\n            _relation,') \r\n            VALUES ($1::',\r\n            _id_type,',$2::',\r\n            _col_type,_relationval,'); '\r\n        );                     \r\n     \tEXECUTE format(_squery) USING _id,_value;\r\n     END IF;   \r\n         \r\n      _squery = concat(\r\n      \t'SELECT row_to_json(d) FROM \r\n        \t(SELECT $1 as ',_col,') as d;'\r\n       );\r\n       IF _userid is not null\r\n       THEN       \r\n       EXECUTE format(_squery) USING _value INTO _newdata;\r\n                 \r\n         INSERT INTO framework.logtable (\r\n               tablename, tableid, opertype,\r\n               userid, newdata, colname\r\n         ) VALUES (\r\n               _tablename, _id, '1',\r\n               _userid::int, _newdata, _col\r\n         );    \r\n       END IF;           \r\n           \t\r\n  \tELSE\r\n    \r\n    \tIF trim(coalesce(_id,'')) = '' THEN\r\n        \tperform raiserror('id is null');\r\n        END IF;\r\n        \r\n         _squery = concat(\r\n         \t'SELECT row_to_json(d) FROM\t\r\n            \t (SELECT \r\n                  \t"',_col,'"\r\n                  FROM ',_tablename,'\r\n                  WHERE id = $1::',_id_type,') as d;'\r\n         );\r\n         EXECUTE format(_squery) USING _id INTO _oldata;  \r\n        IF (SELECT count(t.*)\r\n            FROM information_schema.columns as t\r\n            WHERE concat(t.table_schema,'.',t.table_name) = _tablename and \r\n               t.column_name = 'userid') > 0 \r\n        THEN\r\n             _squery = concat( \r\n             \t' UPDATE ', _tablename, ' \r\n                  SET "',_col,'" = $2::',_col_type,' , userid = $3\r\n                  WHERE id = $1::',_id_type,';'\r\n             );\r\n    \t\t\t\t\t\t\t\r\n             EXECUTE format(_squery) USING _id,_value, _userid::int; \r\n        ELSE\r\n             _squery = concat( \r\n             \t' UPDATE ', _tablename, ' \r\n                  SET "',_col,'" = $2::',_col_type,' \r\n                  WHERE id = $1::',_id_type,';'\r\n             );\r\n             EXECUTE format(_squery) USING _id,_value; \r\n        END IF;   \r\n  \r\n        _squery = concat(\r\n        \t'SELECT row_to_json(d) FROM \r\n            \t(SELECT $1 as ',_col,') as d;');                \r\n        EXECUTE format(_squery) USING _value INTO _newdata;\r\n        IF _userid is not null\r\n        THEN\r\n          INSERT INTO framework.logtable (\r\n                tablename, tableid, opertype,\r\n                userid, oldata, newdata, colname\r\n          ) VALUES (\r\n                _tablename, _id, 2,\r\n                _userid::int, _oldata, _newdata, _col\r\n          );       \r\n        END IF;    \r\n    END IF;\r\n  END IF; \r\n    \r\n  SElECT\r\n  \trow_to_json(d)\r\n  FROM (\r\n  \tSELECT _id as id,\r\n    \t_value as value\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'{}');\r\n  \r\nEND;\r\n$function$\n
+197525	framework	fn_formselect	framework.fn_formselect(injson  json,outjson out json)	select data for type select	2020-05-14 17:26:34.600103	1	f	fn_formselect(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_formselect(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_formselect(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _config json;\r\n  _inputs json;\r\n  _val varchar;\r\n  _id varchar;\r\n  _relationcolums json;\r\n  _relation varchar;\r\n  squery varchar;\r\n  col1 varchar;\r\n  col2 varchar;\r\n  pv json;\r\n  select_condition json;\r\n  _oper varchar(20);\r\n  operval varchar;\r\n  _ismulti boolean;\r\n  _userid int;\r\n  _orgs varchar;\r\n  _orgid varchar;\r\n  k int;\r\nBEGIN\r\n\t\r\n  _config = injson->>'config';\r\n  _inputs = injson->>'inputs';\r\n  _val = injson->> 'val';\r\n  _userid = injson->>'userid';\r\n  _id = injson->>'id';\r\n  _ismulti = injson->>'ismulti';\r\n  _relation = coalesce(_config->>'multiselecttable',_config->>'relation');\r\n  _relationcolums = coalesce(coalesce(_config->>'multicolums',_config->>'relationcolums'),'[]');\r\n  \r\n  \r\n  _ismulti = coalesce(_ismulti,false);\r\n  IF (_config->>'type') like 'multi%' THEN\r\n  \t_ismulti = true;\r\n  END IF; \r\n  \r\n  \r\n  IF _relation is null or _relationcolums is null or (SELECT count(*) \r\n  \t\t\t\t\t\t\t\t\t\t\t\t\t  FROM json_array_elements_text(_relationcolums)) = 0 \r\n  THEN\r\n  \tPERFORM raiserror('Something wrong here. Please check the config');\t\r\n  END IF;  \r\n\r\n  \r\n  col1 = (_relationcolums->0)::json->>'value';\r\n \r\n   IF (SELECT count(*)\r\n   FROM information_schema.columns as t\r\n   WHERE concat(t.table_schema,'.',t.table_name) = _relation and \r\n   \t\t t.column_name = col1) = 0 \r\n   THEN\r\n         PERFORM raiserror('error in config can not find table or col');\r\n   END IF;      \r\n \r\n  IF (SELECT count(*) FROM json_array_elements_text(_relationcolums)) = 1\r\n  \tand _config->>'type' not like '%typehead'\r\n  THEN \t\t\r\n  \tsquery = concat(squery,' SELECT "', col1, \r\n    \t'" as value, "',col1, '" as label FROM ', \r\n        _relation\r\n    );           \r\n  ELSE\r\n        IF (SELECT count(*) FROM json_array_elements_text(_relationcolums)) > 1 THEN\r\n          k = 1;\r\n        ELSE\r\n        \tk = 0; \r\n        END IF;\r\n        \r\n\t\tcol2 = (_relationcolums->k)::json->>'value';\r\n\r\n        IF (SELECT count(*)\r\n        FROM information_schema.columns as t\r\n        WHERE concat(t.table_schema,'.',t.table_name) = _relation and \r\n               t.column_name = col2) = 0 THEN\r\n               PERFORM raiserror('error in config can not find table or col2');\r\n        END IF; \r\n\r\n\t\tsquery = concat(\r\n        \tsquery,\r\n        \t' SELECT "' , \r\n            col1 , \r\n            '" as value, concat( "', col2,'"'\r\n        );\r\n\r\n        k = 2;\r\n        WHILE k < (SELECT count(*) FROM json_array_elements_text(_relationcolums))\r\n        LOOP\r\n        \tsquery = concat(squery,','' '',"',(_relationcolums->k)::json->>'value','"');\r\n        \tk = k + 1;\r\n        END LOOP;\r\n\r\n\t\tsquery = concat(squery,') ');\r\n   \r\n\t\tsquery = concat(squery, ' as label FROM ', _relation);\r\n        \r\n\t\tSELECT \r\n        \tarray_to_json(array_agg(row_to_json(d)))\r\n        FROM (\r\n        SELECT value\r\n        FROM\r\n        (select \r\n        \trow_number() over (order by 1) as n, * \r\n        from json_array_elements_text(_relationcolums) )as p\r\n        where p.n not in (1,2)) as d\r\n        INTO _relationcolums;\r\n\r\n\t\tIF _val is not null \r\n        THEN\r\n        \tIF not _ismulti \r\n            THEN\r\n              _val = concat('%',upper(_val),'%');\r\n              squery = concat(\r\n              \tsquery,' WHERE (upper("' , \r\n                col2 , '"::varchar) like $1 or upper("' , \r\n                col1 , '"::varchar) like $1'); \r\n              FOR pv in (SELECT * FROM json_array_elements_text(_relationcolums))\r\n              LOOP\r\n                  squery = concat(squery, ' or upper(' , (pv->>'value')::json->>'value' , '::varchar) like $1 ');\r\n              END LOOP;   \r\n            ELSE\r\n            \tIF _val not like '[%]' THEN\r\n            \t_val = json_build_array(_val)::varchar;\r\n                END IF;\r\n\r\n            \tsquery = concat(\r\n                \tsquery, \r\n                    ' WHERE  (\r\n                \t(select count(value) \r\n                     from json_array_elements_text($1::json)\r\n                     where upper("' ,col2 , '"::varchar) like \r\n                     \tconcat(''%%'', upper(value::varchar),''%%'')\r\n                     ) > 0 ' \r\n                );\r\n                FOR pv in (SELECT * FROM json_array_elements_text(_relationcolums))\r\n                LOOP\r\n                    squery = concat(\r\n                      squery, \r\n                      ' or upper(' , \r\n                      pv->>'value' , \r\n                      '::varchar) like \r\n                      (select \r\n                      \t upper(value::varchar) \r\n                       from json_array_elements_text($1)) '\r\n                    );\r\n                END LOOP;                           \r\n            END IF;\r\n            squery = concat(squery, ') '); \r\n\t\t\tIF _id is not null THEN\r\n\t\t\t\tsquery = concat(squery,' and "' , col1 , '" = ''' , replace(_id::varchar ,'''',''''''), '''');\r\n            END IF;    \r\n\t\tELSE\r\n        \tIF not _ismulti THEN\r\n              IF _id is not null THEN\r\n                  squery = concat(squery,' WHERE "', col1 , '" = ''' , replace(_id::varchar ,'''','''''') , ''' '); \r\n                  --perform raiserror(squery);\r\n              END IF;   \r\n            ELSE\r\n               IF _id is not null THEN\r\n                  squery = concat(squery,' WHERE "', col1 , '"::varchar in (select value::varchar from json_array_elements_text(''' , replace(_id::varchar ,'''','''''') , ''')) '); \r\n                  --perform raiserror(squery);\r\n              END IF;             \r\n            END IF;   \t\r\n        END IF;        \r\n  END IF;\t\r\n  \r\n  select_condition = _config->>'select_condition';\r\n  IF _inputs is not null \r\n  \tand select_condition is not null \r\n  THEN\r\n    IF squery not like '%WHERE%' THEN\r\n    \tsquery = concat(squery,' WHERE ');\r\n    ELSE\r\n    \tsquery = concat(squery,' and ');\r\n    END IF;    \r\n\r\n    \r\n    SELECT\r\n       \tu.orgs::varchar, u.orgid::varchar \r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n    INTO _orgs,_orgid;\r\n\r\n\r\n    FOR pv in (SELECT * FROM json_array_elements_text(select_condition))\r\n    LOOP\r\n    \tcol1 = (pv->>'col')::json->>'label';\r\n        _oper = (pv->>'operation')::json->>'value';\r\n        operval = replace(\r\n        \treplace(\r\n            \treplace(\r\n                \treplace(\r\n                    \tcoalesce(\r\n                        \tpv->>'const', (_inputs->>((pv->>'value')::json->>'value'))\r\n                        ),'''',''''''\r\n                    ),'_orgid_',coalesce(_orgid,'')\r\n                ),'_userid_',coalesce(_userid::varchar,'')\r\n            ),'_orgs_',coalesce(_orgs,'[]'));\r\n        IF (\r\n          SELECT count(*)\r\n          FROM information_schema.columns as t\r\n          WHERE concat(t.table_schema,'.',t.table_name) = _relation and \r\n                t.column_name = col1\r\n        ) = 0 \r\n        THEN\r\n               PERFORM raiserror('error in config can not find table or col');\r\n        END IF;  \r\n        IF _oper not in ('like', 'in', 'not in', 'is null', 'is not null') THEN\r\n\t\r\n          squery = concat(\r\n          \tsquery, ' "', col1,'"', \r\n            _oper , '''' , \r\n            operval, ''' and'\r\n          );\r\n        END IF;   \r\n        IF _oper in ('is null','is not null') THEN\r\n          squery = concat(\r\n          \tsquery, ' "', col1,'" ', \r\n            _oper , ' and'\r\n          );\t\r\n        END IF;    \r\n        IF _oper = 'like' THEN\r\n            squery = concat(\r\n            \tsquery, ' upper("', col1,'") ',  \r\n                _oper , ' upper(''%%' , \r\n                operval, '%%'') and'\r\n            );\r\n        END IF;       \r\n        IF _oper in ('in','not in') THEN\r\n            squery = concat(\r\n            \tsquery, ' "', col1,'" ',  \r\n                _oper , ' (', \r\n                (SELECT \r\n                \tstring_agg(\r\n                    \tconcat('''',o.name::varchar,''''), \r\n                        ', '\r\n                    )\r\n                 FROM json_array_elements(concat('[',operval,']')::json\r\n                 ) as o), ') and'\r\n            );              \r\n        END IF;  \r\n            \r\n    END LOOP;\r\n    squery = substring(squery,1,length(squery)-4); \r\n  END IF;\r\n  \r\n\r\n  squery = concat(\r\n  \t'SELECT array_to_json(array_agg(row_to_json(d))) FROM ( ',\r\n  \tsquery, ' LIMIT 300 ) as d');\r\n  \r\n  \r\n  EXECUTE format(squery) USING _val INTO outjson;\r\n  outjson = coalesce(outjson,'[]');\r\n  \r\nEND;\r\n$function$\n
+198843	test	fn_test	test.fn_test()	test22	2020-05-14 17:26:34.600103	1	f	fn_test()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_test() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_test()\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\nBEGIN\r\n\r\nEND;\r\n$function$\n
+197443	public	digest	public.digest()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	digest()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.digest() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.digest(text, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_digest$function$\n
+197444	public	digest	public.digest()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	digest()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.digest() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.digest(bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_digest$function$\n
+197445	public	hmac	public.hmac()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	hmac()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.hmac() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.hmac(text, text, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_hmac$function$\n
+197446	public	hmac	public.hmac()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	hmac()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.hmac() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.hmac(bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_hmac$function$\n
+197447	public	crypt	public.crypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	crypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.crypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.crypt(text, text)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_crypt$function$\n
+197448	public	gen_salt	public.gen_salt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	gen_salt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.gen_salt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.gen_salt(text)\n RETURNS text\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pg_gen_salt$function$\n
+197449	public	gen_salt	public.gen_salt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	gen_salt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.gen_salt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.gen_salt(text, integer)\n RETURNS text\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pg_gen_salt_rounds$function$\n
+197450	public	encrypt	public.encrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	encrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.encrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.encrypt(bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_encrypt$function$\n
+197451	public	decrypt	public.decrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	decrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.decrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.decrypt(bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_decrypt$function$\n
+197452	public	encrypt_iv	public.encrypt_iv()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	encrypt_iv()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.encrypt_iv() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.encrypt_iv(bytea, bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_encrypt_iv$function$\n
+197453	public	decrypt_iv	public.decrypt_iv()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	decrypt_iv()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.decrypt_iv() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.decrypt_iv(bytea, bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_decrypt_iv$function$\n
+197454	public	gen_random_bytes	public.gen_random_bytes()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	gen_random_bytes()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.gen_random_bytes() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.gen_random_bytes(integer)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pg_random_bytes$function$\n
+197455	public	gen_random_uuid	public.gen_random_uuid()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	gen_random_uuid()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.gen_random_uuid() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.gen_random_uuid()\n RETURNS uuid\n LANGUAGE c\nAS '$libdir/pgcrypto', $function$pg_random_uuid$function$\n
+197456	public	pgp_sym_encrypt	public.pgp_sym_encrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_encrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_encrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_encrypt(text, text)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_encrypt_text$function$\n
+197457	public	pgp_sym_encrypt_bytea	public.pgp_sym_encrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_encrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_encrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_encrypt_bytea(bytea, text)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_encrypt_bytea$function$\n
+197458	public	pgp_sym_encrypt	public.pgp_sym_encrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_encrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_encrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_encrypt(text, text, text)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_encrypt_text$function$\n
+197459	public	pgp_sym_encrypt_bytea	public.pgp_sym_encrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_encrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_encrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_encrypt_bytea(bytea, text, text)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_encrypt_bytea$function$\n
+197460	public	pgp_sym_decrypt	public.pgp_sym_decrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_decrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_decrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_decrypt(bytea, text)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_decrypt_text$function$\n
+197461	public	pgp_sym_decrypt_bytea	public.pgp_sym_decrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_decrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_decrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_decrypt_bytea(bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_decrypt_bytea$function$\n
+197462	public	pgp_sym_decrypt	public.pgp_sym_decrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_decrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_decrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_decrypt(bytea, text, text)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_decrypt_text$function$\n
+197463	public	pgp_sym_decrypt_bytea	public.pgp_sym_decrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_sym_decrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_sym_decrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_sym_decrypt_bytea(bytea, text, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_sym_decrypt_bytea$function$\n
+197464	public	pgp_pub_encrypt	public.pgp_pub_encrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_encrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_encrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_encrypt(text, bytea)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_encrypt_text$function$\n
+197465	public	pgp_pub_encrypt_bytea	public.pgp_pub_encrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_encrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_encrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_encrypt_bytea(bytea, bytea)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_encrypt_bytea$function$\n
+197466	public	pgp_pub_encrypt	public.pgp_pub_encrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_encrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_encrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_encrypt(text, bytea, text)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_encrypt_text$function$\n
+197467	public	pgp_pub_encrypt_bytea	public.pgp_pub_encrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_encrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_encrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_encrypt_bytea(bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_encrypt_bytea$function$\n
+197468	public	pgp_pub_decrypt	public.pgp_pub_decrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_decrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_decrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_decrypt(bytea, bytea)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_decrypt_text$function$\n
+197469	public	pgp_pub_decrypt_bytea	public.pgp_pub_decrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_decrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_decrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_decrypt_bytea(bytea, bytea)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_decrypt_bytea$function$\n
+197470	public	pgp_pub_decrypt	public.pgp_pub_decrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_decrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_decrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_decrypt(bytea, bytea, text)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_decrypt_text$function$\n
+197471	public	pgp_pub_decrypt_bytea	public.pgp_pub_decrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_decrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_decrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_decrypt_bytea(bytea, bytea, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_decrypt_bytea$function$\n
+197472	public	pgp_pub_decrypt	public.pgp_pub_decrypt()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_decrypt()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_decrypt() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_decrypt(bytea, bytea, text, text)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_decrypt_text$function$\n
+197473	public	pgp_pub_decrypt_bytea	public.pgp_pub_decrypt_bytea()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_pub_decrypt_bytea()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_pub_decrypt_bytea() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_pub_decrypt_bytea(bytea, bytea, text, text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_pub_decrypt_bytea$function$\n
+197474	public	pgp_key_id	public.pgp_key_id()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_key_id()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_key_id() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_key_id(bytea)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_key_id_w$function$\n
+197475	public	armor	public.armor()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	armor()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.armor() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.armor(bytea)\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_armor$function$\n
+197476	public	armor	public.armor()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	armor()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.armor() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.armor(bytea, text[], text[])\n RETURNS text\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_armor$function$\n
+197477	public	dearmor	public.dearmor()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	dearmor()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.dearmor() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.dearmor(text)\n RETURNS bytea\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pg_dearmor$function$\n
+197478	public	pgp_armor_headers	public.pgp_armor_headers(  text,key out text,value out text)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	pgp_armor_headers(  text,key out text,value out text)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.pgp_armor_headers(  text,key out text,value out text) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.pgp_armor_headers(text, OUT key text, OUT value text)\n RETURNS SETOF record\n LANGUAGE c\n IMMUTABLE STRICT\nAS '$libdir/pgcrypto', $function$pgp_armor_headers$function$\n
+197479	framework	fn_action_add_untitle	framework.fn_action_add_untitle()	add untitle action in actions table	2020-05-14 17:26:34.600103	1	f	fn_action_add_untitle()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_action_add_untitle() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_action_add_untitle(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _viewid int;\r\n  _id int;\r\nBEGIN\r\n\t-- add untitle action in actions table\r\n\t\r\n    _viewid = injson->>'viewid';\r\n    \r\n    IF _viewid is NULL THEN\r\n    \tPERFORM raiserror('viewid is null');\r\n    END IF;\r\n    \r\n    _id = nextval('framework.actions_id_seq'::regclass);\r\n    INSERT INTO framework.actions (\r\n      id, column_order, \r\n      title, viewid, icon, \r\n      act_url, act_type\r\n    )\r\n    VALUES (\r\n      _id, COALESCE((\r\n      \tSELECT max(column_order) \r\n       \tFROM framework.actions \r\n        WHERE viewid = _viewid\r\n      ),0) + 1, \r\n      concat('untitled_',_id::varchar), _viewid, 'default', \r\n      '/', 'Link'\r\n    );\r\n    \r\n    \r\nEND;\r\n$function$\n
+197480	framework	fn_action_copy	framework.fn_action_copy()	COPY ACTION IN VIEW	2020-05-14 17:26:34.600103	1	f	fn_action_copy()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_action_copy() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_action_copy(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _id int;\r\n  action_id int;\r\nBEGIN\r\n\r\n  -- COPY ACTION IN VIEW\r\n  _id = injson->>'id';\r\n  \r\n  action_id = nextval('framework.actions_id_seq'::regclass);\r\n  \r\n  \r\n  INSERT INTO framework.actions (\r\n      id, title, act_type,\r\n      act_url, api_method, api_type,\r\n\t  ask_confirm, classname, column_order,\r\n\t  forevery, icon, main_action,\r\n\t  refresh_data, roles, viewid\r\n  )\r\n  SELECT\r\n      action_id, concat(a.title,'_',action_id::varchar), a.act_type,\r\n\t  a.act_url, a.api_method, a.api_type,\r\n\t  a.ask_confirm, a.classname, COALESCE((\r\n\t    SELECT max(aa.column_order)\r\n\t\tFROM framework.actions as aa\r\n\t\tWHERE aa.viewid = a.viewid\t\t\t \r\n\t  ),0) + 1,\r\n\t  a.forevery, a.icon, a.main_action,\r\n\t  a.refresh_data, a.roles, a.viewid\r\n  FROM framework.actions as a\r\n  WHERE a.id = _id;\r\n  \r\n  INSERT INTO framework.act_parametrs(\r\n  \tactionid, paramtitle, paramt,\r\n\tparamconst, paraminput, paramcolumn,\r\n\tval_desc, query_type\r\n  )\r\n  SELECT\r\n\taction_id, paramtitle, paramt,\r\n\tparamconst, paraminput, paramcolumn,\r\n\tval_desc, query_type\r\n  FROM framework.act_parametrs\r\n  WHERE actionid = _id;\r\n  \r\n  INSERT INTO framework.act_visible_condions (\r\n\tactionid, val_desc, col,\r\n\ttitle, operation, value\r\n  ) \r\n  SELECT\r\n    action_id, val_desc, col,\r\n\ttitle, operation, value\r\n  FROM framework.act_visible_condions\r\n  WHERE actionid = _id;\r\n  \r\n  \r\nEND;\r\n$function$\n
+197481	framework	fn_allviews_sel	framework.fn_allviews_sel(injson  int8,outjson out json,foundcount out json)	USING IN COMPOSITIONS\r\nGET ALL VIEWS	2020-05-14 17:26:34.600103	1	f	fn_allviews_sel(injson  int8,outjson out json,foundcount out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_allviews_sel(injson  int8,outjson out json,foundcount out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_allviews_sel(injson json, OUT outjson json, OUT foundcount bigint)\n RETURNS record\n LANGUAGE plpgsql\nAS $function$\r\n-- USING IN COMPOSITIONS\r\nDECLARE\r\n  --pagenum smallint;\r\n -- pagesize smallint;\r\n  substr varchar(50);\r\n -- _off smallint;\r\nBEGIN\r\n -- pagenum = injson->>'pagenum';\r\n  --pagesize = injson->>'pagesize';\r\n  substr = injson->>'substr';\r\n  \r\n -- pagenum = coalesce(pagenum,'1');\r\n  --pagesize = coalesce(pagesize,'15');\r\n  substr = upper(concat('%',coalesce(substr,'%'),'%')); \r\n --_off=(pagenum*pagesize)-pagesize;\r\n  foundcount = (\r\n\tSELECT count(v.id)\r\n\tFROM framework.views as v\r\n\tWHERE upper(v.title) like substr or upper(v.tablename) like substr or \r\n\t      upper(v.path) like substr\r\n  );\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\t  SELECT \r\n\t\t  ROW_NUMBER() over ( order by v.id ) as rownum,\r\n\t\t  v.id, v.title, v.viewtype,\r\n\t\t  v.descr, v.tablename, v.path,\r\n\t\t  v.subscrible, '' as viewlink\r\n\t  FROM framework.views as v\r\n\t  WHERE upper(v.title) like substr or upper(v.tablename) like substr or \r\n\t        upper(v.path) like substr\r\n\t  ORDER BY v.id\r\n    ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = COALESCE(outjson,'[]');\r\nEND;\r\n$function$\n
+197482	framework	fn_apimethods	framework.fn_apimethods(injson  json,outjson out json)	API Methods list	2020-05-14 17:26:34.600103	1	f	fn_apimethods(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_apimethods(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_apimethods(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t-- API method list\r\n\tSELECT \r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n\t  SELECT\r\n\t\t  a.val as label,\r\n\t\t  a.val as value\r\n\t  FROM framework.apimethods as a\r\n\t) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n    \r\n\r\nEND;\r\n$function$\n
+197483	framework	fn_autocomplete	framework.fn_autocomplete(injson  json,outjson out json)	FORM AUTOCOMPLETE METHOD	2020-05-14 17:26:34.600103	1	f	fn_autocomplete(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_autocomplete(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_autocomplete(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  col varchar;\r\n -- val varchar;\r\n  _table varchar;\r\n  squery varchar;\r\n  _val varchar;\r\nBEGIN\r\n\t-- FORM AUTOCOMPLETE METHOD\r\n\tcol = injson->>'col';\r\n    _val = injson->>'val';\r\n    _table = injson->>'table';\r\n    --perform raiserror(val);\r\n    IF _val is not null and length(_val) > 0 THEN\r\n    \t_val = concat('%',upper(_val),'%');\r\n    \tsquery = concat(\r\n\t\t    squery, 'SELECT array_to_json(array_agg(row_to_json(d))) FROM (\r\n            SELECT distinct ' , \r\n            col , ' as value, ' , col , ' \r\n        \tas label FROM ' , _table , ' WHERE upper(' , \r\n            col , ')::varchar like $1::varchar LIMIT 500) as d'\r\n\t\t);\r\n            \t\r\n       EXECUTE format(squery) USING _val INTO outjson;\r\n       \r\n       outjson = coalesce(\r\n\t      outjson, (\r\n\t\t     SELECT \r\n\t\t         array_to_json(array_agg(row_to_json(d))) \r\n\t\t\t FROM (    \r\n\t\t\t     SELECT \r\n\t\t\t\t  injson ->> 'val' as value, \r\n\t\t\t\t  injson ->> 'val' as label          \r\n\t\t\t ) as d\r\n\t      )\r\n\t  );\r\n    END IF;        \r\n\r\n\toutjson = coalesce(outjson,'[]');\r\n    outjson = '{"label":"","value":null}'::jsonb||outjson::jsonb; \r\n\r\nEND;\r\n$function$\n
+197484	framework	fn_branchestree_recurs	framework.fn_branchestree_recurs(_parentid  int4,_treesid  int4,outjson out json)	TREES BRANCHES RECURS FUNCTION	2020-05-14 17:26:34.600103	1	f	fn_branchestree_recurs(_parentid  int4,_treesid  int4,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_branchestree_recurs(_parentid  int4,_treesid  int4,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t-- TREES BRANCHES RECURS FUNCTION\r\n\tSELECT\r\n    \tarray_to_json(array_agg(row_to_json(d))) \r\n    FROM ( \r\n\t  SELECT\r\n          tb.id as key, tb.icon,\r\n          tb.parentid, tb.treesid,\r\n          tb.title as label, tb.ismain,\r\n          framework.fn_branchestree_recurs(tb.id,tb.treesid) as children\r\n      FROM framework.treesbranches as tb\r\n      WHERE tb.treesid = _treesid and tb.title is not null and \r\n            coalesce(tb.parentid,0) = coalesce(_parentid,0)\r\n      ORDER BY coalesce(tb.orderby,0)\r\n    ) as d\r\n    INTO outjson;\r\n      \r\n     -- outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197485	framework	fn_col_add_select_condition	framework.fn_col_add_select_condition()	add select_condition for config	2020-05-14 17:26:34.600103	1	f	fn_col_add_select_condition()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_col_add_select_condition() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_col_add_select_condition(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_conf_id int;\r\n    _operation varchar(30);\r\n    _value varchar(150);\r\n    _const varchar(350);\r\n    _col varchar(350);\r\n    _title varchar(350);\r\nBEGIN\r\n\t-- add select_condition for config\r\n    \r\n    _conf_id = injson->>'confid';\r\n    _operation = '=';\r\n    _const = 'CONST';\r\n\t\r\n\tIF _conf_id is null THEN\r\n    \tPERFORM raiserror('configid is null');\r\n    END IF;\r\n    \r\n    INSERT INTO framework.select_condition (\r\n      configid, col, title,\r\n      operation, const, value\r\n    ) VALUES (\r\n      _conf_id, _col, _title,\r\n      _operation, _const, _value\r\n    );\r\n\t\r\n\r\nEND;\r\n$function$\n
+197487	framework	fn_compo_bypath	framework.fn_compo_bypath(injson  json,outjson out json)	GET COMPO SETTINGS BY PATH	2020-05-14 17:26:34.600103	1	f	fn_compo_bypath(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_compo_bypath(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _path varchar(350);\r\nBEGIN\r\n\t-- GET COMPO SETTINGS BY PATH\r\n\t_path = injson->>'path';\r\n    \r\n    SELECT row_to_json(d)\r\n    FROM (\r\n\t   SELECT *\r\n       FROM framework.compos as c\r\n       WHERE c.path = _path\r\n\t) as d\r\n    INTO outjson;\r\n\r\n\r\n\toutjson = coalesce(outjson,'{}');\r\n\r\nEND;\r\n$function$\n
+197488	framework	fn_compo_save	framework.fn_compo_save(injson  int4,_id out json)	INSERT/UPDATE COMPOSITION	2020-05-14 17:26:34.600103	1	f	fn_compo_save(injson  int4,_id out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_compo_save(injson  int4,_id out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_compo_save(injson json, OUT _id integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _config json;\r\n  _title varchar(350);\r\n  _path varchar(350);\r\n  _userid int;\r\n  _newdata json;\r\nBEGIN\r\n  -- INSERT/UPDATE COMPOSITION\r\n\r\n  _config = injson->>'config';\r\n  _title = injson->>'title';\r\n  _path = injson->>'path';\r\n  _id = injson->>'id';\r\n  _userid = injson->>'userid';\r\n  \r\n  IF _id is null THEN\r\n  \tIF _config is null THEN\r\n    \tperform raiserror('config is null');\r\n    END IF;\r\n\r\n  \tIF _title is null THEN\r\n    \tperform raiserror('title is null'); \r\n    END IF;\r\n\r\n  \tIF _path is null THEN\r\n        perform raiserror('path is null');\r\n    END IF;\r\n    \r\n    _id = nextval('framework.compos_id_seq'::regclass);\r\n    \r\n    INSERT INTO framework.compos (\r\n      id, title,\r\n      path, config\r\n    )\r\n    VALUES (\r\n      _id, _title,\r\n      _path, _config\r\n    );\r\n    \r\n    \r\n    SELECT row_to_json(d)\r\n    FROM (\r\n\t  SELECT\r\n\t\t  *\r\n\t  FROM framework.compos\r\n\t) as d\r\n    WHERE id = _id\r\n    INTO _newdata;\r\n    \r\n  \tINSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, userid,\r\n      newdata\r\n    ) VALUES (\r\n      'framework.compos', _id::varchar(150),\r\n      '1', _userid ,\r\n     _newdata   \r\n    );    \r\n  ELSE\r\n    SELECT row_to_json(d)\r\n    FROM ( \r\n\t  SELECT\r\n\t\t  *\r\n\t  FROM framework.compos\r\n\t) as d\r\n    WHERE id = _id\r\n    INTO _newdata;\r\n    \r\n  \tUPDATE framework.compos\r\n    SET\r\n      title = coalesce(_title,title),\r\n      path = coalesce(_path,path),\r\n      config = coalesce(_config,config )  \t\r\n    WHERE id = _id;\r\n    \r\n  \tINSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, userid,\r\n      newdata\r\n    ) VALUES (\r\n      'framework.compos', _id::varchar(150),\r\n      '2', _userid,\r\n     _newdata   \r\n    ); \r\n  END IF;    \r\nEND;\r\n$function$\n
+197489	framework	fn_config_fncol_add	framework.fn_config_fncol_add()	ADD fn COLUMN IN CONFIG	2020-05-14 17:26:34.600103	1	f	fn_config_fncol_add()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_fncol_add() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_fncol_add(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t-- add fn column in config\r\n\r\n\r\n\tIF (injson->>'title') IS NULL THEN\r\n    \tPERFORM raiserror('title is null');\r\n    END IF;\r\n    \r\n\tIF (injson->>'fn') IS NULL THEN\r\n    \tPERFORM raiserror('fn is null');\r\n    END IF;\r\n    \r\n    IF (injson->'fncols') IS NULL THEN\r\n    \tPERFORM raiserror('fncols is null');\r\n    END IF;\r\n    \r\n\tINSERT INTO framework.config (\r\n  \t  viewid, col, title,\r\n      column_order, fn, fncolumns \r\n    )\r\n    VALUES (\r\n   \t (injson->>'viewid')::INT, substring(injson->>'title',1,15), injson->>'title', (\r\n\t   SELECT\r\n\t\t  max(column_id)\r\n\t   FROM framework.config\r\n\t   WHERE viewid = (injson->>'viewid')::INT\r\n     ) + 1, injson->>'fn',\r\n    injson->'fncols'\r\n    );\r\nEND;\r\n$function$\n
+197541	framework	fn_mainsettings_usercss	framework.fn_mainsettings_usercss()	UPDATE USERCSS FROM FILE ON THE SERVER	2020-05-14 17:26:34.600103	1	f	fn_mainsettings_usercss()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_mainsettings_usercss() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_mainsettings_usercss(_css text)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tUPDATE framework.mainsettings\r\n    SET usercss = _css;\r\n\r\nEND;\r\n$function$\n
+197490	framework	fn_config_inscol	framework.fn_config_inscol()	add fn column in config	2020-05-14 17:26:34.600103	1	f	fn_config_inscol()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_inscol() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_inscol(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_col varchar(150);\r\n    _viewid int;\r\n    _conf JSON;\r\n    _tabname varchar(350);\r\n    _val json;\r\n    _title varchar(500);\r\nBEGIN\r\n\t-- add fn column in config\r\n    _col = injson->>'col'; -- this is title\r\n    _viewid = injson->>'viewid';\r\n    \r\n    IF _col is null OR _viewid is null THEN\r\n    \tPERFORM raiserror('col or view is null');\r\n    END IF;\r\n\r\n    SELECT\r\n    \tv.tablename\r\n    FROM framework.views as v\r\n    WHERE v.id = _viewid\r\n    INTO _tabname;\r\n    \r\n    IF _tabname is null THEN\r\n    \tPERFORM raiserror('tabname is null');\r\n    END IF;\r\n    \r\n    /*SELECT outjson \r\n    FROM framework.fn_createconfig(json_build_object('tabname',_tabname,'colname',_col))\r\n    INTO _conf;*/\r\n    \r\n    \r\n   /* SELECT\r\n    \tvalue\r\n    FROM json_array_elements(_conf)\r\n    WHERE (value->>'title') = _col\r\n    LIMIT 1\r\n    INTO _val;\r\n    \r\n    _title = _val->>'title';\r\n    \r\n    IF (SELECT \r\n    \t\tcount(id) \r\n    \tFROM framework.config \r\n    \tWHERE viewid = _viewid and title = _title) > 0\r\n    THEN\r\n    \t_title = concat(_title,'_', \r\n            (SELECT \r\n                count(id) \r\n          \tFROM framework.config \r\n          \tWHERE viewid = _viewid)::varchar);\r\n    END IF;*/\r\n\r\n    \r\n    INSERT INTO framework.config (\r\n      viewid, t, col, column_id,\r\n      title, relation, relcol,\r\n      depency, column_order,\r\n      depencycol\r\n    )\r\n    SELECT\r\n           _viewid,\tpz.t, pz.col, pz.column_id,\r\n           concat(pz.title, '_', (\r\n             SELECT \r\n               count(id) \r\n             FROM framework.config \r\n             WHERE viewid = _viewid)::varchar) as title,\r\n                COALESCE(pz.relation,(\r\n                \tSELECT \r\n                    \tconcat(y.table_schema, '.', y.table_name)\r\n                    FROM information_schema.table_constraints as c\r\n                    \tJOIN information_schema.key_column_usage AS x ON\r\n                        \tc.constraint_name = x.constraint_name and\r\n                            x.column_name = pz.column_name\r\n                        JOIN information_schema.constraint_column_usage AS y ON \r\n                        \ty.constraint_name = c.constraint_name and\r\n                            y.constraint_schema = c.constraint_schema\r\n                    WHERE c.table_name = pz.table_name and\r\n                          c.table_schema = pz.table_schema and\r\n                          c.constraint_type = 'FOREIGN KEY'\r\n                    LIMIT 1\r\n                )) as relation,\r\n                (\r\n                \tSELECT \r\n                    \tconcat(y.column_name)\r\n                    FROM information_schema.table_constraints as c\r\n                    \tJOIN information_schema.key_column_usage AS x ON\r\n                             c.constraint_name = x.constraint_name and\r\n                             x.column_name = pz.column_name\r\n                        JOIN information_schema.constraint_column_usage AS y ON \r\n                        \ty.constraint_name = c.constraint_name and\r\n                            y.constraint_schema = c.constraint_schema\r\n                    WHERE c.table_name = pz.table_name and\r\n                     \t  c.table_schema = pz.table_schema and\r\n                          c.constraint_type = 'FOREIGN KEY'\r\n                    LIMIT 1\r\n                ) as relcol,\r\n             pz.depency, COALESCE((\r\n               SELECT \r\n                  max(column_order) \r\n               FROM framework.config \r\n               WHERE viewid = _viewid),0) + 1,\r\n             pz.depencycol\t\r\n    FROM (\r\n\t    SELECT \r\n           \tROW_NUMBER() OVER(order by f.column_id) as t,  \r\n            f.*  \r\n        FROM (\r\n        \tSELECT \r\n            \tDISTINCT \r\n            \tt.column_name as col,\r\n                coalesce(pgd.description, t.column_name) as title,                         \r\n                null as relation, null as depencycol,\r\n                t.ordinal_position as column_id, false as depency,\r\n                t.column_name, t.table_schema, t.table_name\r\n            FROM information_schema.columns as t\r\n            \tLEFT JOIN pg_catalog.pg_statio_all_tables as st on\r\n                         st.schemaname = t.table_schema and st.relname =\r\n                         t.table_name\r\n            \tLEFT JOIN pg_catalog.pg_description pgd on pgd.objoid =\r\n                         st.relid and pgd.objsubid = t.ordinal_position\r\n            WHERE concat(t.table_schema, '.', t.table_name) = _tabname\r\n            \t--AND coalesce(pgd.description, t.column_name) = COALESCE(_colname, coalesce(pgd.description, t.column_name))\r\n            UNION ALL\r\n            SELECT \r\n            \tx.table_name as col,       \r\n                x.table_name as title,\r\n                concat(x.table_schema, '.', x.table_name) as relation,\r\n                x.column_name as depencycol,\r\n                (\r\n                 \tSELECT count(t.*)\r\n                    FROM information_schema.columns as t\r\n                    WHERE concat(t.table_schema, '.', t.table_name) = _tabname\r\n                ) + 1 as column_id,\r\n                true as depency,\r\n                '' as column_name,\r\n                '' as table_schema,\r\n                '' as table_name\r\n            FROM information_schema.key_column_usage as x\r\n                 LEFT JOIN information_schema.referential_constraints as c on\r\n                         c.constraint_name = x.constraint_name and\r\n                         c.constraint_schema = x.constraint_schema\r\n                 LEFT JOIN information_schema.key_column_usage y on\r\n                         y.ordinal_position = x.position_in_unique_constraint and\r\n                         y.constraint_name = c.unique_constraint_name\r\n        \tWHERE concat(y.table_schema, '.', y.table_name) = _tabname and\r\n                  y.table_name is not null\r\n        ) as f\r\n       \r\n        ORDER BY \r\n        \tf.column_id) as pz\r\n         WHERE pz.title = _col;\r\n\r\n    \r\nEND;\r\n$function$\n
+197491	framework	fn_config_relation	framework.fn_config_relation(_id  int4,_relation out varchar)	FOR CONFIG RELATION COLUMN	2020-05-14 17:26:34.600103	1	f	fn_config_relation(_id  int4,_relation out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_relation(_id  int4,_relation out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_relation(_id integer, OUT _relation character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\n/*DECLARE\r\n  variable_name datatype;*/\r\nBEGIN\r\n\t-- FOR CONFIG RELATION COLUMN\r\n\t\r\n    SELECT\r\n    \tCASE WHEN \r\n        \tc.type like '%_api'\r\n        THEN\r\n        \tc.select_api\r\n        WHEN c.type like 'multi%' and \r\n        \t c.type not like '%_api'\r\n        THEN\r\n        \tc.multiselecttable\r\n        ELSE\r\n          COALESCE(\r\n            c.relation,c.select_api,c.multiselecttable\r\n          )\r\n        END\r\n    FROM framework.config as c\r\n    WHERE c.id = _id\r\n    INTO _relation;\r\n\r\n\r\nEND;\r\n$function$\n
+197493	framework	fn_config_selectapi	framework.fn_config_selectapi(injson  json,outjson out json)	select_api for column add in config	2020-05-14 17:26:34.600103	1	f	fn_config_selectapi(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_selectapi(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_selectapi(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _viewid int;\r\n  tabname varchar(350);\r\nBEGIN\r\n\t-- select_api for column add in config\r\n\t_viewid = (injson->'inputs')->>'id';\r\n    \r\n    IF _viewid is null THEN\r\n    \tPERFORM raiserror('viewid is null, can not find out table name');\r\n    END IF;\r\n\t\r\n    SELECT \r\n    \tv.tablename\r\n    FROM framework.views as v\r\n    WHERE v.id = _viewid \r\n    INTO tabname; \r\n        \r\n    SELECT \r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n    \tSELECT \r\n           \tDISTINCT \r\n           \tt.column_name as label,\r\n            coalesce(pgd.description, t.column_name) as value\r\n        FROM information_schema.columns as t\r\n           \tLEFT JOIN pg_catalog.pg_statio_all_tables as st on\r\n\t\t\t\tst.schemaname = t.table_schema and \r\n                st.relname = t.table_name\r\n          \tLEFT JOIN pg_catalog.pg_description pgd on \r\n            \tpgd.objoid = st.relid and \r\n                pgd.objsubid = t.ordinal_position\r\n        WHERE concat(t.table_schema, '.', t.table_name) = tabname\r\n            UNION ALL\r\n        SELECT \r\n           \tx.table_name as label,       \r\n            x.table_name as value\r\n        FROM information_schema.key_column_usage as x\r\n             LEFT JOIN information_schema.referential_constraints as c on\r\n                  c.constraint_name = x.constraint_name and\r\n        \t      c.constraint_schema = x.constraint_schema\r\n             LEFT JOIN information_schema.key_column_usage y on\r\n             \ty.ordinal_position = x.position_in_unique_constraint and\r\n                y.constraint_name = c.unique_constraint_name\r\n        WHERE concat(y.table_schema, '.', y.table_name) = tabname and\r\n        \t  y.table_name is not null\r\n    ) as d\r\n    INTO outjson;\r\n \t\r\n    outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197494	framework	fn_config_settings_apply	framework.fn_config_settings_apply()	apply all columns settings in config by chosed column	2020-05-14 17:26:34.600103	1	f	fn_config_settings_apply()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_settings_apply() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_settings_apply(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _col varchar(150);\r\n  _setting varchar(150);\r\n  _selected json;\r\n  _viewid int;\r\nBEGIN\r\n\t-- apply all columns settings in config by chosed column\r\n  _col = injson->>'col';\r\n  _setting = injson->>'setting';\r\n  _viewid = injson->>'viewid';\r\n  \r\n  -- mock yet\r\n  \r\nEND;\r\n$function$\n
+197495	framework	fn_config_to_json	framework.fn_config_to_json(_viewid  int4,_config out json)	CONFIG FROM TABLE TO JSON BY VIEW ID	2020-05-14 17:26:34.600103	1	f	fn_config_to_json(_viewid  int4,_config out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_config_to_json(_viewid  int4,_config out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_config_to_json(_viewid integer, OUT _config json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t-- CONFIG FROM TABLE TO JSON BY VIEW ID\r\n\r\n  SELECT\r\n     array_to_json(array_agg(row_to_json(d)))\r\n  FROM\r\n      (SELECT \r\n      \tc.id,\r\n        concat(c.col,'_',c.id::varchar) as key,\r\n        c.col,\r\n        c.title,\r\n        c.column_id,\r\n        c.classname,\r\n        c.depency,\r\n        c.depencycol,\r\n        c.relcol,\r\n        c.column_order,\r\n        c."join",\r\n        c.updatable,\r\n        c.required,\r\n        c.orderby,\r\n        c.orderbydesc,\r\n        c.related,\r\n        c."table",\r\n        c.width,\r\n        c.visible,\r\n        c."type",\r\n        c.multiselecttable,\r\n        c.editable,\r\n        c.tpath,\r\n        c.relation,\r\n        CASE WHEN c.fn is not null\r\n        THEN\r\n        \tjson_build_object('value', c.fn, 'label', c.fn, 'functype', f.functype) \r\n        ELSE \r\n        \tnull\r\n        END as fn,\r\n        c.select_api,\r\n        c.t,\r\n        c.relatecolumn,\r\n        c.roles,\r\n        COALESCE((\r\n         SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n          FROM(\r\n           SELECT\r\n            value as label,\r\n            value as value\r\n           FROM json_array_elements_text(c.relationcolums) as r\r\n\t\t\t) as d\r\n         ),'[]') as relationcolums,\r\n         (SELECT\r\n          \tarray_to_json(array_agg(row_to_json(d)))\r\n          FROM\r\n           (SELECT\r\n                m.value::varchar as value, \r\n                m.value::varchar as label\r\n            FROM json_array_elements_text(c.multicolums) as m) as d) as multicolums,\r\n          CASE WHEN c.fn is not null\r\n          THEN\r\n          COALESCE((\r\n            SELECT\r\n              array_to_json(array_agg(row_to_json(d)))\r\n            FROM\r\n              (\r\n                SELECT * FROM (\r\n                  SELECT (\r\n                        CASE \r\n                        WHEN value::varchar not in ('_userid_', '_orgid_', '_orgs_') \r\n                        THEN cc.col \r\n                        ELSE value::varchar\r\n                        END \r\n                      ) as label, (\r\n                        CASE \r\n                        WHEN value::varchar not in ('_userid_', '_orgid_', '_orgs_') \r\n                        THEN cc.title\r\n                        ELSE value::varchar\r\n                        END \r\n                      ) as value, (\r\n                        CASE \r\n                        WHEN value::varchar not in ('_userid_', '_orgid_', '_orgs_') \r\n                        THEN concat(cc.col,'_',cc.id::varchar)\r\n                        ELSE value::varchar\r\n                        END \r\n                      ) as key,\r\n                      CASE WHEN cc.related THEN cc.t\r\n                      ELSE '1'\r\n                      END as t\r\n                  FROM (\r\n                    SELECT\r\n                        row_number() over (order by 0) as r,\r\n                        value as value\r\n                    FROM json_array_elements_text(c.fncolumns) as f \r\n                    --WHERE value::varchar not in ('_userid_', '_orgid_', '_orgs_')\r\n                ) as  ff\r\n                    LEFT JOIN framework.config as cc on cc.viewid = _viewid and cc.id::varchar = ff.value::varchar\r\n                ORDER BY ff.r ) as dd\r\n              \r\n                             \r\n               /* SELECT\r\n                    cc.col as label,\r\n                    cc.title as value,\r\n                    concat(cc.col,'_',cc.id::varchar) as key,\r\n                    CASE WHEN cc.related THEN cc.t\r\n                    ELSE '1'\r\n                    END as t\r\n                FROM json_array_elements_text(c.fncolumns) as ff\r\n                    LEFT JOIN framework.config as cc on cc.viewid = _viewid and cc.title = ff.value::varchar*/\r\n              ) as d),'[]')\r\n          ELSE\r\n          \tnull\r\n          END as fncolumns,\r\n              \r\n          (SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n           FROM\r\n           (\r\n            SELECT \r\n                json_build_object('label',df.act,'value',df.act) as act,\r\n                json_build_object('label',df.bool,'value',df.bool) as bool,\r\n                df.value\r\n            FROM framework.defaultval as df\r\n            WHERE df.configid = c.id) as d) as defaultval,\r\n          (SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n           FROM\r\n            (\r\n            SELECT\r\n                vs.value,\r\n                json_build_object('value',op.value,'js',op.js) as operation,\r\n                json_build_object(\r\n                    'value',cc.title,\r\n                    'label',cc.title,\r\n                    't', cc.t,\r\n                    'key',concat(cc.col,'_',cc.id::varchar)\r\n                ) as col\r\n            FROM framework.visible_condition as vs\r\n                LEFT JOIN framework.operations as op on op.value = vs.operation\r\n                LEFT JOIN framework.config as cc on /*cc.viewid = _viewid and*/ cc.id = vs.val_desc\r\n            WHERE vs.configid = c.id\r\n            ) as d) as visible_condition,\r\n          (SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n           FROM\r\n            (SELECT\r\n                  json_build_object('label',sc.col,'value', sc.col) as col,\r\n                  sc.const,\r\n                  json_build_object(\r\n                      'value', op.value,\r\n                      'js', op.js,\r\n                      'python', op.python,\r\n                      'sql', op.sql\r\n                  ) as operation,\r\n                  json_build_object(\r\n                      'value',cc.title,\r\n                      'label',cc.title,\r\n                      't', cc.t,\r\n                      'key',concat(cc.col,'_',cc.id::varchar)\r\n                  ) as value\r\n              FROM framework.select_condition as sc\r\n                  LEFT JOIN framework.operations as op on op.value = sc.operation\r\n                  LEFT JOIN framework.config as cc on cc.viewid = _viewid and cc.id = sc.val_desc\r\n              WHERE sc.configid = c.id      \r\n            ) as d) as select_condition \r\n  FROM framework.config as c\r\n    LEFT JOIN framework.functions as f on f.funcname = c.fn\r\n  WHERE c.viewid = _viewid\r\n  ORDER BY c.column_order) as d\r\n  INTO _config;\r\n  \r\n  _config = COALESCE(_config,'[]');\r\nEND;\r\n$function$\n
+197496	framework	fn_configsettings_selectapi	framework.fn_configsettings_selectapi(insjon  json,outjson out json)	SELECT CONFIG SETTINGS DIC	2020-05-14 17:26:34.600103	1	f	fn_configsettings_selectapi(insjon  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_configsettings_selectapi(insjon  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_configsettings_selectapi(insjon json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t-- SELECT CONFIG SETTINGS DIC\r\n\tSELECT\r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n\t  SELECT\r\n\t\t  c.sname as label,\r\n\t\t  c.sname as value\r\n\t  FROM framework.configsettings as c\r\n\t) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n    \r\n\r\n\r\nEND;\r\n$function$\n
+197499	framework	fn_createconfig	framework.fn_createconfig(injson  json,outjson out json)	CREATE VIEW's CONFIG	2020-05-14 17:26:34.600103	1	f	fn_createconfig(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_createconfig(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_createconfig(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  tabname varchar(350);\r\n\t_colname varchar(200);\r\nBEGIN\r\n\t-- CREATE VIEW's CONFIG\r\n\ttabname = injson->>'tabname';\r\n    --_colname = injson->>'colname';\r\n        \r\n    SELECT \r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n    \tSELECT \r\n           ROW_NUMBER() OVER(order by f.column_id) as t,\r\n           f.*\r\n        FROM (\r\n        \tSELECT \r\n            \tDISTINCT \r\n            \tt.column_name as col,\r\n                coalesce(pgd.description, t.column_name)::varchar(300) as title,                         \r\n                'label' as type,\r\n                true as visible,\r\n                concat(\r\n                \tt.column_name,'_',\r\n                    SUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),1,5)\r\n                ) as key,\r\n                (\r\n                \tSELECT \r\n                    \tconcat(y.table_schema, '.', y.table_name)\r\n                    FROM information_schema.table_constraints as c\r\n                    \tJOIN information_schema.key_column_usage AS x ON\r\n                        \tc.constraint_name = x.constraint_name and\r\n                            x.column_name = t.column_name\r\n                        JOIN information_schema.constraint_column_usage AS y ON \r\n                        \ty.constraint_name = c.constraint_name and\r\n                            y.constraint_schema = c.constraint_schema\r\n                    WHERE c.table_name = t.table_name and\r\n                          c.table_schema = t.table_schema and\r\n                          c.constraint_type = 'FOREIGN KEY'\r\n                    LIMIT 1\r\n                ) as relation,\r\n                (\r\n                \tSELECT \r\n                    \tconcat(y.column_name)\r\n                    FROM information_schema.table_constraints as c\r\n                    \tJOIN information_schema.key_column_usage AS x ON\r\n                             c.constraint_name = x.constraint_name and\r\n                             x.column_name = t.column_name\r\n                        JOIN information_schema.constraint_column_usage AS y ON \r\n                        \ty.constraint_name = c.constraint_name and\r\n                            y.constraint_schema = c.constraint_schema\r\n                    WHERE c.table_name = t.table_name and\r\n                     \t  c.table_schema = t.table_schema and\r\n                          c.constraint_type = 'FOREIGN KEY'\r\n                    LIMIT 1\r\n                ) as relcol,\r\n                '[]' as relationcolums,\r\n                false as "join",\r\n                false as onetomany,\r\n                false as required,\r\n                null as defaultval,\r\n                '' as width,\r\n                t.ordinal_position as column_id,\r\n                false as depency,\r\n                null as depencycol,\r\n                '[]' as roles,\r\n                '' as classname\r\n            FROM information_schema.columns as t\r\n            \tLEFT JOIN pg_catalog.pg_statio_all_tables as st on\r\n                         st.schemaname = t.table_schema and st.relname =\r\n                         t.table_name\r\n            \tLEFT JOIN pg_catalog.pg_description pgd on pgd.objoid =\r\n                         st.relid and pgd.objsubid = t.ordinal_position\r\n            WHERE concat(t.table_schema, '.', t.table_name) = tabname\r\n            \t--AND coalesce(pgd.description, t.column_name) = COALESCE(_colname, coalesce(pgd.description, t.column_name))\r\n           /* UNION ALL\r\n            SELECT \r\n            \tx.table_name as col,       \r\n                x.table_name as title,\r\n                'array' as type,\r\n                false as visible,\r\n                concat(\r\n                \tx.table_name, '_',\r\n                    SUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),1,5)\r\n                ) as key,\r\n                concat(x.table_schema, '.', x.table_name) as relation,\r\n                null as relcol,\r\n                '[]' as relationcolums,\r\n                false as join,\r\n                true as onetomany,\r\n                false as required,\r\n                null as defaultval,\r\n                '' as width,\r\n                (\r\n                 \tSELECT count(t.*)\r\n                    FROM information_schema.columns as t\r\n                    WHERE concat(t.table_schema, '.', t.table_name) = tabname\r\n                ) + 1 as column_id,\r\n                true as depency,\r\n                x.column_name as depencycol,\r\n                '[]' as roles,\r\n                '' as classname\r\n            FROM information_schema.key_column_usage as x\r\n                 LEFT JOIN information_schema.referential_constraints as c on\r\n                         c.constraint_name = x.constraint_name and\r\n                         c.constraint_schema = x.constraint_schema\r\n                 LEFT JOIN information_schema.key_column_usage y on\r\n                         y.ordinal_position = x.position_in_unique_constraint and\r\n                         y.constraint_name = c.unique_constraint_name\r\n        \tWHERE concat(y.table_schema, '.', y.table_name) = tabname and\r\n                  y.table_name is not null*/\r\n        ) as f\r\n        ORDER BY \r\n        \tf.column_id,\r\n        \trelation\r\n    ) as d\r\n    INTO outjson;\r\n \t\r\n    outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197500	framework	fn_createconfig_new	framework.fn_createconfig_new(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_createconfig_new(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_createconfig_new(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_createconfig_new(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  tabname varchar(350);\r\nBEGIN\r\n --dont used\r\n  tabname = injson->>'tabname';\r\n  SELECT array_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n         SELECT ROW_NUMBER() OVER(\r\n         order by f.column_id) as t,\r\n                  *,\r\n                  '[]'::JSON as relationcolums,\r\n                  '[]'::JSON as roles\r\n         FROM (\r\n                SELECT distinct t.column_name as col,\r\n                       substring(coalesce(pgd.description, t.column_name), 1, 62) as title,\r\n                       framework.fn_htmldatatype(t.data_type) as type,\r\n                       true as visible, \r\n                       (\r\n                         SELECT concat(y.table_schema, '.', y.table_name)\r\n                         FROM information_schema.table_constraints as c\r\n                              JOIN information_schema.key_column_usage AS x ON\r\n                                c.constraint_name = x.constraint_name and\r\n                                x.column_name = t.column_name\r\n                              JOIN information_schema.constraint_column_usage AS\r\n                                y ON y.constraint_name = c.constraint_name and\r\n                                y.column_name = t.column_name\r\n                         WHERE c.table_name = t.table_name and\r\n                               c.table_schema = t.table_schema and\r\n                               c.constraint_type = 'FOREIGN KEY'\r\n                         LIMIT 1\r\n                       ) as relation,\r\n                       (\r\n                         SELECT concat(y.column_name)\r\n                         FROM information_schema.table_constraints as c\r\n                              JOIN information_schema.key_column_usage AS x ON\r\n                                c.constraint_name = x.constraint_name and\r\n                                x.column_name = t.column_name\r\n                              JOIN information_schema.constraint_column_usage AS\r\n                                y ON y.constraint_name = c.constraint_name and\r\n                                y.column_name = t.column_name\r\n                         WHERE c.table_name = t.table_name and\r\n                               c.table_schema = t.table_schema and\r\n                               c.constraint_type = 'FOREIGN KEY'\r\n                         LIMIT 1\r\n                       ) as relcol,\r\n                       false as "join",\r\n                       false as onetomany,\r\n                       null as defaultval,\r\n                       ''                       as width,\r\n                       t.ordinal_position as column_id,\r\n                       false as depency,\r\n                       null as depencycol,\r\n                       ''                       as classname\r\n                FROM information_schema.columns as t\r\n                     left join pg_catalog.pg_statio_all_tables as st on\r\n                       st.schemaname = t.table_schema and st.relname =\r\n                       t.table_name\r\n                     left join pg_catalog.pg_description pgd on pgd.objoid =\r\n                       st.relid and pgd.objsubid = t.ordinal_position \r\n                WHERE concat(t.table_schema, '.', t.table_name) = tabname\r\n                UNION ALL\r\n                SELECT x.table_name as col,\r\n                       --,        \r\n                       x.table_name as title,\r\n                       'array'                       as type,\r\n                       false as visible,\r\n                       concat(x.table_schema, '.', x.table_name) as relation,\r\n                       null as relcol,\r\n                       --'[]'::JSON as relationcolums,\r\n                       false as join,\r\n                       true as onetomany,\r\n                       null as defaultval,\r\n                       ''                       as width,\r\n                       (\r\n                         SELECT count(t.*)\r\n                         FROM information_schema.columns as t\r\n                         WHERE concat(t.table_schema, '.', t.table_name) =\r\n                           tabname\r\n                       ) + 1 as column_id,\r\n                       true as depency,\r\n                       x.column_name as depencycol,\r\n                       --'[]'::JSON as roles,\r\n                       ''                       as classname\r\n                FROM information_schema.key_column_usage as x\r\n                     --  and t.column_name = x.column_name\r\n                     left join information_schema.referential_constraints as c\r\n                       on c.constraint_name = x.constraint_name and\r\n                       c.constraint_schema = x.constraint_schema\r\n                     left join information_schema.key_column_usage y on\r\n                       y.ordinal_position = x.position_in_unique_constraint and\r\n                       y.constraint_name = c.unique_constraint_name\r\n                WHERE concat(y.table_schema, '.', y.table_name) = tabname and\r\n                      y.table_name is not null\r\n              ) as f\r\n         ORDER BY f.column_id,\r\n                  relation\r\n       ) as d\r\n  INTO outjson;\r\n\r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197501	framework	fn_cryptosess	framework.fn_cryptosess(injson  json,sessid out bpchar)	AUTH IN WITH CRYPTOKEY	2020-05-14 17:26:34.600103	1	f	fn_cryptosess(injson  json,sessid out bpchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_cryptosess(injson  json,sessid out bpchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_cryptosess(injson json, OUT sessid character)\n RETURNS character\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  user_id int;\r\n  _orgid int;\r\n  _created timestamp;\r\n  \r\n  _thumbprint varchar(200);\r\nBEGIN\r\n\t-- AUTH IN WITH CRYPTOKEY\r\n    \r\n    _thumbprint = injson->>'thumbprint';\r\n    \r\n    IF _thumbprint is null THEN\r\n        PERFORM raiserror('No Certificate');\r\n    END IF;\r\n    \r\n    SELECT \r\n        u.id,\r\n        u.orgs->0\r\n    FROM framework.users as u\r\n    WHERE u.isactive and u.thumbprint = _thumbprint\r\n    INTO user_id, _orgid;\r\n    \r\n    IF user_id is null THEN\r\n        perform raiserror('User not active or not found. Check your certificate');\r\n    END IF;\r\n     \r\n    sessid = uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36);\r\n    \r\n    INSERT INTO framework.sess\r\n    (\r\n        id,\r\n        userid\r\n    )\r\n    VALUES \r\n    (\r\n        sessid,\r\n        user_id\r\n    );\r\n    \r\n    UPDATE framework.users\r\n    SET orgid = _orgid\r\n    WHERE orgid is null and id = user_id;\r\n    \r\nEND;\r\n$function$\n
+197502	framework	fn_deleteconfig_checked	framework.fn_deleteconfig_checked()	DELETE CHECKED CONFIG	2020-05-14 17:26:34.600103	1	f	fn_deleteconfig_checked()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_deleteconfig_checked() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_deleteconfig_checked(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _checked json;\r\n  _userid int;\r\n  _od json;\r\n  _id int;\r\nBEGIN\r\n  _userid = injson->>'userid';\r\n  _checked = injson->>'items';\r\n\r\n  \r\n  FOR _id in (\r\n      SELECT\r\n\t      value::varchar::int\r\n\t  FROM json_array_elements_text(_checked)\r\n  ) \r\n  LOOP\r\n      SELECT\r\n\t       row_to_json(d)\r\n\t  FROM (\r\n\t      SELECT\r\n\t\t      *\r\n\t\t  FROM framework.config\r\n\t\t  WHERE id = _id\r\n\t  ) as d\r\n\t  INTO _od;\r\n\t  \r\n\t  DELETE FROM framework.config\r\n\t  WHERE id = _id;\r\n\t  \r\n\t  INSERT INTO framework.logtable (\r\n\t\ttablename, tableid, opertype,\r\n\t\toldata, newdata, userid\r\n\t  ) VALUES (\r\n\t    'framework.config', _id::varchar, '3',\r\n\t\t_od, '{}'::json, _userid\r\n\t  );\r\n  END LOOP;\r\n\r\n  \r\n   \r\nEND;\r\n$function$\n
+197503	framework	fn_deleterow	framework.fn_deleterow()	DELETE ROW IN LIST COMPONENT (FROM TABLE)	2020-05-14 17:26:34.600103	1	f	fn_deleterow()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_deleterow() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_deleterow(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _tablename varchar(350);\r\n  _id varchar;\r\n  _squery varchar;\r\n  _oldata json;\r\n  _userid varchar(150);\r\n_viewid int;\r\n_userroles json;\r\n_viewroles json;\r\nBEGIN\r\n\t-- DELETE ROW IN LIST COMPONENT (FROM TABLE)\r\n\r\n  -- = injson->>'tablename';\t\r\n  _id = trim(injson->>'id');\r\n  _userid = injson->>'userid';\r\n  _viewid = injson->>'viewid';\r\n  \r\n    IF _viewid is NULL\r\n    THEN\r\n      perform raiserror('view id is null');\r\n    END IF; \r\n    \r\n    SELECT \r\n    \troles,\r\n        tablename\r\n    FROM framework.views \r\n    WHERE id = _viewid\r\n    INTO _viewroles, _tablename;\r\n    IF _viewroles is null THEN\r\n    \tperform raiserror('view is not found');\r\n    END IF;\r\n    SELECT \r\n    \troles\r\n    FROM framework.users \r\n    WHERE id::varchar = _userid\r\n    INTO _userroles;\r\n    \r\n    IF (SELECT count(*) FROM json_array_elements_text(_viewroles)) > 0 and \r\n    (SELECT count(*) \r\n     FROM json_array_elements_text(_viewroles) as v\r\n     \tJOIN json_array_elements_text(_userroles) as r on \r\n        \t((v.value::json->>'value')::varchar = r.value::varchar\r\n            \tOR\r\n             v.value::varchar = r.value::varchar\r\n            )\r\n     ) = 0 THEN\r\n    \tPERFORM raiserror('m403err');\r\n    END IF;\r\n    \r\n    IF _tablename is NULL\r\n    THEN\r\n      perform raiserror('table is null');\r\n    END IF; \r\n    \r\n    \r\n\r\n   \r\n   IF (SELECT count(*)\r\n   FROM information_schema.columns as t\r\n   WHERE concat(t.table_schema,'.',t.table_name) = _tablename ) = 0 THEN\r\n   \t perform raiserror('can not find out the column type. check table and column names');\r\n   END IF;\r\n  \r\n  IF coalesce(_id,'') = '' THEN\r\n\tperform raiserror('id is null');\r\n  END IF;\r\n  \r\n\r\n _squery = concat('\r\n   SELECT row_to_json(d)\r\n   FROM (\r\n    SELECT * \r\n    FROM ',_tablename,'  \r\n    WHERE upper(id::varchar) = upper($1)\r\n  ) as d');\r\n  \r\n    EXECUTE format(_squery) USING _id::varchar INTO _oldata; \r\n  \tINSERT INTO framework.logtable (\r\n      tablename, tableid, opertype,\r\n      userid, oldata\r\n    ) VALUES (\r\n      _tablename, _id, '3',\r\n      _userid::int, _oldata  \r\n    );\r\n \r\n  _squery = concat('DELETE FROM ', _tablename, ' WHERE upper(id::varchar) = $1; ');\r\n  EXECUTE format(_squery) USING upper(_id);\r\nEND;\r\n$function$\n
+197504	framework	fn_dialog_addadmin	framework.fn_dialog_addadmin()	ADD USER TO ADMINS	2020-05-14 17:26:34.600103	1	f	fn_dialog_addadmin()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_addadmin() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_addadmin(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _user_to_add int;\r\n  _dialogid int;\r\n  _dtype smallint;\r\n  _admins json;\r\n  _od json;\r\n  _users JSON;\r\n  _nw JSON;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _dialogid = injson->>'id';\r\n    _user_to_add = injson->>'user_to_add';\r\n\r\n\r\n\tIF _dialogid IS NULL \r\n    THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    IF _user_to_add is null \r\n    THEN \r\n  \t  PERFORM raiserror('user_to_add is null');\r\n    END IF;\r\n    \r\n    SELECT \r\n    \td.dialog_admins, d.dtype, d.users\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _dialogid\r\n    INTO _admins, _dtype, _users; \r\n\r\n    IF _dtype = '1'\r\n    THEN \r\n        RETURN;\r\n    END IF;\r\n    \r\n    IF _user_to_add not in (\r\n    \tSELECT\r\n        \tvalue::varchar::int\r\n    \tFROM json_array_elements_text(_users)\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('User not in dialog');\r\n    END IF;\r\n    \r\n    IF _user_to_add in (\r\n    \tSELECT\r\n        \tvalue::varchar::int\r\n    \tFROM json_array_elements_text(_admins)\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('User already admin');\r\n    END IF;\r\n    \r\n    \r\n    IF (\r\n        SELECT\r\n            count(*)\r\n        FROM json_array_elements_text(_admins)\r\n        WHERE value::varchar::int = _userid\r\n    ) = 0\r\n    THEN\r\n        PERFORM raiserror('ACCESS DENIED');\r\n    END IF;\r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _od;\r\n    \r\n    UPDATE framework.dialogs\r\n    SET    \r\n\t\tdialog_admins = _admins::jsonb||concat('[',_user_to_add::varchar,']')::jsonb\r\n    WHERE id = _dialogid;\r\n\r\n\r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _nw;\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n      'framework.dialogs', _dialogid::VARCHAR,\r\n      '2',_od,_nw,\r\n      _userid\r\n     );\r\nEND;\r\n$function$\n
+197505	framework	fn_dialog_adduser	framework.fn_dialog_adduser()	ADD USER IN DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_adduser()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_adduser() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_adduser(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _user_to_add int;\r\n  _dialogid int;\r\n  _dtype smallint;\r\n  _admins json;\r\n  _od json;\r\n  _users JSON;\r\n  _nw JSON;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _dialogid = injson->>'id';\r\n    _user_to_add = injson->>'user_to_add';\r\n\r\n\r\n\tIF _dialogid IS NULL \r\n    THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    IF _user_to_add is null \r\n    THEN \r\n  \t  PERFORM raiserror('user_to_add is null');\r\n    END IF;\r\n    \r\n    SELECT \r\n    \td.dialog_admins, d.dtype, d.users\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _dialogid\r\n    INTO _admins, _dtype, _users; \r\n\r\n    IF _dtype = '1'\r\n    THEN \r\n        RETURN;\r\n    END IF;\r\n    \r\n    IF _user_to_add in (\r\n    \tSELECT\r\n        \tvalue::varchar::int\r\n    \tFROM json_array_elements_text(_users)\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('User already in dialog');\r\n    END IF;\r\n    \r\n    \r\n    \r\n    IF (\r\n        SELECT\r\n            count(*)\r\n        FROM json_array_elements_text(_admins)\r\n        WHERE value::varchar::int = _userid\r\n    ) = 0\r\n    THEN\r\n        PERFORM raiserror('ACCESS DENIED');\r\n    END IF;\r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _od;\r\n    \r\n    UPDATE framework.dialogs\r\n    SET    \r\n\t\tusers = users::jsonb||concat('[',_user_to_add::varchar,']')::jsonb\r\n    WHERE id = _dialogid;\r\n\r\n\r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _nw;\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n      'framework.dialogs', _dialogid::VARCHAR,\r\n      '2',_od,_nw,\r\n      _userid\r\n     );\r\nEND;\r\n$function$\n
+197506	framework	fn_dialog_edit	framework.fn_dialog_edit()	EDIT DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_edit()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_edit() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_edit(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _id int;\r\n  _title varchar(150);\r\n  _photo json;\r\n  _admins json;\r\n  _dialog_admins json;\r\n  _dtype smallint;\r\n  _od json;\r\n  _nw json;\r\n  _users json;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _id = injson->>'id';\r\n    _title = injson->>'title';\r\n   -- _photo = injson->>'photo';\r\n    _photo = injson->>'value';\r\n    _dialog_admins = injson->>'dialog_admins';\r\n   -- _users = injson->>'users';\r\n    SELECT \r\n    \td.dialog_admins,\r\n        d.dtype\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _id\r\n    INTO _admins, _dtype; \r\n    \r\n    \r\n    IF _dtype = '1'\r\n    THEN \r\n        RETURN;\r\n    END IF;\r\n    \r\n    IF (\r\n        SELECT\r\n            count(*)\r\n        FROM json_array_elements_text(_admins)\r\n        WHERE value::varchar::int = _userid\r\n    ) = 0\r\n    THEN\r\n        PERFORM raiserror('ACCESS DENIED');\r\n    END IF;\r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _id\r\n    ) as z\r\n    INTO _od;\r\n    \r\n    UPDATE framework.dialogs\r\n    SET    \r\n        title = coalesce(_title,title),\r\n        photo = coalesce(_photo,photo),\r\n        dialog_admins = coalesce(_dialog_admins,dialog_admins)--,\r\n\t\t--users = coalesce(_users,'[]')\r\n    WHERE id = _id;\r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _id\r\n    ) as z\r\n    INTO _nw;\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n      'framework.dialogs', _id::VARCHAR,\r\n      '2',_od,_nw,\r\n      _userid\r\n     );\r\n    \r\nEND;\r\n$function$\n
+197507	framework	fn_dialog_group_create	framework.fn_dialog_group_create()	CREATE GROUP DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_group_create()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_group_create() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_group_create(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  --_message_text varchar;\r\n  _dialog_id int;\r\n  _users JSON;\r\n -- _files json;\r\n  --_images json;\r\n  _id int;\r\n  _title varchar(150);\r\n  _photo json;\r\nBEGIN\r\n\t\r\n\t_userid = injson->>'userid';\r\n    _users = injson->>'users';\r\n   -- _message_text = injson->>'message_text';\r\n   -- _files = injson->>'files';\r\n    --_images = injson->>'images';\r\n    _title = injson->>'title';\r\n    _photo = injson->>'value';\r\n    \r\n    -- CHECKS\r\n    IF _userid is NULL \r\n    THEN\r\n    \tPERFORM raiserror('userid is null');\r\n    END IF;\r\n    \r\n    IF _users is NULL \r\n    THEN\r\n    \tPERFORM raiserror('users is null');\r\n    END IF;\r\n    \r\n    -- USERS FOR GROUP DIALOG\r\n    _users = (\r\n      array_to_json(ARRAY(\r\n        SELECT\r\n            _userid\r\n      ))::jsonb||_users::jsonb\r\n    )::json;\r\n    \r\n    -- ADD DIALOG\r\n    _dialog_id = nextval('framework.dialogs_id_seq'::regclass);\r\n    \r\n\t_title = COALESCE(_title,CONCAT('untitled_',_dialog_id::varchar));\r\n    INSERT INTO framework.dialogs (\r\n       id, title, users, userid, \r\n       dtype,  photo \r\n    ) VALUES (\r\n       _dialog_id, _title, _users ,_userid, \r\n       '2', coalesce(_photo,'[]')\r\n    );\r\n    \r\nEND;\r\n$function$\n
+197508	framework	fn_dialog_leave	framework.fn_dialog_leave()	REMOVE USER FROM DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_leave()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_leave() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_leave(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _user_to_remove int;\r\n  _dialogid int;\r\n  _dtype smallint;\r\n  _admins json;\r\n  _od json;\r\n  _users JSON;\r\n  _nw JSON;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _dialogid = injson->>'id';\r\n    _user_to_remove = _userid;\r\n\r\n\r\n\tIF _dialogid IS NULL \r\n    THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    IF _user_to_remove is null \r\n    THEN \r\n  \t  PERFORM raiserror('user_to_remove is null');\r\n    END IF;\r\n    \r\n    SELECT \r\n    \td.dialog_admins,\r\n        d.dtype,\r\n        d.users\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _dialogid\r\n    INTO _admins, _dtype, _users; \r\n\r\n    IF _dtype = '1'\r\n    THEN \r\n        RETURN;\r\n    END IF;\r\n    \r\n    IF _user_to_remove not in (\r\n    \tSELECT\r\n        \tvalue::varchar::int\r\n    \tFROM json_array_elements_text(_users)\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('User not in dialog');\r\n    END IF;\r\n    \r\n    \r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _od;\r\n    \r\n    UPDATE framework.dialogs\r\n    SET    \r\n\t\tusers = array_to_json(ARRAY(\r\n        \tSELECT\r\n                value::varchar::int\r\n            FROM json_array_elements_text(users)\r\n            WHERE value::varchar::int <> _user_to_remove\r\n        ))\r\n    WHERE id = _dialogid;\r\n\r\n\r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _nw;\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n      'framework.dialogs', _dialogid::VARCHAR,\r\n      '2',_od,_nw,\r\n      _userid\r\n     );\r\nEND;\r\n$function$\n
+197568	framework	fn_userorg_upd	framework.fn_userorg_upd()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_userorg_upd()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_userorg_upd() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_userorg_upd(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _orgid int;\r\n  _userid int;\r\nBEGIN\r\n\t_orgid = injson->>'orgid';\r\n\t_userid = injson->>'userid';\r\n    \r\n    UPDATE framework.users\r\n    SET orgid = _orgid\r\n    WHERE id = _userid;\r\n\r\nEND;\r\n$function$\n
+197509	framework	fn_dialog_message_bydialog	framework.fn_dialog_message_bydialog(injson  json,outjson out json)	MESSAGES BY DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_message_bydialog(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_message_bydialog(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_message_bydialog(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \t\r\n\t_dialog_id int;\t\r\n    _userid int;\r\n    _users json;\r\n    _foundcount bigint;\r\n    _pagesize smallint;\r\n    _offset int;\r\n    _reply_to int;\r\n    \r\nBEGIN\r\n\t_dialog_id = injson->>'dialogid';\r\n    _userid = injson->>'userid';\r\n    _pagesize = injson->>'pagesize';\r\n    _reply_to = injson->>'reply_to';\r\n    \r\n    \r\n    IF _userid is NULL \r\n    THEN\r\n    \tPERFORM raiserror('userid is null');\r\n    END IF;\r\n    \r\n    IF _dialog_id is NULL \r\n    THEN\r\n    \tPERFORM raiserror('dialogid is null');\r\n\tEND IF;\r\n    \r\n    SELECT\r\n    \td.users\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _dialog_id\r\n    INTO _users;\r\n    \r\n    IF _users is null \r\n    THEN\r\n    \tPERFORM raiserror('Dialog is not found');\r\n    END IF;\r\n    \r\n    IF _reply_to is not NULL \r\n    THEN\r\n        SELECT\r\n          count(id)\r\n        FROM framework.dialog_messages \r\n        WHERE dialog_id = _dialog_id and id >= _reply_to\r\n        INTO _pagesize;\r\n        \r\n        IF _pagesize < 30 THEN\r\n        \t_pagesize = 30;\r\n        END IF;\r\n    END IF;\r\n    \r\n    IF (\r\n    \tSELECT\r\n        \tcount(*)\r\n        FROM json_array_elements_text(_users)\r\n        WHERE value::varchar::int = _userid\r\n    ) = 0 \r\n    THEN\r\n    \tPERFORM raiserror('ACCESS DENIED');\r\n    END IF;\r\n    \r\n    SELECT\r\n      count(id)\r\n    FROM framework.dialog_messages \r\n    WHERE dialog_id = _dialog_id \r\n    INTO _foundcount;\r\n    \r\n    _pagesize = coalesce(_pagesize,'30');\r\n    _offset = _foundcount - _pagesize;\r\n    \r\n    IF _offset < 0 THEN \r\n    \t_offset = 0;\r\n  \tEND IF;\r\n    \r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(z)))\r\n    FROM (\r\n      SELECT\r\n          row_number() over (ORDER BY dm.created)  as rownum,\r\n          dm.id,\r\n          dm.dialog_id,\r\n          dm.files,\r\n          dm.images,\r\n          dm.isread,\r\n          dm.created,\r\n          dm.isupdated,\r\n          dm.reply_to,\r\n          dm.forwarded_from,\r\n          (\r\n          SELECT\r\n          \tusf.login\r\n          FROM framework.dialog_messages as dmf\r\n          \tLEFT JOIN framework.users as usf on usf.id = dmf.userid\r\n          WHERE dmf.id = dm.forwarded_from\r\n          ) as forwarded_from_user,\r\n          dm.message_text,\r\n          concat(u.fam,' ',u.im,' ',u.ot) as userfio,\r\n\t\t  u.photo,\r\n          u.login,\r\n          o.orgname,\r\n          (\r\n          \tCASE WHEN (\r\n            \tSELECT\r\n                \tdms.id\r\n                FROM framework.dialog_messages as dms\r\n                WHERE dms.dialog_id = _dialog_id\r\n                ORDER BY dms.id \r\n                LIMIT 1\r\n          \t) = dm.id \r\n            THEN \r\n            \ttrue\r\n            ELSE \r\n           \t false\r\n            END\r\n          \r\n          ) as isfirst,\r\n          (\r\n            CASE\r\n            WHEN dm.userid = _userid\r\n            THEN true\r\n            ELSE false\r\n            END\r\n          ) as ismine,\r\n          (SELECT row_to_json(f) FROM (\r\n          \tSELECT\r\n            \tdm2.message_text,\r\n                dm2.id,\r\n                u2.login,\r\n                concat(u2.fam,' ',u2.im,' ',u2.ot) as userfio,\r\n                dm2.files,\r\n                dm2.images\r\n            FROM framework.dialog_messages as dm2\r\n           \t JOIN framework.users as u2 on u2.id = dm2.userid\r\n            WHERE dm2.id = dm.reply_to\r\n          ) as f) as reply_message\r\n      FROM framework.dialog_messages as dm\r\n          JOIN framework.users as u on u.id = dm.userid\r\n          LEFT JOIN framework.orgs as o on o.id = u.orgid\r\n      WHERE dm.dialog_id = _dialog_id\r\n\t  ORDER BY dm.created --desc\r\n      LIMIT _pagesize OFFSET _offset\r\n\t) as z\r\n    INTO outjson;\r\n\r\n\toutjson = COALESCE(outjson,'[]');\r\nEND;\r\n$function$\n
+197510	framework	fn_dialog_message_delete	framework.fn_dialog_message_delete()	EDIR MESSAGE	2020-05-14 17:26:34.600103	1	f	fn_dialog_message_delete()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_message_delete() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_message_delete(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _id int;\r\n  _dialog_id int;\r\n  _message_user int;\r\n  _created TIMESTAMP;\r\n  _od json;\r\nBEGIN\r\n  _id = injson->>'id';\t\r\n  _userid = injson->>'userid';\r\n\r\n  -- CHECKS\r\n  IF _id is NULL \r\n  THEN\r\n  \tPERFORM raiserror('id is null');\r\n  END IF;\r\n  \r\n  IF _userid is NULL \r\n  THEN\r\n  \tPERFORM raiserror('Userid is null');\r\n  END IF;\r\n  \r\n  SELECT\r\n    dm.created,\t\r\n    dm.userid,\r\n    dm.dialog_id\r\n  FROM framework.dialog_messages as dm\r\n  WHERE dm.id = _id\r\n  INTO _created, _message_user, _dialog_id;\r\n  \r\n  IF _message_user <> _userid \r\n  THEN\r\n  \tPERFORM raiserror('Access Denied');\r\n  END IF;\r\n  \r\n  IF NOT (\r\n     EXTRACT(year from now()-_created) = 0 AND \r\n  \t EXTRACT(month from now()-_created) = 0 AND\r\n     EXTRACT(day from now()-_created) = 0 AND\r\n     EXTRACT(hour from now()-_created) < 24\r\n  ) \r\n  THEN\r\n  \tPERFORM raiserror('Passed more than 24 hours');\r\n  END IF;\r\n  \r\n  -- DELETE MESSAGE\r\n  SELECT\r\n  \trow_to_json(d)\r\n  FROM (\r\n  \tSELECT\r\n  \t\t*\r\n \tFROM framework.dialog_messages \r\n \tWHERE id = _id\r\n  ) as d\r\n  INTO _od;\r\n  \r\n  DELETE FROM framework.dialog_notifications \r\n  WHERE message_id = _id;\r\n  \r\n  DELETE FROM framework.dialog_messages \r\n  WHERE id = _id;\r\n  \r\n  -- LOG\r\n  INSERT INTO framework.logtable (\r\n    tablename, tableid, opertype,\r\n    oldata, newdata, userid\r\n  ) VALUES (\r\n    'framework.dialog_messages', _id::varchar, '2',\r\n    _od, '[]'::json, _userid\t\r\n  );\r\n  \r\n  \r\nEND;\r\n$function$\n
+197511	framework	fn_dialog_message_edit	framework.fn_dialog_message_edit()	EDIR MESSAGE	2020-05-14 17:26:34.600103	1	f	fn_dialog_message_edit()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_message_edit() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_message_edit(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _message_text varchar;\r\n  _files json;\r\n  _images json;\r\n  _id int;\r\n  _dialog_id int;\r\n  _message_user int;\r\n  _created TIMESTAMP;\r\n  _od json;\r\n  _nw json;\r\nBEGIN\r\n  _id = injson->>'id';\t\r\n  _userid = injson->>'userid';\r\n  _message_text = injson->>'message_text';\r\n  _files = injson->>'files';\r\n  _images = injson->>'images';\r\n  \r\n  -- CHECKS\r\n  IF _id is NULL \r\n  THEN\r\n  \tPERFORM raiserror('id is null');\r\n  END IF;\r\n  \r\n  IF _userid is NULL \r\n  THEN\r\n  \tPERFORM raiserror('Userid is null');\r\n  END IF;\r\n  \r\n  SELECT\r\n    dm.created,\t\r\n    dm.userid,\r\n    dm.dialog_id\r\n  FROM framework.dialog_messages as dm\r\n  WHERE dm.id = _id\r\n  INTO _created, _message_user, _dialog_id;\r\n  \r\n  IF _message_user <> _userid \r\n  THEN\r\n  \tPERFORM raiserror('Access Denied');\r\n  END IF;\r\n  \r\n  IF NOT (\r\n     EXTRACT(year from now()-_created) = 0 AND \r\n  \t EXTRACT(month from now()-_created) = 0 AND\r\n     EXTRACT(day from now()-_created) = 0 AND\r\n     EXTRACT(hour from now()-_created) < 24\r\n  ) \r\n  THEN\r\n  \tPERFORM raiserror('Passed more than 24 hours');\r\n  END IF;\r\n  \r\n  IF COALESCE(_message_text,'') = '' \r\n  THEN\r\n  \tPERFORM raiserror('Message is empty');\r\n  END IF;\r\n\r\n  -- EDIT MESSAGE\r\n  SELECT\r\n  \trow_to_json(d)\r\n  FROM (\r\n  \tSELECT\r\n  \t\t*\r\n \tFROM framework.dialog_messages \r\n \tWHERE id = _id\r\n  ) as d\r\n  INTO _od;\r\n  \r\n  UPDATE framework.dialog_messages \r\n  SET \r\n  \tmessage_text = _message_text,\r\n    isupdated = true,\r\n    files = COALESCE(_files,files),\r\n    images = COALESCE(_images,images)\r\n  WHERE id = _id;\r\n  \r\n  SELECT\r\n  \trow_to_json(d)\r\n  FROM (\r\n  \tSELECT\r\n  \t\t*\r\n \tFROM framework.dialog_messages \r\n \tWHERE id = _id\r\n  ) as d\r\n  INTO _nw;\r\n  \r\n  -- LOG\r\n  INSERT INTO framework.logtable (\r\n    tablename, tableid, opertype,\r\n    oldata, newdata, userid\r\n  ) VALUES (\r\n    'framework.dialog_messages', _id::varchar, '2',\r\n    _od, _nw, _userid\t\r\n  );\r\n  \r\n  UPDATE framework.dialog_messages\r\n  SET \r\n  \tisread = true, \r\n    user_reads = (\r\n      CASE WHEN (\r\n          SELECT\r\n              count(*)\r\n          FROM json_array_elements_text(user_reads)\r\n          WHERE value::varchar::int = _userid\r\n      ) = 0\r\n      THEN (\r\n          array_to_json(ARRAY(\r\n              SELECT\r\n                  _userid\t\r\n          ))::jsonb||user_reads::jsonb\r\n      )::json\r\n      ELSE\r\n      \tuser_reads\r\n      END\r\n    )\r\n  WHERE dialog_id = _dialog_id and id <> _id;\r\n  \r\nEND;\r\n$function$\n
+197512	framework	fn_dialog_message_send	framework.fn_dialog_message_send()	SEND MESSAGE TO DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_message_send()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_message_send() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_message_send(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _dialogid int;\r\n  _message_text varchar;\r\n  _reply_to int;\r\n  _forwarded_from int;\r\n  _files json;\r\n  _images json;\r\n  _id int;\r\n  _users JSON;\r\nBEGIN\r\n  _userid = injson->>'userid';\r\n  _dialogid = injson->>'dialogid';\r\n  _message_text = injson->>'message_text';\r\n  _forwarded_from = injson->>'forwarded_from';\r\n  _reply_to = injson->>'reply_to';\r\n  _files = injson->>'value';\r\n  _files = COALESCE(_files,'[]');\r\n  \r\n  _images = (\r\n  \tSELECT\r\n \t array_to_json(\r\n       ARRAY(\r\n        SELECT\r\n            *\r\n        FROM json_array_elements(_files)\r\n        WHERE lower(value->>'content_type') like 'image%'\r\n       )\r\n     )\r\n  );\r\n  \r\n  _files = (\r\n  \tSELECT\r\n \t array_to_json(\r\n       ARRAY(\r\n        SELECT\r\n            *\r\n        FROM json_array_elements(_files)\r\n        WHERE lower(value->>'content_type') not like 'image%'\r\n       )\r\n     )\r\n  );\r\n  \r\n  -- CHECKS\r\n  IF _userid is NULL \r\n  THEN\r\n  \tPERFORM raiserror('Userid is null');\r\n  END IF;\r\n  \r\n  IF _dialogid is NULL \r\n  THEN\r\n  \tPERFORM raiserror('Dialogid is null');\r\n  END IF;\r\n  _message_text = COALESCE(_message_text,'');\r\n  IF _message_text = '' AND (\r\n  \tSELECT\r\n    \tcount(*)\r\n    FROM json_array_elements(_files)\r\n  ) = 0 AND (\r\n  \tSELECT\r\n    \tcount(*)\r\n    FROM json_array_elements(_images)\r\n  ) = 0 AND _forwarded_from is null\r\n  THEN\r\n  \tPERFORM raiserror('Message is empty');\r\n  END IF;\r\n  \r\n  -- GET DIALOGS USERS FOR NOTIFICATIONS\r\n  SELECT \r\n  \td.users\r\n  FROM framework.dialogs as d\r\n  WHERE d.id = _dialogid\r\n  INTO _users;\r\n  \r\n  IF _users is null \r\n  THEN\r\n  \tPERFORM raiserror('Dialog is not found');\r\n  END IF;\r\n  \r\n  IF (\r\n    \tSELECT\r\n        \tcount(*)\r\n        FROM json_array_elements_text(_users)\r\n        WHERE value::varchar::int = _userid\r\n   ) = 0 \r\n  THEN\r\n   \tPERFORM raiserror('ACCESS DENIED');\r\n  END IF;\r\n  \r\n  IF _forwarded_from is not null \r\n  THEN\r\n  \r\n  \tSELECT\r\n    \tmessage_text,\r\n        files,\r\n        images\r\n    FROM framework.dialog_messages as dm\r\n    WHERE dm.id = _forwarded_from  \r\n    INTO _message_text, _files, _images;\r\n  \t\r\n  END IF;\r\n  \r\n  -- ADD MESSAGE\r\n  _id = nextval('framework.dialog_messages_id_seq'::regclass);\r\n  \r\n  INSERT INTO framework.dialog_messages (\r\n    id, userid, message_text, reply_to, \r\n    forwarded_from, dialog_id, files, images\r\n  ) VALUES (\r\n    _id, _userid, _message_text, _reply_to,\r\n    _forwarded_from, _dialogid, _files, _images\r\n  );\r\n  \r\n  -- ADD NOTIFICATIONS\r\n  INSERT INTO framework.dialog_notifications (\r\n    dialog_id, sender_userid, userid, message_text, message_id\r\n  ) \r\n  SELECT\r\n  \t_dialogid, _userid, value::varchar::int, _message_text, _id\r\n  FROM json_array_elements_text(_users);\r\n  --WHERE value::varchar::int <> _userid;\r\n  \r\n  UPDATE framework.dialogs\r\n  SET last_message_date = now()\r\n  WHERE id = _dialogid;\r\n  \r\n  UPDATE framework.dialog_messages\r\n  SET \r\n  \tisread = true, \r\n    user_reads = (\r\n      CASE WHEN (\r\n          SELECT\r\n              count(*)\r\n          FROM json_array_elements_text(user_reads)\r\n          WHERE value::varchar::int = _userid\r\n      ) = 0\r\n      THEN (\r\n          array_to_json(ARRAY(\r\n              SELECT\r\n                  _userid\t\r\n          ))::jsonb||user_reads::jsonb\r\n      )::json\r\n      ELSE\r\n      \tuser_reads\r\n      END\r\n    )\r\n  WHERE dialog_id = _dialogid and id<>_id;\r\n  \r\nEND;\r\n$function$\n
+197513	framework	fn_dialog_message_setread	framework.fn_dialog_message_setread()	SET MESSAGE READED	2020-05-14 17:26:34.600103	1	f	fn_dialog_message_setread()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_message_setread() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_message_setread(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _id int;\r\n  _userid int;\r\nBEGIN\r\n\t_id = injson->>'id';\r\n    _userid = injson->>'userid';\r\n    \r\n    IF _id is null \r\n    THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n        \r\n    IF _userid is null \r\n    THEN\r\n    \tPERFORM raiserror('userid is null');\r\n    END IF;\r\n    \r\n    \r\n    \r\n  UPDATE framework.dialog_messages\r\n  SET \r\n    isread = true, \r\n    user_reads = (\r\n      CASE WHEN (\r\n          SELECT\r\n              count(*)\r\n          FROM json_array_elements_text(user_reads)\r\n          WHERE value::varchar::int = _userid\r\n      ) = 0\r\n      THEN (\r\n          array_to_json(ARRAY(\r\n              SELECT\r\n                  _userid\t\r\n          ))::jsonb||user_reads::jsonb\r\n      )::json\r\n      ELSE\r\n      \tuser_reads\r\n      END\r\n    )\r\n  WHERE id = _id;\r\n  UPDATE framework.dialog_notifications\r\n  SET\r\n     issend = TRUE, isread = true\r\n  WHERE message_id = _id and userid = _userid;\r\nEND;\r\n$function$\n
+197521	framework	fn_dialogs_usersearch	framework.fn_dialogs_usersearch(injson  json,outjson out json)	SEARCH USERS	2020-05-14 17:26:34.600103	1	f	fn_dialogs_usersearch(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialogs_usersearch(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialogs_usersearch(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _substr varchar(150);\r\n  _userid int;\r\nBEGIN\r\n\r\n\t_substr = injson->>'substr';\r\n    _userid = injson->>'userid';\r\n    \r\n    _substr = coalesce(_substr,'1');\r\n    _substr = replace(_substr,'@','');\r\n    _substr = lower(concat(_substr,'%'));\r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(z)))\r\n    FROM (\r\n    \tSELECT\r\n        \tu.id,\r\n        \tu.fam,\r\n            u.im,\r\n            u.ot,\r\n            u.login,\r\n            u.orgid,\r\n            o.orgname,\r\n            u.photo\r\n        FROM framework.users as u\r\n        \tLEFT JOIN framework.orgs as o on o.id = u.orgid\r\n        WHERE lower(u.login) like _substr and u.isactive and \r\n        \t  u.id <> _userid\r\n    ) as z\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197514	framework	fn_dialog_personal_create	framework.fn_dialog_personal_create()	CREATE PERSONAL DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_personal_create()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_personal_create() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_personal_create(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _reciver_user_id int;\r\n  _message_text varchar;\r\n  _dialog_id int;\r\n  _users JSON;\r\n  _files json;\r\n  _images json;\r\n  _id int;\r\n  _first_message json;\r\nBEGIN\r\n\t\r\n\t_userid = injson->>'userid';\r\n    _reciver_user_id = injson->>'reciver_user_id';\r\n    _message_text = injson->>'message_text';\r\n    _files = injson->>'files';\r\n    _images = injson->>'images';\r\n    \r\n    -- CHECKS\r\n    IF _userid is NULL \r\n    THEN\r\n    \tPERFORM raiserror('userid is null');\r\n    END IF;\r\n    \r\n    IF _reciver_user_id is NULL \r\n    THEN\r\n    \tPERFORM raiserror('reciver_user is null');\r\n    END IF;\r\n    \r\n    -- IF MESSAGE IS NOT EMPTY, CREATE FIRST MESSAGE\r\n    IF _message_text is NOT NULL\r\n    THEN\r\n    \t_first_message = json_build_object(\r\n           'userid', _userid,\r\n           'dialogid', _dialog_id,\r\n           'files', _files,\r\n           'images', _images,\r\n           'message_text', _message_text\r\n         ); \r\n    ELSE \r\n    \t_first_message = '{}'::json;\r\n    END IF; \r\n    \r\n    -- USERS FOR PERSONAL DIALOG\r\n    _users = array_to_json(ARRAY(\r\n      SELECT\r\n          _userid\r\n      UNION \r\n      SELECT \r\n          _reciver_user_id\r\n    ));\r\n    \r\n    -- ADD DIALOG\r\n    _dialog_id = nextval('framework.dialogs_id_seq'::regclass);\r\n\t\r\n    INSERT INTO framework.dialogs (\r\n       id, users, userid, first_message\r\n    ) VALUES (\r\n       _dialog_id, _users ,_userid, _first_message\r\n    );\r\n\t\r\n    \r\nEND;\r\n$function$\n
+197515	framework	fn_dialog_removeadmin	framework.fn_dialog_removeadmin()	REMOVE USER FROM ADMINS	2020-05-14 17:26:34.600103	1	f	fn_dialog_removeadmin()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_removeadmin() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_removeadmin(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _admin_to_remove int;\r\n  _dialogid int;\r\n  _dtype smallint;\r\n  _admins json;\r\n  _od json;\r\n  _users JSON;\r\n  _nw JSON;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _dialogid = injson->>'id';\r\n    _admin_to_remove = injson->>'admin_to_remove';\r\n\r\n\r\n\tIF _dialogid IS NULL \r\n    THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    IF _admin_to_remove is null \r\n    THEN \r\n  \t  PERFORM raiserror('admin_to_remove is null');\r\n    END IF;\r\n    \r\n    SELECT \r\n    \td.dialog_admins,\r\n        d.dtype,\r\n        d.dialog_admins\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _dialogid\r\n    INTO _admins, _dtype, _users; \r\n\r\n    IF _dtype = '1'\r\n    THEN \r\n        RETURN;\r\n    END IF;\r\n    \r\n    IF _admin_to_remove not in (\r\n    \tSELECT\r\n        \tvalue::varchar::int\r\n    \tFROM json_array_elements_text(_admins)\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('User is not admin');\r\n    END IF;\r\n    \r\n    \r\n    \r\n    IF (\r\n        SELECT\r\n            count(*)\r\n        FROM json_array_elements_text(_admins)\r\n        WHERE value::varchar::int = _userid\r\n    ) = 0\r\n    THEN\r\n        PERFORM raiserror('ACCESS DENIED');\r\n    END IF;\r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _od;\r\n    \r\n    UPDATE framework.dialogs\r\n    SET    \r\n\t\tdialog_admins = array_to_json(ARRAY(\r\n        \tSELECT\r\n                value::varchar::int\r\n            FROM json_array_elements_text(_admins)\r\n            WHERE value::varchar::int <> _admin_to_remove\r\n        ))\r\n    WHERE id = _dialogid;\r\n\r\n\r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _nw;\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n      'framework.dialogs', _dialogid::VARCHAR,\r\n      '2',_od,_nw,\r\n      _userid\r\n     );\r\nEND;\r\n$function$\n
+197516	framework	fn_dialog_removeuser	framework.fn_dialog_removeuser()	REMOVE USER FROM DIALOG	2020-05-14 17:26:34.600103	1	f	fn_dialog_removeuser()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialog_removeuser() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialog_removeuser(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _user_to_remove int;\r\n  _dialogid int;\r\n  _dtype smallint;\r\n  _admins json;\r\n  _od json;\r\n  _users JSON;\r\n  _nw JSON;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _dialogid = injson->>'id';\r\n    _user_to_remove = injson->>'user_to_remove';\r\n\r\n\r\n\tIF _dialogid IS NULL \r\n    THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    IF _user_to_remove is null \r\n    THEN \r\n  \t  PERFORM raiserror('user_to_remove is null');\r\n    END IF;\r\n    \r\n    SELECT \r\n    \td.dialog_admins,\r\n        d.dtype,\r\n        d.users\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = _dialogid\r\n    INTO _admins, _dtype, _users; \r\n\r\n    IF _dtype = '1'\r\n    THEN \r\n        RETURN;\r\n    END IF;\r\n    \r\n    IF _user_to_remove not in (\r\n    \tSELECT\r\n        \tvalue::varchar::int\r\n    \tFROM json_array_elements_text(_users)\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('User not in dialog');\r\n    END IF;\r\n    \r\n    \r\n    \r\n    IF (\r\n        SELECT\r\n            count(*)\r\n        FROM json_array_elements_text(_admins)\r\n        WHERE value::varchar::int = _userid\r\n    ) = 0\r\n    THEN\r\n        PERFORM raiserror('ACCESS DENIED');\r\n    END IF;\r\n    \r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _od;\r\n    \r\n    UPDATE framework.dialogs\r\n    SET    \r\n\t\tusers = array_to_json(ARRAY(\r\n        \tSELECT\r\n                value::varchar::int\r\n            FROM json_array_elements_text(users)\r\n            WHERE value::varchar::int <> _user_to_remove\r\n        )),\r\n    \tdialog_admins = array_to_json(ARRAY(\r\n        \tSELECT\r\n                value::varchar::int\r\n            FROM json_array_elements_text(dialog_admins)\r\n            WHERE value::varchar::int <> _user_to_remove\r\n        ))\r\n    WHERE id = _dialogid;\r\n    \r\n    UPDATE framework.dialog_notifications\r\n    SET\r\n    \tissend = true,\r\n        isread = true\r\n    WHERE dialog_id = _dialogid and userid = _dialogid;\r\n\r\n\r\n    SELECT\r\n        row_to_json(z)\r\n    FROM (\r\n         SELECT\r\n                d.*\r\n         FROM framework.dialogs as d\r\n         WHERE d.id = _dialogid\r\n    ) as z\r\n    INTO _nw;\r\n    \r\n    \r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid,\r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n      'framework.dialogs', _dialogid::VARCHAR,\r\n      '2',_od,_nw,\r\n      _userid\r\n     );\r\nEND;\r\n$function$\n
+197517	framework	fn_dialogs_byuser	framework.fn_dialogs_byuser(injson  json,outjson out json)	USER DIALOGS	2020-05-14 17:26:34.600103	1	f	fn_dialogs_byuser(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialogs_byuser(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialogs_byuser(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    \r\n    IF _userid is null \r\n    THEN\r\n    \tPERFORM raiserror('userid is null');\r\n    END IF;\r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(z)))\r\n    FROM (\r\n      SELECT \r\n          d.id, (\r\n            CASE WHEN\r\n              d.dtype = '1'\r\n            THEN (\r\n              SELECT\r\n              \tu.login\r\n              FROM json_array_elements_text(d.users) as uu\r\n              \tJOIN framework.users as u on uu.value::varchar::int = u.id\r\n              WHERE uu.value::varchar::int <> _userid\r\n            )\t\t\r\n            ELSE\r\n              d.title\r\n            END\r\n          ) as title, (\r\n            CASE WHEN\r\n              d.dtype = '1'\r\n            THEN (\r\n              SELECT\r\n              \tu.photo\r\n              FROM json_array_elements_text(d.users) as uu\r\n              \tJOIN framework.users as u on uu.value::varchar::int = u.id\r\n              WHERE uu.value::varchar::int <> _userid\r\n            )\t\t\r\n            ELSE\r\n              d.photo\r\n            END\r\n          ) as photo,\r\n          d.created,\r\n          d.last_message_date,\r\n          (\r\n          \tSELECT \r\n            \trow_to_json(f)\r\n            FROM (\r\n            \tSELECT\r\n                \tm.message_text,\r\n                    concat(u.fam,' ',u.im,' ',u.ot) as userfio,\r\n                    u.login,\r\n                    u.photo,\r\n                    u.orgid,\r\n                    o.orgname,\r\n                    (\r\n                      CASE\r\n                      WHEN m.userid = _userid\r\n                      THEN true\r\n                      ELSE false\r\n                      END\r\n                    ) as ismine\r\n                FROM framework.dialog_messages as m\r\n                \tLEFT JOIN framework.users as u on u.id = m.userid\r\n                    LEFT JOIN framework.orgs as o on o.id = u.orgid\r\n                WHERE m.dialog_id = d.id\r\n                ORDER BY m.created DESC LIMIT 1\r\n            ) as f\r\n          ) as last_message,\r\n          d.dtype as dialog_type,\r\n          dt.tname as dialog_type_name,\r\n          (\r\n          \tSELECT\r\n            \tarray_to_json(array_agg(row_to_json(zz)))\r\n           \tFROM (\r\n              SELECT \r\n              \tuuu.id,\r\n              \tconcat(uuu.fam,' ',uuu.im,' ',uuu.ot) as userfio,\r\n                uuu.login,\r\n                uuu.photo,\r\n                uuu.orgid,\r\n                o.orgname, (\r\n                  CASE WHEN da.value::varchar is null\r\n                  THEN false\r\n                  ELSE true\r\n                  END\r\n                )  as isadmin\r\n              FROM json_array_elements_text(d.users) as uu\r\n              \tJOIN framework.users as uuu on uuu.id = uu.value::varchar::int \r\n                LEFT JOIN framework.orgs as o on o.id = uuu.orgid\r\n                LEFT JOIN json_array_elements_text(d.dialog_admins) as da on da.value::varchar = uu.value::varchar\r\n              --WHERE uu.value::varchar::int <> _userid\r\n            ) as zz\r\n          ) as users, (\r\n                SELECT\r\n                    count(m.id)\r\n                FROM framework.dialog_messages as m\r\n                \tJOIN framework.dialog_notifications as dn on \r\n                    \tdn.message_id = m.id AND\r\n                        dn.userid = _userid AND \r\n                        NOT dn.isread\r\n                WHERE m.dialog_id = d.id \r\n          ) as unreaded,\r\n          (\r\n          \tSELECT\r\n            \trow_to_json(zd)\r\n            FROM (\r\n            \tSELECT\r\n                \tu.id,\r\n                    u.login,\r\n                    u.photo\r\n                FROM framework.users as u\r\n                WHERE u.id = d.creator\r\n            ) as zd\r\n          ) as creator,\r\n          d.dialog_admins, (\r\n            CASE WHEN (\r\n              SELECT\r\n                  count(*)\r\n              FROM json_array_elements_text(d.dialog_admins)\r\n              WHERE value::varchar::int = _userid\r\n            ) > 0 THEN true\r\n            ELSE false END\r\n          ) as isadmin\r\n      FROM framework.dialogs as d\r\n      \tJOIN framework.dialog_types as dt on dt.id = d.dtype\r\n      WHERE (\r\n          SELECT count(value) \r\n          FROM json_array_elements_text(d.users) \r\n          WHERE value::varchar::int = _userid\r\n      ) > 0\r\n      ORDER BY d.last_message_date desc\r\n    ) as z\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197518	framework	fn_dialogs_chats_ws	framework.fn_dialogs_chats_ws(injson  json,outjson out json)	DIALOGS NOTIFICATIONS FOR WS	2020-05-14 17:26:34.600103	1	f	fn_dialogs_chats_ws(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialogs_chats_ws(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialogs_chats_ws(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\nBEGIN\r\n\r\n  _userid = injson->>'userid';\r\n\r\n  \r\n  SELECT\r\n     array_to_json(array_agg(row_to_json(z)))\r\n  FROM (\r\n       SELECT  \r\n\t     -- n.id as notificationid,\r\n          d.id, (\r\n            CASE WHEN\r\n              d.dtype = '1'\r\n            THEN (\r\n              SELECT\r\n                  u.login\r\n              FROM json_array_elements_text(d.users) as uu\r\n                  JOIN framework.users as u on uu.value::varchar::int = u.id\r\n              WHERE uu.value::varchar::int <> _userid\r\n            )        \r\n            ELSE\r\n              d.title\r\n            END\r\n          ) as title, (\r\n            CASE WHEN\r\n              d.dtype = '1'\r\n            THEN (\r\n              SELECT\r\n                  u.photo\r\n              FROM json_array_elements_text(d.users) as uu\r\n                  JOIN framework.users as u on uu.value::varchar::int = u.id\r\n              WHERE uu.value::varchar::int <> _userid\r\n            )        \r\n            ELSE\r\n              d.photo\r\n            END\r\n          ) as photo,\r\n          d.created,\r\n          d.last_message_date, COALESCE((\r\n            SELECT \r\n                array_to_json(array_agg(row_to_json(f)))\r\n            FROM (\r\n                SELECT\r\n                \t--DISTINCT\r\n                    m.id,\r\n                    m.message_text,\r\n                    concat(u.fam,' ',u.im,' ',u.ot) as userfio,\r\n                    u.login,\r\n                    u.photo,\r\n                    u.orgid,\r\n                    o.orgname--,\r\n                   -- m.created\r\n                FROM framework.dialog_messages as m\r\n                    LEFT JOIN framework.users as u on u.id = m.userid\r\n                    LEFT JOIN framework.orgs as o on o.id = u.orgid\r\n                \tJOIN framework.dialog_notifications as dn on \r\n                    \tdn.message_id = m.id AND not dn.issend and dn.userid = _userid\r\n                WHERE m.dialog_id = d.id\r\n                ORDER BY m.created DESC --LIMIT 1\r\n            ) as f\r\n          ),'[]') as messages,\r\n          d.dtype as dialog_type,\r\n          dt.tname as dialog_type_name,\r\n          (\r\n             SELECT\r\n                array_to_json(array_agg(row_to_json(zz)))\r\n             FROM (\r\n              SELECT \r\n              \tuuu.id,\r\n                  concat(uuu.fam,' ',uuu.im,' ',uuu.ot) as userfio,\r\n                uuu.login,\r\n                uuu.photo,\r\n                uuu.orgid,\r\n                o.orgname, (\r\n                  CASE WHEN da.value::varchar is null\r\n                  THEN false\r\n                  ELSE true\r\n                  END\r\n                )  as isadmin\r\n              FROM json_array_elements_text(d.users) as uu\r\n                JOIN framework.users as uuu on uuu.id = uu.value::varchar::int \r\n                LEFT JOIN framework.orgs as o on o.id = uuu.orgid\r\n                LEFT JOIN json_array_elements_text(d.dialog_admins) as da on da.value::varchar = uu.value::varchar\r\n              --WHERE uu.value::varchar::int <> _userid\r\n            ) as zz\r\n          ) as users, (\r\n                SELECT\r\n                    count(m.id)\r\n                FROM framework.dialog_messages as m\r\n                \tJOIN framework.dialog_notifications as dn on \r\n                    \tdn.message_id = m.id AND\r\n                        dn.userid = _userid AND \r\n                        NOT dn.isread\r\n                WHERE m.dialog_id = d.id \r\n          ) as unreaded,\r\n          (\r\n          \tSELECT\r\n            \trow_to_json(zd)\r\n            FROM (\r\n            \tSELECT\r\n                \tu.id,\r\n                    u.login,\r\n                    u.photo\r\n                FROM framework.users as u\r\n                WHERE u.id = d.creator\r\n            ) as zd\r\n          ) as creator,\r\n          d.dialog_admins, (\r\n            CASE WHEN (\r\n              SELECT\r\n                  count(*)\r\n              FROM json_array_elements_text(d.dialog_admins)\r\n              WHERE value::varchar::int = _userid\r\n            ) > 0 THEN true\r\n            ELSE false END\r\n          ) as isadmin\r\n\t   FROM framework.dialogs as d \r\n\t\t\tJOIN framework.dialog_types as dt on dt.id = d.dtype\r\n\t   WHERE (\r\n          SELECT count(n.id) \r\n          FROM framework.dialog_notifications as n\r\n          WHERE n.dialog_id = d.id and \r\n            n.userid <> n.sender_userid and\r\n          \tn.userid = _userid and not n.issend\r\n       ) > 0\r\n       --n.userid = _userid \r\n  ) as z\r\n  INTO outjson;\r\n  \r\n  outjson = COALESCE(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197519	framework	fn_dialogs_chatsmessages_ws	framework.fn_dialogs_chatsmessages_ws(injson  json,outjson out json)	DIALOGS NOTIFICATIONS FOR WS	2020-05-14 17:26:34.600103	1	f	fn_dialogs_chatsmessages_ws(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_dialogs_chatsmessages_ws(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_dialogs_chatsmessages_ws(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    _userid int;\r\n    _dialog_id int;\r\n    _foundcount bigint;\r\n    _pagesize int;\r\n    _offset int;\r\nBEGIN\r\n    _userid = injson->>'userid';\r\n    _dialog_id = injson->>'dialogid';\r\n    _pagesize = injson->>'pagesize';\r\n\r\n    SELECT\r\n      count(id)\r\n    FROM framework.dialog_messages \r\n    WHERE dialog_id = _dialog_id \r\n    INTO _foundcount;\r\n    \r\n    _pagesize = coalesce(_pagesize,'30');\r\n    _offset = _foundcount - _pagesize;\r\n    \r\n    IF _offset < 0 THEN \r\n    \t_offset = 0;\r\n  \tEND IF;\r\n    \r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(z)))\r\n    FROM (\r\n      SELECT\r\n          row_number() over (ORDER BY dm.created)  as rownum,\r\n          dm.id,\r\n          dm.dialog_id,\r\n          dm.files,\r\n          dm.images,\r\n          dm.isread,\r\n          dm.created,\r\n          dm.isupdated,\r\n          dm.reply_to,\r\n          dm.forwarded_from,\r\n          dm.message_text,\r\n          (\r\n          SELECT\r\n          \tusf.login\r\n          FROM framework.dialog_messages as dmf\r\n          \tLEFT JOIN framework.users as usf on usf.id = dmf.userid\r\n          WHERE dmf.id = dm.forwarded_from\r\n          ) as forwarded_from_user,\r\n          concat(u.fam,' ',u.im,' ',u.ot) as userfio,\r\n\t\t  u.photo,\r\n          u.login,\r\n          o.orgname,\r\n          (\r\n          \tCASE WHEN (\r\n            \tSELECT\r\n                \tdms.id\r\n                FROM framework.dialog_messages as dms\r\n                WHERE dms.dialog_id = _dialog_id\r\n                ORDER BY dms.id \r\n                LIMIT 1\r\n          \t) = dm.id \r\n            THEN \r\n            \ttrue\r\n            ELSE \r\n           \t false\r\n            END\r\n          \r\n          ) as isfirst,\r\n          coalesce(n.id,0) as notificationid,\r\n          (\r\n            CASE\r\n            WHEN dm.userid = _userid\r\n            THEN true\r\n            ELSE false\r\n            END\r\n          ) as ismine,\r\n          (SELECT row_to_json(f) FROM (\r\n          \tSELECT\r\n            \tdm2.message_text,\r\n                dm2.id,\r\n                u2.login,\r\n                dm2.files,\r\n                dm2.images,\r\n                concat(u2.fam,' ',u2.im,' ',u2.ot) as userfio\r\n            FROM framework.dialog_messages as dm2\r\n           \t JOIN framework.users as u2 on u2.id = dm2.userid\r\n            WHERE dm2.id = dm.reply_to\r\n          ) as f) as reply_message\r\n      FROM framework.dialog_messages as dm\r\n          JOIN framework.users as u on u.id = dm.userid\r\n          LEFT JOIN framework.orgs as o on o.id = u.orgid\r\n          LEFT JOIN framework.dialog_notifications as n on n.dialog_id = dm.dialog_id\r\n          \tAND n.message_id = dm.id and n.userid = _userid\r\n      WHERE dm.dialog_id = _dialog_id /*and \r\n       (\r\n        \tSELECT \r\n            \tcount(dn.id)\r\n            FROM framework.dialog_notifications as dn\r\n            WHERE not dn.issend and dn.dialog_id = _dialog_id\r\n            \t  and dn.userid = _userid \r\n        ) > 0*/\r\n\t  ORDER BY dm.created\r\n      LIMIT _pagesize OFFSET _offset\r\n\t) as z\r\n    INTO outjson;\r\n    outjson = coalesce(outjson,'[]');\r\n    \r\n\r\nEND;\r\n$function$\n
+197522	framework	fn_fapi	framework.fn_fapi(injson  int2,apititle  int2,apitype  json,sessid  json,primaryauthorization  bpchar,outjson out varchar)	CALL API METHOD'S FUNCTION	2020-05-14 17:26:34.600103	1	f	fn_fapi(injson  int2,apititle  int2,apitype  json,sessid  json,primaryauthorization  bpchar,outjson out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_fapi(injson  int2,apititle  int2,apitype  json,sessid  json,primaryauthorization  bpchar,outjson out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint DEFAULT NULL::smallint, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    _userid varchar; -- user id\r\n    fn_title varchar(350); -- function name\r\n    _useroles json; -- user roles\r\n    mroles json; -- method roles\r\n    squery varchar; -- for dynamic sql query\r\n    role_id smallint;\r\n    _roles json;\r\nBEGIN\r\n    -- CALL API METHOD'S FUNCTION\r\n    primaryauthorization = coalesce(primaryauthorization,0);\r\n    SELECT\r\n        s.procedurename,\r\n        s.roles\r\n    FROM framework.spapi as s\r\n    WHERE s.methodname = apititle and s.methodtype = apitype\r\n    INTO fn_title, mroles;\r\n     \r\n    IF fn_title is NULL THEN\r\n        PERFORM raiserror('m404err');\r\n    END IF; \r\n    \r\n    SELECT \r\n        s.userid::varchar,\r\n        u.roles\r\n    FROM framework.sess as s\r\n        JOIN framework.users as u on u.id = s.userid and u.isactive\r\n    WHERE s.id = sessid and s.killed is null\r\n    INTO _userid, _roles;\r\n    \r\n    IF mroles is not null and mroles::varchar <> '[]' THEN\r\n        IF _userid is null THEN\r\n            PERFORM raiserror('m401err');\r\n        END IF;\r\n        \r\n        IF (SELECT count(*)  \r\n            FROM json_array_elements_text(mroles) as a1\r\n                   JOIN json_array_elements_text(_roles) as ur \r\n                    ON a1.value::varchar(15)::smallint = ur.value::varchar(15)::smallint\r\n            ) = 0 \r\n        THEN\r\n            PERFORM raiserror('m403err');\r\n        END IF;        \r\n    END IF;   \r\n    \r\n    IF primaryauthorization = 1 and _userid is null THEN\r\n        perform raiserror('m401err');\r\n    END IF; \r\n    \r\n    SELECT \r\n        injson::jsonb || \r\n        (SELECT \r\n            row_to_json(d) \r\n         FROM (\r\n             SELECT _userid as userid\r\n         ) as d)::jsonb || \r\n        (SELECT \r\n            row_to_json(d) \r\n         FROM (\r\n             SELECT sessid as sessid\r\n         ) as d)::jsonb\r\n    INTO injson;\r\n\r\n    squery = concat('\r\n        SELECT \r\n           row_to_json(d) \r\n         FROM\r\n            ( \r\n               select *\r\n               from ',fn_title,'($1)\r\n            ) as d;'\r\n    );\r\n    \r\n    EXECUTE format(squery) INTO outjson USING injson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197523	framework	fn_filter_add_untitle	framework.fn_filter_add_untitle()	-- add untitle filter in filters table	2020-05-14 17:26:34.600103	1	f	fn_filter_add_untitle()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_filter_add_untitle() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_filter_add_untitle(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n  _viewid int;\r\n  _id int;\r\nBEGIN\r\n  -- add untitle filter in filters table\r\n  \r\n  _viewid = injson->>'viewid';\r\n\r\n  IF _viewid is NULL THEN\r\n  \tPERFORM raiserror('viewid is null');\r\n  END IF;\r\n    \r\n    _id = nextval('framework.filters_id_seq'::regclass);\r\n    \r\n    INSERT INTO framework.filters (\r\n      id, column_order,\r\n\t  viewid, title, type\r\n    ) VALUES (\r\n      _id, COALESCE((\r\n      \tSELECT max(column_order) \r\n       \tFROM framework.filters \r\n        WHERE viewid = _viewid\r\n      ),0) + 1,\r\n      _viewid, concat('untitled_',_id::varchar), 'substr'\r\n    );\r\nEND;\r\n$function$\n
+197524	framework	fn_formparams_V004	framework.fn_formparams_V004(injson  json,tables out json,filtertypes out json,viewtypes out json,columntypes out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_formparams_V004(injson  json,tables out json,filtertypes out json,viewtypes out json,columntypes out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_formparams_V004(injson  json,tables out json,filtertypes out json,viewtypes out json,columntypes out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework."fn_formparams_V004"(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json)\n RETURNS record\n LANGUAGE plpgsql\nAS $function$\r\n--DECLARE\r\n\r\nBEGIN\r\n  -- \t\r\n/*\r\n\tOLD V004\r\n    NEED TO REMOVE AFTER TESTS\r\n\r\n*/\r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM\r\n  (SELECT \r\n      concat(TABLE_SCHEMA,'.',TABLE_NAME) as value,\r\n      concat(TABLE_SCHEMA,'.',TABLE_NAME) as label, *\r\n  FROM INFORMATION_SCHEMA.TABLES\r\n  ORDER BY TABLE_SCHEMA, TABLE_NAME) as d\r\n  INTO tables;\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM\r\n  (  SELECT \r\n  \tft.ftname as value,\r\n    ft.ftname as label\r\n  FROM framework.filtertypes as ft) as d\r\n  INTO filtertypes;\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM\r\n  (\r\n    SELECT vtypename as value, vtypename as label \r\n    FROM framework.viewtypes\r\n    ) as d\r\n    INTO viewtypes;\r\n    \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n  SELECT \r\n  \tc.typename as value, \r\n  \tc.typename as label,\r\n    c.viewtypes \r\n  FROM framework.columntypes as c\r\n    ) as d\r\n    INTO columntypes;\r\nEND;\r\n$function$\n
+197527	framework	fn_functions_getall_spapi	framework.fn_functions_getall_spapi(injson  json,outjson out json)	ALL FUNCTIONS FOR SP API	2020-05-14 17:26:34.600103	1	f	fn_functions_getall_spapi(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_functions_getall_spapi(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_functions_getall_spapi(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\n/* ALL FUNCTIONS FOR SP API*/\r\nDECLARE \r\n\t_conf JSON;\r\n    _key varchar(100);\r\n    _val varchar(150);\r\nBEGIN\r\n   _conf = (injson->'config');\r\n   \r\n   SELECT\r\n   \tVALUE->>'key'\r\n   FROM json_array_elements(_conf)\r\n   WHERE (value->>'col') = 'procedurename' \r\n   INTO _key;\r\n   \r\n   _val = (injson->'data')->>_key;\r\n   \r\n   _val = coalesce(_val,'%');\r\n   \r\n\r\n\t\r\n   SELECT\r\n   \t\tarray_to_json(array_agg(row_to_json(d)))\r\n   FROM (\r\n      SELECT \r\n        format('%I.%I', ns.nspname, p.proname) as label,\r\n        format('%I.%I', ns.nspname, p.proname) as value\r\n      FROM pg_proc p \r\n      INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n      WHERE ns.nspname not in ('pg_catalog','information_schema') --and\r\n      \t--format('%I.%I', ns.nspname, p.proname) like _val\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197528	framework	fn_getacttypes	framework.fn_getacttypes(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_getacttypes(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_getacttypes(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_getacttypes(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_viewtype VARCHAR(30);\r\nBEGIN\r\n\t_viewtype = injson->>'viewtype';\t\r\n    \r\n    /*for old versions correct work*/\r\n\t_viewtype = coalesce(_viewtype,'table');\r\n    \r\n\tSELECT \r\n      array_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n\tSELECT \r\n    \ta.actname as value, \r\n        a.actname as label \r\n    FROM framework.acttypes as a\r\n    WHERE (\r\n\t      SELECT count(value)\r\n          FROM json_array_elements_text(a.viewtypes)\r\n          WHERE value::varchar = _viewtype\r\n\t   ) > 0\r\n    ) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197529	framework	fn_getfunctions	framework.fn_getfunctions(injson  json,outjson out json)	functions for config's column 	2020-05-14 17:26:34.600103	1	f	fn_getfunctions(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_getfunctions(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_getfunctions(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  -- functions for config's column \r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n    SELECT \r\n      f.funcname as label,\r\n      f.funcname as value,\r\n      f.functype\r\n    FROM framework.functions as f\r\n    UNION ALL\r\n    SELECT \r\n      format('%I.%I', ns.nspname, p.proname) as label,\r\n      format('%I.%I', ns.nspname, p.proname) as name,\r\n      'user' as functype \r\n    FROM pg_proc p \r\n    INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n    WHERE ns.nspname not in ('pg_catalog','information_schema')\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197540	framework	fn_mainsettings_save	framework.fn_mainsettings_save()	Save main settings from file	2020-05-14 17:26:34.600103	1	f	fn_mainsettings_save()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_mainsettings_save() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_mainsettings_save(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\nIF ( SELECT count(id)\r\n\t FROM framework.mainsettings\r\n\t WHERE isactiv\r\n   ) > 0\r\n   THEN\r\n\t  UPDATE framework.mainsettings\r\n\t  SET \r\n\t\tdsn = COALESCE(injson->>'dsn',dsn),\r\n\t\tport = COALESCE((injson->>'port')::int,port),\r\n\t\t"developerRole" = COALESCE((injson->>'developerRole'),"developerRole"),\r\n\t\tmaindomain = COALESCE(injson->>'maindomain',maindomain),\r\n\t\t"primaryAuthorization" =  COALESCE((injson->>'primaryAuthorization')::smallint,"primaryAuthorization"), \r\n\t\tredirect401 = COALESCE(injson->>'redirect401',redirect401),\r\n\t\thomepage = COALESCE(injson->>'homepage', homepage),\r\n\t\treports_url = COALESCE(injson->>'reports_url', reports_url),\r\n\t\tlogin_url = COALESCE(injson->>'login_url', login_url)\r\n\t  WHERE isactiv;\r\n    ELSE\r\n\t  INSERT INTO framework.mainsettings (\r\n\t\tdsn, port, "developerRole",\t\r\n\t\tmaindomain, "primaryAuthorization", \r\n\t\tredirect401, isactiv, homepage, reports_url, \r\n        login_url\r\n\t  ) VALUES (\r\n\t    injson->>'dsn', (injson->>'port')::int, (injson->>'developerRole'),\r\n\t\tinjson->>'maindomain', (injson->>'primaryAuthorization')::smallint,\r\n\t\tinjson->>'redirect401', true, injson->>'homepage', injson->>'reports_url',\r\n        injson->>'login_url'\r\n\t  ); \r\n    END IF;\r\n\r\nEND;\r\n$function$\n
+197530	framework	fn_getselect	framework.fn_getselect(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_getselect(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_getselect(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_getselect(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _filterid int;\r\n  _tabname varchar(350);\r\n  _tabcolums varchar(1500);\r\n  _squery varchar(1800);\r\nBEGIN\r\n\t_filterid = injson->>'id';\r\n    \r\n    \r\n    SELECT\r\n    \tcoalesce(c.relation, c.multiselecttable) as  tabname,\r\n    \tCOALESCE(\r\n        \tc.relationcolums ,\t\r\n            c.multicolums)->>0 as tabcolums\r\n    FROM framework.filters as f\r\n    \tJOIN framework.config as c on c.id = f.val_desc\r\n        \tand f.viewid = f.viewid\r\n    WHERE f.id = _filterid\r\n    INTO _tabname, _tabcolums;\r\n    \r\n\t/*_tabname = injson->>'tabname';\r\n    _tabcolums = injson->>'tabcolums';*/\r\n    \r\n  IF \r\n    (SELECT \r\n           count(t.*)\r\n    FROM information_schema.columns as t                                         \r\n    WHERE concat(t.table_schema,'.',t.table_name) = _tabname and \r\n    upper(t.column_name) = upper(_tabcolums)) = 0 THEN\r\n  \tperform raiserror('can not find table or column, please check input data');\r\n  END IF;  \r\n\r\n  _squery = concat(\r\n  \t'\r\n    SELECT array_to_json(array_agg(row_to_json(d))) FROM\r\n    (SELECT id as value, ' ,_tabcolums , ' as label FROM ', _tabname,') as d'\r\n  );\r\n  \r\n  EXECUTE format(_squery) INTO outjson; \r\n  outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197531	framework	fn_gettables_sel	framework.fn_gettables_sel(injson  json,outjson out json)	ALL TABLES FOR ADMIN	2020-05-14 17:26:34.600103	1	f	fn_gettables_sel(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_gettables_sel(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_gettables_sel(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT \r\n\t\tconcat(TABLE_SCHEMA,'.',TABLE_NAME) as value,\r\n\t\tconcat(TABLE_SCHEMA,'.',TABLE_NAME) as label, *\r\n\tFROM INFORMATION_SCHEMA.TABLES\r\n\tORDER BY TABLE_SCHEMA, TABLE_NAME\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197533	framework	fn_htmldatatype	framework.fn_htmldatatype(sqldatatype  varchar,htmltype out varchar)	sql types into framework types	2020-05-14 17:26:34.600103	1	f	fn_htmldatatype(sqldatatype  varchar,htmltype out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_htmldatatype(sqldatatype  varchar,htmltype out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t\r\n    htmltype = 'text';\r\n\tIF sqldatatype in (\r\n    \t\t'int',\r\n            'integer', \r\n            'smallint', \r\n            'real', \r\n            'money', \r\n            'float', \r\n            'decimal', \r\n            'numeric', \r\n            'smallmoney', \r\n            'bigint',\r\n            'double precision'\r\n    ) THEN\r\n    \t htmltype = 'number';\r\n    END IF;     \r\n\tIF sqldatatype in (\r\n    \t'date',\r\n        'time',\r\n        'datetime2',\r\n        'datetimeoffset',\r\n        'smalldatetime',\r\n        'datetime',\r\n        'timestamp',\r\n        'timestamp without time zone',\r\n        'timestamp with time zone'\r\n    ) THEN\r\n    \t htmltype = 'date';\r\n\tEND IF; \r\n    IF sqldatatype in ('bit','boolean') THEN\r\n    \t htmltype = 'checkbox' ;   \r\n    END IF; \r\n    \t \r\n    \r\n        \r\n   -- RETURN htmltype\r\nEND;\r\n$function$\n
+197534	framework	fn_logout	framework.fn_logout(sesid  json,outjson out bpchar)	log out	2020-05-14 17:26:34.600103	1	f	fn_logout(sesid  json,outjson out bpchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_logout(sesid  json,outjson out bpchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_logout(sesid character, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tUPDATE framework.sess\r\n\tSET killed = now()\r\n    WHERE id = sesid;\r\n    \r\n    outjson = '{"message":"OK"}';\r\n\r\nEND;\r\n$function$\n
+197537	framework	fn_mainmenu	framework.fn_mainmenu(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_mainmenu(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_mainmenu(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_mainmenu(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _roles json;\t\r\nBEGIN\r\n    -- NOT USED\r\n\t_userid = injson->>'userid';\r\n\t\t\r\n\tSELECT\r\n    \tu.roles\r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n    INTO _roles;\r\n\t\r\n\tSELECT\r\n    \tarray_to_json(array_agg(row_to_json(d))) \r\n    FROM (\r\n\t  SELECT \r\n        m.*,\r\n        (SELECT count(m2.id) FROM framework.mainmenu as m2 WHERE m2.parentid = m.id) as childs\r\n      FROM framework.mainmenu as m\r\n      WHERE ((\r\n\t        SELECT count(*)\r\n      \t\tFROM json_array_elements_text(_roles) as r\r\n            WHERE r.value::varchar = '0'\r\n       )>0     \r\n      \r\n      \t\t\t or \r\n      \t\t (SELECT count(*)\r\n                \t\t\tFROM json_array_elements_text(m.roles) as r\r\n                             JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar \r\n                            )>0)\r\n      ORDER BY m.orderby\r\n      ) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197538	framework	fn_mainmenu_recurs	framework.fn_mainmenu_recurs(_roles  int4,_parentid  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_mainmenu_recurs(_roles  int4,_parentid  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_mainmenu_recurs(_roles  int4,_parentid  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_mainmenu_recurs(_roles json, _parentid integer, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n    --NOT USED\r\n\tSELECT\r\n    \tarray_to_json(array_agg(row_to_json(d))) \r\n    FROM\r\n      (SELECT \r\n        m.*,\r\n        m.title as label,\r\n        m.path as to,\r\n        framework.fn_mainmenu_recurs(_roles,m.id) as items,\r\n        (SELECT count(m2.id) FROM framework.mainmenu as m2 WHERE m2.parentid = m.id) as childs\r\n      FROM framework.mainmenu as m\r\n      WHERE  ((SELECT count(*)\r\n      \t\t\tFROM json_array_elements_text(_roles) as r\r\n                WHERE r.value::varchar = '0'\r\n           \t\t)>0     \r\n      \r\n      \t\t\t or \r\n      \t\t (SELECT count(*)\r\n                \t\t\tFROM json_array_elements_text(m.roles) as r\r\n                             JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar \r\n                            )>0)\r\n      \tand coalesce(m.parentid,0) = coalesce(_parentid,0)\r\n      ORDER BY m.orderby\r\n      ) as d\r\n    INTO outjson;\r\nEND;\r\n$function$\n
+197539	framework	fn_mainmenusigma	framework.fn_mainmenusigma(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_mainmenusigma(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_mainmenusigma(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _roles json;\r\n  _usermenu json;\r\n  _userdetail json;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n\t-- NOT USED\r\n\tSELECT\r\n    \tu.roles\r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n    INTO _roles;\r\n\t\r\n\r\n    \r\n\tIF _userid is null THEN\r\n    \tSELECT \r\n\t\t\t\t'[{"label": "Notifications", "icon": "pi pi-fw pi-inbox", "to":"/list/notifs"},\r\n\t\t\t\t{"label": "login", "icon": "pi pi-fw pi-power-off", "to": "/logout"}]' as usermenu\r\n        INTO _usermenu;        \r\n        \r\n\t\tSELECT row_to_json(d)\r\n        FROM\r\n        (SELECT \r\n        \t'' as login,\r\n            'unknown' as fam,\r\n            '' as im,\r\n            '' as ot,\r\n            0 as orgid,\r\n            '' as orgname,\r\n            '' as photo,\r\n            '{}' as usersettings) as d\r\n         INTO _userdetail;   \r\n    ELSE\r\n    \tSELECT \r\n\t\t\t\t'[{"label": "Account", "icon": "pi pi-fw pi-user", "to": "/getone/account?id=_userid_"},\r\n\t\t\t\t{"label": "Notifications", "icon": "pi pi-fw pi-inbox", "to":"/list/notifs?userid=_userid_"},\r\n                {"label": "My organization", "icon": "pi pi-fw pi-inbox", "to":"/getone/myorg?id=_orgid_"},\r\n\t\t\t\t{"label": "logout", "icon": "pi pi-fw pi-power-off", "to": "/logout"}]' as usermenu\r\n        INTO _usermenu;  \r\n        \r\n        SELECT row_to_json(d)\r\n        FROM\r\n        (SELECT \r\n        \tu.login,\r\n            u.fam,\r\n            u.im,\r\n            u.ot,\r\n            u.orgs,\r\n            u.orgid,\r\n        \to.orgname,\r\n            (u.photo->0)::json->>'src' as photo,\r\n            u.usersettings\r\n        FROM framework.users as u\r\n\t\t\tJOIN framework.orgs as o on u.orgid = o.id \r\n        WHERE u.id = _userid) as d\r\n        INTO _userdetail;\r\n    END IF;    \r\n\r\n    outjson = framework.fn_mainmenu_recurs(_roles, 0);\r\n\r\n\tSELECT\r\n    \trow_to_json(d)\r\n    FROM\r\n    (SELECT \r\n    \toutjson as mainmenu,\r\n        _userdetail as userdetail,\r\n        coalesce(_usermenu,'[]') as usermenu) as d\r\n    INTO outjson;    \r\n    \r\n    --outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197542	framework	fn_menu_recurs	framework.fn_menu_recurs(_userid  int4,_roles  int4,_parentid  int4,menu_id  json,outjson out json)	GET MENU ITEMS \r\nRECURS BY PARENTID	2020-05-14 17:26:34.600103	1	f	fn_menu_recurs(_userid  int4,_roles  int4,_parentid  int4,menu_id  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_menu_recurs(_userid  int4,_roles  int4,_parentid  int4,menu_id  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_menu_recurs(_userid integer, _roles json, _parentid integer, menu_id integer, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n   SELECT\r\n   \t\tarray_to_json(array_agg(row_to_json(d))) \r\n   FROM (\r\n      SELECT \r\n        m.*, (\r\n\t\t  SELECT \r\n\t\t     count(n.id)\r\n\t\t  FROM framework.notifications as n\r\n\t\t  WHERE n.for_userid = _userid AND not n.isread\tAND\r\n\t\t        COALESCE(n.messagetype,'messagetype') = COALESCE(m.ws,'ws')\t \r\n\t\t) as notif_count,\r\n        m.title as label,\r\n        m.path as to,\r\n        framework.fn_menu_recurs(_userid, _roles,m.id,menu_id) as items, (\r\n        \tSELECT count(m2.id) \r\n            FROM framework.mainmenu as m2 \r\n            WHERE m2.parentid = m.id\r\n        ) as childs\r\n      FROM framework.mainmenu as m\r\n      \t--JOIN framework.menus as mn on mn.id = m.menuid --and not mn.ismainmenu \r\n      WHERE ((\r\n          SELECT count(*)\r\n          FROM json_array_elements_text(_roles) as r\r\n          WHERE r.value::varchar = '0'\r\n        ) > 0 OR (\r\n          SELECT count(*)\r\n          FROM json_array_elements_text(m.roles) as r\r\n            JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar \r\n        ) > 0 OR (\r\n          SELECT count(*)\r\n          FROM json_array_elements_text(m.roles) as r\r\n            JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar \r\n        ) > 0 OR m.roles::varchar='[]' OR m.roles is NULL \r\n    ) AND coalesce(m.parentid,0) = coalesce(_parentid,0) and m.menuid = menu_id and\r\n    m.nosession = (\r\n    \tCASE WHEN (SELECT count(*) FROM json_array_elements_text(_roles)) = 0 OR _roles is null\r\n    \tTHEN m.nosession \r\n        ELSE FALSE\r\n        END\r\n    )\r\n    ORDER BY m.orderby\r\n  ) as d\r\n  INTO outjson;\r\nEND;\r\n$function$\n
+197543	framework	fn_menu_recurs	framework.fn_menu_recurs(_userid  int4,_roles  int4,_parentid  int4,menu_id  json,_sessid  json,outjson out bpchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_menu_recurs(_userid  int4,_roles  int4,_parentid  int4,menu_id  json,_sessid  json,outjson out bpchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_menu_recurs(_userid  int4,_roles  int4,_parentid  int4,menu_id  json,_sessid  json,outjson out bpchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_menu_recurs(_userid integer, _roles json, _parentid integer, menu_id integer, _sessid character, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n   SELECT\r\n   \t\tarray_to_json(array_agg(row_to_json(d))) \r\n   FROM (\r\n      SELECT \r\n        m.*, (\r\n          SELECT \r\n             count(n.id)\r\n          FROM framework.notifications as n\r\n          WHERE (n.for_userid = _userid OR n.sessid = _sessid) AND not n.isread    AND\r\n                COALESCE(n.messagetype,'messagetype') = COALESCE(m.ws,'ws')     \r\n        ) as notif_count,\r\n        m.title as label,\r\n        m.path as to,\r\n        framework.fn_menu_recurs(_userid, _roles,m.id,menu_id, _sessid) as items, (\r\n            SELECT count(m2.id) \r\n            FROM framework.mainmenu as m2 \r\n            WHERE m2.parentid = m.id\r\n        ) as childs\r\n      FROM framework.mainmenu as m\r\n          --JOIN framework.menus as mn on mn.id = m.menuid --and not mn.ismainmenu \r\n      WHERE ((\r\n          SELECT count(*)\r\n          FROM json_array_elements_text(_roles) as r\r\n          WHERE r.value::varchar = '0'\r\n        ) > 0 OR (\r\n          SELECT count(*)\r\n          FROM json_array_elements_text(m.roles) as r\r\n            JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar \r\n        ) > 0 OR (\r\n          SELECT count(*)\r\n          FROM json_array_elements_text(m.roles) as r\r\n            JOIN json_array_elements_text(_roles) as r2 on r2.value::varchar = r.value ::varchar \r\n        ) > 0 OR m.roles::varchar='[]' OR m.roles is NULL \r\n    ) AND coalesce(m.parentid,0) = coalesce(_parentid,0) and m.menuid = menu_id and\r\n    m.nosession = (\r\n        CASE WHEN (SELECT count(*) FROM json_array_elements_text(_roles)) = 0 OR _roles is null\r\n        THEN m.nosession \r\n        ELSE FALSE\r\n        END\r\n    )\r\n    ORDER BY m.orderby\r\n  ) as d\r\n  INTO outjson;\r\nEND;\r\n$function$\n
+197544	framework	fn_menus	framework.fn_menus(injson  json,outjson out json)	GET ALL MENUS	2020-05-14 17:26:34.600103	1	f	fn_menus(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_menus(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_menus(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _roles json;\r\n  _usermenu json;\r\n  _userdetail json;\r\nBEGIN\r\n    _userid = injson->>'userid';    \r\n    SELECT\r\n        u.roles\r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n    INTO _roles;\r\n\r\n    IF _userid is null THEN\r\n        SELECT \r\n            '[{"label": "Notifications", "icon": "pi pi-fw pi-inbox", "to":"/list/notifs"},\r\n              {"label": "login", "icon": "pi pi-fw pi-power-off", "to": "/logout"}]' as usermenu\r\n        INTO _usermenu;        \r\n        \r\n        SELECT \r\n            row_to_json(d)\r\n        FROM (\r\n          SELECT \r\n              '' as login, 'unknown' as fam, '' as im,\r\n              '' as ot, 0 as orgid, '' as orgname,\r\n              '' as photo, '{}' as usersettings\r\n        ) as d\r\n         INTO _userdetail;   \r\n    ELSE\r\n        SELECT \r\n            '[\r\n\t\t\t\t{"label": "Account", "icon": "pi pi-fw pi-user", "to": "/getone/account?id=_userid_"},\r\n\t\t\t\t{"label": "Notifications", "icon": "pi pi-fw pi-inbox", "to":"/list/notifs?userid=_userid_"},\r\n\t\t\t\t{"label": "My organization", "icon": "pi pi-fw pi-inbox", "to":"/getone/myorg?id=_orgid_"},\r\n\t\t\t\t{"label": "logout", "icon": "pi pi-fw pi-power-off", "to": "/logout"}\r\n\t\t\t ]' as usermenu\r\n        INTO _usermenu;  \r\n        \r\n        SELECT row_to_json(d)\r\n        FROM (\r\n            SELECT \r\n              u.login, u.fam, u.im, u.ot,\r\n              u.orgs, u.orgid, o.orgname,\r\n              (u.photo->0)::json->>'src' as photo,\r\n              u.usersettings\r\n            FROM framework.users as u\r\n              LEFT JOIN framework.orgs as o on u.orgid = o.id \r\n            WHERE u.id = _userid\r\n\t\t) as d\r\n        INTO _userdetail;\r\n     \r\n    END IF;    \r\n    \r\n\r\n    --outjson = framework.fn_menu_recurs(_roles, 0);\r\n    SELECT\r\n        row_to_json(d)\r\n    FROM (\r\n\t  SELECT \r\n        --outjson as mainmenu,\r\n        _userdetail as userdetail, (\r\n\t\t    SELECT homepage \r\n\t\t\tFROM framework.mainsettings \r\n\t\t\tWHERE isactiv \r\n\t\t) as homepage, (\r\n\t\t    SELECT\r\n                array_to_json(array_agg(row_to_json(t)))\r\n             FROM (\r\n\t\t\t     SELECT \r\n                    ms.menutype as id,\r\n                    mt.mtypename as menutype,\r\n                    coalesce(framework.fn_menu_recurs(_userid,_roles, 0,ms.id),'[]') as menu\r\n                 FROM framework.menus as ms \r\n                      JOIN framework.menutypes as mt on mt.id = ms.menutype\r\n             ) as t\r\n\t\t) as menus,\r\n        coalesce(_usermenu,'[]') as usermenu\r\n\t) as d\r\n    INTO outjson;    \r\n    \r\n    --outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197545	framework	fn_notif_setsended	framework.fn_notif_setsended()	views notifications not sended	2020-05-14 17:26:34.600103	1	f	fn_notif_setsended()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_notif_setsended() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_notif_setsended(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id int; \r\nBEGIN\r\n\t_id = injson->>'id';\r\n    \r\n    UPDATE framework.viewsnotification\r\n    SET sended = now(),\r\n    \tissend = true\r\n    WHERE id = _id;\r\nEND;\r\n$function$\n
+197546	framework	fn_notifications_bysess	framework.fn_notifications_bysess(_sess  json,outjson out bpchar)	global notifications	2020-05-14 17:26:34.600103	1	f	fn_notifications_bysess(_sess  json,outjson out bpchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_notifications_bysess(_sess  json,outjson out bpchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_notifications_bysess(_sess character, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    _userid int;\r\nBEGIN\r\n\r\n    SELECT\r\n\t    s.userid\r\n\tFROM framework.sess as s\r\n\tWHERE s.id = _sess\r\n\tINTO _userid;\r\n\t\r\n\tSELECT\r\n\t     array_to_json(array_agg(row_to_json(d)))\r\n\tFROM (\r\n\t  SELECT \r\n\t\t   n.id, n.message, n.messagetype\r\n\t  FROM framework.notifications as n\r\n\t  WHERE (n.for_userid = coalesce(_userid,0) or n.sessid = coalesce(_sess,'')) and \r\n\t        not n.isread and (\r\n\t\t\t   SELECT count(*)\r\n\t\t\t   FROM json_array_elements_text(n.sended_sessions)\r\n\t\t\t   WHERE value::varchar = _sess\r\n\t\t\t) = 0\r\n    ) as d\r\n    INTO outjson;\r\n    \r\n      /*UPDATE framework.notifications as n\r\n      SET sended_sessions = n.sended_sessions::jsonb||concat('["',_sess,'"]')::jsonb\r\n      WHERE n.for_userid = _userid and not n.isread and (\r\n               SELECT count(*)\r\n               FROM json_array_elements_text(n.sended_sessions)\r\n               WHERE value::varchar = _sess\r\n            ) = 0;*/\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197547	framework	fn_notifications_setreaded_by_userid	framework.fn_notifications_setreaded_by_userid()	set notifs type notifications readed	2020-05-14 17:26:34.600103	1	f	fn_notifications_setreaded_by_userid()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_notifications_setreaded_by_userid() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_notifications_setreaded_by_userid(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\nBEGIN\r\n\r\n  _userid = injson->>'userid';\r\n  \r\n  IF _userid is null\r\n  THEN\r\n     PERFORM raiserror('userid is null');\r\n  END IF;\r\n  \r\n  UPDATE framework.notifications\r\n  SET isread = true\r\n  WHERE messagetype = 'notifs' and for_userid = _userid;\r\n\r\nEND;\r\n$function$\n
+197548	framework	fn_notifications_setsended	framework.fn_notifications_setsended()	set sended for sessionid 	2020-05-14 17:26:34.600103	1	f	fn_notifications_setsended()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_notifications_setsended() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_notifications_setsended(_sess character)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    _userid int;\r\nBEGIN\r\n\r\n    SELECT\r\n\t    s.userid\r\n\tFROM framework.sess as s\r\n\tWHERE s.id = _sess\r\n\tINTO _userid;\r\n\t\r\n\tUPDATE framework.notifications as n\r\n\tSET sended_sessions = n.sended_sessions::jsonb||concat('["',_sess,'"]')::jsonb\r\n\tWHERE n.for_userid = _userid and not n.isread and (\r\n\t\t\t   SELECT count(*)\r\n\t\t\t   FROM json_array_elements_text(n.sended_sessions)\r\n\t\t\t   WHERE value::varchar = _sess\r\n\t\t\t) = 0;\r\n\t\r\n\r\nEND;\r\n$function$\n
+197549	framework	fn_paramtypes	framework.fn_paramtypes(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_paramtypes(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_paramtypes(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_paramtypes(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tSELECT \r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n\t  SELECT\r\n\t\t  a.val as label,\r\n\t\t  a.val as value\r\n\t  FROM framework.paramtypes as a\r\n\t) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n    \r\n\r\nEND;\r\n$function$\n
+197550	framework	fn_refreshconfig	framework.fn_refreshconfig(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_refreshconfig(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_refreshconfig(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_refreshconfig(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _oldconfig JSON;\r\n  _newconfig JSON;\r\n  _tabname varchar(350);\r\n  ov json;\r\n  nw json;\r\n  isnotin boolean;\r\n  isin boolean;\r\n  i int;\r\nBEGIN\r\n    -- NOT USED\r\n\t--_oldconfig = injson->>'config';\r\n\t_tabname = injson->>'tabname';\r\n    \r\n    SELECT * FROM framework.fn_createconfig(injson) INTO _oldconfig;\r\n\r\n    \r\n   /*-- perform raiserror(_newconfig::varchar);\r\n    SELECT * FROM framework.fn_createconfig(injson) INTO _newconfig;\r\n\r\n    FOR nw in (SELECT * FROM json_array_elements_text(_newconfig))\r\n    LOOP \r\n    \tisnotin = true;\r\n        FOR ov in (SELECT * FROM json_array_elements_text(_oldconfig))\r\n        LOOP\r\n\t\t\tIF (ov->>'col')::varchar = (nw->>'col')::varchar \r\n            \tand \r\n            \tov->>'related' is null and ov->>'tpath' is null and isnotin\r\n                 THEN\r\n\t\t\t\tisnotin = false;   \r\n            END IF;\r\n        END LOOP;\r\n        \r\n\r\n        \r\n        IF isnotin  THEN\r\n        \tSELECT _oldconfig::jsonb || nw::jsonb\r\n            INTO _oldconfig;\r\n\t\tEND IF;\r\n    END LOOP;\r\n    i = 0;\r\n    FOR ov in (SELECT * FROM json_array_elements_text(_oldconfig))\r\n    LOOP\r\n    \t\r\n    \tisin = true;\r\n        FOR nw in (SELECT * FROM json_array_elements_text(_newconfig))\r\n        LOOP\r\n\t\t\tIF (nw->>'col')::varchar = (ov->>'col')::varchar  THEN\r\n\t\t\t\tisin = false;\r\n            END IF;\r\n\r\n        END LOOP;\r\n        IF isin and ov->>'related' is null THEN\r\n        \tSELECT _oldconfig::jsonb - i\r\n            INTO _oldconfig;\r\n\t\tEND IF;\r\n        i = i+1;\r\n    END LOOP;*/\r\n\t\r\n    outjson = _oldconfig;\r\n    \r\n    \r\n\r\nEND;\r\n$function$\n
+197551	framework	fn_roles_fetch	framework.fn_roles_fetch(injson  json,outjson out json)	roles list	2020-05-14 17:26:34.600103	1	f	fn_roles_fetch(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_roles_fetch(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_roles_fetch(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\n-- функция возвращает список ролей\r\n-- если отправитель не дев, то убираем дев из списка\r\n-- если отправитель не сисадмин, то убираем сисадмина из списка\r\n-- автор: Сандан Д.Б.\r\n-- дата создания: 30.12.19\r\nDECLARE\r\n\t_userid int;\r\n    _roles JSON;\t\t-- для временного хранения ролей отправителя\r\n    _isdev int;\t\t\t-- флаг для проверки на наличие роли девелопер\r\n    _issysadmin int;\t-- флаг для проверки на наличие роли сисадмин\r\nBEGIN\r\n\r\n\t_isdev = 0;\r\n\t_userid = injson->>'userid';\r\n    \r\n    -- проверяем роль отправившего запрос\r\n\t-- если девелопер то убираем dev\r\n    -- если сисадмин то убираем сисадмина\r\n\r\n\t-- получаем роли отправителя\r\n\tSELECT    \t\r\n    \tu.roles \r\n\tFROM\r\n    \tframework.users AS u\r\n\tWHERE u.id = _userid\r\n\tINTO _roles;\r\n\r\n\t-- проверяем есть ли у него роль девелопера\r\n    SELECT\r\n    \t1\r\n    FROM\r\n    \tjson_array_elements_text(_roles) as q\r\n    WHERE q.value = '0'\r\n    INTO _isdev;\r\n    \r\n\t-- проверяем есть ли у него роль сисадмина\r\n    SELECT\r\n    \t1\r\n    FROM\r\n    \tjson_array_elements_text(_roles) as q\r\n    WHERE q.value = '1'\r\n    INTO _issysadmin;\r\n\r\n\t-- формируем массив ролей без дева\r\n\tSELECT\r\n    \tarray_to_json(array_agg(row_to_json(pz)))\r\n        FROM (\r\n\t\t\tSELECT \r\n            \tro.id AS "value",\r\n  \t\t\t\tro.rolename AS "label"\r\n\t\t\tFROM framework.roles AS ro\r\n            WHERE ro.id <> 0 \t\t\t-- 0 это ID у девелопера\r\n            ) AS pz\r\n\tINTO outjson;\r\n    \r\n    \r\n    -- удаляем элементы массива с сисадмином если отправитель не сисадмин\r\n\tIF _issysadmin IS NULL THEN\r\n\t-- формируем массив ролей для возврата    \r\n        SELECT\r\n            array_to_json(array_agg(row_to_json(pz)))\r\n            FROM (\r\n                SELECT\r\n                    (o->>'value')::int AS "value",\r\n                    o->>'label' AS "label"\r\n                FROM json_array_elements(outjson) AS o\r\n                WHERE o->>'value' <> '1'\t\t-- 1 это ID Администратора С-мы\r\n                ) AS pz\r\n        INTO outjson;\r\n    END IF;\r\n\r\n    outjson = COALESCE(outjson, '[]');\r\nEND;\r\n$function$\n
+197554	framework	fn_saveusersettings	framework.fn_saveusersettings()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_saveusersettings()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_saveusersettings() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_saveusersettings(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_userid int;\r\n    _settings json;\r\n    _osettings json;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _settings = injson->'settings';\r\n    \r\n   UPDATE framework.users\r\n   SET usersettings = _settings\r\n   WHERE id = _userid;\r\n   \r\nEND;\r\n$function$\n
+197557	framework	fn_sess	framework.fn_sess(_login  bpchar,pass  varchar,sessid out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_sess(_login  bpchar,pass  varchar,sessid out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_sess(_login  bpchar,pass  varchar,sessid out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_sess(_login character varying, pass character varying, OUT sessid character)\n RETURNS character\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  user_id int;\r\n  _orgid int;\r\nBEGIN\r\n\r\n\tSELECT \r\n    \tu.id,\r\n        u.orgs->0\r\n    FROM framework.users as u\r\n    WHERE u.isactive and u.login = _login and u.password = pass\r\n    INTO user_id, _orgid;\r\n    \r\n    IF user_id is null THEN\r\n    \tperform raiserror('User not active or not found. Check login password combination');\r\n    END IF;\r\n    \r\n    sessid = uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36);\r\n    \r\n    INSERT INTO framework.sess\r\n    (\r\n    \tid,\r\n        userid\r\n    )\r\n    VALUES \r\n    (\r\n    \tsessid,\r\n        user_id\r\n    );\r\n    \r\n    UPDATE framework.users\r\n    SET orgid = _orgid\r\n    WHERE orgid is null and id = user_id;\r\n\r\nEND;\r\n$function$\n
+197558	framework	fn_sess	framework.fn_sess(_login  bpchar,pass  varchar,sessid  varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_sess(_login  bpchar,pass  varchar,sessid  varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_sess(_login  bpchar,pass  varchar,sessid  varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_sess(_login character varying, pass character varying, INOUT sessid character)\n RETURNS character\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  user_id int;\r\n  _orgid int;\r\nBEGIN\r\n\r\n\tSELECT \r\n    \tu.id,\r\n        u.orgs->0\r\n    FROM framework.users as u\r\n    WHERE u.isactive and u.login = _login and u.password = pass\r\n    INTO user_id, _orgid;\r\n    \r\n    IF user_id is null THEN\r\n        perform raiserror('User not active or not found. Check login password combination');\r\n    END IF;\r\n    IF sessid is null\r\n    THEN\r\n        sessid = uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36);\r\n    END IF;\r\n    INSERT INTO framework.sess\r\n    (\r\n        id,\r\n        userid\r\n    )\r\n    VALUES \r\n    (\r\n        sessid,\r\n        user_id\r\n    );\r\n    \r\n    UPDATE framework.users\r\n    SET orgid = _orgid\r\n    WHERE orgid is null and id = user_id;\r\n\r\nEND;\r\n$function$\n
+197559	framework	fn_tabcolumns	framework.fn_tabcolumns(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _tabname varchar(150);\r\nBEGIN\r\n  _tabname = injson->>'tabname';\r\n\r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT column_name as label,\r\n\t  column_name as value\r\n\tFROM information_schema.columns\r\n\tWHERE concat(table_schema,'.',table_name) = _tabname\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197560	framework	fn_tabcolumns_for_filters	framework.fn_tabcolumns_for_filters(injson  json,outjson out json)	for select conditions	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns_for_filters(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns_for_filters(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns_for_filters(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _viewid int;\r\n  _tabname varchar(150);\r\n  _substr varchar(540);\r\nBEGIN\r\n\r\n\t-- for select conditions\r\n  _viewid = (injson->'inputs')->>'id';\r\n  _substr = injson->>'substr';\r\n  \r\n  SELECT\r\n  \tv.tablename\r\n  FROM framework.views as v\r\n  WHERE v.id = _viewid\r\n  INTO _tabname;\r\n  \t\r\n  _substr = concat('%',upper(coalesce(_substr,'%')),'%');\r\n\r\n\t\r\n /* SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM\r\n  (SELECT column_name as label,\r\n    column_name as value\r\n  FROM information_schema.columns\r\n  WHERE concat(table_schema,'.',table_name) = _tabname and \r\n  \tupper(column_name) like _substr) as d\r\n  INTO outjson;*/\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\t  SELECT\r\n\t\ttitle as label,\r\n\t\tid as value\r\n\t  FROM framework.config\r\n\t  WHERE viewid = _viewid\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197561	framework	fn_tabcolumns_for_filters_arr	framework.fn_tabcolumns_for_filters_arr(injson  json,outjson out json)	for select conditions	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns_for_filters_arr(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns_for_filters_arr(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns_for_filters_arr(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _viewid int;\r\n  _tabname varchar(150);\r\n  _substr varchar(540);\r\n  _cols json;\r\nBEGIN\r\n\r\n\t-- for select conditions\r\n  _viewid = (injson->'inputs')->>'id';\r\n  _substr = injson->>'substr';\r\n  \r\n  SELECT\r\n  \tv.tablename\r\n  FROM framework.views as v\r\n  WHERE v.id = _viewid\r\n  INTO _tabname;\r\n  \t\r\n  --\r\n  IF _substr like '[%' THEN\r\n  \t_cols = _substr::json;\r\n  END IF;\t\r\n  \r\n  _substr = concat('%',upper(coalesce(_substr,'%')),'%');\r\n  \r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n    SELECT\r\n      title as label,\r\n      id as value\r\n    FROM framework.config\r\n    WHERE viewid = _viewid and (\r\n    \tupper(title) in (\r\n          SELECT\r\n              upper(value::varchar)\r\n          FROM json_array_elements_text(_cols)\r\n    \t) OR upper(title) like _substr\r\n    )) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197562	framework	fn_tabcolumns_for_sc	framework.fn_tabcolumns_for_sc(injson  json,outjson out json)	for select conditions	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns_for_sc(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns_for_sc(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns_for_sc(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _tabname varchar(150);\r\n  _substr varchar(540);\r\nBEGIN\r\n\r\n\t-- for select conditions\r\n  _tabname = (injson->'inputs')->>'table';\r\n  _substr = injson->>'substr';\r\n  \t\r\n  _substr = concat('%',upper(coalesce(_substr,'%')),'%');\r\n\r\n\t\r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT column_name as label,\r\n\t  column_name as value\r\n\tFROM information_schema.columns\r\n\tWHERE concat(table_schema,'.',table_name) = _tabname and \r\n\t  upper(column_name) like _substr\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197563	framework	fn_tabcolumns_selforconfig_depselect	framework.fn_tabcolumns_selforconfig_depselect(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns_selforconfig_depselect(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns_selforconfig_depselect(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns_selforconfig_depselect(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _tabname varchar(150);\r\n  _substr varchar(350);\r\n  _config json;\r\n  _key1 varchar(400);\r\nBEGIN\r\n  _config = (injson->'config');\r\n  \r\n  SELECT \r\n  \tcc.value->>'key'\r\n  FROM json_array_elements(_config) as cc \r\n  WHERE (cc.value->>'title') = 'relation table'\r\n  INTO _key1;\r\n\r\n  _tabname = (injson->'data')->>'relation_relation';\r\n  _substr = injson->>'substr';\t\r\n  \r\n  _substr = upper(concat('%',coalesce(_substr,'%'),'%'));\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT column_name as label,\r\n\t  column_name as value\r\n\tFROM information_schema.columns\r\n\tWHERE concat(table_schema,'.',table_name) = _tabname\r\n\t AND upper(column_name) like _substr\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197564	framework	fn_tabcolumns_selforconfig_multiselect	framework.fn_tabcolumns_selforconfig_multiselect(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns_selforconfig_multiselect(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns_selforconfig_multiselect(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns_selforconfig_multiselect(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _tabname varchar(150);\r\n  _substr varchar(350);\r\n  _config json;\r\n  _key1 varchar(400);\r\nBEGIN\r\n  _config = (injson->'config');\r\n  \r\n  SELECT \r\n  \tcc.value->>'key'\r\n  FROM json_array_elements(_config) as cc \r\n  WHERE (cc.value->>'title') = 'multiselecttable'\r\n  INTO _key1;\r\n -- _key1 = _config->>'key';\r\n  \r\n  _tabname = (injson->'data')->>_key1;\r\n  _substr = injson->>'substr';\t\r\n  \r\n  _substr = upper(concat('%',coalesce(_substr,'%'),'%'));\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT column_name as label,\r\n\t  column_name as value\r\n\tFROM information_schema.columns\r\n\tWHERE concat(table_schema,'.',table_name) = _tabname\r\n\t AND upper(column_name) like _substr\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197565	framework	fn_tabcolumns_selforconfig_relselect	framework.fn_tabcolumns_selforconfig_relselect(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_tabcolumns_selforconfig_relselect(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_tabcolumns_selforconfig_relselect(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_tabcolumns_selforconfig_relselect(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _tabname varchar(150);\r\n  _substr varchar(350);\r\n  _config json;\r\n  _key1 varchar(400);\r\nBEGIN\r\n  _config = (injson->'config');\r\n  \r\n  SELECT \r\n  \tcc.value->>'key'\r\n  FROM json_array_elements(_config) as cc \r\n  WHERE (cc.value->>'title') = 'relation table'\r\n  INTO _key1;\r\n\r\n  _tabname = (injson->'data')->>_key1;\r\n  _substr = injson->>'substr';\t\r\n  \r\n  _substr = upper(concat('%',coalesce(_substr,'%'),'%'));\r\n  \r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT column_name as label,\r\n\t  column_name as value\r\n\tFROM information_schema.columns\r\n\tWHERE concat(table_schema,'.',table_name) = _tabname\r\n\t AND upper(column_name) like _substr\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197566	framework	fn_trees_bypath	framework.fn_trees_bypath(injson  json,outjson out json)	GET TREES BY PATH	2020-05-14 17:26:34.600103	1	f	fn_trees_bypath(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_trees_bypath(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _path varchar(350);\r\n  _roles json;\r\nBEGIN\r\n  _userid = injson->>'userid';\r\n  _path = injson->>'path';\r\n  SELECT\r\n  \tu.roles\r\n  FROM framework.users as u\r\n  WHERE u.id = _userid\r\n  INTO _roles;\r\n  \r\n  \r\n  SELECT \r\n  \trow_to_json(d)\r\n  FROM (\r\n  SELECT \r\n  \tt.id, t.title, t.descr, (\r\n\tSELECT \r\n      array_to_json(array_agg(row_to_json(t))) \r\n    FROM (\r\n\t     SELECT \r\n          \tta.*\r\n         FROM framework.treesacts as ta\r\n         WHERE coalesce(ta.act,'')<>'' and coalesce(ta.title,'')<>'' and \r\n\t\t       ta.treesid = t.id) as t) as acts,   \r\n    framework.fn_branchestree_recurs(0,t.id) as branches, (\r\n\t  SELECT\r\n    \tarray_to_json(array_agg(row_to_json(d))) \r\n      FROM (\r\n\t\tSELECT\r\n\t\t\ttb.id as key, tb.icon,\r\n\t\t\ttb.parentid, tb.treesid,\r\n\t\t\ttb.title as label, tb.treeviewtype,\r\n\t\t\tcoalesce(v.path,c.path) as path,\r\n\t\t\tv.viewtype, tb.ismain\r\n\t\tFROM framework.treesbranches as tb\r\n\t\t  LEFT JOIN framework.views as v on v.id = tb.viewid\r\n\t\t  LEFT JOIN framework.compos as c on c.id = tb.compoid\r\n\t\tWHERE tb.treesid = t.id and tb.title is not null\r\n\t\tORDER BY tb.orderby\r\n\t ) as d) as  items  \r\n  FROM framework.trees as t\r\n  WHERE t.url = _path and (t.roles is null or (\r\n\t  SELECT count(*)\r\n\t  FROM json_array_elements_text(t.roles) as t1\r\n    ) = 0 or (\r\n\t\tSELECT count(*)\r\n\t\tFROM json_array_elements_text(t.roles) as t1\r\n\t\tJOIN json_array_elements_text(_roles) as t2 on \r\n\t\t\t t1.value::varchar::int = t2.value::varchar::int or \r\n\t\t\t t2.value::varchar::int = '0'\r\n\t  )>0\r\n\t)\r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'{}');\r\n  \r\nEND;\r\n$function$\n
+197567	framework	fn_userjson	framework.fn_userjson(sessid  json,outjson out bpchar)	USERJSON	2020-05-14 17:26:34.600103	1	f	fn_userjson(sessid  json,outjson out bpchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_userjson(sessid  json,outjson out bpchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_userjson(sessid character, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tSELECT row_to_json(d)\r\n    FROM (\r\n      SELECT\r\n          u.roles, orgs as orgs,\r\n          u.id, u.fam, u.im,\r\n          u.ot, u.login,\r\n          u.usersettings, u.orgid,\r\n          s.id as sessid\r\n      FROM framework.sess as s\r\n          JOIN framework.users as u on u.id = s.userid\r\n      WHERE upper(s.id) = upper(sessid) and u.isactive\r\n    ) as d\r\n    INTO outjson;\r\n    IF outjson is null and (\r\n    \tSELECT "primaryAuthorization"\r\n        FROM framework.mainsettings WHERE isactiv\r\n       ) = '1'\r\n    THEN\r\n    \tperform raiserror('m401err');\r\n    END IF;\r\n    outjson = coalesce(outjson,'{}');\r\n\t\r\n\r\nEND;\r\n$function$\n
+197569	framework	fn_userorgs	framework.fn_userorgs(injson  json,outjson out json)	Change user orgid	2020-05-14 17:26:34.600103	1	f	fn_userorgs(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_userorgs(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_userorgs(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _orgs json;\r\n  _roles JSON;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n\t\r\n    SELECT\r\n    \tu.roles,\r\n        u.orgs\r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n    INTO _roles,_orgs;\r\n    \r\n    IF (\r\n\t    SELECT count(*) \r\n        FROM json_array_elements_text(_roles) \r\n        WHERE VALUE::varchar = '0'\r\n\t) = 0 THEN\r\n    \tSELECT\r\n        \tarray_to_json(array_agg(row_to_json(d))) \r\n        FROM (\r\n\t\t  SELECT\r\n\t\t\t  o.id as value,\r\n\t\t\t  o.orgname as label\r\n\t\t  FROM framework.orgs as o\r\n\t\t\t  JOIN json_array_elements_text(_orgs)  as o1 on o1.value::varchar::int = o.id\r\n  \t\t  UNION ALL \r\n\t\t  SELECT\r\n\t\t\t  o.id as value,\r\n\t\t\t  o.orgname as label\r\n\t\t  FROM framework.orgs as o\r\n\t\t\t  JOIN json_array_elements_text(_orgs)  as o1 on o1.value::varchar::int = o.parentid\r\n\t\t\r\n\t\t) as d\r\n        INTO outjson;    \r\n    ELSE\r\n    \tSELECT\r\n        \tarray_to_json(array_agg(row_to_json(d))) \r\n        FROM (\r\n\t\t  SELECT\r\n\t\t\t  o.id as value,\r\n\t\t\t  o.orgname as label\r\n\t\t  FROM framework.orgs as o\r\n\t\t) as d\r\n        INTO outjson;  \r\n    END IF;    \r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197570	framework	fn_view_byid	framework.fn_view_byid(injson  json,outjson out json,roles out json)	GET VIEW DATA BY id	2020-05-14 17:26:34.600103	1	f	fn_view_byid(injson  json,outjson out json,roles out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_byid(injson  json,outjson out json,roles out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles json)\n RETURNS record\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_id int;\r\nBEGIN\r\n  -- GET VIEW DATA BY id\r\n  _id = injson->>'id'; \t\r\n  SELECT \r\n  \tarray_to_json(array_agg(row_to_json(d)))\r\n  FROM (\r\n\tSELECT id as value, rolename as label \r\n\tFROM  framework.roles\r\n  ) as d\r\n  INTO roles; \r\n\r\n  SELECT \r\n  \trow_to_json(d)\r\n  FROM (\r\n     SELECT \r\n    \tv.id, v.title, v.tablename,\r\n        v.descr, v.path, v.pagination,\r\n        v.viewtype, v.config, v.orderby,\r\n        v.groupby, v.filters, v.acts,\r\n        v.roles, v.classname, v.ispagesize,\r\n        v.pagecount, v.foundcount, v.subscrible,\r\n        v.checker, v.api\r\n    FROM framework.views as v\r\n    WHERE v.id = _id\r\n ) as d\r\n INTO outjson;\r\n    \r\n outjson = coalesce(outjson,'{}');\r\nEND;\r\n$function$\n
+197571	framework	fn_view_cols_for_fn	framework.fn_view_cols_for_fn(injson  json,outjson out json)	-- columns for visible_condition fncols	2020-05-14 17:26:34.600103	1	f	fn_view_cols_for_fn(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_cols_for_fn(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_cols_for_fn(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_viewid int;\r\n    _n int;\r\n    _substr varchar(540);\r\nBEGIN\r\n\r\n    -- columns for fncols select_api\r\n    \r\n    _viewid = (injson->'inputs')->>'id';\r\n      \r\n    \r\n     /*SELECT\r\n        viewid\r\n    FROM framework.config\r\n    WHERE id = _n\r\n    INTO _viewid; */   \r\n    \r\n    SELECT\r\n        array_to_json(array_agg(row_to_json(d)))\r\n    FROM(\r\n       SELECT\r\n          concat(title,' / ',col) as label,\r\n          id::varchar as value\r\n       FROM framework.config\r\n       WHERE viewid = _viewid  \r\n       UNION\r\n       SELECT\r\n          value::varchar as label,\r\n          value::varchar as value\r\n       FROM json_array_elements_text('["_userid_", "_orgid_", "_orgs_", "_sesid_"]'::json)\r\n    ) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197572	framework	fn_view_cols_for_param	framework.fn_view_cols_for_param(injson  json,outjson out json)	-- columns for visible_condition select_api	2020-05-14 17:26:34.600103	1	f	fn_view_cols_for_param(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_cols_for_param(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_cols_for_param(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_viewid int;\r\n    _n int;\r\n    _substr varchar(540);\r\nBEGIN\r\n\r\n\t-- columns for visible_condition select_api\r\n    \r\n\t_n = (injson->'inputs')->>'actionid';\r\n\t_substr = injson->>'substr';\r\n    --_viewid = (injson->'inputs')->>'viewid';\r\n  \t\r\n    _substr = coalesce(_substr,'%');\r\n    \r\n \t_viewid = COALESCE(_viewid,(SELECT\r\n    \tviewid\r\n    FROM framework.actions\r\n    WHERE id = _n\r\n    ));    \r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM (\r\n\t  SELECT\r\n\t\t  concat(title,' / ',col) as label,\r\n\t\t  id as value\r\n\t  FROM framework.config\r\n\t  WHERE viewid = _viewid and \r\n\t\t  id::varchar like _substr\r\n\t) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197573	framework	fn_view_cols_for_sc	framework.fn_view_cols_for_sc(injson  json,outjson out json)	-- columns for visible_condition select_api	2020-05-14 17:26:34.600103	1	f	fn_view_cols_for_sc(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_cols_for_sc(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_cols_for_sc(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_viewid int;\r\n    _n int;\r\n    _substr varchar(540);\r\nBEGIN\r\n\r\n\t-- columns for visible_condition select_api\r\n    \r\n\t_n = (injson->'inputs')->>'configid';\r\n\t_substr = injson->>'substr';\r\n    _viewid = (injson->'inputs')->>'viewid';\r\n  \t\r\n    _substr = coalesce(_substr,'%');\r\n    \r\n \t_viewid = COALESCE(_viewid,(SELECT\r\n    \tviewid\r\n    FROM framework.config\r\n    WHERE id = _n\r\n    ));    \r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM\r\n    (SELECT\r\n    \tconcat(title,' / ',col) as label,\r\n        id as value\r\n    FROM framework.config\r\n    WHERE viewid = _viewid and \r\n    \tid::varchar like _substr) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+197575	framework	fn_view_getByPath	framework.fn_view_getByPath(_path  json,_viewtype  varchar,outjson out varchar)	get view config by path	2020-05-14 17:26:34.600103	1	f	fn_view_getByPath(_path  json,_viewtype  varchar,outjson out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_getByPath(_path  json,_viewtype  varchar,outjson out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework."fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\n--DECLARE\r\n  --_calendar_actions_cols varchar(500); -- FOR ERROR\r\n -- _relation varchar(250);\r\n -- _relation_columns json;\r\nBEGIN\r\n IF (SELECT count(v.id)  \r\n     FROM framework.views as v\r\n      WHERE v."path" = _path ) = 0\r\n THEN\r\n     PERFORM raiserror('view is not found');\r\n END IF;\r\n \r\n IF _viewtype = 'list' and (SELECT count(v.id)  \r\n     FROM framework.views as v\r\n      WHERE v."path" = _path and v.viewtype in ('table','tiles','table_api','calendar')) = 0\r\n THEN\r\n     PERFORM raiserror('view with type list is not found');\r\n END IF;\r\n \r\n IF _viewtype = 'getone' and (SELECT count(v.id)  \r\n     FROM framework.views as v\r\n      WHERE v."path" = _path and v.viewtype like '%form%') = 0\r\n THEN\r\n     PERFORM raiserror('view with type getone is not found');\r\n END IF; \r\n \r\n IF (\r\n  SELECT v.viewtype \r\n  FROM framework.views as v\r\n  WHERE v."path" = _path ) = 'calendar' \r\n THEN\r\n     -- Calendar checks\r\n    \r\n    IF (\r\n        SELECT count(c.id) \r\n        FROM framework.views as v\r\n            JOIN framework.config as c on c.viewid = v.id and c.visible and c.type = 'calendarStartDate'\r\n        WHERE v."path" = _path \r\n    ) = 0\r\n    THEN\r\n         PERFORM raiserror('view with type "calendar" must have one column typeof "calendarStartDate"');\r\n     END IF;\r\n    \r\n    \r\n    IF (\r\n        SELECT count(c.id) \r\n        FROM framework.views as v\r\n            JOIN framework.config as c on c.viewid = v.id and c.visible and c.type = 'calendarEndDate'\r\n        WHERE v."path" = _path \r\n    ) = 0\r\n    THEN\r\n         PERFORM raiserror('view with type "calendar" must have one column typeof "calendarEndDate"');\r\n     END IF;\r\n    \r\n    IF (\r\n        SELECT count(c.id) \r\n        FROM framework.views as v\r\n            JOIN framework.config as c on c.viewid = v.id and c.visible and c.type = 'calendarTitle'\r\n        WHERE v."path" = _path \r\n    ) = 0\r\n    THEN\r\n         PERFORM raiserror('view with type "calendar" must have one column typeof "calendarTitle"');\r\n     END IF;\r\n END IF;\r\n \r\n SELECT\r\n   row_to_json(d)\r\n FROM\r\n  (SELECT\r\n      v.id,\r\n    v.title,\r\n    v.pagecount,\r\n    v.pagination,\r\n    v.checker,\r\n    v.classname,\r\n    v.orderby,\r\n    v.ispagesize,\r\n    v.subscrible,\r\n    COALESCE((SELECT\r\n         array_to_json(array_agg(row_to_json(d)))\r\n     FROM\r\n    (SELECT\r\n        value as value,\r\n        value as label\r\n    FROM json_array_elements(v.roles) as rl) as d),'[]') as roles\r\n        \r\n    ,\r\n    v.viewtype,\r\n    v.tablename,\r\n    \r\n    COALESCE((\r\n      SELECT\r\n          array_to_json(array_agg(row_to_json(d)))\r\n      FROM \r\n       (\r\n        SELECT\r\n            f.title,\r\n            f.id,\r\n            f.type,\r\n            f.t,\r\n            f.classname,\r\n            c.col as column,\r\n            \r\n            CASE WHEN f.columns is not null\r\n            THEN\r\n            COALESCE((\r\n              SELECT\r\n                array_to_json(array_agg(row_to_json(d)))\r\n              FROM\r\n                (\r\n                  SELECT\r\n                      cc.col as label,\r\n                      cc.title as value,\r\n                      concat(cc.col,'_',cc.id::varchar) as key,\r\n                      CASE WHEN cc.related THEN cc.t\r\n                      ELSE '1'\r\n                      END as t\r\n                  FROM json_array_elements_text(f.columns) as ff\r\n                      JOIN framework.config as cc on cc.viewid = v.id and (\r\n                           cc.title = ff.value::varchar OR cc.id::varchar = ff.value::varchar\r\n                      )\r\n                ) as d),'[]')\r\n            ELSE\r\n              null\r\n            END as columns,           \r\n            COALESCE((SELECT\r\n                array_to_json(array_agg(row_to_json(d)))\r\n             FROM\r\n            (SELECT\r\n                value as value,\r\n                value as label\r\n            FROM json_array_elements(f.roles) as rl) as d),'[]') as roles,\r\n            f."table"\r\n        FROM framework.filters as f\r\n            LEFT JOIN framework.config as c on c.id = f.val_desc\r\n        WHERE f.viewid = v.id\r\n        ORDER BY f.column_order\r\n    ) as d),'[]') as filters,\r\n    \r\n   COALESCE( (SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n     FROM (\r\n      SELECT\r\n          a.act_url as act,\r\n        a.title,\r\n        a.icon,\r\n        a.classname,\r\n        a.act_type as "type",\r\n        a.main_action as ismain,\r\n        coalesce((SELECT\r\n           array_to_json(array_agg(row_to_json(d)))\r\n         FROM\r\n            (SELECT\r\n                value as value,\r\n                value as label\r\n            FROM json_array_elements(a.roles) as rl) as d),'[]') as roles\r\n        ,\r\n        a.forevery as isforevery,\r\n        a.ask_confirm as actapiconfirm,\r\n        a.refresh_data as actapirefresh,\r\n        upper(a.api_type) as actapitype,\r\n        a.api_method as actapimethod,\r\n        (SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n         FROM\r\n            (SELECT\r\n              CASE WHEN ap.val_desc is not null\r\n              THEN\r\n              json_build_object(\r\n                  'value',cc.title,\r\n                  'label',cc.title,\r\n                  't', cc.t,\r\n                  'key',concat(cc.col,'_',cc.id::varchar)\r\n              )\r\n              ELSE\r\n                  null\r\n              END\r\n               as paramcolumn,\r\n             ap.paramconst,\r\n             ap.paraminput,\r\n             ap.paramt,\r\n             ap.paramtitle,\r\n             ap.query_type\r\n            FROM framework.act_parametrs as ap\r\n                LEFT JOIN framework.config as cc on cc.id = ap.val_desc\r\n            WHERE ap.actionid = a.id\r\n            ORDER BY ap.orderby\r\n            ) as d\r\n        ) as parametrs,\r\n       (SELECT\r\n               array_to_json(array_agg(row_to_json(d)))\r\n        FROM\r\n        (\r\n        SELECT\r\n            av.value,\r\n            json_build_object(\r\n                'label',cc.col,\r\n                't',cc.t,\r\n                'value', cc.title,\r\n                'key', concat(cc.col,'_',cc.id::varchar)\r\n            ) as col,\r\n            json_build_object('value',op.value,'js',op.js) as operation\r\n        FROM framework.act_visible_condions as av\r\n            LEFT JOIN framework.operations as op on op.value = av.operation\r\n            LEFT JOIN framework.config as cc on cc.viewid = v.id and cc.id = av.val_desc\r\n        WHERE av.actionid = a.id\r\n        ) as d) as act_visible_condition \r\n      FROM framework.actions as a\r\n      WHERE a.viewid = v.id\r\n      ORDER BY a.column_order) as d\r\n    \r\n    ),'[]') as acts\r\n    ,\r\n    framework.fn_config_to_json(v.id) as config\r\n  FROM framework.views as v\r\n  WHERE v."path" = _path) as d\r\n  INTO outjson;\r\n\r\nEND;\r\n$function$\n
+197583	framework	fn_viewnotif_get	framework.fn_viewnotif_get(injson  json,outjson out json)	FOR WS NOTFICATIONS	2020-05-14 17:26:34.600103	1	f	fn_viewnotif_get(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_viewnotif_get(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _viewid int;\r\n  _userid int;\r\n  viewpath varchar;\r\n  ids json;\r\nBEGIN\r\n\r\n\t-- FOR WS NOTFICATIONS\r\n\r\n\tviewpath = injson->>'viewpath';\r\n \t_userid = injson->>'userid';   \r\n    ids = injson->>'ids';\r\n\r\n\tIF viewpath is null THEN\r\n    \tperform raiserror('no viewpath');\r\n    END IF;\r\n     \r\n\tSELECT \r\n    \tv.id\r\n    FROM framework.views as v\r\n\tWHERE v.path = viewpath\r\n    INTO _viewid;\r\n    \r\n\tIF _viewid is null THEN\r\n    \tperform raiserror('no viewid');\r\n    END IF;\r\n    \r\n    -- СТАРЫЙ РАБОЧИЙ КОД \r\n    IF ids is not NULL and ids::varchar <> '[]'\r\n    THEN \r\n      SELECT array_to_json(array_agg(row_to_json(d)))\r\n      FROM (\r\n\t\tSELECT *\r\n\t\tFROM framework.viewsnotification as v\r\n\t\t\tJOIN json_array_elements_text(ids) as n on (n.value::varchar = v.tableid or v.tableid is null)\r\n\t\tWHERE v.viewid = _viewid and \r\n\t\t\t (v.foruser = _userid or v.foruser is null) and not v.isread and not v.issend\r\n      ) as d    \r\n       INTO outjson; \r\n    ELSE\r\n      SELECT array_to_json(array_agg(row_to_json(d)))\r\n      FROM (\r\n\t\tSELECT *\r\n\t\tFROM framework.viewsnotification as v\r\n\t\t   -- JOIN json_array_elements_text(ids) as n on (n.value::varchar = v.tableid or v.tableid is null)\r\n\t\tWHERE v.viewid = _viewid and v.tableid is null and\r\n\t\t\t (v.foruser = _userid or v.foruser is null) and not v.isread and not v.issend\r\n       ) as d    \r\n       INTO outjson; \r\n    END IF;  \r\n    -- НОВЫЙ КОД ГДЕ РАСКОМЕНТИРОВАН v.tableid is null\r\n/*    SELECT array_to_json(array_agg(row_to_json(d)))\r\n    FROM\r\n    (SELECT *\r\n    FROM framework.viewsnotification as v\r\n    \tJOIN json_array_elements_text(ids) as n on (n.value::varchar = v.tableid or v.tableid is null)\r\n    WHERE v.viewid = _viewid and \r\n    \t (v.foruser = _userid or v.foruser is null) and not v.isread and not v.issend\r\n     ) as d    \r\n     INTO outjson;      */\r\n\t\r\n    outjson = COALESCE(outjson,'[]');\r\nEND;\r\n$function$\n
+197577	framework	fn_view_getByPath_showSQL	framework.fn_view_getByPath_showSQL(_path  json,outjson out varchar)	for show sql button	2020-05-14 17:26:34.600103	1	f	fn_view_getByPath_showSQL(_path  json,outjson out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_getByPath_showSQL(_path  json,outjson out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework."fn_view_getByPath_showSQL"(_path character varying, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\n--DECLARE\r\n  --variable_name datatype;\r\nBEGIN\r\n IF (SELECT count(v.id)  \r\n     FROM framework.views as v\r\n \t WHERE v."path" = _path ) = 0\r\n THEN\r\n \tPERFORM raiserror('view is not found');\r\n END IF;\r\n \r\n\r\n \r\n SELECT\r\n   row_to_json(d)\r\n FROM\r\n  (SELECT\r\n  \tv.id,\r\n    v.title,\r\n    v.pagecount,\r\n    v.pagination,\r\n    v.checker,\r\n    v.classname,\r\n    v.orderby,\r\n    v.ispagesize,\r\n    v.subscrible,\r\n    COALESCE((SELECT\r\n     \tarray_to_json(array_agg(row_to_json(d)))\r\n     FROM\r\n    (SELECT\r\n    \tvalue as value,\r\n        value as label\r\n    FROM json_array_elements(v.roles) as rl) as d),'[]') as roles\r\n    \t\r\n    ,\r\n    v.viewtype,\r\n    v.tablename,\r\n    \r\n    COALESCE((\r\n      SELECT\r\n      \tarray_to_json(array_agg(row_to_json(d)))\r\n      FROM \r\n       (\r\n        SELECT\r\n            f.title,\r\n            f.id,\r\n            f.type,\r\n            f.t,\r\n            f.classname,\r\n            f."column",\r\n            \r\n            CASE WHEN f.columns is not null\r\n            THEN\r\n            (\r\n              SELECT\r\n                array_to_json(array_agg(row_to_json(d)))\r\n              FROM\r\n                (\r\n                  SELECT\r\n                      cc.col as label,\r\n                      cc.title as value,\r\n                      concat(cc.col,'_',cc.id::varchar) as key,\r\n                      CASE WHEN cc.relation is not null THEN cc.t\r\n                      ELSE '1'\r\n                      END as t\r\n                  FROM json_array_elements_text(f.columns) as ff\r\n                      JOIN framework.config as cc on cc.viewid = v.id and cc.title = ff.value::varchar\r\n                ) as d)\r\n            ELSE\r\n              null\r\n            END as columns,           \r\n            COALESCE((SELECT\r\n                array_to_json(array_agg(row_to_json(d)))\r\n             FROM\r\n            (SELECT\r\n                value as value,\r\n                value as label\r\n            FROM json_array_elements(f.roles) as rl) as d),'[]') as roles,\r\n            f."table"\r\n        FROM framework.filters as f\r\n        WHERE f.viewid = v.id\r\n        ORDER BY f.column_order\r\n    ) as d),'[]') as filters,\r\n    \r\n   COALESCE( (SELECT\r\n   \t \tarray_to_json(array_agg(row_to_json(d)))\r\n     FROM (\r\n      SELECT\r\n      \ta.act_url as act,\r\n        a.title,\r\n        a.icon,\r\n        a.classname,\r\n        a.act_type as "type",\r\n        a.main_action as ismain,\r\n        coalesce((SELECT\r\n           array_to_json(array_agg(row_to_json(d)))\r\n         FROM\r\n            (SELECT\r\n                value as value,\r\n                value as label\r\n            FROM json_array_elements(a.roles) as rl) as d),'[]') as roles\r\n        ,\r\n        a.forevery as isforevery,\r\n        a.ask_confirm as actapiconfirm,\r\n        a.refresh_data as actapirefresh,\r\n        upper(a.api_type) as actapitype,\r\n        a.api_method as actapimethod,\r\n        (SELECT\r\n        \tarray_to_json(array_agg(row_to_json(d)))\r\n         FROM\r\n            (SELECT\r\n              CASE WHEN ap.val_desc is not null\r\n              THEN\r\n              json_build_object(\r\n                  'value',cc.title,\r\n                  'label',cc.title,\r\n                  't', cc.t,\r\n                  'key',concat(cc.col,'_',cc.id::varchar)\r\n              )\r\n              ELSE\r\n              \tnull\r\n              END\r\n               as paramcolumn,\r\n             ap.paramconst,\r\n             ap.paraminput,\r\n             ap.paramt,\r\n             ap.paramtitle,\r\n             ap.query_type\r\n            FROM framework.act_parametrs as ap\r\n            \tLEFT JOIN framework.config as cc on cc.id = ap.val_desc\r\n            WHERE ap.actionid = a.id\r\n            ) as d\r\n        ) as parametrs,\r\n       (SELECT\r\n      \t \tarray_to_json(array_agg(row_to_json(d)))\r\n        FROM\r\n        (\r\n        SELECT\r\n            av.value,\r\n            json_build_object(\r\n            \t'label',cc.col,\r\n                't',cc.t,\r\n                'value', cc.title,\r\n                'key', concat(cc.col,'_',cc.id::varchar)\r\n            ) as col,\r\n            json_build_object('value',op.value,'js',op.js) as operation\r\n        FROM framework.act_visible_condions as av\r\n        \tLEFT JOIN framework.operations as op on op.value = av.operation\r\n            LEFT JOIN framework.config as cc on cc.viewid = v.id and cc.id = av.val_desc\r\n        WHERE av.actionid = a.id\r\n        ) as d) as act_visible_condition \r\n      FROM framework.actions as a\r\n      WHERE a.viewid = v.id\r\n      ORDER BY a.column_order) as d\r\n    \r\n    ),'[]') as acts\r\n    ,\r\n    framework.fn_config_to_json(v.id) as config\r\n  FROM framework.views as v\r\n  WHERE v."path" = _path) as d\r\n  INTO outjson;\r\n\r\nEND;\r\n$function$\n
+197578	framework	fn_view_json_for_copy	framework.fn_view_json_for_copy(_id  int4,outjson out json)	GET VIEW IN JSON FOR COPY TO ANOTHER DB	2020-05-14 17:26:34.600103	1	f	fn_view_json_for_copy(_id  int4,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_json_for_copy(_id  int4,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_json_for_copy(_id integer, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  \r\nBEGIN\r\n\t-- GET VIEW IN JSON FOR COPY TO ANOTHER DB\r\n    \r\n    SELECT\r\n    \trow_to_json(dd)\r\n    FROM (\r\n      SELECT (\r\n          SELECT\r\n            row_to_json(d)\r\n          FROM (\r\n            SELECT\r\n                v.*\r\n            FROM framework.views as v\r\n            WHERE v.id = _id\r\n          ) as d\r\n      \t) as "view", COALESCE((\r\n          SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n          FROM (\r\n            SELECT\r\n                c.*                \r\n            FROM framework.config as c\r\n            WHERE c.viewid = _id\r\n          ) as d\r\n        ),'[]') as config, COALESCE((\r\n          SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n          FROM (\r\n            SELECT\r\n                a.*\r\n            FROM framework.actions as a\r\n            WHERE a.viewid = _id\r\n          ) as d\r\n        ),'[]') actions, COALESCE((\r\n          SELECT\r\n            array_to_json(array_agg(row_to_json(d)))\r\n          FROM (\r\n            SELECT\r\n                f.*\r\n            FROM framework.filters as f\r\n            WHERE f.viewid = _id\r\n        ) as d\r\n      ),'[]') as  filters,COALESCE((\r\n      \tSELECT\r\n        \tarray_to_json(array_agg(row_to_json(d)))\r\n        FROM (\r\n        \tSELECT vc.*\r\n            FROM framework.config as c\r\n            \tJOIN framework.visible_condition as vc on vc.configid = c.id  \r\n            WHERE c.viewid = _id\r\n        ) as d ),'[]'\r\n      ) visible_condition, COALESCE((\r\n      \tSELECT\r\n        \tarray_to_json(array_agg(row_to_json(d)))\r\n        FROM (\r\n        \tSELECT sc.*\r\n            FROM framework.config as c \r\n            \tJOIN framework.select_condition as sc on sc.configid = c.id \r\n            WHERE c.viewid = _id\r\n        ) as d),'[]') as select_condition, COALESCE((\r\n        SELECT\r\n        \tarray_to_json(array_agg(row_to_json(d)))\r\n        FROM (\r\n        \tSELECT dv.*\r\n            FROM framework.config as c\r\n               \tJOIN framework.defaultval as dv on dv.configid = c.id \r\n            WHERE c.viewid = _id\r\n      \t) as d),'[]') defaultval,COALESCE((\r\n        SELECT\r\n           array_to_json(array_agg(row_to_json(d)))\r\n        FROM (\r\n         \tSELECT\r\n            \tap.*\r\n            FROM framework.actions as a\r\n            \tJOIN framework.act_parametrs as ap on ap.actionid = a.id\r\n            WHERE a.viewid = _id\r\n        ) as d),'[]') as act_parametrs, COALESCE((\r\n        \tSELECT\r\n               array_to_json(array_agg(row_to_json(d)))\r\n            FROM (\r\n            \tSELECT\r\n                   av.*\r\n                FROM framework.actions as a\r\n                \tJOIN framework.act_visible_condions as av on av.actionid = a.id\r\n                WHERE a.viewid = _id\r\n            ) as d),'[]') as act_visible_condions\r\n    ) as dd\r\n    INTO outjson;\r\n\r\nEND;\r\n$function$\n
+197579	framework	fn_view_json_parse	framework.fn_view_json_parse()	PARSE VIEW FROM JSON \r\nFROM framework.fn_vew_json_for_copy function	2020-05-14 17:26:34.600103	1	f	fn_view_json_parse()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_json_parse() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_view_json_parse(injson json, _n integer DEFAULT 2)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  \r\nBEGIN\r\n\tBEGIN\r\n      INSERT INTO framework.views (\r\n        id,\r\n        title, descr,\r\n        tablename, viewtype,\r\n        pagination,\r\n        "path", roles,\r\n        classname, orderby,\r\n        ispagesize, pagecount,\r\n        foundcount, subscrible,\r\n        checker, copy\r\n      )\r\n      SELECT \r\n          ((injson->'view')->>'id')::smallint*_n,\r\n          ((injson->'view')->>'title'), ((injson->'view')->>'descr'),\r\n          ((injson->'view')->>'tablename'), ((injson->'view')->>'viewtype'),\r\n          ((injson->'view')->>'pagination')::boolean, \r\n          ((injson->'view')->>'path'), ((injson->'view')->'roles'),\r\n          ((injson->'view')->>'classname'), ((injson->'view')->>'orderby')::boolean,\r\n          ((injson->'view')->>'ispagesize')::boolean, ((injson->'view')->>'pagecount')::boolean,\r\n          ((injson->'view')->>'foundcount')::boolean, ((injson->'view')->>'subscrible')::boolean,\r\n          ((injson->'view')->>'checker')::boolean, true;\r\n    END;\r\n    INSERT INTO framework.config (\r\n      id, viewid,\r\n      t, col,\r\n      column_id, title,\r\n      type, roles,\r\n      visible, required,\r\n      width, "join",\r\n      classname, updatable,\r\n      relation, select_api,\r\n      multiselecttable,\r\n      orderby, orderbydesc,\r\n      relcol, depency,\r\n      relationcolums, multicolums,\r\n      depencycol, column_order,\r\n      fn, fncolumns,\r\n      relatecolumn, "table",\r\n      related, tpath,\r\n      editable, "copy"\r\n    ) SELECT \r\n    \t (value->>'id')::smallint*_n, (value->>'viewid')::smallint*_n,\r\n    \t (value->>'t'), (value->>'col'),\r\n         (value->>'column_id')::int, (value->>'title'),\r\n         (value->>'type'), (value->'roles'),\r\n         (value->>'visible')::boolean, (value->>'required')::boolean,\r\n    \t (value->>'width'), (value->>'join')::boolean,\r\n         (value->>'classname'), (value->>'updatable')::boolean, \r\n         (value->>'relation'), (value->>'select_api'), \r\n         (value->>'multiselecttable'),\r\n\t\t (value->>'orderby')::boolean, (value->>'orderbydesc')::boolean,\r\n         (value->>'relcol'), (value->>'depency')::boolean,\r\n\t     (value->'relationcolums'), (value->'multicolums'),\r\n    \t (value->>'depencycol'), (value->>'column_order')::SMALLINT,\r\n    \t (value->>'fn'), array_to_json(ARRAY(SELECT value::varchar::int*20\r\n         \tFROM json_array_elements_text(coalesce((value->>'fncolumns')::json,'[]'::json)::json))),\r\n    \t (value->>'relatecolumn'), (value->>'table'),\r\n         (value->>'related')::boolean, (value->'tpath'),\r\n         (value->>'editable')::boolean, true\r\n    FROM json_array_elements(injson->'config') ;\r\n         \r\n     INSERT INTO framework.visible_condition (\r\n      id, configid,\r\n      val_desc, col,\r\n      title, operation,\r\n      value\r\n     ) \r\n     SELECT \r\n    \t (value->>'id')::int, (value->>'configid')::int*_n,\r\n \t\t (value->>'val_desc')::int*_n, (value->>'col'),\r\n         (value->>'title'), (value->>'operation'),\r\n         (value->>'value')\r\n     FROM json_array_elements(injson->'visible_condition') ;\r\n    \r\n     INSERT INTO framework.select_condition (\r\n      id, configid,\r\n      col, operation,\r\n      const, value,\r\n      val_desc\r\n     )      \r\n     SELECT \r\n    \t (value->>'id')::int, (value->>'configid')::int*_n,\r\n \t\t (value->>'col'), (value->>'operation'),\r\n         (value->>'const'), (value->>'value'),\r\n         (value->>'val_desc')::int*20\r\n     FROM json_array_elements(injson->'select_condition');\r\n         \r\n     INSERT INTO framework.defaultval (\r\n      id, configid,\r\n      bool, act,\r\n      value\r\n     )      \r\n     SELECT \r\n    \t (value->>'id')::int*_n, (value->>'configid')::int*_n,\r\n \t\t (value->>'bool'), (value->>'act'),\r\n         (value->>'value')\r\n     FROM json_array_elements(injson->'defaultval');\r\n     \r\n     INSERT INTO framework.actions (\r\n      id, column_order,\r\n      title, viewid,\r\n      icon, classname,\r\n      act_url, api_method,\r\n      api_type, refresh_data,\r\n      ask_confirm, roles,\r\n      forevery, main_action,\r\n      act_type\r\n     ) \r\n     SELECT \r\n    \t (value->>'id')::int*_n, (value->>'column_order')::int,\r\n \t\t (value->>'title'), (value->>'viewid')::int*_n,\r\n         (value->>'icon'), (value->>'classname'),\r\n         (value->>'act_url'), (value->>'api_method'),\r\n         (value->>'api_type'), (value->>'refresh_data')::boolean,  \r\n         (value->>'ask_confirm')::boolean, (value->'roles'),\r\n         (value->>'forevery')::boolean, (value->>'main_action')::boolean,\r\n\t\t(value->>'act_type')\r\n     FROM json_array_elements(injson->'actions')\r\n      ;     \r\n         \r\n    INSERT INTO framework.act_parametrs (\r\n      id, actionid,\r\n      paramtitle, paramt,\r\n      paramconst, paraminput,\r\n      paramcolumn, val_desc,\r\n      query_type, "order by"\r\n    ) \r\n     SELECT \r\n    \t (value->>'id')::int, (value->>'actionid')::int*_n,\r\n \t\t (value->>'paramtitle'), (value->>'paramt'),\r\n         (value->>'paramconst'), (value->>'paraminput'),\r\n         (value->>'paramcolumn'), (value->>'val_desc')::int*_n,\r\n         (value->>'query_type'), (value->>'order by')::int\r\n     FROM json_array_elements(injson->'act_parametrs');\r\n         \r\n    INSERT INTO framework.act_visible_condions (\r\n      id, actionid,\r\n      val_desc, col,\r\n      title, operation,\r\n      value\r\n    ) \r\n     SELECT \r\n    \t (value->>'id')::int,  (value->>'actionid')::int*_n,\r\n \t\t (value->>'val_desc')::int*_n, (value->>'col'),\r\n         (value->>'title'), \r\n         (value->>'operation'),\r\n         (value->>'value')\r\n     FROM json_array_elements(injson->'act_visible_condions');\r\n\r\n\tINSERT INTO framework.filters (\r\n      id, column_order,\r\n      viewid, title,\r\n      type, classname,\r\n      "column", columns,\r\n      roles, t,\r\n      "table", val_desc\r\n    ) \r\n    SELECT\r\n    \t (value->>'id')::int*_n,  (value->>'column_order')::smallint,\r\n \t\t (value->>'viewid')::int*_n, (value->>'title'),\r\n         (value->>'type'), (value->>'classname'),\r\n         (value->>'column'), (value->'columns'),\r\n         (value->'roles'), (value->>'t'),\r\n         (value->'table'), (value->>'val_desc')::int*_n\r\n    FROM json_array_elements(injson->'filters')\r\n         ;\r\n         \r\n     \r\nEND;\r\n$function$\n
+197581	framework	fn_view_setKeys	framework.fn_view_setKeys()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_view_setKeys()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_view_setKeys() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework."fn_view_setKeys"()\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\n/*\r\n\tADD "key" IN CONFIG\r\n\tFOR TRANSFER TO NEW VERSION\r\n*/\r\nBEGIN\r\n\tUPDATE framework.views SET config = (\r\n\tSELECT \r\n    \tjson_build_array (\r\n\t\t  ARRAY ( \r\n\t\t\tSELECT \r\n\t\t\t\tvalue::jsonb || (\r\n\t\t\t\t\tjsonb_build_object( 'key',\r\n\t\t\t\t\t\tconcat(\r\n\t\t\t\t\t\t\tvalue->>'col','_',                         \t\r\n\t\t\t\t\t\t\tSUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),1,5)\r\n\t\t\t\t\t\t)) \r\n\t\t\t\t)::jsonb as conf\r\n\t\t\tFROM json_array_elements(config)\r\n\t\t  ) \r\n\t\t)\r\n\t)->0;\r\n    \r\n    UPDATE framework.views as v\r\n\tSET acts = \r\n\tjsonb_build_array(\r\n\t\tARRAY(\r\n          (SELECT\r\n            (a.value::jsonb - 'parametrs') ||\r\n            jsonb_build_object('parametrs',\r\n              jsonb_build_array(\r\n                ARRAY(\r\n                  SELECT\r\n                    CASE WHEN coalesce((p.value->>'paramconst'),'') = ''\r\n                    THEN\r\n\r\n                    jsonb_build_object('paramcolumn',\r\n                      (p.value->'paramcolumn')::jsonb ||\r\n                       test."fn_setParamsKey"(\r\n                            v.config,\r\n                            (p.value->>'paramcolumn')::jsonb\r\n                        )\r\n                      ) || p.value::jsonb - 'paramcolumn'\r\n                    ELSE\r\n                      (p.value)::jsonb\r\n                    END\r\n                  FROM json_array_elements(coalesce((a.value->>'parametrs')::json,'[]')) as p\r\n\r\n\r\n                )\r\n              )->0\r\n            )\r\n\r\n\r\n    \t FROM json_array_elements(v.acts) as a\r\n     \t)\r\n   \t )\r\n\t)->0;\r\nEND;\r\n$function$\n
+197599	framework	tr_dialogs_tr_ins_after	framework.tr_dialogs_tr_ins_after()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_dialogs_tr_ins_after()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_dialogs_tr_ins_after() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_dialogs_tr_ins_after()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_id int;\r\n    _users json;\r\nBEGIN\r\n    -- SEND FIRST MESSAGE\r\n    IF NEW.dtype = '1' AND NEW.first_message::varchar <> '{}'\r\n    THEN\r\n      PERFORM framework.fn_dialog_message_send(\r\n         NEW.first_message\r\n      );\r\n    END IF;\r\n\r\n    RETURN NEW;\r\nEND;\r\n$function$\n
+197584	framework	fn_viewsave	framework.fn_viewsave(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_viewsave(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.fn_viewsave(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.fn_viewsave(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _id int ;\r\n  _title varchar(150) ;\r\n  _descr varchar(1500) ;\r\n  _tablename varchar(350) ;\r\n  _viewtype varchar(200) ;\r\n  _pagination boolean ;\r\n  _config JSON ;\r\n  _path varchar(150) ;\r\n  _orderby boolean ;\r\n  _pagesize boolean ;\r\n  _pagecount boolean ;\r\n  _foundcount boolean ;\r\n  _subscrible boolean;\r\n  _checker boolean;  \r\n  _groupby JSON ;\r\n  _filters JSON ;\r\n  _acts JSON ;\r\n  _roles JSON ;\r\n  _classname varchar(400) ;\r\n  _userid varchar(250) ;\r\n  _newdata json;\r\n  _oldata json;\r\nBEGIN\r\n  _id  = injson->>'id';\r\n  _title  = injson->>'title';\r\n  _descr  = injson->>'descr';\r\n  _tablename  = injson->>'tablename';\r\n  _viewtype  = injson->>'viewtype';\r\n  _pagination  = injson->>'pagination';\r\n  _config = injson->>'config';\r\n  _path = injson->>'path';\r\n  _orderby = injson->>'orderby';\r\n  _groupby = injson->>'groupby';\r\n  _filters = injson->>'filters';\r\n  _acts = injson->>'acts';\r\n  _roles = injson->>'roles';\r\n  _classname = injson->>'classname';\r\n  _userid = injson->>'userid';\r\n  _pagesize = injson->>'ispagesize';\r\n  _pagecount = injson->>'pagecount';\r\n  _foundcount = injson->>'foundcount';\r\n  _subscrible = injson->>'subscrible';\r\n  _checker = injson->>'checker';\r\n IF _id is null THEN\r\n  \r\n    IF coalesce(_title,'') = '' THEN\r\n        PERFORM raiserror('title is null');\r\n    END IF;\r\n      \r\n    IF coalesce(_descr,'') = '' THEN\r\n        PERFORM raiserror('descr is null');\r\n    END IF;\r\n      \r\n    IF coalesce(_tablename,'') = '' THEN\r\n        perform raiserror('tablename is null');  \r\n    END IF;\r\n      \r\n    IF coalesce(_viewtype,'') = '' THEN\r\n        perform raiserror('viewtype is null');\r\n    END IF;    \r\n\r\n    _pagination = coalesce(_pagination,false);\r\n\r\n    IF coalesce(_config::varchar,'[]') = '[]' THEN\r\n    \tperform raiserror('config is null');\t\r\n    END IF;\r\n    \r\n    IF _path is null THEN\r\n    \tperform raiserror('path is null');\r\n    END IF;  \r\n    \r\n    _orderby = coalesce(_orderby,false);\r\n    _pagesize = coalesce(_pagesize,true);\r\n    _pagecount = coalesce(_pagecount,true);\r\n    _foundcount = coalesce(_foundcount,true);\r\n    _subscrible = coalesce(_subscrible,false);\r\n    \r\n    _groupby = coalesce(_groupby,'[]');\r\n    _roles = coalesce(_roles,'[]');\r\n    _filters = coalesce(_filters,'[]');\r\n\t_acts = coalesce(_acts,'[]');\r\n    \r\n    IF (SELECT \r\n        count(*)\r\n    FROM INFORMATION_SCHEMA.TABLES\r\n    WHERE concat('',TABLE_SCHEMA,'.', TABLE_NAME) = _tablename) = 0\r\n    THEN\r\n      perform raiserror('table is not exist');\r\n    END IF;\r\n    \r\n    _id = nextval('framework.views_id_seq'::regclass);\r\n\t   \r\n\r\n    INSERT INTO framework.views (\r\n    \tid,\r\n      title ,\r\n      descr ,\r\n      tablename ,\r\n      viewtype ,\r\n      pagination ,\r\n      config ,\r\n      "path" ,\r\n      orderby ,\r\n      groupby ,\r\n      filters ,\r\n      acts,\r\n      roles,\r\n      classname,\r\n      ispagesize,\r\n      pagecount,\r\n      foundcount,\r\n      subscrible,\r\n      checker\r\n    )\r\n    VALUES (\r\n      _id,\t\r\n      _title ,\r\n      _descr ,\r\n      _tablename ,\r\n      _viewtype ,\r\n      _pagination ,\r\n      _config ,\r\n      _path ,\r\n      _orderby ,\r\n      _groupby ,\r\n      _filters ,\r\n      _acts,\r\n      _roles,\r\n      _classname,\r\n      _pagesize,\r\n      _pagecount,\r\n      _foundcount ,\r\n      _subscrible   ,\r\n      coalesce(_checker,false)  \r\n    );\r\n    \r\n\r\n    _newdata  = (\r\n      SELECT row_to_json(d) \r\n      FROM \r\n      (SELECT *\r\n      FROM framework.views  \r\n      WHERE id = _id) as d\r\n    );\r\n  \tINSERT INTO framework.logtable (\r\n      tablename,\r\n      tableid,\r\n      opertype,\r\n      userid,\r\n      newdata\r\n    ) VALUES (\r\n      'framework.views',\r\n      _id::varchar(150),\r\n      '1',\r\n      _userid::int ,\r\n     _newdata   \r\n    );\r\n\toutjson = (select row_to_json(d) from ( select _id as id) as d);\r\n  ELSE\r\n     _oldata = (\r\n        SELECT row_to_json(d)\r\n        FROM\r\n        (SELECT * \r\n        FROM framework.views  \r\n        WHERE id = _id) as d\r\n\r\n      );\r\n\r\n      \r\n      UPDATE framework.views \r\n      SET\r\n        title = coalesce(_title,title),\r\n        descr = coalesce(_descr,descr),\r\n        viewtype = coalesce(_viewtype,viewtype),\r\n        pagination = coalesce(_pagination,pagination),\r\n        config = coalesce(_config,config),\r\n        "path" = coalesce(_path,"path"),\r\n        orderby = coalesce(_orderby,orderby),\r\n        groupby = coalesce(_groupby,'[]'),\r\n        filters = coalesce(_filters,'[]'),\r\n        acts = coalesce(_acts,'[]'),\r\n        roles = coalesce(_roles,'[]'),\r\n        classname = _classname,\r\n        ispagesize = coalesce(_pagesize,ispagesize),\r\n        pagecount = coalesce(_pagecount,pagecount),  \r\n        foundcount = coalesce(_foundcount,foundcount),\r\n        subscrible = coalesce(_subscrible,subscrible) ,\r\n        checker = coalesce(_checker,checker)\r\n      WHERE id = _id;\r\n      \r\n      _newdata = (\r\n      \tSELECT\r\n        \trow_to_json(d)\r\n        FROM\r\n        (SELECT * \r\n        FROM framework.views  \r\n        WHERE id = _id) as d\r\n       \r\n      );\r\n      \r\n      IF _oldata::varchar <> _newdata::varchar THEN\r\n        INSERT INTO framework.logtable (\r\n          tablename, tableid,\r\n          opertype, userid,\r\n          oldata, newdata\r\n        ) VALUES (\r\n          'framework.views', _id::varchar(150),\r\n          '2', _userid::int ,\r\n         _oldata, _newdata   \r\n        );\r\n    END IF;\r\n  END IF; \r\nEND;\r\n$function$\n
+197586	framework	get_colcongif	framework.get_colcongif(injson  json,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	get_colcongif(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.get_colcongif(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.get_colcongif(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  col varchar(350);\r\n  _table varchar(350);\r\n  \r\nBEGIN\r\n  col = injson->>'col';\r\n  _table = injson->>'table';\r\n  SELECT\r\n  \trow_to_json(d) \r\n  FROM (\r\n   SELECT \r\n      \tCASE WHEN y.table_schema is not null \r\n            THEN  concat(y.table_schema , '.' , y.table_name)\r\n             ELSE y.table_schema\r\n        END\t\t\r\n      as relation      \r\n   FROM information_schema.columns as t\r\n \t  left join pg_catalog.pg_statio_all_tables as st on \r\n      \t\tst.schemaname = t.table_schema \r\n      \t\tand st.relname = t.table_name\t\r\n \t  left join pg_catalog.pg_description pgd on pgd.objoid=st.relid\r\n\t\t\tand pgd.objsubid=t.ordinal_position\r\n       left join information_schema.table_constraints as c on c.table_name = t.table_name\r\n      \tand c.table_schema = t.table_schema and c.constraint_type = 'FOREIGN KEY'\r\n         \r\n      LEFT JOIN information_schema.key_column_usage AS x ON \r\n      c.constraint_name = x.constraint_name and x.column_name = t.column_name                        \r\n\t  LEFT JOIN information_schema.constraint_column_usage \r\n        AS y ON y.constraint_name = c.constraint_name and x.column_name = t.column_name \r\n                                 \r\n WHERE concat(t.table_schema,'.',t.table_name) = _table and t.column_name = col) as d\r\n INTO outjson;\r\n \r\n outjson = coalesce(outjson,'{}');\r\n\r\nEND;\r\n$function$\n
+197587	framework	get_colcongif_V004	framework.get_colcongif_V004(injson  json,outjson out json)	/*\r\n\tOLD V004\r\n    NEED TO REMOVE AFTER TESTS\r\n\r\n*/	2020-05-14 17:26:34.600103	1	f	get_colcongif_V004(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.get_colcongif_V004(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION framework."get_colcongif_V004"(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  col varchar(350);\r\n  _table varchar(350);\r\n  \r\nBEGIN\r\n/*\r\n\tOLD V004\r\n    NEED TO REMOVE AFTER TESTS\r\n\r\n*/\r\n  \t\r\n\r\n  col = injson->>'col';\r\n  _table = injson->>'table';\r\n  SELECT\r\n  \trow_to_json(d) \r\n  FROM\r\n  (SELECT \r\n      \tCASE WHEN y.table_schema is not null \r\n            THEN  concat(y.table_schema , '.' , y.table_name)\r\n             ELSE y.table_schema\r\n        END\t\t\r\n      as relation      \r\n FROM information_schema.columns as t\r\n \t  left join pg_catalog.pg_statio_all_tables as st on \r\n      \t\tst.schemaname = t.table_schema \r\n      \t\tand st.relname = t.table_name\t\r\n \t  left join pg_catalog.pg_description pgd on pgd.objoid=st.relid\r\n\t\t\tand pgd.objsubid=t.ordinal_position\r\n       left join information_schema.table_constraints as c on c.table_name = t.table_name\r\n      \tand c.table_schema = t.table_schema and c.constraint_type = 'FOREIGN KEY'\r\n         \r\n      LEFT JOIN information_schema.key_column_usage AS x ON \r\n      c.constraint_name = x.constraint_name and x.column_name = t.column_name                        \r\n\t  LEFT JOIN information_schema.constraint_column_usage \r\n        AS y ON y.constraint_name = c.constraint_name and x.column_name = t.column_name \r\n                                 \r\n WHERE concat(t.table_schema,'.',t.table_name) = _table and t.column_name = col) as d\r\n INTO outjson;\r\n \r\n outjson = coalesce(outjson,'{}');\r\n\r\nEND;\r\n$function$\n
+197588	framework	tr_act_parametrs_tr	framework.tr_act_parametrs_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_act_parametrs_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_act_parametrs_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_act_parametrs_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tIF (\r\n    \tSELECT act_type\r\n        FROM framework.actions\r\n        WHERE id = NEW.actionid\r\n      ) = 'onLoad' and (NEW.paramconst is not null OR \r\n      NEW.val_desc is not null )\r\n    THEN\r\n    \tPERFORM raiserror('onLoad type parametr can be only from url');\r\n    END IF;\r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+198620	sqlmanager	tr_tablecolumns_tr_accur	sqlmanager.tr_tablecolumns_tr_accur()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_accur()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_accur() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_accur()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript and NEW.size is not null and\r\n  \t NEW.accur is not null\r\n  THEN\r\n    squery = concat('\t\r\n\t\tALTER TABLE ',NEW.tablename,'\r\n  \t\t\tALTER COLUMN "',NEW.colname,'" \r\n            TYPE ',NEW.coltype,'(',NEW.size::varchar,',',\r\n            NEW.accur::varchar,');\r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197589	framework	tr_actions_tr	framework.tr_actions_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_actions_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_actions_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_actions_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tIF NEW.act_type in ('API', 'onLoad') and \r\n       NEW.api_type is NULL \r\n    THEN\r\n    \tNEW.api_type = 'get';\t\r\n        NEW.classname = coalesce(NEW.classname,'success');\r\n    END IF;\r\n    \r\n    IF NEW.act_type = 'Save' THEN\r\n    \tNEW.forevery = false;\r\n        NEW.classname = coalesce(NEW.classname,'success');\r\n    END IF; \r\n\t\r\n    IF NEW.act_type in ('Delete', 'Expand') THEN\r\n    \tNEW.forevery = true;\r\n        NEW.classname = coalesce(NEW.classname,'danger');\r\n    END IF; \r\n\r\n    \r\n    IF NEW.act_type = 'Expand' and not (\r\n    \tNEW.act_url like '/list/%' OR \r\n\t\tNEW.act_url like '/getone/%'\r\n      )    \r\n    THEN\r\n    \tPERFORM raiserror('Expand act must have list or getone url');\r\n    END IF;\r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+197590	framework	tr_actions_tr_del	framework.tr_actions_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_actions_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_actions_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_actions_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tDELETE FROM framework.act_parametrs WHERE actionid = OLD.id;\r\n    DELETE FROM framework.act_visible_condions WHERE actionid = OLD.id;\r\n    \r\n    RETURN OLD;\r\nEND;\r\n$function$\n
+197591	framework	tr_calendar_actions_tr	framework.tr_calendar_actions_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_calendar_actions_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_calendar_actions_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_calendar_actions_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tSELECT\r\n    \tcalendar_date, \r\n        calendar_date\r\n    FROM framework.calendar_test\r\n    WHERE id = NEW.calendar_id\r\n    INTO NEW."start", NEW."end";\r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197594	framework	tr_config_tr_del	framework.tr_config_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_config_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_config_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_config_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\t-- column use in fncols \r\n    IF OLD.fncolumns::varchar like '[%]' and (\r\n    \tSELECT \r\n        \tcount(id)\r\n        FROM framework.config\r\n        WHERE (\r\n        \tSELECT \r\n            \tcount(*)\r\n            FROM json_array_elements_text(OLD.fncolumns)\r\n            WHERE value::varchar = OLD.id::varchar \r\n        ) > 0\r\n    ) > 0 THEN\r\n    \tPERFORM raiserror('column use in fn columns');\r\n    END IF;\r\n    \r\n\tDELETE FROM framework.visible_condition WHERE configid = OLD.id;\r\n\tDELETE FROM framework.select_condition WHERE configid = OLD.id;\r\n\t\r\n\tDELETE FROM framework.defaultval WHERE configid = OLD.id;\r\n    \r\n    RETURN OLD;\r\n\r\nEND;\r\n$function$\n
+197595	framework	tr_config_tr_ins	framework.tr_config_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_config_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_config_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_config_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tIF (\r\n    \tSELECT \r\n        \tcount(c.id)\r\n        FROM framework.config as c\r\n        WHERE c.title = NEW.title and c.viewid = NEW.viewid\r\n    ) > 0\r\n    THEN\r\n    \tNEW.title = CONCAT(NEW.title,'_',NEW.id::varchar);\r\n    END IF;\r\n\r\n\t-- IF FN PARAMETR IS FN\r\n\tIF NEW.fn is not null\r\n    THEN\r\n    \tIF NEW.fncolumns is not null and (\r\n        \tSELECT\r\n            \tcount(c.id)\r\n            FROM framework.config as c \r\n            \tJOIN json_array_elements_text(NEW.fncolumns) as fc on c.id::varchar = fc.value::varchar\r\n            WHERE c.fn is not null\r\n        ) > 0\r\n        THEN\r\n        \tPERFORM raiserror('fn columns can not be fn');\r\n        END IF;\r\n    END IF;\r\n    \r\n    -- CHECK T NUMBER\r\n    IF NEW.table is NULL AND (\r\n    \tSELECT\r\n        \tcount(c.id)\r\n        FROM framework.config as c\r\n        WHERE c.viewid = NEW.viewid and c.t = NEW.t\r\n       ) > 0\r\n    THEN\r\n    \tSELECT\r\n        \tmax(c.t::int) + 1\r\n        FROM framework.config as c\r\n        WHERE c.viewid = NEW.viewid and isnumeric(c.t)\r\n        INTO NEW.t;     \r\n    END IF;\r\n    \r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+197596	framework	tr_dialog_messages_tr_ins	framework.tr_dialog_messages_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_dialog_messages_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_dialog_messages_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_dialog_messages_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_dialog_users json;\r\n    _status smallint;\r\nBEGIN\r\n\t\r\n\t-- CHECK USER ACCESS IN DIALOG\r\n\tSELECT\r\n    \td.users,\r\n        d.status\r\n    FROM framework.dialogs as d\r\n    WHERE d.id = NEW.dialog_id\r\n    INTO \r\n    \t_dialog_users,\r\n        _status\r\n        ;\r\n    \r\n    IF NEW.userid not in (\r\n    \t\tSELECT value::varchar::int \r\n        \tFROM json_array_elements(_dialog_users)\r\n    \t) \r\n    THEN\r\n    \tPERFORM raiserror('Access denied. User not in dialog');\r\n    END IF;\r\n    \r\n    -- CHECK DIALOG STATUS\r\n    IF _status in ('2')\r\n    THEN\r\n    \tPERFORM raiserror('Dialog is closed');\r\n    END IF;\r\n    \r\n    \r\n    -- CHECK USER ACTIVATION\r\n    IF (\r\n    \tSELECT \r\n        \tcount(u.id)\r\n        FROM framework.users as u\r\n        WHERE u.id = NEW.userid and u.isactive\r\n     ) = 0 \r\n    THEN\r\n    \tPERFORM raiserror('User not found or not active');\r\n    END IF;\r\n     \r\n    -- COPY MESSAGE IF FORWARDED\r\n    IF NEW.forwarded_from IS NOT NULL \r\n    THEN\r\n    \tSELECT\r\n        \td.message_text,\r\n            d.files,\r\n            d.images\r\n        FROM framework.dialog_messages as d\r\n        WHERE d.id = NEW.forwarded_from\r\n        INTO \r\n        \tNEW.message_text,\r\n            NEW.files,\r\n            NEW.images;\r\n    END IF;\r\n    \r\n    -- CHECK MESSAGE TEXT\r\n    NEW.message_text = COALESCE(NEW.message_text,'');\r\n    IF NEW.message_text = '' AND (\r\n      SELECT\r\n          count(*)\r\n      FROM json_array_elements(NEW.files)\r\n \t) = 0 AND (\r\n      SELECT\r\n          count(*)\r\n      FROM json_array_elements(NEW.images)\r\n    ) = 0\r\n    THEN\r\n\t\tPERFORM raiserror('Message is empty');\r\n    END IF;\r\n\r\n    -- DEFAULTS\r\n    NEW.files = COALESCE(NEW.files,'[]');    \r\n    NEW.images = COALESCE(NEW.images,'[]');\r\n    NEW.user_reads = array_to_json(ARRAY(\r\n    \tSELECT\r\n        \tNEW.userid\r\n    ));\r\n    \r\n    \r\n\tRETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197597	framework	tr_dialogs_tr_edit	framework.tr_dialogs_tr_edit()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_dialogs_tr_edit()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_dialogs_tr_edit() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_dialogs_tr_edit()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n   IF NEW.dtype = '1' THEN\r\n      NEW.title = OLD.title;\r\n   END IF;\r\n   \r\n   RETURN NEW;\r\n  \r\nEND;\r\n$function$\n
+197598	framework	tr_dialogs_tr_ins	framework.tr_dialogs_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_dialogs_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_dialogs_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_dialogs_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t\r\n\t-- IF PERSONAL DIALOG\r\n\tIF NEW.dtype = '1' \r\n    THEN\r\n    \tIF (\r\n        \tSELECT count(*) \r\n        \tFROM json_array_elements(NEW.users)\r\n        ) <> 2\r\n        THEN\r\n        \tPERFORM raiserror('For pesonal dialog must be 2 users');\r\n        END IF;\r\n        \r\n        \r\n    \tNEW.title = COALESCE(NEW.title,\r\n        \t(\r\n              SELECT\r\n                  string_agg(us.login,',') \r\n              FROM json_array_elements(NEW.users) as u\r\n                  JOIN framework.users as us on us.id = u.value::varchar::int\r\n            )\r\n        );\r\n        \r\n        -- CHECK DUBLICATES\r\n        IF (\r\n        \tSELECT \t\r\n            \tcount(d.id)\r\n        \tFROM framework.dialogs as d\r\n            WHERE  d.dtype = NEW.dtype and (\r\n            \tSELECT count(*) \r\n                FROM json_array_elements(NEW.users) as u1\r\n                \tJOIN json_array_elements(d.users) as u2 on u1.value::varchar::int = u2.value::varchar::int\r\n            ) = 2\r\n        ) > 0\r\n        THEN\r\n        \tPERFORM raiserror('Dialog already exist');\r\n        END IF;\r\n        \r\n        \r\n    END IF; \r\n    \r\n    -- CHECK USERS\r\n    IF (\r\n    \tSELECT count(*) \r\n    \tFROM json_array_elements(NEW.users)\r\n    ) <> (\r\n      SELECT\r\n     \t count(*)\r\n      FROM json_array_elements(NEW.users) as u\r\n      \tJOIN framework.users as us on us.id = u.value::varchar::int\r\n      WHERE us.isactive\r\n    )\r\n    THEN\r\n    \tPERFORM raiserror('One of dialogs user are not found or not active');\r\n    END IF;\r\n    \r\n    NEW.creator = NEW.userid;\r\n    \r\n    -- SET ADMINS BY DEFAULT\r\n\tNEW.dialog_admins = array_to_json(\r\n    \tARRAY(\r\n        \tSELECT NEW.userid\r\n        )\r\n    );\r\n    \r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+197600	framework	tr_filters_tr	framework.tr_filters_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_filters_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_filters_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_filters_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t\r\n\t-- get column title\r\n\tIF NEW.val_desc is not NULL\r\n    THEN \r\n    \tSELECT\r\n        \tcol, t\r\n        FROM framework.config\r\n        WHERE id = NEW.val_desc\r\n        INTO NEW."column", NEW.t;\r\n        IF /*(\r\n          SELECT\r\n              relation\r\n          FROM framework.config\r\n          WHERE id = NEW.val_desc\r\n        ) is null AND*/ (\r\n          SELECT\r\n              "table"\r\n          FROM framework.config\r\n          WHERE id = NEW.val_desc\r\n        ) is null \r\n        THEN\r\n        \tNEW.t = '1';\r\n        END IF;\r\n\t\t\r\n        \r\n\tEND IF;\r\n    \r\n    -- columns only for typehead type\r\n    IF NEW.type<>'typehead' THEN\r\n    \tNEW.columns = '[]'::json;\r\n    ELSE\r\n    \tNEW."column" = null;\r\n    END IF;\r\n    \r\n    RETURN NEW;\r\nEND;\r\n$function$\n
+197601	framework	tr_mainmenu_tr	framework.tr_mainmenu_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_mainmenu_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_mainmenu_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_mainmenu_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tIF NEW.parentid is not null and NEW.parentid = NEW.id THEN\r\n    \tPERFORM raiserror('parent id can not be = id');\r\n    END IF;\r\n    \r\n    IF NEW.parentid is not null and \r\n    \tNEW.menuid is not null and\r\n    (SELECT \r\n    \tm.menutype\r\n     FROM framework.menus as m\r\n     WHERE m.id = NEW.menuid\r\n     ) = '3' THEN\r\n     \tPERFORM raiserror('Footer menu can not have child elements');\r\n    END IF;\r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197602	framework	tr_menu_tr	framework.tr_menu_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_menu_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_menu_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_menu_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tIF NEW.ismainmenu and NEW.menutype in ('1','2')\r\n    THEN\r\n    \tUPDATE framework.menus\r\n        SET ismainmenu = false\r\n        WHERE id <> NEW.id;\r\n    END IF;\r\n    IF NEW.menutype not in ('1','2') THEN\r\n    \tNEW.ismainmenu = false; \r\n    END IF;\r\n    \r\n   \r\n    \r\n    RETURN NEW;\r\nEND;\r\n$function$\n
+197603	framework	tr_menus_tr_del	framework.tr_menus_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_menus_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_menus_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_menus_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tIF OLD.ismainmenu = true THEN\r\n    \tPERFORM raiserror('Access denied. It is main menu');\r\n    END IF;\r\n    \r\n    DELETE FROM framework.mainmenu WHERE menuid = OLD.id;\r\n    \r\n    RETURN OLD;\r\nEND;\r\n$function$\n
+197604	framework	tr_notifications_tr_check	framework.tr_notifications_tr_check()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_notifications_tr_check()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_notifications_tr_check() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_notifications_tr_check()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\r\nBEGIN\r\n\r\n\tIF NEW.for_userid is NULL AND \r\n       NEW.sessid is NULL\r\n    THEN\r\n    \tPERFORM raiserror('no session and user');\r\n    END IF;\r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197605	framework	tr_orgs	framework.tr_orgs()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_orgs()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_orgs() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_orgs()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _useroles json;\r\n  _userorgs json;\r\n  _orgs json;\r\n  _org int;\r\n  _parentid int;\r\nBEGIN\r\n\tSELECT \r\n    \tu.roles,\r\n        u.orgs\r\n    FROM framework.users as u\r\n    WHERE u.id = NEW.userid\r\n    INTO _useroles,_userorgs;\r\n    _orgs = concat('[',NEW.id::varchar,']')::json;\r\n    \r\n\tIF COALESCE(NEW.parentid,0)<>0 THEN \r\n      WHILE COALESCE(NEW.parentid,0)<>0\r\n      LOOP\r\n          SELECT\r\n              parentid\r\n          FROM framework.orgs\r\n          WHERE id = _org\r\n          INTO _parentid;\r\n          IF coalesce(_parentid,0) <> 0 THEN\r\n              SELECT\r\n                  (_orgs::jsonb || concat('[',_parentid::varchar,']')::jsonb)::json   \r\n              INTO _orgs;\r\n          END IF;\r\n      END LOOP;    \r\n    END IF;     \r\n    \r\n    IF NEW.orgtype in (2,3,4) and \r\n       (\r\n       \t(SELECT count(*)\r\n         FROM json_array_elements_text(_useroles)\r\n         WHERE value::varchar::int in (0,3)) = 0\r\n         OR \r\n        (SELECT count(*)\r\n         FROM json_array_elements_text(_orgs) as o\r\n          \tJOIN json_array_elements_text(_userorgs) as uo on \r\n                  \tuo.value::varchar::int = o.value::varchar::int\r\n        ) = 0\r\n      ) THEN\r\n      \tPERFORM raiserror('Отказано в доступе');\r\n    END IF;\t\r\n    \r\n    IF NEW.orgtype in (1,5) and  -- Разрешить редактировать только админам системы, либо админам организаций\r\n       (\r\n       \t(SELECT count(*)\r\n         FROM json_array_elements_text(_useroles)\r\n         WHERE value::varchar::int in (0,1)) = 0\r\n         OR \r\n        (\r\n           (SELECT count(*)\r\n           FROM json_array_elements_text(_orgs) as o\r\n              JOIN json_array_elements_text(_userorgs) as uo on \r\n                      uo.value::varchar::int = o.value::varchar::int\r\n           ) = 0 \r\n           AND \r\n          (SELECT count(*)\r\n           FROM json_array_elements_text(_useroles)\r\n           WHERE value::varchar::int in (0,1,2)) = 0\r\n       )\r\n      ) THEN\r\n      \tPERFORM raiserror('Отказано в доступе');\r\n    END IF;\t\r\n    \r\n    IF NEW.ogrn is not null and not isnumeric(NEW.ogrn)\r\n    \tand length(NEW.ogrn)<>13\r\n    THEN\r\n\t\tPERFORM raiserror('ошибка в формате ОГРН');\r\n    END IF;\r\n    \r\n    IF NEW.inn is not null and not isnumeric(NEW.inn)\r\n    \tand length(NEW.inn)<>10\r\n    THEN\r\n\t\tPERFORM raiserror('ошибка в формате ИНН');\r\n    END IF;\r\n\r\n\tIF new.orgname<>'' and new.orgtype is not null THEN\r\n    \tNEW.completed = true;\r\n    END IF;\r\n      \r\n\tRETURN new;\r\n\r\n\r\nEND;\r\n$function$\n
+197606	framework	tr_select_condition_tr	framework.tr_select_condition_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_select_condition_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_select_condition_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_select_condition_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n    \r\n\tIF NEW.const is null and NEW.val_desc is null and NEW.operation not like '%null%'\r\n    THEN\r\n    \tPERFORM raiserror('const or value is null');\r\n    END IF;\r\n    \r\n    IF NEW.const is not null and NEW.value is not null\r\n    THEN\r\n    \tNEW.value = null;\r\n    END IF;\r\n    SELECT\r\n    \trow_to_json(d)\r\n    FROM\r\n    (SELECT\r\n    \tc.t,\r\n        c.id as key,\r\n        c.col as label,\r\n        c.title as value\r\n    FROM framework.config as c\r\n    WHERE c.id = NEW.val_desc) as d\r\n    INTO NEW.value;\r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197607	framework	tr_spapi_tr	framework.tr_spapi_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_spapi_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_spapi_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_spapi_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\t\r\n\t-- existing in db\r\n\tIF (\r\n      SELECT \r\n        count(p.proname)\r\n      FROM pg_proc p \r\n      INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n      WHERE format('%I.%I', ns.nspname, p.proname) = NEW.procedurename \r\n    ) = 0 THEN\r\n    \tPERFORM raiserror('Can not found selected function');\r\n    END IF;\r\n    \r\n    -- Check function description\r\n    IF COALESCE((\r\n      SELECT \r\n          pd.description\r\n      FROM pg_proc p \r\n          INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n          LEFT JOIN pg_catalog.pg_description as pd on p.oid = pd.objoid\r\n      WHERE format('%I.%I', ns.nspname, p.proname) = NEW.procedurename \r\n    ),'') = '' THEN\r\n    \tPERFORM raiserror('Function without description');\r\n    END IF;\r\n    \r\n    -- IN parametr check\r\n    IF (\r\n      SELECT count(p.proname)\t\r\n      FROM pg_proc p \r\n          INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n          LEFT JOIN pg_catalog.pg_description as pd on p.oid = pd.objoid\r\n          LEFT JOIN pg_type as pt on pt.oid = p.proargtypes[0]::int\r\n      WHERE format('%I.%I', ns.nspname, p.proname) = NEW.procedurename \r\n      and p.proargnames[1] = 'injson' and upper(pt.typname) like '%JSON' \r\n      --and p.proargmodes[1] = 'i'\r\n    ) = 0 THEN\r\n    \tPERFORM raiserror('Check injson parametr');\r\n    END IF;\r\n    \r\n\t-- title\r\n\tIF (\r\n      SELECT \r\n        p.proname\r\n      FROM pg_proc p \r\n      INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n      WHERE format('%I.%I', ns.nspname, p.proname) = NEW.procedurename \r\n    ) not like 'fn_%' THEN\r\n    \tPERFORM raiserror('Function title must begun with fn_');\r\n    END IF;\r\n    \r\n    -- check api method path\r\n    new.methodname = regexp_replace(new.methodname, '[^a-z0-9_]-', '', 'g');\r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197608	framework	tr_trees_add_org	framework.tr_trees_add_org()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_trees_add_org()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_trees_add_org() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_trees_add_org()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _orgid int;\r\nBEGIN\r\n\tSELECT \r\n    \torgid\r\n    FROM framework.users\r\n    WHERE id = NEW.userid\r\n    INTO _orgid;\r\n    \r\n    UPDATE framework.trees\r\n    SET orgid = _orgid\r\n    WHERE id = NEW.id;\r\n    \r\n    return null;\r\nEND;\r\n$function$\n
+197609	framework	tr_trees_tr_del	framework.tr_trees_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_trees_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_trees_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_trees_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tDELETE FROM framework.treesbranches WHERE treesid = OLD.id;\r\n    DELETE FROM framework.treesacts WHERE treesid = OLD.id;\r\n    \r\n    RETURN OLD; \r\n\r\nEND;\r\n$function$\n
+197610	framework	tr_treesbranch_check	framework.tr_treesbranch_check()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_treesbranch_check()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_treesbranch_check() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_treesbranch_check()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tIF TG_OP = 'UPDATE' and  NEW.compoid is not null and OLD.compoid is null  THEN\r\n    \tNEW.viewid = null;\r\n    END IF;\r\n    \r\n\tIF TG_OP = 'UPDATE' and NEW.viewid is not null and OLD.viewid is null  THEN\r\n    \tNEW.compoid = null;\r\n    END IF;    \r\n    \r\n\tIF NEW.ismain THEN\r\n    \tUPDATE framework.treesbranches\r\n        SET ismain = false\r\n        WHERE treesid = NEW.treesid and id<>NEW.id;\r\n    END IF;\r\n    \r\n    return \tNEW;\r\nEND;\r\n$function$\n
+197611	framework	tr_user_check	framework.tr_user_check()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_user_check()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_user_check() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_user_check()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\tuseroles json;\r\n    \r\nBEGIN\r\n\r\n    IF NEW.fam is not null and NEW.fam = '' THEN\r\n    \tperform raiserror('fam is null');\r\n    END IF;\r\n    IF NEW.im is not null and NEW.im = '' THEN\r\n    \tperform raiserror('im is null');\r\n    END IF;\r\n\r\n    IF NEW.login is not null and NEW.login = '' THEN\r\n    \tperform raiserror('login is null');\r\n    END IF;\r\n    IF TG_OP = 'INSERT' and NEW.password is null THEN\r\n    \tperform raiserror('password is null');\r\n    END IF;\r\n    IF TG_OP = 'UPDATE' and NEW.password is not null and NEW.password = 'd14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f' THEN\r\n    \tNEW.password = OLD.password;\r\n    END IF;\r\n\r\n\r\n\tIF NEW.roles is not null and  NEW.roles::varchar not like '[%]' THEN\r\n    \tperform raiserror('roles format error');\r\n    END IF;\r\n\tIF NEW.orgs is not null and  NEW.orgs::varchar not like '[%]' THEN\r\n    \tperform raiserror('orgs format error');\r\n    END IF;\r\n\t\r\n\tIF NEW.orgid is null and NEW.orgs is not null\r\n\tTHEN\r\n\t   SELECT\r\n\t      value::varchar::int\r\n\t   FROM json_array_elements_text(NEW.orgs)\r\n\t   LIMIT 1\r\n\t   INTO NEW.orgid;\r\n\tEND IF;\r\n\t\r\n\tIF NEW.roles is not null and (SELECT count(*) FROM json_array_elements_text(NEW.roles)) = 0 THEN\r\n    \tperform raiserror('no roles');\r\n    END IF;\r\n    \r\n    SELECT\r\n    \t roles\r\n    FROM framework.users\r\n    WHERE id = NEW.userid\r\n    INTO useroles;\r\n    \r\n\r\n    IF TG_OP = 'UPDATE' and NEW.roles::VARCHAR<>OLD.roles::varchar THEN\r\n      \t\r\n       IF (SELECT \r\n          coalesce( min(r.hierarchy),100000)\r\n        FROM  json_array_elements_text(Old.roles) as o\r\n          JOIN framework.roles as r on r.id = o.value::varchar::smallint) <\r\n        (SELECT \r\n              coalesce( min(r.hierarchy),100000)\r\n        FROM  json_array_elements_text(useroles) as o\r\n          JOIN framework.roles as r on r.id = o.value::varchar::smallint) THEN\r\n         perform raiserror('u can not change the roles');\r\n         \r\n       END IF;   \r\n  \r\n          \r\n    END IF;\r\n\r\n    return NEW;\r\nEND;\r\n$function$\n
+197612	framework	tr_view_tr_check	framework.tr_view_tr_check()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_view_tr_check()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_view_tr_check() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_view_tr_check()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tIF NEW.viewtype like '%api' and NEW.tablename is NULL THEN\r\n    -- if data-binding from API method - view type is api, tablename is not neccesary\r\n    \tNEW.tablename = '';\r\n    END IF;\r\n    \r\n    SELECT\t\t\r\n    \tCOALESCE(NEW.descr,p.description)\r\n    FROM pg_catalog.pg_statio_all_tables as t\r\n    \tLEFT JOIN pg_catalog.pg_description as p on p.objoid = t.relid\r\n    WHERE concat(t.schemaname::varchar,'.',t.relname::varchar) = NEW.tablename \r\n    INTO NEW.descr;\r\n    \r\n    IF coalesce((\r\n      SELECT\t\t\r\n          p.description\r\n      FROM pg_catalog.pg_statio_all_tables as t\r\n          LEFT JOIN pg_catalog.pg_description as p on p.objoid = t.relid\r\n      WHERE concat(t.schemaname::varchar,'.',t.relname::varchar) = NEW.tablename \r\n      LIMIT 1\r\n    ),'') = '' THEN\r\n       PERFORM raiserror('Table has no description');\r\n    END IF;\r\n\r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197613	framework	tr_views_tr_del	framework.tr_views_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_views_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_views_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_views_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\tolddata json;\r\nBEGIN\r\n/*\r\n    SELECT row_to_json(d)\r\n    FROM\r\n    (SELECT \r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.actions\r\n          WHERE viewid = OLD.id \r\n      ) as d) as actions,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.visible_condition\r\n          WHERE configid in (\r\n              SELECT id FROM framework.config WHERE viewid = OLD.id\r\n            )\r\n      ) as d) as visible_condition,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.select_condition\r\n          WHERE configid in (\r\n              SELECT id FROM framework.config WHERE viewid = OLD.id\r\n            )\r\n      ) as d) as select_condition,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.defaultval\r\n          WHERE configid in (\r\n             SELECT id FROM framework.config WHERE viewid = OLD.id\r\n          )\r\n      ) as d) as defaultval,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.config\r\n          WHERE viewid = OLD.id \r\n      ) as d) as config,\r\n      (\r\n        SELECT \r\n            array_to_json(array_agg(row_to_json(d)))\r\n        FROM ( \r\n          SELECT *\r\n          FROM framework.filters\r\n          WHERE viewid = OLD.id \r\n      ) as d) as filters\r\n    ) as d\r\n    INTO olddata;\r\n*/    \r\n    \r\n    \r\n   -- UPDATE framework.views SET config = olddata WHERE id = OLD.id;\r\n    DELETE FROM framework.act_parametrs WHERE val_desc in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    ); \r\n    \r\n   DELETE FROM framework.act_visible_condions WHERE val_desc in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    ); \r\n    DELETE FROM framework.actions WHERE viewid = OLD.id;    \r\n        \r\n\tDELETE FROM framework.visible_condition WHERE configid in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    );\r\n    \r\n\tDELETE FROM framework.visible_condition WHERE val_desc in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    );\r\n    \r\n\tDELETE FROM framework.select_condition WHERE configid in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    );\r\n    \r\n\tDELETE FROM framework.select_condition WHERE val_desc in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    ); \r\n    \r\n\tDELETE FROM framework.defaultval WHERE configid in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    );\r\n    DELETE FROM framework.filters WHERE val_desc in (\r\n      SELECT id FROM framework.config WHERE viewid = OLD.id\r\n    );\r\n    DELETE FROM framework.filters WHERE viewid = OLD.id;\r\n\r\n\tDELETE FROM framework.config WHERE viewid = OLD.id and fn is not null;\r\n\tDELETE FROM framework.config WHERE viewid = OLD.id and fn is null;\t\r\n\t\r\n    \r\n/*    \r\n    INSERT INTO framework.logtable(\r\n      tablename, tableid, \r\n      opertype, oldata, newdata,\r\n      userid\r\n    ) VALUES (\r\n    \t'framework.views', OLD.id::varchar,\r\n        '3', olddata, '[]'::json,\r\n        1\r\n    );\r\n*/    \r\n    RETURN OLD;  \r\n\r\nEND;\r\n$function$\n
+197614	framework	tr_views_tr_ins_after	framework.tr_views_tr_ins_after()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_views_tr_ins_after()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_views_tr_ins_after() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_views_tr_ins_after()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tIF not NEW.copy THEN\r\n      INSERT INTO framework.config (\r\n        viewid, t, col, column_id, title, type,\r\n        roles, visible, required, width,\r\n        "join", classname, updatable,\r\n        relation, select_api, multiselecttable,\r\n        orderby, orderbydesc, relcol,\r\n        depency, depencycol, relationcolums,\r\n        multicolums, column_order, fn,\r\n        fncolumns, relatecolumn, "table",\r\n        related\r\n      )\r\n      SELECT \r\n        NEW.id, c.value->>'t' as t, c.value->>'col' as col, \r\n        (c.value->>'column_id')::INTEGER as column_id,\r\n        c.value->>'title' as title, c.value->>'type' as type,\r\n        \r\n        (CASE WHEN (c.value->>'roles')::varchar like '[%'\r\n        THEN\r\n        json_build_array(array(SELECT\r\n                value->'value'\r\n           FROM json_array_elements((c.value->>'roles')::json)\r\n        ))->0\r\n        ELSE\r\n            '[]'::json\r\n        END) as roles,\r\n         \r\n        coalesce((c.value->>'visible' )::BOOLEAN,false) as visible,\r\n        COALESCE((c.value->>'required')::BOOLEAN,false) as required,\r\n        c.value->>'width' as width,\r\n        COALESCE((c.value->>'join')::BOOLEAN,false) as join,\r\n        c.value->>'classname' as classname,\r\n        COALESCE((c.value->>'updatable')::BOOLEAN,false) as updatable,\r\n        c.value->>'relation' as relation,\r\n        c.value->>'select_api' as select_api,   \r\n        c.value->>'multiselecttable' as multiselecttable,\r\n        COALESCE((c.value->>'orderby')::BOOLEAN,false) as orderby,\r\n        COALESCE((c.value->>'orderbydesc')::BOOLEAN,false) as orderbydesc,\r\n        c.value->>'relcol' as relcol,\r\n        COALESCE((c.value->>'depency')::BOOLEAN,false) as depency,\r\n        c.value->>'depencycol' as depencycol,\r\n        \r\n        (CASE WHEN (c.value->>'relationcolums')::varchar like '[%'\r\n        THEN\r\n        json_build_array(array(SELECT\r\n                value->'value'\r\n           FROM json_array_elements((c.value->>'relationcolums')::json)\r\n        ))->0\r\n        ELSE\r\n         '[]'::json\r\n        END) as relationcolums,\r\n         \r\n        (CASE WHEN (c.value->>'multicolums')::varchar like '[%'\r\n        THEN\r\n            json_build_array(array(SELECT\r\n                value->'value'\r\n           FROM json_array_elements((c.value->>'multicolums')::json)\r\n            ))->0\r\n        ELSE\r\n            '[]'::json\r\n        END\r\n        ) as multicolums,\r\n        \r\n        (row_number() over (PARTITION BY 0))*10 as column_order,\r\n        (c.value->'fn')->>'value' as fn,\r\n        \r\n        (CASE WHEN (c.value->>'fncolumns')::varchar like '[%'\r\n        THEN\r\n           json_build_array(array(SELECT\r\n                value->'value'\r\n           FROM json_array_elements((c.value->'fncolumns')::json)\r\n        ))->0 \r\n        ELSE\r\n         null\r\n        END ) as fncolumns,\r\n        \r\n        c.value->>'relatecolumn',\r\n        c.value->>'table',\r\n        coalesce((c.value->>'related')::boolean,false)\r\n     FROM json_array_elements(framework.fn_createconfig(json_build_object('tabname',NEW.tablename ))) as c;\t\r\n\tEND IF;\r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+197615	framework	tr_viewsnotification_del_doubles	framework.tr_viewsnotification_del_doubles()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_viewsnotification_del_doubles()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_viewsnotification_del_doubles() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_viewsnotification_del_doubles()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN /*Этот  триггер удаляет дубли  сообщений по полю doublemess*/ \r\n  if (old.issend=false and new.issend=true and not (new.doublemess is null))  then -- если информация о том что issend изменен на получен и причем принимает участие поле doublemess\r\n    delete from framework.viewsnotification \r\n    where doublemess=new.doublemess and id<>new.id;\r\n  end if; \r\n  RETURN NEW;\r\nEXCEPTION\r\nWHEN others THEN\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197616	framework	tr_visible_condition_tr	framework.tr_visible_condition_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_visible_condition_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nframework.tr_visible_condition_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION framework.tr_visible_condition_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tIF NEW.value is null and NEW.operation not like '%null%'\r\n    THEN\r\n    \tPERFORM raiserror('value is null');\r\n    END IF; \r\n    \r\n\tIF NEW.val_desc is null\r\n    THEN\r\n    \tPERFORM raiserror('val_desc is null');\r\n    END IF;     \r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197618	public	fn_completed_colorblack	public.fn_completed_colorblack(t  bool,c out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_completed_colorblack(t  bool,c out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_completed_colorblack(t  bool,c out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_completed_colorblack(t boolean, OUT c character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tc = 'black';\r\n    IF not  t THEN\r\n    \tc = 'red';\r\n    END IF;\r\n\r\nEND;\r\n$function$\n
+197619	public	fn_corect_error_view_config	public.fn_corect_error_view_config(_id  int4,_result out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_corect_error_view_config(_id  int4,_result out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_corect_error_view_config(_id  int4,_result out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_corect_error_view_config(_id integer, OUT _result character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _i int;\r\n  _act json; \r\n  _acts json[];\r\n  _newact json;\r\nBEGIN\r\n _result='';\r\n _i=0;\r\n FOR  _act in (select value from json_array_elements ((select acts from framework.views where  id=_id)::json) as d) \r\n LOOP\r\n  _i=_i+1;\r\n  --_result=(concat(_result,' ',_i::varchar,'-',_act->>'title'::varchar,' ',_act->>'isforevery'::varchar,', '));\r\n  if _act->>'isforevery' is null \r\n    then\r\n     _newact=(_act::jsonb||'{"isforevery":"false"}'::jsonb)::json;\r\n     /*_acts=row_to_json\r\n     (\r\n         select value from json_array_elements (_acts)\r\n         -- union  select _newact\r\n     );*/\r\n     \r\n    else   \r\n     _newact=_act;\r\n  end if;\r\n END LOOP;\r\n _result=_newact::varchar;\r\n return;\r\nEND;\r\n$function$\n
+197620	public	fn_users_getorgs	public.fn_users_getorgs(injson  json,result out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_users_getorgs(injson  json,result out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_users_getorgs(injson  json,result out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_users_getorgs(injson json, OUT result character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\n\r\n\r\nBEGIN\r\n    SELECT \r\n    \tstring_agg(ro.orgname, ', ')\r\n    FROM\r\n        json_array_elements_text(injson) as q\r\n    JOIN framework.orgs AS ro ON ro.id = q.value::VARCHAR::int\r\n    INTO result;\r\nEND;\r\n$function$\n
+197621	public	fn_users_getroles	public.fn_users_getroles(injson  json,result out varchar)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_users_getroles(injson  json,result out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_users_getroles(injson  json,result out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_users_getroles(injson json, OUT result character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\n\r\nBEGIN\r\n    SELECT \r\n        string_agg(ro.rolename, ', ')\r\n    FROM\r\n        json_array_elements_text(injson) as q\r\n    JOIN framework.roles AS ro ON ro.id = q.value::VARCHAR::int\r\n    INTO result;\r\nEND;\r\n$function$\n
+197622	public	fn_view_copy_json_test	public.fn_view_copy_json_test(_id  int4,outjson out json)	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_view_copy_json_test(_id  int4,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_view_copy_json_test(_id  int4,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION public.fn_view_copy_json_test(_id integer, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  SELECT\r\n      row_to_json(d)\r\n  FROM \r\n  (SELECT COALESCE((\r\n      SELECT \r\n         row_to_json(f)\r\n      FROM (\r\n        SELECT v.*\r\n        FROM framework.views as v\r\n        WHERE v.id = _id\r\n      ) as f),'[]') as view, COALESCE((\r\n        SELECT\r\n            array_to_json(array_agg(row_to_json(f)))\r\n        FROM (\r\n            SELECT\r\n                c.*\r\n            FROM framework.config as c\r\n            WHERE c.viewid = _id\r\n        ) as f),'[]') as config, COALESCE((\r\n        SELECT\r\n            array_to_json(array_agg(row_to_json(f)))\r\n        FROM (\r\n            SELECT\r\n                a.*\r\n            FROM framework.actions as a\r\n            WHERE a.viewid = _id\r\n        ) as f),'[]') as actions, COALESCE((\r\n        SELECT\r\n            array_to_json(array_agg(row_to_json(f)))\r\n        FROM (\r\n            SELECT\r\n                ff.*\r\n            FROM framework.filters as ff\r\n            WHERE ff.viewid = _id\r\n        ) as f),'[]') as filters, COALESCE((\r\n        SELECT\r\n            array_to_json(array_agg(row_to_json(f)))\r\n        FROM (\r\n            SELECT\r\n                ap.*\r\n            FROM framework.act_parametrs as ap\r\n              JOIN framework.actions as a on a.id = ap.actionid\r\n            WHERE a.viewid = _id\r\n        ) as f),'[]') as act_parametrs, COALESCE((\r\n          SELECT\r\n              array_to_json(array_agg(row_to_json(f)))\r\n          FROM (\r\n              SELECT\r\n                  vc.*\r\n              FROM framework.visible_condition as vc\r\n                JOIN framework.config as c on c.id = vc.configid\r\n              WHERE c.viewid = _id\r\n          ) as f),'[]') as visible_condition, COALESCE((\r\n          SELECT\r\n              array_to_json(array_agg(row_to_json(f)))\r\n          FROM (\r\n              SELECT\r\n                  sc.*\r\n              FROM framework.select_condition as sc\r\n                JOIN framework.config as c on c.id = sc.configid\r\n              WHERE c.viewid = _id\r\n          ) as f),'[]') as select_condition,  COALESCE((\r\n          SELECT\r\n              array_to_json(array_agg(row_to_json(f)))\r\n          FROM (\r\n              SELECT\r\n                  df.*\r\n              FROM framework.defaultval as df\r\n                JOIN framework.config as c on c.id = df.configid\r\n              WHERE c.viewid = _id\r\n          ) as f),'[]') as defaultval, COALESCE((\r\n          SELECT\r\n              array_to_json(array_agg(row_to_json(f)))\r\n          FROM (\r\n              SELECT\r\n                  av.*\r\n              FROM framework.act_visible_condions as av\r\n                JOIN framework.actions as a on a.id = av.actionid\r\n              WHERE a.viewid = _id\r\n          ) as f),'[]') as act_visible_condions) as d\r\n    INTO outjson    \r\n        ;\r\n      \r\n\r\nEND;\r\n$function$\n
+197623	public	fn_withoutDesc_setRightFnTitle	public.fn_withoutDesc_setRightFnTitle()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_withoutDesc_setRightFnTitle()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_withoutDesc_setRightFnTitle() \r\n*/\r\nCREATE OR REPLACE FUNCTION public."fn_withoutDesc_setRightFnTitle"(_schemaname character varying, _fn_name character varying, _newschemaname character varying)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _squery varchar;\r\n  _nfnname varchar(500);\r\nBEGIN\r\n\r\n\tIF _schemaname<>_newschemaname\r\n    THEN\r\n      _squery = CONCAT(\r\n          'ALTER FUNCTION "',_schemaname,'"."', _fn_name,\r\n          '"() SET SCHEMA "',_newschemaname,'";'\r\n      );\r\n      EXECUTE(_squery);\r\n    END IF;\r\n    \r\n    \r\n\r\n\r\n    \r\n   --_squery = CONCAT(_squery,' SET SCHEMA ', _schemaname,' ',_newschemaname,';');\r\n    \r\n    \r\n    \r\n    IF _fn_name not like 'tr_%'\r\n    THEN\r\n    \t_nfnname = _fn_name;\r\n    \tIF _nfnname like 'fn_%'\r\n        THEN\r\n        \t_nfnname = replace(_fn_name,'fn_','');\r\n        END IF;\r\n        \r\n        _nfnname = concat('"tr_', _nfnname,'"');\r\n        _squery = CONCAT(\r\n        \t'ALTER FUNCTION "',_newschemaname,'"."', _fn_name,\r\n            '"() RENAME TO ', _nfnname,';'\r\n        );\r\n        EXECUTE(_squery);\r\n    END IF;\r\n\t\r\n\r\nEND;\r\n$function$\n
+197624	public	fn_withoutDesc_tables	public.fn_withoutDesc_tables(_schema  varchar,schema  varchar,tablename  varchar,description  varchar)	ТАБЛИЦЫ БЕЗ ОПИСАНИЙ	2020-05-14 17:26:34.600103	1	f	fn_withoutDesc_tables(_schema  varchar,schema  varchar,tablename  varchar,description  varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_withoutDesc_tables(_schema  varchar,schema  varchar,tablename  varchar,description  varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public."fn_withoutDesc_tables"(_schema character varying)\n RETURNS TABLE(schema character varying, tablename character varying, description character varying)\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  RETURN QUERY\r\n  SELECT \r\n\t   t.schemaname::varchar, \r\n\t   t.relname::varchar as table,\r\n\t   COALESCE(p.description,'НЕТ ОПИСАНИЯ')::varchar as desc\r\n  FROM pg_catalog.pg_statio_all_tables as t\r\n\t  LEFT JOIN pg_catalog.pg_description as p on p.objoid = t.relid\r\n  WHERE t.schemaname = _schema and (COALESCE(p.description,'') = '' OR\r\n\t\tp.description = 'НЕТ ОПИСАНИЯ');\r\n\r\nEND;\r\n$function$\n
+197625	public	fn_withoutDesc_triggers	public.fn_withoutDesc_triggers(_schemaname  varchar,tab  varchar,tg_name  varchar,function_shema  varchar,fnresult  varchar)	 -- triggers with wrong schemas and names	2020-05-14 17:26:34.600103	1	f	fn_withoutDesc_triggers(_schemaname  varchar,tab  varchar,tg_name  varchar,function_shema  varchar,fnresult  varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_withoutDesc_triggers(_schemaname  varchar,tab  varchar,tg_name  varchar,function_shema  varchar,fnresult  varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public."fn_withoutDesc_triggers"(_schemaname character varying)\n RETURNS TABLE(tab character varying, tg_name character varying, function_shema character varying, fnresult character varying)\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  RETURN QUERY\r\n  SELECT \r\n   --c.*,\r\n      CONCAT(n.nspname,'.', c.relname)::varchar as tablename, \r\n      t.tgname::varchar as tg_name,\r\n      concat(pn.nspname,'.', p.proname)::varchar as functionschema ,\r\n      "fn_withoutDesc_setRightFnTitle"(\r\n         pn.nspname::varchar,\r\n         p.proname::varchar,\r\n     \t n.nspname::varchar   \r\n      )::varchar as fn_result\r\n  FROM pg_trigger as t\r\n       JOIN pg_class as c on c.oid = t.tgrelid \r\n       JOIN pg_namespace as n on n.oid = c.relnamespace\r\n       JOIN pg_proc as p on p.oid = t.tgfoid\r\n       JOIN pg_namespace pn ON pn.oid = p.pronamespace\r\n  WHERE n.nspname = _schemaname and not t.tgisinternal \r\n      AND ( n.nspname <> pn.nspname OR p.proname not like 'tr_%');\r\nEND;\r\n$function$\n
+197626	public	fn_withoutDesc_triggers_test	public.fn_withoutDesc_triggers_test(_schemaname  json,tab  varchar,tg_name  varchar,function_shema  varchar,fnresult  varchar)	 -- triggers with wrong schemas and names	2020-05-14 17:26:34.600103	1	f	fn_withoutDesc_triggers_test(_schemaname  json,tab  varchar,tg_name  varchar,function_shema  varchar,fnresult  varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.fn_withoutDesc_triggers_test(_schemaname  json,tab  varchar,tg_name  varchar,function_shema  varchar,fnresult  varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION public."fn_withoutDesc_triggers_test"(_schemaname character varying)\n RETURNS TABLE(tab character varying, tg_name character varying, function_shema character varying, fnresult json)\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  RETURN QUERY\r\n  SELECT \r\n   --c.*,\r\n      CONCAT(n.nspname,'.', c.relname)::varchar as tablename, \r\n      t.tgname::varchar as tg_name,\r\n      concat(pn.nspname,'.', p.proname)::varchar as functionschema ,\r\n      t.tgargs as fnresult\r\n  FROM pg_trigger as t\r\n       JOIN pg_class as c on c.oid = t.tgrelid \r\n       JOIN pg_namespace as n on n.oid = c.relnamespace\r\n       JOIN pg_proc as p on p.oid = t.tgfoid\r\n       JOIN pg_namespace pn ON pn.oid = p.pronamespace\r\n  WHERE n.nspname = _schemaname ;\r\nEND;\r\n$function$\n
+197628	public	isnumeric	public.isnumeric()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	isnumeric()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.isnumeric() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.isnumeric(text)\n RETURNS boolean\n LANGUAGE plpgsql\n IMMUTABLE STRICT\nAS $function$\r\nDECLARE x NUMERIC;\r\nBEGIN\r\n    x = $1::NUMERIC;\r\n    RETURN TRUE;\r\nEXCEPTION WHEN others THEN\r\n    RETURN FALSE;\r\nEND;\r\n$function$\n
+197629	public	raiserror	public.raiserror()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	raiserror()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\npublic.raiserror() \r\n*/\r\nCREATE OR REPLACE FUNCTION public.raiserror(_hint character varying)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\tRAISE EXCEPTION 'usererror' USING HINT=concat(_hint,'+++___');\r\nEND;\r\n$function$\n
+197630	reports	fn_call_report	reports.fn_call_report(injson  json,outjson out json)	ФУНКЦИЯ ВЫЗОВА ФУНКЦИИ ОТЧЁТА	2020-05-14 17:26:34.600103	1	f	fn_call_report(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.fn_call_report(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.fn_call_report(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  report_path VARCHAR(350);\r\n  _roles json;\r\n  _userroles json;\r\n  _sess char(36);\r\n  _userid char(36);\r\n  _fn_title VARCHAR(350);  \r\n  squery varchar;\r\n  _template_path varchar(300);\r\n  _ishtml boolean; \r\nBEGIN\r\n  report_path = injson->>'report_path';\r\n  _sess =injson->>'sess';\r\n  injson = injson->>'injson';\r\n  \r\n  SELECT \r\n  \trl.functitle,\r\n    rl.roles,\r\n    rl.template_path,\r\n    rl.ishtml\r\n  FROM reports.reportlist as rl\r\n  WHERE rl.path = report_path\r\n  INTO _fn_title, _roles, _template_path, _ishtml;\r\n  \r\n  IF _fn_title is null THEN\r\n  \tPERFORM raiserror('404');\r\n  END IF; \r\n  \r\n  SELECT\r\n      u.id,\r\n      u.roles\r\n  FROM framework.users as u\r\n      JOIN framework.sess as s on s.userid = u.id\r\n  WHERE s.id = _sess\r\n  INTO _userid, _userroles;\r\n  \r\n  IF _roles is not null and (\r\n      SELECT count(*) \r\n      FROM json_array_elements_text(_roles)\r\n    ) <> 0 AND (\r\n    \tSELECT count(*) \r\n        FROM json_array_elements_text(_userroles)\r\n    ) <> 0\r\n  THEN\r\n \tIF (\r\n          SELECT \r\n              count(*) \r\n          FROM json_array_elements_text(_userroles) as u\r\n              JOIN json_array_elements_text(_roles) as r on \r\n                  u.value::varchar::int = r.value::varchar::int\r\n        ) = 0 AND (\r\n          SELECT \r\n              count(*) \r\n          FROM json_array_elements_text(_userroles)\r\n          WHERE value::varchar = '0'\r\n        ) = 0\r\n \tTHEN\r\n    \tPERFORM raiserror('access denied');\r\n    END IF;\r\n  END IF;\r\n  \r\n  SELECT injson::jsonb || (\r\n  \tSELECT row_to_json(d) \r\n    FROM (\r\n    \tSELECT _userid as userid\r\n    ) as d\r\n  )::jsonb\r\n  INTO injson;\r\n\r\n  squery = concat('\r\n    SELECT \r\n       row_to_json(d) \r\n    FROM\r\n       ( \r\n         select \r\n         \toutjson\r\n            \r\n         from ',_fn_title,'($1)\r\n       ) as d;'\r\n    );\r\n    \r\n  EXECUTE format(squery) INTO outjson USING injson;\r\n  \r\n  outjson =  (outjson::jsonb||(SELECT row_to_json(d) FROM (\r\n  \tSELECT \r\n      _template_path as template_path,\r\n      _ishtml as ishtml\r\n  ) as d)::jsonb)::jsonb;\r\n  \r\n  outjson = coalesce(outjson,'{}');\r\n \r\nEND;\r\n$function$\n
+197631	reports	fn_getmethod_info	reports.fn_getmethod_info(injson  json,outjson out json)	get method info	2020-05-14 17:26:34.600103	1	f	fn_getmethod_info(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.fn_getmethod_info(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.fn_getmethod_info(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id int; \r\nBEGIN\r\n\t_id = injson->>'id';\r\n\t\r\n\r\n\tSELECT\r\n    \trow_to_json(d)\r\n    FROM (\r\n\t  SELECT\r\n\t\t  s.methodname,\r\n\t\t  s.methodtype,\r\n\t\t  mt.methotypename\r\n\t  FROM framework.spapi as s\r\n\t\t  LEFT JOIN framework.methodtypes as mt on mt.id = s.methodtype\r\n\t  WHERE s.id = _id\r\n\t) as d\r\n\tinto outjson;\r\n    \r\n    outjson = coalesce(outjson,'{}');\r\nEND;\r\n$function$\n
+197661	test	tr_major_table_tr	test.tr_major_table_tr()	test major table trigger	2020-05-14 17:26:34.600103	1	f	tr_major_table_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.tr_major_table_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.tr_major_table_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tNEW.gallery = NEW.images;\r\n    NEW.color = NEW.colorpicker;\r\n    NEW.colorrow = NEW.colorpicker;\r\n    IF NEW.colorpicker is not null and NEW.colorpicker not like '#%'\r\n    THEN\r\n    \tNEW.color = concat('#',NEW.color);\r\n    \tNEW.colorrow = concat('#',NEW.colorrow);\r\n    END IF;\r\n    NEW.link = json_build_object('title', NEW.text, 'link', concat('/view/',NEW.number));\r\n    NEW.label = NEW.text;\r\n    NEW.html = NEW.texteditor;\r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197632	reports	fn_getreports_fn	reports.fn_getreports_fn(injson  json,outjson out json)	get report info	2020-05-14 17:26:34.600103	1	f	fn_getreports_fn(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.fn_getreports_fn(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.fn_getreports_fn(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_substr varchar(130);\r\nBEGIN\r\n\r\n  _substr = injson->>'substr';\t\r\n\r\n  _substr = CONCAT('%',upper(coalesce(_substr,'%')),'%');\t\r\n\r\n  SELECT\r\n  \tarray_to_json(array_agg(row_to_json(p)))\r\n  FROM (\r\n\tSELECT \r\n\t  format('%I.%I', ns.nspname, p.proname) as label,\r\n\t  format('%I.%I', ns.nspname, p.proname) as value,\r\n\t  'user' as functype \r\n\tFROM pg_proc p \r\n\tINNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n\tWHERE ns.nspname in ('reports') and  \r\n\t  upper(format('%I.%I', ns.nspname, p.proname)) like _substr \r\n  ) as p\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197633	reports	fn_report_copy	reports.fn_report_copy()	REPORT COPY (DUBLICATE)	2020-05-14 17:26:34.600103	1	f	fn_report_copy()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.fn_report_copy() \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.fn_report_copy(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _id int;\r\n  _newid int;\t\r\n  _nw json;\r\nBEGIN\r\n\t/* REPORT COPY (DUBLICATE) */\r\n\t_userid = injson->>'userid';\r\n    _id = injson->>'id';\r\n    \r\n    _newid = nextval('reports.reportlist_id_seq'::regclass);\r\n\t\r\n    \r\n    INSERT INTO reports.reportlist (\r\n      id, title, roles,\r\n      "path", "template",\r\n      template_path, functitle,\r\n      section, completed, filename\r\n    )\r\n    SELECT\r\n      _newid, r.title, r.roles,\r\n      concat(r."path",'_copy'), r."template",\r\n      r.template_path, r.functitle,\r\n      r.section, r.completed, r.filename\r\n    FROM reports.reportlist as r\r\n    WHERE r.id = _id;\r\n    \r\n    INSERT INTO reports.reportparams (\r\n      reportlistid, ptitle, func_paramtitle,\r\n      ptype, apimethod, completed, orderby \r\n    )\r\n    SELECT\r\n      _newid, rp.ptitle, rp.func_paramtitle,\r\n      rp.ptype, rp.apimethod, rp.completed, rp.orderby \r\n    FROM reports.reportparams as rp\r\n    WHERE rp.reportlistid = _id;\r\n    \r\n    SELECT\r\n    \trow_to_json(d)\r\n    FROM (\r\n      SELECT r.*\r\n      FROM reports.reportlist as r\r\n      WHERE r.id = _id\r\n    ) as d\r\n    INTO _nw;\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid, opertype,\r\n      oldata, newdata, userid\r\n    ) VALUES (\r\n    \t'reports.reportlist', _newid, '1',\r\n        '{}'::json, _nw, _userid\r\n    );\r\nEND;\r\n$function$\n
+197634	reports	fn_report_getone	reports.fn_report_getone(injson  json,outjson out json)	get report by id	2020-05-14 17:26:34.600103	1	f	fn_report_getone(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.fn_report_getone(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.fn_report_getone(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _id int;\r\n  _userroles json;\r\n  _reportroles json;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    _id = injson->>'id';\r\n    \r\n    SELECT\r\n    \tu.roles\r\n    FROM framework.users as u\r\n    WHERE u.id = _userid\r\n\tINTO _userroles;\r\n    \r\n\tSELECT \r\n    \trl.roles\r\n    FROM reports.reportlist as rl\r\n    WHERE rl.id = _id\r\n    INTO _reportroles;\r\n    \r\n    \r\n    IF _reportroles is not null AND\r\n    \t(SELECT count(*) \r\n         FROM json_array_elements_text(_reportroles)) <> 0\r\n\tTHEN\r\n    \tIF (SELECT count(*) \r\n             FROM json_array_elements_text(_reportroles) as r\r\n                JOIN json_array_elements_text(_userroles) as ur on \r\n                    ur.value::varchar = r.value::varchar) = 0\r\n\r\n    \tTHEN\r\n        \tPERFORM raiserror('access denied');\r\n        END IF;                     \r\n    END IF;\r\n    \r\n    SELECT \r\n   \t\trow_to_json(d)\r\n \tFROM (\r\n\t  SELECT \r\n\t\t  rl.id,\r\n\t\t  rl.filename,\r\n\t\t  rl.template_path,\r\n\t\t  rl.title,\r\n\t\t  rl.path,\r\n\t\t  COALESCE((\r\n\t\t\tSELECT \r\n\t\t\t\tarray_to_json(array_agg(row_to_json(p)))\r\n\t\t\tFROM (\r\n\t\t\t  SELECT\r\n\t\t\t\t  rp.id,\r\n\t\t\t\t  rp.apimethod,\r\n\t\t\t\t  rp.func_paramtitle,\r\n\t\t\t\t  rp.ptitle,\r\n\t\t\t\t  rp.ptype,\r\n\t\t\t\t  pt.typename\r\n\t\t\t  FROM reports.reportparams as rp\r\n\t\t\t\t  LEFT JOIN reports.paramtypes as pt on pt.id = rp.ptype\r\n\t\t\t  WHERE rp.reportlistid = rl.id\r\n\t\t\t\t  AND rp.completed\r\n\t\t\tORDER BY rp.orderby\r\n\t\t  ) as p\r\n\t  ),'[]') as params\t\r\n\t  FROM reports.reportlist as rl\r\n\t  WHERE rl.id = _id and rl.completed\r\n\t) as d\r\n    INTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'{}');\r\n\r\nEND;\r\n$function$\n
+197635	reports	tr_reportlist_tr	reports.tr_reportlist_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_reportlist_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.tr_reportlist_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.tr_reportlist_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  IF NEW."template" is not null THEN\r\n    IF (\r\n\t  SELECT\r\n          count(*)\r\n      FROM json_array_elements_text(NEW."template")\r\n\t)>1 \r\n\tTHEN\r\n    \tPERFORM raiserror('more than 1 file');\r\n    END IF;  \r\n\t\r\n    IF NEW."template"->0 is not null THEN\r\n    \tNEW.template_path = (NEW."template"->0)::json->>'uri';\r\n        IF (NEW."template"->0)::json->>'filename' not like '%.xlsx' THEN\r\n\t    \tPERFORM raiserror('template must be xlsx');\t\r\n        END IF; \r\n    END IF; \r\n  END IF;\r\n  \r\n  IF NEW.functitle is not null THEN\r\n    IF (SELECT \r\n          count(*)\r\n        FROM pg_proc p \r\n        INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n        WHERE ns.nspname not in ('pg_catalog','information_schema') and \r\n        \t\tformat('%I.%I', ns.nspname, p.proname) = NEW.functitle) = 0 THEN\r\n\t    \tPERFORM raiserror('can not found function');\t\r\n    END IF;\r\n  END IF; \r\n  \r\n  \r\n  NEW.filename = (NEW."template"->0)::json->>'filename';\r\n  NEW.completed = false;\r\n  \r\n  IF \r\n  \tcoalesce(NEW.title,'') <>'' and\r\n \tCOALESCE(NEW."path",'')<>'' and\r\n  \tNEW.template is not null and\r\n  \tcoalesce(NEW.template_path,'')<>'' and\r\n  \tcoalesce(NEW.functitle,'')<>'' and\r\n  \r\n  \tcoalesce(NEW.section,'')<>'' \r\n    \r\n  THEN\r\n  \t NEW.completed = true;\r\n  END IF;   \r\n  \r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197636	reports	tr_reportlist_tr_ins	reports.tr_reportlist_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_reportlist_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.tr_reportlist_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.tr_reportlist_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tNEW.title = upper(trim(NEW.title));\r\n    NEW.path = trim(NEW.path);\r\n    \r\n    \r\n    RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197637	reports	tr_reportlist_trigger	reports.tr_reportlist_trigger()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_reportlist_trigger()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.tr_reportlist_trigger() \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.tr_reportlist_trigger()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  IF NEW."template" is not null THEN\r\n    IF \r\n      (SELECT\r\n          count(*)\r\n      FROM json_array_elements_text(NEW."template"))>1 THEN\r\n    \tPERFORM raiserror('more than 1 file');\r\n    END IF;  \r\n    IF NEW."template"->0 is not null THEN\r\n    \tNEW.template_path = (NEW."template"->0)::json->>'uri';\r\n        IF (NEW."template"->0)::json->>'filename' not like '%.xlsx' THEN\r\n\t    \tPERFORM raiserror('Template must be xlsx');\t\r\n        END IF; \r\n    END IF; \r\n  END IF;\r\n  \r\n  IF NEW.functitle is not null THEN\r\n    IF (SELECT \r\n          count(*)\r\n        FROM pg_proc p \r\n        INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n        WHERE ns.nspname not in ('pg_catalog','information_schema') and \r\n        \t\tformat('%I.%I', ns.nspname, p.proname) = NEW.functitle) = 0 THEN\r\n\t    \tPERFORM raiserror('Can not found the function');\t\r\n    END IF;\r\n  END IF; \r\n  \r\n  \r\n  NEW.filename = (NEW."template"->0)::json->>'filename';\r\n  NEW.completed = false;\r\n  \r\n  IF \r\n  \tcoalesce(NEW.title,'') <>'' and\r\n \tCOALESCE(NEW."path",'')<>'' and\r\n  \tNEW.template is not null and\r\n  \tcoalesce(NEW.template_path,'')<>'' and\r\n  \tcoalesce(NEW.functitle,'')<>'' and\r\n  \r\n  \tcoalesce(NEW.section,'')<>'' \r\n    \r\n  THEN\r\n  \t NEW.completed = true;\r\n  END IF;   \r\n  \r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197638	reports	tr_reportparams_tr	reports.tr_reportparams_tr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_reportparams_tr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nreports.tr_reportparams_tr() \r\n*/\r\nCREATE OR REPLACE FUNCTION reports.tr_reportparams_tr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tNEW.completed = false;\r\n\r\n  IF NEW.reportlistid is not null and\r\n  \t coalesce(NEW.ptitle,'') <> '' and\r\n  \t coalesce(NEW.func_paramtitle,'')<>'' and\r\n  \t NEW.ptype is not null \r\n  THEN\r\n  \tNEW.completed = true;\r\n  \tIF NEW.ptype in (2,3,5) and NEW.apimethod is null THEN\r\n    \tNEW.completed = false;\r\n    END IF;\r\n  END IF; \r\n  \r\n  RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197642	sqlmanager	fn_tablelist_onload	sqlmanager.fn_tablelist_onload()	table list	2020-05-14 17:26:34.600103	1	f	fn_tablelist_onload()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.fn_tablelist_onload() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.fn_tablelist_onload(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n   UPDATE sqlmanager.tablelist\r\n   SET noscript = true; \r\n   \r\n    UPDATE sqlmanager.tablelist as tb\r\n    SET\r\n    \ttableschemaname = t.schemaname,\r\n        tablename = t.relname,\r\n        descr =  COALESCE(pg_catalog.obj_description(t.relid),'<NO TITLE>'),\r\n        userid = _userid\r\n    FROM pg_catalog.pg_statio_all_tables as t\r\n    WHERE t.relid = tb.id and t.schemaname not like 'pg_%' and t.schemaname<>'information_schema';\r\n\r\n    \r\n    \r\n    INSERT INTO sqlmanager.tablelist (\r\n      id, tableschemaname, tablename, fullname,\r\n      descr, userid \r\n    )\r\n    SELECT \r\n        t.relid, t.schemaname, t.relname, concat(t.schemaname,'.', t.relname),\r\n        COALESCE(pg_catalog.obj_description(t.relid),'<NO TITLE>'),\r\n        _userid\r\n    FROM pg_catalog.pg_statio_all_tables as t\r\n    WHERE t.schemaname not like 'pg_%' and t.schemaname<>'information_schema'\r\n\t\t\tand t.relid not in (\r\n            \tSELECT id\r\n                FROM sqlmanager.tablelist\r\n            );\r\n\tDELETE FROM sqlmanager.tablelist\r\n    WHERE id not in (\r\n    \tSELECT\r\n        \tt.relid\r\n\t\tFROM pg_catalog.pg_statio_all_tables as t\r\n    \tWHERE t.schemaname not like 'pg_%' and t.schemaname<>'information_schema'\r\n    );\r\n    \r\n   UPDATE sqlmanager.tablelist\r\n   SET noscript = false; \r\n\r\nEND;\r\n$function$\n
+198629	sqlmanager	tr_tablecolumns_tr_notnull	sqlmanager.tr_tablecolumns_tr_notnull()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_notnull()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_notnull() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_notnull()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\n _nn varchar(150);\r\nBEGIN\r\n  IF not NEW.noscript \r\n  THEN\r\n  \tIF NEW.notnull \r\n    THEN\r\n    \t_nn = 'SET NOT NULL';\r\n    ELSE\r\n\t\t_nn = 'DROP NOT NULL';\t\t\r\n    END IF;\r\n    \r\n    squery = concat('\t\r\n      ALTER TABLE ',NEW.tablename,'\r\n        ALTER COLUMN "',NEW.colname,'" ', _nn, ';\r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197641	sqlmanager	fn_tablecols_onload	sqlmanager.fn_tablecols_onload()	table columns onload	2020-05-14 17:26:34.600103	1	f	fn_tablecols_onload()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.fn_tablecols_onload() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.fn_tablecols_onload(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\n  _tablename varchar(350);\r\nBEGIN\r\n  _userid = injson->>'userid';\r\n  \r\n  _tablename = injson->>'tablename';\r\n  \r\n  UPDATE sqlmanager.tablecolumns as tb\r\n  SET \r\n  \tnoscript = true\r\n  WHERE tb.tablename = _tablename;\r\n  \r\n  UPDATE sqlmanager.tablecolumns as tb\r\n  SET \r\n    coldesc = COALESCE(pgd.description, '<NO TITLE>'),\r\n    coltype = t.udt_name,\r\n    size = COALESCE(\r\n        t.character_maximum_length, \r\n        t.numeric_precision\r\n    ),\r\n    accur = t.numeric_scale,\r\n    defval = t.column_default,\r\n    "notnull" = (CASE WHEN t.is_nullable = 'YES'\r\n    THEN false\r\n    ELSE true\r\n    END) ,\r\n    uniq = (CASE WHEN (\r\n      SELECT count(i.indrelid)\r\n      FROM pg_index as i\r\n           JOIN pg_class as c on c.oid = i.indexrelid\r\n           JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace\r\n           JOIN pg_class as tt on tt.oid = i.indrelid\r\n           JOIN pg_attribute a on a.attrelid = tt.oid and a.attnum = ANY(i.indkey)\r\n      WHERE concat(n.nspname,'.', tt.relname) = concat(t.table_schema, '.', t.table_name)\r\n            and i.indisunique and a.attname = t.column_name\r\n      ) > 0\r\n    THEN true\r\n    ELSE false \r\n    END), userid = _userid  \r\n  \r\n  FROM information_schema.columns as t\r\n      LEFT JOIN pg_catalog.pg_statio_all_tables as st on \r\n           st.schemaname = t.table_schema and \r\n           st.relname = t.table_name\r\n      LEFT JOIN pg_catalog.pg_description pgd on \r\n           pgd.objoid = st.relid and \r\n           pgd.objsubid = t.ordinal_position\r\n  WHERE concat(t.table_schema, '.', t.table_name) = _tablename and \r\n        tb.tablename = _tablename and \r\n        t.column_name = tb.colname;  \r\n  \r\n  INSERT INTO sqlmanager.tablecolumns (\r\n      tablename, colname, coldesc,\r\n      coltype, size, accur, defval,\r\n      "notnull", uniq, userid\r\n  )\r\n  SELECT\r\n    concat(t.table_schema, '.', t.table_name) as tablename,\r\n    t.column_name as colname,\r\n    COALESCE(pgd.description, '<NO TITLE>') as coldesc,\r\n    t.udt_name as coltype,\r\n    COALESCE(\r\n        t.character_maximum_length, \r\n        t.numeric_precision\r\n    ) as size,\r\n    t.numeric_scale as accur,\r\n    t.column_default as defval,\r\n    CASE WHEN t.is_nullable = 'YES'\r\n    THEN false\r\n    ELSE true\r\n    END as notnull,\r\n    CASE WHEN (\r\n      SELECT count(i.indrelid)\r\n      FROM pg_index as i\r\n           JOIN pg_class as c on c.oid = i.indexrelid\r\n           JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace\r\n           JOIN pg_class as tt on tt.oid = i.indrelid\r\n           JOIN pg_attribute a on a.attrelid = tt.oid and a.attnum = ANY(i.indkey)\r\n      WHERE concat(n.nspname,'.', tt.relname) = concat(t.table_schema, '.', t.table_name)\r\n            and i.indisunique and a.attname = t.column_name\r\n      ) > 0\r\n    THEN true\r\n    ELSE false \r\n    END as uniq, _userid\r\n  FROM information_schema.columns as t\r\n\t  LEFT JOIN pg_catalog.pg_statio_all_tables as st on \r\n\t\t   st.schemaname = t.table_schema and \r\n\t\t   st.relname = t.table_name\r\n\t  LEFT JOIN pg_catalog.pg_description pgd on \r\n\t\t   pgd.objoid = st.relid and \r\n\t\t   pgd.objsubid = t.ordinal_position\r\n  WHERE concat(t.table_schema, '.', t.table_name) = _tablename and (\r\n      SELECT count(tb.id)\r\n\t  FROM sqlmanager.tablecolumns as tb\r\n\t  WHERE tb.tablename = _tablename and tb.colname = t.column_name\r\n  ) = 0;\r\n  \r\n  DELETE FROM sqlmanager.tablecolumns \r\n  WHERE tablename = _tablename and \r\n        colname not in (\r\n\t\t    SELECT t.column_name\r\n\t\t\tFROM information_schema.columns as t\r\n            WHERE concat(t.table_schema, '.', t.table_name) = _tablename\r\n\t\t);\r\n        \r\n  UPDATE sqlmanager.tablecolumns as tb\r\n  SET \r\n  \tnoscript = false\r\n  WHERE tb.tablename = _tablename;\r\n\r\nEND;\r\n$function$\n
+198635	sqlmanager	tr_tablecolumns_tr_uniq	sqlmanager.tr_tablecolumns_tr_uniq()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_uniq()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_uniq() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_uniq()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\n/*\r\n\r\n*/\r\n\r\nDECLARE\r\n squery varchar;\r\n _nn varchar(150);\r\nBEGIN\r\n  IF not NEW.noscript \r\n  THEN\r\n  \tIF NEW.uniq \r\n    THEN\r\n    \t_nn = concat('ADD UNIQUE ("',NEW.colname,'")');\r\n    ELSE\r\n\t\t_nn = CONCAT('DROP CONSTRAINT ',(\r\n            SELECT c.relname\r\n            FROM pg_index as i\r\n                 JOIN pg_class as c on c.oid = i.indexrelid\r\n                 JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace\r\n                 JOIN pg_class as tt on tt.oid = i.indrelid\r\n                 JOIN pg_attribute a on a.attrelid = tt.oid and a.attnum = ANY(i.indkey)\r\n            WHERE concat(n.nspname,'.', tt.relname) = NEW.tablename\r\n                  and i.indisunique and a.attname = NEW.colname\r\n\r\n        ),' RESTRICT;');\t\t\r\n    END IF;\r\n    \r\n    squery = concat('\t\r\n      ALTER TABLE ',NEW.tablename,' ', _nn);\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+198640	sqlmanager	tr_tablecolumns_tr_defval	sqlmanager.tr_tablecolumns_tr_defval()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_defval()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_defval() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_defval()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\n _nn varchar(150);\r\nBEGIN\r\n  IF not NEW.noscript  \r\n  THEN\r\n  \tIF COALESCE(NEW.defval,'') <> ''\r\n    THEN\r\n    \t_nn = CONCAT(\r\n        \t'ALTER COLUMN "', \r\n            NEW.colname, \r\n            '" SET DEFAULT ',\r\n            NEW.defval, ';'\r\n        );\r\n    ELSE\r\n    \t_nn = CONCAT(\r\n        \t'ALTER COLUMN "', \r\n            NEW.colname, \r\n            '" DROP DEFAULT;'\r\n        );\r\n    END IF;\r\n  \r\n -- ALTER COLUMN col5 ;\r\n    squery = concat('\t\r\n      ALTER TABLE ', NEW.tablename, ' ', _nn, '\r\n        \r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197644	test	fn_actions_in_table	test.fn_actions_in_table(_actions  int4,_vid  json)	ins actions from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_actions_in_table(_actions  int4,_vid  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_actions_in_table(_actions  int4,_vid  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_actions_in_table(_actions json, INOUT _vid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_kl json;\r\nBEGIN\r\n\r\n\tINSERT INTO framework.actions (\r\n      column_order,\r\n      viewid, classname, title,\r\n      icon, act_url ,\r\n      api_method ,\r\n      api_type ,\r\n      refresh_data ,\r\n      ask_confirm ,\r\n      roles ,\r\n      forevery ,\r\n      main_action ,\r\n      act_type \r\n    )\r\n\tSELECT\r\n      row_number() over (PARTITION BY 0) as column_order,\r\n      _vid, value->>'classname' as classname, value->>'title' as title,\r\n\t  value->>'icon' as icon, value->>'act' as act,\r\n      value->>'actapimethod' as api_method,\r\n      lower(value->>'actapitype') as api_type,\r\n      COALESCE((value->>'actapirefresh')::boolean,FALSE) as refresh_data,\r\n      COALESCE((value->>'actapiconfirm')::boolean,FALSE) as ask_confirm,\r\n      \r\n      json_build_array(array(SELECT\r\n             value->'value'\r\n      \tFROM json_array_elements((value->'roles')::json)\r\n      ))->0 as roles,\r\n      \r\n      COALESCE((value->>'isforevery')::boolean,FALSE) as forevery,\r\n      COALESCE((value->>'ismain')::boolean,FALSE) as main_action,\r\n\t  value->>'type' as type\r\n    FROM json_array_elements(_actions);\r\n    \r\n    SELECT\r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM\r\n    (SELECT\r\n    \ttest.fn_parametrs_intotables(  \r\n       \t  value->'parametrs',\r\n          _vid,\r\n           c.id\r\n        ),\r\n        test.fn_act_visible_conditions_intable(\r\n       \t  value->'act_visible_condition',\r\n          c.id,\r\n          _vid  \r\n        )\r\n    FROM json_array_elements(_actions) as a\r\n    \tJOIN framework.actions as c on c.viewid = _vid and \r\n        \tc.title = value->>'title') as d\r\n    INTO _kl;\r\n    \r\n    \r\n    \r\n\t/*\r\n\t[\r\n       {\r\n          "act": "/", \r\n          "icon": "fa fa-check", \r\n          "type": "Save", \r\n          "title": "save", \r\n          "classname": "p-button-success", \r\n          "parametrs": [], \r\n          "isforevery": false, \r\n          "act_visible_condition": [{\r\n              "col": {\r\n                  "t": 1, \r\n                  "key": "id_99ad9", \r\n                  "label": "id", \r\n                  "value": "vs_id"\r\n              },\r\n              "value": "-1", \r\n              "operation": {\r\n                  "js": ">", \r\n                  "label": ">", \r\n                  "value": ">", \r\n                  "python": ">"\r\n              }}\r\n          ]\r\n       }, \r\n       {\r\n         "act": "/composition/act_visible_conditions", \r\n         "icon": "fa fa-cros",\r\n         "type": "Link", \r\n         "title": "close", \r\n         "parametrs": [{\r\n              "paramt": null, \r\n              "paramconst": "", \r\n              "paraminput": "actionid", \r\n              "paramtitle": "actionid", \r\n              "paramcolumn": null\r\n           }, \r\n           {\r\n              "paramt": null, \r\n              "paramconst": "actionid", \r\n              "paraminput": "", \r\n              "paramtitle": "relation", \r\n              "paramcolumn": null\r\n           }, \r\n           {\r\n              "paramt": null, \r\n              "paramconst": "-1", \r\n              "paraminput": "", \r\n              "paramtitle": "vs_id", \r\n              "paramcolumn": null\r\n           }, \r\n           {\r\n              "paramt": null, \r\n              "paramconst": "", \r\n              "paraminput": "act_id", \r\n              "paramtitle": "act_id", \r\n              "paramcolumn": null\r\n           }\r\n         ], \r\n         "isforevery": false, \r\n         "act_visible_condition": [\r\n         \t{\r\n            \t"col": {\r\n            \t\t"t": 1, \r\n                    "key": "id_99ad9", \r\n                \t"label": "id", \r\n                \t"value": "vs_id"\r\n            \t}, \r\n         \t\t"const": null, \r\n            \t"value": "-1", \r\n            \t"operation": {\r\n            \t\t"js": ">", \r\n                \t"label": ">", \r\n                \t"value": ">", \r\n                \t"python": ">"\r\n            \t}\r\n            }\r\n         ]\r\n   \t   }\r\n     ]    \r\n     \r\n\t[\r\n        {\r\n        \t"act": "/api/postmethodtest_setselectedcolor_black", \r\n            "type": "API", \r\n            "title": "set checke black (POST TEST CHECKED)", \r\n            "parametrs": [\r\n            \t{\r\n                \t"paramt": null, \r\n                    "paramconst": "_checked_", \r\n                    "paraminput": "", \r\n                    "paramtitle": "checked", \r\n                    "paramcolumn": null\r\n                }\r\n            ], \r\n            "actapitype": "POST", \r\n            "isforevery": false, \r\n            "actapiconfirm": true, \r\n            "actapirefresh": true\r\n        }\r\n    ]\r\n    \r\n    */\r\n\r\nEND;\r\n$function$\n
+197645	test	fn_config_in_table	test.fn_config_in_table(_config  int4,_viewid  json)	ins config from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_config_in_table(_config  int4,_viewid  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_config_in_table(_config  int4,_viewid  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_config_in_table(_config json, INOUT _viewid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\n--insert all configs in tables\r\nDECLARE \r\n\tmock_json json;\r\nBEGIN\r\n  INSERT INTO framework.config (\r\n    viewid, t, col ,\r\n    column_id ,\r\n    title , type ,\r\n    roles ,\r\n    visible ,\r\n    required ,\r\n    width ,\r\n    "join" ,\r\n    classname ,\r\n    updatable ,\r\n    relation ,\r\n    select_api ,\r\n    multiselecttable ,\r\n    orderby ,\r\n    orderbydesc ,\r\n    relcol ,\r\n    depency ,\r\n    depencycol ,\r\n    relationcolums ,\r\n    multicolums ,\r\n    column_order ,\r\n    fn ,\r\n    fncolumns,\r\n    relatecolumn,\r\n    "table",\r\n    related\r\n  )\r\n\r\n  SELECT \r\n\t_viewid, c.value->>'t' as t, c.value->>'col' as col,\r\n    (c.value->>'column_id')::INTEGER as column_id,\r\n    c.value->>'title' as title, c.value->>'type' as type,\r\n    \r\n    (CASE WHEN (c.value->>'roles')::varchar like '[%'\r\n    THEN\r\n    json_build_array(array(SELECT\r\n    \t\tvalue->'value'\r\n       FROM json_array_elements((c.value->>'roles')::json)\r\n    ))->0\r\n    ELSE\r\n    \t'[]'::json\r\n    END)\r\n     as roles,\r\n    \r\n    coalesce((c.value->>'visible' )::BOOLEAN,false) as visible,\r\n    COALESCE((c.value->>'required')::BOOLEAN,false) as required,\r\n    c.value->>'width' as width,\r\n    COALESCE((c.value->>'join')::BOOLEAN,false) as join,\r\n    c.value->>'classname' as classname,\r\n    COALESCE((c.value->>'updatable')::BOOLEAN,false) as updatable,\r\n    c.value->>'relation' as relation,\r\n    c.value->>'select_api' as select_api,   \r\n\tc.value->>'multiselecttable' as multiselecttable,\r\n    COALESCE((c.value->>'orderby')::BOOLEAN,false) as orderby,\r\n    COALESCE((c.value->>'orderbydesc')::BOOLEAN,false) as orderbydesc,\r\n    c.value->>'relcol' as relcol,\r\n    COALESCE((c.value->>'depency')::BOOLEAN,false) as depency,\r\n    c.value->>'depencycol' as depencycol,\r\n    \r\n    (CASE WHEN (c.value->>'relationcolums')::varchar like '[%'\r\n    THEN\r\n    json_build_array(array(SELECT\r\n    \t\tvalue->'value'\r\n       FROM json_array_elements((c.value->>'relationcolums')::json)\r\n    ))->0\r\n    ELSE\r\n   \t '[]'::json\r\n    END)\r\n     as relationcolums,\r\n     \r\n    (CASE WHEN (c.value->>'multicolums')::varchar like '[%'\r\n    THEN\r\n    \tjson_build_array(array(SELECT\r\n    \t\tvalue->'value'\r\n       FROM json_array_elements((c.value->>'multicolums')::json)\r\n   \t\t))->0\r\n    ELSE\r\n    \t'[]'::json\r\n    END\r\n    ) as multicolums,\r\n    \r\n    row_number() over (PARTITION BY 0) as column_order,\r\n    (c.value->'fn')->>'value' as fn,\r\n    \r\n    (CASE WHEN (c.value->>'fncolumns')::varchar like '[%'\r\n    THEN\r\n    json_build_array(array(SELECT\r\n    \t\tvalue->'value'\r\n       FROM json_array_elements((c.value->'fncolumns')::json)\r\n    ))->0 \r\n    ELSE\r\n   \t null\r\n    END ) as fncolumns,\r\n    c.value->>'relatecolumn',\r\n    c.value->>'table',\r\n    coalesce((c.value->>'related')::boolean,false)\r\n FROM json_array_elements(_config) as c;\r\n\r\n\r\n  SELECT\r\n  \tarray_to_json(array_agg(row_to_json(d))) \r\n  FROM\r\n  (SELECT \r\n    c.value->>'title' as title,\r\n    test.fn_visible_condition_intable(cn.id, (c.value->'visible_condition')) as vc,\r\n    test.fn_select_condition_intable(cn.id,(c.value->'select_condition')) as sc,\r\n    test.fn_defaultval_intable(cn.id,(c.value->'defaultval')) as dv\r\n FROM json_array_elements(_config) as c\r\n \tJOIN framework.config as cn on cn.title = c.value->>'title'\r\n WHERE cn.viewid = _viewid) as d\r\n \r\n INTO mock_json\r\n ;  \t\r\nEND;\r\n$function$\n
+197646	test	fn_config_in_table_fncolumns_fix	test.fn_config_in_table_fncolumns_fix(_config  int4,_viewid  json)	ins config fn cols from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_config_in_table_fncolumns_fix(_config  int4,_viewid  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_config_in_table_fncolumns_fix(_config  int4,_viewid  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\n-- update all configs , fix fncolumns\r\nDECLARE \r\n\tmock_json json;\r\nBEGIN\r\n\r\n  UPDATE framework.config as cc\r\n  SET fncolumns =   \r\n    (CASE WHEN (c.value->>'fncolumns')::varchar like '[%'\r\n    THEN\r\n    \tjson_build_array(array(SELECT\r\n    \t\tccc.id\r\n       FROM json_array_elements((c.value->'fncolumns')::json) as n\r\n         JOIN framework.config as ccc on (ccc.title = (value->>'value')) and ccc.viewid = _viewid\r\n    ))->0 \r\n    ELSE\r\n   \t null\r\n    END ) \r\n FROM json_array_elements(_config) as c\r\n WHERE c.value->>'title' = cc.title and cc.viewid = _viewid and \r\n  ((c.value->'fn')->>'value') is not null ;\r\n \t\r\nEND;\r\n$function$\n
+197647	test	fn_config_in_table_tpath_fix	test.fn_config_in_table_tpath_fix(_config  int4,_viewid  json)	ins config tpath from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_config_in_table_tpath_fix(_config  int4,_viewid  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_config_in_table_tpath_fix(_config  int4,_viewid  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\n-- update all configs , fix fncolumns\r\nDECLARE \r\n\tmock_json json;\r\nBEGIN\r\n\r\n UPDATE framework.config as cc\r\n  SET tpath = coalesce(c.value->'tpath','[]')\r\n FROM json_array_elements(_config) as c\r\n WHERE c.value->>'title' = cc.title and cc.viewid = _viewid;\r\n \t\r\nEND;\r\n$function$\n
+197648	test	fn_defaultval_intable	test.fn_defaultval_intable(_colid  int4,_dv  json)	put defaultval from json to table 	2020-05-14 17:26:34.600103	1	f	fn_defaultval_intable(_colid  int4,_dv  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_defaultval_intable(_colid  int4,_dv  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_defaultval_intable(INOUT _colid integer, _dv json)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  -- put defaultval from json to table \r\n\r\n  /*[{"act": {"label": "=", "value": "="}, \r\n  "bool": {"label": "and", "value": "and"}, \r\n  "value": "_orgid_"}]*/\r\n  IF _colid is not null and _dv::varchar like '[%' THEN\r\n    INSERT INTO framework.defaultval(\r\n      configid,\r\n      act,\r\n      bool,\r\n      value \r\n    )\r\n    SELECT \r\n    \t_colid,\r\n        (v.value->'act')->>'label',\r\n        (v.value->'bool')->>'label',\r\n        v.value ->> 'value'\r\n    FROM json_array_elements(_dv) as v;\r\n  END IF;\r\n\r\nEND;\r\n$function$\n
+197649	test	fn_filters_in_table	test.fn_filters_in_table(filtrs  int4,_vid  json)	ins filters from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_filters_in_table(filtrs  int4,_vid  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_filters_in_table(filtrs  int4,_vid  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_filters_in_table(filtrs json, INOUT _vid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n\tINSERT INTO framework.filters (\r\n      column_order, \r\n      viewid, classname, title,\r\n      "column",\r\n      columns,\r\n      t, roles, "type", "table" \r\n    )\r\n\tSELECT\r\n    \t row_number() over (PARTITION BY 0) as column_order,\r\n    \t_vid, value->>'classname' as classname, value->>'title' as title,\r\n        (CASE WHEN (value->>'column')::varchar not like '[%'\r\n          THEN \r\n          (value->>'column')::varchar\r\n          ELSE \r\n          null\r\n        END) as column,\r\n        (CASE WHEN (value->>'column')::varchar like '[%'\r\n          THEN \r\n            json_build_array(array(SELECT\r\n                value->'value'\r\n            FROM json_array_elements((value->>'column')::json)\r\n            ))->0\r\n\t\t  ELSE \r\n          '[]'::json\r\n        END) as columns,\r\n        value->>'t', \r\n        json_build_array(array(SELECT\r\n            value->'value'\r\n        FROM json_array_elements(value->'roles')\r\n        ))->0, value->>'type', coalesce(value->'table','{}')\r\n   FROM json_array_elements(filtrs);\r\n\r\n\t\r\n\r\nEND;\r\n$function$\n
+197650	test	fn_getmethodtest_setcolorblack	test.fn_getmethodtest_setcolorblack()	TEST GET API METHOD \r\nCHANGE test.major_table\r\ncolorpicker COLOR	2020-05-14 17:26:34.600103	1	f	fn_getmethodtest_setcolorblack()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_getmethodtest_setcolorblack() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_getmethodtest_setcolorblack(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id int;\r\nBEGIN\r\n\t/*\r\n      TEST GET API METHOD \r\n      CHANGE test.major_table\r\n      colorpicker COLOR    \r\n    */\r\n\t\r\n\t_id = injson->>'id';\r\n    \r\n    IF _id is null THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    UPDATE test.major_table\r\n    SET colorpicker = 'ff0000'\r\n    WHERE id = _id;\r\n\r\n\r\n\r\nEND;\r\n$function$\n
+197652	test	fn_parametrs_intotables	test.fn_parametrs_intotables(_params  int4,vi_id  int4,act_id  json)	ins acts params from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_parametrs_intotables(_params  int4,vi_id  int4,act_id  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_parametrs_intotables(_params  int4,vi_id  int4,act_id  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\n/*DECLARE\r\n  variable_name datatype;*/\r\nBEGIN\r\n    INSERT INTO framework.act_parametrs (\r\n      actionid,\r\n      paramtitle,\r\n      paramt,\r\n      paramconst,\r\n      paraminput,\r\n      paramcolumn,\r\n      val_desc\r\n    ) \r\n    SELECT \r\n    \tact_id,\r\n        value->>'paramtitle' as paramtitle,\r\n        value->>'paramt' as paramt,\r\n        value->>'paramconst' as paramconst,\r\n        value->>'paraminput' as paraminput,\r\n        (value->'paramcolumn')->>'value' as paramcolumn,\r\n        (\r\n        SELECT\r\n        \tc.id\r\n        FROM framework.config as c\r\n        WHERE c.viewid = vi_id and c.title = (value->'paramcolumn')->>'value'\r\n        ) as val_desc\r\n    FROM json_array_elements(_params) as p;\r\n    \r\n    /*\r\n\t\t"paramt": null, \r\n        "paramconst": "", \r\n        "paraminput": "actionid", \r\n        "paramtitle": "actionid", \r\n        "paramcolumn": null\r\n    */\r\nEND;\r\n$function$\n
+197653	test	fn_postmethodtest_setcolorblue	test.fn_postmethodtest_setcolorblue()	TEST POST API METHOD \r\nCHANGE test.major_table\r\ncolorpicker COLOR    	2020-05-14 17:26:34.600103	1	f	fn_postmethodtest_setcolorblue()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_postmethodtest_setcolorblue() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_postmethodtest_setcolorblue(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id int;\r\nBEGIN\r\n\t/*\r\n      TEST POST API METHOD \r\n      CHANGE test.major_table\r\n      colorpicker COLOR    \r\n    */\r\n\t\r\n\t_id = injson->>'id';\r\n    \r\n    IF _id is null THEN\r\n    \tPERFORM raiserror('id is null');\r\n    END IF;\r\n    \r\n    UPDATE test.major_table\r\n    SET colorpicker = '2f00ff'\r\n    WHERE id = _id;\r\n\r\n\r\n\r\nEND;\r\n$function$\n
+197654	test	fn_postmethodtest_setselectedcolor_black	test.fn_postmethodtest_setselectedcolor_black()	TEST POST API METHOD \r\nCHANGE test.major_table\r\ncolorpicker COLOR by selected rows  	2020-05-14 17:26:34.600103	1	f	fn_postmethodtest_setselectedcolor_black()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_postmethodtest_setselectedcolor_black() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_postmethodtest_setselectedcolor_black(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\t_id int;\r\n    checked json;\r\nBEGIN\r\n\t/*\r\n      TEST POST API METHOD \r\n      CHANGE test.major_table\r\n      colorpicker COLOR by selected rows  \r\n    */\r\n\t\r\n\tchecked = injson->>'checked';\r\n    \r\n    IF checked is null THEN\r\n    \tPERFORM raiserror('checked is null');\r\n    END IF;\r\n    \r\n    \r\n    \r\n    UPDATE test.major_table as m\r\n    SET colorpicker = '000000'\r\n    FROM json_array_elements(checked) as c\r\n    WHERE (c.value->>'id_3a31e')::int = m.id;\r\n\r\n\r\n\r\nEND;\r\n$function$\n
+197655	test	fn_select_api	test.fn_select_api(injson  json,outjson out json)	test select_api type	2020-05-14 17:26:34.600103	1	f	fn_select_api(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_select_api(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_select_api(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\n/*\r\n\tfunction must have input variable "injson" type of JSON\r\n    and out variable "outjson" type of JSON,\r\n    objects array with label,value keys\r\n*/\r\nDECLARE \r\n\t_substr varchar(150);\r\n    _data json; -- from data  \r\n    _inputs json; -- query params\r\n\r\nBEGIN\r\n\t_substr = injson->>'substr';\r\n    _data = injson->'data';\r\n    _inputs = injson->'inputs';\r\n    \r\n    \r\n    _substr = concat('%',lower(_substr),'%');\r\n\r\n\tSElECT\r\n    \tarray_to_json(array_agg(row_to_json(f))) \r\n    FROM\r\n    (SELECT \r\n    \td.id as value,\r\n        d.dname as label\r\n    FROM test.dictionary_for_select as d\r\n    WHERE lower(d.dname) like _substr OR \r\n    \t  d.id::varchar like _substr -- there must be "id" too\r\n    ) as f\r\n\tINTO outjson;\r\n    \r\n    outjson = coalesce(outjson,'[]');\r\nEND;\r\n$function$\n
+197656	test	fn_select_condition_intable	test.fn_select_condition_intable(_colid  int4,_sc  json)	put visible_condition from json to table 	2020-05-14 17:26:34.600103	1	f	fn_select_condition_intable(_colid  int4,_sc  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_select_condition_intable(_colid  int4,_sc  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_select_condition_intable(INOUT _colid integer, _sc json)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  -- put visible_condition from json to table \r\n\r\n  /*[{"col": {"label": "treesid", "value": "treesid"}, "value": {"t": 1, "key":\r\n  "treesid_9766c", "label": "treesid", "value": "treesid"}, "operation": {"js":\r\n  "===", "label": "=", "value": "=", "python": "=="}}, {"col": {"label": "id",\r\n  "value": "id"}, "value": {"t": 1, "key": "id_512cb", "label": "id", "value":\r\n  "bid"}, "operation": {"js": "!==", "label": "!=", "value": "<>", "python":\r\n  "!="}}]\r\n  */\r\n   IF _colid is not null and _sc::varchar like '[%' THEN\r\n     INSERT INTO framework.select_condition (\r\n        configid,\r\n        col ,\r\n        operation ,\r\n        const,\r\n        value,\r\n        val_desc \r\n      )\r\n      SELECT\r\n          _colid,\r\n          (v.value->'col')->>'label',\r\n          (v.value->'operation')->>'value',\r\n          v.value->>'const',\r\n          v.value->>'value',\r\n          (SELECT\r\n              c.id\r\n           FROM framework.config as c\r\n           WHERE c.title = ((v.value->'value')->>'value')\r\n           and c.col = ((v.value->'value')->>'label')\r\n           LIMIT 1)\r\n          \r\n          \r\n      FROM json_array_elements(_sc) as v;\r\n    END IF;\r\n    \r\nEND;\r\n$function$\n
+197657	test	fn_setParamsKey	test.fn_setParamsKey(conf  json,paramcol  jsonb)	set keys in params into json	2020-05-14 17:26:34.600103	1	f	fn_setParamsKey(conf  json,paramcol  jsonb)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_setParamsKey(conf  json,paramcol  jsonb) \r\n*/\r\nCREATE OR REPLACE FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb)\n RETURNS jsonb\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n\r\n   \r\n\r\n   \tIF paramcol is not null THEN\r\n     SELECT\t\r\n       paramcol::jsonb\r\n            || \r\n       coalesce(jsonb_build_object('key', (\r\n          SELECT\r\n            c.value->>'key'\r\n          FROM json_array_elements(conf) as c\r\n          WHERE c.value->>'title' = (paramcol)->>'value'\r\n        )),'{}')\r\n     INTO paramcol;\r\n    END IF;\r\n\r\nEND;\r\n$function$\n
+197658	test	fn_tel_save	test.fn_tel_save()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_tel_save()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_tel_save() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_tel_save(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _log_data json;\r\nBEGIN\r\n\t_log_data = injson->>'logdata';\r\n    \r\n    IF _log_data is null\r\n    THEN\r\n    \tPERFORM raiserror('logdata is null');\r\n    END IF;\r\n    \r\n    INSERT INTO test.fel (\r\n    \tlogdata\r\n    ) VALUES (\r\n    \t_log_data\r\n    );\r\n    \r\n    \r\n\r\nEND;\r\n$function$\n
+197659	test	fn_views_in_table	test.fn_views_in_table()	put views data in tables	2020-05-14 17:26:34.600103	1	f	fn_views_in_table()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_views_in_table() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_views_in_table()\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\t\r\n\tx json;\r\nBEGIN\r\n\t-- put views data in tables\r\n\tSELECT \r\n    \tarray_to_json(array_agg(row_to_json(d)))\r\n    FROM\r\n    (\r\n    SELECT\r\n    \ttest.fn_config_in_table(v.config, v.id) as f,\r\n        test.fn_filters_in_table(v.filters, v.id) as k,\r\n        test.fn_actions_in_table(v.acts, v.id) as a\r\n    FROM framework.views as v\r\n    WHERE v.id in (118,119,120,121)\r\n    ) as d\r\n    INTO x;\r\n    \r\n    \r\n    \r\n   -- INTO x;\r\n\r\n\r\nEND;\r\n$function$\n
+197660	test	fn_visible_condition_intable	test.fn_visible_condition_intable(_colid  int4,_vs  json)	put visible_condition from json to table 	2020-05-14 17:26:34.600103	1	f	fn_visible_condition_intable(_colid  int4,_vs  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_visible_condition_intable(_colid  int4,_vs  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_visible_condition_intable(INOUT _colid integer, _vs json)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n\t_viewid int;\r\nBEGIN\r\n  -- put visible_condition from json to table \r\n\r\n  /*[{"col": {"t": 1, "label": "id", "value": "bid"}, \r\n  \t\t"value": "-1",\r\n  \t "operation": {"js": ">", "label": ">", "value": ">", "python": ">"}}]*/\r\n   IF _colid is not null and _vs::varchar like '[%' \r\n   THEN\r\n   \t SELECT\r\n     \tc.viewid\r\n     FROM framework.config as c\r\n     WHERE c.id = _colid\r\n     INTO _viewid;\t\r\n \r\n     INSERT INTO framework.visible_condition (\r\n        configid, col,\r\n        operation, value,\r\n        val_desc\r\n      )\r\n      SELECT\r\n          _colid, (v.value->'col')->>'label',\r\n          (v.value->'operation')->>'value', v.value->>'value',\r\n          (SELECT\r\n              c.id\r\n           FROM framework.config as c\r\n           WHERE c.title = ((v.value->'col')->>'value')\r\n           and c.col = ((v.value->'col')->>'label')\r\n           LIMIT 1)\r\n      FROM json_array_elements(_vs) as v;\r\n   END IF;\r\n    \r\nEND;\r\n$function$\n
+198595	sqlmanager	tr_tablelist_tr_name	sqlmanager.tr_tablelist_tr_name()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablelist_tr_name()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablelist_tr_name() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablelist_tr_name()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript and \r\n  \t NEW.tablename <> OLD.tablename\r\n  THEN\r\n    squery = concat('\t\r\n      \tALTER TABLE ', \r\n        concat(\r\n        \t'"', NEW.tableschemaname, '"."', \r\n            OLD.tablename, '"'\r\n        ), '\r\n        RENAME TO ', \r\n        concat(\r\n        \t'"', \r\n            NEW.tablename, '"'\r\n        ), ';\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  \r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+197640	sqlmanager	fn_schemalist_onload	sqlmanager.fn_schemalist_onload()	load schemas	2020-05-14 17:26:34.600103	1	f	fn_schemalist_onload()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.fn_schemalist_onload() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.fn_schemalist_onload(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    \r\n   UPDATE sqlmanager.schemalist\r\n   SET noscript = true; \r\n    \r\n   UPDATE sqlmanager.schemalist as s\r\n   SET \r\n   \tschemaname = n.nspname,\r\n   \tschemadescr = COALESCE( pg_catalog.obj_description(n.oid, 'pg_namespace'),'<NO DESCR>'),\r\n    userid = _userid\r\n   FROM pg_catalog.pg_namespace as n\r\n   WHERE\r\n    n.oid = s.id AND\r\n    n.nspname !~ '^pg_' AND \r\n   \tn.nspname <> 'information_schema';\r\n\r\n    \r\n   INSERT INTO sqlmanager.schemalist (\r\n    id, schemaname,\r\n    schemadescr,\r\n    userid\r\n   ) \r\n   SELECT \r\n      n.oid, n.nspname,                                                     \r\n      COALESCE( pg_catalog.obj_description(n.oid, 'pg_namespace'),'<NO DESCR>') AS descr,\r\n      _userid\r\n   FROM pg_catalog.pg_namespace n                                       \r\n   WHERE n.nspname !~ '^pg_' AND n.nspname <> 'information_schema'\r\n   \t\t\tand n.oid not in (\r\n            \tSELECT id\r\n                FROM sqlmanager.schemalist\r\n            );\r\n            \r\n\tDELETE FROM sqlmanager.schemalist\r\n    WHERE id not in (\r\n       SELECT \r\n          n.oid\r\n       FROM pg_catalog.pg_namespace n                                       \r\n       WHERE n.nspname !~ '^pg_' AND n.nspname <> 'information_schema'\r\n    );  \t\r\n\t\r\n\tINSERT INTO sqlmanager.schemaobjects (\r\n\t  oname, schemaname, linkurl\r\n\t) \r\n\tSELECT\r\n\t  'tables', s.schemaname, 'tables'\r\n\tFROM sqlmanager.schemalist as s\r\n\tWHERE (\r\n\t    SELECT\r\n\t\t  count(c.id)\r\n\t\tFROM sqlmanager.schemaobjects as c\r\n\t\tWHERE c.schemaname = s.schemaname and c.oname = 'tables'\r\n\t) = 0 \r\n\tUNION ALL\r\n\tSELECT\r\n\t  'functions', s.schemaname, 'functions'\r\n\tFROM sqlmanager.schemalist as s\r\n\tWHERE (\r\n\t    SELECT\r\n\t\t  count(c.id)\r\n\t\tFROM sqlmanager.schemaobjects as c\r\n\t\tWHERE c.schemaname = s.schemaname and c.oname = 'functions'\r\n\t) = 0 ;\r\n    \r\n    UPDATE sqlmanager.schemalist\r\n    SET noscript = false; \r\nEND;\r\n$function$\n
+198591	sqlmanager	tr_schemalist_tr_name	sqlmanager.tr_schemalist_tr_name()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_schemalist_tr_name()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_schemalist_tr_name() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_schemalist_tr_name()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript and \r\n  \t NEW.schemaname <> OLD.schemaname\r\n  THEN\r\n    squery = concat('\t\r\n        ALTER SCHEMA ',OLD.schemaname,'\r\n        RENAME TO ',NEW.schemaname,';\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  \r\n  RETURN NEW;\r\n  \r\nEND;\r\n$function$\n
+198604	sqlmanager	tr_tablecolumns_tr_coldesc	sqlmanager.tr_tablecolumns_tr_coldesc()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_coldesc()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_coldesc() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_coldesc()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript\r\n  THEN\r\n    squery = concat('\t\r\n      COMMENT ON COLUMN ',NEW.tablename,'.',NEW.colname,'\r\n      IS ''', NEW.coldesc ,''';\r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+198589	sqlmanager	tr_schemalist_tr_descr	sqlmanager.tr_schemalist_tr_descr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_schemalist_tr_descr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_schemalist_tr_descr() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_schemalist_tr_descr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript\r\n  THEN\r\n    squery = concat('\t\r\n      COMMENT ON SCHEMA "', \r\n      replace(NEW.schemaname, '"', ''), '" \r\n      IS ''', NEW.schemadescr, '''\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+198597	sqlmanager	tr_tablelist_tr_descr	sqlmanager.tr_tablelist_tr_descr()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablelist_tr_descr()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablelist_tr_descr() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablelist_tr_descr()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript and \r\n  \t NEW.descr <> OLD.descr\r\n  THEN\r\n    squery = concat('\t\r\n      COMMENT ON TABLE ', concat(\r\n      \t\t'"',NEW.tableschemaname,'"."',\r\n            NEW.tablename,'"'\r\n        ) ,'\r\n      IS ''', NEW.descr ,''';\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n\r\n  RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+198602	sqlmanager	tr_tablecolumns_tr_colname	sqlmanager.tr_tablecolumns_tr_colname()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_colname()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_colname() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_colname()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript\r\n  THEN\r\n    squery = concat('\t\r\n      ALTER TABLE ',NEW.tablename,'\r\n        RENAME COLUMN ',OLD.colname,' TO ',NEW.colname,';\r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+198606	sqlmanager	fn_types_sel	sqlmanager.fn_types_sel(injson  json,outjson out json)	ALL TYPES	2020-05-14 17:26:34.600103	1	f	fn_types_sel(injson  json,outjson out json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.fn_types_sel(injson  json,outjson out json) \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.fn_types_sel(injson json, OUT outjson json)\n RETURNS json\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\r\nBEGIN\r\n  SELECT\r\n      array_to_json(array_agg(row_to_json(d)))\r\n  FROM (\t\r\n    SELECT \r\n        t.typname as value,\r\n        t.typname as label\r\n    FROM pg_type t\r\n        LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace\r\n    WHERE (\r\n      t.typrelid = 0 OR (\r\n          SELECT c.relkind = 'c'\r\n          FROM pg_catalog.pg_class c\r\n          WHERE c.oid = t.typrelid\r\n      )\r\n    ) AND NOT EXISTS (\r\n        SELECT 1\r\n        FROM pg_catalog.pg_type el\r\n        WHERE el.oid = t.typelem AND\r\n              el.typarray = t.oid\r\n    ) \r\n  ) as d\r\n  INTO outjson;\r\n  \r\n  outjson = coalesce(outjson,'[]');\r\n\r\nEND;\r\n$function$\n
+198615	sqlmanager	tr_tablecolumns_tr_size	sqlmanager.tr_tablecolumns_tr_size()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_size()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_size() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_size()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript and \r\n  \t NEW.size is not null\r\n  THEN\r\n    squery = concat('\t\r\n\t\tALTER TABLE ',NEW.tablename,'\r\n  \t\t\tALTER COLUMN "',NEW.colname,'" \r\n            TYPE ',NEW.coltype,'(',NEW.size::varchar,');\r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+198607	sqlmanager	tr_tablecolumns_tr_type	sqlmanager.tr_tablecolumns_tr_type()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_type()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_type() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_type()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript\r\n  THEN\r\n    squery = concat('\t\r\n\t\tALTER TABLE ',NEW.tablename,'\r\n  \t\t\tALTER COLUMN "',NEW.colname,'" \r\n            TYPE ',NEW.coltype,';\r\n    ');\r\n    \r\n     EXECUTE format(squery);\r\n  END IF;\r\n  RETURN NEW;\r\nEND;\r\n$function$\n
+198661	sqlmanager	tr_tablecolumns_tr_ins	sqlmanager.tr_tablecolumns_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n squery varchar;\r\nBEGIN\r\n\tIF not NEW.noscript\r\n    THEN\r\n      IF COALESCE(NEW.colname,'') = ''\r\n      THEN \r\n          PERFORM raiserror('Name is empty');\r\n      END IF;\r\n      \r\n      IF COALESCE(NEW.tablename,'') = ''\r\n      THEN \r\n          PERFORM raiserror('tablename is empty');\r\n      END IF;\r\n      \r\n      NEW.coltype = COALESCE(NEW.coltype,'int');\r\n      squery = concat('\r\n        ALTER TABLE ',NEW.tablename,'\r\n          ADD COLUMN "',NEW.colname,'" ',NEW.coltype\r\n      );\r\n      \r\n      -- Type size\r\n      IF NEW.size is not null\r\n      THEN\r\n        squery = concat( squery, '(', NEW.size::varchar);\r\n        IF NEW.accur is not null\r\n        THEN\r\n          squery = concat( squery, ',', NEW.accur::varchar);\r\n        END IF;\r\n        squery = concat(squery, ')');\r\n      END IF;\r\n      \r\n      IF COALESCE(NEW.defval,'') <> ''\r\n      THEN\r\n        squery = concat(squery, ' DEFAULT ''', NEW.defval,'''');\r\n      END IF;\r\n      \r\n      IF NEW."notnull"\r\n      THEN\r\n        squery = concat( squery, ' NOT NULL ');\r\n      END IF;\r\n      \r\n\r\n      \r\n      squery = concat(squery,';');\r\n      \r\n      IF COALESCE(NEW.coldesc,'') <> ''\r\n      THEN\r\n      \tsquery = concat(squery ,'\r\n        \tCOMMENT ON COLUMN ', NEW.tablename, '."', NEW.colname,'"\r\n        \tIS ''', NEW.coldesc, ''';'\r\n        );\r\n      END IF;\r\n      \r\n      EXECUTE squery;\r\n      \r\n    END IF;\r\n\r\n\r\n\tRETURN NEW;\r\nEND;\r\n$function$\n
+198683	sqlmanager	tr_schemalist_tr_ins	sqlmanager.tr_schemalist_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_schemalist_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_schemalist_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_schemalist_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n\tsquery varchar;\r\nBEGIN\r\n\r\n\tIF not NEW.noscript\r\n    THEN \r\n        IF COALESCE(NEW.schemaname,'') = ''\r\n        THEN\r\n        \tPERFORM raiserror('Name is empty');\r\n        END IF;\r\n    \t\r\n    \tsquery = concat(\r\n    \t\t'CREATE SCHEMA "',NEW.schemaname,'" \r\n            AUTHORIZATION postgres;'\r\n        );\r\n         IF COALESCE(NEW.schemadescr,'') <> ''\r\n         THEN\r\n            squery = concat(squery,\r\n                'COMMENT ON SCHEMA "',NEW.schemaname,'" \r\n                IS ''',NEW.schemadescr,''';'\r\n            );\r\n         END IF;   \r\n         \r\n         EXECUTE squery;             \r\n        \r\n    END IF;\r\n    \r\n    RETURN NEW;\r\n\t\r\n\r\nEND;\r\n$function$\n
+198687	sqlmanager	tr_schemalist_tr_del	sqlmanager.tr_schemalist_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_schemalist_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_schemalist_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_schemalist_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    squery varchar;\r\nBEGIN\r\n\r\n  IF not OLD.noscript \r\n  THEN\r\n    squery = concat('\t\r\n        DROP SCHEMA ',OLD.schemaname,';\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  RETURN OLD;\r\n\r\nEND;\r\n$function$\n
+198679	sqlmanager	tr_tablecolumns_tr_del	sqlmanager.tr_tablecolumns_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablecolumns_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablecolumns_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablecolumns_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n   squery varchar;\r\n\r\nBEGIN\r\n\r\n\tIF not OLD.noscript\r\n    THEN\r\n      squery = concat('\r\n          ALTER TABLE ',OLD.tablename,'\r\n            DROP COLUMN "',OLD.colname,'";'\r\n      );\r\n      \r\n      EXECUTE squery;    \r\n    END IF;\r\n    \r\n    RETURN OLD;\r\n\r\nEND;\r\n$function$\n
+198691	sqlmanager	tr_tablelist_tr_ins	sqlmanager.tr_tablelist_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablelist_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablelist_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablelist_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  squery varchar;\r\nBEGIN\r\n  IF not NEW.noscript \r\n  THEN\r\n  \r\n  \tIF COALESCE(NEW.tableschemaname, '') = ''\r\n    THEN\r\n    \tPERFORM raiserror('Schema name is empty');\r\n    END IF;\r\n    \r\n  \tIF COALESCE(NEW.tablename, '') = ''\r\n    THEN\r\n    \tPERFORM raiserror('Table name is empty');\r\n    END IF;\r\n    \r\n    NEW.fullname = concat('"', NEW.tableschemaname, '"."', NEW.tablename,'"');\r\n    \r\n    squery = concat('\t\r\n        CREATE TABLE "', NEW.tableschemaname, '"."', NEW.tablename, '" (\r\n          id SERIAL NOT NULL,\r\n          PRIMARY KEY(id)\r\n        ) \r\n        WITH (oids = false);\r\n    ');\r\n    \r\n    IF COALESCE(NEW.descr,'') <> ''\r\n    THEN\r\n    \tsquery = concat(squery,'\r\n          COMMENT ON TABLE "', NEW.tableschemaname, '"."', NEW.tablename, '"\r\n          IS ''', NEW.descr, ''';'\r\n        );\r\n    END IF;  \r\n    \r\n    EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  \r\n  RETURN NEW;\r\n  \r\nEND;\r\n$function$\n
+198752	sqlmanager	tr_tablelist_tr_del	sqlmanager.tr_tablelist_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_tablelist_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_tablelist_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_tablelist_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    squery varchar;\r\nBEGIN\r\n\r\n  IF not OLD.noscript \r\n  THEN\r\n    squery = concat('\t\r\n        DROP TABLE ',OLD.fullname,';\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  RETURN OLD;\r\n\r\nEND;\r\n$function$\n
+220909	sqlmanager	fn_function_add	sqlmanager.fn_function_add(injson  json,_redirect out varchar)	add function	2020-05-14 17:26:34.600103	1	f	fn_function_add(injson  json,_redirect out varchar)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.fn_function_add(injson  json,_redirect out varchar) \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.fn_function_add(injson json, OUT _redirect character varying)\n RETURNS character varying\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE \r\n  schemaname varchar(350);\t\r\n  squery varchar;\r\n  fn_title varchar(150);\r\n  _userid int;\r\n  _id int;\r\n  _nw json;\r\nBEGIN\r\n\tschemaname = injson->>'schemaname';\r\n    _userid =injson->>'userid';\r\n    IF COALESCE(schemaname,'') = ''\r\n    THEN\r\n    \tPERFORM raiserror('schema name is empty');\r\n    END IF;\r\n    \r\n    fn_title = CONCAT('"',schemaname ,'"."fn_untitle_', (\r\n      SELECT \r\n          COUNT(p.oid)::varchar\r\n      FROM pg_proc as p\r\n          JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n      WHERE ns.nspname = fn_title\r\n    ), '"');\r\n    \r\n    squery = CONCAT('\r\n      CREATE FUNCTION ',fn_title,' ()\r\n      RETURNS void AS\r\n      $body$\r\n      DECLARE BEGIN END;\r\n      $body$\r\n      LANGUAGE ''plpgsql'' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;\r\n    ');\r\n    \r\n    \r\n    EXECUTE squery;\r\n    SELECT \r\n        p.oid\r\n    FROM pg_proc as p\r\n        JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n    WHERE concat('"',ns.nspname,'"."',p.proname,'"') = fn_title\r\n    \tand p.oid not in (\r\n        \tSELECT id FROM sqlmanager.functionslist \r\n        )\r\n    INTO _id;\r\n    \r\n    INSERT INTO sqlmanager.functionslist(\r\n      id, functionschema,\r\n      functiontitle,\r\n      fullname, descr,\r\n      userid, functionfulltitle, \r\n      dll\r\n    )\r\n    SELECT \r\n        p.oid, ns.nspname, p.proname, \r\n        concat(ns.nspname,'.', p.proname,'(', (\r\n          \tSELECT \r\n            \tstring_agg(\r\n                \tCONCAT(\r\n                    \tan.arg,' ', (\r\n                        \tCASE WHEN \r\n                            am.mode = 'o'\r\n                            THEN 'out'\r\n                            ELSE ''\r\n                            END\r\n                        ),' ',p.typname\r\n                    ),','\r\n                ) \r\n           \tFROM (\r\n              SELECT \r\n                  row_number() over (order by 0) as rownum, c.typname\r\n              FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proallargtypes)\r\n              ) as a\r\n                  JOIN pg_type  as c on c.oid = a.value::varchar::int\r\n            \r\n            ) as p\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as arg \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargnames)\r\n              ) as vv\r\n            ) as an on an.rownum = p.rownum\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as mode \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargmodes)\r\n              ) as vv\r\n            ) as am on am.rownum = p.rownum\r\n          ),')'),\r\n        COALESCE(pg_catalog.obj_description(p.oid),'<NO TITLE>'),\r\n        _userid, concat( p.proname,'(', (\r\n          \tSELECT \r\n            \tstring_agg(\r\n                \tCONCAT(\r\n                    \tan.arg,' ', (\r\n                        \tCASE WHEN \r\n                            am.mode = 'o'\r\n                            THEN 'out'\r\n                            ELSE ''\r\n                            END\r\n                        ),' ',p.typname\r\n                    ),','\r\n                ) \r\n           \tFROM (\r\n              SELECT \r\n                  row_number() over (order by 0) as rownum, c.typname\r\n              FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proallargtypes)\r\n              ) as a\r\n                  JOIN pg_type  as c on c.oid = a.value::varchar::int\r\n            \r\n            ) as p\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as arg \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargnames)\r\n              ) as vv\r\n            ) as an on an.rownum = p.rownum\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as mode \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargmodes)\r\n              ) as vv\r\n            ) as am on am.rownum = p.rownum\r\n          ),')'), \r\n          pg_get_functiondef(p.oid)\r\n    FROM pg_proc as p\r\n        JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n    WHERE p.oid = _id\r\n    ;\r\n    \r\n    SELECT\r\n    \trow_to_json(d)\r\n    FROM (\r\n    \tSELECT *\r\n        FROM sqlmanager.functionslist\r\n        WHERE id = _id\r\n    ) as d\r\n    INTO _nw;\r\n    \r\n    _redirect = CONCAT('/trees/function?id=', _id::varchar);\r\n    \r\n    INSERT INTO framework.logtable (\r\n      tablename, tableid, opertype,\r\n      oldata, newdata, userid\r\n    ) VALUES (\r\n      'sqlmanager.functionslist', _id::varchar, '1',\r\n      '{}'::json, _nw, _userid\r\n    );\r\n    \r\n    \r\n    \r\n\t\r\n\r\nEND;\r\n$function$\n
+198771	sqlmanager	tr_functionslist_tr_del	sqlmanager.tr_functionslist_tr_del()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_functionslist_tr_del()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_functionslist_tr_del() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_functionslist_tr_del()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    squery varchar;\r\nBEGIN\r\n\r\n  IF not OLD.noscript \r\n  THEN\r\n    squery = concat('\t\r\n        DROP FUNCTION ',OLD.fullname,' ;\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  RETURN OLD;\r\n\r\nEND;\r\n$function$\n
+198823	sqlmanager	tr_functionslist_tr_dll	sqlmanager.tr_functionslist_tr_dll()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_functionslist_tr_dll()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_functionslist_tr_dll() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_functionslist_tr_dll()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  IF not NEW.noscript and OLD.dll <> NEW.dll\r\n  THEN    \r\n     EXECUTE format(NEW.dll) ;\r\n  END IF;\r\n  RETURN OLD;\r\nEND;\r\n$function$\n
+204529	sqlmanager	tr_functionslist_tr_desc	sqlmanager.tr_functionslist_tr_desc()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_functionslist_tr_desc()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_functionslist_tr_desc() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_functionslist_tr_desc()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    squery varchar;\r\nBEGIN\r\n\t\r\n  IF not NEW.noscript and COALESCE(NEW.descr,'') <> ''\r\n  THEN\r\n    squery = concat('\t\r\n        COMMENT ON FUNCTION ', NEW.fullname ,'\r\n        IS ''', NEW.descr ,''';\r\n    ');\r\n    \r\n     EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197639	sqlmanager	fn_functions_onload	sqlmanager.fn_functions_onload()	functions_onload 	2020-05-14 17:26:34.600103	1	f	fn_functions_onload()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.fn_functions_onload() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.fn_functions_onload(injson json)\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n  _userid int;\r\nBEGIN\r\n\t_userid = injson->>'userid';\r\n    UPDATE sqlmanager.functionslist\r\n    SET noscript = true; \r\n   \r\n    UPDATE sqlmanager.functionslist as f\r\n    SET\r\n\t\tfunctiontitle = p.proname,\r\n        functionschema = ns.nspname, \r\n        fullname = concat(ns.nspname,'.', p.proname,'(', (\r\n          \tSELECT \r\n            \tstring_agg(\r\n                \tCONCAT(\r\n                    \tan.arg,' ', (\r\n                        \tCASE WHEN \r\n                            am.mode = 'o'\r\n                            THEN 'out'\r\n                            ELSE ''\r\n                            END\r\n                        ),' ',p.typname\r\n                    ),','\r\n                ) \r\n           \tFROM (\r\n              SELECT \r\n                  row_number() over (order by 0) as rownum, c.typname\r\n              FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proallargtypes)\r\n              ) as a\r\n                  JOIN pg_type  as c on c.oid = a.value::varchar::int\r\n            \r\n            ) as p\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as arg \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargnames)\r\n              ) as vv\r\n            ) as an on an.rownum = p.rownum\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as mode \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargmodes)\r\n              ) as vv\r\n            ) as am on am.rownum = p.rownum\r\n          ),')'\r\n        ),\r\n        descr = COALESCE(pg_catalog.obj_description(p.oid),'<NO TITLE>'),\r\n        userid = _userid,\r\n        functionfulltitle = concat( p.proname,'(', (\r\n          \tSELECT \r\n            \tstring_agg(\r\n                \tCONCAT(\r\n                    \tan.arg,' ', (\r\n                        \tCASE WHEN \r\n                            am.mode = 'o'\r\n                            THEN 'out'\r\n                            ELSE ''\r\n                            END\r\n                        ),' ',p.typname\r\n                    ),','\r\n                ) \r\n           \tFROM (\r\n              SELECT \r\n                  row_number() over (order by 0) as rownum, c.typname\r\n              FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proallargtypes)\r\n              ) as a\r\n                  JOIN pg_type  as c on c.oid = a.value::varchar::int\r\n            \r\n            ) as p\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as arg \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargnames)\r\n              ) as vv\r\n            ) as an on an.rownum = p.rownum\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as mode \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargmodes)\r\n              ) as vv\r\n            ) as am on am.rownum = p.rownum\r\n          ),')'),\r\n          dll = pg_get_functiondef(p.oid)\r\n    FROM pg_proc as p\r\n    \tJOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n    WHERE p.oid = f.id and ns.nspname not in ('pg_catalog','information_schema');\r\n    \r\n    INSERT INTO sqlmanager.functionslist(\r\n      id, functionschema,\r\n      functiontitle,\r\n      fullname, descr,\r\n      userid, functionfulltitle, \r\n      dll\r\n    )\r\n    SELECT \r\n        p.oid, ns.nspname, p.proname, \r\n        concat(ns.nspname,'.', p.proname,'(', (\r\n          \tSELECT \r\n            \tstring_agg(\r\n                \tCONCAT(\r\n                    \tan.arg,' ', (\r\n                        \tCASE WHEN \r\n                            am.mode = 'o'\r\n                            THEN 'out'\r\n                            ELSE ''\r\n                            END\r\n                        ),' ',p.typname\r\n                    ),','\r\n                ) \r\n           \tFROM (\r\n              SELECT \r\n                  row_number() over (order by 0) as rownum, c.typname\r\n              FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proallargtypes)\r\n              ) as a\r\n                  JOIN pg_type  as c on c.oid = a.value::varchar::int\r\n            \r\n            ) as p\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as arg \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargnames)\r\n              ) as vv\r\n            ) as an on an.rownum = p.rownum\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as mode \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargmodes)\r\n              ) as vv\r\n            ) as am on am.rownum = p.rownum\r\n          ),')'),\r\n        COALESCE(pg_catalog.obj_description(p.oid),'<NO TITLE>'),\r\n        _userid, concat( p.proname,'(', (\r\n          \tSELECT \r\n            \tstring_agg(\r\n                \tCONCAT(\r\n                    \tan.arg,' ', (\r\n                        \tCASE WHEN \r\n                            am.mode = 'o'\r\n                            THEN 'out'\r\n                            ELSE ''\r\n                            END\r\n                        ),' ',p.typname\r\n                    ),','\r\n                ) \r\n           \tFROM (\r\n              SELECT \r\n                  row_number() over (order by 0) as rownum, c.typname\r\n              FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proallargtypes)\r\n              ) as a\r\n                  JOIN pg_type  as c on c.oid = a.value::varchar::int\r\n            \r\n            ) as p\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as arg \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargnames)\r\n              ) as vv\r\n            ) as an on an.rownum = p.rownum\r\n            JOIN (\r\n            \tSELECT \r\n                  row_number() over (order by 0) as rownum, vv.value as mode \r\n                FROM json_array_elements_text(\r\n                  ARRAY_TO_JSON(p.proargmodes)\r\n              ) as vv\r\n            ) as am on am.rownum = p.rownum\r\n          ),')'), \r\n          pg_get_functiondef(p.oid)\r\n    FROM pg_proc as p\r\n        JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n    WHERE ns.nspname not in ('pg_catalog','information_schema')\r\n    \tand p.oid not in (\r\n        \tSELECT id FROM sqlmanager.functionslist \r\n        )\r\n    ;\r\n    \r\n    DELETE FROM sqlmanager.functionslist \r\n    WHERE id not in (\r\n    \tSELECT p.oid\r\n        FROM pg_proc as p\r\n         INNER JOIN pg_namespace ns ON (p.pronamespace = ns.oid)\r\n    \tWHERE ns.nspname not in ('pg_catalog','information_schema')\r\n    );\r\n\r\n    UPDATE sqlmanager.functionslist\r\n    SET noscript = false; \r\nEND;\r\n$function$\n
+220941	test	fn_test3_t	test.fn_test3_t()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	fn_test3_t()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_test3_t() \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_test3_t()\n RETURNS void\n LANGUAGE plpgsql\nAS $function$\r\n      DECLARE BEGIN END;\r\n      $function$\n
+220935	sqlmanager	tr_functionslist_tr_ins	sqlmanager.tr_functionslist_tr_ins()	<NO TITLE>	2020-05-14 17:26:34.600103	1	f	tr_functionslist_tr_ins()	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\nsqlmanager.tr_functionslist_tr_ins() \r\n*/\r\nCREATE OR REPLACE FUNCTION sqlmanager.tr_functionslist_tr_ins()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nDECLARE\r\n    squery varchar;\r\nBEGIN\r\n\t\r\n  IF not NEW.noscript\r\n  THEN\r\n  \tIF COALESCE(NEW.functionschema, '') = ''\r\n    THEN\r\n    \tPERFORM raiserror('function schema is empty');\r\n    END IF;\r\n    \r\n  \tIF COALESCE(NEW.functiontitle, '') = ''\r\n    THEN\r\n    \tPERFORM raiserror('title is empty');\r\n    END IF;\r\n    NEW.fullname = CONCAT(NEW.functionschema,'.',NEW.functiontitle,'()');\r\n    NEW.functionfulltitle = CONCAT(NEW.functiontitle,'()');\r\n    squery = CONCAT('\r\n      CREATE FUNCTION "', NEW.functionschema, '"."',\r\n      \tNEW.functiontitle, '"()\r\n      RETURNS void AS\r\n      $body$\r\n      DECLARE BEGIN END;\r\n      $body$\r\n      LANGUAGE ''plpgsql'' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;\r\n    ');\r\n    \r\n    NEW.dll = squery;\r\n    \r\n    EXECUTE format(squery) ;\r\n    \r\n  END IF;\r\n  \r\n  NEW.dll = CONCAT(\r\n  \t'/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\n', NEW.fullname ,' \r\n*/\r\n', \r\nNEW.dll\r\n  );\r\n\r\n  RETURN NEW;\r\n\r\nEND;\r\n$function$\n
+197643	test	fn_act_visible_conditions_intable	test.fn_act_visible_conditions_intable(_vs  int4,act_id  int4,_vid  json)	ins act vis conditions from json (table views) into table	2020-05-14 17:26:34.600103	1	f	fn_act_visible_conditions_intable(_vs  int4,act_id  int4,_vid  json)	/*\r\n    //PLEASE DROP FUNCTION IF YOU CHANGE ARGUMENTS\r\n    DROP FUNCTION \r\ntest.fn_act_visible_conditions_intable(_vs  int4,act_id  int4,_vid  json) \r\n*/\r\nCREATE OR REPLACE FUNCTION test.fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer)\n RETURNS integer\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n\t\n  INSERT INTO framework.act_visible_condions (\n    actionid, val_desc,\n    col, title,\n    operation, value\n  )\n  SELECT\n  \tact_id, (\n  \t SELECT\n       \tc.id\n     FROM framework.config as c\n     WHERE c.viewid = _vid and c.title = (value->'col')->>'value'\n    ) as val_desc, (v.value->'col')->>'col' as col,\n    (v.value->'col')->>'title' as title,\n    (v.value->'operation')->>'value' as operation,\n    v.value->>'value'\n  FROM json_array_elements(_vs) as v;\n\nEND;\n$function$\n
 \.
 
 
 --
--- TOC entry 3616 (class 0 OID 0)
+-- TOC entry 3633 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: functionslist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
 
-SELECT pg_catalog.setval('functionslist_id_seq', 1, false);
+SELECT pg_catalog.setval('functionslist_id_seq', 4, true);
 
 
 --
--- TOC entry 3185 (class 0 OID 198129)
+-- TOC entry 3200 (class 0 OID 198129)
 -- Dependencies: 278
 -- Data for Name: schemalist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -21366,16 +22241,16 @@ COPY schemalist (id, schemaname, schemadescr, created, userid, noscript) FROM st
 
 
 --
--- TOC entry 3617 (class 0 OID 0)
+-- TOC entry 3634 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: schemalist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
 
-SELECT pg_catalog.setval('schemalist_id_seq', 3, true);
+SELECT pg_catalog.setval('schemalist_id_seq', 5, true);
 
 
 --
--- TOC entry 3187 (class 0 OID 198139)
+-- TOC entry 3202 (class 0 OID 198139)
 -- Dependencies: 280
 -- Data for Name: schemaobjects; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -21397,20 +22272,24 @@ COPY schemaobjects (id, oname, schemaname, linkurl) FROM stdin;
 36	functions	Test2	functions
 37	tables	test2	tables
 38	functions	test2	functions
+39	tables	еуу	tables
+40	tables	ке	tables
+41	functions	еуу	functions
+42	functions	ке	functions
 \.
 
 
 --
--- TOC entry 3618 (class 0 OID 0)
+-- TOC entry 3635 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: schemaobjects_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
 
-SELECT pg_catalog.setval('schemaobjects_id_seq', 38, true);
+SELECT pg_catalog.setval('schemaobjects_id_seq', 42, true);
 
 
 --
--- TOC entry 3189 (class 0 OID 198148)
+-- TOC entry 3204 (class 0 OID 198148)
 -- Dependencies: 282
 -- Data for Name: tablecolumns; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -21452,20 +22331,21 @@ COPY tablecolumns (id, tablename, colname, coldesc, coltype, size, accur, "notnu
 36	test.testmanager	col5	column	varchar	100	\N	t	f	\N	1	2020-05-13 14:12:31.465604	f
 39	test.testmanager	textfield1	<NO TITLE>	varchar	200	\N	f	f	\N	1	2020-05-13 18:21:56.410868	f
 42	test.testmanager	intfield	intfield	int4	32	0	f	f	\N	1	2020-05-13 18:22:40.652645	f
+57	test.test3	id	<NO TITLE>	int4	32	0	t	t	nextval('test.test3_id_seq'::regclass)	1	2020-05-14 10:22:12.599537	f
 \.
 
 
 --
--- TOC entry 3619 (class 0 OID 0)
+-- TOC entry 3636 (class 0 OID 0)
 -- Dependencies: 283
 -- Name: tablecolumns_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
 
-SELECT pg_catalog.setval('tablecolumns_id_seq', 56, true);
+SELECT pg_catalog.setval('tablecolumns_id_seq', 57, true);
 
 
 --
--- TOC entry 3191 (class 0 OID 198160)
+-- TOC entry 3206 (class 0 OID 198160)
 -- Dependencies: 284
 -- Data for Name: tableindexes; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -21475,7 +22355,7 @@ COPY tableindexes (id, tablename, index_name, columns, typename, userid, created
 
 
 --
--- TOC entry 3620 (class 0 OID 0)
+-- TOC entry 3637 (class 0 OID 0)
 -- Dependencies: 285
 -- Name: tableindexes_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -21484,66 +22364,52 @@ SELECT pg_catalog.setval('tableindexes_id_seq', 1, false);
 
 
 --
--- TOC entry 3193 (class 0 OID 198170)
+-- TOC entry 3208 (class 0 OID 198170)
 -- Dependencies: 286
 -- Data for Name: tablelist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
 
 COPY tablelist (id, tableschemaname, tablename, fullname, descr, userid, created, noscript) FROM stdin;
-198599	test	testmanager	test.testmanager	<NO TITLE>	1	2020-05-13 13:51:47.958326	f
-198087	framework	visible_condition	framework.visible_condition	form type components columns visible types	1	2020-05-13 08:27:29.205326	f
-197865	framework	filtertypes	framework.filtertypes	filters types	1	2020-05-13 08:27:29.205326	f
-198111	reports	reportparams	reports.reportparams	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
-197715	framework	apimethods	framework.apimethods	Different implementations of API calls\r\nAlong with the type, a method must be added on the interface (front-end)	1	2020-05-13 08:27:29.205326	f
-198148	sqlmanager	tablecolumns	sqlmanager.tablecolumns	tables columns	1	2020-05-13 08:27:29.205326	f
-198119	sqlmanager	functionslist	sqlmanager.functionslist	FUNCTIONS LIST	1	2020-05-13 08:27:29.205326	f
-197830	framework	dialog_types	framework.dialog_types	DIALOG TYPES	1	2020-05-13 08:27:29.205326	f
-197914	framework	menus	framework.menus	Projects Menus	1	2020-05-13 08:27:29.205326	f
-197982	framework	sess	framework.sess	Sessions table\r\nPlease kill in shedules sessions if you need	1	2020-05-13 08:27:29.205326	f
-197948	framework	opertypes	framework.opertypes	operations types for logtable	1	2020-05-13 08:27:29.205326	f
-198203	test	onemorerelation	test.onemorerelation	one more dictionary for tests	1	2020-05-13 08:27:29.205326	f
-197698	framework	actparam_querytypes	framework.actparam_querytypes	action's parametrs query types	1	2020-05-13 08:27:29.205326	f
-197763	framework	config	framework.config	view columns config	1	2020-05-13 08:27:29.205326	f
-197710	framework	apicallingmethods	framework.apicallingmethods	API calling methods\r\nfor user methods	1	2020-05-13 08:27:29.205326	f
-198029	framework	users	framework.users	USER	1	2020-05-13 08:27:29.205326	f
-197751	framework	compos	framework.compos	compositions	1	2020-05-13 08:27:29.205326	f
-197931	framework	notifications	framework.notifications	Global notifications for dashboard menu type	1	2020-05-13 08:27:29.205326	f
-197920	framework	menutypes	framework.menutypes	menu types dictionary	1	2020-05-13 08:27:29.205326	f
-198099	reports	reportlist	reports.reportlist	reportslist	1	2020-05-13 08:27:29.205326	f
-197986	framework	spapi	framework.spapi	Rest Api methods\r\ncall plpg function \r\nalways pass in function injson JSON parametr	1	2020-05-13 08:27:29.205326	f
-197928	framework	methodtypes	framework.methodtypes	API methods types	1	2020-05-13 08:27:29.205326	f
 198045	framework	views	framework.views	views	1	2020-05-13 08:27:29.205326	f
-197943	framework	operations	framework.operations	boolean operations for condinions settings	1	2020-05-13 08:27:29.205326	f
-197663	framework	act_parametrs	framework.act_parametrs	ACTIONS PARAMETERS	1	2020-05-13 08:27:29.205326	f
-197868	framework	functions	framework.functions	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
-198081	framework	viewtypes	framework.viewtypes	views types dictionaries	1	2020-05-13 08:27:29.205326	f
-198096	reports	paramtypes	reports.paramtypes	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
-197970	framework	roles	framework.roles	project roles	1	2020-05-13 08:27:29.205326	f
-197740	framework	columntypes	framework.columntypes	configs columns types	1	2020-05-13 08:27:29.205326	f
-197683	framework	actions	framework.actions	VIEWS ACTIONS	1	2020-05-13 08:27:29.205326	f
-197973	framework	select_condition	framework.select_condition	select form method conditions settings	1	2020-05-13 08:27:29.205326	f
-198195	test	major_table	test.major_table	table for testing framework interface	1	2020-05-13 08:27:29.205326	f
-198208	test	relate_with_major	test.relate_with_major	relate table with major_table	1	2020-05-13 08:27:29.205326	f
 198185	test	fel	test.fel	Fron-ent errors log	1	2020-05-13 08:27:29.205326	f
-197881	framework	mainmenu	framework.mainmenu	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
-198026	framework	treeviewtypes	framework.treeviewtypes	treesbranches views types\r\nview or composition	1	2020-05-13 08:27:29.205326	f
-197896	framework	mainsettings	framework.mainsettings	Projects main settings\r\nMust be the same as settings.json file	1	2020-05-13 08:27:29.205326	f
-197724	framework	calendar_actions	framework.calendar_actions	calendars actions test table\r\nnot use\r\ndelete	1	2020-05-13 08:27:29.205326	f
-198180	test	dictionary_for_select	test.dictionary_for_select	dictionary for relation 	1	2020-05-13 08:27:29.205326	f
-197734	framework	calendar_test	framework.calendar_test	calendar types view test table\r\nnot use\r\ndelete	1	2020-05-13 08:27:29.205326	f
-197794	framework	defaultval	framework.defaultval	defaultval configs property	1	2020-05-13 08:27:29.205326	f
-197833	framework	dialogs	framework.dialogs	USERS CHAT DIALOGS	1	2020-05-13 08:27:29.205326	f
-197825	framework	dialog_statuses	framework.dialog_statuses	DIALOG STATUSES	1	2020-05-13 08:27:29.205326	f
-197996	framework	trees	framework.trees	Trees menus	1	2020-05-13 08:27:29.205326	f
-198007	framework	treesacts	framework.treesacts	trees actions	1	2020-05-13 08:27:29.205326	f
 197789	framework	configsettings	framework.configsettings	config settings list	1	2020-05-13 08:27:29.205326	f
 197871	framework	logtable	framework.logtable	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
 198069	framework	viewsnotification	framework.viewsnotification	notifications for views on ws \r\nyou can add here notification for different views on triggers	1	2020-05-13 08:27:29.205326	f
 197703	framework	acttypes	framework.acttypes	actions types dictionary	1	2020-05-13 08:27:29.205326	f
 197719	framework	booloper	framework.booloper	boolean operations	1	2020-05-13 08:27:29.205326	f
 197800	framework	dialog_messages	framework.dialog_messages	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
-197851	framework	filters	framework.filters	view's filters	1	2020-05-13 08:27:29.205326	f
+198096	reports	paramtypes	reports.paramtypes	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
+198180	test	dictionary_for_select	test.dictionary_for_select	dictionary for relation 	1	2020-05-13 08:27:29.205326	f
+197734	framework	calendar_test	framework.calendar_test	calendar types view test table\r\nnot use\r\ndelete	1	2020-05-13 08:27:29.205326	f
+197794	framework	defaultval	framework.defaultval	defaultval configs property	1	2020-05-13 08:27:29.205326	f
+197943	framework	operations	framework.operations	boolean operations for condinions settings	1	2020-05-13 08:27:29.205326	f
+197663	framework	act_parametrs	framework.act_parametrs	ACTIONS PARAMETERS	1	2020-05-13 08:27:29.205326	f
+197868	framework	functions	framework.functions	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
+197973	framework	select_condition	framework.select_condition	select form method conditions settings	1	2020-05-13 08:27:29.205326	f
+198195	test	major_table	test.major_table	table for testing framework interface	1	2020-05-13 08:27:29.205326	f
+198208	test	relate_with_major	test.relate_with_major	relate table with major_table	1	2020-05-13 08:27:29.205326	f
+197881	framework	mainmenu	framework.mainmenu	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
+198026	framework	treeviewtypes	framework.treeviewtypes	treesbranches views types\r\nview or composition	1	2020-05-13 08:27:29.205326	f
+198081	framework	viewtypes	framework.viewtypes	views types dictionaries	1	2020-05-13 08:27:29.205326	f
+197970	framework	roles	framework.roles	project roles	1	2020-05-13 08:27:29.205326	f
+197740	framework	columntypes	framework.columntypes	configs columns types	1	2020-05-13 08:27:29.205326	f
+197683	framework	actions	framework.actions	VIEWS ACTIONS	1	2020-05-13 08:27:29.205326	f
+197996	framework	trees	framework.trees	Trees menus	1	2020-05-13 08:27:29.205326	f
+197896	framework	mainsettings	framework.mainsettings	Projects main settings\r\nMust be the same as settings.json file	1	2020-05-13 08:27:29.205326	f
+198029	framework	users	framework.users	USER	1	2020-05-13 08:27:29.205326	f
+197825	framework	dialog_statuses	framework.dialog_statuses	DIALOG STATUSES	1	2020-05-13 08:27:29.205326	f
+198007	framework	treesacts	framework.treesacts	trees actions	1	2020-05-13 08:27:29.205326	f
+197833	framework	dialogs	framework.dialogs	USERS CHAT DIALOGS	1	2020-05-13 08:27:29.205326	f
+197724	framework	calendar_actions	framework.calendar_actions	calendars actions test table\r\nnot use\r\ndelete	1	2020-05-13 08:27:29.205326	f
+197951	framework	orgs	framework.orgs	ORGS	1	2020-05-13 08:27:29.205326	f
 197814	framework	dialog_notifications	framework.dialog_notifications	ws notifications for dialogs	1	2020-05-13 08:27:29.205326	f
+197982	framework	sess	framework.sess	Sessions table\r\nPlease kill in shedules sessions if you need	1	2020-05-13 08:27:29.205326	f
+197948	framework	opertypes	framework.opertypes	operations types for logtable	1	2020-05-13 08:27:29.205326	f
+198203	test	onemorerelation	test.onemorerelation	one more dictionary for tests	1	2020-05-13 08:27:29.205326	f
+197698	framework	actparam_querytypes	framework.actparam_querytypes	action's parametrs query types	1	2020-05-13 08:27:29.205326	f
+197763	framework	config	framework.config	view columns config	1	2020-05-13 08:27:29.205326	f
+197931	framework	notifications	framework.notifications	Global notifications for dashboard menu type	1	2020-05-13 08:27:29.205326	f
+198099	reports	reportlist	reports.reportlist	reportslist	1	2020-05-13 08:27:29.205326	f
 197966	framework	paramtypes	framework.paramtypes	actions parametrs types	1	2020-05-13 08:27:29.205326	f
 197963	framework	orgtypes	framework.orgtypes	organizations types	1	2020-05-13 08:27:29.205326	f
 198170	sqlmanager	tablelist	sqlmanager.tablelist	tables	1	2020-05-13 08:27:29.205326	f
@@ -21552,23 +22418,37 @@ COPY tablelist (id, tableschemaname, tablename, fullname, descr, userid, created
 198016	framework	treesbranches	framework.treesbranches	trees branches	1	2020-05-13 08:27:29.205326	f
 197674	framework	act_visible_condions	framework.act_visible_condions	action visible condition	1	2020-05-13 08:27:29.205326	f
 198160	sqlmanager	tableindexes	sqlmanager.tableindexes	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
-197951	framework	orgs	framework.orgs	ORGS	1	2020-05-13 08:27:29.205326	f
+198111	reports	reportparams	reports.reportparams	<NO TITLE>	1	2020-05-13 08:27:29.205326	f
+198148	sqlmanager	tablecolumns	sqlmanager.tablecolumns	tables columns	1	2020-05-13 08:27:29.205326	f
+197928	framework	methodtypes	framework.methodtypes	API methods types	1	2020-05-13 08:27:29.205326	f
+197986	framework	spapi	framework.spapi	Rest Api methods\r\ncall plpg function \r\nalways pass in function injson JSON parametr	1	2020-05-13 08:27:29.205326	f
+197710	framework	apicallingmethods	framework.apicallingmethods	API calling methods\r\nfor user methods	1	2020-05-13 08:27:29.205326	f
+197751	framework	compos	framework.compos	compositions	1	2020-05-13 08:27:29.205326	f
+197920	framework	menutypes	framework.menutypes	menu types dictionary	1	2020-05-13 08:27:29.205326	f
+198599	test	testmanager	test.testmanager	<NO TITLE>	1	2020-05-13 13:51:47.958326	f
+198087	framework	visible_condition	framework.visible_condition	form type components columns visible types	1	2020-05-13 08:27:29.205326	f
+197865	framework	filtertypes	framework.filtertypes	filters types	1	2020-05-13 08:27:29.205326	f
+197715	framework	apimethods	framework.apimethods	Different implementations of API calls\r\nAlong with the type, a method must be added on the interface (front-end)	1	2020-05-13 08:27:29.205326	f
+198119	sqlmanager	functionslist	sqlmanager.functionslist	FUNCTIONS LIST	1	2020-05-13 08:27:29.205326	f
+197914	framework	menus	framework.menus	Projects Menus	1	2020-05-13 08:27:29.205326	f
+197830	framework	dialog_types	framework.dialog_types	DIALOG TYPES	1	2020-05-13 08:27:29.205326	f
+197851	framework	filters	framework.filters	view's filters	1	2020-05-13 08:27:29.205326	f
 \.
 
 
 --
--- TOC entry 3621 (class 0 OID 0)
+-- TOC entry 3638 (class 0 OID 0)
 -- Dependencies: 287
 -- Name: tablelist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
 
-SELECT pg_catalog.setval('tablelist_id_seq', 1, false);
+SELECT pg_catalog.setval('tablelist_id_seq', 10, true);
 
 
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3195 (class 0 OID 198180)
+-- TOC entry 3210 (class 0 OID 198180)
 -- Dependencies: 288
 -- Data for Name: dictionary_for_select; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -21583,7 +22463,7 @@ COPY dictionary_for_select (id, dname, onemoreraltionid) FROM stdin;
 
 
 --
--- TOC entry 3622 (class 0 OID 0)
+-- TOC entry 3639 (class 0 OID 0)
 -- Dependencies: 289
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -21592,7 +22472,7 @@ SELECT pg_catalog.setval('dictionary_for_select_id_seq', 5, true);
 
 
 --
--- TOC entry 3197 (class 0 OID 198185)
+-- TOC entry 3212 (class 0 OID 198185)
 -- Dependencies: 290
 -- Data for Name: fel; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -21602,7 +22482,7 @@ COPY fel (id, logdata, created) FROM stdin;
 
 
 --
--- TOC entry 3623 (class 0 OID 0)
+-- TOC entry 3640 (class 0 OID 0)
 -- Dependencies: 291
 -- Name: fel_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -21611,7 +22491,7 @@ SELECT pg_catalog.setval('fel_id_seq', 1, false);
 
 
 --
--- TOC entry 3199 (class 0 OID 198195)
+-- TOC entry 3214 (class 0 OID 198195)
 -- Dependencies: 292
 -- Data for Name: major_table; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -21622,7 +22502,7 @@ COPY major_table (id, text, data, "check", "time", password, color, multiselect,
 
 
 --
--- TOC entry 3624 (class 0 OID 0)
+-- TOC entry 3641 (class 0 OID 0)
 -- Dependencies: 293
 -- Name: major_table_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -21631,7 +22511,7 @@ SELECT pg_catalog.setval('major_table_id_seq', 31, true);
 
 
 --
--- TOC entry 3201 (class 0 OID 198203)
+-- TOC entry 3216 (class 0 OID 198203)
 -- Dependencies: 294
 -- Data for Name: onemorerelation; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -21643,7 +22523,7 @@ COPY onemorerelation (id, oname) FROM stdin;
 
 
 --
--- TOC entry 3625 (class 0 OID 0)
+-- TOC entry 3642 (class 0 OID 0)
 -- Dependencies: 295
 -- Name: onemorerelation_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -21652,7 +22532,7 @@ SELECT pg_catalog.setval('onemorerelation_id_seq', 2, true);
 
 
 --
--- TOC entry 3203 (class 0 OID 198208)
+-- TOC entry 3218 (class 0 OID 198208)
 -- Dependencies: 296
 -- Data for Name: relate_with_major; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -21662,7 +22542,7 @@ COPY relate_with_major (id, somecolumn, major_table_id, created) FROM stdin;
 
 
 --
--- TOC entry 3626 (class 0 OID 0)
+-- TOC entry 3643 (class 0 OID 0)
 -- Dependencies: 297
 -- Name: relate_with_major_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -21671,7 +22551,7 @@ SELECT pg_catalog.setval('relate_with_major_id_seq', 2, true);
 
 
 --
--- TOC entry 3205 (class 0 OID 198599)
+-- TOC entry 3220 (class 0 OID 198599)
 -- Dependencies: 298
 -- Data for Name: testmanager; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -21683,7 +22563,7 @@ COPY testmanager (id, col5, textfield1, intfield, "boolField") FROM stdin;
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2807 (class 2606 OID 198265)
+-- TOC entry 2816 (class 2606 OID 198265)
 -- Name: act_parametrs_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21692,7 +22572,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 2810 (class 2606 OID 198267)
+-- TOC entry 2819 (class 2606 OID 198267)
 -- Name: act_visible_condions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21701,7 +22581,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 2813 (class 2606 OID 198269)
+-- TOC entry 2822 (class 2606 OID 198269)
 -- Name: actions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21710,7 +22590,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 2816 (class 2606 OID 198271)
+-- TOC entry 2825 (class 2606 OID 198271)
 -- Name: actparam_querytypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21719,7 +22599,7 @@ ALTER TABLE ONLY actparam_querytypes
 
 
 --
--- TOC entry 2819 (class 2606 OID 198273)
+-- TOC entry 2828 (class 2606 OID 198273)
 -- Name: acttypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21728,7 +22608,7 @@ ALTER TABLE ONLY acttypes
 
 
 --
--- TOC entry 2822 (class 2606 OID 198275)
+-- TOC entry 2831 (class 2606 OID 198275)
 -- Name: apicallingmethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21737,7 +22617,7 @@ ALTER TABLE ONLY apicallingmethods
 
 
 --
--- TOC entry 2824 (class 2606 OID 198277)
+-- TOC entry 2833 (class 2606 OID 198277)
 -- Name: apimethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21746,7 +22626,7 @@ ALTER TABLE ONLY apimethods
 
 
 --
--- TOC entry 2828 (class 2606 OID 198279)
+-- TOC entry 2837 (class 2606 OID 198279)
 -- Name: booloper_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21755,7 +22635,7 @@ ALTER TABLE ONLY booloper
 
 
 --
--- TOC entry 2830 (class 2606 OID 198281)
+-- TOC entry 2839 (class 2606 OID 198281)
 -- Name: columntypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21764,7 +22644,7 @@ ALTER TABLE ONLY columntypes
 
 
 --
--- TOC entry 2833 (class 2606 OID 198283)
+-- TOC entry 2842 (class 2606 OID 198283)
 -- Name: compos_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21773,7 +22653,7 @@ ALTER TABLE ONLY compos
 
 
 --
--- TOC entry 2837 (class 2606 OID 198285)
+-- TOC entry 2846 (class 2606 OID 198285)
 -- Name: config_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21782,7 +22662,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 2839 (class 2606 OID 198287)
+-- TOC entry 2848 (class 2606 OID 198287)
 -- Name: configsettings_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21791,7 +22671,7 @@ ALTER TABLE ONLY configsettings
 
 
 --
--- TOC entry 2842 (class 2606 OID 198289)
+-- TOC entry 2851 (class 2606 OID 198289)
 -- Name: defaultval_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21800,7 +22680,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 2846 (class 2606 OID 198291)
+-- TOC entry 2855 (class 2606 OID 198291)
 -- Name: filters_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21809,7 +22689,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 2849 (class 2606 OID 198293)
+-- TOC entry 2858 (class 2606 OID 198293)
 -- Name: filtertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21818,7 +22698,7 @@ ALTER TABLE ONLY filtertypes
 
 
 --
--- TOC entry 2851 (class 2606 OID 198295)
+-- TOC entry 2860 (class 2606 OID 198295)
 -- Name: functions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21827,7 +22707,7 @@ ALTER TABLE ONLY functions
 
 
 --
--- TOC entry 2853 (class 2606 OID 198297)
+-- TOC entry 2862 (class 2606 OID 198297)
 -- Name: menus_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21836,7 +22716,7 @@ ALTER TABLE ONLY menus
 
 
 --
--- TOC entry 2856 (class 2606 OID 198299)
+-- TOC entry 2865 (class 2606 OID 198299)
 -- Name: methodtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21845,7 +22725,7 @@ ALTER TABLE ONLY methodtypes
 
 
 --
--- TOC entry 2858 (class 2606 OID 198301)
+-- TOC entry 2867 (class 2606 OID 198301)
 -- Name: notifications_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21854,7 +22734,7 @@ ALTER TABLE ONLY notifications
 
 
 --
--- TOC entry 2860 (class 2606 OID 198303)
+-- TOC entry 2869 (class 2606 OID 198303)
 -- Name: operations_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21863,7 +22743,7 @@ ALTER TABLE ONLY operations
 
 
 --
--- TOC entry 2863 (class 2606 OID 198305)
+-- TOC entry 2872 (class 2606 OID 198305)
 -- Name: opertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21872,7 +22752,7 @@ ALTER TABLE ONLY opertypes
 
 
 --
--- TOC entry 2867 (class 2606 OID 198307)
+-- TOC entry 2876 (class 2606 OID 198307)
 -- Name: paramtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21881,7 +22761,7 @@ ALTER TABLE ONLY paramtypes
 
 
 --
--- TOC entry 2870 (class 2606 OID 198309)
+-- TOC entry 2879 (class 2606 OID 198309)
 -- Name: select_condition_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21890,7 +22770,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 2872 (class 2606 OID 198311)
+-- TOC entry 2881 (class 2606 OID 198311)
 -- Name: treeviewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21899,7 +22779,7 @@ ALTER TABLE ONLY treeviewtypes
 
 
 --
--- TOC entry 2875 (class 2606 OID 198313)
+-- TOC entry 2884 (class 2606 OID 198313)
 -- Name: views_path_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21908,7 +22788,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 2877 (class 2606 OID 198315)
+-- TOC entry 2886 (class 2606 OID 198315)
 -- Name: views_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21917,7 +22797,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 2879 (class 2606 OID 198317)
+-- TOC entry 2888 (class 2606 OID 198317)
 -- Name: viewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21926,7 +22806,7 @@ ALTER TABLE ONLY viewtypes
 
 
 --
--- TOC entry 2881 (class 2606 OID 198319)
+-- TOC entry 2890 (class 2606 OID 198319)
 -- Name: visible_condition_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -21937,7 +22817,7 @@ ALTER TABLE ONLY visible_condition
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 2883 (class 2606 OID 198321)
+-- TOC entry 2892 (class 2606 OID 198321)
 -- Name: functionslist_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21946,7 +22826,7 @@ ALTER TABLE ONLY functionslist
 
 
 --
--- TOC entry 2885 (class 2606 OID 198323)
+-- TOC entry 2894 (class 2606 OID 198323)
 -- Name: schemalist_id_key; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21955,7 +22835,7 @@ ALTER TABLE ONLY schemalist
 
 
 --
--- TOC entry 2887 (class 2606 OID 198325)
+-- TOC entry 2896 (class 2606 OID 198325)
 -- Name: schemaobjects_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21964,7 +22844,7 @@ ALTER TABLE ONLY schemaobjects
 
 
 --
--- TOC entry 2889 (class 2606 OID 198327)
+-- TOC entry 2898 (class 2606 OID 198327)
 -- Name: tablecolumns_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21973,7 +22853,7 @@ ALTER TABLE ONLY tablecolumns
 
 
 --
--- TOC entry 2891 (class 2606 OID 198329)
+-- TOC entry 2900 (class 2606 OID 198329)
 -- Name: tableindexes_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21982,7 +22862,7 @@ ALTER TABLE ONLY tableindexes
 
 
 --
--- TOC entry 2893 (class 2606 OID 198331)
+-- TOC entry 2902 (class 2606 OID 198331)
 -- Name: tablelist_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21993,7 +22873,7 @@ ALTER TABLE ONLY tablelist
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2895 (class 2606 OID 198333)
+-- TOC entry 2904 (class 2606 OID 198333)
 -- Name: dictionary_for_select_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22002,7 +22882,7 @@ ALTER TABLE ONLY dictionary_for_select
 
 
 --
--- TOC entry 2897 (class 2606 OID 198335)
+-- TOC entry 2906 (class 2606 OID 198335)
 -- Name: fel_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22011,7 +22891,7 @@ ALTER TABLE ONLY fel
 
 
 --
--- TOC entry 2899 (class 2606 OID 198337)
+-- TOC entry 2908 (class 2606 OID 198337)
 -- Name: major_table_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22020,7 +22900,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 2901 (class 2606 OID 198339)
+-- TOC entry 2910 (class 2606 OID 198339)
 -- Name: onemorerelation_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22029,7 +22909,7 @@ ALTER TABLE ONLY onemorerelation
 
 
 --
--- TOC entry 2903 (class 2606 OID 198341)
+-- TOC entry 2912 (class 2606 OID 198341)
 -- Name: relate_with_major_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22040,7 +22920,7 @@ ALTER TABLE ONLY relate_with_major
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2805 (class 1259 OID 198342)
+-- TOC entry 2814 (class 1259 OID 198342)
 -- Name: act_parametrs_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22048,7 +22928,7 @@ CREATE INDEX act_parametrs_idx ON act_parametrs USING btree (actionid);
 
 
 --
--- TOC entry 2808 (class 1259 OID 198343)
+-- TOC entry 2817 (class 1259 OID 198343)
 -- Name: act_visible_condions_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22056,7 +22936,7 @@ CREATE INDEX act_visible_condions_idx ON act_visible_condions USING btree (actio
 
 
 --
--- TOC entry 2811 (class 1259 OID 198344)
+-- TOC entry 2820 (class 1259 OID 198344)
 -- Name: actions_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22064,7 +22944,7 @@ CREATE INDEX actions_idx ON actions USING btree (viewid);
 
 
 --
--- TOC entry 2814 (class 1259 OID 198345)
+-- TOC entry 2823 (class 1259 OID 198345)
 -- Name: actparam_querytypes_aqname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22072,7 +22952,7 @@ CREATE UNIQUE INDEX actparam_querytypes_aqname_key ON actparam_querytypes USING 
 
 
 --
--- TOC entry 2817 (class 1259 OID 198346)
+-- TOC entry 2826 (class 1259 OID 198346)
 -- Name: acttypes_actname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22080,7 +22960,7 @@ CREATE UNIQUE INDEX acttypes_actname_key ON acttypes USING btree (actname);
 
 
 --
--- TOC entry 2820 (class 1259 OID 198347)
+-- TOC entry 2829 (class 1259 OID 198347)
 -- Name: apicallingmethods_aname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22088,7 +22968,7 @@ CREATE UNIQUE INDEX apicallingmethods_aname_key ON apicallingmethods USING btree
 
 
 --
--- TOC entry 2825 (class 1259 OID 198348)
+-- TOC entry 2834 (class 1259 OID 198348)
 -- Name: apimethods_val_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22096,7 +22976,7 @@ CREATE UNIQUE INDEX apimethods_val_key ON apimethods USING btree (val);
 
 
 --
--- TOC entry 2826 (class 1259 OID 198349)
+-- TOC entry 2835 (class 1259 OID 198349)
 -- Name: booloper_bname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22104,7 +22984,7 @@ CREATE UNIQUE INDEX booloper_bname_key ON booloper USING btree (bname);
 
 
 --
--- TOC entry 2831 (class 1259 OID 198350)
+-- TOC entry 2840 (class 1259 OID 198350)
 -- Name: columntypes_typename_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22112,7 +22992,7 @@ CREATE UNIQUE INDEX columntypes_typename_key ON columntypes USING btree (typenam
 
 
 --
--- TOC entry 2834 (class 1259 OID 198351)
+-- TOC entry 2843 (class 1259 OID 198351)
 -- Name: config_idx_uniq_title; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22120,7 +23000,7 @@ CREATE UNIQUE INDEX config_idx_uniq_title ON config USING btree (viewid, title);
 
 
 --
--- TOC entry 2835 (class 1259 OID 198352)
+-- TOC entry 2844 (class 1259 OID 198352)
 -- Name: config_idx_view; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22128,7 +23008,7 @@ CREATE INDEX config_idx_view ON config USING btree (viewid);
 
 
 --
--- TOC entry 2840 (class 1259 OID 198353)
+-- TOC entry 2849 (class 1259 OID 198353)
 -- Name: defaultval_idxconfd; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22136,7 +23016,7 @@ CREATE INDEX defaultval_idxconfd ON defaultval USING btree (configid);
 
 
 --
--- TOC entry 2843 (class 1259 OID 198354)
+-- TOC entry 2852 (class 1259 OID 198354)
 -- Name: filters_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22144,7 +23024,7 @@ CREATE UNIQUE INDEX filters_idx ON filters USING btree (title, viewid);
 
 
 --
--- TOC entry 2844 (class 1259 OID 198355)
+-- TOC entry 2853 (class 1259 OID 198355)
 -- Name: filters_idx1; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22152,7 +23032,7 @@ CREATE INDEX filters_idx1 ON filters USING btree (viewid);
 
 
 --
--- TOC entry 2847 (class 1259 OID 198356)
+-- TOC entry 2856 (class 1259 OID 198356)
 -- Name: filtertypes_ftname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22160,7 +23040,7 @@ CREATE UNIQUE INDEX filtertypes_ftname_key ON filtertypes USING btree (ftname);
 
 
 --
--- TOC entry 2854 (class 1259 OID 198357)
+-- TOC entry 2863 (class 1259 OID 198357)
 -- Name: methodtypes_methotypename_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22168,7 +23048,7 @@ CREATE UNIQUE INDEX methodtypes_methotypename_key ON methodtypes USING btree (me
 
 
 --
--- TOC entry 2861 (class 1259 OID 198358)
+-- TOC entry 2870 (class 1259 OID 198358)
 -- Name: operations_value_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22176,7 +23056,7 @@ CREATE UNIQUE INDEX operations_value_key ON operations USING btree (value);
 
 
 --
--- TOC entry 2864 (class 1259 OID 198359)
+-- TOC entry 2873 (class 1259 OID 198359)
 -- Name: orgs_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22184,7 +23064,7 @@ CREATE UNIQUE INDEX orgs_id_key ON orgs USING btree (id);
 
 
 --
--- TOC entry 2865 (class 1259 OID 198360)
+-- TOC entry 2874 (class 1259 OID 198360)
 -- Name: orgtypes_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22192,7 +23072,7 @@ CREATE UNIQUE INDEX orgtypes_id_key ON orgtypes USING btree (id);
 
 
 --
--- TOC entry 2868 (class 1259 OID 198361)
+-- TOC entry 2877 (class 1259 OID 198361)
 -- Name: select_condition_idx_sc; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22200,7 +23080,7 @@ CREATE INDEX select_condition_idx_sc ON select_condition USING btree (configid);
 
 
 --
--- TOC entry 2873 (class 1259 OID 198362)
+-- TOC entry 2882 (class 1259 OID 198362)
 -- Name: users_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -22208,7 +23088,7 @@ CREATE UNIQUE INDEX users_id_key ON users USING btree (id);
 
 
 --
--- TOC entry 2935 (class 2620 OID 198363)
+-- TOC entry 2944 (class 2620 OID 198363)
 -- Name: act_parametrs_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22216,7 +23096,7 @@ CREATE TRIGGER act_parametrs_tr BEFORE INSERT OR UPDATE ON act_parametrs FOR EAC
 
 
 --
--- TOC entry 2936 (class 2620 OID 198364)
+-- TOC entry 2945 (class 2620 OID 198364)
 -- Name: actions_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22224,7 +23104,7 @@ CREATE TRIGGER actions_tr BEFORE INSERT OR UPDATE ON actions FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 2937 (class 2620 OID 198365)
+-- TOC entry 2946 (class 2620 OID 198365)
 -- Name: actions_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22232,7 +23112,7 @@ CREATE TRIGGER actions_tr_del BEFORE DELETE ON actions FOR EACH ROW EXECUTE PROC
 
 
 --
--- TOC entry 2938 (class 2620 OID 198366)
+-- TOC entry 2947 (class 2620 OID 198366)
 -- Name: config_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22240,8 +23120,8 @@ CREATE TRIGGER config_tr BEFORE UPDATE ON config FOR EACH ROW EXECUTE PROCEDURE 
 
 
 --
--- TOC entry 3627 (class 0 OID 0)
--- Dependencies: 2938
+-- TOC entry 3644 (class 0 OID 0)
+-- Dependencies: 2947
 -- Name: TRIGGER config_tr ON config; Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -22249,7 +23129,7 @@ COMMENT ON TRIGGER config_tr ON config IS 'config checks';
 
 
 --
--- TOC entry 2939 (class 2620 OID 198367)
+-- TOC entry 2948 (class 2620 OID 198367)
 -- Name: config_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22257,7 +23137,7 @@ CREATE TRIGGER config_tr_del BEFORE DELETE ON config FOR EACH ROW EXECUTE PROCED
 
 
 --
--- TOC entry 2940 (class 2620 OID 198368)
+-- TOC entry 2949 (class 2620 OID 198368)
 -- Name: config_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22265,7 +23145,7 @@ CREATE TRIGGER config_tr_ins BEFORE INSERT ON config FOR EACH ROW EXECUTE PROCED
 
 
 --
--- TOC entry 2941 (class 2620 OID 198369)
+-- TOC entry 2950 (class 2620 OID 198369)
 -- Name: dialog_messages_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22273,7 +23153,7 @@ CREATE TRIGGER dialog_messages_tr_ins BEFORE INSERT ON dialog_messages FOR EACH 
 
 
 --
--- TOC entry 2942 (class 2620 OID 198370)
+-- TOC entry 2951 (class 2620 OID 198370)
 -- Name: dialogs_tr_edit; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22281,7 +23161,7 @@ CREATE TRIGGER dialogs_tr_edit BEFORE UPDATE ON dialogs FOR EACH ROW EXECUTE PRO
 
 
 --
--- TOC entry 2943 (class 2620 OID 198371)
+-- TOC entry 2952 (class 2620 OID 198371)
 -- Name: dialogs_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22289,7 +23169,7 @@ CREATE TRIGGER dialogs_tr_ins BEFORE INSERT ON dialogs FOR EACH ROW EXECUTE PROC
 
 
 --
--- TOC entry 2944 (class 2620 OID 198372)
+-- TOC entry 2953 (class 2620 OID 198372)
 -- Name: dialogs_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22297,7 +23177,7 @@ CREATE TRIGGER dialogs_tr_ins_after AFTER INSERT ON dialogs FOR EACH ROW EXECUTE
 
 
 --
--- TOC entry 2945 (class 2620 OID 198373)
+-- TOC entry 2954 (class 2620 OID 198373)
 -- Name: filters_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22305,7 +23185,7 @@ CREATE TRIGGER filters_tr BEFORE INSERT OR UPDATE ON filters FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 2946 (class 2620 OID 198374)
+-- TOC entry 2955 (class 2620 OID 198374)
 -- Name: menus_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22313,7 +23193,7 @@ CREATE TRIGGER menus_tr BEFORE INSERT OR UPDATE OF menutype, ismainmenu ON menus
 
 
 --
--- TOC entry 2947 (class 2620 OID 198375)
+-- TOC entry 2956 (class 2620 OID 198375)
 -- Name: menus_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22321,7 +23201,7 @@ CREATE TRIGGER menus_tr_del BEFORE DELETE ON menus FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
--- TOC entry 2948 (class 2620 OID 198376)
+-- TOC entry 2957 (class 2620 OID 198376)
 -- Name: select_condition_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22331,7 +23211,7 @@ ALTER TABLE select_condition DISABLE TRIGGER select_condition_tr;
 
 
 --
--- TOC entry 2949 (class 2620 OID 198377)
+-- TOC entry 2958 (class 2620 OID 198377)
 -- Name: spapi_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22339,7 +23219,7 @@ CREATE TRIGGER spapi_tr BEFORE INSERT OR UPDATE ON spapi FOR EACH ROW EXECUTE PR
 
 
 --
--- TOC entry 2950 (class 2620 OID 198378)
+-- TOC entry 2959 (class 2620 OID 198378)
 -- Name: trees_add_org; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22347,7 +23227,7 @@ CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON trees FOR EACH 
 
 
 --
--- TOC entry 2951 (class 2620 OID 198379)
+-- TOC entry 2960 (class 2620 OID 198379)
 -- Name: trees_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22355,7 +23235,7 @@ CREATE TRIGGER trees_tr_del BEFORE DELETE ON trees FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
--- TOC entry 2952 (class 2620 OID 198380)
+-- TOC entry 2961 (class 2620 OID 198380)
 -- Name: treesbranches_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22363,7 +23243,7 @@ CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, isma
 
 
 --
--- TOC entry 2953 (class 2620 OID 198381)
+-- TOC entry 2962 (class 2620 OID 198381)
 -- Name: users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22371,7 +23251,7 @@ CREATE TRIGGER users_tr BEFORE INSERT OR UPDATE OF password, roles, orgs, userid
 
 
 --
--- TOC entry 2954 (class 2620 OID 198382)
+-- TOC entry 2963 (class 2620 OID 198382)
 -- Name: views_tr_check; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22379,7 +23259,7 @@ CREATE TRIGGER views_tr_check BEFORE INSERT OR UPDATE ON views FOR EACH ROW EXEC
 
 
 --
--- TOC entry 2955 (class 2620 OID 198383)
+-- TOC entry 2964 (class 2620 OID 198383)
 -- Name: views_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22387,7 +23267,7 @@ CREATE TRIGGER views_tr_del BEFORE DELETE ON views FOR EACH ROW EXECUTE PROCEDUR
 
 
 --
--- TOC entry 2956 (class 2620 OID 198384)
+-- TOC entry 2965 (class 2620 OID 198384)
 -- Name: views_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22395,7 +23275,7 @@ CREATE TRIGGER views_tr_ins_after AFTER INSERT ON views FOR EACH ROW EXECUTE PRO
 
 
 --
--- TOC entry 2957 (class 2620 OID 198385)
+-- TOC entry 2966 (class 2620 OID 198385)
 -- Name: visible_condition_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -22407,7 +23287,7 @@ ALTER TABLE visible_condition DISABLE TRIGGER visible_condition_tr;
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 2958 (class 2620 OID 198386)
+-- TOC entry 2967 (class 2620 OID 198386)
 -- Name: reportlist_tr; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -22415,7 +23295,7 @@ CREATE TRIGGER reportlist_tr BEFORE UPDATE OF title, path, template, functitle, 
 
 
 --
--- TOC entry 2959 (class 2620 OID 198387)
+-- TOC entry 2968 (class 2620 OID 198387)
 -- Name: reportlist_tr_ins; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -22423,7 +23303,7 @@ CREATE TRIGGER reportlist_tr_ins BEFORE INSERT ON reportlist FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 2960 (class 2620 OID 198388)
+-- TOC entry 2969 (class 2620 OID 198388)
 -- Name: reportparams_tr; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -22433,7 +23313,39 @@ CREATE TRIGGER reportparams_tr BEFORE INSERT OR UPDATE ON reportparams FOR EACH 
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 2964 (class 2620 OID 198688)
+-- TOC entry 2970 (class 2620 OID 198773)
+-- Name: functionslist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE TRIGGER functionslist_tr_del BEFORE DELETE ON functionslist FOR EACH ROW EXECUTE PROCEDURE tr_functionslist_tr_del();
+
+
+--
+-- TOC entry 2972 (class 2620 OID 204530)
+-- Name: functionslist_tr_desc; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE TRIGGER functionslist_tr_desc BEFORE UPDATE OF descr ON functionslist FOR EACH ROW EXECUTE PROCEDURE tr_functionslist_tr_desc();
+
+
+--
+-- TOC entry 2971 (class 2620 OID 198824)
+-- Name: functionslist_tr_dll; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE TRIGGER functionslist_tr_dll BEFORE UPDATE OF dll ON functionslist FOR EACH ROW EXECUTE PROCEDURE tr_functionslist_tr_dll();
+
+
+--
+-- TOC entry 2973 (class 2620 OID 220937)
+-- Name: functionslist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE TRIGGER functionslist_tr_ins BEFORE INSERT ON functionslist FOR EACH ROW EXECUTE PROCEDURE tr_functionslist_tr_ins();
+
+
+--
+-- TOC entry 2977 (class 2620 OID 198688)
 -- Name: schemalist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22441,7 +23353,7 @@ CREATE TRIGGER schemalist_tr_del BEFORE DELETE ON schemalist FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 2961 (class 2620 OID 198590)
+-- TOC entry 2974 (class 2620 OID 198590)
 -- Name: schemalist_tr_descr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22449,7 +23361,7 @@ CREATE TRIGGER schemalist_tr_descr BEFORE UPDATE OF schemadescr ON schemalist FO
 
 
 --
--- TOC entry 2963 (class 2620 OID 198684)
+-- TOC entry 2976 (class 2620 OID 198684)
 -- Name: schemalist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22457,7 +23369,7 @@ CREATE TRIGGER schemalist_tr_ins BEFORE INSERT ON schemalist FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 2962 (class 2620 OID 198592)
+-- TOC entry 2975 (class 2620 OID 198592)
 -- Name: schemalist_tr_name; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22465,7 +23377,7 @@ CREATE TRIGGER schemalist_tr_name BEFORE UPDATE OF schemaname ON schemalist FOR 
 
 
 --
--- TOC entry 2969 (class 2620 OID 198621)
+-- TOC entry 2982 (class 2620 OID 198621)
 -- Name: tablecolumns_tr_accur; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22473,7 +23385,7 @@ CREATE TRIGGER tablecolumns_tr_accur BEFORE UPDATE OF accur ON tablecolumns FOR 
 
 
 --
--- TOC entry 2966 (class 2620 OID 198605)
+-- TOC entry 2979 (class 2620 OID 198605)
 -- Name: tablecolumns_tr_coldesc; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22481,7 +23393,7 @@ CREATE TRIGGER tablecolumns_tr_coldesc BEFORE UPDATE OF coldesc ON tablecolumns 
 
 
 --
--- TOC entry 2965 (class 2620 OID 198603)
+-- TOC entry 2978 (class 2620 OID 198603)
 -- Name: tablecolumns_tr_colname; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22489,7 +23401,7 @@ CREATE TRIGGER tablecolumns_tr_colname BEFORE UPDATE OF colname ON tablecolumns 
 
 
 --
--- TOC entry 2972 (class 2620 OID 198641)
+-- TOC entry 2985 (class 2620 OID 198641)
 -- Name: tablecolumns_tr_defval; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22497,7 +23409,7 @@ CREATE TRIGGER tablecolumns_tr_defval BEFORE UPDATE OF defval ON tablecolumns FO
 
 
 --
--- TOC entry 2974 (class 2620 OID 198680)
+-- TOC entry 2987 (class 2620 OID 198680)
 -- Name: tablecolumns_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22505,7 +23417,7 @@ CREATE TRIGGER tablecolumns_tr_del BEFORE DELETE ON tablecolumns FOR EACH ROW EX
 
 
 --
--- TOC entry 2973 (class 2620 OID 198662)
+-- TOC entry 2986 (class 2620 OID 198662)
 -- Name: tablecolumns_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22513,7 +23425,7 @@ CREATE TRIGGER tablecolumns_tr_ins BEFORE INSERT ON tablecolumns FOR EACH ROW EX
 
 
 --
--- TOC entry 2970 (class 2620 OID 198630)
+-- TOC entry 2983 (class 2620 OID 198630)
 -- Name: tablecolumns_tr_notnull; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22521,7 +23433,7 @@ CREATE TRIGGER tablecolumns_tr_notnull BEFORE UPDATE OF "notnull" ON tablecolumn
 
 
 --
--- TOC entry 2968 (class 2620 OID 198616)
+-- TOC entry 2981 (class 2620 OID 198616)
 -- Name: tablecolumns_tr_size; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22529,7 +23441,7 @@ CREATE TRIGGER tablecolumns_tr_size BEFORE UPDATE OF size ON tablecolumns FOR EA
 
 
 --
--- TOC entry 2967 (class 2620 OID 198614)
+-- TOC entry 2980 (class 2620 OID 198614)
 -- Name: tablecolumns_tr_type; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22537,7 +23449,7 @@ CREATE TRIGGER tablecolumns_tr_type BEFORE UPDATE OF coltype ON tablecolumns FOR
 
 
 --
--- TOC entry 2971 (class 2620 OID 198636)
+-- TOC entry 2984 (class 2620 OID 198636)
 -- Name: tablecolumns_tr_uniq; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22545,7 +23457,15 @@ CREATE TRIGGER tablecolumns_tr_uniq BEFORE UPDATE OF uniq ON tablecolumns FOR EA
 
 
 --
--- TOC entry 2976 (class 2620 OID 198598)
+-- TOC entry 2991 (class 2620 OID 198754)
+-- Name: tablelist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE TRIGGER tablelist_tr_del BEFORE DELETE ON tablelist FOR EACH ROW EXECUTE PROCEDURE tr_tablelist_tr_del();
+
+
+--
+-- TOC entry 2989 (class 2620 OID 198598)
 -- Name: tablelist_tr_descr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22553,7 +23473,15 @@ CREATE TRIGGER tablelist_tr_descr BEFORE UPDATE OF descr ON tablelist FOR EACH R
 
 
 --
--- TOC entry 2975 (class 2620 OID 198596)
+-- TOC entry 2990 (class 2620 OID 198718)
+-- Name: tablelist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE TRIGGER tablelist_tr_ins BEFORE INSERT ON tablelist FOR EACH ROW EXECUTE PROCEDURE tr_tablelist_tr_ins();
+
+
+--
+-- TOC entry 2988 (class 2620 OID 198596)
 -- Name: tablelist_tr_name; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -22563,7 +23491,7 @@ CREATE TRIGGER tablelist_tr_name BEFORE UPDATE OF tablename ON tablelist FOR EAC
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2977 (class 2620 OID 198389)
+-- TOC entry 2992 (class 2620 OID 198389)
 -- Name: major_table_tr; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -22571,7 +23499,7 @@ CREATE TRIGGER major_table_tr BEFORE INSERT OR UPDATE ON major_table FOR EACH RO
 
 
 --
--- TOC entry 2978 (class 2620 OID 198390)
+-- TOC entry 2993 (class 2620 OID 198390)
 -- Name: major_table_tr1; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -22581,7 +23509,7 @@ CREATE TRIGGER major_table_tr1 BEFORE UPDATE OF text ON major_table FOR EACH ROW
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2904 (class 2606 OID 198391)
+-- TOC entry 2913 (class 2606 OID 198391)
 -- Name: act_parametrs_fk_action; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22590,7 +23518,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 2905 (class 2606 OID 198396)
+-- TOC entry 2914 (class 2606 OID 198396)
 -- Name: act_parametrs_fk_confg; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22599,7 +23527,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 2906 (class 2606 OID 198401)
+-- TOC entry 2915 (class 2606 OID 198401)
 -- Name: act_parametrs_fk_qt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22608,7 +23536,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 2907 (class 2606 OID 198406)
+-- TOC entry 2916 (class 2606 OID 198406)
 -- Name: act_visible_condions_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22617,7 +23545,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 2908 (class 2606 OID 198411)
+-- TOC entry 2917 (class 2606 OID 198411)
 -- Name: act_visible_condions_fk1; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22626,7 +23554,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 2909 (class 2606 OID 198416)
+-- TOC entry 2918 (class 2606 OID 198416)
 -- Name: act_visible_condions_fk_act; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22635,7 +23563,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 2910 (class 2606 OID 198421)
+-- TOC entry 2919 (class 2606 OID 198421)
 -- Name: actions_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22644,7 +23572,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 2911 (class 2606 OID 198426)
+-- TOC entry 2920 (class 2606 OID 198426)
 -- Name: actions_fk_actype; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22653,7 +23581,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 2912 (class 2606 OID 198431)
+-- TOC entry 2921 (class 2606 OID 198431)
 -- Name: actions_fk_apicalinme; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22662,7 +23590,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 2913 (class 2606 OID 198436)
+-- TOC entry 2922 (class 2606 OID 198436)
 -- Name: actions_fk_apimeth; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22671,7 +23599,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 2914 (class 2606 OID 198441)
+-- TOC entry 2923 (class 2606 OID 198441)
 -- Name: config_fk_ct; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22680,7 +23608,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 2915 (class 2606 OID 198446)
+-- TOC entry 2924 (class 2606 OID 198446)
 -- Name: config_fk_view; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22689,7 +23617,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 2916 (class 2606 OID 198451)
+-- TOC entry 2925 (class 2606 OID 198451)
 -- Name: defaultval_fk_ao; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22698,7 +23626,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 2917 (class 2606 OID 198456)
+-- TOC entry 2926 (class 2606 OID 198456)
 -- Name: defaultval_fk_bo; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22707,7 +23635,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 2918 (class 2606 OID 198461)
+-- TOC entry 2927 (class 2606 OID 198461)
 -- Name: defaultval_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22716,7 +23644,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 2919 (class 2606 OID 198466)
+-- TOC entry 2928 (class 2606 OID 198466)
 -- Name: filters_fk_c; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22725,7 +23653,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 2920 (class 2606 OID 198471)
+-- TOC entry 2929 (class 2606 OID 198471)
 -- Name: filters_fk_ft; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22734,7 +23662,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 2921 (class 2606 OID 198476)
+-- TOC entry 2930 (class 2606 OID 198476)
 -- Name: filters_fk_vi; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22743,7 +23671,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 2922 (class 2606 OID 198481)
+-- TOC entry 2931 (class 2606 OID 198481)
 -- Name: mainmenu_fk_mn; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22752,7 +23680,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
--- TOC entry 2923 (class 2606 OID 198486)
+-- TOC entry 2932 (class 2606 OID 198486)
 -- Name: notifications_fk_userid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22761,7 +23689,7 @@ ALTER TABLE ONLY notifications
 
 
 --
--- TOC entry 2924 (class 2606 OID 198491)
+-- TOC entry 2933 (class 2606 OID 198491)
 -- Name: orgs_fk_ot; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22770,7 +23698,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 2925 (class 2606 OID 198496)
+-- TOC entry 2934 (class 2606 OID 198496)
 -- Name: select_condition_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22779,7 +23707,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 2926 (class 2606 OID 198501)
+-- TOC entry 2935 (class 2606 OID 198501)
 -- Name: select_condition_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22788,7 +23716,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 2927 (class 2606 OID 198506)
+-- TOC entry 2936 (class 2606 OID 198506)
 -- Name: select_condition_fk_valconf; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22797,7 +23725,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 2928 (class 2606 OID 198511)
+-- TOC entry 2937 (class 2606 OID 198511)
 -- Name: visible_condition_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22806,7 +23734,7 @@ ALTER TABLE ONLY visible_condition
 
 
 --
--- TOC entry 2929 (class 2606 OID 198516)
+-- TOC entry 2938 (class 2606 OID 198516)
 -- Name: visible_condition_fk_oper; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22815,7 +23743,7 @@ ALTER TABLE ONLY visible_condition
 
 
 --
--- TOC entry 2930 (class 2606 OID 198521)
+-- TOC entry 2939 (class 2606 OID 198521)
 -- Name: visible_condition_fk_v; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -22826,7 +23754,7 @@ ALTER TABLE ONLY visible_condition
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2931 (class 2606 OID 198526)
+-- TOC entry 2940 (class 2606 OID 198526)
 -- Name: dictionary_for_select_fk_or; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22835,7 +23763,7 @@ ALTER TABLE ONLY dictionary_for_select
 
 
 --
--- TOC entry 2932 (class 2606 OID 198531)
+-- TOC entry 2941 (class 2606 OID 198531)
 -- Name: major_table_seldic; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22844,7 +23772,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 2933 (class 2606 OID 198536)
+-- TOC entry 2942 (class 2606 OID 198536)
 -- Name: major_table_th; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22853,7 +23781,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 2934 (class 2606 OID 198541)
+-- TOC entry 2943 (class 2606 OID 198541)
 -- Name: relate_with_major_tab_id; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -22862,7 +23790,7 @@ ALTER TABLE ONLY relate_with_major
 
 
 --
--- TOC entry 3213 (class 0 OID 0)
+-- TOC entry 3228 (class 0 OID 0)
 -- Dependencies: 11
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -22873,7 +23801,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2020-05-13 22:11:05
+-- Completed on 2020-05-14 17:27:58
 
 --
 -- PostgreSQL database dump complete
