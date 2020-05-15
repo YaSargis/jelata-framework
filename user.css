@@ -22,6 +22,19 @@
   border-style: none;
 }
 
+.args_table {
+  font-size: 11px;
+  width:100%;
+}
+
+.args_table tbody {
+  color: #1c92ff;
+}
+
+.args_table td, th {
+  border-style: none;
+}
+
 .t_table {
   font-size: 11px;
 }
