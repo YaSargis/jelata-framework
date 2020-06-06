@@ -91,54 +91,6 @@
   resize: both;
 }
 
-@font-face {
-  font-family: RMIASFont;
-  src: url('build/17487.ttf');
-}
-
-@font-face {
-  font-family: RM2;
-  src: url('build/17493.otf');
-}
-
-@font-face {
-  font-family: RM3;
-  src: url('build/17428.ttf');
-}
-
-@font-face {
-  font-family: RM4;
-  src: url('build/16864.ttf');
-}
-
-@font-face {
-  font-family: RM5;
-  src: url('build/16658.otf');
-}
-
-@font-face {
-  font-family: RM6;
-  src: url('build/16198.ttf');
-}
-
-
-@font-face {
-  font-family: RM7;
-  src: url('build/17338.otf');
-}
-
-
-
-
-/*
-span {
-	font-size: 16px;
-}
-div, span {
-  font-family: RM7;
-
-}*/
-
 
 
 .content_app {
@@ -276,6 +228,7 @@ body {
 }
 
 
+/* MOBILE */
 @media screen
   and (max-device-width: 1080px)
   and (max-device-height: 1920px)
@@ -314,14 +267,6 @@ body {
 
   }
 
-  /*.nob span {
-    padding-left:40px;
-  }
-
-  .lil_list_text span, b {
-    padding-left:40px;
-  }*/
-
   button {
     min-width:100px;
     min-height:55px;
@@ -334,7 +279,7 @@ body {
 
 
 }
-
+/* MOBILE */
 
 .p11 {
     font-size: 11px;
@@ -349,3 +294,33 @@ body {
   background-color: #fff44c;
   color: #000;
 }
+
+/* CHAT */
+
+.chat_list {
+  background-color: aliceblue;
+}
+
+.chat_list div {
+  background-color: aliceblue;
+  margin: 0;
+  padding: 2px;
+}
+
+.avka {
+
+}
+
+.avka img {
+    height: 65px;
+    width: 65px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.chattitle {
+    font-size: large;
+    font-weight: 500;
+    color: rgba(0,0,0,.65);
+}
+/* CHAT */
