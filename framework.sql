@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.19
 -- Dumped by pg_dump version 9.5.1
 
--- Started on 2020-06-04 14:18:35
+-- Started on 2020-06-06 11:23:16
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -903,7 +903,7 @@ COMMENT ON FUNCTION fn_config_fncol_add(injson json) IS 'ADD fn COLUMN IN CONFIG
 
 
 --
--- TOC entry 368 (class 1255 OID 72620)
+-- TOC entry 590 (class 1255 OID 72620)
 -- Name: fn_config_inscol(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -976,15 +976,33 @@ BEGIN
                count(id) 
              FROM framework.config 
              WHERE viewid = _viewid)::varchar) as title,
-                COALESCE(pz.relation,(
-                	SELECT 
-                    	concat(y.table_schema, '.', y.table_name)
+             COALESCE(pz.relation,(
+                  SELECT 
+                    r.confrelid::regclass::varchar
+                  FROM pg_constraint r
+                       JOIN pg_attribute as c on  c.attrelid = r.conrelid and r.conkey[1] = c.attnum
+                     --  JOIN pg_attribute as c on  c.attrelid = r.confrelid and r.confkey[1] = c.attnum
+                  WHERE r.conrelid = concat(t.table_schema,'.',t.table_name)::regclass AND r.contype = 'f' AND c.attname = t.column_name
+                  LIMIT 1
+             )) as relation,
+             (                 
+                  SELECT 
+                    c1.attname
+                  FROM pg_constraint r
+                       JOIN pg_attribute as c on  c.attrelid = r.conrelid and r.conkey[1] = c.attnum
+                       JOIN pg_attribute as c1 on  c1.attrelid = r.confrelid and r.confkey[1] = c1.attnum
+                  WHERE r.conrelid = concat(t.table_schema,'.',t.table_name)::regclass AND r.contype = 'f' AND c.attname = t.column_name
+                  LIMIT 1
+              ) as relcol,
+              /*  COALESCE(pz.relation,(
+                    SELECT 
+                        concat(y.table_schema, '.', y.table_name)
                     FROM information_schema.table_constraints as c
-                    	JOIN information_schema.key_column_usage AS x ON
-                        	c.constraint_name = x.constraint_name and
+                        JOIN information_schema.key_column_usage AS x ON
+                            c.constraint_name = x.constraint_name and
                             x.column_name = pz.column_name
                         JOIN information_schema.constraint_column_usage AS y ON 
-                        	y.constraint_name = c.constraint_name and
+                            y.constraint_name = c.constraint_name and
                             y.constraint_schema = c.constraint_schema
                     WHERE c.table_name = pz.table_name and
                           c.table_schema = pz.table_schema and
@@ -992,20 +1010,20 @@ BEGIN
                     LIMIT 1
                 )) as relation,
                 (
-                	SELECT 
-                    	concat(y.column_name)
+                    SELECT 
+                        concat(y.column_name)
                     FROM information_schema.table_constraints as c
-                    	JOIN information_schema.key_column_usage AS x ON
+                        JOIN information_schema.key_column_usage AS x ON
                              c.constraint_name = x.constraint_name and
                              x.column_name = pz.column_name
                         JOIN information_schema.constraint_column_usage AS y ON 
-                        	y.constraint_name = c.constraint_name and
+                            y.constraint_name = c.constraint_name and
                             y.constraint_schema = c.constraint_schema
                     WHERE c.table_name = pz.table_name and
-                     	  c.table_schema = pz.table_schema and
+                           c.table_schema = pz.table_schema and
                           c.constraint_type = 'FOREIGN KEY'
                     LIMIT 1
-                ) as relcol,
+                ) as relcol,*/
              pz.depency, COALESCE((
                SELECT 
                   max(column_order) 
@@ -1071,7 +1089,7 @@ ALTER FUNCTION framework.fn_config_inscol(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3366 (class 0 OID 0)
--- Dependencies: 368
+-- Dependencies: 590
 -- Name: FUNCTION fn_config_inscol(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1079,7 +1097,7 @@ COMMENT ON FUNCTION fn_config_inscol(injson json) IS 'add fn column in config';
 
 
 --
--- TOC entry 369 (class 1255 OID 72621)
+-- TOC entry 368 (class 1255 OID 72621)
 -- Name: fn_config_relation(integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1118,7 +1136,7 @@ ALTER FUNCTION framework.fn_config_relation(_id integer, OUT _relation character
 
 --
 -- TOC entry 3367 (class 0 OID 0)
--- Dependencies: 369
+-- Dependencies: 368
 -- Name: FUNCTION fn_config_relation(_id integer, OUT _relation character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1126,7 +1144,7 @@ COMMENT ON FUNCTION fn_config_relation(_id integer, OUT _relation character vary
 
 
 --
--- TOC entry 370 (class 1255 OID 72622)
+-- TOC entry 369 (class 1255 OID 72622)
 -- Name: fn_config_relationcolumns(integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1171,7 +1189,7 @@ ALTER FUNCTION framework.fn_config_relationcolumns(_id integer, OUT relation_col
 
 --
 -- TOC entry 3368 (class 0 OID 0)
--- Dependencies: 370
+-- Dependencies: 369
 -- Name: FUNCTION fn_config_relationcolumns(_id integer, OUT relation_columns character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1179,7 +1197,7 @@ COMMENT ON FUNCTION fn_config_relationcolumns(_id integer, OUT relation_columns 
 
 
 --
--- TOC entry 372 (class 1255 OID 72623)
+-- TOC entry 371 (class 1255 OID 72623)
 -- Name: fn_config_selectapi(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1243,7 +1261,7 @@ ALTER FUNCTION framework.fn_config_selectapi(injson json, OUT outjson json) OWNE
 
 --
 -- TOC entry 3369 (class 0 OID 0)
--- Dependencies: 372
+-- Dependencies: 371
 -- Name: FUNCTION fn_config_selectapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1251,7 +1269,7 @@ COMMENT ON FUNCTION fn_config_selectapi(injson json, OUT outjson json) IS 'selec
 
 
 --
--- TOC entry 373 (class 1255 OID 72624)
+-- TOC entry 372 (class 1255 OID 72624)
 -- Name: fn_config_settings_apply(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1279,7 +1297,7 @@ ALTER FUNCTION framework.fn_config_settings_apply(injson json) OWNER TO postgres
 
 --
 -- TOC entry 3370 (class 0 OID 0)
--- Dependencies: 373
+-- Dependencies: 372
 -- Name: FUNCTION fn_config_settings_apply(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1287,7 +1305,7 @@ COMMENT ON FUNCTION fn_config_settings_apply(injson json) IS 'apply all columns 
 
 
 --
--- TOC entry 374 (class 1255 OID 72625)
+-- TOC entry 373 (class 1255 OID 72625)
 -- Name: fn_config_to_json(integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1473,7 +1491,7 @@ ALTER FUNCTION framework.fn_config_to_json(_viewid integer, OUT _config json) OW
 
 --
 -- TOC entry 3371 (class 0 OID 0)
--- Dependencies: 374
+-- Dependencies: 373
 -- Name: FUNCTION fn_config_to_json(_viewid integer, OUT _config json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1481,7 +1499,7 @@ COMMENT ON FUNCTION fn_config_to_json(_viewid integer, OUT _config json) IS 'CON
 
 
 --
--- TOC entry 375 (class 1255 OID 72626)
+-- TOC entry 374 (class 1255 OID 72626)
 -- Name: fn_configsettings_selectapi(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1512,7 +1530,7 @@ ALTER FUNCTION framework.fn_configsettings_selectapi(insjon json, OUT outjson js
 
 --
 -- TOC entry 3372 (class 0 OID 0)
--- Dependencies: 375
+-- Dependencies: 374
 -- Name: FUNCTION fn_configsettings_selectapi(insjon json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1520,7 +1538,7 @@ COMMENT ON FUNCTION fn_configsettings_selectapi(insjon json, OUT outjson json) I
 
 
 --
--- TOC entry 376 (class 1255 OID 72627)
+-- TOC entry 375 (class 1255 OID 72627)
 -- Name: fn_copyview(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1749,7 +1767,7 @@ ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO p
 
 --
 -- TOC entry 3373 (class 0 OID 0)
--- Dependencies: 376
+-- Dependencies: 375
 -- Name: FUNCTION fn_copyview(injson json, OUT _newid integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1757,7 +1775,7 @@ COMMENT ON FUNCTION fn_copyview(injson json, OUT _newid integer) IS 'COPY VIEW '
 
 
 --
--- TOC entry 377 (class 1255 OID 72629)
+-- TOC entry 589 (class 1255 OID 72629)
 -- Name: fn_createconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1789,15 +1807,15 @@ BEGIN
                 	t.column_name,'_',
                     SUBSTRING((uuid_in(md5(random()::text || now()::text)::cstring)::CHAR(36)),1,5)
                 ) as key,
-                (
-                	SELECT 
-                    	concat(y.table_schema, '.', y.table_name)
+                /*(
+                    SELECT 
+                        concat(y.table_schema, '.', y.table_name)
                     FROM information_schema.table_constraints as c
-                    	JOIN information_schema.key_column_usage AS x ON
-                        	c.constraint_name = x.constraint_name and
+                        JOIN information_schema.key_column_usage AS x ON
+                            c.constraint_name = x.constraint_name and
                             x.column_name = t.column_name
                         JOIN information_schema.constraint_column_usage AS y ON 
-                        	y.constraint_name = c.constraint_name and
+                            y.constraint_name = c.constraint_name and
                             y.constraint_schema = c.constraint_schema
                     WHERE c.table_name = t.table_name and
                           c.table_schema = t.table_schema and
@@ -1805,20 +1823,38 @@ BEGIN
                     LIMIT 1
                 ) as relation,
                 (
-                	SELECT 
-                    	concat(y.column_name)
+                    SELECT 
+                        concat(y.column_name)
                     FROM information_schema.table_constraints as c
-                    	JOIN information_schema.key_column_usage AS x ON
+                        JOIN information_schema.key_column_usage AS x ON
                              c.constraint_name = x.constraint_name and
                              x.column_name = t.column_name
                         JOIN information_schema.constraint_column_usage AS y ON 
-                        	y.constraint_name = c.constraint_name and
+                            y.constraint_name = c.constraint_name and
                             y.constraint_schema = c.constraint_schema
                     WHERE c.table_name = t.table_name and
-                     	  c.table_schema = t.table_schema and
+                           c.table_schema = t.table_schema and
                           c.constraint_type = 'FOREIGN KEY'
                     LIMIT 1
-                ) as relcol,
+                ) as relcol,*/
+                (
+                  SELECT 
+                    r.confrelid::regclass::varchar
+                  FROM pg_constraint r
+                       JOIN pg_attribute as c on  c.attrelid = r.conrelid and r.conkey[1] = c.attnum
+				     --  JOIN pg_attribute as c on  c.attrelid = r.confrelid and r.confkey[1] = c.attnum
+				  WHERE r.conrelid = concat(t.table_schema,'.',t.table_name)::regclass AND r.contype = 'f' AND c.attname = t.column_name
+				  LIMIT 1
+				) as relation,
+				(                 
+				  SELECT 
+                    c1.attname
+                  FROM pg_constraint r
+				       JOIN pg_attribute as c on  c.attrelid = r.conrelid and r.conkey[1] = c.attnum
+				       JOIN pg_attribute as c1 on  c1.attrelid = r.confrelid and r.confkey[1] = c1.attnum
+				  WHERE r.conrelid = concat(t.table_schema,'.',t.table_name)::regclass AND r.contype = 'f' AND c.attname = t.column_name
+				  LIMIT 1
+				 ) as relcol,
                 '[]' as relationcolums,
                 false as "join",
                 false as onetomany,
@@ -1890,7 +1926,7 @@ ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO
 
 --
 -- TOC entry 3374 (class 0 OID 0)
--- Dependencies: 377
+-- Dependencies: 589
 -- Name: FUNCTION fn_createconfig(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1898,7 +1934,7 @@ COMMENT ON FUNCTION fn_createconfig(injson json, OUT outjson json) IS 'CREATE VI
 
 
 --
--- TOC entry 379 (class 1255 OID 72630)
+-- TOC entry 377 (class 1255 OID 72630)
 -- Name: fn_createconfig_new(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2012,7 +2048,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig_new(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 380 (class 1255 OID 72631)
+-- TOC entry 378 (class 1255 OID 72631)
 -- Name: fn_cryptosess(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2070,7 +2106,7 @@ ALTER FUNCTION framework.fn_cryptosess(injson json, OUT sessid character) OWNER 
 
 --
 -- TOC entry 3375 (class 0 OID 0)
--- Dependencies: 380
+-- Dependencies: 378
 -- Name: FUNCTION fn_cryptosess(injson json, OUT sessid character); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2078,7 +2114,7 @@ COMMENT ON FUNCTION fn_cryptosess(injson json, OUT sessid character) IS 'AUTH IN
 
 
 --
--- TOC entry 381 (class 1255 OID 72632)
+-- TOC entry 379 (class 1255 OID 72632)
 -- Name: fn_deleteconfig_checked(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2133,7 +2169,7 @@ ALTER FUNCTION framework.fn_deleteconfig_checked(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3376 (class 0 OID 0)
--- Dependencies: 381
+-- Dependencies: 379
 -- Name: FUNCTION fn_deleteconfig_checked(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2141,7 +2177,7 @@ COMMENT ON FUNCTION fn_deleteconfig_checked(injson json) IS 'DELETE CHECKED CONF
 
 
 --
--- TOC entry 382 (class 1255 OID 72633)
+-- TOC entry 380 (class 1255 OID 72633)
 -- Name: fn_deleterow(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2261,7 +2297,7 @@ ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3377 (class 0 OID 0)
--- Dependencies: 382
+-- Dependencies: 380
 -- Name: FUNCTION fn_deleterow(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2269,7 +2305,7 @@ COMMENT ON FUNCTION fn_deleterow(injson json) IS 'DELETE ROW IN LIST COMPONENT (
 
 
 --
--- TOC entry 383 (class 1255 OID 72634)
+-- TOC entry 381 (class 1255 OID 72634)
 -- Name: fn_dialog_addadmin(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2384,7 +2420,7 @@ ALTER FUNCTION framework.fn_dialog_addadmin(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3378 (class 0 OID 0)
--- Dependencies: 383
+-- Dependencies: 381
 -- Name: FUNCTION fn_dialog_addadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2392,7 +2428,7 @@ COMMENT ON FUNCTION fn_dialog_addadmin(injson json) IS 'ADD USER TO ADMINS';
 
 
 --
--- TOC entry 384 (class 1255 OID 72635)
+-- TOC entry 382 (class 1255 OID 72635)
 -- Name: fn_dialog_adduser(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2499,7 +2535,7 @@ ALTER FUNCTION framework.fn_dialog_adduser(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3379 (class 0 OID 0)
--- Dependencies: 384
+-- Dependencies: 382
 -- Name: FUNCTION fn_dialog_adduser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2507,7 +2543,7 @@ COMMENT ON FUNCTION fn_dialog_adduser(injson json) IS 'ADD USER IN DIALOG';
 
 
 --
--- TOC entry 388 (class 1255 OID 72636)
+-- TOC entry 386 (class 1255 OID 72636)
 -- Name: fn_dialog_edit(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2602,7 +2638,7 @@ ALTER FUNCTION framework.fn_dialog_edit(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3380 (class 0 OID 0)
--- Dependencies: 388
+-- Dependencies: 386
 -- Name: FUNCTION fn_dialog_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2610,7 +2646,7 @@ COMMENT ON FUNCTION fn_dialog_edit(injson json) IS 'EDIT DIALOG';
 
 
 --
--- TOC entry 389 (class 1255 OID 72637)
+-- TOC entry 387 (class 1255 OID 72637)
 -- Name: fn_dialog_group_create(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2676,7 +2712,7 @@ ALTER FUNCTION framework.fn_dialog_group_create(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3381 (class 0 OID 0)
--- Dependencies: 389
+-- Dependencies: 387
 -- Name: FUNCTION fn_dialog_group_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2684,7 +2720,7 @@ COMMENT ON FUNCTION fn_dialog_group_create(injson json) IS 'CREATE GROUP DIALOG'
 
 
 --
--- TOC entry 390 (class 1255 OID 72638)
+-- TOC entry 388 (class 1255 OID 72638)
 -- Name: fn_dialog_leave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2788,7 +2824,7 @@ ALTER FUNCTION framework.fn_dialog_leave(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3382 (class 0 OID 0)
--- Dependencies: 390
+-- Dependencies: 388
 -- Name: FUNCTION fn_dialog_leave(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2796,7 +2832,7 @@ COMMENT ON FUNCTION fn_dialog_leave(injson json) IS 'REMOVE USER FROM DIALOG';
 
 
 --
--- TOC entry 391 (class 1255 OID 72639)
+-- TOC entry 389 (class 1255 OID 72639)
 -- Name: fn_dialog_message_bydialog(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2956,7 +2992,7 @@ ALTER FUNCTION framework.fn_dialog_message_bydialog(injson json, OUT outjson jso
 
 --
 -- TOC entry 3383 (class 0 OID 0)
--- Dependencies: 391
+-- Dependencies: 389
 -- Name: FUNCTION fn_dialog_message_bydialog(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2964,7 +3000,7 @@ COMMENT ON FUNCTION fn_dialog_message_bydialog(injson json, OUT outjson json) IS
 
 
 --
--- TOC entry 393 (class 1255 OID 72640)
+-- TOC entry 391 (class 1255 OID 72640)
 -- Name: fn_dialog_message_delete(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3051,7 +3087,7 @@ ALTER FUNCTION framework.fn_dialog_message_delete(injson json) OWNER TO postgres
 
 --
 -- TOC entry 3384 (class 0 OID 0)
--- Dependencies: 393
+-- Dependencies: 391
 -- Name: FUNCTION fn_dialog_message_delete(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3059,7 +3095,7 @@ COMMENT ON FUNCTION fn_dialog_message_delete(injson json) IS 'EDIR MESSAGE';
 
 
 --
--- TOC entry 394 (class 1255 OID 72641)
+-- TOC entry 392 (class 1255 OID 72641)
 -- Name: fn_dialog_message_edit(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3191,7 +3227,7 @@ ALTER FUNCTION framework.fn_dialog_message_edit(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3385 (class 0 OID 0)
--- Dependencies: 394
+-- Dependencies: 392
 -- Name: FUNCTION fn_dialog_message_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3199,7 +3235,7 @@ COMMENT ON FUNCTION fn_dialog_message_edit(injson json) IS 'EDIR MESSAGE';
 
 
 --
--- TOC entry 395 (class 1255 OID 72642)
+-- TOC entry 393 (class 1255 OID 72642)
 -- Name: fn_dialog_message_send(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3362,7 +3398,7 @@ ALTER FUNCTION framework.fn_dialog_message_send(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3386 (class 0 OID 0)
--- Dependencies: 395
+-- Dependencies: 393
 -- Name: FUNCTION fn_dialog_message_send(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3370,7 +3406,7 @@ COMMENT ON FUNCTION fn_dialog_message_send(injson json) IS 'SEND MESSAGE TO DIAL
 
 
 --
--- TOC entry 396 (class 1255 OID 72643)
+-- TOC entry 394 (class 1255 OID 72643)
 -- Name: fn_dialog_message_setread(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3429,7 +3465,7 @@ ALTER FUNCTION framework.fn_dialog_message_setread(injson json) OWNER TO postgre
 
 --
 -- TOC entry 3387 (class 0 OID 0)
--- Dependencies: 396
+-- Dependencies: 394
 -- Name: FUNCTION fn_dialog_message_setread(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3437,7 +3473,7 @@ COMMENT ON FUNCTION fn_dialog_message_setread(injson json) IS 'SET MESSAGE READE
 
 
 --
--- TOC entry 397 (class 1255 OID 72644)
+-- TOC entry 395 (class 1255 OID 72644)
 -- Name: fn_dialog_personal_create(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3514,7 +3550,7 @@ ALTER FUNCTION framework.fn_dialog_personal_create(injson json) OWNER TO postgre
 
 --
 -- TOC entry 3388 (class 0 OID 0)
--- Dependencies: 397
+-- Dependencies: 395
 -- Name: FUNCTION fn_dialog_personal_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3522,7 +3558,7 @@ COMMENT ON FUNCTION fn_dialog_personal_create(injson json) IS 'CREATE PERSONAL D
 
 
 --
--- TOC entry 398 (class 1255 OID 72645)
+-- TOC entry 396 (class 1255 OID 72645)
 -- Name: fn_dialog_removeadmin(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3636,7 +3672,7 @@ ALTER FUNCTION framework.fn_dialog_removeadmin(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3389 (class 0 OID 0)
--- Dependencies: 398
+-- Dependencies: 396
 -- Name: FUNCTION fn_dialog_removeadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3780,7 +3816,7 @@ COMMENT ON FUNCTION fn_dialog_removeuser(injson json) IS 'REMOVE USER FROM DIALO
 
 
 --
--- TOC entry 399 (class 1255 OID 72647)
+-- TOC entry 397 (class 1255 OID 72647)
 -- Name: fn_dialogs_byuser(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3931,7 +3967,7 @@ ALTER FUNCTION framework.fn_dialogs_byuser(injson json, OUT outjson json) OWNER 
 
 --
 -- TOC entry 3391 (class 0 OID 0)
--- Dependencies: 399
+-- Dependencies: 397
 -- Name: FUNCTION fn_dialogs_byuser(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3939,7 +3975,7 @@ COMMENT ON FUNCTION fn_dialogs_byuser(injson json, OUT outjson json) IS 'USER DI
 
 
 --
--- TOC entry 400 (class 1255 OID 72648)
+-- TOC entry 398 (class 1255 OID 72648)
 -- Name: fn_dialogs_chats_ws(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4087,7 +4123,7 @@ ALTER FUNCTION framework.fn_dialogs_chats_ws(injson json, OUT outjson json) OWNE
 
 --
 -- TOC entry 3392 (class 0 OID 0)
--- Dependencies: 400
+-- Dependencies: 398
 -- Name: FUNCTION fn_dialogs_chats_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4095,7 +4131,7 @@ COMMENT ON FUNCTION fn_dialogs_chats_ws(injson json, OUT outjson json) IS 'DIALO
 
 
 --
--- TOC entry 401 (class 1255 OID 72649)
+-- TOC entry 399 (class 1255 OID 72649)
 -- Name: fn_dialogs_chatsmessages_ws(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4217,7 +4253,7 @@ ALTER FUNCTION framework.fn_dialogs_chatsmessages_ws(injson json, OUT outjson js
 
 --
 -- TOC entry 3393 (class 0 OID 0)
--- Dependencies: 401
+-- Dependencies: 399
 -- Name: FUNCTION fn_dialogs_chatsmessages_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4225,7 +4261,7 @@ COMMENT ON FUNCTION fn_dialogs_chatsmessages_ws(injson json, OUT outjson json) I
 
 
 --
--- TOC entry 402 (class 1255 OID 72650)
+-- TOC entry 400 (class 1255 OID 72650)
 -- Name: fn_dialogs_notif_setsended(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4256,7 +4292,7 @@ ALTER FUNCTION framework.fn_dialogs_notif_setsended(injson json) OWNER TO postgr
 
 --
 -- TOC entry 3394 (class 0 OID 0)
--- Dependencies: 402
+-- Dependencies: 400
 -- Name: FUNCTION fn_dialogs_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4264,7 +4300,7 @@ COMMENT ON FUNCTION fn_dialogs_notif_setsended(injson json) IS 'SET DIALOGS NOTI
 
 
 --
--- TOC entry 403 (class 1255 OID 72651)
+-- TOC entry 401 (class 1255 OID 72651)
 -- Name: fn_dialogs_usersearch(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4312,7 +4348,7 @@ ALTER FUNCTION framework.fn_dialogs_usersearch(injson json, OUT outjson json) OW
 
 --
 -- TOC entry 3395 (class 0 OID 0)
--- Dependencies: 403
+-- Dependencies: 401
 -- Name: FUNCTION fn_dialogs_usersearch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4320,7 +4356,7 @@ COMMENT ON FUNCTION fn_dialogs_usersearch(injson json, OUT outjson json) IS 'SEA
 
 
 --
--- TOC entry 404 (class 1255 OID 72652)
+-- TOC entry 402 (class 1255 OID 72652)
 -- Name: fn_fapi(json, character varying, smallint, character, smallint); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4411,7 +4447,7 @@ ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apityp
 
 --
 -- TOC entry 3396 (class 0 OID 0)
--- Dependencies: 404
+-- Dependencies: 402
 -- Name: FUNCTION fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4419,7 +4455,7 @@ COMMENT ON FUNCTION fn_fapi(injson json, apititle character varying, apitype sma
 
 
 --
--- TOC entry 371 (class 1255 OID 72653)
+-- TOC entry 370 (class 1255 OID 72653)
 -- Name: fn_filter_add_untitle(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4459,7 +4495,7 @@ ALTER FUNCTION framework.fn_filter_add_untitle(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3397 (class 0 OID 0)
--- Dependencies: 371
+-- Dependencies: 370
 -- Name: FUNCTION fn_filter_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4467,7 +4503,7 @@ COMMENT ON FUNCTION fn_filter_add_untitle(injson json) IS '-- add untitle filter
 
 
 --
--- TOC entry 407 (class 1255 OID 72654)
+-- TOC entry 405 (class 1255 OID 72654)
 -- Name: fn_formparams_V004(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4528,7 +4564,7 @@ $$;
 ALTER FUNCTION framework."fn_formparams_V004"(injson json, OUT tables json, OUT filtertypes json, OUT viewtypes json, OUT columntypes json) OWNER TO postgres;
 
 --
--- TOC entry 408 (class 1255 OID 72655)
+-- TOC entry 406 (class 1255 OID 72655)
 -- Name: fn_formselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4797,7 +4833,7 @@ ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO p
 
 --
 -- TOC entry 3398 (class 0 OID 0)
--- Dependencies: 408
+-- Dependencies: 406
 -- Name: FUNCTION fn_formselect(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4805,7 +4841,7 @@ COMMENT ON FUNCTION fn_formselect(injson json, OUT outjson json) IS 'select data
 
 
 --
--- TOC entry 409 (class 1255 OID 72657)
+-- TOC entry 407 (class 1255 OID 72657)
 -- Name: fn_functions_getall_spapi(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4854,7 +4890,7 @@ ALTER FUNCTION framework.fn_functions_getall_spapi(injson json, OUT outjson json
 
 --
 -- TOC entry 3399 (class 0 OID 0)
--- Dependencies: 409
+-- Dependencies: 407
 -- Name: FUNCTION fn_functions_getall_spapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4862,7 +4898,7 @@ COMMENT ON FUNCTION fn_functions_getall_spapi(injson json, OUT outjson json) IS 
 
 
 --
--- TOC entry 410 (class 1255 OID 72658)
+-- TOC entry 408 (class 1255 OID 72658)
 -- Name: fn_getacttypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4900,7 +4936,7 @@ $$;
 ALTER FUNCTION framework.fn_getacttypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 411 (class 1255 OID 72659)
+-- TOC entry 409 (class 1255 OID 72659)
 -- Name: fn_getfunctions(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4938,7 +4974,7 @@ ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO
 
 --
 -- TOC entry 3400 (class 0 OID 0)
--- Dependencies: 411
+-- Dependencies: 409
 -- Name: FUNCTION fn_getfunctions(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4946,7 +4982,7 @@ COMMENT ON FUNCTION fn_getfunctions(injson json, OUT outjson json) IS 'functions
 
 
 --
--- TOC entry 412 (class 1255 OID 72660)
+-- TOC entry 410 (class 1255 OID 72660)
 -- Name: fn_getselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5001,7 +5037,7 @@ $$;
 ALTER FUNCTION framework.fn_getselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 413 (class 1255 OID 72661)
+-- TOC entry 411 (class 1255 OID 72661)
 -- Name: fn_gettables_sel(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5029,7 +5065,7 @@ ALTER FUNCTION framework.fn_gettables_sel(injson json, OUT outjson json) OWNER T
 
 --
 -- TOC entry 3401 (class 0 OID 0)
--- Dependencies: 413
+-- Dependencies: 411
 -- Name: FUNCTION fn_gettables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5037,7 +5073,7 @@ COMMENT ON FUNCTION fn_gettables_sel(injson json, OUT outjson json) IS 'ALL TABL
 
 
 --
--- TOC entry 414 (class 1255 OID 72662)
+-- TOC entry 412 (class 1255 OID 72662)
 -- Name: fn_getusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5063,7 +5099,7 @@ $$;
 ALTER FUNCTION framework.fn_getusersettings(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 378 (class 1255 OID 72663)
+-- TOC entry 376 (class 1255 OID 72663)
 -- Name: fn_htmldatatype(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5116,7 +5152,7 @@ ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT html
 
 --
 -- TOC entry 3402 (class 0 OID 0)
--- Dependencies: 378
+-- Dependencies: 376
 -- Name: FUNCTION fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5124,7 +5160,7 @@ COMMENT ON FUNCTION fn_htmldatatype(sqldatatype character varying, OUT htmltype 
 
 
 --
--- TOC entry 385 (class 1255 OID 72664)
+-- TOC entry 383 (class 1255 OID 72664)
 -- Name: fn_logout(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5147,7 +5183,7 @@ ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO p
 
 --
 -- TOC entry 3403 (class 0 OID 0)
--- Dependencies: 385
+-- Dependencies: 383
 -- Name: FUNCTION fn_logout(sesid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5155,7 +5191,7 @@ COMMENT ON FUNCTION fn_logout(sesid character, OUT outjson json) IS 'log out';
 
 
 --
--- TOC entry 386 (class 1255 OID 72665)
+-- TOC entry 384 (class 1255 OID 72665)
 -- Name: fn_logtable_rollback(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5434,7 +5470,7 @@ ALTER FUNCTION framework.fn_logtable_rollback(injson json, OUT message character
 
 --
 -- TOC entry 3404 (class 0 OID 0)
--- Dependencies: 386
+-- Dependencies: 384
 -- Name: FUNCTION fn_logtable_rollback(injson json, OUT message character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5442,7 +5478,7 @@ COMMENT ON FUNCTION fn_logtable_rollback(injson json, OUT message character vary
 
 
 --
--- TOC entry 392 (class 1255 OID 72667)
+-- TOC entry 390 (class 1255 OID 72667)
 -- Name: fn_mainmenu(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5493,7 +5529,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 416 (class 1255 OID 72668)
+-- TOC entry 414 (class 1255 OID 72668)
 -- Name: fn_mainmenu_recurs(json, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5533,7 +5569,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenu_recurs(_roles json, _parentid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 417 (class 1255 OID 72669)
+-- TOC entry 415 (class 1255 OID 72669)
 -- Name: fn_mainmenusigma(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5619,7 +5655,7 @@ $$;
 ALTER FUNCTION framework.fn_mainmenusigma(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 418 (class 1255 OID 72670)
+-- TOC entry 416 (class 1255 OID 72670)
 -- Name: fn_mainsettings_save(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5667,7 +5703,7 @@ ALTER FUNCTION framework.fn_mainsettings_save(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3405 (class 0 OID 0)
--- Dependencies: 418
+-- Dependencies: 416
 -- Name: FUNCTION fn_mainsettings_save(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5675,7 +5711,7 @@ COMMENT ON FUNCTION fn_mainsettings_save(injson json) IS 'Save main settings fro
 
 
 --
--- TOC entry 419 (class 1255 OID 72671)
+-- TOC entry 417 (class 1255 OID 72671)
 -- Name: fn_mainsettings_usercss(text); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5695,7 +5731,7 @@ ALTER FUNCTION framework.fn_mainsettings_usercss(_css text) OWNER TO postgres;
 
 --
 -- TOC entry 3406 (class 0 OID 0)
--- Dependencies: 419
+-- Dependencies: 417
 -- Name: FUNCTION fn_mainsettings_usercss(_css text); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5703,7 +5739,7 @@ COMMENT ON FUNCTION fn_mainsettings_usercss(_css text) IS 'UPDATE USERCSS FROM F
 
 
 --
--- TOC entry 420 (class 1255 OID 72672)
+-- TOC entry 418 (class 1255 OID 72672)
 -- Name: fn_menu_recurs(integer, json, integer, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5762,7 +5798,7 @@ ALTER FUNCTION framework.fn_menu_recurs(_userid integer, _roles json, _parentid 
 
 --
 -- TOC entry 3407 (class 0 OID 0)
--- Dependencies: 420
+-- Dependencies: 418
 -- Name: FUNCTION fn_menu_recurs(_userid integer, _roles json, _parentid integer, menu_id integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5771,7 +5807,7 @@ RECURS BY PARENTID';
 
 
 --
--- TOC entry 421 (class 1255 OID 72673)
+-- TOC entry 419 (class 1255 OID 72673)
 -- Name: fn_menu_recurs(integer, json, integer, integer, character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5829,7 +5865,7 @@ $$;
 ALTER FUNCTION framework.fn_menu_recurs(_userid integer, _roles json, _parentid integer, menu_id integer, _sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 423 (class 1255 OID 72674)
+-- TOC entry 421 (class 1255 OID 72674)
 -- Name: fn_menus(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5929,7 +5965,7 @@ ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgr
 
 --
 -- TOC entry 3408 (class 0 OID 0)
--- Dependencies: 423
+-- Dependencies: 421
 -- Name: FUNCTION fn_menus(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5937,7 +5973,7 @@ COMMENT ON FUNCTION fn_menus(injson json, OUT outjson json) IS 'GET ALL MENUS';
 
 
 --
--- TOC entry 424 (class 1255 OID 72675)
+-- TOC entry 422 (class 1255 OID 72675)
 -- Name: fn_notif_setsended(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -5961,7 +5997,7 @@ ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3409 (class 0 OID 0)
--- Dependencies: 424
+-- Dependencies: 422
 -- Name: FUNCTION fn_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -5969,7 +6005,7 @@ COMMENT ON FUNCTION fn_notif_setsended(injson json) IS 'views notifications not 
 
 
 --
--- TOC entry 425 (class 1255 OID 72676)
+-- TOC entry 423 (class 1255 OID 72676)
 -- Name: fn_notifications_bysess(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6019,7 +6055,7 @@ ALTER FUNCTION framework.fn_notifications_bysess(_sess character, OUT outjson js
 
 --
 -- TOC entry 3410 (class 0 OID 0)
--- Dependencies: 425
+-- Dependencies: 423
 -- Name: FUNCTION fn_notifications_bysess(_sess character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -6027,7 +6063,7 @@ COMMENT ON FUNCTION fn_notifications_bysess(_sess character, OUT outjson json) I
 
 
 --
--- TOC entry 426 (class 1255 OID 72677)
+-- TOC entry 424 (class 1255 OID 72677)
 -- Name: fn_notifications_setreaded_by_userid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6057,7 +6093,7 @@ ALTER FUNCTION framework.fn_notifications_setreaded_by_userid(injson json) OWNER
 
 --
 -- TOC entry 3411 (class 0 OID 0)
--- Dependencies: 426
+-- Dependencies: 424
 -- Name: FUNCTION fn_notifications_setreaded_by_userid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -6065,7 +6101,7 @@ COMMENT ON FUNCTION fn_notifications_setreaded_by_userid(injson json) IS 'set no
 
 
 --
--- TOC entry 427 (class 1255 OID 72678)
+-- TOC entry 425 (class 1255 OID 72678)
 -- Name: fn_notifications_setsended(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6099,7 +6135,7 @@ ALTER FUNCTION framework.fn_notifications_setsended(_sess character) OWNER TO po
 
 --
 -- TOC entry 3412 (class 0 OID 0)
--- Dependencies: 427
+-- Dependencies: 425
 -- Name: FUNCTION fn_notifications_setsended(_sess character); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -6107,7 +6143,7 @@ COMMENT ON FUNCTION fn_notifications_setsended(_sess character) IS 'set sended f
 
 
 --
--- TOC entry 428 (class 1255 OID 72679)
+-- TOC entry 426 (class 1255 OID 72679)
 -- Name: fn_paramtypes(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6136,7 +6172,7 @@ $$;
 ALTER FUNCTION framework.fn_paramtypes(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 429 (class 1255 OID 72680)
+-- TOC entry 427 (class 1255 OID 72680)
 -- Name: fn_refreshconfig(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6213,7 +6249,7 @@ $$;
 ALTER FUNCTION framework.fn_refreshconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 430 (class 1255 OID 72681)
+-- TOC entry 428 (class 1255 OID 72681)
 -- Name: fn_roles_fetch(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6300,7 +6336,7 @@ ALTER FUNCTION framework.fn_roles_fetch(injson json, OUT outjson json) OWNER TO 
 
 --
 -- TOC entry 3413 (class 0 OID 0)
--- Dependencies: 430
+-- Dependencies: 428
 -- Name: FUNCTION fn_roles_fetch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -6308,7 +6344,7 @@ COMMENT ON FUNCTION fn_roles_fetch(injson json, OUT outjson json) IS 'roles list
 
 
 --
--- TOC entry 431 (class 1255 OID 72682)
+-- TOC entry 429 (class 1255 OID 72682)
 -- Name: fn_savestate(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6706,7 +6742,7 @@ ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO po
 
 --
 -- TOC entry 3414 (class 0 OID 0)
--- Dependencies: 431
+-- Dependencies: 429
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -6714,7 +6750,7 @@ COMMENT ON FUNCTION fn_savestate(injson json, OUT outjson json) IS 'save all for
 
 
 --
--- TOC entry 405 (class 1255 OID 72684)
+-- TOC entry 403 (class 1255 OID 72684)
 -- Name: fn_saveusersettings(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -6740,7 +6776,7 @@ $$;
 ALTER FUNCTION framework.fn_saveusersettings(injson json) OWNER TO postgres;
 
 --
--- TOC entry 406 (class 1255 OID 72685)
+-- TOC entry 404 (class 1255 OID 72685)
 -- Name: fn_savevalue(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7178,7 +7214,7 @@ ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO po
 
 --
 -- TOC entry 3415 (class 0 OID 0)
--- Dependencies: 406
+-- Dependencies: 404
 -- Name: FUNCTION fn_savevalue(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7186,7 +7222,7 @@ COMMENT ON FUNCTION fn_savevalue(injson json, OUT outjson json) IS 'SAVE ONE COL
 
 
 --
--- TOC entry 415 (class 1255 OID 72687)
+-- TOC entry 413 (class 1255 OID 72687)
 -- Name: fn_sess(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7233,7 +7269,7 @@ $$;
 ALTER FUNCTION framework.fn_sess(_login character varying, pass character varying, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 432 (class 1255 OID 72688)
+-- TOC entry 430 (class 1255 OID 72688)
 -- Name: fn_sess(character varying, character varying, character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7281,7 +7317,7 @@ $$;
 ALTER FUNCTION framework.fn_sess(_login character varying, pass character varying, INOUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 433 (class 1255 OID 72689)
+-- TOC entry 431 (class 1255 OID 72689)
 -- Name: fn_tabcolumns(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7311,7 +7347,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 434 (class 1255 OID 72690)
+-- TOC entry 432 (class 1255 OID 72690)
 -- Name: fn_tabcolumns_for_filters(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7368,7 +7404,7 @@ ALTER FUNCTION framework.fn_tabcolumns_for_filters(injson json, OUT outjson json
 
 --
 -- TOC entry 3416 (class 0 OID 0)
--- Dependencies: 434
+-- Dependencies: 432
 -- Name: FUNCTION fn_tabcolumns_for_filters(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7376,7 +7412,7 @@ COMMENT ON FUNCTION fn_tabcolumns_for_filters(injson json, OUT outjson json) IS 
 
 
 --
--- TOC entry 435 (class 1255 OID 72691)
+-- TOC entry 433 (class 1255 OID 72691)
 -- Name: fn_tabcolumns_for_filters_arr(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7433,7 +7469,7 @@ ALTER FUNCTION framework.fn_tabcolumns_for_filters_arr(injson json, OUT outjson 
 
 --
 -- TOC entry 3417 (class 0 OID 0)
--- Dependencies: 435
+-- Dependencies: 433
 -- Name: FUNCTION fn_tabcolumns_for_filters_arr(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7441,7 +7477,7 @@ COMMENT ON FUNCTION fn_tabcolumns_for_filters_arr(injson json, OUT outjson json)
 
 
 --
--- TOC entry 436 (class 1255 OID 72692)
+-- TOC entry 434 (class 1255 OID 72692)
 -- Name: fn_tabcolumns_for_sc(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7480,7 +7516,7 @@ ALTER FUNCTION framework.fn_tabcolumns_for_sc(injson json, OUT outjson json) OWN
 
 --
 -- TOC entry 3418 (class 0 OID 0)
--- Dependencies: 436
+-- Dependencies: 434
 -- Name: FUNCTION fn_tabcolumns_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7488,7 +7524,7 @@ COMMENT ON FUNCTION fn_tabcolumns_for_sc(injson json, OUT outjson json) IS 'for 
 
 
 --
--- TOC entry 437 (class 1255 OID 72693)
+-- TOC entry 435 (class 1255 OID 72693)
 -- Name: fn_tabcolumns_selforconfig_depselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7533,7 +7569,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_selforconfig_depselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 438 (class 1255 OID 72694)
+-- TOC entry 436 (class 1255 OID 72694)
 -- Name: fn_tabcolumns_selforconfig_multiselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7579,7 +7615,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_selforconfig_multiselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 439 (class 1255 OID 72695)
+-- TOC entry 437 (class 1255 OID 72695)
 -- Name: fn_tabcolumns_selforconfig_relselect(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7624,7 +7660,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_selforconfig_relselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 440 (class 1255 OID 72696)
+-- TOC entry 438 (class 1255 OID 72696)
 -- Name: fn_trees_bypath(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7699,7 +7735,7 @@ ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO
 
 --
 -- TOC entry 3419 (class 0 OID 0)
--- Dependencies: 440
+-- Dependencies: 438
 -- Name: FUNCTION fn_trees_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7707,7 +7743,7 @@ COMMENT ON FUNCTION fn_trees_bypath(injson json, OUT outjson json) IS 'GET TREES
 
 
 --
--- TOC entry 441 (class 1255 OID 72697)
+-- TOC entry 439 (class 1255 OID 72697)
 -- Name: fn_userjson(character); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7747,7 +7783,7 @@ ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER T
 
 --
 -- TOC entry 3420 (class 0 OID 0)
--- Dependencies: 441
+-- Dependencies: 439
 -- Name: FUNCTION fn_userjson(sessid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7755,7 +7791,7 @@ COMMENT ON FUNCTION fn_userjson(sessid character, OUT outjson json) IS 'USERJSON
 
 
 --
--- TOC entry 442 (class 1255 OID 72698)
+-- TOC entry 440 (class 1255 OID 72698)
 -- Name: fn_userorg_upd(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7780,7 +7816,7 @@ $$;
 ALTER FUNCTION framework.fn_userorg_upd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 443 (class 1255 OID 72699)
+-- TOC entry 441 (class 1255 OID 72699)
 -- Name: fn_userorgs(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7845,7 +7881,7 @@ ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO pos
 
 --
 -- TOC entry 3421 (class 0 OID 0)
--- Dependencies: 443
+-- Dependencies: 441
 -- Name: FUNCTION fn_userorgs(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7853,7 +7889,7 @@ COMMENT ON FUNCTION fn_userorgs(injson json, OUT outjson json) IS 'Change user o
 
 
 --
--- TOC entry 444 (class 1255 OID 72700)
+-- TOC entry 442 (class 1255 OID 72700)
 -- Name: fn_view_byid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7898,7 +7934,7 @@ ALTER FUNCTION framework.fn_view_byid(injson json, OUT outjson json, OUT roles j
 
 --
 -- TOC entry 3422 (class 0 OID 0)
--- Dependencies: 444
+-- Dependencies: 442
 -- Name: FUNCTION fn_view_byid(injson json, OUT outjson json, OUT roles json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7906,7 +7942,7 @@ COMMENT ON FUNCTION fn_view_byid(injson json, OUT outjson json, OUT roles json) 
 
 
 --
--- TOC entry 445 (class 1255 OID 72701)
+-- TOC entry 443 (class 1255 OID 72701)
 -- Name: fn_view_cols_for_fn(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -7956,7 +7992,7 @@ ALTER FUNCTION framework.fn_view_cols_for_fn(injson json, OUT outjson json) OWNE
 
 --
 -- TOC entry 3423 (class 0 OID 0)
--- Dependencies: 445
+-- Dependencies: 443
 -- Name: FUNCTION fn_view_cols_for_fn(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -7964,7 +8000,7 @@ COMMENT ON FUNCTION fn_view_cols_for_fn(injson json, OUT outjson json) IS '-- co
 
 
 --
--- TOC entry 446 (class 1255 OID 72702)
+-- TOC entry 444 (class 1255 OID 72702)
 -- Name: fn_view_cols_for_param(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8013,7 +8049,7 @@ ALTER FUNCTION framework.fn_view_cols_for_param(injson json, OUT outjson json) O
 
 --
 -- TOC entry 3424 (class 0 OID 0)
--- Dependencies: 446
+-- Dependencies: 444
 -- Name: FUNCTION fn_view_cols_for_param(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8021,7 +8057,7 @@ COMMENT ON FUNCTION fn_view_cols_for_param(injson json, OUT outjson json) IS '--
 
 
 --
--- TOC entry 448 (class 1255 OID 72703)
+-- TOC entry 446 (class 1255 OID 72703)
 -- Name: fn_view_cols_for_sc(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8069,7 +8105,7 @@ ALTER FUNCTION framework.fn_view_cols_for_sc(injson json, OUT outjson json) OWNE
 
 --
 -- TOC entry 3425 (class 0 OID 0)
--- Dependencies: 448
+-- Dependencies: 446
 -- Name: FUNCTION fn_view_cols_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8077,7 +8113,7 @@ COMMENT ON FUNCTION fn_view_cols_for_sc(injson json, OUT outjson json) IS '-- co
 
 
 --
--- TOC entry 449 (class 1255 OID 72704)
+-- TOC entry 447 (class 1255 OID 72704)
 -- Name: fn_view_deletebyid(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8208,7 +8244,7 @@ ALTER FUNCTION framework.fn_view_deletebyid(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3426 (class 0 OID 0)
--- Dependencies: 449
+-- Dependencies: 447
 -- Name: FUNCTION fn_view_deletebyid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8216,7 +8252,7 @@ COMMENT ON FUNCTION fn_view_deletebyid(injson json) IS 'delete view';
 
 
 --
--- TOC entry 450 (class 1255 OID 72705)
+-- TOC entry 448 (class 1255 OID 72705)
 -- Name: fn_view_getByPath(character varying, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8450,7 +8486,7 @@ ALTER FUNCTION framework."fn_view_getByPath"(_path character varying, _viewtype 
 
 --
 -- TOC entry 3427 (class 0 OID 0)
--- Dependencies: 450
+-- Dependencies: 448
 -- Name: FUNCTION "fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8458,7 +8494,7 @@ COMMENT ON FUNCTION "fn_view_getByPath"(_path character varying, _viewtype chara
 
 
 --
--- TOC entry 451 (class 1255 OID 72707)
+-- TOC entry 449 (class 1255 OID 72707)
 -- Name: fn_view_getByPath_showSQL(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8634,7 +8670,7 @@ ALTER FUNCTION framework."fn_view_getByPath_showSQL"(_path character varying, OU
 
 --
 -- TOC entry 3428 (class 0 OID 0)
--- Dependencies: 451
+-- Dependencies: 449
 -- Name: FUNCTION "fn_view_getByPath_showSQL"(_path character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8642,7 +8678,7 @@ COMMENT ON FUNCTION "fn_view_getByPath_showSQL"(_path character varying, OUT out
 
 
 --
--- TOC entry 452 (class 1255 OID 72708)
+-- TOC entry 450 (class 1255 OID 72708)
 -- Name: fn_view_json_for_copy(integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8748,7 +8784,7 @@ ALTER FUNCTION framework.fn_view_json_for_copy(_id integer, OUT outjson json) OW
 
 --
 -- TOC entry 3429 (class 0 OID 0)
--- Dependencies: 452
+-- Dependencies: 450
 -- Name: FUNCTION fn_view_json_for_copy(_id integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8756,7 +8792,7 @@ COMMENT ON FUNCTION fn_view_json_for_copy(_id integer, OUT outjson json) IS 'GET
 
 
 --
--- TOC entry 453 (class 1255 OID 72709)
+-- TOC entry 451 (class 1255 OID 72709)
 -- Name: fn_view_json_parse(json, integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8943,7 +8979,7 @@ ALTER FUNCTION framework.fn_view_json_parse(injson json, _n integer) OWNER TO po
 
 --
 -- TOC entry 3430 (class 0 OID 0)
--- Dependencies: 453
+-- Dependencies: 451
 -- Name: FUNCTION fn_view_json_parse(injson json, _n integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8952,7 +8988,7 @@ FROM framework.fn_vew_json_for_copy function';
 
 
 --
--- TOC entry 454 (class 1255 OID 72710)
+-- TOC entry 452 (class 1255 OID 72710)
 -- Name: fn_view_link_showsql(character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -8979,7 +9015,7 @@ ALTER FUNCTION framework.fn_view_link_showsql(_path character varying, OUT _link
 
 --
 -- TOC entry 3431 (class 0 OID 0)
--- Dependencies: 454
+-- Dependencies: 452
 -- Name: FUNCTION fn_view_link_showsql(_path character varying, OUT _link json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -8987,7 +9023,7 @@ COMMENT ON FUNCTION fn_view_link_showsql(_path character varying, OUT _link json
 
 
 --
--- TOC entry 456 (class 1255 OID 72711)
+-- TOC entry 454 (class 1255 OID 72711)
 -- Name: fn_view_setKeys(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9058,7 +9094,7 @@ $$;
 ALTER FUNCTION framework."fn_view_setKeys"() OWNER TO postgres;
 
 --
--- TOC entry 457 (class 1255 OID 72712)
+-- TOC entry 455 (class 1255 OID 72712)
 -- Name: fn_view_title_link(integer, character varying); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9086,7 +9122,7 @@ $$;
 ALTER FUNCTION framework.fn_view_title_link(viewid integer, title character varying, OUT lnk json) OWNER TO postgres;
 
 --
--- TOC entry 458 (class 1255 OID 72713)
+-- TOC entry 456 (class 1255 OID 72713)
 -- Name: fn_viewnotif_get(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9163,7 +9199,7 @@ ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER T
 
 --
 -- TOC entry 3432 (class 0 OID 0)
--- Dependencies: 458
+-- Dependencies: 456
 -- Name: FUNCTION fn_viewnotif_get(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -9171,7 +9207,7 @@ COMMENT ON FUNCTION fn_viewnotif_get(injson json, OUT outjson json) IS 'FOR WS N
 
 
 --
--- TOC entry 590 (class 1255 OID 72714)
+-- TOC entry 588 (class 1255 OID 72714)
 -- Name: fn_views_compo_visible(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9202,7 +9238,7 @@ ALTER FUNCTION framework.fn_views_compo_visible(injson json, OUT outjson json) O
 
 --
 -- TOC entry 3433 (class 0 OID 0)
--- Dependencies: 590
+-- Dependencies: 588
 -- Name: FUNCTION fn_views_compo_visible(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -9210,7 +9246,7 @@ COMMENT ON FUNCTION fn_views_compo_visible(injson json, OUT outjson json) IS 'co
 
 
 --
--- TOC entry 459 (class 1255 OID 72715)
+-- TOC entry 457 (class 1255 OID 72715)
 -- Name: fn_viewsave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9437,7 +9473,7 @@ $$;
 ALTER FUNCTION framework.fn_viewsave(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 460 (class 1255 OID 72716)
+-- TOC entry 458 (class 1255 OID 72716)
 -- Name: fn_viewsave_V004(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9675,7 +9711,7 @@ ALTER FUNCTION framework."fn_viewsave_V004"(injson json, OUT outjson json) OWNER
 
 --
 -- TOC entry 3434 (class 0 OID 0)
--- Dependencies: 460
+-- Dependencies: 458
 -- Name: FUNCTION "fn_viewsave_V004"(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -9687,7 +9723,7 @@ COMMENT ON FUNCTION "fn_viewsave_V004"(injson json, OUT outjson json) IS '/*
 
 
 --
--- TOC entry 462 (class 1255 OID 72717)
+-- TOC entry 460 (class 1255 OID 72717)
 -- Name: get_colcongif(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9736,7 +9772,7 @@ $$;
 ALTER FUNCTION framework.get_colcongif(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 463 (class 1255 OID 72718)
+-- TOC entry 461 (class 1255 OID 72718)
 -- Name: get_colcongif_V004(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9793,7 +9829,7 @@ ALTER FUNCTION framework."get_colcongif_V004"(injson json, OUT outjson json) OWN
 
 --
 -- TOC entry 3435 (class 0 OID 0)
--- Dependencies: 463
+-- Dependencies: 461
 -- Name: FUNCTION "get_colcongif_V004"(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -9805,7 +9841,7 @@ COMMENT ON FUNCTION "get_colcongif_V004"(injson json, OUT outjson json) IS '/*
 
 
 --
--- TOC entry 464 (class 1255 OID 72719)
+-- TOC entry 462 (class 1255 OID 72719)
 -- Name: tr_act_parametrs_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9833,7 +9869,7 @@ $$;
 ALTER FUNCTION framework.tr_act_parametrs_tr() OWNER TO postgres;
 
 --
--- TOC entry 465 (class 1255 OID 72720)
+-- TOC entry 463 (class 1255 OID 72720)
 -- Name: tr_actions_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9874,7 +9910,7 @@ $$;
 ALTER FUNCTION framework.tr_actions_tr() OWNER TO postgres;
 
 --
--- TOC entry 466 (class 1255 OID 72721)
+-- TOC entry 464 (class 1255 OID 72721)
 -- Name: tr_actions_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9894,7 +9930,7 @@ $$;
 ALTER FUNCTION framework.tr_actions_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 467 (class 1255 OID 72722)
+-- TOC entry 465 (class 1255 OID 72722)
 -- Name: tr_calendar_actions_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9919,7 +9955,7 @@ $$;
 ALTER FUNCTION framework.tr_calendar_actions_tr() OWNER TO postgres;
 
 --
--- TOC entry 468 (class 1255 OID 72723)
+-- TOC entry 466 (class 1255 OID 72723)
 -- Name: tr_compoitems_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -9966,7 +10002,7 @@ $$;
 ALTER FUNCTION framework.tr_compoitems_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 469 (class 1255 OID 72724)
+-- TOC entry 467 (class 1255 OID 72724)
 -- Name: tr_compoitems_tr_upd(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10009,7 +10045,7 @@ $$;
 ALTER FUNCTION framework.tr_compoitems_tr_upd() OWNER TO postgres;
 
 --
--- TOC entry 470 (class 1255 OID 72725)
+-- TOC entry 468 (class 1255 OID 72725)
 -- Name: tr_config_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10246,7 +10282,7 @@ $$;
 ALTER FUNCTION framework.tr_config_tr() OWNER TO postgres;
 
 --
--- TOC entry 422 (class 1255 OID 72727)
+-- TOC entry 420 (class 1255 OID 72727)
 -- Name: tr_config_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10284,7 +10320,7 @@ $$;
 ALTER FUNCTION framework.tr_config_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 472 (class 1255 OID 72728)
+-- TOC entry 470 (class 1255 OID 72728)
 -- Name: tr_config_tr_ins(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10341,7 +10377,7 @@ $$;
 ALTER FUNCTION framework.tr_config_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 473 (class 1255 OID 72729)
+-- TOC entry 471 (class 1255 OID 72729)
 -- Name: tr_dialog_messages_tr_ins(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10438,7 +10474,7 @@ $$;
 ALTER FUNCTION framework.tr_dialog_messages_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 474 (class 1255 OID 72730)
+-- TOC entry 472 (class 1255 OID 72730)
 -- Name: tr_dialogs_tr_edit(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10460,7 +10496,7 @@ $$;
 ALTER FUNCTION framework.tr_dialogs_tr_edit() OWNER TO postgres;
 
 --
--- TOC entry 475 (class 1255 OID 72731)
+-- TOC entry 473 (class 1255 OID 72731)
 -- Name: tr_dialogs_tr_ins(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10540,7 +10576,7 @@ $$;
 ALTER FUNCTION framework.tr_dialogs_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 476 (class 1255 OID 72732)
+-- TOC entry 474 (class 1255 OID 72732)
 -- Name: tr_dialogs_tr_ins_after(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10567,7 +10603,7 @@ $$;
 ALTER FUNCTION framework.tr_dialogs_tr_ins_after() OWNER TO postgres;
 
 --
--- TOC entry 477 (class 1255 OID 72733)
+-- TOC entry 475 (class 1255 OID 72733)
 -- Name: tr_filters_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10617,7 +10653,7 @@ $$;
 ALTER FUNCTION framework.tr_filters_tr() OWNER TO postgres;
 
 --
--- TOC entry 478 (class 1255 OID 72734)
+-- TOC entry 476 (class 1255 OID 72734)
 -- Name: tr_mainmenu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10649,7 +10685,7 @@ $$;
 ALTER FUNCTION framework.tr_mainmenu_tr() OWNER TO postgres;
 
 --
--- TOC entry 479 (class 1255 OID 72735)
+-- TOC entry 477 (class 1255 OID 72735)
 -- Name: tr_menu_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10678,7 +10714,7 @@ $$;
 ALTER FUNCTION framework.tr_menu_tr() OWNER TO postgres;
 
 --
--- TOC entry 447 (class 1255 OID 72736)
+-- TOC entry 445 (class 1255 OID 72736)
 -- Name: tr_menus_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10701,7 +10737,7 @@ $$;
 ALTER FUNCTION framework.tr_menus_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 455 (class 1255 OID 72737)
+-- TOC entry 453 (class 1255 OID 72737)
 -- Name: tr_notifications_tr_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10727,7 +10763,7 @@ $$;
 ALTER FUNCTION framework.tr_notifications_tr_check() OWNER TO postgres;
 
 --
--- TOC entry 480 (class 1255 OID 72738)
+-- TOC entry 478 (class 1255 OID 72738)
 -- Name: tr_orgs(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10827,7 +10863,7 @@ $$;
 ALTER FUNCTION framework.tr_orgs() OWNER TO postgres;
 
 --
--- TOC entry 481 (class 1255 OID 72739)
+-- TOC entry 479 (class 1255 OID 72739)
 -- Name: tr_select_condition_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10866,7 +10902,7 @@ $$;
 ALTER FUNCTION framework.tr_select_condition_tr() OWNER TO postgres;
 
 --
--- TOC entry 482 (class 1255 OID 72740)
+-- TOC entry 480 (class 1255 OID 72740)
 -- Name: tr_spapi_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10935,7 +10971,7 @@ $$;
 ALTER FUNCTION framework.tr_spapi_tr() OWNER TO postgres;
 
 --
--- TOC entry 483 (class 1255 OID 72741)
+-- TOC entry 481 (class 1255 OID 72741)
 -- Name: tr_trees_add_org(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10963,7 +10999,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_add_org() OWNER TO postgres;
 
 --
--- TOC entry 484 (class 1255 OID 72742)
+-- TOC entry 482 (class 1255 OID 72742)
 -- Name: tr_trees_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -10984,7 +11020,7 @@ $$;
 ALTER FUNCTION framework.tr_trees_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 485 (class 1255 OID 72743)
+-- TOC entry 483 (class 1255 OID 72743)
 -- Name: tr_treesbranch_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11014,7 +11050,7 @@ $$;
 ALTER FUNCTION framework.tr_treesbranch_check() OWNER TO postgres;
 
 --
--- TOC entry 486 (class 1255 OID 72744)
+-- TOC entry 484 (class 1255 OID 72744)
 -- Name: tr_user_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11096,7 +11132,7 @@ $$;
 ALTER FUNCTION framework.tr_user_check() OWNER TO postgres;
 
 --
--- TOC entry 487 (class 1255 OID 72745)
+-- TOC entry 485 (class 1255 OID 72745)
 -- Name: tr_view_tr_check(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11136,7 +11172,7 @@ $$;
 ALTER FUNCTION framework.tr_view_tr_check() OWNER TO postgres;
 
 --
--- TOC entry 488 (class 1255 OID 72746)
+-- TOC entry 486 (class 1255 OID 72746)
 -- Name: tr_views_tr_del(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11267,7 +11303,7 @@ $$;
 ALTER FUNCTION framework.tr_views_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 489 (class 1255 OID 72747)
+-- TOC entry 487 (class 1255 OID 72747)
 -- Name: tr_views_tr_ins_after(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11364,7 +11400,7 @@ $$;
 ALTER FUNCTION framework.tr_views_tr_ins_after() OWNER TO postgres;
 
 --
--- TOC entry 490 (class 1255 OID 72748)
+-- TOC entry 488 (class 1255 OID 72748)
 -- Name: tr_viewsnotification_del_doubles(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11387,7 +11423,7 @@ $$;
 ALTER FUNCTION framework.tr_viewsnotification_del_doubles() OWNER TO postgres;
 
 --
--- TOC entry 491 (class 1255 OID 72749)
+-- TOC entry 489 (class 1255 OID 72749)
 -- Name: tr_visible_condition_tr(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11417,7 +11453,7 @@ ALTER FUNCTION framework.tr_visible_condition_tr() OWNER TO postgres;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 492 (class 1255 OID 72750)
+-- TOC entry 490 (class 1255 OID 72750)
 -- Name: fn_completed_color(boolean); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11438,7 +11474,7 @@ $$;
 ALTER FUNCTION public.fn_completed_color(c boolean, OUT color character varying) OWNER TO postgres;
 
 --
--- TOC entry 493 (class 1255 OID 72751)
+-- TOC entry 491 (class 1255 OID 72751)
 -- Name: fn_completed_colorblack(boolean); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11458,7 +11494,7 @@ $$;
 ALTER FUNCTION public.fn_completed_colorblack(t boolean, OUT c character varying) OWNER TO postgres;
 
 --
--- TOC entry 494 (class 1255 OID 72752)
+-- TOC entry 492 (class 1255 OID 72752)
 -- Name: fn_corect_error_view_config(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11499,7 +11535,7 @@ $$;
 ALTER FUNCTION public.fn_corect_error_view_config(_id integer, OUT _result character varying) OWNER TO postgres;
 
 --
--- TOC entry 495 (class 1255 OID 72753)
+-- TOC entry 493 (class 1255 OID 72753)
 -- Name: fn_users_getorgs(json); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11522,7 +11558,7 @@ $$;
 ALTER FUNCTION public.fn_users_getorgs(injson json, OUT result character varying) OWNER TO postgres;
 
 --
--- TOC entry 496 (class 1255 OID 72754)
+-- TOC entry 494 (class 1255 OID 72754)
 -- Name: fn_users_getroles(json); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11544,7 +11580,7 @@ $$;
 ALTER FUNCTION public.fn_users_getroles(injson json, OUT result character varying) OWNER TO postgres;
 
 --
--- TOC entry 497 (class 1255 OID 72755)
+-- TOC entry 495 (class 1255 OID 72755)
 -- Name: fn_view_copy_json_test(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11643,7 +11679,7 @@ $$;
 ALTER FUNCTION public.fn_view_copy_json_test(_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 498 (class 1255 OID 72756)
+-- TOC entry 496 (class 1255 OID 72756)
 -- Name: fn_withoutDesc_setRightFnTitle(character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11696,7 +11732,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_setRightFnTitle"(_schemaname character varying, _fn_name character varying, _newschemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 499 (class 1255 OID 72757)
+-- TOC entry 497 (class 1255 OID 72757)
 -- Name: fn_withoutDesc_tables(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11722,7 +11758,7 @@ ALTER FUNCTION public."fn_withoutDesc_tables"(_schema character varying) OWNER T
 
 --
 -- TOC entry 3436 (class 0 OID 0)
--- Dependencies: 499
+-- Dependencies: 497
 -- Name: FUNCTION "fn_withoutDesc_tables"(_schema character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -11730,7 +11766,7 @@ COMMENT ON FUNCTION "fn_withoutDesc_tables"(_schema character varying) IS 'ТА�
 
 
 --
--- TOC entry 501 (class 1255 OID 72758)
+-- TOC entry 499 (class 1255 OID 72758)
 -- Name: fn_withoutDesc_triggers(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11764,7 +11800,7 @@ ALTER FUNCTION public."fn_withoutDesc_triggers"(_schemaname character varying) O
 
 --
 -- TOC entry 3437 (class 0 OID 0)
--- Dependencies: 501
+-- Dependencies: 499
 -- Name: FUNCTION "fn_withoutDesc_triggers"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -11772,7 +11808,7 @@ COMMENT ON FUNCTION "fn_withoutDesc_triggers"(_schemaname character varying) IS 
 
 
 --
--- TOC entry 502 (class 1255 OID 72759)
+-- TOC entry 500 (class 1255 OID 72759)
 -- Name: fn_withoutDesc_triggers_test(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11801,7 +11837,7 @@ ALTER FUNCTION public."fn_withoutDesc_triggers_test"(_schemaname character varyi
 
 --
 -- TOC entry 3438 (class 0 OID 0)
--- Dependencies: 502
+-- Dependencies: 500
 -- Name: FUNCTION "fn_withoutDesc_triggers_test"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -11809,7 +11845,7 @@ COMMENT ON FUNCTION "fn_withoutDesc_triggers_test"(_schemaname character varying
 
 
 --
--- TOC entry 503 (class 1255 OID 72760)
+-- TOC entry 501 (class 1255 OID 72760)
 -- Name: fn_yesorno(boolean); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11830,7 +11866,7 @@ $$;
 ALTER FUNCTION public.fn_yesorno(b boolean, OUT y character varying) OWNER TO postgres;
 
 --
--- TOC entry 504 (class 1255 OID 72761)
+-- TOC entry 502 (class 1255 OID 72761)
 -- Name: isnumeric(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11850,7 +11886,7 @@ $_$;
 ALTER FUNCTION public.isnumeric(text) OWNER TO postgres;
 
 --
--- TOC entry 505 (class 1255 OID 72762)
+-- TOC entry 503 (class 1255 OID 72762)
 -- Name: raiserror(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -11868,7 +11904,7 @@ ALTER FUNCTION public.raiserror(_hint character varying) OWNER TO postgres;
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 506 (class 1255 OID 72763)
+-- TOC entry 504 (class 1255 OID 72763)
 -- Name: fn_call_report(json); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -11974,7 +12010,7 @@ ALTER FUNCTION reports.fn_call_report(injson json, OUT outjson json) OWNER TO po
 
 --
 -- TOC entry 3439 (class 0 OID 0)
--- Dependencies: 506
+-- Dependencies: 504
 -- Name: FUNCTION fn_call_report(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
 
@@ -11982,7 +12018,7 @@ COMMENT ON FUNCTION fn_call_report(injson json, OUT outjson json) IS 'ФУНКЦ
 
 
 --
--- TOC entry 507 (class 1255 OID 72764)
+-- TOC entry 505 (class 1255 OID 72764)
 -- Name: fn_getmethod_info(json); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12017,7 +12053,7 @@ ALTER FUNCTION reports.fn_getmethod_info(injson json, OUT outjson json) OWNER TO
 
 --
 -- TOC entry 3440 (class 0 OID 0)
--- Dependencies: 507
+-- Dependencies: 505
 -- Name: FUNCTION fn_getmethod_info(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
 
@@ -12025,7 +12061,7 @@ COMMENT ON FUNCTION fn_getmethod_info(injson json, OUT outjson json) IS 'get met
 
 
 --
--- TOC entry 508 (class 1255 OID 72765)
+-- TOC entry 506 (class 1255 OID 72765)
 -- Name: fn_getreports_fn(json); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12063,7 +12099,7 @@ ALTER FUNCTION reports.fn_getreports_fn(injson json, OUT outjson json) OWNER TO 
 
 --
 -- TOC entry 3441 (class 0 OID 0)
--- Dependencies: 508
+-- Dependencies: 506
 -- Name: FUNCTION fn_getreports_fn(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
 
@@ -12071,7 +12107,7 @@ COMMENT ON FUNCTION fn_getreports_fn(injson json, OUT outjson json) IS 'get repo
 
 
 --
--- TOC entry 509 (class 1255 OID 72766)
+-- TOC entry 507 (class 1255 OID 72766)
 -- Name: fn_report_copy(json); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12139,7 +12175,7 @@ ALTER FUNCTION reports.fn_report_copy(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3442 (class 0 OID 0)
--- Dependencies: 509
+-- Dependencies: 507
 -- Name: FUNCTION fn_report_copy(injson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
 
@@ -12147,7 +12183,7 @@ COMMENT ON FUNCTION fn_report_copy(injson json) IS 'REPORT COPY (DUBLICATE)';
 
 
 --
--- TOC entry 511 (class 1255 OID 72767)
+-- TOC entry 509 (class 1255 OID 72767)
 -- Name: fn_report_getone(json); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12232,7 +12268,7 @@ ALTER FUNCTION reports.fn_report_getone(injson json, OUT outjson json) OWNER TO 
 
 --
 -- TOC entry 3443 (class 0 OID 0)
--- Dependencies: 511
+-- Dependencies: 509
 -- Name: FUNCTION fn_report_getone(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
 
@@ -12240,7 +12276,7 @@ COMMENT ON FUNCTION fn_report_getone(injson json, OUT outjson json) IS 'get repo
 
 
 --
--- TOC entry 512 (class 1255 OID 72768)
+-- TOC entry 510 (class 1255 OID 72768)
 -- Name: tr_reportlist_tr(); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12302,7 +12338,7 @@ $$;
 ALTER FUNCTION reports.tr_reportlist_tr() OWNER TO postgres;
 
 --
--- TOC entry 513 (class 1255 OID 72769)
+-- TOC entry 511 (class 1255 OID 72769)
 -- Name: tr_reportlist_tr_ins(); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12324,7 +12360,7 @@ $$;
 ALTER FUNCTION reports.tr_reportlist_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 514 (class 1255 OID 72770)
+-- TOC entry 512 (class 1255 OID 72770)
 -- Name: tr_reportlist_trigger(); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12383,7 +12419,7 @@ $$;
 ALTER FUNCTION reports.tr_reportlist_trigger() OWNER TO postgres;
 
 --
--- TOC entry 515 (class 1255 OID 72771)
+-- TOC entry 513 (class 1255 OID 72771)
 -- Name: tr_reportparams_tr(); Type: FUNCTION; Schema: reports; Owner: postgres
 --
 
@@ -12416,7 +12452,7 @@ ALTER FUNCTION reports.tr_reportparams_tr() OWNER TO postgres;
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 516 (class 1255 OID 72772)
+-- TOC entry 514 (class 1255 OID 72772)
 -- Name: fn_fk_maintablecols_select(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12450,7 +12486,7 @@ ALTER FUNCTION sqlmanager.fn_fk_maintablecols_select(injson json, OUT outjson js
 
 --
 -- TOC entry 3444 (class 0 OID 0)
--- Dependencies: 516
+-- Dependencies: 514
 -- Name: FUNCTION fn_fk_maintablecols_select(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12458,7 +12494,7 @@ COMMENT ON FUNCTION fn_fk_maintablecols_select(injson json, OUT outjson json) IS
 
 
 --
--- TOC entry 517 (class 1255 OID 72773)
+-- TOC entry 515 (class 1255 OID 72773)
 -- Name: fn_fk_parentcols_sel(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12505,7 +12541,7 @@ ALTER FUNCTION sqlmanager.fn_fk_parentcols_sel(injson json, OUT outjson json) OW
 
 --
 -- TOC entry 3445 (class 0 OID 0)
--- Dependencies: 517
+-- Dependencies: 515
 -- Name: FUNCTION fn_fk_parentcols_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12513,7 +12549,7 @@ COMMENT ON FUNCTION fn_fk_parentcols_sel(injson json, OUT outjson json) IS 'FK P
 
 
 --
--- TOC entry 518 (class 1255 OID 72774)
+-- TOC entry 516 (class 1255 OID 72774)
 -- Name: fn_fk_tables_sel(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12546,7 +12582,7 @@ ALTER FUNCTION sqlmanager.fn_fk_tables_sel(injson json, OUT outjson json) OWNER 
 
 --
 -- TOC entry 3446 (class 0 OID 0)
--- Dependencies: 518
+-- Dependencies: 516
 -- Name: FUNCTION fn_fk_tables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12554,7 +12590,7 @@ COMMENT ON FUNCTION fn_fk_tables_sel(injson json, OUT outjson json) IS 'TABLES';
 
 
 --
--- TOC entry 510 (class 1255 OID 72775)
+-- TOC entry 508 (class 1255 OID 72775)
 -- Name: fn_foreignkeys_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12665,7 +12701,7 @@ ALTER FUNCTION sqlmanager.fn_foreignkeys_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3447 (class 0 OID 0)
--- Dependencies: 510
+-- Dependencies: 508
 -- Name: FUNCTION fn_foreignkeys_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12673,7 +12709,7 @@ COMMENT ON FUNCTION fn_foreignkeys_onload(injson json) IS 'FOREIGN KEYS';
 
 
 --
--- TOC entry 519 (class 1255 OID 72776)
+-- TOC entry 517 (class 1255 OID 72776)
 -- Name: fn_function_add(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12845,7 +12881,7 @@ ALTER FUNCTION sqlmanager.fn_function_add(injson json, OUT _redirect character v
 
 --
 -- TOC entry 3448 (class 0 OID 0)
--- Dependencies: 519
+-- Dependencies: 517
 -- Name: FUNCTION fn_function_add(injson json, OUT _redirect character varying); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12853,7 +12889,7 @@ COMMENT ON FUNCTION fn_function_add(injson json, OUT _redirect character varying
 
 
 --
--- TOC entry 520 (class 1255 OID 72777)
+-- TOC entry 518 (class 1255 OID 72777)
 -- Name: fn_function_argadd(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12903,7 +12939,7 @@ ALTER FUNCTION sqlmanager.fn_function_argadd(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3449 (class 0 OID 0)
--- Dependencies: 520
+-- Dependencies: 518
 -- Name: FUNCTION fn_function_argadd(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12911,7 +12947,7 @@ COMMENT ON FUNCTION fn_function_argadd(injson json) IS 'ADD ARGUMENT FOR FUNCTIO
 
 
 --
--- TOC entry 521 (class 1255 OID 72778)
+-- TOC entry 519 (class 1255 OID 72778)
 -- Name: fn_function_args_json(json, json, json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -12969,7 +13005,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_function_args_json(_names json, _types json, _modesc json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 522 (class 1255 OID 72779)
+-- TOC entry 520 (class 1255 OID 72779)
 -- Name: fn_function_args_text(json, json, json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13032,7 +13068,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_function_args_text(_names json, _types json, _modesc json, OUT _str character varying) OWNER TO postgres;
 
 --
--- TOC entry 523 (class 1255 OID 72780)
+-- TOC entry 521 (class 1255 OID 72780)
 -- Name: fn_function_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13104,7 +13140,7 @@ ALTER FUNCTION sqlmanager.fn_function_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3450 (class 0 OID 0)
--- Dependencies: 523
+-- Dependencies: 521
 -- Name: FUNCTION fn_function_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13112,7 +13148,7 @@ COMMENT ON FUNCTION fn_function_onload(injson json) IS 'Function onload';
 
 
 --
--- TOC entry 524 (class 1255 OID 72781)
+-- TOC entry 522 (class 1255 OID 72781)
 -- Name: fn_functions_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13222,7 +13258,7 @@ ALTER FUNCTION sqlmanager.fn_functions_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3451 (class 0 OID 0)
--- Dependencies: 524
+-- Dependencies: 522
 -- Name: FUNCTION fn_functions_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13230,7 +13266,7 @@ COMMENT ON FUNCTION fn_functions_onload(injson json) IS 'functions_onload ';
 
 
 --
--- TOC entry 387 (class 1255 OID 72782)
+-- TOC entry 385 (class 1255 OID 72782)
 -- Name: fn_modes_sel(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13260,7 +13296,7 @@ ALTER FUNCTION sqlmanager.fn_modes_sel(injson json, OUT outjson json) OWNER TO p
 
 --
 -- TOC entry 3452 (class 0 OID 0)
--- Dependencies: 387
+-- Dependencies: 385
 -- Name: FUNCTION fn_modes_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13268,7 +13304,7 @@ COMMENT ON FUNCTION fn_modes_sel(injson json, OUT outjson json) IS 'functions ar
 
 
 --
--- TOC entry 525 (class 1255 OID 72783)
+-- TOC entry 523 (class 1255 OID 72783)
 -- Name: fn_schemalist_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13352,7 +13388,7 @@ ALTER FUNCTION sqlmanager.fn_schemalist_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3453 (class 0 OID 0)
--- Dependencies: 525
+-- Dependencies: 523
 -- Name: FUNCTION fn_schemalist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13360,7 +13396,7 @@ COMMENT ON FUNCTION fn_schemalist_onload(injson json) IS 'load schemas';
 
 
 --
--- TOC entry 526 (class 1255 OID 72784)
+-- TOC entry 524 (class 1255 OID 72784)
 -- Name: fn_schemas_sel(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13392,7 +13428,7 @@ ALTER FUNCTION sqlmanager.fn_schemas_sel(injson json, OUT outjson json) OWNER TO
 
 --
 -- TOC entry 3454 (class 0 OID 0)
--- Dependencies: 526
+-- Dependencies: 524
 -- Name: FUNCTION fn_schemas_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13400,7 +13436,7 @@ COMMENT ON FUNCTION fn_schemas_sel(injson json, OUT outjson json) IS 'select api
 
 
 --
--- TOC entry 527 (class 1255 OID 72785)
+-- TOC entry 525 (class 1255 OID 72785)
 -- Name: fn_tablecols_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13526,7 +13562,7 @@ ALTER FUNCTION sqlmanager.fn_tablecols_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3455 (class 0 OID 0)
--- Dependencies: 527
+-- Dependencies: 525
 -- Name: FUNCTION fn_tablecols_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13534,7 +13570,7 @@ COMMENT ON FUNCTION fn_tablecols_onload(injson json) IS 'table columns onload';
 
 
 --
--- TOC entry 528 (class 1255 OID 72786)
+-- TOC entry 526 (class 1255 OID 72786)
 -- Name: fn_tablelist_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13592,7 +13628,7 @@ ALTER FUNCTION sqlmanager.fn_tablelist_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3456 (class 0 OID 0)
--- Dependencies: 528
+-- Dependencies: 526
 -- Name: FUNCTION fn_tablelist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13600,7 +13636,7 @@ COMMENT ON FUNCTION fn_tablelist_onload(injson json) IS 'table list';
 
 
 --
--- TOC entry 529 (class 1255 OID 72787)
+-- TOC entry 527 (class 1255 OID 72787)
 -- Name: fn_trigger_fields(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13659,7 +13695,7 @@ ALTER FUNCTION sqlmanager.fn_trigger_fields(injson json, OUT outjson json) OWNER
 
 --
 -- TOC entry 3457 (class 0 OID 0)
--- Dependencies: 529
+-- Dependencies: 527
 -- Name: FUNCTION fn_trigger_fields(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13667,7 +13703,7 @@ COMMENT ON FUNCTION fn_trigger_fields(injson json, OUT outjson json) IS 'fields 
 
 
 --
--- TOC entry 530 (class 1255 OID 72788)
+-- TOC entry 528 (class 1255 OID 72788)
 -- Name: fn_triggeractions_str(boolean, boolean, boolean, boolean); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13709,7 +13745,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_triggeractions_str(_ins boolean, _upd boolean, _del boolean, _trun boolean, OUT _str character varying) OWNER TO postgres;
 
 --
--- TOC entry 531 (class 1255 OID 72789)
+-- TOC entry 529 (class 1255 OID 72789)
 -- Name: fn_triggers_onload(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13859,7 +13895,7 @@ ALTER FUNCTION sqlmanager.fn_triggers_onload(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3458 (class 0 OID 0)
--- Dependencies: 531
+-- Dependencies: 529
 -- Name: FUNCTION fn_triggers_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13867,7 +13903,7 @@ COMMENT ON FUNCTION fn_triggers_onload(injson json) IS 'triggers onload';
 
 
 --
--- TOC entry 532 (class 1255 OID 72790)
+-- TOC entry 530 (class 1255 OID 72790)
 -- Name: fn_types_sel(json); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13910,7 +13946,7 @@ ALTER FUNCTION sqlmanager.fn_types_sel(injson json, OUT outjson json) OWNER TO p
 
 --
 -- TOC entry 3459 (class 0 OID 0)
--- Dependencies: 532
+-- Dependencies: 530
 -- Name: FUNCTION fn_types_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13918,7 +13954,7 @@ COMMENT ON FUNCTION fn_types_sel(injson json, OUT outjson json) IS 'ALL TYPES';
 
 
 --
--- TOC entry 533 (class 1255 OID 72791)
+-- TOC entry 531 (class 1255 OID 72791)
 -- Name: tr_foreignkeys_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13947,7 +13983,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_foreignkeys_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 534 (class 1255 OID 72792)
+-- TOC entry 532 (class 1255 OID 72792)
 -- Name: tr_foreignkeys_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -13981,7 +14017,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_foreignkeys_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 535 (class 1255 OID 72793)
+-- TOC entry 533 (class 1255 OID 72793)
 -- Name: tr_foreignkeys_tr_maincol(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14022,7 +14058,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_foreignkeys_tr_maincol() OWNER TO postgres;
 
 --
--- TOC entry 536 (class 1255 OID 72794)
+-- TOC entry 534 (class 1255 OID 72794)
 -- Name: tr_foreignkeys_tr_title(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14051,7 +14087,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_foreignkeys_tr_title() OWNER TO postgres;
 
 --
--- TOC entry 537 (class 1255 OID 72795)
+-- TOC entry 535 (class 1255 OID 72795)
 -- Name: tr_functionslist_tr_args(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14094,7 +14130,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_functionslist_tr_args() OWNER TO postgres;
 
 --
--- TOC entry 538 (class 1255 OID 72796)
+-- TOC entry 536 (class 1255 OID 72796)
 -- Name: tr_functionslist_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14130,7 +14166,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_functionslist_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 539 (class 1255 OID 72797)
+-- TOC entry 537 (class 1255 OID 72797)
 -- Name: tr_functionslist_tr_desc(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14160,7 +14196,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_functionslist_tr_desc() OWNER TO postgres;
 
 --
--- TOC entry 540 (class 1255 OID 72798)
+-- TOC entry 538 (class 1255 OID 72798)
 -- Name: tr_functionslist_tr_dll(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14182,7 +14218,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_functionslist_tr_dll() OWNER TO postgres;
 
 --
--- TOC entry 541 (class 1255 OID 72799)
+-- TOC entry 539 (class 1255 OID 72799)
 -- Name: tr_functionslist_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14251,7 +14287,7 @@ $_$;
 ALTER FUNCTION sqlmanager.tr_functionslist_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 543 (class 1255 OID 72800)
+-- TOC entry 541 (class 1255 OID 72800)
 -- Name: tr_functionslist_tr_upd(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14385,7 +14421,7 @@ $_$;
 ALTER FUNCTION sqlmanager.tr_functionslist_tr_upd() OWNER TO postgres;
 
 --
--- TOC entry 544 (class 1255 OID 72801)
+-- TOC entry 542 (class 1255 OID 72801)
 -- Name: tr_schemalist_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14414,7 +14450,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 545 (class 1255 OID 72802)
+-- TOC entry 543 (class 1255 OID 72802)
 -- Name: tr_schemalist_tr_descr(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14442,7 +14478,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_descr() OWNER TO postgres;
 
 --
--- TOC entry 546 (class 1255 OID 72803)
+-- TOC entry 544 (class 1255 OID 72803)
 -- Name: tr_schemalist_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14486,7 +14522,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 547 (class 1255 OID 72804)
+-- TOC entry 545 (class 1255 OID 72804)
 -- Name: tr_schemalist_tr_name(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14517,7 +14553,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_schemalist_tr_name() OWNER TO postgres;
 
 --
--- TOC entry 548 (class 1255 OID 72805)
+-- TOC entry 546 (class 1255 OID 72805)
 -- Name: tr_tablecolumns_tr_accur(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14547,7 +14583,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_accur() OWNER TO postgres;
 
 --
--- TOC entry 549 (class 1255 OID 72806)
+-- TOC entry 547 (class 1255 OID 72806)
 -- Name: tr_tablecolumns_tr_coldesc(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14574,7 +14610,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_coldesc() OWNER TO postgres;
 
 --
--- TOC entry 550 (class 1255 OID 72807)
+-- TOC entry 548 (class 1255 OID 72807)
 -- Name: tr_tablecolumns_tr_colname(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14601,7 +14637,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_colname() OWNER TO postgres;
 
 --
--- TOC entry 551 (class 1255 OID 72808)
+-- TOC entry 549 (class 1255 OID 72808)
 -- Name: tr_tablecolumns_tr_defval(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14646,7 +14682,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_defval() OWNER TO postgres;
 
 --
--- TOC entry 552 (class 1255 OID 72809)
+-- TOC entry 550 (class 1255 OID 72809)
 -- Name: tr_tablecolumns_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14677,7 +14713,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 553 (class 1255 OID 72810)
+-- TOC entry 551 (class 1255 OID 72810)
 -- Name: tr_tablecolumns_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14751,7 +14787,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 461 (class 1255 OID 72811)
+-- TOC entry 459 (class 1255 OID 72811)
 -- Name: tr_tablecolumns_tr_notnull(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14786,7 +14822,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_notnull() OWNER TO postgres;
 
 --
--- TOC entry 471 (class 1255 OID 72812)
+-- TOC entry 469 (class 1255 OID 72812)
 -- Name: tr_tablecolumns_tr_size(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14815,7 +14851,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_size() OWNER TO postgres;
 
 --
--- TOC entry 500 (class 1255 OID 72813)
+-- TOC entry 498 (class 1255 OID 72813)
 -- Name: tr_tablecolumns_tr_type(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14843,7 +14879,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_type() OWNER TO postgres;
 
 --
--- TOC entry 554 (class 1255 OID 72814)
+-- TOC entry 552 (class 1255 OID 72814)
 -- Name: tr_tablecolumns_tr_uniq(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14890,7 +14926,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablecolumns_tr_uniq() OWNER TO postgres;
 
 --
--- TOC entry 555 (class 1255 OID 72815)
+-- TOC entry 553 (class 1255 OID 72815)
 -- Name: tr_tablelist_tr_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14919,7 +14955,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablelist_tr_del() OWNER TO postgres;
 
 --
--- TOC entry 556 (class 1255 OID 72816)
+-- TOC entry 554 (class 1255 OID 72816)
 -- Name: tr_tablelist_tr_descr(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -14953,7 +14989,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablelist_tr_descr() OWNER TO postgres;
 
 --
--- TOC entry 557 (class 1255 OID 72817)
+-- TOC entry 555 (class 1255 OID 72817)
 -- Name: tr_tablelist_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15007,7 +15043,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablelist_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 558 (class 1255 OID 72818)
+-- TOC entry 556 (class 1255 OID 72818)
 -- Name: tr_tablelist_tr_name(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15045,7 +15081,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_tablelist_tr_name() OWNER TO postgres;
 
 --
--- TOC entry 559 (class 1255 OID 72819)
+-- TOC entry 557 (class 1255 OID 72819)
 -- Name: tr_trigger_del(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15071,7 +15107,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_trigger_del() OWNER TO postgres;
 
 --
--- TOC entry 560 (class 1255 OID 72820)
+-- TOC entry 558 (class 1255 OID 72820)
 -- Name: tr_triggers_tr_beforafter(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15149,7 +15185,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_triggers_tr_beforafter() OWNER TO postgres;
 
 --
--- TOC entry 561 (class 1255 OID 72821)
+-- TOC entry 559 (class 1255 OID 72821)
 -- Name: tr_triggers_tr_def(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15180,7 +15216,7 @@ $_$;
 ALTER FUNCTION sqlmanager.tr_triggers_tr_def() OWNER TO postgres;
 
 --
--- TOC entry 562 (class 1255 OID 72822)
+-- TOC entry 560 (class 1255 OID 72822)
 -- Name: tr_triggers_tr_def_upd(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15218,7 +15254,7 @@ $_$;
 ALTER FUNCTION sqlmanager.tr_triggers_tr_def_upd() OWNER TO postgres;
 
 --
--- TOC entry 563 (class 1255 OID 72823)
+-- TOC entry 561 (class 1255 OID 72823)
 -- Name: tr_triggers_tr_enabled(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15253,7 +15289,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_triggers_tr_enabled() OWNER TO postgres;
 
 --
--- TOC entry 564 (class 1255 OID 72824)
+-- TOC entry 562 (class 1255 OID 72824)
 -- Name: tr_triggers_tr_ins(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15322,7 +15358,7 @@ $_$;
 ALTER FUNCTION sqlmanager.tr_triggers_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 565 (class 1255 OID 72825)
+-- TOC entry 563 (class 1255 OID 72825)
 -- Name: tr_triggers_tr_iudt(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15389,7 +15425,7 @@ $$;
 ALTER FUNCTION sqlmanager.tr_triggers_tr_iudt() OWNER TO postgres;
 
 --
--- TOC entry 566 (class 1255 OID 72826)
+-- TOC entry 564 (class 1255 OID 72826)
 -- Name: tr_triggers_tr_title(); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
 --
 
@@ -15423,7 +15459,7 @@ ALTER FUNCTION sqlmanager.tr_triggers_tr_title() OWNER TO postgres;
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 567 (class 1255 OID 72827)
+-- TOC entry 565 (class 1255 OID 72827)
 -- Name: fn_act_visible_conditions_intable(json, integer, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15457,7 +15493,7 @@ ALTER FUNCTION test.fn_act_visible_conditions_intable(_vs json, act_id integer, 
 
 --
 -- TOC entry 3460 (class 0 OID 0)
--- Dependencies: 567
+-- Dependencies: 565
 -- Name: FUNCTION fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15465,7 +15501,7 @@ COMMENT ON FUNCTION fn_act_visible_conditions_intable(_vs json, act_id integer, 
 
 
 --
--- TOC entry 568 (class 1255 OID 72828)
+-- TOC entry 566 (class 1255 OID 72828)
 -- Name: fn_actions_in_table(json, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15642,7 +15678,7 @@ ALTER FUNCTION test.fn_actions_in_table(_actions json, INOUT _vid integer) OWNER
 
 --
 -- TOC entry 3461 (class 0 OID 0)
--- Dependencies: 568
+-- Dependencies: 566
 -- Name: FUNCTION fn_actions_in_table(_actions json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15650,7 +15686,7 @@ COMMENT ON FUNCTION fn_actions_in_table(_actions json, INOUT _vid integer) IS 'i
 
 
 --
--- TOC entry 569 (class 1255 OID 72829)
+-- TOC entry 567 (class 1255 OID 72829)
 -- Name: fn_config_in_table(json, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15783,7 +15819,7 @@ ALTER FUNCTION test.fn_config_in_table(_config json, INOUT _viewid integer) OWNE
 
 --
 -- TOC entry 3462 (class 0 OID 0)
--- Dependencies: 569
+-- Dependencies: 567
 -- Name: FUNCTION fn_config_in_table(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15791,7 +15827,7 @@ COMMENT ON FUNCTION fn_config_in_table(_config json, INOUT _viewid integer) IS '
 
 
 --
--- TOC entry 542 (class 1255 OID 72830)
+-- TOC entry 540 (class 1255 OID 72830)
 -- Name: fn_config_in_table_fncolumns_fix(json, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15827,7 +15863,7 @@ ALTER FUNCTION test.fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid
 
 --
 -- TOC entry 3463 (class 0 OID 0)
--- Dependencies: 542
+-- Dependencies: 540
 -- Name: FUNCTION fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15835,7 +15871,7 @@ COMMENT ON FUNCTION fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid
 
 
 --
--- TOC entry 570 (class 1255 OID 72831)
+-- TOC entry 568 (class 1255 OID 72831)
 -- Name: fn_config_in_table_tpath_fix(json, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15860,7 +15896,7 @@ ALTER FUNCTION test.fn_config_in_table_tpath_fix(_config json, INOUT _viewid int
 
 --
 -- TOC entry 3464 (class 0 OID 0)
--- Dependencies: 570
+-- Dependencies: 568
 -- Name: FUNCTION fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15868,7 +15904,7 @@ COMMENT ON FUNCTION fn_config_in_table_tpath_fix(_config json, INOUT _viewid int
 
 
 --
--- TOC entry 571 (class 1255 OID 72832)
+-- TOC entry 569 (class 1255 OID 72832)
 -- Name: fn_defaultval_intable(integer, json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15904,7 +15940,7 @@ ALTER FUNCTION test.fn_defaultval_intable(INOUT _colid integer, _dv json) OWNER 
 
 --
 -- TOC entry 3465 (class 0 OID 0)
--- Dependencies: 571
+-- Dependencies: 569
 -- Name: FUNCTION fn_defaultval_intable(INOUT _colid integer, _dv json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15912,7 +15948,7 @@ COMMENT ON FUNCTION fn_defaultval_intable(INOUT _colid integer, _dv json) IS 'pu
 
 
 --
--- TOC entry 572 (class 1255 OID 72833)
+-- TOC entry 570 (class 1255 OID 72833)
 -- Name: fn_filters_in_table(json, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15963,7 +15999,7 @@ ALTER FUNCTION test.fn_filters_in_table(filtrs json, INOUT _vid integer) OWNER T
 
 --
 -- TOC entry 3466 (class 0 OID 0)
--- Dependencies: 572
+-- Dependencies: 570
 -- Name: FUNCTION fn_filters_in_table(filtrs json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -15971,7 +16007,7 @@ COMMENT ON FUNCTION fn_filters_in_table(filtrs json, INOUT _vid integer) IS 'ins
 
 
 --
--- TOC entry 573 (class 1255 OID 72834)
+-- TOC entry 571 (class 1255 OID 72834)
 -- Name: fn_getmethodtest_setcolorblack(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16007,7 +16043,7 @@ ALTER FUNCTION test.fn_getmethodtest_setcolorblack(injson json) OWNER TO postgre
 
 --
 -- TOC entry 3467 (class 0 OID 0)
--- Dependencies: 573
+-- Dependencies: 571
 -- Name: FUNCTION fn_getmethodtest_setcolorblack(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16017,7 +16053,7 @@ colorpicker COLOR';
 
 
 --
--- TOC entry 574 (class 1255 OID 72835)
+-- TOC entry 572 (class 1255 OID 72835)
 -- Name: fn_gettest_setallcolor_red(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16041,7 +16077,7 @@ ALTER FUNCTION test.fn_gettest_setallcolor_red(injson json) OWNER TO postgres;
 
 --
 -- TOC entry 3468 (class 0 OID 0)
--- Dependencies: 574
+-- Dependencies: 572
 -- Name: FUNCTION fn_gettest_setallcolor_red(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16049,7 +16085,7 @@ COMMENT ON FUNCTION fn_gettest_setallcolor_red(injson json) IS 'set color red fo
 
 
 --
--- TOC entry 575 (class 1255 OID 72836)
+-- TOC entry 573 (class 1255 OID 72836)
 -- Name: fn_parametrs_intotables(json, integer, integer); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16098,7 +16134,7 @@ ALTER FUNCTION test.fn_parametrs_intotables(_params json, vi_id integer, INOUT a
 
 --
 -- TOC entry 3469 (class 0 OID 0)
--- Dependencies: 575
+-- Dependencies: 573
 -- Name: FUNCTION fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16106,7 +16142,7 @@ COMMENT ON FUNCTION fn_parametrs_intotables(_params json, vi_id integer, INOUT a
 
 
 --
--- TOC entry 576 (class 1255 OID 72837)
+-- TOC entry 574 (class 1255 OID 72837)
 -- Name: fn_postmethodtest_setcolorblue(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16142,7 +16178,7 @@ ALTER FUNCTION test.fn_postmethodtest_setcolorblue(injson json) OWNER TO postgre
 
 --
 -- TOC entry 3470 (class 0 OID 0)
--- Dependencies: 576
+-- Dependencies: 574
 -- Name: FUNCTION fn_postmethodtest_setcolorblue(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16152,7 +16188,7 @@ colorpicker COLOR    ';
 
 
 --
--- TOC entry 577 (class 1255 OID 72838)
+-- TOC entry 575 (class 1255 OID 72838)
 -- Name: fn_postmethodtest_setselectedcolor_black(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16192,7 +16228,7 @@ ALTER FUNCTION test.fn_postmethodtest_setselectedcolor_black(injson json) OWNER 
 
 --
 -- TOC entry 3471 (class 0 OID 0)
--- Dependencies: 577
+-- Dependencies: 575
 -- Name: FUNCTION fn_postmethodtest_setselectedcolor_black(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16202,7 +16238,7 @@ colorpicker COLOR by selected rows  ';
 
 
 --
--- TOC entry 578 (class 1255 OID 72839)
+-- TOC entry 576 (class 1255 OID 72839)
 -- Name: fn_select_api(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16248,7 +16284,7 @@ ALTER FUNCTION test.fn_select_api(injson json, OUT outjson json) OWNER TO postgr
 
 --
 -- TOC entry 3472 (class 0 OID 0)
--- Dependencies: 578
+-- Dependencies: 576
 -- Name: FUNCTION fn_select_api(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16256,7 +16292,7 @@ COMMENT ON FUNCTION fn_select_api(injson json, OUT outjson json) IS 'test select
 
 
 --
--- TOC entry 579 (class 1255 OID 72840)
+-- TOC entry 577 (class 1255 OID 72840)
 -- Name: fn_select_condition_intable(integer, json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16307,7 +16343,7 @@ ALTER FUNCTION test.fn_select_condition_intable(INOUT _colid integer, _sc json) 
 
 --
 -- TOC entry 3473 (class 0 OID 0)
--- Dependencies: 579
+-- Dependencies: 577
 -- Name: FUNCTION fn_select_condition_intable(INOUT _colid integer, _sc json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16315,7 +16351,7 @@ COMMENT ON FUNCTION fn_select_condition_intable(INOUT _colid integer, _sc json) 
 
 
 --
--- TOC entry 580 (class 1255 OID 72841)
+-- TOC entry 578 (class 1255 OID 72841)
 -- Name: fn_setParamsKey(json, jsonb); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16347,7 +16383,7 @@ ALTER FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb) OWNER TO 
 
 --
 -- TOC entry 3474 (class 0 OID 0)
--- Dependencies: 580
+-- Dependencies: 578
 -- Name: FUNCTION "fn_setParamsKey"(conf json, INOUT paramcol jsonb); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16355,7 +16391,7 @@ COMMENT ON FUNCTION "fn_setParamsKey"(conf json, INOUT paramcol jsonb) IS 'set k
 
 
 --
--- TOC entry 581 (class 1255 OID 72842)
+-- TOC entry 579 (class 1255 OID 72842)
 -- Name: fn_tel_save(json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16387,7 +16423,7 @@ $$;
 ALTER FUNCTION test.fn_tel_save(injson json) OWNER TO postgres;
 
 --
--- TOC entry 582 (class 1255 OID 72843)
+-- TOC entry 580 (class 1255 OID 72843)
 -- Name: fn_test(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16405,7 +16441,7 @@ ALTER FUNCTION test.fn_test() OWNER TO postgres;
 
 --
 -- TOC entry 3475 (class 0 OID 0)
--- Dependencies: 582
+-- Dependencies: 580
 -- Name: FUNCTION fn_test(); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16413,7 +16449,7 @@ COMMENT ON FUNCTION fn_test() IS 'test22';
 
 
 --
--- TOC entry 583 (class 1255 OID 72844)
+-- TOC entry 581 (class 1255 OID 72844)
 -- Name: fn_test3_t(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16427,7 +16463,7 @@ CREATE FUNCTION fn_test3_t() RETURNS void
 ALTER FUNCTION test.fn_test3_t() OWNER TO postgres;
 
 --
--- TOC entry 584 (class 1255 OID 72845)
+-- TOC entry 582 (class 1255 OID 72845)
 -- Name: fn_views_in_table(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16464,7 +16500,7 @@ ALTER FUNCTION test.fn_views_in_table() OWNER TO postgres;
 
 --
 -- TOC entry 3476 (class 0 OID 0)
--- Dependencies: 584
+-- Dependencies: 582
 -- Name: FUNCTION fn_views_in_table(); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16472,7 +16508,7 @@ COMMENT ON FUNCTION fn_views_in_table() IS 'put views data in tables';
 
 
 --
--- TOC entry 585 (class 1255 OID 72846)
+-- TOC entry 583 (class 1255 OID 72846)
 -- Name: fn_visible_condition_intable(integer, json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16520,7 +16556,7 @@ ALTER FUNCTION test.fn_visible_condition_intable(INOUT _colid integer, _vs json)
 
 --
 -- TOC entry 3477 (class 0 OID 0)
--- Dependencies: 585
+-- Dependencies: 583
 -- Name: FUNCTION fn_visible_condition_intable(INOUT _colid integer, _vs json); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16528,7 +16564,7 @@ COMMENT ON FUNCTION fn_visible_condition_intable(INOUT _colid integer, _vs json)
 
 
 --
--- TOC entry 586 (class 1255 OID 72847)
+-- TOC entry 584 (class 1255 OID 72847)
 -- Name: tr_dfs4(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16547,7 +16583,7 @@ END;
 ALTER FUNCTION test.tr_dfs4() OWNER TO postgres;
 
 --
--- TOC entry 587 (class 1255 OID 72848)
+-- TOC entry 585 (class 1255 OID 72848)
 -- Name: tr_major_table_tr(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16582,7 +16618,7 @@ ALTER FUNCTION test.tr_major_table_tr() OWNER TO postgres;
 
 --
 -- TOC entry 3478 (class 0 OID 0)
--- Dependencies: 587
+-- Dependencies: 585
 -- Name: FUNCTION tr_major_table_tr(); Type: COMMENT; Schema: test; Owner: postgres
 --
 
@@ -16590,7 +16626,7 @@ COMMENT ON FUNCTION tr_major_table_tr() IS 'test major table trigger';
 
 
 --
--- TOC entry 588 (class 1255 OID 72849)
+-- TOC entry 586 (class 1255 OID 72849)
 -- Name: tr_major_table_tr1(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -16607,7 +16643,7 @@ $$;
 ALTER FUNCTION test.tr_major_table_tr1() OWNER TO postgres;
 
 --
--- TOC entry 589 (class 1255 OID 72850)
+-- TOC entry 587 (class 1255 OID 72850)
 -- Name: tr_trtr(); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -23563,7 +23599,15 @@ SELECT pg_catalog.setval('select_condition_id_seq', 1197, true);
 --
 
 COPY sess (id, userid, created, killed) FROM stdin;
-1043e957-2e80-42ad-b051-5028a4d7994e	1	2020-06-04 12:34:27.540133	\N
+743716fc-8d29-4587-b0a8-a25b83cdb0c3	1	2020-06-04 18:07:02.278185	2020-06-04 18:07:11.073454
+814ea137-8648-4625-9cb2-baedc968ec0b	1	2020-06-04 18:07:23.068576	2020-06-04 18:07:29.598631
+1043e957-2e80-42ad-b051-5028a4d7994e	1	2020-06-04 12:34:27.540133	2020-06-04 18:14:19.728641
+4467a90d-f990-4582-9bd0-eee63e3608c5	1	2020-06-04 18:22:12.434988	2020-06-04 18:22:17.41605
+f6bb0e06-e235-42d5-a218-2aa517439e48	1	2020-06-04 19:19:34.62273	2020-06-04 19:20:00.870732
+e60dd6c4-2ac0-48a0-a3d0-8ffffdfe56ee	1	2020-06-04 19:20:32.953543	2020-06-04 19:22:00.648527
+e4bafd36-f6ff-4302-904e-56610c889282	1	2020-06-04 19:22:20.014162	2020-06-04 19:22:32.823289
+0d1b36f3-8682-4429-b8e1-7ab0b13caeec	1	2020-06-04 19:30:53.859288	2020-06-04 19:31:06.273218
+a2b1b0b4-07c7-4bec-aa64-1671f7944832	1	2020-06-04 19:31:14.45929	2020-06-04 19:31:17.263019
 \.
 
 
@@ -26764,7 +26808,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2020-06-04 14:18:48
+-- Completed on 2020-06-06 11:23:29
 
 --
 -- PostgreSQL database dump complete
