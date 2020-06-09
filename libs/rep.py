@@ -1,3 +1,4 @@
+from os import system
 from json import loads, dumps
 import urllib.request, urllib.error
 from psycopg2 import extras
@@ -71,6 +72,13 @@ def Report(self, url):
 			sesid + '; type: 1; Error:' + str(e))
 		showError(str(e), self)
 		return
+	except Exception as err:	
+		system('cd reports && node index.js') # try start reports server
+		try:
+			req = yield http_client.fetch(req)
+		except Exception as err:
+			showError('No connection to the report server',self)
+			return 
 		
 	if res.get('ishtml'):
 		html_report = StringIO()

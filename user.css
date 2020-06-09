@@ -312,8 +312,8 @@ body {
 }
 
 .avka img {
-    height: 65px;
-    width: 65px;
+    height: 45px;
+    width: 45px;
     display: inline-block;
     border-radius: 50%;
 }
@@ -322,5 +322,25 @@ body {
     font-size: large;
     font-weight: 500;
     color: rgba(0,0,0,.65);
+}
+
+.chat_login {
+  background: #899ee8;
+  color: white;
+  text-align: center;
+  border-radius: 40%;
+}
+
+.chat_time {
+  font-size:9px;
+}
+
+.chat_message {
+  background: #abd4f9;
+  height: 60px;
+  width: 150px;
+  border-radius: 10%;
+  color: #291818;
+  padding: 20px;
 }
 /* CHAT */
