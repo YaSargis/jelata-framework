@@ -304,7 +304,7 @@ body {
 .chat_list div {
   background-color: aliceblue;
   margin: 0;
-  padding: 2px;
+  /*padding: 2px;*/
 }
 
 .avka {
@@ -343,4 +343,40 @@ body {
   color: #291818;
   padding: 20px;
 }
+
+.unreaded2 span {
+    width: 20px;
+    display: block;
+    background: #ffa0cc;
+    text-align: center;
+    border-radius: 50%;
+    border-width: 0.2pt;
+    border-style: ridge;
+    border-color: #e066c059;
+    text-shadow: 0 0 1px red, 0 0 0.1px #505852;
+}
+
+.unreaded span {
+    margin: 2px 0 2px 2px;
+    zoom: 1;
+    padding: 4px 6px;
+    vertical-align: top;
+    color: #5b6e85;
+    background: #d1d9e0;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 11px;
+    line-height: 17px;
+    height: 16px;
+    border-radius: 2px;
+    transition: background-color 200ms linear,color 200ms linear;
+}
+
+.unreaded div {
+    color: #3f3ff5;
+    font-weight: 500;
+}
+
+
 /* CHAT */
