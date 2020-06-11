@@ -10,7 +10,7 @@ from libs.auth import Auth
 from libs.admin import Admin, Logs, Log, CSS
 from libs.schema import Schema
 from libs.fapi import FApi
-from libs.ws import WebSocket, WebSocketMessages, WebSocketMessageNotifications, WebSocketGlobal
+from libs.ws import WebSocketViews, WebSocketGlobal
 
 from libs.rep import Reporter
 
@@ -25,8 +25,6 @@ if __name__ == '__main__':
 	application = web.Application([
 		(r"/()", web.StaticFileHandler, {'path':'../jelataframework/',"default_filename": "index.html"}),
 		(r"/(list.*)", MainHandler),
-		(r'/(chats.*)', WebSocketMessages),
-		(r"/(chat.*)", MainHandler),
 		(r"/(getone.*)", MainHandler),
 		(r"/(calendar.*)", MainHandler),
 		(r"/(home.*)", MainHandler),
@@ -44,9 +42,8 @@ if __name__ == '__main__':
 		(r'/(logs.*)', Logs),
 		(r'/(log.*)', Log),
 		(r'/(rep.*)', Reporter),
-		(r'/(ws.*)', WebSocket),
+		(r'/(ws.*)', WebSocketViews),
 		(r'/(global_ws.*)', WebSocketGlobal),
-		(r'/(messages.*)', WebSocketMessageNotifications),
 		(r"/(.*.html)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.jpg)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r"/(.*.png)", web.StaticFileHandler, {'path':'../jelataframework/'} ),
