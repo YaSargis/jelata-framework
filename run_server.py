@@ -9,7 +9,7 @@ from settings import poolsize, dsn, port
 from libs.auth import Auth
 from libs.admin import Admin, Logs, Log, CSS
 from libs.schema import Schema
-from libs.fapi import FApi
+from libs.fapi import FApi, UploadFiles
 from libs.ws import WebSocketViews, WebSocketGlobal
 
 from libs.rep import Reporter
@@ -35,6 +35,7 @@ if __name__ == '__main__':
 		(r"/(login.*)", MainHandler),
 		(r"/(logout.*)", MainHandler),
 		(r'/(api.*)', FApi),
+		(r'/(upload_file.*)', UploadFiles),
 		(r'/(auth.*)', Auth),
 		(r'/(schema.*)', Schema),
 		(r'/(admin.*)', Admin),

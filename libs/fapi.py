@@ -109,10 +109,54 @@ def onRequest(self, url, type):
 	self.set_status(200,None)	
 	self.finish()
 
+@gen.coroutine		
+def onFileUpload(self, url, type):
+	'''
+		Function for post request on universal api for upload file (for class Uplo)
+	'''
+	args = {} #variable for arguments or body
+	method = url[4:] #cut 4 symbols from url start, work only if it will be api/
+	files = [] #variable for files
+	sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
+	if type != 1 and self.request.headers.get('Content-Type').find('multipart/form-data') == -1:
+		log(url, 'args: ' + str(self.request.arguments) + '; body: ' + str(self.request.body.decode('utf-8')) + 
+			'; sess: ' + str(sesid) + '; type: ' + str(type))
+	else:
+		log(url, 'args: ' + str(self.request.arguments) + 
+			'; sess: ' + str(sesid) + '; type: ' + str(type))		
+	if primaryAuthorization == "1" and sesid == '':
+		self.set_status(401,None)
+		self.write('{"message":"No session"}')
+		return
+	args = self.request.arguments 
+	for k in args:
+		args[k] = args.get(k)[0].decode('utf-8')
+		
+	files = self.request.files
+	
+	value = args.get('value') 
+	if not value:
+		value = '[]'
+
+	if files:
+		value = loads(value)
+		if args.get('config') and loads(args.get('config')).get('type') in ('file','image') and len(value) > 0:
+			showError('for type file/image can not be more then 1 file',self)
+			return
+				
+		value = value + savefile(self)
+		#args['value'] = dumps(value)
+
+	self.set_header('Content-Type','application/json charset="utf-8"')
+	self.write(dumps(value, indent=4, default=lambda x:str(x),ensure_ascii=False))
+	self.set_status(200,None)	
+	self.finish()
+	
+	
 class FApi(BaseHandler):
-	"""
+	'''
 		Universal API for methods
-	"""
+	'''
 	def set_default_headers(self):
 		default_headers(self)
 
@@ -131,3 +175,18 @@ class FApi(BaseHandler):
 	@gen.coroutine		
 	def delete(self, url):
 		yield onRequest(self,url,4)
+		
+class UploadFiles(BaseHandler):
+	'''
+		New file uploader
+	'''
+	def set_default_headers(self):
+		default_headers(self)
+
+	def options(self,url):
+		self.set_status(200,None)
+		self.finish()
+	@gen.coroutine		
+	def post(self, url):
+		yield onFileUpload(self,url,2)
+	
