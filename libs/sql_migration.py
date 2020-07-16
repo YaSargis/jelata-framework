@@ -266,7 +266,7 @@ def getList(result, body, userdetail=None):
 			where += 'and t' + sColT + '."' + col.get('col') + '" = null '		
 	if len(filters) > 0:
 		for col in filters:
-			print('col:',col)
+			#print('col:',col)
 			if 'filters' in body:
 				if (col.get("type") == "typehead" and col.get("title") in body.get("filters")) or str(col.get("column")) in body.get("filters"): 
 					if col.get("type") == "select":
