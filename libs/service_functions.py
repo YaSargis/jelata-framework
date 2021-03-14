@@ -22,9 +22,9 @@ def datetimeToFormat(dt):
 		day = '0' + day
 	if len(month) == 1:
 		month = '0' + month	
-	return (day + "." + month + 
-			"." + str(dt.year) + " " + hour+ ":" + 
-			minute + ":" + second)	
+	return (
+		day + '.' + month +  '.' + str(dt.year) + ' ' + hour+ ':' + minute + ':' + second
+	)	
 
 def dateToFormat(dt):
 	day = str(dt.day)
@@ -38,10 +38,10 @@ def dateToFormat(dt):
 			"." + str(dt.year) )	
 			
 def ifnull(s):
-	"""
+	'''
 		if None return null
 		else return 's'
-	"""	
+	'''	
 	if s is None:
 		s = 'null'
 	else:
@@ -100,7 +100,7 @@ def showError(err,self):
 		err - error text, self - context
 	"""
 	if err.find('HINT:') > -1:
-		err = (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0]
+		err = (err[err.find('HINT:')+5:err.find('+++___')]).split('\n')[0]
 	else:
 		err = err.split("\n")[0]
 	self.set_header("Content-Type",'application/json charset="utf-8"')
@@ -141,9 +141,9 @@ def default_headers(self):
 	'''
 		Default headers for requests
 	'''
-	orig = self.request.headers.get("Origin")
-	self.set_header("Access-Control-Allow-Origin",str(orig))	
-	self.set_header("Access-Control-Allow-Credentials","true")
-	self.set_header("withCredentials","true")
-	self.set_header("Access-Control-Allow-Headers","withCredentials, Auth, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers")	
-	self.set_header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS")		
+	orig = self.request.headers.get('Origin')
+	self.set_header('Access-Control-Allow-Origin',str(orig))	
+	self.set_header('Access-Control-Allow-Credentials','true')
+	self.set_header('withCredentials','true')
+	self.set_header('Access-Control-Allow-Headers','withCredentials, Auth, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers')	
+	self.set_header('Access-Control-Allow-Methods','GET, POST, PUT, DELETE, OPTIONS')		

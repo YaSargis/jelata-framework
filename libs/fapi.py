@@ -8,9 +8,9 @@ from libs.service_functions import showError, default_headers, log
 from settings import maindomain, primaryAuthorization
 
 def savefile(self):
-	"""
+	'''
 		save files
-	"""
+	'''
 	files = self.request.files
 	value = []
 	x = True
@@ -46,9 +46,9 @@ def savefile(self):
 	
 @gen.coroutine		
 def onRequest(self, url, type):
-	"""
+	'''
 		Function for get,post,put and delete requests on universal api (for class FApi)
-	"""
+	'''
 	args = {} #variable for arguments or body
 	method = url[4:] #cut 4 symbols from url start, work only if it will be api/
 	files = [] #variable for files
@@ -90,9 +90,9 @@ def onRequest(self, url, type):
 			
 		args = body	
 		for k in args:
-			if args[k] == "":
+			if args[k] == '':
 				args[k] = None
-	squery = "select * from framework.fn_fapi(injson:=%s,apititle:=%s,apitype:=%s,sessid:=%s,primaryauthorization:=%s)"
+	squery = 'select * from framework.fn_fapi(injson:=%s,apititle:=%s,apitype:=%s,sessid:=%s,primaryauthorization:=%s)'
 	result = None
 	try:
 		result = yield self.db.execute(squery,(extras.Json(args),method,str(type),sesid,str(primaryAuthorization),))

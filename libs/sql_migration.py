@@ -63,7 +63,6 @@ def getList(result, body, userdetail=None):
 		newroles = []	
 		if roles:
 			for obj in roles:
-				#newroles.append(obj.get('value'))	
 				newroles.append(obj)	
 				newroles.append(developerRole)	
 		if (newroles is None or len(newroles) == 0 or (len(newroles)>0 
@@ -199,7 +198,10 @@ def getList(result, body, userdetail=None):
 						defv += bool_v + ' ' + colname + ' ' + act_v + " '%" + userid + "%' "	
 					elif def_v == '_orgid_':
 						orgid = str(userdetail.get('orgid'))	
-						defv += bool_v + ' ' + colname + ' ' + act_v + " '%" + orgid + "%' "						
+						defv += bool_v + ' ' + colname + ' ' + act_v + " '%" + orgid + "%' "		
+					elif def_v == '_sesid_':
+						sId = str(userdetail.get('_sesid_'))	
+						defv += bool_v + ' ' + colname + ' ' + act_v + " '%" + sId + "%' "							
 					else :
 						defv += bool_v + ' ' + colname + ' ' + act_v + " '%" + def_v + "%' "
 				elif act_v == 'is null' or act_v == 'is not null':		
@@ -214,6 +216,9 @@ def getList(result, body, userdetail=None):
 					elif def_v == '_userid_':
 						userid = str(userdetail.get('id'))	
 						defv += bool_v + ' ' + colname + '::varchar ' + act_v + " ('" + userid + "') "	
+					elif def_v == '_sesid_':
+						sId = str(userdetail.get('sessid'))	
+						defv += bool_v + ' ' + colname + '::varchar ' + act_v + " ('" + sId + "') "		
 					elif def_v == '_orgid_':
 						orgid = str(userdetail.get('orgid'))	
 						defv += bool_v + ' ' + colname +  '::varchar ' + act_v + " ('" + orgid + "') "		
@@ -232,6 +237,9 @@ def getList(result, body, userdetail=None):
 					elif def_v == '_orgid_':
 						orgid = str(userdetail.get('orgid'))	
 						defv += bool_v + ' ' + colname +  ' ' + act_v + " '" + orgid + "' "		
+					elif def_v == '_sesid_':
+						sId = str(userdetail.get('sessid'))	
+						defv += bool_v + ' ' + colname +  ' ' + act_v + " '" + sId + "' "	
 					else :
 						defv += bool_v + ' ' + colname + ' ' + act_v + " '" + def_v + "' "
 			if len(defv) > 0:
@@ -283,14 +291,6 @@ def getList(result, body, userdetail=None):
 							"::varchar,'')) like upper(concat(substring('" + formatInj(body.get("filters").get(col.get("column"))) + 
 							"',3,14),substring('" + formatInj(body.get("filters").get(col.get("column"))) + "',19,13)))) "
 						)
-						'''(
-							"and upper(coalesce(t" + 
-							str(col.get("t") or '1') + "." + 
-							col.get("column") + 
-							"::varchar,'')) like upper('%" + 
-							formatInj(body.get("filters").get(col.get("column"))) + 
-							"%') "
-						)'''
 					elif col.get("type") == "period":
 						if ('date1' in body.get("filters").get(col.get("column"))) and ('date2' in body.get("filters").get(col.get("column"))):
 							where += ("and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 

@@ -44,7 +44,7 @@ class WebSocketViews(websocket.WebSocketHandler, BaseHandler):
 		return
 
 	def on_close(self):
-		print("Connection closed")
+		print('Connection closed')
 		
 class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 	def check_origin(self, origin):
@@ -55,7 +55,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 		log('ws_global', 'message:' + str(message))
 		sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')
 		
-		squery = "select * from framework.fn_notifications_bysess(_sess:=%s)"
+		squery = 'select * from framework.fn_notifications_bysess(_sess:=%s)'
 		result = None
 		oldresult = []
 		while True:
@@ -64,7 +64,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 				result = yield self.db.execute(squery,(sesid,))
 			except Exception as err:
 				err = str(err)
-				self.write_message('{"error":"' + (err[err.find("HINT:")+5:err.find("+++___")]).split("\n")[0] + '"}')
+				self.write_message('{"error":"' + (err[err.find('HINT:')+5:err.find('+++___')]).split('\n')[0] + '"}')
 				return
 
 			result = result.fetchone()[0]
@@ -74,5 +74,5 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 		return
 
 	def on_close(self):
-		print("Connection closed")
+		print('Connection closed')
 		

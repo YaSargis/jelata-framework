@@ -7,7 +7,7 @@ from libs.service_functions import showError, default_headers, curtojson, log
 from settings import primaryAuthorization, developerRole, maindomain
 
 
-AsyncHTTPClient.configure("tornado.simple_httpclient.SimpleAsyncHTTPClient", max_clients=1000)
+AsyncHTTPClient.configure('tornado.simple_httpclient.SimpleAsyncHTTPClient', max_clients=1000)
 http_client =  AsyncHTTPClient()
 class Schema(BaseHandler):
 	'''
@@ -35,7 +35,7 @@ class Schema(BaseHandler):
 		method = url[7:].replace('/','').lower()
 		
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
-		if primaryAuthorization == "1" and sesid is None:
+		if primaryAuthorization == '1' and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
 			return
@@ -51,8 +51,7 @@ class Schema(BaseHandler):
 		userdetail = userdetail.fetchone()[0]
 		userdetail['sessid'] = sesid
 		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
-		'''SELECT row_to_json (d) FROM (select *
-					from framework.views where path = %s) as d'''
+
 		result = []
 		roles = (userdetail.get('roles') or [])
 		if int(developerRole) not in roles:
@@ -71,7 +70,6 @@ class Schema(BaseHandler):
 			self.write('{"message":"view is not found"}')
 			return
 		result = result[0]
-		#self.write(dumps(result))
 		query = getList(result, {}, userdetail=userdetail)
 		squery = query[0]
 		self.write(squery)		
@@ -90,7 +88,7 @@ class Schema(BaseHandler):
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
 		log(url, 'path: '+ path + '; body: ' + str(body) + ' sessid:' + str(sesid) )
 
-		if primaryAuthorization == "1" and sesid is None:
+		if primaryAuthorization == '1' and sesid is None:
 			self.set_status(401,None)
 			self.write('{"message":"No session"}')
 			return
@@ -105,11 +103,7 @@ class Schema(BaseHandler):
 
 		userdetail = userdetail.fetchone()[0]
 		userdetail['sessid'] = sesid
-		#userdetail = userdetail.get('outjson')
 		if method == 'list':
-			"""SELECT row_to_json (d) FROM (select *
-				from framework.views
-				where path = %s and viewtype in ('table', 'tiles') ) as d"""
 			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)'
 			result = []
 			try:
@@ -123,7 +117,6 @@ class Schema(BaseHandler):
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
-			#result = result[0]
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
@@ -137,7 +130,6 @@ class Schema(BaseHandler):
 				return
 			user = {}
 			
-			# if exist initial action onLoad
 			actions = result.get('acts')
 			onLoad = None
 
@@ -175,12 +167,12 @@ class Schema(BaseHandler):
 					response = yield http_client.fetch(req)
 				except HTTPError as e:
 					if e.response and e.response.body:
-						e = e.response.body.decode("utf-8")
+						e = e.response.body.decode('utf-8')
 					showError(str(e), self)
 					log(req_url + '_Error_onLoad', str(e))
 					log(req_url + '_Error_act', str(onLoad))
 					return
-			# if exist initial action onLoad
+
 	
 			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
@@ -217,9 +209,7 @@ class Schema(BaseHandler):
 			}))
 
 		elif method == 'getone':
-			'''SELECT row_to_json (d) FROM (select *
-				FROM framework.views
-				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d'''
+
 			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)' 
 			result = []
 			try:
@@ -232,21 +222,19 @@ class Schema(BaseHandler):
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
-			#result = result[0]
 			
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
 				x = True
 			for col in result.get('roles'):
-				if col.get("value") in (userdetail.get('roles') or []) and not x:
+				if col.get('value') in (userdetail.get('roles') or []) and not x:
 					x = True
 			if not x:
 				self.set_status(403,None)
 				self.write('{"message":"access denied"}')
 				return
 				
-			# if exist initial action onLoad
 			actions = result.get('acts')
 			onLoad = None
 
@@ -290,7 +278,6 @@ class Schema(BaseHandler):
 					log(req_url + '_Error_onLoad', str(e))
 					log(url + '_Error_act', str(onLoad))
 					return
-			# if exist initial action onLoad
 				
 			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
@@ -307,7 +294,7 @@ class Schema(BaseHandler):
 				self.set_status(500,None)
 				self.write('{"message":"getone can\'t return more then 1 row"}')
 				return
-			#count = count.fetchone()[0]
+
 			self.set_status(200,None)
 			self.write(dumps({
 				'data':data, 'config':result.get('config'),
@@ -317,8 +304,13 @@ class Schema(BaseHandler):
 				'id':result.get('id')
 			}))
 		elif method == 'squery':
-			squery = """SELECT row_to_json (d) FROM (select *
-						from framework.views where path = %s) as d"""
+			squery = '''
+				SELECT row_to_json (d) 
+				FROM (
+					SELECT *
+					FROM framework.views where path = %s
+				) as d
+			'''
 			result = []
 			roles = userdetail.get('roles')
 			if int(developerRole) not in roles:
@@ -337,10 +329,9 @@ class Schema(BaseHandler):
 				self.write('{"message":"view is not found"}')
 				return
 			result = result[0]
-			#self.write(dumps(result))
 			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
-			self.write(dumps({'squery':squery + "; "}))
+			self.write(dumps({'squery': squery + '; '}))
 		else:
 			self.set_status(404,None)
 			self.write('{"message":"method not found"}')

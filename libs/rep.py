@@ -21,7 +21,7 @@ def Report(self, url):
 	"""
 	args = {} #variable for arguments or body
 	report_path = url[4:] #cut 4 symbols from url start, work only if it will be rep/
-	sesid = self.get_cookie("sesid") or self.request.headers.get('Auth')	#get session id cookie
+	sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
 
 	log(url, 'args: ' + str(self.request.arguments) + 
 			'; sess: ' + sesid + '; type: 1')		
@@ -37,7 +37,7 @@ def Report(self, url):
 		return
 	injson = {'injson':args, 'sess':sesid, 'report_path':report_path}
 	
-	squery = "select * from reports.fn_call_report(injson:=%s)"
+	squery = 'select * from reports.fn_call_report(injson:=%s)'
 	result = None
 	try:
 		result = yield self.db.execute(squery,(extras.Json(injson),))
@@ -51,7 +51,7 @@ def Report(self, url):
 	res = result.fetchone()[0]	
 	data = res.get('outjson')
 
-	reqBody = {'template':".." + res.get('template_path'),'data':dumps(data), 'filename':args.get('filename')}
+	reqBody = {'template':'..' + res.get('template_path'),'data':dumps(data), 'filename':args.get('filename')}
 	
 	http_client =  AsyncHTTPClient();
 	req = HTTPRequest(
@@ -66,7 +66,7 @@ def Report(self, url):
 		req = yield http_client.fetch(req)
 	except HTTPError as e:
 		if e.response and e.response.body:
-			e = e.response.body.decode("utf-8")
+			e = e.response.body.decode('utf-8')
 		log(url + '_Error_NodeJs',' args: ' + 
 			str(extras.Json(args)) + '; sess: ' + 
 			sesid + '; type: 1; Error:' + str(e))
