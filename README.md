@@ -41,7 +41,13 @@ After starting the server, in the browser, go to http://127.0.0.1:8080 and in th
 <p>PS Be sure to change the administrator password before release.</p>
 <p>For see template components	follow the link  http://127.0.0.1:8080/list/test</p>
 
-You can write your own front-end for framework using <a href="https://github.com/YaSargis/jelata-framework-ant-frontend">main frontent project</a>				
+
+Templates: 
+<ul>
+	<li><a href="https://github.com/YaSargis/jelata-framework-ant-frontend">and design</a></li>
+	<li><a href="https://github.com/YaSargis/jelata-framework-frontend-materialize">materialize</a></li>
+</ul>
+You can write your own front-end for framework 
 
 ## Authors
 
