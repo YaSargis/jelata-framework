@@ -14,4 +14,4 @@ developerRole = settingsFile.get('developerRole')  # role of developer in system
 maindomain = settingsFile.get('maindomain')  #main domain for static file path
 primaryAuthorization = settingsFile.get('primaryAuthorization')  #main domain for static file path
 template = settingsFile.get('template') or 'ant'  
-        
+                              

@@ -134,6 +134,14 @@ var LaNg = {
 	"notForget" : {
 		"EN":"Do not forget save changes",
 		"RU":"Не забудьте сохранить изменения"
+	}, 
+	"Empty" : {
+		"EN":"empty",
+		"RU":"пусто"
+	}, 
+	"authErr" : {
+		"EN":"authentication failed",
+		"RU":"Ошибка аутентификации"
 	}
 }
 
