@@ -114,7 +114,7 @@ def getList(result, body, userdetail=None):
 					squery += ' distinct '
 				else:
 					for cl in col.get('fncolumns'):
-						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_'):
+						if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_', '_viewid_'):
 							gropby += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 						else:
 							if str(cl.get('label')) == '_userid_':
@@ -124,9 +124,11 @@ def getList(result, body, userdetail=None):
 							if str(cl.get('label')) == '_orgs_':
 								gropby += "'" + str(userdetail.get('orgs') or 'null') + "',"		
 							if str(cl.get('label')) == '_sesid_':
-								gropby += "'" + str(userdetail.get('sessid') or 'null') + "',"		
+								gropby += "'" + str(userdetail.get('sessid') or 'null') + "',"	
+							if str(cl.get('label')) == '_viewid_':
+								gropby += "'" + str(result.get('id') or 'null') + "',"								
 				for cl in col.get('fncolumns'):
-					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_'):
+					if str(cl.get('label')) not in ('_userid_', '_orgid_', '_orgs_', '_sesid_', '_viewid_'):
 						squery += 't' + str(cl.get('t')) + '."' + str(cl.get('label')) + '",'
 					else:
 						if str(cl.get('label')) == '_userid_':
@@ -136,11 +138,14 @@ def getList(result, body, userdetail=None):
 						if str(cl.get('label')) == '_orgs_':
 							squery += "'" + str(userdetail.get('orgs') or 'null') + "',"		
 						if str(cl.get('label')) == '_sesid_':
-							squery += "'" + str(userdetail.get('sessid') or 'null') + "',"			
+							squery += "'" + str(userdetail.get('sessid') or 'null') + "',"	
+						if str(cl.get('label')) == '_viewid_':
+							squery += "'" + str(result.get('id') or 'null') + "',"								
 					if col.get('fn').get('label') == 'concat':
 						squery += "' ',"
 				squery = squery[:len(squery)-1]
-				squery += ') as "' + (col.get('key') or col.get('title')) + '", ' 				
+				squery += ') as "' + (col.get('key') or col.get('title')) + '", ' 					
+				
 
 		if col.get('relation') and not col.get('depency') and not col.get('related'):
 			if 'join' in col:

@@ -142,7 +142,31 @@ var LaNg = {
 	"authErr" : {
 		"EN":"authentication failed",
 		"RU":"Ошибка аутентификации"
+	},
+	"uploadFile" : {
+		"EN":"Upload File",
+		"RU":"Загрузить файл"
+	},
+	"uploadImage" : {
+		"EN":"Upload Image",
+		"RU":"Загрузить картинку"
+	},
+	"Delete" : {
+		"EN":"Delete",
+		"RU":"Удалить"
+	},
+	"Show" : {
+		"EN":"Show",
+		"RU":"Просмотр"
+	},
+	"Slider" : {
+		"EN":"Slider",
+		"RU":"Слайды"
+	},
+	"Download" : {
+		"EN":"Download",
+		"RU":"Скачать"
 	}
 }
 
-var LnG = 'EN'
+var LnG = 'RU'
