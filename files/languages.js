@@ -91,12 +91,12 @@ var LaNg = {
 	
 	"logSig": {
 		"EN":"Log in by digital signature",
-		"RU":"авторизацоваться по ЭЦП"
+		"RU":"авторизоваться по ЭЦП"
 	},
 	
 	"logPas": {
 		"EN":"Log in by login/password",
-		"RU":"авторизацоваться по логину/паролю"
+		"RU":"авторизоваться по логину/паролю"
 	},
 	"tCount" : {
 		"EN":"count",

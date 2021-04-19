@@ -10,8 +10,7 @@ from libs.auth import Auth
 from libs.admin import Admin, Logs, Log, CSS
 from libs.schema import Schema
 from libs.fapi import FApi, UploadFiles
-from libs.ws import WebSocketViews, WebSocketGlobal
-
+from libs.ws import WebSocketViews, WebSocketMessages, WebSocketMessageNotifications, WebSocketGlobal
 from libs.rep import Reporter
 
 tPath = '../jelataframework/template/'
@@ -42,6 +41,7 @@ if __name__ == '__main__':
 		(r'/(tiles.*)', MainHandler),
 		(r'/(login.*)', MainHandler),
 		(r'/(logout.*)', MainHandler),
+		(r'/(chats.*)', MainHandler),
 		(r'/(api.*)', FApi),
 		(r'/(upload_file.*)', UploadFiles),
 		(r'/(auth.*)', Auth),
@@ -53,6 +53,8 @@ if __name__ == '__main__':
 		(r'/(rep.*)', Reporter),
 		(r'/(ws.*)', WebSocketViews),
 		(r'/(global_ws.*)', WebSocketGlobal),
+		(r'/(messages.*)', WebSocketMessageNotifications),
+		(r'/(chats.*)', WebSocketMessages),
 		(r'/(.*.html)', web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r'/(.*.jpg)', web.StaticFileHandler, {'path':'../jelataframework/'} ),
 		(r'/(.*.png)', web.StaticFileHandler, {'path':'../jelataframework/'} ),
