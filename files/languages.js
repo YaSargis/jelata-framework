@@ -169,4 +169,4 @@ var LaNg = {
 	}
 }
 
-var LnG = 'RU'
+var LnG = 'EN'
