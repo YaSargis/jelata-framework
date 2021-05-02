@@ -167,8 +167,8 @@ def getList(result, body, userdetail=None):
 					if joins.find(tpath[i].get('t')) == -1:
 						joins += ' LEFT JOIN ' + tpath[i].get('table') + ' as ' + tpath[i].get('t') + ' on ' + tpath[i-1].get('t') + '."' + tpath[i].get('col') + '" = ' + tpath[i].get('t') + '."' + (col.get('relcol') or 'id') + '"'
 				i += 1
-			if joins.find(" as t" + str(col.get("t"))) == -1:
-				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get("t")) + " on t" + str(col.get("t")) + '."' + (col.get("relcol") or "id") + '" = ' + tpath[i-1].get("t") + '."' + col.get('relatecolumn') + '"'  
+			if joins.find(" as t" + str(col.get('t'))) == -1:
+				joins += " LEFT JOIN " + col.get("table") + " as t" + str(col.get('t')) + " on t" + str(col.get('t')) + '."' + (col.get("relcol") or "id") + '" = ' + tpath[i-1].get('t') + '."' + col.get('relatecolumn') + '"'  
 		colname = ''
 		if col.get('fn') is None:	
 			colname = 't' + sColT + '."' + col.get("col") + '"'
@@ -281,77 +281,77 @@ def getList(result, body, userdetail=None):
 		for col in filters:
 			#print('col:',col)
 			if 'filters' in body:
-				if (col.get("type") == "typehead" and col.get("title") in body.get("filters")) or str(col.get("column")) in body.get("filters"): 
-					if col.get("type") == "select":
-						if body.get("filters").get(col.get("column")):
-							where += "and t" + str(col.get("t") or '1') + "." + col.get("column") + " = '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
-					elif col.get("type") == "substr":
+				if (col.get('type') == 'typehead' and col.get('title') in body.get('filters')) or str(col.get('column')) in body.get('filters'): 
+					if col.get('type') == 'select':
+						if body.get('filters').get(col.get('column')):
+							where += 'and t' + str(col.get('t') or '1') + '.' + col.get('column') + " = '" + formatInj(body.get('filters').get(col.get('column'))) + "' "
+					elif col.get('type') == 'substr':
 						where += (
-							"and (upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + 
-							"::varchar,'')) like upper('%" + formatInj(body.get("filters").get(col.get("column"))) + 
-							"%') OR upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + 
-							"::varchar,'')) like substring(upper('" + formatInj(body.get("filters").get(col.get("column"))) + 
-							"'),3,length('" + formatInj(body.get("filters").get(col.get("column"))) + 
-							"')) OR upper(coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + 
-							"::varchar,'')) like upper(concat(substring('" + formatInj(body.get("filters").get(col.get("column"))) + 
-							"',3,14),substring('" + formatInj(body.get("filters").get(col.get("column"))) + "',19,13)))) "
+							'and (upper(coalesce(t' + str(col.get('t') or '1') + '."' + col.get('column') + '"' +
+							"::varchar,'')) like upper('%" + formatInj(body.get('filters').get(col.get('column'))) + 
+							"%') OR upper(coalesce(t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' +
+							"::varchar,'')) like substring(upper('" + formatInj(body.get('filters').get(col.get('column'))) + 
+							"'),3,length('" + formatInj(body.get('filters').get(col.get('column'))) + 
+							"')) OR upper(coalesce(t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' + 
+							"::varchar,'')) like upper(concat(substring('" + formatInj(body.get('filters').get(col.get('column'))) + 
+							"',3,14),substring('" + formatInj(body.get('filters').get(col.get('column'))) + "',19,13)))) "
 						)
-					elif col.get("type") == "period":
-						if ('date1' in body.get("filters").get(col.get("column"))) and ('date2' in body.get("filters").get(col.get("column"))):
-							where += ("and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 
-								formatInj(body.get("filters").get(col.get("column")).get("date1")) + 
-								"' and t" + str(col.get("t") or '1') + "." + col.get("column") + 
-								"::date <= '" + formatInj(body.get("filters").get(col.get("column")).get("date2")) + "' ")									
-					elif col.get("type") == "date_between":
-						if formatInj(body.get("filters").get(col.get("column"))) is not None:
+					elif col.get('type') == 'period':
+						if ('date1' in body.get('filters').get(col.get('column'))) and ('date2' in body.get('filters').get(col.get('column'))):
+							where += ("and t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' + "::date >= '" + 
+								formatInj(body.get('filters').get(col.get('column')).get('date1')) + 
+								"' and t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' +
+								"::date <= '" + formatInj(body.get('filters').get(col.get('column')).get('date2')) + "' ")									
+					elif col.get('type') == 'date_between':
+						if formatInj(body.get('filters').get(col.get('column'))) is not None:
 							where += (
-								"and t" + str(col.get("t") or '1') + "." + col.get("column") + "::date >= '" + 
-								formatInj(body.get("filters").get(col.get("column"))) + 
-								"' and t" + str(col.get("t") or '1') + "." + col.get("column") + 
-								"::date <= '" + formatInj(body.get("filters").get(col.get("column"))) + "' "
+								"and t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' + "::date >= '" + 
+								formatInj(body.get('filters').get(col.get('column'))) + 
+								"' and t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' +
+								"::date <= '" + formatInj(body.get('filters').get(col.get('column'))) + "' "
 							)	
-					elif col.get("type") == "multiselect":
-						if len(body.get("filters").get(col.get("column"))) > 0 :
-							where += ("and (t" + str(col.get("t") or '1') + "." + col.get("column") + 
+					elif col.get('type') == 'multiselect':
+						if len(body.get('filters').get(col.get('column'))) > 0 :
+							where += ("and (t" + str(col.get('t') or '1') + '."' + col.get('column') + '"' +
 								"::varchar in ( select (value::varchar::json)->>'value'::varchar from json_array_elements_text('" + 
-								dumps(body.get("filters").get(col.get("column"))) + "')) or ( select count(*) from json_array_elements_text('" + 
-								dumps(body.get("filters").get(col.get("column"))) + "') where (value::varchar::json)->>'value' is null )>0)")
-					elif col.get("type") == "multijson":
-						if len(body.get("filters").get(col.get("column"))) > 0:
+								dumps(body.get('filters').get(col.get('column'))) + "')) or ( select count(*) from json_array_elements_text('" + 
+								dumps(body.get('filters').get(col.get('column'))) + "') where (value::varchar::json)->>'value' is null )>0)")
+					elif col.get('type') == 'multijson':
+						if len(body.get('filters').get(col.get('column'))) > 0:
 							where += ("and  ( select count(*) from json_array_elements_text('" + 
-								dumps(body.get("filters").get(col.get("column"))) + "') as a JOIN json_array_elements_text(t" + str(col.get("t") or '1') + "." + 
-								col.get("column") + ") as b on (a.value::varchar::json)->>'value'::varchar = b.value::varchar or (a.value::varchar::json->>'value') is null )>0 ")
-					elif col.get("type") == "check" and body.get("filters").get(col.get("column")) is not None:
+								dumps(body.get('filters').get(col.get('column'))) + "') as a JOIN json_array_elements_text(t" + str(col.get('t') or '1') + '."' + 
+								col.get('column') + '"' + ") as b on (a.value::varchar::json)->>'value'::varchar = b.value::varchar or (a.value::varchar::json->>'value') is null )>0 ")
+					elif col.get('type') == 'check' and body.get('filters').get(col.get('column')) is not None:
 						ch = 'false'
-						if body.get("filters").get(col.get("column")) == True:
+						if body.get('filters').get(col.get('column')) == True:
 							ch = 'true'
-						where += "and coalesce(t" + str(col.get("t") or '1') + "." + col.get("column") + ",false) = " + str(ch) + " "
-					elif col.get("type") == "typehead":
+						where += 'and coalesce(t' + str(col.get('t') or '1') + '."' + col.get('column') +  '",false) = ' + str(ch) + ' '
+					elif col.get('type') == 'typehead':
 						
-						v = formatInj(body.get("filters").get(col.get("title")))
+						v = formatInj(body.get('filters').get(col.get('title')))
 						if v:
-							where += "and ("
-							if len(v.split(" "))>2:
+							where += 'and ('
+							if len(v.split(' ')) > 2:
 								i = 0
-								v = v.split(" ")
-								cols = col.get("columns")
+								v = v.split(' ')
+								cols = col.get('columns')
 								while i < len(cols):
-									if len(v) >= i+1:
-										where += " and "
-										if cols[i].get("t"):
-											where += " lower(t" + str(cols[i].get("t") or '1') + "." + cols[i].get("label") + "::varchar) like lower('" + str(v[i]) + "%') "
+									if len(v) >= i + 1:
+										where += ' and '
+										if cols[i].get('t'):
+											where += ' lower(t' + str(cols[i].get('t') or '1') + '."' + cols[i].get('label') + '"' + "::varchar) like lower('" + str(v[i]) + "%') "
 										else:	
-											where += " lower(" + cols[i].get("label") + "::varchar) like lower('" + str(v[i]) + "') "
+											where += ' lower(' + cols[i].get('label') + "::varchar) like lower('" + str(v[i]) + "') "
 									i += 1	
-								where = where.replace("( and","(") + " ) "	
+								where = where.replace('( and','(') + ' ) '	
 							else:
-								for x in col.get("columns"):	
-									where += " or "
-									if x.get("t"):
-										where += " lower(t" + str(x.get("t") or '1') + "." + x.get("label") + "::varchar) like lower('%" + str(v).strip() + "%') "
+								for x in col.get('columns'):	
+									where += ' or '
+									if x.get('t'):
+										where += ' lower(t' + str(x.get('t') or '1') + '."' + x.get('label') + '"' + "::varchar) like lower('%" + str(v).strip() + "%') "
 									else:	
-										where += " lower(" + x.get("label") + "::varchar) like lower('%" + str(v).strip() + "%') "
-								where = where.replace("( or","(") + " ) "
+										where += ' lower(' + x.get('label') + "::varchar) like lower('%" + str(v).strip() + "%') "
+								where = where.replace('( or','(') + ' ) '
 							
 	pagenum = 1
 	pagesize = 30

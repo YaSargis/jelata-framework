@@ -166,6 +166,11 @@ var LaNg = {
 	"Download" : {
 		"EN":"Download",
 		"RU":"Скачать"
+	},
+	"enterTheValue":{
+		"EN":"enter the value",
+		"RU":"Введите текст"
+		
 	}
 }
 
