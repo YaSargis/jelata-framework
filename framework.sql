@@ -5,7 +5,7 @@
 -- Dumped from database version 9.6.20
 -- Dumped by pg_dump version 9.6.0
 
--- Started on 2021-04-26 19:55:33
+-- Started on 2021-05-12 11:46:56
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -27,7 +27,7 @@ CREATE SCHEMA framework;
 ALTER SCHEMA framework OWNER TO postgres;
 
 --
--- TOC entry 3405 (class 0 OID 0)
+-- TOC entry 3409 (class 0 OID 0)
 -- Dependencies: 10
 -- Name: SCHEMA framework; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -46,7 +46,7 @@ CREATE SCHEMA reports;
 ALTER SCHEMA reports OWNER TO postgres;
 
 --
--- TOC entry 3407 (class 0 OID 0)
+-- TOC entry 3411 (class 0 OID 0)
 -- Dependencies: 5
 -- Name: SCHEMA reports; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -65,7 +65,7 @@ CREATE SCHEMA sqlmanager;
 ALTER SCHEMA sqlmanager OWNER TO postgres;
 
 --
--- TOC entry 3408 (class 0 OID 0)
+-- TOC entry 3412 (class 0 OID 0)
 -- Dependencies: 9
 -- Name: SCHEMA sqlmanager; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -84,7 +84,7 @@ CREATE SCHEMA test;
 ALTER SCHEMA test OWNER TO postgres;
 
 --
--- TOC entry 3409 (class 0 OID 0)
+-- TOC entry 3413 (class 0 OID 0)
 -- Dependencies: 11
 -- Name: SCHEMA test; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -101,7 +101,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 3410 (class 0 OID 0)
+-- TOC entry 3414 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -118,7 +118,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 3411 (class 0 OID 0)
+-- TOC entry 3415 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -173,7 +173,7 @@ $$;
 ALTER FUNCTION framework.fn_action_add_untitle(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3412 (class 0 OID 0)
+-- TOC entry 3416 (class 0 OID 0)
 -- Dependencies: 326
 -- Name: FUNCTION fn_action_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -250,7 +250,7 @@ $$;
 ALTER FUNCTION framework.fn_action_copy(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3413 (class 0 OID 0)
+-- TOC entry 3417 (class 0 OID 0)
 -- Dependencies: 327
 -- Name: FUNCTION fn_action_copy(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -288,7 +288,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3414 (class 0 OID 0)
+-- TOC entry 3418 (class 0 OID 0)
 -- Dependencies: 328
 -- Name: FUNCTION fn_apimethods(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -352,7 +352,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3415 (class 0 OID 0)
+-- TOC entry 3419 (class 0 OID 0)
 -- Dependencies: 329
 -- Name: FUNCTION fn_autocomplete(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -393,7 +393,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3416 (class 0 OID 0)
+-- TOC entry 3420 (class 0 OID 0)
 -- Dependencies: 330
 -- Name: FUNCTION fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -444,7 +444,7 @@ $$;
 ALTER FUNCTION framework.fn_col_add_select_condition(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3417 (class 0 OID 0)
+-- TOC entry 3421 (class 0 OID 0)
 -- Dependencies: 331
 -- Name: FUNCTION fn_col_add_select_condition(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -512,7 +512,7 @@ $_$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3418 (class 0 OID 0)
+-- TOC entry 3422 (class 0 OID 0)
 -- Dependencies: 332
 -- Name: FUNCTION fn_compo_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -582,7 +582,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3419 (class 0 OID 0)
+-- TOC entry 3423 (class 0 OID 0)
 -- Dependencies: 333
 -- Name: FUNCTION fn_compo_onload(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -632,7 +632,7 @@ $$;
 ALTER FUNCTION framework.fn_compoitem_add(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3420 (class 0 OID 0)
+-- TOC entry 3424 (class 0 OID 0)
 -- Dependencies: 334
 -- Name: FUNCTION fn_compoitem_add(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -687,7 +687,7 @@ $$;
 ALTER FUNCTION framework.fn_config_fncol_add(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3421 (class 0 OID 0)
+-- TOC entry 3425 (class 0 OID 0)
 -- Dependencies: 335
 -- Name: FUNCTION fn_config_fncol_add(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -856,7 +856,7 @@ $$;
 ALTER FUNCTION framework.fn_config_inscol(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3422 (class 0 OID 0)
+-- TOC entry 3426 (class 0 OID 0)
 -- Dependencies: 539
 -- Name: FUNCTION fn_config_inscol(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -903,7 +903,7 @@ $$;
 ALTER FUNCTION framework.fn_config_relation(_id integer, OUT _relation character varying) OWNER TO postgres;
 
 --
--- TOC entry 3423 (class 0 OID 0)
+-- TOC entry 3427 (class 0 OID 0)
 -- Dependencies: 336
 -- Name: FUNCTION fn_config_relation(_id integer, OUT _relation character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -956,7 +956,7 @@ $$;
 ALTER FUNCTION framework.fn_config_relationcolumns(_id integer, OUT relation_columns character varying) OWNER TO postgres;
 
 --
--- TOC entry 3424 (class 0 OID 0)
+-- TOC entry 3428 (class 0 OID 0)
 -- Dependencies: 337
 -- Name: FUNCTION fn_config_relationcolumns(_id integer, OUT relation_columns character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1029,7 +1029,7 @@ $$;
 ALTER FUNCTION framework.fn_config_selectapi(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3425 (class 0 OID 0)
+-- TOC entry 3429 (class 0 OID 0)
 -- Dependencies: 338
 -- Name: FUNCTION fn_config_selectapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1065,7 +1065,7 @@ $$;
 ALTER FUNCTION framework.fn_config_settings_apply(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3426 (class 0 OID 0)
+-- TOC entry 3430 (class 0 OID 0)
 -- Dependencies: 339
 -- Name: FUNCTION fn_config_settings_apply(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1074,7 +1074,7 @@ COMMENT ON FUNCTION fn_config_settings_apply(injson json) IS 'apply all columns 
 
 
 --
--- TOC entry 588 (class 1255 OID 51902)
+-- TOC entry 599 (class 1255 OID 51902)
 -- Name: fn_config_to_json(integer); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -1093,7 +1093,7 @@ BEGIN
             c.relcol, c.column_order, c."join", c.updatable, c.required, 
             c.orderby, c.orderbydesc, c.related, c."table", c.width,
   			c.visible, c."type", c.multiselecttable, c.editable, c.tpath, 
-            c.relation, (
+            c.relation, c.disabled, (
               CASE WHEN c.fn is not null
               THEN
                   json_build_object('value',c.fn,'label',c.fn,'functype',f.functype)
@@ -1228,8 +1228,8 @@ $$;
 ALTER FUNCTION framework.fn_config_to_json(_viewid integer, OUT _config json) OWNER TO postgres;
 
 --
--- TOC entry 3427 (class 0 OID 0)
--- Dependencies: 588
+-- TOC entry 3431 (class 0 OID 0)
+-- Dependencies: 599
 -- Name: FUNCTION fn_config_to_json(_viewid integer, OUT _config json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -1267,7 +1267,7 @@ $$;
 ALTER FUNCTION framework.fn_configsettings_selectapi(insjon json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3428 (class 0 OID 0)
+-- TOC entry 3432 (class 0 OID 0)
 -- Dependencies: 341
 -- Name: FUNCTION fn_configsettings_selectapi(insjon json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1504,7 +1504,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
--- TOC entry 3429 (class 0 OID 0)
+-- TOC entry 3433 (class 0 OID 0)
 -- Dependencies: 342
 -- Name: FUNCTION fn_copyview(injson json, OUT _newid integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1663,7 +1663,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3430 (class 0 OID 0)
+-- TOC entry 3434 (class 0 OID 0)
 -- Dependencies: 343
 -- Name: FUNCTION fn_createconfig(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1726,7 +1726,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 3431 (class 0 OID 0)
+-- TOC entry 3435 (class 0 OID 0)
 -- Dependencies: 344
 -- Name: FUNCTION fn_cryptosess(injson json, OUT sessid character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1792,7 +1792,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, INOUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 3432 (class 0 OID 0)
+-- TOC entry 3436 (class 0 OID 0)
 -- Dependencies: 545
 -- Name: FUNCTION fn_cryptosess(injson json, INOUT sessid character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1855,7 +1855,7 @@ $$;
 ALTER FUNCTION framework.fn_deleteconfig_checked(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3433 (class 0 OID 0)
+-- TOC entry 3437 (class 0 OID 0)
 -- Dependencies: 345
 -- Name: FUNCTION fn_deleteconfig_checked(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1983,7 +1983,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3434 (class 0 OID 0)
+-- TOC entry 3438 (class 0 OID 0)
 -- Dependencies: 346
 -- Name: FUNCTION fn_deleterow(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1992,7 +1992,7 @@ COMMENT ON FUNCTION fn_deleterow(injson json) IS 'DELETE ROW IN LIST COMPONENT (
 
 
 --
--- TOC entry 590 (class 1255 OID 51910)
+-- TOC entry 589 (class 1255 OID 51910)
 -- Name: fn_dialog_addadmin(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2108,8 +2108,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_addadmin(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3435 (class 0 OID 0)
--- Dependencies: 590
+-- TOC entry 3439 (class 0 OID 0)
+-- Dependencies: 589
 -- Name: FUNCTION fn_dialog_addadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2225,7 +2225,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_adduser(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3436 (class 0 OID 0)
+-- TOC entry 3440 (class 0 OID 0)
 -- Dependencies: 350
 -- Name: FUNCTION fn_dialog_adduser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2234,7 +2234,7 @@ COMMENT ON FUNCTION fn_dialog_adduser(injson json) IS 'ADD USER IN DIALOG';
 
 
 --
--- TOC entry 591 (class 1255 OID 51912)
+-- TOC entry 590 (class 1255 OID 51912)
 -- Name: fn_dialog_edit(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2328,8 +2328,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_edit(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3437 (class 0 OID 0)
--- Dependencies: 591
+-- TOC entry 3441 (class 0 OID 0)
+-- Dependencies: 590
 -- Name: FUNCTION fn_dialog_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2337,7 +2337,7 @@ COMMENT ON FUNCTION fn_dialog_edit(injson json) IS 'EDIT DIALOG';
 
 
 --
--- TOC entry 592 (class 1255 OID 51913)
+-- TOC entry 591 (class 1255 OID 51913)
 -- Name: fn_dialog_group_create(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2402,8 +2402,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_group_create(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3438 (class 0 OID 0)
--- Dependencies: 592
+-- TOC entry 3442 (class 0 OID 0)
+-- Dependencies: 591
 -- Name: FUNCTION fn_dialog_group_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2439,7 +2439,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_isadmin(_dialog_admins json, _userid integer, OUT _a boolean) OWNER TO postgres;
 
 --
--- TOC entry 3439 (class 0 OID 0)
+-- TOC entry 3443 (class 0 OID 0)
 -- Dependencies: 347
 -- Name: FUNCTION fn_dialog_isadmin(_dialog_admins json, _userid integer, OUT _a boolean); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2478,7 +2478,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_lasmessage(_id integer, OUT lm character varying) OWNER TO postgres;
 
 --
--- TOC entry 593 (class 1255 OID 51916)
+-- TOC entry 592 (class 1255 OID 51916)
 -- Name: fn_dialog_leave(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -2581,8 +2581,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_leave(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3440 (class 0 OID 0)
--- Dependencies: 593
+-- TOC entry 3444 (class 0 OID 0)
+-- Dependencies: 592
 -- Name: FUNCTION fn_dialog_leave(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -2749,7 +2749,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_bydialog(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3441 (class 0 OID 0)
+-- TOC entry 3445 (class 0 OID 0)
 -- Dependencies: 353
 -- Name: FUNCTION fn_dialog_message_bydialog(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2844,7 +2844,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_delete(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3442 (class 0 OID 0)
+-- TOC entry 3446 (class 0 OID 0)
 -- Dependencies: 354
 -- Name: FUNCTION fn_dialog_message_delete(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2984,7 +2984,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_edit(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3443 (class 0 OID 0)
+-- TOC entry 3447 (class 0 OID 0)
 -- Dependencies: 355
 -- Name: FUNCTION fn_dialog_message_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2993,7 +2993,7 @@ COMMENT ON FUNCTION fn_dialog_message_edit(injson json) IS 'EDIR MESSAGE';
 
 
 --
--- TOC entry 594 (class 1255 OID 51920)
+-- TOC entry 593 (class 1255 OID 51920)
 -- Name: fn_dialog_message_send(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3155,8 +3155,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_send(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3444 (class 0 OID 0)
--- Dependencies: 594
+-- TOC entry 3448 (class 0 OID 0)
+-- Dependencies: 593
 -- Name: FUNCTION fn_dialog_message_send(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3222,7 +3222,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_setread(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3445 (class 0 OID 0)
+-- TOC entry 3449 (class 0 OID 0)
 -- Dependencies: 351
 -- Name: FUNCTION fn_dialog_message_setread(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3231,7 +3231,7 @@ COMMENT ON FUNCTION fn_dialog_message_setread(injson json) IS 'SET MESSAGE READE
 
 
 --
--- TOC entry 595 (class 1255 OID 51922)
+-- TOC entry 594 (class 1255 OID 51922)
 -- Name: fn_dialog_messages_onload(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3290,8 +3290,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_messages_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3446 (class 0 OID 0)
--- Dependencies: 595
+-- TOC entry 3450 (class 0 OID 0)
+-- Dependencies: 594
 -- Name: FUNCTION fn_dialog_messages_onload(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3299,7 +3299,7 @@ COMMENT ON FUNCTION fn_dialog_messages_onload(injson json) IS 'oload messages';
 
 
 --
--- TOC entry 598 (class 1255 OID 51923)
+-- TOC entry 597 (class 1255 OID 51923)
 -- Name: fn_dialog_personal_create(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3372,8 +3372,8 @@ $$;
 ALTER FUNCTION framework.fn_dialog_personal_create(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3447 (class 0 OID 0)
--- Dependencies: 598
+-- TOC entry 3451 (class 0 OID 0)
+-- Dependencies: 597
 -- Name: FUNCTION fn_dialog_personal_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3526,7 +3526,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_removeadmin(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3448 (class 0 OID 0)
+-- TOC entry 3452 (class 0 OID 0)
 -- Dependencies: 358
 -- Name: FUNCTION fn_dialog_removeadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3662,7 +3662,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_removeuser(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3449 (class 0 OID 0)
+-- TOC entry 3453 (class 0 OID 0)
 -- Dependencies: 359
 -- Name: FUNCTION fn_dialog_removeuser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3779,7 +3779,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogmessage_color(_userid integer, _message_userid integer, OUT _color character varying) OWNER TO postgres;
 
 --
--- TOC entry 599 (class 1255 OID 51931)
+-- TOC entry 598 (class 1255 OID 51931)
 -- Name: fn_dialogs_byuser(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -3928,8 +3928,8 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_byuser(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3450 (class 0 OID 0)
--- Dependencies: 599
+-- TOC entry 3454 (class 0 OID 0)
+-- Dependencies: 598
 -- Name: FUNCTION fn_dialogs_byuser(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -3937,7 +3937,7 @@ COMMENT ON FUNCTION fn_dialogs_byuser(injson json, OUT outjson json) IS 'USER DI
 
 
 --
--- TOC entry 596 (class 1255 OID 51932)
+-- TOC entry 595 (class 1255 OID 51932)
 -- Name: fn_dialogs_chats_ws(json); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -4084,8 +4084,8 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_chats_ws(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3451 (class 0 OID 0)
--- Dependencies: 596
+-- TOC entry 3455 (class 0 OID 0)
+-- Dependencies: 595
 -- Name: FUNCTION fn_dialogs_chats_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -4214,7 +4214,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_chatsmessages_ws(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3452 (class 0 OID 0)
+-- TOC entry 3456 (class 0 OID 0)
 -- Dependencies: 366
 -- Name: FUNCTION fn_dialogs_chatsmessages_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4253,7 +4253,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3453 (class 0 OID 0)
+-- TOC entry 3457 (class 0 OID 0)
 -- Dependencies: 367
 -- Name: FUNCTION fn_dialogs_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4309,7 +4309,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_usersearch(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3454 (class 0 OID 0)
+-- TOC entry 3458 (class 0 OID 0)
 -- Dependencies: 368
 -- Name: FUNCTION fn_dialogs_usersearch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4412,7 +4412,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3455 (class 0 OID 0)
+-- TOC entry 3459 (class 0 OID 0)
 -- Dependencies: 364
 -- Name: FUNCTION fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4459,7 +4459,7 @@ $$;
 ALTER FUNCTION framework.fn_filter_add_untitle(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3456 (class 0 OID 0)
+-- TOC entry 3460 (class 0 OID 0)
 -- Dependencies: 365
 -- Name: FUNCTION fn_filter_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4763,7 +4763,7 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3457 (class 0 OID 0)
+-- TOC entry 3461 (class 0 OID 0)
 -- Dependencies: 352
 -- Name: FUNCTION fn_formselect(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4820,7 +4820,7 @@ $$;
 ALTER FUNCTION framework.fn_functions_getall_spapi(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3458 (class 0 OID 0)
+-- TOC entry 3462 (class 0 OID 0)
 -- Dependencies: 369
 -- Name: FUNCTION fn_functions_getall_spapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4904,7 +4904,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3459 (class 0 OID 0)
+-- TOC entry 3463 (class 0 OID 0)
 -- Dependencies: 371
 -- Name: FUNCTION fn_getfunctions(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4998,7 +4998,7 @@ $$;
 ALTER FUNCTION framework.fn_gettables_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3460 (class 0 OID 0)
+-- TOC entry 3464 (class 0 OID 0)
 -- Dependencies: 373
 -- Name: FUNCTION fn_gettables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5071,7 +5071,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
--- TOC entry 3461 (class 0 OID 0)
+-- TOC entry 3465 (class 0 OID 0)
 -- Dependencies: 375
 -- Name: FUNCTION fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5102,7 +5102,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3462 (class 0 OID 0)
+-- TOC entry 3466 (class 0 OID 0)
 -- Dependencies: 376
 -- Name: FUNCTION fn_logout(sesid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5389,7 +5389,7 @@ $$;
 ALTER FUNCTION framework.fn_logtable_rollback(injson json, OUT message character varying) OWNER TO postgres;
 
 --
--- TOC entry 3463 (class 0 OID 0)
+-- TOC entry 3467 (class 0 OID 0)
 -- Dependencies: 377
 -- Name: FUNCTION fn_logtable_rollback(injson json, OUT message character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5449,7 +5449,7 @@ $$;
 ALTER FUNCTION framework.fn_mainsettings_save(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3464 (class 0 OID 0)
+-- TOC entry 3468 (class 0 OID 0)
 -- Dependencies: 546
 -- Name: FUNCTION fn_mainsettings_save(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5477,7 +5477,7 @@ $$;
 ALTER FUNCTION framework.fn_mainsettings_usercss(_css text) OWNER TO postgres;
 
 --
--- TOC entry 3465 (class 0 OID 0)
+-- TOC entry 3469 (class 0 OID 0)
 -- Dependencies: 379
 -- Name: FUNCTION fn_mainsettings_usercss(_css text); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5646,7 +5646,7 @@ $$;
 ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3466 (class 0 OID 0)
+-- TOC entry 3470 (class 0 OID 0)
 -- Dependencies: 381
 -- Name: FUNCTION fn_menus(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5677,7 +5677,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3467 (class 0 OID 0)
+-- TOC entry 3471 (class 0 OID 0)
 -- Dependencies: 382
 -- Name: FUNCTION fn_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5735,7 +5735,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_bysess(_sess character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3468 (class 0 OID 0)
+-- TOC entry 3472 (class 0 OID 0)
 -- Dependencies: 383
 -- Name: FUNCTION fn_notifications_bysess(_sess character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5773,7 +5773,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_setreaded_by_userid(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3469 (class 0 OID 0)
+-- TOC entry 3473 (class 0 OID 0)
 -- Dependencies: 387
 -- Name: FUNCTION fn_notifications_setreaded_by_userid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5815,7 +5815,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_setsended(_sess character) OWNER TO postgres;
 
 --
--- TOC entry 3470 (class 0 OID 0)
+-- TOC entry 3474 (class 0 OID 0)
 -- Dependencies: 384
 -- Name: FUNCTION fn_notifications_setsended(_sess character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5927,7 +5927,7 @@ $$;
 ALTER FUNCTION framework.fn_roles_fetch(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3471 (class 0 OID 0)
+-- TOC entry 3475 (class 0 OID 0)
 -- Dependencies: 388
 -- Name: FUNCTION fn_roles_fetch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6352,7 +6352,7 @@ $_$;
 ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3472 (class 0 OID 0)
+-- TOC entry 3476 (class 0 OID 0)
 -- Dependencies: 389
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6840,7 +6840,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3473 (class 0 OID 0)
+-- TOC entry 3477 (class 0 OID 0)
 -- Dependencies: 391
 -- Name: FUNCTION fn_savevalue(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6979,7 +6979,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_filters(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3474 (class 0 OID 0)
+-- TOC entry 3478 (class 0 OID 0)
 -- Dependencies: 394
 -- Name: FUNCTION fn_tabcolumns_for_filters(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7045,7 +7045,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_filters_arr(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3475 (class 0 OID 0)
+-- TOC entry 3479 (class 0 OID 0)
 -- Dependencies: 395
 -- Name: FUNCTION fn_tabcolumns_for_filters_arr(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7092,7 +7092,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_sc(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3476 (class 0 OID 0)
+-- TOC entry 3480 (class 0 OID 0)
 -- Dependencies: 396
 -- Name: FUNCTION fn_tabcolumns_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7320,7 +7320,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3477 (class 0 OID 0)
+-- TOC entry 3481 (class 0 OID 0)
 -- Dependencies: 584
 -- Name: FUNCTION fn_trees_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7366,7 +7366,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3478 (class 0 OID 0)
+-- TOC entry 3482 (class 0 OID 0)
 -- Dependencies: 401
 -- Name: FUNCTION fn_userjson(sessid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7464,7 +7464,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3479 (class 0 OID 0)
+-- TOC entry 3483 (class 0 OID 0)
 -- Dependencies: 403
 -- Name: FUNCTION fn_userorgs(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7520,7 +7520,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_fn(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3480 (class 0 OID 0)
+-- TOC entry 3484 (class 0 OID 0)
 -- Dependencies: 404
 -- Name: FUNCTION fn_view_cols_for_fn(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7577,7 +7577,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_param(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3481 (class 0 OID 0)
+-- TOC entry 3485 (class 0 OID 0)
 -- Dependencies: 405
 -- Name: FUNCTION fn_view_cols_for_param(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7635,7 +7635,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_sc(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3482 (class 0 OID 0)
+-- TOC entry 3486 (class 0 OID 0)
 -- Dependencies: 406
 -- Name: FUNCTION fn_view_cols_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7775,7 +7775,7 @@ $$;
 ALTER FUNCTION framework.fn_view_deletebyid(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3483 (class 0 OID 0)
+-- TOC entry 3487 (class 0 OID 0)
 -- Dependencies: 407
 -- Name: FUNCTION fn_view_deletebyid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8170,7 +8170,7 @@ $$;
 ALTER FUNCTION framework."fn_view_fromJson"(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3484 (class 0 OID 0)
+-- TOC entry 3488 (class 0 OID 0)
 -- Dependencies: 585
 -- Name: FUNCTION "fn_view_fromJson"(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8294,7 +8294,7 @@ $$;
 ALTER FUNCTION framework."fn_view_genJson"(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3485 (class 0 OID 0)
+-- TOC entry 3489 (class 0 OID 0)
 -- Dependencies: 586
 -- Name: FUNCTION "fn_view_genJson"(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8506,7 +8506,7 @@ $$;
 ALTER FUNCTION framework."fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3486 (class 0 OID 0)
+-- TOC entry 3490 (class 0 OID 0)
 -- Dependencies: 408
 -- Name: FUNCTION "fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8654,7 +8654,7 @@ $$;
 ALTER FUNCTION framework."fn_view_getByPath_showSQL"(_path character varying, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3487 (class 0 OID 0)
+-- TOC entry 3491 (class 0 OID 0)
 -- Dependencies: 409
 -- Name: FUNCTION "fn_view_getByPath_showSQL"(_path character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8768,7 +8768,7 @@ $$;
 ALTER FUNCTION framework.fn_view_json_for_copy(_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3488 (class 0 OID 0)
+-- TOC entry 3492 (class 0 OID 0)
 -- Dependencies: 410
 -- Name: FUNCTION fn_view_json_for_copy(_id integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8963,7 +8963,7 @@ $$;
 ALTER FUNCTION framework.fn_view_json_parse(injson json, _n integer) OWNER TO postgres;
 
 --
--- TOC entry 3489 (class 0 OID 0)
+-- TOC entry 3493 (class 0 OID 0)
 -- Dependencies: 411
 -- Name: FUNCTION fn_view_json_parse(injson json, _n integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8999,7 +8999,7 @@ $$;
 ALTER FUNCTION framework.fn_view_link_showsql(_path character varying, OUT _link json) OWNER TO postgres;
 
 --
--- TOC entry 3490 (class 0 OID 0)
+-- TOC entry 3494 (class 0 OID 0)
 -- Dependencies: 386
 -- Name: FUNCTION fn_view_link_showsql(_path character varying, OUT _link json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9188,7 +9188,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3491 (class 0 OID 0)
+-- TOC entry 3495 (class 0 OID 0)
 -- Dependencies: 414
 -- Name: FUNCTION fn_viewnotif_get(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9227,7 +9227,7 @@ $$;
 ALTER FUNCTION framework.fn_views_compo_visible(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3492 (class 0 OID 0)
+-- TOC entry 3496 (class 0 OID 0)
 -- Dependencies: 415
 -- Name: FUNCTION fn_views_compo_visible(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9742,7 +9742,7 @@ $$;
 ALTER FUNCTION framework.tr_config_tr_ins() OWNER TO postgres;
 
 --
--- TOC entry 597 (class 1255 OID 52001)
+-- TOC entry 596 (class 1255 OID 52001)
 -- Name: tr_dialog_messages_tr_ins(); Type: FUNCTION; Schema: framework; Owner: postgres
 --
 
@@ -11208,7 +11208,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_tables"(_schema character varying) OWNER TO postgres;
 
 --
--- TOC entry 3493 (class 0 OID 0)
+-- TOC entry 3497 (class 0 OID 0)
 -- Dependencies: 447
 -- Name: FUNCTION "fn_withoutDesc_tables"(_schema character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11250,7 +11250,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_triggers"(_schemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 3494 (class 0 OID 0)
+-- TOC entry 3498 (class 0 OID 0)
 -- Dependencies: 448
 -- Name: FUNCTION "fn_withoutDesc_triggers"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11287,7 +11287,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_triggers_test"(_schemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 3495 (class 0 OID 0)
+-- TOC entry 3499 (class 0 OID 0)
 -- Dependencies: 449
 -- Name: FUNCTION "fn_withoutDesc_triggers_test"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11460,7 +11460,7 @@ $_$;
 ALTER FUNCTION reports.fn_call_report(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3496 (class 0 OID 0)
+-- TOC entry 3500 (class 0 OID 0)
 -- Dependencies: 456
 -- Name: FUNCTION fn_call_report(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11503,7 +11503,7 @@ $$;
 ALTER FUNCTION reports.fn_getmethod_info(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3497 (class 0 OID 0)
+-- TOC entry 3501 (class 0 OID 0)
 -- Dependencies: 453
 -- Name: FUNCTION fn_getmethod_info(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11549,7 +11549,7 @@ $$;
 ALTER FUNCTION reports.fn_getreports_fn(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3498 (class 0 OID 0)
+-- TOC entry 3502 (class 0 OID 0)
 -- Dependencies: 454
 -- Name: FUNCTION fn_getreports_fn(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11625,7 +11625,7 @@ $$;
 ALTER FUNCTION reports.fn_report_copy(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3499 (class 0 OID 0)
+-- TOC entry 3503 (class 0 OID 0)
 -- Dependencies: 457
 -- Name: FUNCTION fn_report_copy(injson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11713,7 +11713,7 @@ $$;
 ALTER FUNCTION reports.fn_report_getone(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3500 (class 0 OID 0)
+-- TOC entry 3504 (class 0 OID 0)
 -- Dependencies: 542
 -- Name: FUNCTION fn_report_getone(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11967,7 +11967,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_fk_maintablecols_select(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3501 (class 0 OID 0)
+-- TOC entry 3505 (class 0 OID 0)
 -- Dependencies: 464
 -- Name: FUNCTION fn_fk_maintablecols_select(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12021,7 +12021,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_fk_parentcols_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3502 (class 0 OID 0)
+-- TOC entry 3506 (class 0 OID 0)
 -- Dependencies: 543
 -- Name: FUNCTION fn_fk_parentcols_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12062,7 +12062,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_fk_tables_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3503 (class 0 OID 0)
+-- TOC entry 3507 (class 0 OID 0)
 -- Dependencies: 465
 -- Name: FUNCTION fn_fk_tables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12181,7 +12181,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_foreignkeys_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3504 (class 0 OID 0)
+-- TOC entry 3508 (class 0 OID 0)
 -- Dependencies: 466
 -- Name: FUNCTION fn_foreignkeys_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12361,7 +12361,7 @@ $_$;
 ALTER FUNCTION sqlmanager.fn_function_add(injson json, OUT _redirect character varying) OWNER TO postgres;
 
 --
--- TOC entry 3505 (class 0 OID 0)
+-- TOC entry 3509 (class 0 OID 0)
 -- Dependencies: 467
 -- Name: FUNCTION fn_function_add(injson json, OUT _redirect character varying); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12419,7 +12419,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_function_argadd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3506 (class 0 OID 0)
+-- TOC entry 3510 (class 0 OID 0)
 -- Dependencies: 468
 -- Name: FUNCTION fn_function_argadd(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12620,7 +12620,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_function_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3507 (class 0 OID 0)
+-- TOC entry 3511 (class 0 OID 0)
 -- Dependencies: 472
 -- Name: FUNCTION fn_function_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12738,7 +12738,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_functions_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3508 (class 0 OID 0)
+-- TOC entry 3512 (class 0 OID 0)
 -- Dependencies: 473
 -- Name: FUNCTION fn_functions_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12776,7 +12776,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_modes_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3509 (class 0 OID 0)
+-- TOC entry 3513 (class 0 OID 0)
 -- Dependencies: 474
 -- Name: FUNCTION fn_modes_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12868,7 +12868,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_schemalist_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3510 (class 0 OID 0)
+-- TOC entry 3514 (class 0 OID 0)
 -- Dependencies: 475
 -- Name: FUNCTION fn_schemalist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12908,13 +12908,209 @@ $$;
 ALTER FUNCTION sqlmanager.fn_schemas_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3511 (class 0 OID 0)
+-- TOC entry 3515 (class 0 OID 0)
 -- Dependencies: 476
 -- Name: FUNCTION fn_schemas_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
 
 COMMENT ON FUNCTION fn_schemas_sel(injson json, OUT outjson json) IS 'select api for schemas';
 
+
+--
+-- TOC entry 600 (class 1255 OID 92922)
+-- Name: fn_table_createScript(character varying, character varying); Type: FUNCTION; Schema: sqlmanager; Owner: postgres
+--
+
+CREATE FUNCTION "fn_table_createScript"(_tableschema character varying, _tablename character varying, OUT _script character varying) RETURNS character varying
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+	_relid int;
+BEGIN
+
+	SELECT 
+		t.relid
+	FROM pg_catalog.pg_statio_all_tables as t
+    WHERE t.relname = _tablename AND t.schemaname = _tableschema
+    INTO _relid;
+    
+    _script = concat('CREATE TABLE "', _tableschema, '"."', _tablename, '" (', (
+            SELECT
+               string_agg(
+                  CONCAT(
+                    '
+	"', t.column_name, '" ', t.udt_name, (
+                        CASE 
+                        WHEN (
+                            t.udt_name not like 'int%' AND 
+                            t.udt_name not like 'float%' AND
+                            COALESCE(
+                                t.character_maximum_length, 
+                                t.numeric_precision
+                            ) is NOT NULL
+                        )
+                        THEN
+                            CONCAT(
+                                '(', COALESCE(
+                                    t.character_maximum_length, 
+                                    t.numeric_precision
+                                ), (
+                                    CASE
+                                    WHEN t.numeric_scale is NOT NULL
+                                    THEN CONCAT(',', t.numeric_scale)
+                                    ELSE ''
+                                    END
+                                ), ')'
+                            )
+                        ELSE
+                            ''
+                        END
+                    ), ' ', (
+                          CASE 
+                          WHEN t.column_default is NOT NULL
+                          THEN
+                              CONCAT('DEFAULT ', REPLACE(t.column_default, '\', ''))
+                          ELSE
+                              ''
+                          END
+                    ), ' ', (
+                      CASE WHEN t.is_nullable = 'YES'
+                      THEN ''
+                      ELSE 'NOT NULL'
+                      END 
+                    ), (
+
+                      CASE WHEN (
+                          SELECT count(kc.column_name)
+                          FROM information_schema.table_constraints tc
+                            JOIN information_schema.key_column_usage kc 
+                              on kc.table_name = tc.table_name and kc.table_schema = tc.table_schema and kc.constraint_name = tc.constraint_name
+                          WHERE tc.constraint_type = 'PRIMARY KEY' AND tc.table_schema = _tableschema and tc.table_name = _tablename AND kc.column_name = t.column_name
+                            and kc.ordinal_position is not null
+                        ) > 0
+                      THEN 
+                          ' PRIMARY KEY'
+                      ELSE '' 
+                      END 
+                  
+                    )
+                  ), ','
+              )
+            FROM  (
+              SELECT
+                t.*
+              FROM information_schema.columns as t
+                  /*LEFT JOIN pg_catalog.pg_statio_all_tables as st on 
+                       st.schemaname = t.table_schema and 
+                       st.relname = t.table_name
+                  LEFT JOIN pg_catalog.pg_description pgd on 
+                       pgd.objoid = st.relid and 
+                       pgd.objsubid = t.ordinal_position*/
+              WHERE t.table_schema = _tableschema and t.table_name = _tablename
+
+              ORDER BY t.ordinal_position
+            ) as t
+        ), ' 
+) WITH (oids = false); ', (
+            	SELECT       
+                    string_agg(CONCAT('
+ALTER TABLE "', _tableschema, '"."', _tablename, '" ADD CONSTRAINT "', con.conname, 
+					'" FOREIGN KEY ("' , att2.attname, '") REFERENCES ', 
+                    att.attrelid::regclass,'("', att.attname ,'") ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;'),
+                   '') 
+               FROM (
+                  SELECT 
+                      unnest(con1.conkey) as "parent", 
+                      unnest(con1.confkey) as "child", 
+                      con1.confrelid, con1.conrelid,
+                      con1.conname, con1.oid
+                  FROM pg_class cl
+                      JOIN pg_namespace ns on cl.relnamespace = ns.oid
+                      JOIN pg_constraint con1 on con1.conrelid = cl.oid
+                  WHERE ns.nspname not like  'pg_%' and con1.contype = 'f' AND 
+                        con1.conrelid::regclass::varchar = concat(_tableschema, '.', _tablename)
+               ) con
+                 JOIN pg_attribute att on att.attrelid = con.confrelid and 
+                     att.attnum = con.child
+                 JOIN pg_class cl on cl.oid = con.confrelid
+                 JOIN pg_attribute att2 on att2.attrelid = con.conrelid and 
+                     att2.attnum = con.parent
+		), ( 
+             SELECT
+                string_agg((
+                    CASE WHEN (
+                      SELECT count(i.indrelid)
+                      FROM pg_index as i
+                           JOIN pg_class as c on c.oid = i.indexrelid
+                           JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+                           JOIN pg_class as tt on tt.oid = i.indrelid
+                           JOIN pg_attribute a on a.attrelid = tt.oid and a.attnum = ANY(i.indkey)
+                      WHERE n.nspname = _tableschema AND tt.relname = _tablename
+                            and i.indisunique and a.attname = t.column_name
+                      ) > 0
+                    THEN CONCAT('
+ALTER TABLE "', _tableschema, '"."', _tablename, '" ADD UNIQUE ("',t.column_name,'");')
+                    ELSE '' 
+                    END 
+                  ), ' '
+                ) 
+             FROM (
+                SELECT
+                  t.column_name
+                FROM information_schema.columns as t
+                    /*LEFT JOIN pg_catalog.pg_statio_all_tables as st on 
+                         st.schemaname = t.table_schema and 
+                         st.relname = t.table_name
+                    LEFT JOIN pg_catalog.pg_description pgd on 
+                         pgd.objoid = st.relid and 
+                         pgd.objsubid = t.ordinal_position*/
+                WHERE t.table_schema = _tableschema and t.table_name = _tablename
+
+                ORDER BY t.ordinal_position
+        	) as t
+        
+        ), (
+        	SELECT
+            	string_agg(d.f, ' ')
+            FROM (
+              SELECT
+                 CONCAT(
+                    CASE WHEN pgd.description is not null
+                    THEN
+                      CONCAT(
+                        '
+COMMENT ON COLUMN "', t.table_schema, '"."', 
+                        t.table_name, '"."', t.column_name, '" IS ''', 
+                        pgd.description, ''';'
+                      )
+                    ELSE ''
+                    END
+                  ) as f
+              FROM information_schema.columns as t
+                  LEFT JOIN pg_catalog.pg_statio_all_tables as st on 
+                       st.schemaname = t.table_schema and 
+                       st.relname = t.table_name
+                  LEFT JOIN pg_catalog.pg_description pgd on 
+                       pgd.objoid = st.relid and 
+                       pgd.objsubid = t.ordinal_position
+              WHERE t.table_schema = _tableschema and t.table_name = _tablename
+
+              ORDER BY t.ordinal_position
+            ) as d
+                  
+        
+        ), 
+		'	
+        
+COMMENT ON TABLE "', _tableschema ,'"."',_tablename, '" IS ''', pg_catalog.obj_description(_relid) , ''';'
+       
+
+    );
+END;
+$$;
+
+
+ALTER FUNCTION sqlmanager."fn_table_createScript"(_tableschema character varying, _tablename character varying, OUT _script character varying) OWNER TO postgres;
 
 --
 -- TOC entry 477 (class 1255 OID 52059)
@@ -13042,7 +13238,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_tablecols_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3512 (class 0 OID 0)
+-- TOC entry 3516 (class 0 OID 0)
 -- Dependencies: 477
 -- Name: FUNCTION fn_tablecols_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13108,7 +13304,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_tablelist_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3513 (class 0 OID 0)
+-- TOC entry 3517 (class 0 OID 0)
 -- Dependencies: 479
 -- Name: FUNCTION fn_tablelist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13175,7 +13371,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_trigger_fields(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3514 (class 0 OID 0)
+-- TOC entry 3518 (class 0 OID 0)
 -- Dependencies: 480
 -- Name: FUNCTION fn_trigger_fields(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13375,7 +13571,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_triggers_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3515 (class 0 OID 0)
+-- TOC entry 3519 (class 0 OID 0)
 -- Dependencies: 482
 -- Name: FUNCTION fn_triggers_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13426,7 +13622,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_types_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3516 (class 0 OID 0)
+-- TOC entry 3520 (class 0 OID 0)
 -- Dependencies: 483
 -- Name: FUNCTION fn_types_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -15030,7 +15226,7 @@ ALTER FUNCTION sqlmanager.tr_triggers_tr_title() OWNER TO postgres;
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 589 (class 1255 OID 92820)
+-- TOC entry 588 (class 1255 OID 92820)
 -- Name: diagram(json, json); Type: FUNCTION; Schema: test; Owner: postgres
 --
 
@@ -15087,7 +15283,7 @@ $$;
 ALTER FUNCTION test.fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3517 (class 0 OID 0)
+-- TOC entry 3521 (class 0 OID 0)
 -- Dependencies: 515
 -- Name: FUNCTION fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15267,7 +15463,7 @@ $$;
 ALTER FUNCTION test.fn_actions_in_table(_actions json, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3518 (class 0 OID 0)
+-- TOC entry 3522 (class 0 OID 0)
 -- Dependencies: 516
 -- Name: FUNCTION fn_actions_in_table(_actions json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15384,7 +15580,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3519 (class 0 OID 0)
+-- TOC entry 3523 (class 0 OID 0)
 -- Dependencies: 517
 -- Name: FUNCTION fn_config_in_table(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15429,7 +15625,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3520 (class 0 OID 0)
+-- TOC entry 3524 (class 0 OID 0)
 -- Dependencies: 518
 -- Name: FUNCTION fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15462,7 +15658,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3521 (class 0 OID 0)
+-- TOC entry 3525 (class 0 OID 0)
 -- Dependencies: 519
 -- Name: FUNCTION fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15501,7 +15697,7 @@ $$;
 ALTER FUNCTION test.fn_defaultval_intable(INOUT _colid integer, _dv json) OWNER TO postgres;
 
 --
--- TOC entry 3522 (class 0 OID 0)
+-- TOC entry 3526 (class 0 OID 0)
 -- Dependencies: 520
 -- Name: FUNCTION fn_defaultval_intable(INOUT _colid integer, _dv json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15561,7 +15757,7 @@ $$;
 ALTER FUNCTION test.fn_diagram_test(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3523 (class 0 OID 0)
+-- TOC entry 3527 (class 0 OID 0)
 -- Dependencies: 547
 -- Name: FUNCTION fn_diagram_test(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15623,7 +15819,7 @@ $$;
 ALTER FUNCTION test.fn_filters_in_table(filtrs json, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3524 (class 0 OID 0)
+-- TOC entry 3528 (class 0 OID 0)
 -- Dependencies: 521
 -- Name: FUNCTION fn_filters_in_table(filtrs json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15668,7 +15864,7 @@ $$;
 ALTER FUNCTION test.fn_getmethodtest_setcolorblack(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3525 (class 0 OID 0)
+-- TOC entry 3529 (class 0 OID 0)
 -- Dependencies: 522
 -- Name: FUNCTION fn_getmethodtest_setcolorblack(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15702,7 +15898,7 @@ $$;
 ALTER FUNCTION test.fn_gettest_setallcolor_red(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3526 (class 0 OID 0)
+-- TOC entry 3530 (class 0 OID 0)
 -- Dependencies: 470
 -- Name: FUNCTION fn_gettest_setallcolor_red(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15751,7 +15947,7 @@ $$;
 ALTER FUNCTION test.fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer) OWNER TO postgres;
 
 --
--- TOC entry 3527 (class 0 OID 0)
+-- TOC entry 3531 (class 0 OID 0)
 -- Dependencies: 523
 -- Name: FUNCTION fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15796,7 +15992,7 @@ $$;
 ALTER FUNCTION test.fn_postmethodtest_setcolorblue(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3528 (class 0 OID 0)
+-- TOC entry 3532 (class 0 OID 0)
 -- Dependencies: 524
 -- Name: FUNCTION fn_postmethodtest_setcolorblue(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15847,7 +16043,7 @@ $$;
 ALTER FUNCTION test.fn_postmethodtest_setselectedcolor_black(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3529 (class 0 OID 0)
+-- TOC entry 3533 (class 0 OID 0)
 -- Dependencies: 525
 -- Name: FUNCTION fn_postmethodtest_setselectedcolor_black(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15903,7 +16099,7 @@ $$;
 ALTER FUNCTION test.fn_select_api(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3530 (class 0 OID 0)
+-- TOC entry 3534 (class 0 OID 0)
 -- Dependencies: 526
 -- Name: FUNCTION fn_select_api(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15954,7 +16150,7 @@ $$;
 ALTER FUNCTION test.fn_select_condition_intable(INOUT _colid integer, _sc json) OWNER TO postgres;
 
 --
--- TOC entry 3531 (class 0 OID 0)
+-- TOC entry 3535 (class 0 OID 0)
 -- Dependencies: 527
 -- Name: FUNCTION fn_select_condition_intable(INOUT _colid integer, _sc json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15994,7 +16190,7 @@ $$;
 ALTER FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb) OWNER TO postgres;
 
 --
--- TOC entry 3532 (class 0 OID 0)
+-- TOC entry 3536 (class 0 OID 0)
 -- Dependencies: 528
 -- Name: FUNCTION "fn_setParamsKey"(conf json, INOUT paramcol jsonb); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16052,7 +16248,7 @@ $$;
 ALTER FUNCTION test.fn_test() OWNER TO postgres;
 
 --
--- TOC entry 3533 (class 0 OID 0)
+-- TOC entry 3537 (class 0 OID 0)
 -- Dependencies: 530
 -- Name: FUNCTION fn_test(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16110,7 +16306,7 @@ $$;
 ALTER FUNCTION test.fn_views_in_table() OWNER TO postgres;
 
 --
--- TOC entry 3534 (class 0 OID 0)
+-- TOC entry 3538 (class 0 OID 0)
 -- Dependencies: 532
 -- Name: FUNCTION fn_views_in_table(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16166,7 +16362,7 @@ $$;
 ALTER FUNCTION test.fn_visible_condition_intable(INOUT _colid integer, _vs json) OWNER TO postgres;
 
 --
--- TOC entry 3535 (class 0 OID 0)
+-- TOC entry 3539 (class 0 OID 0)
 -- Dependencies: 534
 -- Name: FUNCTION fn_visible_condition_intable(INOUT _colid integer, _vs json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16228,7 +16424,7 @@ END;
 ALTER FUNCTION test.tr_major_table_tr() OWNER TO postgres;
 
 --
--- TOC entry 3536 (class 0 OID 0)
+-- TOC entry 3540 (class 0 OID 0)
 -- Dependencies: 536
 -- Name: FUNCTION tr_major_table_tr(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16302,7 +16498,7 @@ CREATE TABLE act_parametrs (
 ALTER TABLE act_parametrs OWNER TO postgres;
 
 --
--- TOC entry 3537 (class 0 OID 0)
+-- TOC entry 3541 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: TABLE act_parametrs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16326,7 +16522,7 @@ CREATE SEQUENCE act_parametrs_id_seq
 ALTER TABLE act_parametrs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3538 (class 0 OID 0)
+-- TOC entry 3542 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: act_parametrs_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16354,7 +16550,7 @@ CREATE TABLE act_visible_condions (
 ALTER TABLE act_visible_condions OWNER TO postgres;
 
 --
--- TOC entry 3539 (class 0 OID 0)
+-- TOC entry 3543 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: TABLE act_visible_condions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16363,7 +16559,7 @@ COMMENT ON TABLE act_visible_condions IS 'action visible condition';
 
 
 --
--- TOC entry 3540 (class 0 OID 0)
+-- TOC entry 3544 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: COLUMN act_visible_condions.val_desc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16372,7 +16568,7 @@ COMMENT ON COLUMN act_visible_condions.val_desc IS 'column id in config';
 
 
 --
--- TOC entry 3541 (class 0 OID 0)
+-- TOC entry 3545 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: COLUMN act_visible_condions.operation; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16381,7 +16577,7 @@ COMMENT ON COLUMN act_visible_condions.operation IS 'bool operation ';
 
 
 --
--- TOC entry 3542 (class 0 OID 0)
+-- TOC entry 3546 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: COLUMN act_visible_condions.value; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16405,7 +16601,7 @@ CREATE SEQUENCE act_visible_condions_id_seq
 ALTER TABLE act_visible_condions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3543 (class 0 OID 0)
+-- TOC entry 3547 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: act_visible_condions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16441,7 +16637,7 @@ CREATE TABLE actions (
 ALTER TABLE actions OWNER TO postgres;
 
 --
--- TOC entry 3544 (class 0 OID 0)
+-- TOC entry 3548 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: TABLE actions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16465,7 +16661,7 @@ CREATE SEQUENCE actions_id_seq
 ALTER TABLE actions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3545 (class 0 OID 0)
+-- TOC entry 3549 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: actions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16487,7 +16683,7 @@ CREATE TABLE actparam_querytypes (
 ALTER TABLE actparam_querytypes OWNER TO postgres;
 
 --
--- TOC entry 3546 (class 0 OID 0)
+-- TOC entry 3550 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: TABLE actparam_querytypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16511,7 +16707,7 @@ CREATE SEQUENCE actparam_querytypes_id_seq
 ALTER TABLE actparam_querytypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3547 (class 0 OID 0)
+-- TOC entry 3551 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: actparam_querytypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16534,7 +16730,7 @@ CREATE TABLE acttypes (
 ALTER TABLE acttypes OWNER TO postgres;
 
 --
--- TOC entry 3548 (class 0 OID 0)
+-- TOC entry 3552 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: TABLE acttypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16556,7 +16752,7 @@ CREATE TABLE apicallingmethods (
 ALTER TABLE apicallingmethods OWNER TO postgres;
 
 --
--- TOC entry 3549 (class 0 OID 0)
+-- TOC entry 3553 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: TABLE apicallingmethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16581,7 +16777,7 @@ CREATE SEQUENCE apicallingmethods_id_seq
 ALTER TABLE apicallingmethods_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3550 (class 0 OID 0)
+-- TOC entry 3554 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: apicallingmethods_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16604,7 +16800,7 @@ CREATE TABLE apimethods (
 ALTER TABLE apimethods OWNER TO postgres;
 
 --
--- TOC entry 3551 (class 0 OID 0)
+-- TOC entry 3555 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: TABLE apimethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16627,7 +16823,7 @@ CREATE TABLE booloper (
 ALTER TABLE booloper OWNER TO postgres;
 
 --
--- TOC entry 3552 (class 0 OID 0)
+-- TOC entry 3556 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: TABLE booloper; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16651,7 +16847,7 @@ CREATE SEQUENCE booloper_id_seq
 ALTER TABLE booloper_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3553 (class 0 OID 0)
+-- TOC entry 3557 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: booloper_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16674,7 +16870,7 @@ CREATE TABLE columntypes (
 ALTER TABLE columntypes OWNER TO postgres;
 
 --
--- TOC entry 3554 (class 0 OID 0)
+-- TOC entry 3558 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: TABLE columntypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16713,7 +16909,7 @@ CREATE SEQUENCE columntypes_id_seq1
 ALTER TABLE columntypes_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 3555 (class 0 OID 0)
+-- TOC entry 3559 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: columntypes_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16740,7 +16936,7 @@ CREATE TABLE compoitems (
 ALTER TABLE compoitems OWNER TO postgres;
 
 --
--- TOC entry 3556 (class 0 OID 0)
+-- TOC entry 3560 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: TABLE compoitems; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16765,7 +16961,7 @@ CREATE SEQUENCE compoitems_id_seq
 ALTER TABLE compoitems_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3557 (class 0 OID 0)
+-- TOC entry 3561 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: compoitems_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16791,7 +16987,7 @@ CREATE TABLE compos (
 ALTER TABLE compos OWNER TO postgres;
 
 --
--- TOC entry 3558 (class 0 OID 0)
+-- TOC entry 3562 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: TABLE compos; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16800,7 +16996,7 @@ COMMENT ON TABLE compos IS 'compositions';
 
 
 --
--- TOC entry 3559 (class 0 OID 0)
+-- TOC entry 3563 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: COLUMN compos.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16809,7 +17005,7 @@ COMMENT ON COLUMN compos.title IS 'compositions title';
 
 
 --
--- TOC entry 3560 (class 0 OID 0)
+-- TOC entry 3564 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: COLUMN compos.path; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16818,7 +17014,7 @@ COMMENT ON COLUMN compos.path IS 'path';
 
 
 --
--- TOC entry 3561 (class 0 OID 0)
+-- TOC entry 3565 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: COLUMN compos.config; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16857,7 +17053,7 @@ CREATE SEQUENCE compos_id_seq1
 ALTER TABLE compos_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 3562 (class 0 OID 0)
+-- TOC entry 3566 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: compos_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16904,14 +17100,15 @@ CREATE TABLE config (
     related boolean DEFAULT false NOT NULL,
     tpath json DEFAULT '[]'::json NOT NULL,
     editable boolean DEFAULT false NOT NULL,
-    copy boolean DEFAULT false NOT NULL
+    copy boolean DEFAULT false NOT NULL,
+    disabled boolean DEFAULT false NOT NULL
 );
 
 
 ALTER TABLE config OWNER TO postgres;
 
 --
--- TOC entry 3563 (class 0 OID 0)
+-- TOC entry 3567 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: TABLE config; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16920,7 +17117,7 @@ COMMENT ON TABLE config IS 'view columns config';
 
 
 --
--- TOC entry 3564 (class 0 OID 0)
+-- TOC entry 3568 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.viewid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16929,7 +17126,7 @@ COMMENT ON COLUMN config.viewid IS 'view';
 
 
 --
--- TOC entry 3565 (class 0 OID 0)
+-- TOC entry 3569 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.t; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16938,7 +17135,7 @@ COMMENT ON COLUMN config.t IS 'column allias in query';
 
 
 --
--- TOC entry 3566 (class 0 OID 0)
+-- TOC entry 3570 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.col; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16947,7 +17144,7 @@ COMMENT ON COLUMN config.col IS 'column title';
 
 
 --
--- TOC entry 3567 (class 0 OID 0)
+-- TOC entry 3571 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.column_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16957,7 +17154,7 @@ use in createconfig function';
 
 
 --
--- TOC entry 3568 (class 0 OID 0)
+-- TOC entry 3572 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16966,7 +17163,7 @@ COMMENT ON COLUMN config.title IS 'title';
 
 
 --
--- TOC entry 3569 (class 0 OID 0)
+-- TOC entry 3573 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.type; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16975,7 +17172,7 @@ COMMENT ON COLUMN config.type IS 'type';
 
 
 --
--- TOC entry 3570 (class 0 OID 0)
+-- TOC entry 3574 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16984,7 +17181,7 @@ COMMENT ON COLUMN config.roles IS 'roles accessed to this column';
 
 
 --
--- TOC entry 3571 (class 0 OID 0)
+-- TOC entry 3575 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.visible; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16993,7 +17190,7 @@ COMMENT ON COLUMN config.visible IS 'is required in WHERE (query)';
 
 
 --
--- TOC entry 3572 (class 0 OID 0)
+-- TOC entry 3576 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.required; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17002,7 +17199,7 @@ COMMENT ON COLUMN config.required IS 'is required column value in WHERE';
 
 
 --
--- TOC entry 3573 (class 0 OID 0)
+-- TOC entry 3577 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.width; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17011,7 +17208,7 @@ COMMENT ON COLUMN config.width IS 'column width CSS';
 
 
 --
--- TOC entry 3574 (class 0 OID 0)
+-- TOC entry 3578 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config."join"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17021,7 +17218,7 @@ LEFT JOIN if false';
 
 
 --
--- TOC entry 3575 (class 0 OID 0)
+-- TOC entry 3579 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.classname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17030,7 +17227,7 @@ COMMENT ON COLUMN config.classname IS 'className CSS';
 
 
 --
--- TOC entry 3576 (class 0 OID 0)
+-- TOC entry 3580 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.updatable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17039,7 +17236,7 @@ COMMENT ON COLUMN config.updatable IS 'refresh data on this column change';
 
 
 --
--- TOC entry 3577 (class 0 OID 0)
+-- TOC entry 3581 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.relation; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17048,7 +17245,7 @@ COMMENT ON COLUMN config.relation IS 'relation table';
 
 
 --
--- TOC entry 3578 (class 0 OID 0)
+-- TOC entry 3582 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.select_api; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17057,7 +17254,7 @@ COMMENT ON COLUMN config.select_api IS 'api method path for type *_api';
 
 
 --
--- TOC entry 3579 (class 0 OID 0)
+-- TOC entry 3583 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.multiselecttable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17066,7 +17263,7 @@ COMMENT ON COLUMN config.multiselecttable IS 'tablename for type multiselect';
 
 
 --
--- TOC entry 3580 (class 0 OID 0)
+-- TOC entry 3584 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.orderby; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17075,7 +17272,7 @@ COMMENT ON COLUMN config.orderby IS 'order by this column by default';
 
 
 --
--- TOC entry 3581 (class 0 OID 0)
+-- TOC entry 3585 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.orderbydesc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17084,7 +17281,7 @@ COMMENT ON COLUMN config.orderbydesc IS 'order by desc or asc';
 
 
 --
--- TOC entry 3582 (class 0 OID 0)
+-- TOC entry 3586 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.depency; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17093,7 +17290,7 @@ COMMENT ON COLUMN config.depency IS 'this column is depency table';
 
 
 --
--- TOC entry 3583 (class 0 OID 0)
+-- TOC entry 3587 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.relationcolums; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17104,7 +17301,7 @@ for select filters in lists';
 
 
 --
--- TOC entry 3584 (class 0 OID 0)
+-- TOC entry 3588 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.multicolums; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17113,7 +17310,7 @@ COMMENT ON COLUMN config.multicolums IS 'columns array for multiselect type';
 
 
 --
--- TOC entry 3585 (class 0 OID 0)
+-- TOC entry 3589 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.column_order; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17122,7 +17319,7 @@ COMMENT ON COLUMN config.column_order IS 'column order in config';
 
 
 --
--- TOC entry 3586 (class 0 OID 0)
+-- TOC entry 3590 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.fn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17131,7 +17328,7 @@ COMMENT ON COLUMN config.fn IS 'function is SELECT';
 
 
 --
--- TOC entry 3587 (class 0 OID 0)
+-- TOC entry 3591 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.fncolumns; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17140,7 +17337,7 @@ COMMENT ON COLUMN config.fncolumns IS 'Function input parametrs';
 
 
 --
--- TOC entry 3588 (class 0 OID 0)
+-- TOC entry 3592 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config."table"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17149,7 +17346,7 @@ COMMENT ON COLUMN config."table" IS 'table name for related col';
 
 
 --
--- TOC entry 3589 (class 0 OID 0)
+-- TOC entry 3593 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.related; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17158,7 +17355,7 @@ COMMENT ON COLUMN config.related IS 'is related';
 
 
 --
--- TOC entry 3590 (class 0 OID 0)
+-- TOC entry 3594 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.tpath; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17167,7 +17364,7 @@ COMMENT ON COLUMN config.tpath IS 'join path';
 
 
 --
--- TOC entry 3591 (class 0 OID 0)
+-- TOC entry 3595 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.editable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17176,7 +17373,7 @@ COMMENT ON COLUMN config.editable IS 'is editable cell';
 
 
 --
--- TOC entry 3592 (class 0 OID 0)
+-- TOC entry 3596 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.copy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17200,7 +17397,7 @@ CREATE SEQUENCE config_id_seq
 ALTER TABLE config_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3593 (class 0 OID 0)
+-- TOC entry 3597 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: config_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17222,7 +17419,7 @@ CREATE TABLE configsettings (
 ALTER TABLE configsettings OWNER TO postgres;
 
 --
--- TOC entry 3594 (class 0 OID 0)
+-- TOC entry 3598 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: TABLE configsettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17246,7 +17443,7 @@ CREATE SEQUENCE configsettings_id_seq
 ALTER TABLE configsettings_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3595 (class 0 OID 0)
+-- TOC entry 3599 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: configsettings_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17272,7 +17469,7 @@ CREATE TABLE defaultval (
 ALTER TABLE defaultval OWNER TO postgres;
 
 --
--- TOC entry 3596 (class 0 OID 0)
+-- TOC entry 3600 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: TABLE defaultval; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17281,7 +17478,7 @@ COMMENT ON TABLE defaultval IS 'defaultval configs property';
 
 
 --
--- TOC entry 3597 (class 0 OID 0)
+-- TOC entry 3601 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.configid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17290,7 +17487,7 @@ COMMENT ON COLUMN defaultval.configid IS 'id from config table';
 
 
 --
--- TOC entry 3598 (class 0 OID 0)
+-- TOC entry 3602 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.bool; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17299,7 +17496,7 @@ COMMENT ON COLUMN defaultval.bool IS 'bool operator';
 
 
 --
--- TOC entry 3599 (class 0 OID 0)
+-- TOC entry 3603 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.act; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17308,7 +17505,7 @@ COMMENT ON COLUMN defaultval.act IS 'action';
 
 
 --
--- TOC entry 3600 (class 0 OID 0)
+-- TOC entry 3604 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.value; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17332,7 +17529,7 @@ CREATE SEQUENCE defaultval_id_seq
 ALTER TABLE defaultval_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3601 (class 0 OID 0)
+-- TOC entry 3605 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: defaultval_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17364,7 +17561,7 @@ CREATE TABLE dialog_messages (
 ALTER TABLE dialog_messages OWNER TO postgres;
 
 --
--- TOC entry 3602 (class 0 OID 0)
+-- TOC entry 3606 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17373,7 +17570,7 @@ COMMENT ON COLUMN dialog_messages.userid IS 'who send';
 
 
 --
--- TOC entry 3603 (class 0 OID 0)
+-- TOC entry 3607 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.message_text; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17382,7 +17579,7 @@ COMMENT ON COLUMN dialog_messages.message_text IS 'message';
 
 
 --
--- TOC entry 3604 (class 0 OID 0)
+-- TOC entry 3608 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.reply_to; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17391,7 +17588,7 @@ COMMENT ON COLUMN dialog_messages.reply_to IS 'reply to message id';
 
 
 --
--- TOC entry 3605 (class 0 OID 0)
+-- TOC entry 3609 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.forwarded_from; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17400,7 +17597,7 @@ COMMENT ON COLUMN dialog_messages.forwarded_from IS 'forward from message';
 
 
 --
--- TOC entry 3606 (class 0 OID 0)
+-- TOC entry 3610 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.dialog_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17409,7 +17606,7 @@ COMMENT ON COLUMN dialog_messages.dialog_id IS 'dialog';
 
 
 --
--- TOC entry 3607 (class 0 OID 0)
+-- TOC entry 3611 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.files; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17418,7 +17615,7 @@ COMMENT ON COLUMN dialog_messages.files IS 'files';
 
 
 --
--- TOC entry 3608 (class 0 OID 0)
+-- TOC entry 3612 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.images; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17427,7 +17624,7 @@ COMMENT ON COLUMN dialog_messages.images IS 'images';
 
 
 --
--- TOC entry 3609 (class 0 OID 0)
+-- TOC entry 3613 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.isread; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17436,7 +17633,7 @@ COMMENT ON COLUMN dialog_messages.isread IS 'when user read message';
 
 
 --
--- TOC entry 3610 (class 0 OID 0)
+-- TOC entry 3614 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.isupdated; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17445,7 +17642,7 @@ COMMENT ON COLUMN dialog_messages.isupdated IS 'when user update the message';
 
 
 --
--- TOC entry 3611 (class 0 OID 0)
+-- TOC entry 3615 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.user_reads; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17469,7 +17666,7 @@ CREATE SEQUENCE dialog_messages_id_seq
 ALTER TABLE dialog_messages_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3612 (class 0 OID 0)
+-- TOC entry 3616 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: dialog_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17498,7 +17695,7 @@ CREATE TABLE dialog_notifications (
 ALTER TABLE dialog_notifications OWNER TO postgres;
 
 --
--- TOC entry 3613 (class 0 OID 0)
+-- TOC entry 3617 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: TABLE dialog_notifications; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17507,7 +17704,7 @@ COMMENT ON TABLE dialog_notifications IS 'ws notifications for dialogs';
 
 
 --
--- TOC entry 3614 (class 0 OID 0)
+-- TOC entry 3618 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: COLUMN dialog_notifications.dialog_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17516,7 +17713,7 @@ COMMENT ON COLUMN dialog_notifications.dialog_id IS 'dialog';
 
 
 --
--- TOC entry 3615 (class 0 OID 0)
+-- TOC entry 3619 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: COLUMN dialog_notifications.issend; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17540,7 +17737,7 @@ CREATE SEQUENCE dialog_notifications_id_seq
 ALTER TABLE dialog_notifications_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3616 (class 0 OID 0)
+-- TOC entry 3620 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: dialog_notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17562,7 +17759,7 @@ CREATE TABLE dialog_statuses (
 ALTER TABLE dialog_statuses OWNER TO postgres;
 
 --
--- TOC entry 3617 (class 0 OID 0)
+-- TOC entry 3621 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: TABLE dialog_statuses; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17586,7 +17783,7 @@ CREATE SEQUENCE dialog_statuses_id_seq
 ALTER TABLE dialog_statuses_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3618 (class 0 OID 0)
+-- TOC entry 3622 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: dialog_statuses_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17608,7 +17805,7 @@ CREATE TABLE dialog_types (
 ALTER TABLE dialog_types OWNER TO postgres;
 
 --
--- TOC entry 3619 (class 0 OID 0)
+-- TOC entry 3623 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: TABLE dialog_types; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17640,7 +17837,7 @@ CREATE TABLE dialogs (
 ALTER TABLE dialogs OWNER TO postgres;
 
 --
--- TOC entry 3620 (class 0 OID 0)
+-- TOC entry 3624 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: TABLE dialogs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17649,7 +17846,7 @@ COMMENT ON TABLE dialogs IS 'USERS CHAT DIALOGS';
 
 
 --
--- TOC entry 3621 (class 0 OID 0)
+-- TOC entry 3625 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17658,7 +17855,7 @@ COMMENT ON COLUMN dialogs.title IS 'title of dialog';
 
 
 --
--- TOC entry 3622 (class 0 OID 0)
+-- TOC entry 3626 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.users; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17667,7 +17864,7 @@ COMMENT ON COLUMN dialogs.users IS 'users of dialog';
 
 
 --
--- TOC entry 3623 (class 0 OID 0)
+-- TOC entry 3627 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.dtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17676,7 +17873,7 @@ COMMENT ON COLUMN dialogs.dtype IS 'type of dialog';
 
 
 --
--- TOC entry 3624 (class 0 OID 0)
+-- TOC entry 3628 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17685,7 +17882,7 @@ COMMENT ON COLUMN dialogs.userid IS 'user who create dialog';
 
 
 --
--- TOC entry 3625 (class 0 OID 0)
+-- TOC entry 3629 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.created; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17694,7 +17891,7 @@ COMMENT ON COLUMN dialogs.created IS 'create date';
 
 
 --
--- TOC entry 3626 (class 0 OID 0)
+-- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.status; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17703,7 +17900,7 @@ COMMENT ON COLUMN dialogs.status IS 'status of dialog';
 
 
 --
--- TOC entry 3627 (class 0 OID 0)
+-- TOC entry 3631 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.first_message; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17712,7 +17909,7 @@ COMMENT ON COLUMN dialogs.first_message IS 'first message in dialog';
 
 
 --
--- TOC entry 3628 (class 0 OID 0)
+-- TOC entry 3632 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.last_message_date; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17721,7 +17918,7 @@ COMMENT ON COLUMN dialogs.last_message_date IS 'last mesage date';
 
 
 --
--- TOC entry 3629 (class 0 OID 0)
+-- TOC entry 3633 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.photo; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17731,7 +17928,7 @@ only for groups';
 
 
 --
--- TOC entry 3630 (class 0 OID 0)
+-- TOC entry 3634 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.dialog_admins; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17740,7 +17937,7 @@ COMMENT ON COLUMN dialogs.dialog_admins IS 'admin users';
 
 
 --
--- TOC entry 3631 (class 0 OID 0)
+-- TOC entry 3635 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.creator; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17764,7 +17961,7 @@ CREATE SEQUENCE dialogs_id_seq
 ALTER TABLE dialogs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3632 (class 0 OID 0)
+-- TOC entry 3636 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: dialogs_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17788,7 +17985,7 @@ CREATE SEQUENCE dialogs_status_seq
 ALTER TABLE dialogs_status_seq OWNER TO postgres;
 
 --
--- TOC entry 3633 (class 0 OID 0)
+-- TOC entry 3637 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: dialogs_status_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17810,7 +18007,7 @@ CREATE TABLE filter_position (
 ALTER TABLE filter_position OWNER TO postgres;
 
 --
--- TOC entry 3634 (class 0 OID 0)
+-- TOC entry 3638 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: TABLE filter_position; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17844,7 +18041,7 @@ CREATE TABLE filters (
 ALTER TABLE filters OWNER TO postgres;
 
 --
--- TOC entry 3635 (class 0 OID 0)
+-- TOC entry 3639 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: TABLE filters; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17853,7 +18050,7 @@ COMMENT ON TABLE filters IS 'view''s filters';
 
 
 --
--- TOC entry 3636 (class 0 OID 0)
+-- TOC entry 3640 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.column_order; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17862,7 +18059,7 @@ COMMENT ON COLUMN filters.column_order IS 'order by';
 
 
 --
--- TOC entry 3637 (class 0 OID 0)
+-- TOC entry 3641 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.viewid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17871,7 +18068,7 @@ COMMENT ON COLUMN filters.viewid IS 'view';
 
 
 --
--- TOC entry 3638 (class 0 OID 0)
+-- TOC entry 3642 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17880,7 +18077,7 @@ COMMENT ON COLUMN filters.title IS 'title';
 
 
 --
--- TOC entry 3639 (class 0 OID 0)
+-- TOC entry 3643 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.type; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17889,7 +18086,7 @@ COMMENT ON COLUMN filters.type IS 'filter type';
 
 
 --
--- TOC entry 3640 (class 0 OID 0)
+-- TOC entry 3644 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.classname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17898,7 +18095,7 @@ COMMENT ON COLUMN filters.classname IS 'css classname';
 
 
 --
--- TOC entry 3641 (class 0 OID 0)
+-- TOC entry 3645 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters."column"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17907,7 +18104,7 @@ COMMENT ON COLUMN filters."column" IS 'congig columns title';
 
 
 --
--- TOC entry 3642 (class 0 OID 0)
+-- TOC entry 3646 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.columns; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17916,7 +18113,7 @@ COMMENT ON COLUMN filters.columns IS 'config id json array';
 
 
 --
--- TOC entry 3643 (class 0 OID 0)
+-- TOC entry 3647 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17925,7 +18122,7 @@ COMMENT ON COLUMN filters.roles IS 'roles access';
 
 
 --
--- TOC entry 3644 (class 0 OID 0)
+-- TOC entry 3648 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.val_desc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17949,7 +18146,7 @@ CREATE SEQUENCE filters_id_seq
 ALTER TABLE filters_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3645 (class 0 OID 0)
+-- TOC entry 3649 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: filters_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17971,7 +18168,7 @@ CREATE TABLE filtertypes (
 ALTER TABLE filtertypes OWNER TO postgres;
 
 --
--- TOC entry 3646 (class 0 OID 0)
+-- TOC entry 3650 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: TABLE filtertypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18009,7 +18206,7 @@ CREATE TABLE instructions (
 ALTER TABLE instructions OWNER TO postgres;
 
 --
--- TOC entry 3647 (class 0 OID 0)
+-- TOC entry 3651 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: TABLE instructions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18033,7 +18230,7 @@ CREATE SEQUENCE instructions_id_seq
 ALTER TABLE instructions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3648 (class 0 OID 0)
+-- TOC entry 3652 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: instructions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18062,7 +18259,7 @@ CREATE TABLE logtable (
 ALTER TABLE logtable OWNER TO postgres;
 
 --
--- TOC entry 3649 (class 0 OID 0)
+-- TOC entry 3653 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.tablename; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18071,7 +18268,7 @@ COMMENT ON COLUMN logtable.tablename IS 'table name';
 
 
 --
--- TOC entry 3650 (class 0 OID 0)
+-- TOC entry 3654 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.tableid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18080,7 +18277,7 @@ COMMENT ON COLUMN logtable.tableid IS 'id columns value';
 
 
 --
--- TOC entry 3651 (class 0 OID 0)
+-- TOC entry 3655 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.opertype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18089,7 +18286,7 @@ COMMENT ON COLUMN logtable.opertype IS 'operations type';
 
 
 --
--- TOC entry 3652 (class 0 OID 0)
+-- TOC entry 3656 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.oldata; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18098,7 +18295,7 @@ COMMENT ON COLUMN logtable.oldata IS 'old data in json object';
 
 
 --
--- TOC entry 3653 (class 0 OID 0)
+-- TOC entry 3657 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.newdata; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18107,7 +18304,7 @@ COMMENT ON COLUMN logtable.newdata IS 'new data after operation. json object';
 
 
 --
--- TOC entry 3654 (class 0 OID 0)
+-- TOC entry 3658 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.colname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18116,7 +18313,7 @@ COMMENT ON COLUMN logtable.colname IS 'colname, if changed just one column in ta
 
 
 --
--- TOC entry 3655 (class 0 OID 0)
+-- TOC entry 3659 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18164,7 +18361,7 @@ CREATE TABLE mainmenu (
 ALTER TABLE mainmenu OWNER TO postgres;
 
 --
--- TOC entry 3656 (class 0 OID 0)
+-- TOC entry 3660 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.icon; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18173,7 +18370,7 @@ COMMENT ON COLUMN mainmenu.icon IS 'icon';
 
 
 --
--- TOC entry 3657 (class 0 OID 0)
+-- TOC entry 3661 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.nosession; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18182,7 +18379,7 @@ COMMENT ON COLUMN mainmenu.nosession IS 'only if not session';
 
 
 --
--- TOC entry 3658 (class 0 OID 0)
+-- TOC entry 3662 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.ws; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18191,7 +18388,7 @@ COMMENT ON COLUMN mainmenu.ws IS 'ws message';
 
 
 --
--- TOC entry 3659 (class 0 OID 0)
+-- TOC entry 3663 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.istitle; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18215,7 +18412,7 @@ CREATE SEQUENCE mainmenu_id_seq
 ALTER TABLE mainmenu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3660 (class 0 OID 0)
+-- TOC entry 3664 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: mainmenu_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18249,7 +18446,7 @@ CREATE TABLE mainsettings (
 ALTER TABLE mainsettings OWNER TO postgres;
 
 --
--- TOC entry 3661 (class 0 OID 0)
+-- TOC entry 3665 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: TABLE mainsettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18259,7 +18456,7 @@ Must be the same as settings.json file';
 
 
 --
--- TOC entry 3662 (class 0 OID 0)
+-- TOC entry 3666 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.dsn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18268,7 +18465,7 @@ COMMENT ON COLUMN mainsettings.dsn IS 'db connection string';
 
 
 --
--- TOC entry 3663 (class 0 OID 0)
+-- TOC entry 3667 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.port; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18277,7 +18474,7 @@ COMMENT ON COLUMN mainsettings.port IS 'project server port';
 
 
 --
--- TOC entry 3664 (class 0 OID 0)
+-- TOC entry 3668 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings."developerRole"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18286,7 +18483,7 @@ COMMENT ON COLUMN mainsettings."developerRole" IS 'developer role id';
 
 
 --
--- TOC entry 3665 (class 0 OID 0)
+-- TOC entry 3669 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.maindomain; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18295,7 +18492,7 @@ COMMENT ON COLUMN mainsettings.maindomain IS 'main domain';
 
 
 --
--- TOC entry 3666 (class 0 OID 0)
+-- TOC entry 3670 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings."primaryAuthorization"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18304,7 +18501,7 @@ COMMENT ON COLUMN mainsettings."primaryAuthorization" IS 'primary authorization'
 
 
 --
--- TOC entry 3667 (class 0 OID 0)
+-- TOC entry 3671 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.redirect401; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18313,7 +18510,7 @@ COMMENT ON COLUMN mainsettings.redirect401 IS 'redirect when status 401';
 
 
 --
--- TOC entry 3668 (class 0 OID 0)
+-- TOC entry 3672 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.usercss; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18322,7 +18519,7 @@ COMMENT ON COLUMN mainsettings.usercss IS 'css file';
 
 
 --
--- TOC entry 3669 (class 0 OID 0)
+-- TOC entry 3673 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.homepage; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18331,7 +18528,7 @@ COMMENT ON COLUMN mainsettings.homepage IS 'home page';
 
 
 --
--- TOC entry 3670 (class 0 OID 0)
+-- TOC entry 3674 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.reports_url; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18355,7 +18552,7 @@ CREATE TABLE menus (
 ALTER TABLE menus OWNER TO postgres;
 
 --
--- TOC entry 3671 (class 0 OID 0)
+-- TOC entry 3675 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: TABLE menus; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18379,7 +18576,7 @@ CREATE SEQUENCE menus_id_seq
 ALTER TABLE menus_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3672 (class 0 OID 0)
+-- TOC entry 3676 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: menus_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18401,7 +18598,7 @@ CREATE TABLE menutypes (
 ALTER TABLE menutypes OWNER TO postgres;
 
 --
--- TOC entry 3673 (class 0 OID 0)
+-- TOC entry 3677 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: TABLE menutypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18425,7 +18622,7 @@ CREATE SEQUENCE menutypes_id_seq
 ALTER TABLE menutypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3674 (class 0 OID 0)
+-- TOC entry 3678 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: menutypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18447,7 +18644,7 @@ CREATE TABLE methodtypes (
 ALTER TABLE methodtypes OWNER TO postgres;
 
 --
--- TOC entry 3675 (class 0 OID 0)
+-- TOC entry 3679 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: TABLE methodtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18475,7 +18672,7 @@ CREATE TABLE notifications (
 ALTER TABLE notifications OWNER TO postgres;
 
 --
--- TOC entry 3676 (class 0 OID 0)
+-- TOC entry 3680 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: TABLE notifications; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18484,7 +18681,7 @@ COMMENT ON TABLE notifications IS 'Global notifications for dashboard menu type'
 
 
 --
--- TOC entry 3677 (class 0 OID 0)
+-- TOC entry 3681 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.message; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18493,7 +18690,7 @@ COMMENT ON COLUMN notifications.message IS 'notifications message';
 
 
 --
--- TOC entry 3678 (class 0 OID 0)
+-- TOC entry 3682 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.messagetype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18502,7 +18699,7 @@ COMMENT ON COLUMN notifications.messagetype IS 'notifications message types';
 
 
 --
--- TOC entry 3679 (class 0 OID 0)
+-- TOC entry 3683 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.for_userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18511,7 +18708,7 @@ COMMENT ON COLUMN notifications.for_userid IS 'for user';
 
 
 --
--- TOC entry 3680 (class 0 OID 0)
+-- TOC entry 3684 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.sended_sessions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18520,7 +18717,7 @@ COMMENT ON COLUMN notifications.sended_sessions IS 'what sessions are already ge
 
 
 --
--- TOC entry 3681 (class 0 OID 0)
+-- TOC entry 3685 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.isread; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18544,7 +18741,7 @@ CREATE SEQUENCE notifications_id_seq
 ALTER TABLE notifications_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3682 (class 0 OID 0)
+-- TOC entry 3686 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18569,7 +18766,7 @@ CREATE TABLE operations (
 ALTER TABLE operations OWNER TO postgres;
 
 --
--- TOC entry 3683 (class 0 OID 0)
+-- TOC entry 3687 (class 0 OID 0)
 -- Dependencies: 247
 -- Name: TABLE operations; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18593,7 +18790,7 @@ CREATE SEQUENCE operations_id_seq
 ALTER TABLE operations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3684 (class 0 OID 0)
+-- TOC entry 3688 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: operations_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18616,7 +18813,7 @@ CREATE TABLE opertypes (
 ALTER TABLE opertypes OWNER TO postgres;
 
 --
--- TOC entry 3685 (class 0 OID 0)
+-- TOC entry 3689 (class 0 OID 0)
 -- Dependencies: 249
 -- Name: TABLE opertypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18644,7 +18841,7 @@ CREATE TABLE orgs (
 ALTER TABLE orgs OWNER TO postgres;
 
 --
--- TOC entry 3686 (class 0 OID 0)
+-- TOC entry 3690 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: TABLE orgs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18653,7 +18850,7 @@ COMMENT ON TABLE orgs IS 'ORGS';
 
 
 --
--- TOC entry 3687 (class 0 OID 0)
+-- TOC entry 3691 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: COLUMN orgs.orgname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18662,7 +18859,7 @@ COMMENT ON COLUMN orgs.orgname IS 'org title';
 
 
 --
--- TOC entry 3688 (class 0 OID 0)
+-- TOC entry 3692 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: COLUMN orgs.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18671,7 +18868,7 @@ COMMENT ON COLUMN orgs.parentid IS 'major org';
 
 
 --
--- TOC entry 3689 (class 0 OID 0)
+-- TOC entry 3693 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: COLUMN orgs.shortname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18708,7 +18905,7 @@ CREATE TABLE orgtypes (
 ALTER TABLE orgtypes OWNER TO postgres;
 
 --
--- TOC entry 3690 (class 0 OID 0)
+-- TOC entry 3694 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: TABLE orgtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18731,7 +18928,7 @@ CREATE TABLE paramtypes (
 ALTER TABLE paramtypes OWNER TO postgres;
 
 --
--- TOC entry 3691 (class 0 OID 0)
+-- TOC entry 3695 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: TABLE paramtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18754,7 +18951,7 @@ CREATE TABLE roles (
 ALTER TABLE roles OWNER TO postgres;
 
 --
--- TOC entry 3692 (class 0 OID 0)
+-- TOC entry 3696 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: TABLE roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18763,7 +18960,7 @@ COMMENT ON TABLE roles IS 'project roles';
 
 
 --
--- TOC entry 3693 (class 0 OID 0)
+-- TOC entry 3697 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: COLUMN roles.hierarchy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18791,7 +18988,7 @@ CREATE TABLE select_condition (
 ALTER TABLE select_condition OWNER TO postgres;
 
 --
--- TOC entry 3694 (class 0 OID 0)
+-- TOC entry 3698 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: TABLE select_condition; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18815,7 +19012,7 @@ CREATE SEQUENCE select_condition_id_seq
 ALTER TABLE select_condition_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3695 (class 0 OID 0)
+-- TOC entry 3699 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: select_condition_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18839,7 +19036,7 @@ CREATE TABLE sess (
 ALTER TABLE sess OWNER TO postgres;
 
 --
--- TOC entry 3696 (class 0 OID 0)
+-- TOC entry 3700 (class 0 OID 0)
 -- Dependencies: 257
 -- Name: TABLE sess; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18866,7 +19063,7 @@ CREATE TABLE spapi (
 ALTER TABLE spapi OWNER TO postgres;
 
 --
--- TOC entry 3697 (class 0 OID 0)
+-- TOC entry 3701 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: TABLE spapi; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18877,7 +19074,7 @@ always pass in function injson JSON parametr';
 
 
 --
--- TOC entry 3698 (class 0 OID 0)
+-- TOC entry 3702 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.methodname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18886,7 +19083,7 @@ COMMENT ON COLUMN spapi.methodname IS 'API method name (call like this /api/{met
 
 
 --
--- TOC entry 3699 (class 0 OID 0)
+-- TOC entry 3703 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.procedurename; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18897,7 +19094,7 @@ pass all parametrs in injson type of JSON
 
 
 --
--- TOC entry 3700 (class 0 OID 0)
+-- TOC entry 3704 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.methodtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18906,7 +19103,7 @@ COMMENT ON COLUMN spapi.methodtype IS 'rest method type';
 
 
 --
--- TOC entry 3701 (class 0 OID 0)
+-- TOC entry 3705 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18930,7 +19127,7 @@ CREATE SEQUENCE spapi_id_seq
 ALTER TABLE spapi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3702 (class 0 OID 0)
+-- TOC entry 3706 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: spapi_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18952,7 +19149,7 @@ CREATE TABLE templates (
 ALTER TABLE templates OWNER TO postgres;
 
 --
--- TOC entry 3703 (class 0 OID 0)
+-- TOC entry 3707 (class 0 OID 0)
 -- Dependencies: 313
 -- Name: TABLE templates; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18976,7 +19173,7 @@ CREATE SEQUENCE templates_id_seq
 ALTER TABLE templates_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3704 (class 0 OID 0)
+-- TOC entry 3708 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: templates_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19005,7 +19202,7 @@ CREATE TABLE trees (
 ALTER TABLE trees OWNER TO postgres;
 
 --
--- TOC entry 3705 (class 0 OID 0)
+-- TOC entry 3709 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: TABLE trees; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19014,7 +19211,7 @@ COMMENT ON TABLE trees IS 'Trees menus';
 
 
 --
--- TOC entry 3706 (class 0 OID 0)
+-- TOC entry 3710 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: COLUMN trees.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19023,7 +19220,7 @@ COMMENT ON COLUMN trees.title IS 'page title';
 
 
 --
--- TOC entry 3707 (class 0 OID 0)
+-- TOC entry 3711 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: COLUMN trees.url; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19047,7 +19244,7 @@ CREATE SEQUENCE trees_id_seq
 ALTER TABLE trees_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3708 (class 0 OID 0)
+-- TOC entry 3712 (class 0 OID 0)
 -- Dependencies: 261
 -- Name: trees_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19074,7 +19271,7 @@ CREATE TABLE treesacts (
 ALTER TABLE treesacts OWNER TO postgres;
 
 --
--- TOC entry 3709 (class 0 OID 0)
+-- TOC entry 3713 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: TABLE treesacts; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19098,7 +19295,7 @@ CREATE SEQUENCE treesacts_id_seq
 ALTER TABLE treesacts_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3710 (class 0 OID 0)
+-- TOC entry 3714 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: treesacts_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19130,7 +19327,7 @@ CREATE TABLE treesbranches (
 ALTER TABLE treesbranches OWNER TO postgres;
 
 --
--- TOC entry 3711 (class 0 OID 0)
+-- TOC entry 3715 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: TABLE treesbranches; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19139,7 +19336,7 @@ COMMENT ON TABLE treesbranches IS 'trees branches';
 
 
 --
--- TOC entry 3712 (class 0 OID 0)
+-- TOC entry 3716 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: COLUMN treesbranches.treesid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19148,7 +19345,7 @@ COMMENT ON COLUMN treesbranches.treesid IS 'tree';
 
 
 --
--- TOC entry 3713 (class 0 OID 0)
+-- TOC entry 3717 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: COLUMN treesbranches.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19157,7 +19354,7 @@ COMMENT ON COLUMN treesbranches.title IS 'menu item title';
 
 
 --
--- TOC entry 3714 (class 0 OID 0)
+-- TOC entry 3718 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: COLUMN treesbranches.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19166,7 +19363,7 @@ COMMENT ON COLUMN treesbranches.parentid IS 'parent';
 
 
 --
--- TOC entry 3715 (class 0 OID 0)
+-- TOC entry 3719 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: COLUMN treesbranches.treeviewtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19190,7 +19387,7 @@ CREATE SEQUENCE treesbranches_id_seq
 ALTER TABLE treesbranches_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3716 (class 0 OID 0)
+-- TOC entry 3720 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: treesbranches_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19212,7 +19409,7 @@ CREATE TABLE treeviewtypes (
 ALTER TABLE treeviewtypes OWNER TO postgres;
 
 --
--- TOC entry 3717 (class 0 OID 0)
+-- TOC entry 3721 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: TABLE treeviewtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19249,7 +19446,7 @@ CREATE TABLE users (
 ALTER TABLE users OWNER TO postgres;
 
 --
--- TOC entry 3718 (class 0 OID 0)
+-- TOC entry 3722 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: TABLE users; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19258,7 +19455,7 @@ COMMENT ON TABLE users IS 'USER';
 
 
 --
--- TOC entry 3719 (class 0 OID 0)
+-- TOC entry 3723 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.fam; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19267,7 +19464,7 @@ COMMENT ON COLUMN users.fam IS 'lastname';
 
 
 --
--- TOC entry 3720 (class 0 OID 0)
+-- TOC entry 3724 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.im; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19276,7 +19473,7 @@ COMMENT ON COLUMN users.im IS 'firstname';
 
 
 --
--- TOC entry 3721 (class 0 OID 0)
+-- TOC entry 3725 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.ot; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19285,7 +19482,7 @@ COMMENT ON COLUMN users.ot IS 'secondname';
 
 
 --
--- TOC entry 3722 (class 0 OID 0)
+-- TOC entry 3726 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.login; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19294,7 +19491,7 @@ COMMENT ON COLUMN users.login IS 'login';
 
 
 --
--- TOC entry 3723 (class 0 OID 0)
+-- TOC entry 3727 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.password; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19303,7 +19500,7 @@ COMMENT ON COLUMN users.password IS 'userpas';
 
 
 --
--- TOC entry 3724 (class 0 OID 0)
+-- TOC entry 3728 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.isactive; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19312,7 +19509,7 @@ COMMENT ON COLUMN users.isactive IS 'is active';
 
 
 --
--- TOC entry 3725 (class 0 OID 0)
+-- TOC entry 3729 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19321,7 +19518,7 @@ COMMENT ON COLUMN users.roles IS 'roles';
 
 
 --
--- TOC entry 3726 (class 0 OID 0)
+-- TOC entry 3730 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.photo; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19330,7 +19527,7 @@ COMMENT ON COLUMN users.photo IS 'avatar';
 
 
 --
--- TOC entry 3727 (class 0 OID 0)
+-- TOC entry 3731 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.orgs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19339,7 +19536,7 @@ COMMENT ON COLUMN users.orgs IS 'user orgs';
 
 
 --
--- TOC entry 3728 (class 0 OID 0)
+-- TOC entry 3732 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.usersettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19348,7 +19545,7 @@ COMMENT ON COLUMN users.usersettings IS 'this is views interface settings';
 
 
 --
--- TOC entry 3729 (class 0 OID 0)
+-- TOC entry 3733 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: COLUMN users.thumbprint; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19372,7 +19569,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3730 (class 0 OID 0)
+-- TOC entry 3734 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19414,7 +19611,7 @@ CREATE TABLE views (
 ALTER TABLE views OWNER TO postgres;
 
 --
--- TOC entry 3731 (class 0 OID 0)
+-- TOC entry 3735 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: TABLE views; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19438,7 +19635,7 @@ CREATE SEQUENCE views_id_seq
 ALTER TABLE views_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3732 (class 0 OID 0)
+-- TOC entry 3736 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: views_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19469,7 +19666,7 @@ CREATE TABLE viewsnotification (
 ALTER TABLE viewsnotification OWNER TO postgres;
 
 --
--- TOC entry 3733 (class 0 OID 0)
+-- TOC entry 3737 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: TABLE viewsnotification; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19479,7 +19676,7 @@ you can add here notification for different views on triggers';
 
 
 --
--- TOC entry 3734 (class 0 OID 0)
+-- TOC entry 3738 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: COLUMN viewsnotification.tableid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19488,7 +19685,7 @@ COMMENT ON COLUMN viewsnotification.tableid IS 'id from table';
 
 
 --
--- TOC entry 3735 (class 0 OID 0)
+-- TOC entry 3739 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: COLUMN viewsnotification.notificationtext; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19497,7 +19694,7 @@ COMMENT ON COLUMN viewsnotification.notificationtext IS 'message';
 
 
 --
--- TOC entry 3736 (class 0 OID 0)
+-- TOC entry 3740 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: COLUMN viewsnotification.foruser; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19521,7 +19718,7 @@ CREATE SEQUENCE viewsnotification_id_seq
 ALTER TABLE viewsnotification_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3737 (class 0 OID 0)
+-- TOC entry 3741 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: viewsnotification_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19544,7 +19741,7 @@ CREATE TABLE viewtypes (
 ALTER TABLE viewtypes OWNER TO postgres;
 
 --
--- TOC entry 3738 (class 0 OID 0)
+-- TOC entry 3742 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: TABLE viewtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19572,7 +19769,7 @@ CREATE TABLE visible_condition (
 ALTER TABLE visible_condition OWNER TO postgres;
 
 --
--- TOC entry 3739 (class 0 OID 0)
+-- TOC entry 3743 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: TABLE visible_condition; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19596,7 +19793,7 @@ CREATE SEQUENCE visible_condition_id_seq
 ALTER TABLE visible_condition_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3740 (class 0 OID 0)
+-- TOC entry 3744 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: visible_condition_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19643,7 +19840,7 @@ CREATE TABLE reportlist (
 ALTER TABLE reportlist OWNER TO postgres;
 
 --
--- TOC entry 3741 (class 0 OID 0)
+-- TOC entry 3745 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: TABLE reportlist; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19652,7 +19849,7 @@ COMMENT ON TABLE reportlist IS 'reportslist';
 
 
 --
--- TOC entry 3742 (class 0 OID 0)
+-- TOC entry 3746 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.title; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19661,7 +19858,7 @@ COMMENT ON COLUMN reportlist.title IS 'Название';
 
 
 --
--- TOC entry 3743 (class 0 OID 0)
+-- TOC entry 3747 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.roles; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19670,7 +19867,7 @@ COMMENT ON COLUMN reportlist.roles IS 'Роли';
 
 
 --
--- TOC entry 3744 (class 0 OID 0)
+-- TOC entry 3748 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.path; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19679,7 +19876,7 @@ COMMENT ON COLUMN reportlist.path IS 'Путь';
 
 
 --
--- TOC entry 3745 (class 0 OID 0)
+-- TOC entry 3749 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.template; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19688,7 +19885,7 @@ COMMENT ON COLUMN reportlist.template IS 'Файл шаблона';
 
 
 --
--- TOC entry 3746 (class 0 OID 0)
+-- TOC entry 3750 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.functitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19697,7 +19894,7 @@ COMMENT ON COLUMN reportlist.functitle IS 'Название функции';
 
 
 --
--- TOC entry 3747 (class 0 OID 0)
+-- TOC entry 3751 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.section; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19706,7 +19903,7 @@ COMMENT ON COLUMN reportlist.section IS 'Секция';
 
 
 --
--- TOC entry 3748 (class 0 OID 0)
+-- TOC entry 3752 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: COLUMN reportlist.ishtml; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19730,7 +19927,7 @@ CREATE SEQUENCE reportlist_id_seq
 ALTER TABLE reportlist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3749 (class 0 OID 0)
+-- TOC entry 3753 (class 0 OID 0)
 -- Dependencies: 278
 -- Name: reportlist_id_seq; Type: SEQUENCE OWNED BY; Schema: reports; Owner: postgres
 --
@@ -19759,7 +19956,7 @@ CREATE TABLE reportparams (
 ALTER TABLE reportparams OWNER TO postgres;
 
 --
--- TOC entry 3750 (class 0 OID 0)
+-- TOC entry 3754 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportparams.ptitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19768,7 +19965,7 @@ COMMENT ON COLUMN reportparams.ptitle IS 'parametr title';
 
 
 --
--- TOC entry 3751 (class 0 OID 0)
+-- TOC entry 3755 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportparams.func_paramtitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19777,7 +19974,7 @@ COMMENT ON COLUMN reportparams.func_paramtitle IS 'param in function';
 
 
 --
--- TOC entry 3752 (class 0 OID 0)
+-- TOC entry 3756 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportparams.ptype; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -19801,7 +19998,7 @@ CREATE SEQUENCE reportparams_id_seq
 ALTER TABLE reportparams_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3753 (class 0 OID 0)
+-- TOC entry 3757 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: reportparams_id_seq; Type: SEQUENCE OWNED BY; Schema: reports; Owner: postgres
 --
@@ -19834,7 +20031,7 @@ CREATE TABLE foreignkeys (
 ALTER TABLE foreignkeys OWNER TO postgres;
 
 --
--- TOC entry 3754 (class 0 OID 0)
+-- TOC entry 3758 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: TABLE foreignkeys; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -19858,7 +20055,7 @@ CREATE SEQUENCE foreignkeys_id_seq
 ALTER TABLE foreignkeys_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3755 (class 0 OID 0)
+-- TOC entry 3759 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: foreignkeys_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -19885,7 +20082,7 @@ CREATE TABLE functionargs (
 ALTER TABLE functionargs OWNER TO postgres;
 
 --
--- TOC entry 3756 (class 0 OID 0)
+-- TOC entry 3760 (class 0 OID 0)
 -- Dependencies: 283
 -- Name: TABLE functionargs; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -19894,7 +20091,7 @@ COMMENT ON TABLE functionargs IS 'FUNCTION ARGUMENTS';
 
 
 --
--- TOC entry 3757 (class 0 OID 0)
+-- TOC entry 3761 (class 0 OID 0)
 -- Dependencies: 283
 -- Name: COLUMN functionargs.oid; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -19918,7 +20115,7 @@ CREATE SEQUENCE functionargs_id_seq
 ALTER TABLE functionargs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3758 (class 0 OID 0)
+-- TOC entry 3762 (class 0 OID 0)
 -- Dependencies: 284
 -- Name: functionargs_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -19951,7 +20148,7 @@ CREATE TABLE functionslist (
 ALTER TABLE functionslist OWNER TO postgres;
 
 --
--- TOC entry 3759 (class 0 OID 0)
+-- TOC entry 3763 (class 0 OID 0)
 -- Dependencies: 285
 -- Name: TABLE functionslist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -19975,7 +20172,7 @@ CREATE SEQUENCE functionslist_id_seq
 ALTER TABLE functionslist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3760 (class 0 OID 0)
+-- TOC entry 3764 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: functionslist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20001,7 +20198,7 @@ CREATE TABLE queries (
 ALTER TABLE queries OWNER TO postgres;
 
 --
--- TOC entry 3761 (class 0 OID 0)
+-- TOC entry 3765 (class 0 OID 0)
 -- Dependencies: 287
 -- Name: TABLE queries; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20025,7 +20222,7 @@ CREATE SEQUENCE queries_id_seq
 ALTER TABLE queries_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3762 (class 0 OID 0)
+-- TOC entry 3766 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: queries_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20051,7 +20248,7 @@ CREATE TABLE schemalist (
 ALTER TABLE schemalist OWNER TO postgres;
 
 --
--- TOC entry 3763 (class 0 OID 0)
+-- TOC entry 3767 (class 0 OID 0)
 -- Dependencies: 289
 -- Name: TABLE schemalist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20075,7 +20272,7 @@ CREATE SEQUENCE schemalist_id_seq
 ALTER TABLE schemalist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3764 (class 0 OID 0)
+-- TOC entry 3768 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: schemalist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20099,7 +20296,7 @@ CREATE TABLE schemaobjects (
 ALTER TABLE schemaobjects OWNER TO postgres;
 
 --
--- TOC entry 3765 (class 0 OID 0)
+-- TOC entry 3769 (class 0 OID 0)
 -- Dependencies: 291
 -- Name: TABLE schemaobjects; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20123,7 +20320,7 @@ CREATE SEQUENCE schemaobjects_id_seq
 ALTER TABLE schemaobjects_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3766 (class 0 OID 0)
+-- TOC entry 3770 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: schemaobjects_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20156,7 +20353,7 @@ CREATE TABLE tablecolumns (
 ALTER TABLE tablecolumns OWNER TO postgres;
 
 --
--- TOC entry 3767 (class 0 OID 0)
+-- TOC entry 3771 (class 0 OID 0)
 -- Dependencies: 293
 -- Name: TABLE tablecolumns; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20180,7 +20377,7 @@ CREATE SEQUENCE tablecolumns_id_seq
 ALTER TABLE tablecolumns_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3768 (class 0 OID 0)
+-- TOC entry 3772 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: tablecolumns_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20223,7 +20420,7 @@ CREATE SEQUENCE tableindexes_id_seq
 ALTER TABLE tableindexes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3769 (class 0 OID 0)
+-- TOC entry 3773 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: tableindexes_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20251,7 +20448,7 @@ CREATE TABLE tablelist (
 ALTER TABLE tablelist OWNER TO postgres;
 
 --
--- TOC entry 3770 (class 0 OID 0)
+-- TOC entry 3774 (class 0 OID 0)
 -- Dependencies: 297
 -- Name: TABLE tablelist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20275,7 +20472,7 @@ CREATE SEQUENCE tablelist_id_seq
 ALTER TABLE tablelist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3771 (class 0 OID 0)
+-- TOC entry 3775 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: tablelist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20313,7 +20510,7 @@ CREATE TABLE triggers (
 ALTER TABLE triggers OWNER TO postgres;
 
 --
--- TOC entry 3772 (class 0 OID 0)
+-- TOC entry 3776 (class 0 OID 0)
 -- Dependencies: 299
 -- Name: TABLE triggers; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20353,7 +20550,7 @@ CREATE TABLE dictionary_for_select (
 ALTER TABLE dictionary_for_select OWNER TO postgres;
 
 --
--- TOC entry 3773 (class 0 OID 0)
+-- TOC entry 3777 (class 0 OID 0)
 -- Dependencies: 301
 -- Name: TABLE dictionary_for_select; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20377,7 +20574,7 @@ CREATE SEQUENCE dictionary_for_select_id_seq
 ALTER TABLE dictionary_for_select_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3774 (class 0 OID 0)
+-- TOC entry 3778 (class 0 OID 0)
 -- Dependencies: 302
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -20400,7 +20597,7 @@ CREATE TABLE fel (
 ALTER TABLE fel OWNER TO postgres;
 
 --
--- TOC entry 3775 (class 0 OID 0)
+-- TOC entry 3779 (class 0 OID 0)
 -- Dependencies: 303
 -- Name: TABLE fel; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20424,7 +20621,7 @@ CREATE SEQUENCE fel_id_seq
 ALTER TABLE fel_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3776 (class 0 OID 0)
+-- TOC entry 3780 (class 0 OID 0)
 -- Dependencies: 304
 -- Name: fel_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -20476,7 +20673,7 @@ CREATE TABLE major_table (
 ALTER TABLE major_table OWNER TO postgres;
 
 --
--- TOC entry 3777 (class 0 OID 0)
+-- TOC entry 3781 (class 0 OID 0)
 -- Dependencies: 305
 -- Name: TABLE major_table; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20485,7 +20682,7 @@ COMMENT ON TABLE major_table IS 'table for testing framework interface';
 
 
 --
--- TOC entry 3778 (class 0 OID 0)
+-- TOC entry 3782 (class 0 OID 0)
 -- Dependencies: 305
 -- Name: COLUMN major_table.id; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20494,7 +20691,7 @@ COMMENT ON COLUMN major_table.id IS 'iddd';
 
 
 --
--- TOC entry 3779 (class 0 OID 0)
+-- TOC entry 3783 (class 0 OID 0)
 -- Dependencies: 305
 -- Name: COLUMN major_table.text; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20518,7 +20715,7 @@ CREATE SEQUENCE major_table_id_seq
 ALTER TABLE major_table_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3780 (class 0 OID 0)
+-- TOC entry 3784 (class 0 OID 0)
 -- Dependencies: 306
 -- Name: major_table_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -20540,7 +20737,7 @@ CREATE TABLE onemorerelation (
 ALTER TABLE onemorerelation OWNER TO postgres;
 
 --
--- TOC entry 3781 (class 0 OID 0)
+-- TOC entry 3785 (class 0 OID 0)
 -- Dependencies: 307
 -- Name: TABLE onemorerelation; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20564,7 +20761,7 @@ CREATE SEQUENCE onemorerelation_id_seq
 ALTER TABLE onemorerelation_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3782 (class 0 OID 0)
+-- TOC entry 3786 (class 0 OID 0)
 -- Dependencies: 308
 -- Name: onemorerelation_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -20588,7 +20785,7 @@ CREATE TABLE relate_with_major (
 ALTER TABLE relate_with_major OWNER TO postgres;
 
 --
--- TOC entry 3783 (class 0 OID 0)
+-- TOC entry 3787 (class 0 OID 0)
 -- Dependencies: 309
 -- Name: TABLE relate_with_major; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20612,7 +20809,7 @@ CREATE SEQUENCE relate_with_major_id_seq
 ALTER TABLE relate_with_major_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3784 (class 0 OID 0)
+-- TOC entry 3788 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: relate_with_major_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -20637,7 +20834,7 @@ CREATE TABLE testmanager (
 ALTER TABLE testmanager OWNER TO postgres;
 
 --
--- TOC entry 3785 (class 0 OID 0)
+-- TOC entry 3789 (class 0 OID 0)
 -- Dependencies: 311
 -- Name: COLUMN testmanager.col5; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20646,7 +20843,7 @@ COMMENT ON COLUMN testmanager.col5 IS 'column';
 
 
 --
--- TOC entry 3786 (class 0 OID 0)
+-- TOC entry 3790 (class 0 OID 0)
 -- Dependencies: 311
 -- Name: COLUMN testmanager.textfield1; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20655,7 +20852,7 @@ COMMENT ON COLUMN testmanager.textfield1 IS '<NO TITLE>';
 
 
 --
--- TOC entry 3787 (class 0 OID 0)
+-- TOC entry 3791 (class 0 OID 0)
 -- Dependencies: 311
 -- Name: COLUMN testmanager.intfield; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20664,7 +20861,7 @@ COMMENT ON COLUMN testmanager.intfield IS 'intfield';
 
 
 --
--- TOC entry 3788 (class 0 OID 0)
+-- TOC entry 3792 (class 0 OID 0)
 -- Dependencies: 311
 -- Name: COLUMN testmanager."boolField"; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20675,7 +20872,7 @@ COMMENT ON COLUMN testmanager."boolField" IS 'bool';
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2703 (class 2604 OID 52740)
+-- TOC entry 2704 (class 2604 OID 52740)
 -- Name: act_parametrs id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20683,7 +20880,7 @@ ALTER TABLE ONLY act_parametrs ALTER COLUMN id SET DEFAULT nextval('act_parametr
 
 
 --
--- TOC entry 2704 (class 2604 OID 52741)
+-- TOC entry 2705 (class 2604 OID 52741)
 -- Name: act_visible_condions id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20691,7 +20888,7 @@ ALTER TABLE ONLY act_visible_condions ALTER COLUMN id SET DEFAULT nextval('act_v
 
 
 --
--- TOC entry 2713 (class 2604 OID 52742)
+-- TOC entry 2714 (class 2604 OID 52742)
 -- Name: actions id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20699,7 +20896,7 @@ ALTER TABLE ONLY actions ALTER COLUMN id SET DEFAULT nextval('actions_id_seq'::r
 
 
 --
--- TOC entry 2714 (class 2604 OID 52743)
+-- TOC entry 2715 (class 2604 OID 52743)
 -- Name: actparam_querytypes id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20707,7 +20904,7 @@ ALTER TABLE ONLY actparam_querytypes ALTER COLUMN id SET DEFAULT nextval('actpar
 
 
 --
--- TOC entry 2716 (class 2604 OID 52744)
+-- TOC entry 2717 (class 2604 OID 52744)
 -- Name: apicallingmethods id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20715,7 +20912,7 @@ ALTER TABLE ONLY apicallingmethods ALTER COLUMN id SET DEFAULT nextval('apicalli
 
 
 --
--- TOC entry 2718 (class 2604 OID 52745)
+-- TOC entry 2719 (class 2604 OID 52745)
 -- Name: booloper id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20723,7 +20920,7 @@ ALTER TABLE ONLY booloper ALTER COLUMN id SET DEFAULT nextval('booloper_id_seq':
 
 
 --
--- TOC entry 2719 (class 2604 OID 52746)
+-- TOC entry 2720 (class 2604 OID 52746)
 -- Name: columntypes id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20731,7 +20928,7 @@ ALTER TABLE ONLY columntypes ALTER COLUMN id SET DEFAULT nextval('columntypes_id
 
 
 --
--- TOC entry 2724 (class 2604 OID 52747)
+-- TOC entry 2725 (class 2604 OID 52747)
 -- Name: compoitems id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20739,7 +20936,7 @@ ALTER TABLE ONLY compoitems ALTER COLUMN id SET DEFAULT nextval('compoitems_id_s
 
 
 --
--- TOC entry 2727 (class 2604 OID 52748)
+-- TOC entry 2728 (class 2604 OID 52748)
 -- Name: compos id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20747,7 +20944,7 @@ ALTER TABLE ONLY compos ALTER COLUMN id SET DEFAULT nextval('compos_id_seq1'::re
 
 
 --
--- TOC entry 2746 (class 2604 OID 52749)
+-- TOC entry 2747 (class 2604 OID 52749)
 -- Name: config id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20755,7 +20952,7 @@ ALTER TABLE ONLY config ALTER COLUMN id SET DEFAULT nextval('config_id_seq'::reg
 
 
 --
--- TOC entry 2747 (class 2604 OID 52750)
+-- TOC entry 2749 (class 2604 OID 52750)
 -- Name: configsettings id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20763,7 +20960,7 @@ ALTER TABLE ONLY configsettings ALTER COLUMN id SET DEFAULT nextval('configsetti
 
 
 --
--- TOC entry 2748 (class 2604 OID 52751)
+-- TOC entry 2750 (class 2604 OID 52751)
 -- Name: defaultval id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20771,7 +20968,7 @@ ALTER TABLE ONLY defaultval ALTER COLUMN id SET DEFAULT nextval('defaultval_id_s
 
 
 --
--- TOC entry 2756 (class 2604 OID 52752)
+-- TOC entry 2758 (class 2604 OID 52752)
 -- Name: dialog_messages id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20779,7 +20976,7 @@ ALTER TABLE ONLY dialog_messages ALTER COLUMN id SET DEFAULT nextval('dialog_mes
 
 
 --
--- TOC entry 2760 (class 2604 OID 52753)
+-- TOC entry 2762 (class 2604 OID 52753)
 -- Name: dialog_notifications id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20787,7 +20984,7 @@ ALTER TABLE ONLY dialog_notifications ALTER COLUMN id SET DEFAULT nextval('dialo
 
 
 --
--- TOC entry 2761 (class 2604 OID 52754)
+-- TOC entry 2763 (class 2604 OID 52754)
 -- Name: dialog_statuses id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20795,7 +20992,7 @@ ALTER TABLE ONLY dialog_statuses ALTER COLUMN id SET DEFAULT nextval('dialog_sta
 
 
 --
--- TOC entry 2770 (class 2604 OID 52755)
+-- TOC entry 2772 (class 2604 OID 52755)
 -- Name: dialogs id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20803,7 +21000,7 @@ ALTER TABLE ONLY dialogs ALTER COLUMN id SET DEFAULT nextval('dialogs_id_seq'::r
 
 
 --
--- TOC entry 2778 (class 2604 OID 52756)
+-- TOC entry 2780 (class 2604 OID 52756)
 -- Name: filters id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20811,7 +21008,7 @@ ALTER TABLE ONLY filters ALTER COLUMN id SET DEFAULT nextval('filters_id_seq'::r
 
 
 --
--- TOC entry 2779 (class 2604 OID 52757)
+-- TOC entry 2781 (class 2604 OID 52757)
 -- Name: instructions id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20819,7 +21016,7 @@ ALTER TABLE ONLY instructions ALTER COLUMN id SET DEFAULT nextval('instructions_
 
 
 --
--- TOC entry 2790 (class 2604 OID 52758)
+-- TOC entry 2792 (class 2604 OID 52758)
 -- Name: mainmenu id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20827,7 +21024,7 @@ ALTER TABLE ONLY mainmenu ALTER COLUMN id SET DEFAULT nextval('mainmenu_id_seq':
 
 
 --
--- TOC entry 2805 (class 2604 OID 52759)
+-- TOC entry 2807 (class 2604 OID 52759)
 -- Name: menus id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20835,7 +21032,7 @@ ALTER TABLE ONLY menus ALTER COLUMN id SET DEFAULT nextval('menus_id_seq'::regcl
 
 
 --
--- TOC entry 2807 (class 2604 OID 52760)
+-- TOC entry 2809 (class 2604 OID 52760)
 -- Name: menutypes id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20843,7 +21040,7 @@ ALTER TABLE ONLY menutypes ALTER COLUMN id SET DEFAULT nextval('menutypes_id_seq
 
 
 --
--- TOC entry 2812 (class 2604 OID 52761)
+-- TOC entry 2814 (class 2604 OID 52761)
 -- Name: notifications id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20851,7 +21048,7 @@ ALTER TABLE ONLY notifications ALTER COLUMN id SET DEFAULT nextval('notification
 
 
 --
--- TOC entry 2813 (class 2604 OID 52762)
+-- TOC entry 2815 (class 2604 OID 52762)
 -- Name: operations id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20859,7 +21056,7 @@ ALTER TABLE ONLY operations ALTER COLUMN id SET DEFAULT nextval('operations_id_s
 
 
 --
--- TOC entry 2819 (class 2604 OID 52763)
+-- TOC entry 2821 (class 2604 OID 52763)
 -- Name: select_condition id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20867,7 +21064,7 @@ ALTER TABLE ONLY select_condition ALTER COLUMN id SET DEFAULT nextval('select_co
 
 
 --
--- TOC entry 2824 (class 2604 OID 52764)
+-- TOC entry 2826 (class 2604 OID 52764)
 -- Name: spapi id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20875,7 +21072,7 @@ ALTER TABLE ONLY spapi ALTER COLUMN id SET DEFAULT nextval('spapi_id_seq'::regcl
 
 
 --
--- TOC entry 2931 (class 2604 OID 68345)
+-- TOC entry 2933 (class 2604 OID 68345)
 -- Name: templates id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20883,7 +21080,7 @@ ALTER TABLE ONLY templates ALTER COLUMN id SET DEFAULT nextval('templates_id_seq
 
 
 --
--- TOC entry 2828 (class 2604 OID 52765)
+-- TOC entry 2830 (class 2604 OID 52765)
 -- Name: trees id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20891,7 +21088,7 @@ ALTER TABLE ONLY trees ALTER COLUMN id SET DEFAULT nextval('trees_id_seq'::regcl
 
 
 --
--- TOC entry 2829 (class 2604 OID 52766)
+-- TOC entry 2831 (class 2604 OID 52766)
 -- Name: treesacts id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20899,7 +21096,7 @@ ALTER TABLE ONLY treesacts ALTER COLUMN id SET DEFAULT nextval('treesacts_id_seq
 
 
 --
--- TOC entry 2833 (class 2604 OID 52767)
+-- TOC entry 2835 (class 2604 OID 52767)
 -- Name: treesbranches id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20907,7 +21104,7 @@ ALTER TABLE ONLY treesbranches ALTER COLUMN id SET DEFAULT nextval('treesbranche
 
 
 --
--- TOC entry 2842 (class 2604 OID 52768)
+-- TOC entry 2844 (class 2604 OID 52768)
 -- Name: users id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20915,7 +21112,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
--- TOC entry 2859 (class 2604 OID 52769)
+-- TOC entry 2861 (class 2604 OID 52769)
 -- Name: views id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20923,7 +21120,7 @@ ALTER TABLE ONLY views ALTER COLUMN id SET DEFAULT nextval('views_id_seq'::regcl
 
 
 --
--- TOC entry 2864 (class 2604 OID 52770)
+-- TOC entry 2866 (class 2604 OID 52770)
 -- Name: viewsnotification id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20931,7 +21128,7 @@ ALTER TABLE ONLY viewsnotification ALTER COLUMN id SET DEFAULT nextval('viewsnot
 
 
 --
--- TOC entry 2865 (class 2604 OID 52771)
+-- TOC entry 2867 (class 2604 OID 52771)
 -- Name: visible_condition id; Type: DEFAULT; Schema: framework; Owner: postgres
 --
 
@@ -20941,7 +21138,7 @@ ALTER TABLE ONLY visible_condition ALTER COLUMN id SET DEFAULT nextval('visible_
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 2871 (class 2604 OID 52772)
+-- TOC entry 2873 (class 2604 OID 52772)
 -- Name: reportlist id; Type: DEFAULT; Schema: reports; Owner: postgres
 --
 
@@ -20949,7 +21146,7 @@ ALTER TABLE ONLY reportlist ALTER COLUMN id SET DEFAULT nextval('reportlist_id_s
 
 
 --
--- TOC entry 2875 (class 2604 OID 52773)
+-- TOC entry 2877 (class 2604 OID 52773)
 -- Name: reportparams id; Type: DEFAULT; Schema: reports; Owner: postgres
 --
 
@@ -20959,7 +21156,7 @@ ALTER TABLE ONLY reportparams ALTER COLUMN id SET DEFAULT nextval('reportparams_
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 2878 (class 2604 OID 52774)
+-- TOC entry 2880 (class 2604 OID 52774)
 -- Name: foreignkeys id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -20967,7 +21164,7 @@ ALTER TABLE ONLY foreignkeys ALTER COLUMN id SET DEFAULT nextval('foreignkeys_id
 
 
 --
--- TOC entry 2879 (class 2604 OID 52775)
+-- TOC entry 2881 (class 2604 OID 52775)
 -- Name: functionargs id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -20975,7 +21172,7 @@ ALTER TABLE ONLY functionargs ALTER COLUMN id SET DEFAULT nextval('functionargs_
 
 
 --
--- TOC entry 2885 (class 2604 OID 52776)
+-- TOC entry 2887 (class 2604 OID 52776)
 -- Name: functionslist id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -20983,7 +21180,7 @@ ALTER TABLE ONLY functionslist ALTER COLUMN id SET DEFAULT nextval('functionslis
 
 
 --
--- TOC entry 2886 (class 2604 OID 52777)
+-- TOC entry 2888 (class 2604 OID 52777)
 -- Name: queries id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -20991,7 +21188,7 @@ ALTER TABLE ONLY queries ALTER COLUMN id SET DEFAULT nextval('queries_id_seq'::r
 
 
 --
--- TOC entry 2891 (class 2604 OID 52778)
+-- TOC entry 2893 (class 2604 OID 52778)
 -- Name: schemalist id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -20999,7 +21196,7 @@ ALTER TABLE ONLY schemalist ALTER COLUMN id SET DEFAULT nextval('schemalist_id_s
 
 
 --
--- TOC entry 2892 (class 2604 OID 52779)
+-- TOC entry 2894 (class 2604 OID 52779)
 -- Name: schemaobjects id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21007,7 +21204,7 @@ ALTER TABLE ONLY schemaobjects ALTER COLUMN id SET DEFAULT nextval('schemaobject
 
 
 --
--- TOC entry 2899 (class 2604 OID 52780)
+-- TOC entry 2901 (class 2604 OID 52780)
 -- Name: tablecolumns id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21015,7 +21212,7 @@ ALTER TABLE ONLY tablecolumns ALTER COLUMN id SET DEFAULT nextval('tablecolumns_
 
 
 --
--- TOC entry 2903 (class 2604 OID 52781)
+-- TOC entry 2905 (class 2604 OID 52781)
 -- Name: tableindexes id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21023,7 +21220,7 @@ ALTER TABLE ONLY tableindexes ALTER COLUMN id SET DEFAULT nextval('tableindexes_
 
 
 --
--- TOC entry 2907 (class 2604 OID 52782)
+-- TOC entry 2909 (class 2604 OID 52782)
 -- Name: tablelist id; Type: DEFAULT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -21033,7 +21230,7 @@ ALTER TABLE ONLY tablelist ALTER COLUMN id SET DEFAULT nextval('tablelist_id_seq
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 2920 (class 2604 OID 52783)
+-- TOC entry 2922 (class 2604 OID 52783)
 -- Name: dictionary_for_select id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -21041,7 +21238,7 @@ ALTER TABLE ONLY dictionary_for_select ALTER COLUMN id SET DEFAULT nextval('dict
 
 
 --
--- TOC entry 2923 (class 2604 OID 52784)
+-- TOC entry 2925 (class 2604 OID 52784)
 -- Name: fel id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -21049,7 +21246,7 @@ ALTER TABLE ONLY fel ALTER COLUMN id SET DEFAULT nextval('fel_id_seq'::regclass)
 
 
 --
--- TOC entry 2924 (class 2604 OID 52785)
+-- TOC entry 2926 (class 2604 OID 52785)
 -- Name: major_table id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -21057,7 +21254,7 @@ ALTER TABLE ONLY major_table ALTER COLUMN id SET DEFAULT nextval('major_table_id
 
 
 --
--- TOC entry 2926 (class 2604 OID 52786)
+-- TOC entry 2928 (class 2604 OID 52786)
 -- Name: onemorerelation id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -21065,7 +21262,7 @@ ALTER TABLE ONLY onemorerelation ALTER COLUMN id SET DEFAULT nextval('onemorerel
 
 
 --
--- TOC entry 2927 (class 2604 OID 52787)
+-- TOC entry 2929 (class 2604 OID 52787)
 -- Name: relate_with_major id; Type: DEFAULT; Schema: test; Owner: postgres
 --
 
@@ -21075,7 +21272,7 @@ ALTER TABLE ONLY relate_with_major ALTER COLUMN id SET DEFAULT nextval('relate_w
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3276 (class 0 OID 52127)
+-- TOC entry 3280 (class 0 OID 52127)
 -- Dependencies: 190
 -- Data for Name: act_parametrs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21451,7 +21648,7 @@ COPY act_parametrs (id, actionid, paramtitle, paramt, paramconst, paraminput, pa
 
 
 --
--- TOC entry 3789 (class 0 OID 0)
+-- TOC entry 3793 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: act_parametrs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21460,7 +21657,7 @@ SELECT pg_catalog.setval('act_parametrs_id_seq', 113, true);
 
 
 --
--- TOC entry 3278 (class 0 OID 52138)
+-- TOC entry 3282 (class 0 OID 52138)
 -- Dependencies: 192
 -- Data for Name: act_visible_condions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21502,7 +21699,7 @@ COPY act_visible_condions (id, actionid, val_desc, col, title, operation, value,
 
 
 --
--- TOC entry 3790 (class 0 OID 0)
+-- TOC entry 3794 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: act_visible_condions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21511,7 +21708,7 @@ SELECT pg_catalog.setval('act_visible_condions_id_seq', 1368, true);
 
 
 --
--- TOC entry 3280 (class 0 OID 52147)
+-- TOC entry 3284 (class 0 OID 52147)
 -- Dependencies: 194
 -- Data for Name: actions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21743,7 +21940,7 @@ COPY actions (id, column_order, title, viewid, icon, classname, act_url, api_met
 
 
 --
--- TOC entry 3791 (class 0 OID 0)
+-- TOC entry 3795 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: actions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21752,7 +21949,7 @@ SELECT pg_catalog.setval('actions_id_seq', 12167, true);
 
 
 --
--- TOC entry 3282 (class 0 OID 52162)
+-- TOC entry 3286 (class 0 OID 52162)
 -- Dependencies: 196
 -- Data for Name: actparam_querytypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21764,7 +21961,7 @@ COPY actparam_querytypes (id, aqname) FROM stdin;
 
 
 --
--- TOC entry 3792 (class 0 OID 0)
+-- TOC entry 3796 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: actparam_querytypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21773,7 +21970,7 @@ SELECT pg_catalog.setval('actparam_querytypes_id_seq', 2, true);
 
 
 --
--- TOC entry 3284 (class 0 OID 52167)
+-- TOC entry 3288 (class 0 OID 52167)
 -- Dependencies: 198
 -- Data for Name: acttypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21794,7 +21991,7 @@ COPY acttypes (id, actname, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 3285 (class 0 OID 52174)
+-- TOC entry 3289 (class 0 OID 52174)
 -- Dependencies: 199
 -- Data for Name: apicallingmethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21806,7 +22003,7 @@ COPY apicallingmethods (id, aname) FROM stdin;
 
 
 --
--- TOC entry 3793 (class 0 OID 0)
+-- TOC entry 3797 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: apicallingmethods_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21815,7 +22012,7 @@ SELECT pg_catalog.setval('apicallingmethods_id_seq', 2, true);
 
 
 --
--- TOC entry 3287 (class 0 OID 52179)
+-- TOC entry 3291 (class 0 OID 52179)
 -- Dependencies: 201
 -- Data for Name: apimethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21827,7 +22024,7 @@ COPY apimethods (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 3288 (class 0 OID 52183)
+-- TOC entry 3292 (class 0 OID 52183)
 -- Dependencies: 202
 -- Data for Name: booloper; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21839,7 +22036,7 @@ COPY booloper (id, bname) FROM stdin;
 
 
 --
--- TOC entry 3794 (class 0 OID 0)
+-- TOC entry 3798 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: booloper_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21848,7 +22045,7 @@ SELECT pg_catalog.setval('booloper_id_seq', 2, true);
 
 
 --
--- TOC entry 3290 (class 0 OID 52188)
+-- TOC entry 3294 (class 0 OID 52188)
 -- Dependencies: 204
 -- Data for Name: columntypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21898,7 +22095,7 @@ COPY columntypes (id, typename, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 3795 (class 0 OID 0)
+-- TOC entry 3799 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: columntypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21907,7 +22104,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 
 
 --
--- TOC entry 3796 (class 0 OID 0)
+-- TOC entry 3800 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21916,7 +22113,7 @@ SELECT pg_catalog.setval('columntypes_id_seq1', 4, true);
 
 
 --
--- TOC entry 3293 (class 0 OID 52199)
+-- TOC entry 3297 (class 0 OID 52199)
 -- Dependencies: 207
 -- Data for Name: compoitems; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21942,7 +22139,7 @@ COPY compoitems (id, compoid, viewid, width, rownum, created, noscript) FROM std
 
 
 --
--- TOC entry 3797 (class 0 OID 0)
+-- TOC entry 3801 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: compoitems_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21951,7 +22148,7 @@ SELECT pg_catalog.setval('compoitems_id_seq', 210, true);
 
 
 --
--- TOC entry 3295 (class 0 OID 52207)
+-- TOC entry 3299 (class 0 OID 52207)
 -- Dependencies: 209
 -- Data for Name: compos; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -21975,7 +22172,7 @@ COPY compos (id, title, path, config, created, viscond_function) FROM stdin;
 
 
 --
--- TOC entry 3798 (class 0 OID 0)
+-- TOC entry 3802 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: compos_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21984,7 +22181,7 @@ SELECT pg_catalog.setval('compos_id_seq', 248, true);
 
 
 --
--- TOC entry 3799 (class 0 OID 0)
+-- TOC entry 3803 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: compos_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -21993,891 +22190,892 @@ SELECT pg_catalog.setval('compos_id_seq1', 4, true);
 
 
 --
--- TOC entry 3298 (class 0 OID 52219)
+-- TOC entry 3302 (class 0 OID 52219)
 -- Dependencies: 212
 -- Data for Name: config; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
-COPY config (id, viewid, t, col, column_id, title, type, roles, visible, required, width, "join", classname, updatable, relation, select_api, multiselecttable, orderby, orderbydesc, relcol, depency, created, relationcolums, multicolums, depencycol, column_order, fn, fncolumns, relatecolumn, "table", related, tpath, editable, copy) FROM stdin;
-13108	236	2	fam	2	lastname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-13111	236	11	photo	14	photo	image	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-601841	236	15	roles	\N	user roles	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-04 16:30:33.64911	[]	[]	\N	72	public.fn_users_getroles	["13113"]	\N	\N	f	[]	f	f
-13576	221	4	col	4	col title fn	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-07 15:37:15.70217	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-601851	50783	9	id	9	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-13644	228	9	api_type	9	api_type	select	[]	t	f	\N	f	\N	f	framework.methodtypes	\N	\N	f	f	methotypename	f	2019-11-08 11:08:46.710689	["methotypename"]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601852	50783	10	homepage	10	home page	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12879	220	2	text	2	text title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	t	f
-601843	50783	1	dsn	1	db connection string	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13577	242	13	val_desc	13	col	select_api	[]	t	f	\N	f	\N	f	framework.config	/api/tabcolumns_for_filters	\N	f	f	id	f	2019-11-07 16:03:45.333515	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-601844	50783	2	port	2	project server port	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601845	50783	3	developerRole	3	developer role id	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-13647	239	30	table	30	table	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 09:06:53.086775	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f
-601846	50783	4	maindomain	4	main domain	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601848	50783	6	redirect401	6	redirect when status 401	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-601849	50783	7	isactiv	7	isactiv	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-601847	50783	5	primaryAuthorization	5	primary authorization	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-12914	221	3	t	3	t	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-601706	235	12	nosession	11	no session	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-31 10:34:48.063871	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-12741	218	7	color	7	color title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f
-12701	224	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12702	224	2	configid	2	configid	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12704	224	5	operation	5	operation	label	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12705	224	6	value	6	value	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12872	219	28	multitypehead	28	multitypehead	multitypehead	[]	f	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	27	\N	\N	\N	\N	f	[]	f	f
-13011	56	1	id	1	id	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13067	32	1	id	1	bid	label	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13189	242	1	id	1	fl_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13190	242	12	column_order	2	column_order	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12878	220	1	id	1	test	checkbox	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13196	242	7	columns	7	columns	multiselect_api	[]	t	f		f		f	\N	/api/tabcolumns_for_filters_arr	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13197	242	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13239	224	3	val_desc	3	val_desc	select	[]	f	f	\N	f	\N	f	framework.config	\N	\N	f	f	id	f	2019-11-05 13:50:29.934237	["title"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13198	242	9	t	9	t	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13199	242	10	table	10	table	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-13200	242	11	created	11	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-13210	244	1	id	1	vs_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13023	229	8	val_desc	8	val_desc	select_api	[]	t	f		f		f	framework.config	/api/view_cols_for_param	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id", "title"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13119	237	\N	tit	\N	view title	link	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	framework.fn_view_title_link	[13117,13118]		\N	t	null	f	f
-601842	236	16	user orgs	\N	user orgs	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-04 16:31:42.88825	[]	[]	\N	82	public.fn_users_getorgs	["13114"]	\N	\N	f	[]	f	f
-19392	118	21	created	8	Created Date	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13261	238	1	SHOW SQL	\N	SHOW SQL	link	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-06 09:00:53.832788	[]	[]	\N	21	framework.fn_view_link_showsql	[13130]	\N	\N	f	[]	f	f
-12706	224	7	created	7	created	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13240	224	3	title	\N	title	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 13:57:11.162051	[]	[]	\N	1	\N	\N	val_desc	framework.config	t	[]	f	f
-12707	44	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12708	44	2	viewid	2	viewid	number	[]	f	f		f	\N	f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12709	44	3	col	3	col	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12710	44	4	tableid	4	tableid	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12711	44	5	notificationtext	5	notificationtext	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12713	44	7	issend	7	issend	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12714	44	8	isread	8	isread	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12715	44	9	created	9	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12716	44	10	sended	10	sended	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12717	44	11	readed	11	readed	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12749	211	1	id	1	id	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12750	211	3	menutitle	3	menu title	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12751	211	2	menutype	2	menu type	select	[]	t	f		f	col-md-11	f	framework.menutypes	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","mtypename"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12752	211	4	ismainmenu	4	is main menu	checkbox	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12718	218	1	id	1	id	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12719	218	2	text	2	text title	text	[]	t	f		f		t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12720	218	15	number	15	number title	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12721	218	3	data	3	date title	date	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12722	218	29	datetime	29	datetime	datetime	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12723	218	5	time	5	time title	time	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12724	218	4	check	4	check title	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12725	218	6	password	6	password title visible check	password	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12726	218	10	typehead	10	typehead title	typehead	[]	t	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12727	218	22	select	22	select title	select	[]	t	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13017	56	6	oldata	6	oldata	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12728	218	8	multiselect	8	multiselect title	multiselect	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12729	218	28	multitypehead	28	multitypehead title	multitypehead	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	12	\N	\N	\N	\N	f	[]	f	f
-601856	50784	4	for_userid	4	for user	label	[]	f	f		f		f	framework.users	\N	\N	f	f	id	f	2020-04-04 22:00:08.558568	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601858	50784	6	isread	6	readed	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-601859	50784	7	created	7	created	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-601855	50784	3	messagetype	3	message type	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-13068	32	2	treesid	2	treesid	label	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13069	32	3	title	3	title	text	[]	t	f		f	col-md-12	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13070	32	5	parentid	5	parentid	select	[]	t	f		f	col-md-12	f	framework.treesbranches	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13071	32	6	icon	6	icon	text	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13072	32	7	created	7	created	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-601854	50784	2	message	2	message	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601853	50784	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13073	32	15	treeviewtype	8	treeviewtype	select	[]	t	f		f	col-md-12	f	framework.treeviewtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","typename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13075	32	14	compoid	10	compoid	select	[]	t	f		f	col-md-12	f	framework.compos	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13076	32	10	orderby	11	orderby	number	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13077	32	11	ismain	12	ismain	checkbox	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12833	34	2	orgname	2	orgname	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12832	34	1	id	1	id	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13012	56	10	userid	10	userid	number	[]	f	f		f	col-md-12	f	framework.users	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["login"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13013	56	2	tablename	2	tablename	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13014	56	3	tableid	3	tableid	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13015	56	4	opertype	4	opertype	label	[]	f	f		f	col-md-12	f	framework.opertypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["typename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13016	56	10	login	\N	login	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	userid	framework.users	t	[]	f	f
-13018	56	7	newdata	7	newdata	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13019	56	8	created	8	created	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12784	214	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12785	214	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12786	214	3	path	3	path	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12787	214	4	config	4	config	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12788	214	5	created	5	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12846	219	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	t	t	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12847	219	2	text	2	text title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12848	219	3	data	3	data	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12849	219	4	check	4	check	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12850	219	5	time	5	time	time	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12851	219	6	password	6	password	password	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12852	219	7	color	7	color	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12853	219	8	multiselect	8	multiselect	multiselect	[]	f	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12854	219	9	file	9	file	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12855	219	10	typehead	10	typehead	typehead	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12856	219	11	image	11	image	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12857	219	12	images	12	images	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-12858	219	13	gallery	13	gallery	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-12859	219	14	label	14	label	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-12860	219	15	number	15	number	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12861	219	16	link	16	link	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-12862	219	17	texteditor	17	texteditor	texteditor	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f
-12960	55	3	im	3	FirstName	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12958	55	1	id	1	id	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12964	55	7	isactive	8	isactive	checkbox	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12965	55	8	created	9	created	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12966	55	9	roles	11	roles	label	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12967	55	10	roleid	12	roleid	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12968	55	12	orgs	15	orgs	label	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12969	55	13	usersettings	16	usersettings	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-12970	55	14	orgid	17	orgid	number	[]	f	f		f	\N	f	framework.orgs	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["orgname"]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-12971	55	14	orgname	\N	orgname	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	orgid	framework.orgs	t	[]	f	f
-12972	55	11	photo	14	photo	image	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12863	219	18	colorrow	18	color row	colorrow	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f
-12864	219	19	multitypehead_api	19	multitypehead_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f
-12865	219	20	multi_select_api	20	multi_select_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-12866	219	21	colorpicker	21	colorpicker	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f
-12867	219	23	autocomplete	23	autocomplete	autocomplete	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f
-12868	219	24	textarea	24	textarea	textarea	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f
-12869	219	25	files	25	files	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f
-12870	219	26	typehead_api	26	typehead_api	typehead_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f
-12871	219	27	select_api	27	select_api	select_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f
-12873	219	29	datetime	29	datetime	datetime	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f
-12874	219	31	relate_with_major	31	relate_with_major	array	[]	t	f		f		f	test.relate_with_major	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["id","somecolumn","major_table_id","created"]	[]	major_table_id	29	\N	\N	\N	\N	f	[]	f	f
-12875	219	22	select	22	select	label	[]	f	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["dname","id"]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601860	50783	11	reports_url	11	reports url	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-04 22:25:29.950382	[]	[]	\N	91	\N	\N	\N	\N	f	[]	f	f
-12876	219	22	dname	\N	dname	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	select	test.dictionary_for_select	t	[]	f	f
-12877	219	22	id	\N	id_	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	32	\N	\N	select	test.dictionary_for_select	t	[]	f	f
-12973	226	1	id	1	CN	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12974	226	2	configid	2	configid	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12978	226	6	created	6	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12995	228	1	id	1	act_id	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12996	228	2	column_order	2	order by	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12997	228	3	title	3	act title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12998	228	16	act_type	16	act_type	select	[]	t	f		f		f	framework.acttypes	\N	\N	f	f	actname	f	2019-11-05 10:00:17.290746	["actname"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12999	228	4	viewid	4	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13000	228	5	icon	5	act icon	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13001	228	6	classname	6	class name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13002	228	7	act_url	7	act url	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13003	228	8	api_method	8	api method	select	[]	t	f		f		f	framework.apicallingmethods	\N	\N	f	f	aname	f	2019-11-05 10:00:17.290746	["aname"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13005	228	10	refresh_data	10	refresh data	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-13006	228	11	ask_confirm	11	ask confirm	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-13007	228	12	roles	12	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	13	\N	\N	\N	\N	f	[]	f	f
-13008	228	13	forevery	13	for every row	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-13009	228	14	main_action	14	main_action	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-13010	228	15	created	15	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-13028	230	6	title	6	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13029	230	27	fn	27	function	select_api	[]	t	f		f		f	\N	/api/getfunctions	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13030	230	28	fncolumns	28	columns	multiselect_api	[]	t	f		f		f	\N	/api/view_cols_for_fn	framework.config	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13031	230	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13032	231	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13033	231	3	val_desc	3	val_desc	label	[]	t	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13034	231	2	actionid	2	act_id	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13035	231	3	title	\N	column title	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	val_desc	framework.config	t	[]	f	f
-13036	231	6	operation	6	operation	label	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13037	231	7	value	7	value	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13038	231	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13039	232	4	col	4	column title	select_api	[]	t	f		f		f	\N	/api/config_selectapi	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12976	226	4	act	4	Action	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12977	226	5	value	5	Value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13040	232	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13085	234	1	id	1	id	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13086	234	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13087	234	8	path	8	path	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13088	234	4	roles	4	roles	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13089	234	6	systemfield	6	systemfield	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13090	234	9	icon	10	icon	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13091	234	3	parentid	3	parentid	select	[]	f	f		f	\N	f	framework.mainmenu	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13092	234	3	title	\N	parent	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	parentid	framework.mainmenu	t	[]	f	f
-13093	234	7	orderby	7	orderby	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13094	234	5	created	5	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13212	244	3	val_desc	3	val_desc	select_api	[]	t	f		f		f	framework.config	/api/view_cols_for_param	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id", "title"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13095	234	10	menuid	10	menuid	number	[]	f	f		f		f	framework.menus	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-13191	242	2	viewid	2	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13192	242	3	title	3	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12962	55	5	login	5	Login	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13193	242	4	type	4	type	select	[]	t	f		f		f	framework.filtertypes	\N	\N	f	f	ftname	f	2019-11-05 10:00:17.290746	["ftname"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13194	242	5	classname	5	classname	text	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13211	244	2	actionid	2	actionid	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13213	244	6	operation	6	operation	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13214	244	7	value	7	value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13215	244	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13118	237	2	title	2	title	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13120	237	4	tablename	4	tablename	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13121	237	5	vtypename	\N	view type	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	viewtype	framework.viewtypes	t	[]	f	f
-13122	237	3	descr	3	descr	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13124	237	5	viewtype	5	viewtype	label	[]	f	f		f		f	framework.viewtypes	\N	\N	f	f	vtypename	f	2019-11-05 10:00:17.290746	["vtypename"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12839	217	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12840	217	6	methodtype	6	methodtype	select	[]	f	f		f	\N	f	framework.methodtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["methotypename"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12841	217	2	methodname	2	method name	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12842	217	3	procedurename	3	procedure name	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12843	217	6	methotypename	\N	methotypename	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	methodtype	framework.methodtypes	t	[]	f	f
-12844	217	4	roles	4	roles	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12845	217	5	created	5	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-601835	239	7	typename	\N	typename	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	typename	f	2020-04-03 12:33:29.81526	[]	[]	\N	31	\N	\N	type	framework.columntypes	t	[]	f	f
-601839	235	13	ws	13	ws messagetype	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-03 14:31:40.101312	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-601840	235	14	istitle	14	is title	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-03 14:31:49.306246	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-12757	225	5	value	5	Value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-601836	227	16	actname	\N	actname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	actname	f	2020-04-03 12:39:37.338658	[]	[]	\N	16	\N	\N	act_type	framework.acttypes	t	[]	f	f
-601837	227	8	aname	\N	aname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	aname	f	2020-04-03 12:39:57.452917	[]	[]	\N	17	\N	\N	api_method	framework.apicallingmethods	t	[]	f	f
-601838	227	9	methotypename	\N	methotypename	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	methotypename	f	2020-04-03 12:40:17.479944	[]	[]	\N	18	\N	\N	api_type	framework.methodtypes	t	[]	f	f
-12730	218	27	select_api	27	select_api title	select_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-12731	218	26	typehead_api	26	typehead_api title	typehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-12732	218	20	multi_select_api	20	multi_select_api	multiselect_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12783	213	12	photo	13	photo	image	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-16468	5542	15	userid	15	userid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12733	218	19	multitypehead_api	19	multitypehead_api	multitypehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-12734	218	23	autocomplete	23	autocomplete title	autocomplete	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f
-12735	218	16	link	16	link title	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f
-12736	218	14	label	14	label title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f
-12737	218	17	texteditor	17	texteditor title	texteditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-12738	218	31	html	30	html title	innerHtml	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f
-12739	218	24	textarea	24	textarea title	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f
-12740	218	21	colorpicker	21	colorpicker title	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f
-12742	218	18	colorrow	18	colorrow title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f
-12743	218	9	file	9	file title	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f
-12744	218	25	files	25	files title	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	27	\N	\N	\N	\N	f	[]	f	f
-12745	218	30	files	25	filelist title	filelist	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f
-12746	218	11	image	11	image title	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	29	\N	\N	\N	\N	f	[]	f	f
-12747	218	12	images	12	images title	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-12748	218	13	gallery	13	gallery title	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f
-12753	225	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12754	225	2	configid	2	configid	label	[]	f	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12758	225	6	created	6	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12759	100	1	id	1	id	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12760	100	2	treesid	2	treesid	number	[]	f	f		f	\N	f	framework.trees	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12761	100	3	title	3	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12762	100	4	icon	4	icon	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12763	100	5	classname	5	classname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12764	100	6	act	6	act	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12765	100	7	created	7	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12766	212	1	id	1	N	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12768	212	2	methodname	2	method name	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12769	212	6	methodtype	6	methodtype	select	[]	t	f		f	col-md-11	f	framework.methodtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","methotypename"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12770	212	4	roles	4	roles	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12771	212	5	created	5	created	label	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12772	213	2	fam	2	fam	text	[]	t	f		f	col-md-11	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12773	213	3	im	3	im	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12774	213	4	ot	4	ot	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12775	213	5	login	5	login	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12776	213	6	password	6	password	password	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12777	213	8	isactive	8	isactive	checkbox	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12778	213	9	created	9	created	label	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12779	213	10	roles	11	roles	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12780	213	12	orgs	12	orgs	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.orgs	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","orgname"]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12781	213	1	id	1	id	number	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12782	213	11	roleid	12	roleid	number	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12756	225	4	act	4	Action	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["id","value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-16469	5542	16	thumbprint	17	thumbprint	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-12807	215	14	label	14	label title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f
-12801	215	27	select_api	27	select_api title	select_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-12824	216	3	tableid	3	tableid	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12834	150	1	id	1	id	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12835	150	3	menutitle	3	menu title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12836	150	2	mtypename	\N	menu type	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	menutype	framework.menutypes	t	[]	f	f
-12837	150	4	ismainmenu	4	is main menu	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12838	150	2	menutype	2	menutype	number	[]	f	f		f		f	framework.menutypes	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["mtypename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12887	220	10	typehead	10	typehead	typehead	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12910	220	\N	func test	\N	func test	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	33	concat	[12879,12892]		\N	t	null	f	f
-12799	215	8	multiselect	8	multiselect title	multiselect	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12800	215	28	multitypehead	28	multitypehead title	multitypehead	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	12	\N	\N	\N	\N	f	[]	f	f
-12802	215	26	typehead_api	26	typehead_api title	typehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-12803	215	20	multi_select_api	20	multi_select_api	multiselect_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12805	215	23	autocomplete	23	autocomplete title	autocomplete	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f
-12806	215	16	link	16	link title	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f
-12808	215	17	texteditor	17	texteditor title	texteditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-12809	215	31	html	30	html title	innerHtml	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f
-12810	215	24	textarea	24	textarea title	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f
-12811	215	21	colorpicker	21	colorpicker title	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f
-12812	215	7	color	7	color title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f
-12813	215	18	colorrow	18	colorrow title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f
-12814	215	9	file	9	file title	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f
-12817	215	11	image	11	image title	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	29	\N	\N	\N	\N	f	[]	f	f
-12818	215	12	images	12	images title	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-12819	215	13	gallery	13	gallery title	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f
-12816	215	30	files	25	filelist title	filelist	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f
-12821	215	33	relate_with_major	31	relate_with_major	array	[]	t	f		f		f	test.relate_with_major	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["id","somecolumn","major_table_id","created"]	[]	major_table_id	33	\N	\N	\N	\N	f	[]	f	f
-12822	216	1	id	1	id	number	[0]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12823	216	2	tablename	2	tablename	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12825	216	4	typename	\N	typename	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	opertype	framework.opertypes	t	[]	f	f
-12826	216	10	userid	10	userid	number	[]	f	f		f	\N	f	framework.users	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["login"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12827	216	4	opertype	4	opertype	select	[]	f	f		f	\N	f	framework.opertypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["typename"]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12828	216	10	login	\N	login	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	userid	framework.users	t	[]	f	f
-12829	216	6	oldata	6	oldata	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12830	216	7	newdata	7	newdata	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12831	216	8	created	8	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12880	220	3	data	3	data	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12882	220	5	time	5	time	time	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12883	220	6	password	6	password	password	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12884	220	7	color	7	color	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12886	220	9	file	9	file	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12888	220	11	image	11	image	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12889	220	12	images	12	images	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-12890	220	13	gallery	13	gallery	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-12891	220	14	label	14	label	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-12892	220	15	number	15	number	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12893	220	16	link	16	link	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-12894	220	17	texteditor	17	texteditor	texteditor	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f
-12895	220	18	colorrow	18	color row	colorrow	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f
-12896	220	19	multitypehead_api	19	multitypehead_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f
-12897	220	20	multi_select_api	20	multi_select_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-12898	220	21	colorpicker	21	colorpicker	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f
-12899	220	23	autocomplete	23	autocomplete	autocomplete	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f
-12900	220	24	textarea	24	textarea	textarea	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f
-12792	215	3	data	3	date title	date	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12797	215	10	typehead	10	typehead title	typehead	[]	t	f	6	f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12815	215	25	files	25	files title	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	27	\N	\N	\N	\N	f	[]	f	f
-12790	215	2	text	2	text title	text	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12794	215	5	time	5	time title	time	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12795	215	4	check	4	check title	checkbox	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12796	215	6	password	6	password title visible check	password	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12793	215	29	datetime	29	datetime 12345678900000000000000000000000000 qwerty jaksdf jdkjfka kadfkasdjf knrenr kvvfdfd dfkk jdf kf jdk kdfjk d ijijgt djnjrfnrjfrnf 	datetime	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12798	215	22	select	22	select title	select	[]	t	f	6	f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-12901	220	25	files	25	files	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f
-12902	220	26	typehead_api	26	typehead_api	typehead_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f
-12903	220	27	select_api	27	select_api	select_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f
-12904	220	28	multitypehead	28	multitypehead	multitypehead	[]	f	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	27	\N	\N	\N	\N	f	[]	f	f
-12906	220	31	relate_with_major	31	relate_with_major	array	[]	t	f		f		f	test.relate_with_major	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["id","somecolumn","major_table_id","created"]	[]	major_table_id	29	\N	\N	\N	\N	f	[]	f	f
-12905	220	29	datetime	29	datetime	datetime	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f
-12908	220	22	dname	\N	dname	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	select	test.dictionary_for_select	t	[]	f	f
-12909	220	22	id	\N	id_	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	32	\N	\N	select	test.dictionary_for_select	t	[]	f	f
-12912	221	1	id	1	N	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12913	221	2	viewid	2	id	label	[]	f	f		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["viewtype"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12915	221	4	col	4	column title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12916	221	5	column_id	5	column_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12917	221	6	title	6	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12918	221	7	type	7	type	select	[]	t	f		f		f	framework.columntypes	\N	\N	f	f	typename	f	2019-11-05 10:00:17.290746	["typename"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12919	221	27	fn	27	fn	select_api	[]	t	f		f		f	\N	/api/getfunctions	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-12921	221	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	11	\N	\N	\N	\N	f	[]	f	f
-12922	221	9	visible	9	visible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-12923	221	10	required	10	is required	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-12924	221	11	width	11	width	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-12925	221	12	join	12	join	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-12926	221	13	classname	13	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-12927	221	14	updatable	14	updatable	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f
-12928	221	16	select_api	16	select_api	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f
-12929	221	18	orderby	18	order by	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f
-12930	221	19	orderbydesc	19	order by desc	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-12931	221	15	relation	15	relation table	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f
-12932	221	17	multiselecttable	17	multiselecttable	select_api	[]	t	f		f		f	\N	/api/gettables	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f
-12933	221	20	relcol	20	relcol	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f
-12934	221	21	depency	21	 is depency	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f
-12935	221	24	multicolums	24	multicolums	multiselect_api	[]	t	f		f		f	\N	/api/multi_tabcolumns	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f
-12936	221	23	relationcolums	23	relationcolums	multiselect_api	[]	t	f		f		f	\N	/api/rel_tabcolumns	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f
-12937	221	25	depencycol	25	depencycol	label	[]	f	f		f		f	\N	/api/dep_tabcolumns	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	27	\N	\N	\N	\N	f	[]	f	f
-12938	221	29	defaultval	29	defaultval	array	[]	t	f		f		f	framework.defaultval	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	[]	[]	configid	28	\N	\N	\N	\N	f	[]	f	f
-12939	221	30	select_condition	29	select_condition	array	[]	t	f		f		f	framework.select_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["col","operation","const","val_desc"]	[]	configid	29	\N	\N	\N	\N	f	[]	f	f
-12940	221	31	visible_condition	29	visible_condition	array	[]	t	f		f		f	framework.visible_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	[]	[]	configid	30	\N	\N	\N	\N	f	[]	f	f
-12942	222	1	id	1	CN	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12943	222	2	configid	2	N	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12944	222	3	col	3	col	select_api	[]	t	f		f		f	\N	/api/tabcolumns_for_sc	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12945	222	5	operation	5	operation	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12946	222	9	val_desc	9	val_desc	select_api	[]	t	f		f		f	\N	/api/view_cols_for_sc	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12947	222	6	const	6	const	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12948	222	7	value	7	value	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12949	222	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12950	223	1	id	1	CN	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12951	223	2	configid	2	configid	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12952	223	8	val_desc	3	val_desc	select_api	[]	t	f		f		f	framework.config	/api/view_cols_for_sc	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12953	223	3	col	3	col	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12954	223	4	title	4	title	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-12955	223	5	operation	5	operation	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12956	223	6	value	6	value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12957	223	7	created	7	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12983	227	4	viewid	4	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13020	229	1	id	1	paramid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13021	229	2	actionid	2	act_id	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13022	229	3	paramtitle	3	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13024	229	5	paramconst	5	const	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13025	229	6	paraminput	6	input	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13026	229	4	paramt	4	method type	select	[]	t	f		f		f	framework.paramtypes	\N	\N	f	f	val	f	2019-11-05 10:00:17.290746	["val"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13027	229	9	query_type	9	query type	select	[]	t	f		f		f	framework.actparam_querytypes	\N	\N	f	f	aqname	f	2019-11-05 10:00:17.290746	["aqname"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13045	26	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13046	26	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13047	26	3	url	3	url	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13048	26	4	descr	4	descr	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13049	26	5	roles	5	roles	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13050	26	6	created	6	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13051	28	1	id	1	id	label	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13052	28	2	title	2	title	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13053	28	3	url	3	url	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13054	28	4	descr	4	descr	textarea	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13055	28	5	roles	5	roles	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13056	28	6	created	6	created	label	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13057	30	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13058	30	2	treesid	2	treesid	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13059	30	3	title	3	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13061	30	6	icon	6	icon	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13062	30	7	created	7	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13063	30	7	treeviewtype	8	treeviewtype	number	[]	t	f		f	\N	f	framework.treeviewtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13065	30	9	compoid	10	compoid	number	[]	f	f		f	\N	f	framework.compos	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13041	233	2	viewid	2	viewid	label	[]	f	f		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13042	233	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13043	233	6	title	6	setting	select_api	[]	t	f		f		f	\N	/api/configsettings_selectapi	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13044	233	4	col	4	column	select_api	[]	t	f		f		f	\N	/api/view_cols_for_fn	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13078	101	1	id	1	bid	number	[]	f	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13079	101	2	treesid	2	treesid	number	[]	f	f	30%	f	col-md-11	f	framework.trees	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13081	101	4	icon	4	icon	text	[]	t	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13082	101	5	classname	5	classname	text	[]	t	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13083	101	6	act	6	act	text	[]	t	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13084	101	7	created	7	created	date	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13096	235	1	id	1	id	label	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13097	235	2	title	2	title	text	[]	t	f		f	col-md-12	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13098	235	3	parentid	3	parent	select	[]	t	f		f	col-md-12	f	framework.mainmenu	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13099	235	4	roles	4	roles	multiselect	[]	t	f		f	col-md-12	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13100	235	5	created	5	created	label	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13101	235	6	systemfield	6	system field	checkbox	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13102	235	7	orderby	7	order by	number	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13103	235	8	path	8	path	text	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13104	235	10	test	10	test	array	[]	f	f		f	col-md-12	f	framework.test	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	[]	[]	relat	9	\N	\N	\N	\N	f	[]	f	f
-13105	235	9	icon	10	icon	text	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13106	235	11	menuid	10	menuid	number	[]	f	f		f	col-md-12	f	framework.menus	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-13129	238	3	descr	3	descr	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13125	238	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13127	238	21	tablename	4	tablename	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13130	238	8	path	8	path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13131	238	5	viewtype	5	viewtype	select	[]	t	f		f		f	framework.viewtypes	\N	\N	f	f	vtypename	f	2019-11-05 10:00:17.290746	["vtypename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13132	238	13	roles	13	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13133	238	14	classname	14	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13134	238	6	pagination	6	pagination	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13135	238	15	orderby	15	orderby	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-13136	238	16	ispagesize	16	ispagesize	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-13137	238	17	pagecount	17	pagecount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-13138	238	18	foundcount	18	foundcount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-13139	238	19	subscrible	19	subscrible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-13140	238	20	checker	20	checker	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-13060	30	5	parentid	5	parentid	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f
-13116	236	9	created	9	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
-13115	236	8	isactive	8	isactive	checkbox	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-13114	236	12	orgs	15	orgs	multiselect	[]	f	f		f	\N	f	\N	\N	framework.orgs	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["orgname"]	\N	80	\N	\N	\N	\N	f	[]	f	f
-13112	236	5	login	5	login	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-13107	236	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13113	236	9	roles	11	roles	multiselect	[]	f	f		f	\N	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["rolename"]	\N	70	\N	\N	\N	\N	f	[]	f	f
-13163	239	21	depency	21	depency	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f
-13167	240	1	id	1	cni	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13168	240	2	configid	2	N	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["viewid"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13169	240	3	col	3	col	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13170	240	5	operation	5	operation	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13171	240	9	val_desc	10	val_desc	label	[]	f	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13172	240	6	const	6	const	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13173	240	7	value	7	val	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13174	240	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13175	240	9	title	\N	value	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	val_desc	framework.config	t	[]	f	f
-13176	240	2	viewid	\N	viewid	label	[]	f	f	\N	f		f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	configid	framework.config	t	[]	f	f
-13178	241	2	viewid	2	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13203	243	3	paramtitle	3	title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13204	243	8	title	\N	column	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	val_desc	framework.config	t	[]	f	f
-13109	236	3	im	3	firstname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-13110	236	4	ot	4	secondname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-13205	243	5	paramconst	5	const	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13206	243	6	paraminput	6	input	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13207	243	4	paramt	4	method type	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13208	243	8	val_desc	8	val_desc	label	[]	f	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13209	243	9	query_type	9	query type	label	[]	t	f		f		f	framework.actparam_querytypes	\N	\N	f	f	aqname	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13216	245	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13217	245	4	tablename	4	table name	select_api	[]	t	f		f		f	\N	/api/gettables	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13218	245	21	tablename	4	tablename	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13219	245	2	title	2	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13220	245	3	descr	3	descr	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13221	245	8	path	8	path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13222	245	5	viewtype	5	viewtype	select	[]	t	f		f		f	framework.viewtypes	\N	\N	f	f	vtypename	f	2019-11-05 10:00:17.290746	["vtypename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-13223	245	13	roles	13	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13224	245	14	classname	14	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-13225	245	6	pagination	6	pagination	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13226	245	15	orderby	15	orderby	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-13227	245	16	ispagesize	16	ispagesize	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-13228	245	17	pagecount	17	pagecount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-13229	245	18	foundcount	18	foundcount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-13230	245	19	subscrible	19	subscrible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-13231	245	20	checker	20	checker	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-13663	221	40	editable	34	is editable cell	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 09:35:28.103632	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f
-13689	220	3	data	3	data_33	date	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 10:59:05.158573	[]	[]	\N	6	\N	\N	\N	\N	f	[]	t	f
-13703	220	15	number	15	number_34	number	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 11:31:40.154123	[]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f
-12907	220	22	select	22	select	select	[]	t	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id", "dname"]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f
-13201	243	1	id	1	p_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13145	239	4	col	4	column	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13165	239	25	depencycol	25	depencycol	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f
-13183	241	6	column	6	column	select_api	[]	t	f		f		f	\N	/api/tabcolumns_for_filters	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-13182	241	5	classname	5	classname	text	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	t	f
-12911	221	26	column_order	26	column order	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12982	227	16	act_type	16	act_type	select	[]	t	f		f		f	framework.acttypes	\N	\N	f	f	actname	f	2019-11-05 10:00:17.290746	["actname"]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f
-13185	241	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	["id", "rolename"]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f
-12987	227	8	api_method	8	api method	select	[]	t	f		f		f	framework.apicallingmethods	\N	\N	f	f	aname	f	2019-11-05 10:00:17.290746	["aname"]	[]	\N	9	\N	\N	\N	\N	f	[]	t	f
-13179	241	12	column_order	2	column_order	number	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	t	f
-13180	241	3	title	3	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f
-13773	239	2	viewtype	\N	viewtype	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-11 17:02:52.048476	[]	[]	\N	29	\N	\N	viewid	framework.views	t	[]	f	f
-12981	227	3	title	3	act title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	t	f
-12984	227	5	icon	5	act icon	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	t	f
-12985	227	6	classname	6	class name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f
-12986	227	7	act_url	7	act url	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	t	f
-12980	227	2	column_order	2	order by	number	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	t	f
-13152	239	11	width	11	width	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	t	f
-19344	118	3	roles	3	Roles	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13789	241	13	val_desc	13	col	select	[]	t	f	\N	f	\N	f	framework.config	\N	\N	f	f	id	f	2019-11-11 21:53:56.51403	["id", "title"]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f
-13166	239	27	defaultval	27	default value	array	[]	t	f		f		f	framework.defaultval	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["bool", "act", "value"]	[]	configid	26	\N	\N	\N	\N	f	[]	f	f
-13796	227	9	api_type	9	api_type	select	[]	t	f	\N	f	\N	f	framework.methodtypes	\N	\N	f	f	methotypename	f	2019-11-11 22:21:30.217723	["methotypename"]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f
-12920	221	28	fncolumns	28	fn columns	multiselect_api	[]	t	f		f		f	\N	/api/view_cols_for_fn	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13184	241	7	columns	7	columns	multiselect_api	[]	t	f		f		f	\N	/api/tabcolumns_for_filters_arr	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	t	f
-12992	227	13	forevery	13	for every row	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	t	f
-12993	227	14	main_action	14	main_action	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	t	f
-12989	227	10	refresh_data	10	refresh data	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f
-12990	227	11	ask_confirm	11	ask confirm	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	t	f
-12991	227	12	roles	12	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	["id", "rolename"]	[]	\N	13	\N	\N	\N	\N	f	[]	t	f
-13177	241	1	id	1	f_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-13847	221	28	fncolumns	28	Function input parametrs	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-12 11:19:41.149179	[]	[]	\N	34	\N	\N	\N	\N	f	[]	f	f
-12941	221	2	viewtype	\N	viewtype	label	[]	f	f	\N	f		f	framework.viewtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	0	\N	\N	viewid	framework.views	t	[]	f	f
-13142	239	1	id	1	key	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12979	227	1	id	1	a_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-16458	5542	5	login	5	login	label	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-13146	239	5	column_id	5	column_id	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13733	239	7	type	7	type	select	[]	t	f	\N	f	\N	f	framework.columntypes	\N	\N	f	f	typename	f	2019-11-11 09:30:09.143427	["typename"]	[]	\N	8	\N	\N	\N	\N	f	[]	t	f
-16153	239	28	fncolumns	28	fn_columns	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-12-05 15:54:51.85706	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-16466	5542	13	usersettings	13	usersettings	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-13147	239	6	title	6	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f
-13150	239	9	visible	9	visible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	t	f
-13156	239	18	orderby	18	order by	checkbox	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f
-13155	239	14	updatable	14	updatable	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	t	f
-13157	239	19	orderbydesc	19	desc	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	t	f
-13151	239	10	required	10	required	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f
-13153	239	12	join	12	join	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	t	f
-13158	239	\N	relation	\N	relation table	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	framework.fn_config_relation	[13142]		\N	t	null	t	f
-13143	239	2	viewid	2	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13149	239	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	t	f
-13751	239	23	relationcolums	23	relation columns	multiselect_api	[]	t	f	\N	f	\N	f	\N	/api/rel_tabcolumns	\N	f	f	\N	f	2019-11-11 14:49:20.081457	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f
-13160	239	28	select_condition	27	select condition	text	[]	t	f		f		f	framework.select_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["val_desc", "operation", "value"]	[]	configid	21	\N	\N	\N	\N	f	[]	f	f
-13161	239	29	visible_condition	27	visible condition	array	[]	t	f		f		f	framework.visible_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["val_desc", "operation", "value"]	[]	configid	22	\N	\N	\N	\N	f	[]	f	f
-16465	5542	12	orgs	12	orgs	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
-13064	30	8	viewid	9	viewid	number	[]	t	f		f	\N	f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	t	f
-12804	215	19	multitypehead_api	19	multitypehead_api	multitypehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-16454	5542	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12767	212	3	procedurename	3	function	select_api	[]	t	f		f	col-md-11	f	\N	/api/functions_getall_spapi	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-16467	5542	14	orgid	14	user org	select_api	[]	t	f	24	f		f	framework.orgs	/api/userorgss	\N	f	f	id	f	2019-12-09 18:09:00.445033	["id", "orgname"]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-16455	5542	2	fam	2	fam	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-16457	5542	4	ot	4	ot	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-16463	5542	10	roleid	10	roleid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-16462	5542	9	roles	9	roles	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-16464	5542	11	photo	11	photo	image	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-16456	5542	3	im	3	im	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-12755	225	3	bool	3	Bool operator	select	[]	t	f		f		f	framework.booloper	\N	\N	f	f	bname	f	2019-11-05 10:00:17.290746	["id","bname"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-13662	239	40	editable	34	editable cell	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 09:34:37.399096	[]	[]	\N	15	\N	\N	\N	\N	f	[]	t	f
-12975	226	3	bool	3	Bool operator	select	[]	t	f		f		f	framework.booloper	\N	\N	f	f	bname	f	2019-11-05 10:00:17.290746	["bname"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-16656	55	16	thumbprint	17	Certificate	certificate	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-12-11 11:15:13.088394	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f
-13066	30	10	orderby	11	orderby	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f
-19355	119	2	title	2	Title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-19398	119	15	functitle	7	Function	select_api	[]	t	f		f	col-md-12	f	\N	/api/getreports_fn	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-19356	119	3	roles	3	Roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-12-25 10:56:44.415375	["id", "rolename"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-19357	119	4	path	4	Path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-19358	119	5	template	5	Template	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-19362	119	9	section	9	Section	autocomplete	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-19377	121	3	ptitle	3	Title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-19378	121	4	func_paramtitle	4	Function parametr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-19423	121	17	orderby	9	Order By	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12789	215	1	id	1	id	label	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-12820	215	32	link	16	link sdkfjkqjkefmrfkefkdsfk dfkjsdkfj knksdj fksak jdk234 2jkk23 rk2j k32j k23j jk jr 	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	32	\N	\N	\N	\N	f	[]	f	f
-19343	118	2	title	2	Title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-12791	215	15	number	15	number title	number	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-19345	118	4	path	4	Path	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-19342	118	1	id	1	id	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19374	120	9	orderby	9	Order By	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-19370	120	5	ptype	5	Param Type	label	[]	f	f		f		f	reports.paramtypes	\N	\N	f	f	id	f	2019-12-25 10:56:45.989848	["typename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-19348	118	7	functitle	7	Function name	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-19426	120	18	colorr	\N	colorr	colorrow	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-12-25 11:15:57.01164	[]	[]	\N	10	public.fn_completed_colorblack	[19373]	\N	\N	f	[]	f	f
-19350	118	9	section	9	Section	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-19364	119	11	filename	11	filename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-19382	121	8	completed	8	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-19369	120	4	func_paramtitle	4	Function Param	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-19368	120	3	ptitle	3	Title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-19353	118	12	reportparams	12	reportparams	array	[]	f	f		f		f	reports.reportparams	\N	\N	f	f	\N	t	2019-12-25 10:56:42.165857	[]	[]	reportlistid	12	\N	\N	\N	\N	f	[]	f	f
-19365	119	12	reportparams	12	reportparams	array	[]	f	f		f		f	reports.reportparams	\N	\N	f	f	\N	t	2019-12-25 10:56:44.415375	[]	[]	reportlistid	12	\N	\N	\N	\N	f	[]	f	f
-19363	119	10	completed	10	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-19354	119	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19373	120	8	completed	8	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-19371	120	6	created	6	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-19367	120	2	reportlistid	2	reportlistid	label	[]	f	f		f		f	reports.reportlist	\N	\N	f	f	id	f	2019-12-25 10:56:45.989848	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-19366	120	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19376	121	2	reportlistid	2	reportlistid	label	[]	f	f		f		f	reports.reportlist	\N	\N	f	f	id	f	2019-12-25 10:57:10.533471	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-19375	121	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19352	118	11	filename	11	filename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f
-19351	118	10	completed	10	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-19349	118	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-19347	118	6	template_path	6	template_path	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-19396	119	13	id	1	reportlistid	number	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19406	120	10	id	1	param_id	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19416	121	10	id	1	paramid	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-19421	121	15	created	7	created	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-19427	120	5	typename	\N	Type	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	id	f	2019-12-25 11:24:06.247663	[]	[]	\N	5	\N	\N	ptype	reports.paramtypes	t	[]	f	f
-32354	119	16	ishtml	12	Out in html	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-17 06:07:34.112362	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-19379	121	5	ptype	5	Type	select	[]	t	f		f		f	reports.paramtypes	\N	\N	f	f	id	f	2019-12-25 10:57:10.533471	["id", "typename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-19381	121	7	apimethod	7	Method	typehead	[]	t	f		f		f	framework.spapi	\N	\N	f	f	id	f	2019-12-25 10:57:10.533471	["id", "methodname", "procedurename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-32438	120	19	Метод API	\N	API	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 03:06:22.700614	[]	[]	\N	7	concat	["32437", "32436"]	\N	\N	f	[]	f	f
-13074	32	23	viewid	9	viewid	typehead	[]	t	f		f	col-md-12	f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title","path"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-12885	220	8	multiselect	8	multiselect	multiselect	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	8	\N	\N	\N	\N	f	[]	t	f
-12712	44	6	foruser	6	foruser	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-13154	239	13	classname	13	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	t	f
-13241	239	27	fn	27	fn	select_api	[]	t	f	50px	f	break_word	f	\N	/api/getfunctions	\N	f	f	\N	f	2019-11-05 14:31:51.940762	[]	[]	\N	1	\N	\N	\N	\N	f	[]	t	f
-13141	239	26	column_order	26	column order	number	[]	t	f	80px	f	\N	f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	0	\N	\N	\N	\N	f	[]	t	f
-32437	120	7	procedurename	\N	procedurename	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-03-18 03:05:28.411065	[]	[]	\N	11	\N	\N	apimethod	framework.spapi	t	[]	f	f
-32436	120	7	methodname	\N	methodname	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-03-18 03:04:18.994558	[]	[]	\N	7	\N	\N	apimethod	framework.spapi	t	[]	f	f
-19372	120	7	apimethod	7	apimethod	label	[]	f	f		f		f	framework.spapi	\N	\N	f	f	id	f	2019-12-25 10:56:45.989848	["methodname", "procedurename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-32523	6424	9	id	9	id	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 11:47:27.067402	[]	[]	\N	81	\N	\N	\N	\N	f	[]	f	f
-32497	6424	7	isactiv	7	isactiv	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-32496	6424	6	redirect401	6	redirect when status 401	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-32495	6424	5	primaryAuthorization	5	primary authorization	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-32494	6424	4	maindomain	4	main domain	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-32493	6424	3	developerRole	3	developer role id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-32492	6424	2	port	2	project server port	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-32491	6424	1	dsn	1	db connection string	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-32498	6424	8	usercss	8	css file	codeEditor	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-32603	243	12	orderby	12	orderby	number	[]	t	f	\N	f	\N	f	\N	\N	\N	t	f	\N	f	2020-03-19 08:09:28.571976	[]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f
-12881	220	4	check	4	check	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f
-13126	238	4	tablename	4	table name	select_api	[]	t	f		f	\N	f	\N	/api/gettables	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-13128	238	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-13117	237	1	id	1	id	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-33336	237	9	created	9	created_8	label	[]	f	f	\N	f	\N	f	\N	\N	\N	t	t	\N	f	2020-03-23 03:39:48.434754	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f
-33582	220	32	text	2	text_35	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-25 08:56:48.322494	[]	[]	\N	34	\N	\N	\N	\N	f	[]	f	f
-33583	220	33	text	2	text_36	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-25 08:57:46.025617	[]	[]	\N	35	\N	\N	\N	\N	f	[]	f	f
-601862	218	32	rate	31	rate	rate	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-06 20:35:47.50216	[]	[]	\N	32	\N	\N	\N	\N	f	[]	f	f
-32490	215	35	texteditor	17	texteditor_34	codeEditor	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 10:24:26.490987	[]	[]	\N	35	\N	\N	\N	\N	f	[]	f	f
-601861	215	36	rate	31	rate	rate	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-06 20:33:35.54051	[]	[]	\N	36	\N	\N	\N	\N	f	[]	f	f
-13181	241	4	type	4	type	select	[]	t	f		f		f	framework.filtertypes	\N	\N	f	f	ftname	f	2019-11-05 10:00:17.290746	["ftname"]	[]	\N	5	\N	\N	\N	\N	f	[]	t	f
-601863	241	4	ftname	\N	ftname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	ftname	f	2020-05-06 22:14:58.609463	[]	[]	\N	11	\N	\N	type	framework.filtertypes	t	[]	f	f
-601865	241	13	title	\N	title_13789	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-06 22:15:40.056	[]	[]	\N	13	\N	\N	val_desc	framework.config	t	[]	f	f
-601864	241	13	id	\N	id_13789	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-06 22:15:32.776994	[]	[]	\N	12	\N	\N	val_desc	framework.config	t	[]	f	f
-601869	50785	3	schemadescr	3	schemadescr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f
-601874	50786	3	linkurl	3	linkurl	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601872	50786	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601873	50786	2	oname	2	 	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601875	50786	4	schemaname	4	schemaname	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-11 17:36:42.392127	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f
-601876	50788	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601884	50789	2	functionschema	2	functionschema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601883	50789	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601867	50785	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601868	50785	2	schemaname	2	schemaname	text	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f
-601877	50788	2	tableschemaname	2	tableschemaname	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601879	50788	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601903	50791	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601904	50791	2	tablename	2	tablename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601880	50788	5	descr	5	descr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f
-601902	50790	13	noscript	13	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	130	\N	\N	\N	\N	f	[]	f	f
-601905	50791	3	colname	3	Field Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601912	50791	10	defval	10	Default	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
-601892	50790	3	colname	3	Field  Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f
-601917	50792	2	schemaname	2	Schema Name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601918	50792	3	schemadescr	3	Description	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601907	50791	5	coltype	5	Field Type	select_api	[]	t	f		f		f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-601891	50790	2	tablename	2	tablename	text	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601911	50791	9	uniq	9	uniq	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-601910	50791	8	notnull	8	Not Null	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-601909	50791	7	accur	7	Accur	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-601908	50791	6	size	6	Size	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-601894	50790	5	coltype	5	Field Type	select_api	[]	t	f		f		f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f
-601893	50790	4	coldesc	4	Description	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	40	\N	\N	\N	\N	f	[]	t	f
-601895	50790	6	size	6	Size	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	60	\N	\N	\N	\N	f	[]	t	f
-601896	50790	7	accur	7	Accur	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	70	\N	\N	\N	\N	f	[]	t	f
-601897	50790	8	notnull	8	Not Null	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	80	\N	\N	\N	\N	f	[]	t	f
-601898	50790	9	uniq	9	Uniq	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	90	\N	\N	\N	\N	f	[]	t	f
-601899	50790	10	defval	10	Default	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	100	\N	\N	\N	\N	f	[]	t	f
-601906	50791	4	coldesc	4	Description	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601916	50792	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601930	50793	4	fullname	4	fullname	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-14 10:32:19.679899	[]	[]	\N	81	\N	\N	\N	\N	f	[]	f	f
-601922	50793	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601923	50793	2	tableschemaname	2	tableschemaname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601929	50793	8	noscript	8	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-601924	50793	3	tablename	3	Table name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601931	50789	9	functionfulltitle	9	title	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-14 12:10:53.300908	[]	[]	\N	45	\N	\N	\N	\N	f	[]	f	f
-601926	50793	5	descr	5	Description	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-601886	50789	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601885	50789	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601932	50794	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601934	50794	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601933	50794	2	functionschema	2	functionschema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601935	50794	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601936	50794	5	descr	5	descr	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-601940	50794	9	functionfulltitle	9	functionfulltitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-601887	50789	5	descr	5	descr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f
-601941	50794	10	dll	10	DLL	codeEditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
-601944	50796	2	functionschema	2	schema	select_api	[]	t	f	12	f		f	\N	/api/schemas_sel	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601947	50796	5	descr	5	descr	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-601946	50796	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601945	50796	3	functiontitle	3	title	text	[]	t	f	12	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601943	50796	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601957	50797	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601956	50797	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-601955	50797	5	descr	5	descr	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-601958	50797	12	returntype	13	Return	select_api	[]	t	f	24	f	\N	f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-15 10:35:58.563052	[]	[]	\N	51	\N	\N	\N	\N	f	[]	f	f
-601953	50797	3	functiontitle	3	Title	text	[]	t	f	12	f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601954	50797	2	functionschema	2	Schema	select_api	[]	t	f	12	f		f	\N	/api/schemas_sel	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601878	50788	3	tablename	3	tablename	text	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f
-601961	50798	3	argname	3	Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f
-601967	50799	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601968	50799	2	triggername	2	Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f
-601972	50799	6	functionname	7	Function	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-601962	50798	4	argtype	4	Type	select_api	[]	t	f		f		f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	40	\N	\N	\N	\N	f	[]	t	f
-601973	50799	7	functionoid	8	functionoid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-601959	50798	1	id	1	aid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601960	50798	2	oid	2	id	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601963	50798	5	argmode	5	Mode	select_api	[]	t	f		f		f	\N	/api/modes_sel	\N	t	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f
-601966	50797	13	definition	14	Definition	codeEditor	[]	t	f	24	f	\N	t	\N	\N	\N	f	f	\N	f	2020-05-15 11:16:42.567809	[]	[]	\N	52	\N	\N	\N	\N	f	[]	f	f
-601977	50799	11	oninstead	12	Instead	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f
-601974	50799	8	enables	9	Enable	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	80	\N	\N	\N	\N	f	[]	t	f
-601975	50799	9	onbefore	10	Before	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	90	\N	\N	\N	\N	f	[]	t	f
-601976	50799	10	onafter	11	After	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	100	\N	\N	\N	\N	f	[]	t	f
-601978	50799	12	oninsert	13	Insert	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	120	\N	\N	\N	\N	f	[]	t	f
-601979	50799	13	onupdate	14	Update	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	130	\N	\N	\N	\N	f	[]	t	f
-601980	50799	14	ondelete	15	Delete	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	140	\N	\N	\N	\N	f	[]	t	f
-601981	50799	15	ontruncate	16	Truncate	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	150	\N	\N	\N	\N	f	[]	t	f
-601982	50800	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601984	50800	3	tablename	4	tablename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-601997	50800	16	noscript	17	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	160	\N	\N	\N	\N	f	[]	f	f
-601983	50800	2	triggername	2	Name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-601993	50800	12	oninsert	13	On Insert	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f
-601994	50800	13	onupdate	14	On Update	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	130	\N	\N	\N	\N	f	[]	f	f
-601995	50800	14	ondelete	15	On Delete	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	140	\N	\N	\N	\N	f	[]	f	f
-601996	50800	15	ontruncate	16	On Truncate	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	150	\N	\N	\N	\N	f	[]	f	f
-601990	50800	9	onbefore	10	Before	checkbox	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-601991	50800	10	onafter	11	After	checkbox	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
-601998	50801	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602014	50801	17	functiondef	18	Definition	codeEditor	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	170	\N	\N	\N	\N	f	[]	f	f
-602000	50801	3	tablename	4	Table	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-601999	50801	2	triggername	2	Trigger Name	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602003	50801	6	functionname	7	Function	label	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602015	50802	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602018	50802	4	maintableid	4	maintableid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602020	50802	6	parenttableid	6	parenttableid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602030	50803	5	parentablename	5	Foreign Table	select_api	[]	t	f		f		f	\N	/api/fk_tables_sel	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-602033	50803	8	parentcol	8	Foreign Field	select_api	[]	t	f		f		f	\N	/api/fk_parentcols_sel	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-602016	50802	2	ftitle	2	Foreign Key Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f
-602017	50802	3	maintablename	3	tablename	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602021	50802	7	maincol	7	On Field	select_api	[]	t	f		f		f	\N	/api/fk_maintablecols_select	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	23	\N	\N	\N	\N	f	[]	t	f
-602026	50803	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602031	50803	6	parenttableid	6	parenttableid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602019	50802	5	parentablename	5	FK Table	select_api	[]	t	f		f		f	\N	/api/fk_tables_sel	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	33	\N	\N	\N	\N	f	[]	t	f
-602027	50803	2	ftitle	2	FK Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602022	50802	8	parentcol	8	FK Field	select_api	[]	t	f		f		f	\N	/api/fk_parentcols_sel	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	35	\N	\N	\N	\N	f	[]	t	f
-602032	50803	7	maincol	7	Main Field	select_api	[]	t	f		f		f	\N	/api/fk_maintablecols_select	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602038	50804	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-21 14:00:19.69668	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-601969	50799	3	tablename	4	tablename	label	[]	t	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602040	50804	3	tablename	3	Table	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-21 14:00:19.69668	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602056	50799	18	fields	18	Fields	multiselect_api	[]	t	f	\N	f	\N	f	\N	/api/trigger_fields	\N	f	f	\N	f	2020-05-21 14:11:42.745277	[]	[]	\N	151	\N	\N	\N	\N	f	[]	t	f
-13080	101	3	title	3	title	text	[]	t	f	30%	f	col-md-11	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f
-602055	50804	18	fields	18	Fields	multiselect_api	[]	t	f		f		t	\N	/api/trigger_fields	\N	f	f	\N	f	2020-05-21 14:00:19.69668	[]	[]	\N	180	\N	\N	\N	\N	f	[]	f	f
-602057	50783	13	ischat	13	ischat	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-21 16:28:46.985152	[]	[]	\N	92	\N	\N	\N	\N	f	[]	f	f
-603332	50854	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-603333	50854	2	title	2	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-603334	50854	3	path	3	path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-603335	50854	4	config	4	config	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-603339	50854	6	viscond_function	6	viscond_function	select_api	[]	t	f	\N	f	\N	f	\N	/api/getfunctions	\N	f	f	\N	f	2020-05-22 04:43:46	[]	[]	\N	41	\N	\N	\N	\N	f	[]	f	f
-603447	50855	1	id	1	ciid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-603448	50855	2	compoid	2	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-603450	50855	4	width	4	width	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	55	\N	\N	\N	\N	f	[]	t	f
-603451	50855	5	created	5	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-603528	50855	6	rownum	5	rownum	number	[]	t	f	\N	f	\N	f	\N	\N	\N	t	f	\N	f	2020-05-22 08:08:41	[]	[]	\N	40	\N	\N	\N	\N	f	[]	t	f
-603453	50855	3	viewid	3	view	typehead	[]	t	f	\N	f	\N	f	framework.views	\N	\N	f	f	id	f	2020-05-22 07:00:58	["id", "title"]	[]	\N	51	\N	\N	\N	\N	f	[]	t	f
-13202	243	2	actionid	2	act_id	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-602073	241	14	fname	\N	fname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-29 11:15:17.143855	[]	[]	\N	16	\N	\N	position	framework.filter_position	t	[]	f	f
-602072	241	14	id	\N	id_602071	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-29 11:15:13.50691	[]	[]	\N	15	\N	\N	position	framework.filter_position	t	[]	f	f
-602071	241	14	position	14	position	select	[]	t	f	\N	f	\N	f	framework.filter_position	\N	\N	f	f	id	f	2020-05-29 11:14:45.249131	["id", "fname"]	[]	\N	14	\N	\N	\N	\N	f	[]	t	f
-602077	50856	2	lang	2	lang	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:07.261626	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602095	50859	8	first_message	8	first message in dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-602088	50859	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602083	50857	4	created	4	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602076	50856	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:07.261626	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602079	50856	4	created	4	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:07.261626	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602097	50859	10	photo	10	photo	image	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f
-602081	50857	2	lang	2	lang	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602082	50857	3	instructtext	3	instructtext	texteditor	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602096	50859	9	last_message_date	9	last mesage date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-602080	50857	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602084	50858	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602087	50858	4	created	4	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602086	50858	3	instructtext	3	_	innerHtml	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602099	50859	12	creator	12	dialog creator userid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f
-602098	50859	11	dialog_admins	11	admin users	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f
-602090	50859	3	users	3	users of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602092	50859	5	userid	5	user who create dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-602093	50859	6	created	6	create date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602094	50859	7	status	7	status of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-602112	50860	10	isread	10	when user read message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
-602113	50860	11	isupdated	11	when user update the message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f
-602101	50859	14	last_mennsage	\N	last_message	label	[]	t	f	20	f	nob	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:13:33.308205	[]	[]	\N	23	framework.fn_dialog_lasmessage	["602088"]	\N	\N	f	[]	f	f
-602117	50860	2	photo	\N	photo	image	[]	t	f	5	f	nob avka	f	\N	\N	\N	f	f	id	f	2020-06-06 22:21:16.040046	[]	[]	\N	19	\N	\N	userid	framework.users	t	[]	f	f
-602114	50860	12	user_reads	12	users who reads the message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f
-602119	50855	3	id	\N	id_603453	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-06-08 19:42:51.144022	[]	[]	\N	57	\N	\N	viewid	framework.views	t	[]	f	f
-602118	50855	3	classname	\N	classname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-06-08 19:42:49.955429	[]	[]	\N	56	\N	\N	viewid	framework.views	t	[]	f	f
-602109	50860	7	files	7	files	filelist	[]	t	f		f	nob	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-602107	50860	5	forwarded_from	5	forward from message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-602106	50860	4	reply_to	4	reply to message id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602103	50860	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602110	50860	8	images	8	images	gallery	[]	t	f		f	nob	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-602116	50860	2	login	\N	login	label	[]	t	f	6	f	nob chat_login 	f	\N	\N	\N	f	f	id	f	2020-06-06 22:21:06.072179	[]	[]	\N	20	\N	\N	userid	framework.users	t	[]	f	f
-602115	50860	2	userid	2	userid	label	[]	f	f	\N	f	\N	f	framework.users	\N	\N	f	f	id	f	2020-06-06 22:11:21.024565	["login", "photo"]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f
-602111	50860	9	created	9	created	label	[]	t	f	7	f	nob chat_time	f	\N	\N	\N	t	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f
-602105	50860	3	message_text	3	message	label	[]	t	f	24	f	nob chat_message	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602089	50859	2	title	2	title	label	[]	t	f	19	f	nob chattitle	f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602127	50861	7	status	7	status of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-602120	50855	3	title	\N	title	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-06-08 19:43:01.447303	[]	[]	\N	58	\N	\N	viewid	framework.views	t	[]	f	f
-602108	50860	6	dialog_id	6	dialog_id	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602133	50862	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602134	50862	2	title	2	Title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602145	50859	4	dtype	4	dtype	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-09 13:10:40.243928	[]	[]	\N	121	\N	\N	\N	\N	f	[]	f	f
-602128	50861	8	first_message	8	first message in dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-602121	50861	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602122	50861	2	title	2	title of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602141	50862	9	last_message_date	9	last mesage date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-602137	50862	5	userid	5	user who create dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-602135	50862	3	users	3	Users	multitypehead	[]	t	f		f		f	\N	\N	framework.users	f	f	\N	f	2020-06-09 12:32:45.365758	["id", "login"]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602148	50859	16	dialog photo	\N	dialog photo	gallery	[]	t	f	\N	f	nob avka	f	\N	\N	\N	f	f	\N	f	2020-06-09 13:19:14.980615	[]	[]	\N	13	framework.fn_dialog_photo	["_userid_", "602145", "602090", "602097"]	\N	\N	f	[]	f	f
-602140	50862	8	first_message	8	First Message	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f
-602150	50863	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602151	50863	2	userid	2	who send	label	[]	f	f		f		f	framework.users	\N	\N	f	f	id	f	2020-06-09 17:07:40.589023	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602153	50863	4	reply_to	4	reply to message id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602154	50863	5	forwarded_from	5	forward from message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-602155	50863	6	dialog_id	6	dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602156	50863	7	files	7	files	files	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f
-602157	50863	8	images	8	images	images	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f
-602152	50863	3	message_text	3	message	textarea	[]	t	f	24	f		t	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602147	50859	15	cond	\N	cond	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-09 13:16:01.777021	[]	[]	\N	13	framework.fn_dialog_userinchat	["_userid_", "602090"]	\N	\N	f	[]	f	f
-602149	50860	13	collorrow	\N	collorrow	colorrow	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-09 16:53:42.381901	[]	[]	\N	13	framework.fn_dialogmessage_color	["_userid_", "602115"]	\N	\N	f	[]	f	f
-602123	50861	3	users	3	users of dialog	multitypehead	[]	t	f		f		f	\N	\N	framework.users	f	f	\N	f	2020-06-09 11:44:37.71825	["id", "login"]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602129	50861	9	last_message_date	9	last mesage date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f
-602130	50861	10	photo	10	dialog photo\r\nonly for groups	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f
-602124	50861	4	dtype	4	type of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602125	50861	5	userid	5	user who create dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f
-602126	50861	6	created	6	create date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602131	50861	11	dialog_admins	11	admin users	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f
-602132	50861	12	creator	12	dialog creator userid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f
-602176	50864	12	isadmin	\N	isadmin	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:27:26.577332	[]	[]	\N	12	framework.fn_dialog_isadmin	["602175", "_userid_"]	\N	\N	f	[]	f	f
-602184	50866	3	querytext	3	querytext	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f
-602185	50866	4	result	4	result	innerHtml	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f
-602187	50866	6	exectime	7	exectime	label	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f
-602178	50864	2	title	2	title	text	[]	t	f	24	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:29:00.784895	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f
-602179	50864	10	photo	10	photo	image	[]	t	f	24	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:30:36.486474	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-602174	50859	17	unreaded	\N	unreaded	label	[]	t	f	4	f	nob unreaded	f	\N	\N	\N	f	f	\N	f	2020-06-10 16:25:27.983358	[]	[]	\N	24	framework.fn_dialog_unreadedcount	["602088", "_userid_"]	\N	\N	f	[]	f	f
-602164	50864	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:18:42.98408	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602180	50864	3	users	3	users	multiselect	[]	t	f	24	f	\N	f	\N	\N	framework.users	f	f	\N	f	2020-06-10 20:34:17.90959	["id", "login"]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f
-602175	50864	11	dialog_admins	11	admins	multiselect	[]	t	f	24	f	\N	f	\N	\N	framework.users	f	f	\N	f	2020-06-10 20:12:22.856449	["id", "login"]	["id", "login"]	\N	11	\N	\N	\N	\N	f	[]	f	f
-602177	50864	4	dtype	4	dtype	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:28:42.095719	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f
-602181	50859	18	isadmin	\N	isadmin	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 21:11:17.317736	[]	[]	\N	13	framework.fn_dialog_isadmin	["602098", "_userid_"]	\N	\N	f	[]	f	f
-19346	118	5	template	5	Template	filelist	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-19388	118	17	filename	13	File name	text	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f
-601890	50790	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-602182	50866	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f
-13123	237	8	path	8	path	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f
-12963	55	6	password	6	Password	password	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f
-12961	55	4	ot	4	SecondName	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f
-12959	55	2	fam	2	LastName	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f
-602188	50783	14	template	14	template	select	[]	t	f	\N	f	\N	f	framework.templates	\N	\N	f	f	template	f	2021-03-14 21:13:52.58357	["template"]	[]	\N	93	\N	\N	\N	\N	f	[]	f	f
-602085	50858	2	lang	2	lang	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f
-602190	215	37	diagram	32	diagram	diagram_api	[]	t	f	\N	f	\N	f	\N	/api/diagram	\N	f	f	\N	f	2021-03-16 08:32:12.434269	[]	[]	\N	37	\N	\N	\N	\N	f	[]	f	f
-602191	32	12	roles	12	roles	multiselect	[]	t	f	\N	f	\N	f	\N	\N	framework.roles	f	f	\N	f	2021-03-25 12:59:32.094846	["id", "rolename"]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f
+COPY config (id, viewid, t, col, column_id, title, type, roles, visible, required, width, "join", classname, updatable, relation, select_api, multiselecttable, orderby, orderbydesc, relcol, depency, created, relationcolums, multicolums, depencycol, column_order, fn, fncolumns, relatecolumn, "table", related, tpath, editable, copy, disabled) FROM stdin;
+13108	236	2	fam	2	lastname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+13111	236	11	photo	14	photo	image	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+601841	236	15	roles	\N	user roles	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-04 16:30:33.64911	[]	[]	\N	72	public.fn_users_getroles	["13113"]	\N	\N	f	[]	f	f	f
+13576	221	4	col	4	col title fn	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-07 15:37:15.70217	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+601851	50783	9	id	9	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+13644	228	9	api_type	9	api_type	select	[]	t	f	\N	f	\N	f	framework.methodtypes	\N	\N	f	f	methotypename	f	2019-11-08 11:08:46.710689	["methotypename"]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601852	50783	10	homepage	10	home page	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12879	220	2	text	2	text title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	t	f	f
+601843	50783	1	dsn	1	db connection string	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13577	242	13	val_desc	13	col	select_api	[]	t	f	\N	f	\N	f	framework.config	/api/tabcolumns_for_filters	\N	f	f	id	f	2019-11-07 16:03:45.333515	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+601844	50783	2	port	2	project server port	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601845	50783	3	developerRole	3	developer role id	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+13647	239	30	table	30	table	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 09:06:53.086775	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f	f
+601846	50783	4	maindomain	4	main domain	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601848	50783	6	redirect401	6	redirect when status 401	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+601849	50783	7	isactiv	7	isactiv	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+601847	50783	5	primaryAuthorization	5	primary authorization	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 21:05:33.699555	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+12914	221	3	t	3	t	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+601706	235	12	nosession	11	no session	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-31 10:34:48.063871	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+12741	218	7	color	7	color title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f	f
+12701	224	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12702	224	2	configid	2	configid	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12704	224	5	operation	5	operation	label	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12705	224	6	value	6	value	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12872	219	28	multitypehead	28	multitypehead	multitypehead	[]	f	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	27	\N	\N	\N	\N	f	[]	f	f	f
+13011	56	1	id	1	id	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13067	32	1	id	1	bid	label	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13189	242	1	id	1	fl_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13190	242	12	column_order	2	column_order	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12878	220	1	id	1	test	checkbox	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13196	242	7	columns	7	columns	multiselect_api	[]	t	f		f		f	\N	/api/tabcolumns_for_filters_arr	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13197	242	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13239	224	3	val_desc	3	val_desc	select	[]	f	f	\N	f	\N	f	framework.config	\N	\N	f	f	id	f	2019-11-05 13:50:29.934237	["title"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13198	242	9	t	9	t	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13199	242	10	table	10	table	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+13200	242	11	created	11	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+13210	244	1	id	1	vs_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13023	229	8	val_desc	8	val_desc	select_api	[]	t	f		f		f	framework.config	/api/view_cols_for_param	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id", "title"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13119	237	\N	tit	\N	view title	link	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	framework.fn_view_title_link	[13117,13118]		\N	t	null	f	f	f
+601842	236	16	user orgs	\N	user orgs	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-04 16:31:42.88825	[]	[]	\N	82	public.fn_users_getorgs	["13114"]	\N	\N	f	[]	f	f	f
+19392	118	21	created	8	Created Date	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13261	238	1	SHOW SQL	\N	SHOW SQL	link	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-06 09:00:53.832788	[]	[]	\N	21	framework.fn_view_link_showsql	[13130]	\N	\N	f	[]	f	f	f
+12706	224	7	created	7	created	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13240	224	3	title	\N	title	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 13:57:11.162051	[]	[]	\N	1	\N	\N	val_desc	framework.config	t	[]	f	f	f
+12707	44	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12708	44	2	viewid	2	viewid	number	[]	f	f		f	\N	f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12709	44	3	col	3	col	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12710	44	4	tableid	4	tableid	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12711	44	5	notificationtext	5	notificationtext	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12713	44	7	issend	7	issend	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12714	44	8	isread	8	isread	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12715	44	9	created	9	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12716	44	10	sended	10	sended	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12717	44	11	readed	11	readed	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12749	211	1	id	1	id	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12750	211	3	menutitle	3	menu title	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12751	211	2	menutype	2	menu type	select	[]	t	f		f	col-md-11	f	framework.menutypes	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","mtypename"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12752	211	4	ismainmenu	4	is main menu	checkbox	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12718	218	1	id	1	id	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12719	218	2	text	2	text title	text	[]	t	f		f		t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12720	218	15	number	15	number title	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12721	218	3	data	3	date title	date	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12722	218	29	datetime	29	datetime	datetime	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12723	218	5	time	5	time title	time	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12724	218	4	check	4	check title	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12725	218	6	password	6	password title visible check	password	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12726	218	10	typehead	10	typehead title	typehead	[]	t	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12727	218	22	select	22	select title	select	[]	t	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13017	56	6	oldata	6	oldata	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12728	218	8	multiselect	8	multiselect title	multiselect	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12729	218	28	multitypehead	28	multitypehead title	multitypehead	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+601856	50784	4	for_userid	4	for user	label	[]	f	f		f		f	framework.users	\N	\N	f	f	id	f	2020-04-04 22:00:08.558568	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601858	50784	6	isread	6	readed	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+601859	50784	7	created	7	created	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+601855	50784	3	messagetype	3	message type	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+13068	32	2	treesid	2	treesid	label	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13069	32	3	title	3	title	text	[]	t	f		f	col-md-12	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13070	32	5	parentid	5	parentid	select	[]	t	f		f	col-md-12	f	framework.treesbranches	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13071	32	6	icon	6	icon	text	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13072	32	7	created	7	created	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+601854	50784	2	message	2	message	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601853	50784	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-04-04 22:00:08.558568	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13073	32	15	treeviewtype	8	treeviewtype	select	[]	t	f		f	col-md-12	f	framework.treeviewtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","typename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13075	32	14	compoid	10	compoid	select	[]	t	f		f	col-md-12	f	framework.compos	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13076	32	10	orderby	11	orderby	number	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13077	32	11	ismain	12	ismain	checkbox	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12833	34	2	orgname	2	orgname	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12832	34	1	id	1	id	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13012	56	10	userid	10	userid	number	[]	f	f		f	col-md-12	f	framework.users	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["login"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13013	56	2	tablename	2	tablename	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13014	56	3	tableid	3	tableid	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13015	56	4	opertype	4	opertype	label	[]	f	f		f	col-md-12	f	framework.opertypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["typename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13016	56	10	login	\N	login	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	userid	framework.users	t	[]	f	f	f
+13018	56	7	newdata	7	newdata	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13019	56	8	created	8	created	label	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12784	214	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12785	214	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12786	214	3	path	3	path	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12787	214	4	config	4	config	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12788	214	5	created	5	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12846	219	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	t	t	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12847	219	2	text	2	text title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12848	219	3	data	3	data	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12849	219	4	check	4	check	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12850	219	5	time	5	time	time	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12851	219	6	password	6	password	password	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12852	219	7	color	7	color	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12853	219	8	multiselect	8	multiselect	multiselect	[]	f	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12854	219	9	file	9	file	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12855	219	10	typehead	10	typehead	typehead	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12856	219	11	image	11	image	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12857	219	12	images	12	images	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+12858	219	13	gallery	13	gallery	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+12859	219	14	label	14	label	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+12860	219	15	number	15	number	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12861	219	16	link	16	link	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+12862	219	17	texteditor	17	texteditor	texteditor	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f	f
+12960	55	3	im	3	FirstName	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12958	55	1	id	1	id	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12964	55	7	isactive	8	isactive	checkbox	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12965	55	8	created	9	created	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12966	55	9	roles	11	roles	label	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12967	55	10	roleid	12	roleid	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12968	55	12	orgs	15	orgs	label	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12969	55	13	usersettings	16	usersettings	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+12970	55	14	orgid	17	orgid	number	[]	f	f		f	\N	f	framework.orgs	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["orgname"]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+12971	55	14	orgname	\N	orgname	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	orgid	framework.orgs	t	[]	f	f	f
+12972	55	11	photo	14	photo	image	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12863	219	18	colorrow	18	color row	colorrow	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f	f
+12864	219	19	multitypehead_api	19	multitypehead_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f	f
+12865	219	20	multi_select_api	20	multi_select_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+12866	219	21	colorpicker	21	colorpicker	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f	f
+12867	219	23	autocomplete	23	autocomplete	autocomplete	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f	f
+12868	219	24	textarea	24	textarea	textarea	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f	f
+12869	219	25	files	25	files	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f	f
+12870	219	26	typehead_api	26	typehead_api	typehead_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f	f
+12871	219	27	select_api	27	select_api	select_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f	f
+12873	219	29	datetime	29	datetime	datetime	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f	f
+12874	219	31	relate_with_major	31	relate_with_major	array	[]	t	f		f		f	test.relate_with_major	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["id","somecolumn","major_table_id","created"]	[]	major_table_id	29	\N	\N	\N	\N	f	[]	f	f	f
+12875	219	22	select	22	select	label	[]	f	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["dname","id"]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601860	50783	11	reports_url	11	reports url	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-04 22:25:29.950382	[]	[]	\N	91	\N	\N	\N	\N	f	[]	f	f	f
+12876	219	22	dname	\N	dname	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	select	test.dictionary_for_select	t	[]	f	f	f
+12877	219	22	id	\N	id_	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	32	\N	\N	select	test.dictionary_for_select	t	[]	f	f	f
+12973	226	1	id	1	CN	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12974	226	2	configid	2	configid	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12978	226	6	created	6	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12995	228	1	id	1	act_id	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12996	228	2	column_order	2	order by	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12997	228	3	title	3	act title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12998	228	16	act_type	16	act_type	select	[]	t	f		f		f	framework.acttypes	\N	\N	f	f	actname	f	2019-11-05 10:00:17.290746	["actname"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12999	228	4	viewid	4	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13000	228	5	icon	5	act icon	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13001	228	6	classname	6	class name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13002	228	7	act_url	7	act url	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13003	228	8	api_method	8	api method	select	[]	t	f		f		f	framework.apicallingmethods	\N	\N	f	f	aname	f	2019-11-05 10:00:17.290746	["aname"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13005	228	10	refresh_data	10	refresh data	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+13006	228	11	ask_confirm	11	ask confirm	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+13007	228	12	roles	12	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+13008	228	13	forevery	13	for every row	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+13009	228	14	main_action	14	main_action	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+13010	228	15	created	15	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+13028	230	6	title	6	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13029	230	27	fn	27	function	select_api	[]	t	f		f		f	\N	/api/getfunctions	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13030	230	28	fncolumns	28	columns	multiselect_api	[]	t	f		f		f	\N	/api/view_cols_for_fn	framework.config	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13031	230	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13032	231	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13033	231	3	val_desc	3	val_desc	label	[]	t	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13034	231	2	actionid	2	act_id	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13035	231	3	title	\N	column title	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	val_desc	framework.config	t	[]	f	f	f
+13036	231	6	operation	6	operation	label	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13037	231	7	value	7	value	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13038	231	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13039	232	4	col	4	column title	select_api	[]	t	f		f		f	\N	/api/config_selectapi	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12976	226	4	act	4	Action	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12977	226	5	value	5	Value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13040	232	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13085	234	1	id	1	id	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13086	234	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13087	234	8	path	8	path	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13088	234	4	roles	4	roles	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13089	234	6	systemfield	6	systemfield	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13090	234	9	icon	10	icon	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13091	234	3	parentid	3	parentid	select	[]	f	f		f	\N	f	framework.mainmenu	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13092	234	3	title	\N	parent	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	parentid	framework.mainmenu	t	[]	f	f	f
+13093	234	7	orderby	7	orderby	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13094	234	5	created	5	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13212	244	3	val_desc	3	val_desc	select_api	[]	t	f		f		f	framework.config	/api/view_cols_for_param	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id", "title"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13095	234	10	menuid	10	menuid	number	[]	f	f		f		f	framework.menus	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+13191	242	2	viewid	2	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13192	242	3	title	3	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12962	55	5	login	5	Login	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13193	242	4	type	4	type	select	[]	t	f		f		f	framework.filtertypes	\N	\N	f	f	ftname	f	2019-11-05 10:00:17.290746	["ftname"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13194	242	5	classname	5	classname	text	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13211	244	2	actionid	2	actionid	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13213	244	6	operation	6	operation	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13214	244	7	value	7	value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13215	244	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13118	237	2	title	2	title	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13120	237	4	tablename	4	tablename	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13121	237	5	vtypename	\N	view type	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	viewtype	framework.viewtypes	t	[]	f	f	f
+13122	237	3	descr	3	descr	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13124	237	5	viewtype	5	viewtype	label	[]	f	f		f		f	framework.viewtypes	\N	\N	f	f	vtypename	f	2019-11-05 10:00:17.290746	["vtypename"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12839	217	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12840	217	6	methodtype	6	methodtype	select	[]	f	f		f	\N	f	framework.methodtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["methotypename"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12841	217	2	methodname	2	method name	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12842	217	3	procedurename	3	procedure name	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12843	217	6	methotypename	\N	methotypename	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	methodtype	framework.methodtypes	t	[]	f	f	f
+12844	217	4	roles	4	roles	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12845	217	5	created	5	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+601835	239	7	typename	\N	typename	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	typename	f	2020-04-03 12:33:29.81526	[]	[]	\N	31	\N	\N	type	framework.columntypes	t	[]	f	f	f
+601839	235	13	ws	13	ws messagetype	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-03 14:31:40.101312	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+601840	235	14	istitle	14	is title	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-04-03 14:31:49.306246	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+12757	225	5	value	5	Value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+601836	227	16	actname	\N	actname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	actname	f	2020-04-03 12:39:37.338658	[]	[]	\N	16	\N	\N	act_type	framework.acttypes	t	[]	f	f	f
+601837	227	8	aname	\N	aname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	aname	f	2020-04-03 12:39:57.452917	[]	[]	\N	17	\N	\N	api_method	framework.apicallingmethods	t	[]	f	f	f
+601838	227	9	methotypename	\N	methotypename	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	methotypename	f	2020-04-03 12:40:17.479944	[]	[]	\N	18	\N	\N	api_type	framework.methodtypes	t	[]	f	f	f
+12730	218	27	select_api	27	select_api title	select_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+12731	218	26	typehead_api	26	typehead_api title	typehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+12732	218	20	multi_select_api	20	multi_select_api	multiselect_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12783	213	12	photo	13	photo	image	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+16468	5542	15	userid	15	userid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12733	218	19	multitypehead_api	19	multitypehead_api	multitypehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+12734	218	23	autocomplete	23	autocomplete title	autocomplete	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f	f
+12735	218	16	link	16	link title	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f	f
+12736	218	14	label	14	label title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f	f
+12737	218	17	texteditor	17	texteditor title	texteditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+12738	218	31	html	30	html title	innerHtml	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f	f
+12739	218	24	textarea	24	textarea title	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f	f
+12740	218	21	colorpicker	21	colorpicker title	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f	f
+12742	218	18	colorrow	18	colorrow title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f	f
+12743	218	9	file	9	file title	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f	f
+12744	218	25	files	25	files title	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	27	\N	\N	\N	\N	f	[]	f	f	f
+12745	218	30	files	25	filelist title	filelist	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f	f
+12746	218	11	image	11	image title	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	29	\N	\N	\N	\N	f	[]	f	f	f
+12747	218	12	images	12	images title	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+12748	218	13	gallery	13	gallery title	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f	f
+12753	225	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12754	225	2	configid	2	configid	label	[]	f	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12758	225	6	created	6	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12759	100	1	id	1	id	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12760	100	2	treesid	2	treesid	number	[]	f	f		f	\N	f	framework.trees	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12761	100	3	title	3	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12762	100	4	icon	4	icon	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12763	100	5	classname	5	classname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12764	100	6	act	6	act	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12765	100	7	created	7	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12766	212	1	id	1	N	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12768	212	2	methodname	2	method name	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12769	212	6	methodtype	6	methodtype	select	[]	t	f		f	col-md-11	f	framework.methodtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","methotypename"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12770	212	4	roles	4	roles	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12771	212	5	created	5	created	label	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12772	213	2	fam	2	fam	text	[]	t	f		f	col-md-11	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12773	213	3	im	3	im	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12774	213	4	ot	4	ot	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12775	213	5	login	5	login	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12776	213	6	password	6	password	password	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12777	213	8	isactive	8	isactive	checkbox	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12778	213	9	created	9	created	label	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12779	213	10	roles	11	roles	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12780	213	12	orgs	12	orgs	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.orgs	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","orgname"]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12781	213	1	id	1	id	number	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12782	213	11	roleid	12	roleid	number	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12756	225	4	act	4	Action	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["id","value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+16469	5542	16	thumbprint	17	thumbprint	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+12807	215	14	label	14	label title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f	f
+12801	215	27	select_api	27	select_api title	select_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+12824	216	3	tableid	3	tableid	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12834	150	1	id	1	id	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12835	150	3	menutitle	3	menu title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12836	150	2	mtypename	\N	menu type	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	menutype	framework.menutypes	t	[]	f	f	f
+12837	150	4	ismainmenu	4	is main menu	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12838	150	2	menutype	2	menutype	number	[]	f	f		f		f	framework.menutypes	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["mtypename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12887	220	10	typehead	10	typehead	typehead	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12910	220	\N	func test	\N	func test	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	33	concat	[12879,12892]		\N	t	null	f	f	f
+12799	215	8	multiselect	8	multiselect title	multiselect	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12800	215	28	multitypehead	28	multitypehead title	multitypehead	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","dname"]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+12802	215	26	typehead_api	26	typehead_api title	typehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+12803	215	20	multi_select_api	20	multi_select_api	multiselect_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12805	215	23	autocomplete	23	autocomplete title	autocomplete	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f	f
+12806	215	16	link	16	link title	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f	f
+12808	215	17	texteditor	17	texteditor title	texteditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+12809	215	31	html	30	html title	innerHtml	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f	f
+12810	215	24	textarea	24	textarea title	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f	f
+12811	215	21	colorpicker	21	colorpicker title	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f	f
+12812	215	7	color	7	color title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f	f
+12813	215	18	colorrow	18	colorrow title	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f	f
+12814	215	9	file	9	file title	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f	f
+12817	215	11	image	11	image title	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	29	\N	\N	\N	\N	f	[]	f	f	f
+12818	215	12	images	12	images title	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+12819	215	13	gallery	13	gallery title	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f	f
+12816	215	30	files	25	filelist title	filelist	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	28	\N	\N	\N	\N	f	[]	f	f	f
+12821	215	33	relate_with_major	31	relate_with_major	array	[]	t	f		f		f	test.relate_with_major	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["id","somecolumn","major_table_id","created"]	[]	major_table_id	33	\N	\N	\N	\N	f	[]	f	f	f
+12822	216	1	id	1	id	number	[0]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12823	216	2	tablename	2	tablename	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12825	216	4	typename	\N	typename	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	opertype	framework.opertypes	t	[]	f	f	f
+12826	216	10	userid	10	userid	number	[]	f	f		f	\N	f	framework.users	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["login"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12827	216	4	opertype	4	opertype	select	[]	f	f		f	\N	f	framework.opertypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["typename"]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12828	216	10	login	\N	login	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	userid	framework.users	t	[]	f	f	f
+12829	216	6	oldata	6	oldata	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12830	216	7	newdata	7	newdata	text	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12831	216	8	created	8	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12880	220	3	data	3	data	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12882	220	5	time	5	time	time	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12883	220	6	password	6	password	password	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12884	220	7	color	7	color	color	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12886	220	9	file	9	file	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12888	220	11	image	11	image	image	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12889	220	12	images	12	images	images	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+12890	220	13	gallery	13	gallery	gallery	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+12891	220	14	label	14	label	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+12892	220	15	number	15	number	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12893	220	16	link	16	link	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+12894	220	17	texteditor	17	texteditor	texteditor	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f	f
+12895	220	18	colorrow	18	color row	colorrow	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f	f
+12896	220	19	multitypehead_api	19	multitypehead_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f	f
+12897	220	20	multi_select_api	20	multi_select_api	multiselect_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+12898	220	21	colorpicker	21	colorpicker	colorpicker	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f	f
+12899	220	23	autocomplete	23	autocomplete	autocomplete	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f	f
+12900	220	24	textarea	24	textarea	textarea	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f	f
+12792	215	3	data	3	date title	date	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12797	215	10	typehead	10	typehead title	typehead	[]	t	f	6	f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12815	215	25	files	25	files title	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	27	\N	\N	\N	\N	f	[]	f	f	f
+12790	215	2	text	2	text title	text	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12794	215	5	time	5	time title	time	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12795	215	4	check	4	check title	checkbox	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12796	215	6	password	6	password title visible check	password	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12793	215	29	datetime	29	datetime 12345678900000000000000000000000000 qwerty jaksdf jdkjfka kadfkasdjf knrenr kvvfdfd dfkk jdf kf jdk kdfjk d ijijgt djnjrfnrjfrnf 	datetime	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12798	215	22	select	22	select title	select	[]	t	f	6	f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","dname"]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+12901	220	25	files	25	files	files	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f	f
+12902	220	26	typehead_api	26	typehead_api	typehead_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f	f
+12903	220	27	select_api	27	select_api	select_api	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f	f
+12904	220	28	multitypehead	28	multitypehead	multitypehead	[]	f	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	27	\N	\N	\N	\N	f	[]	f	f	f
+12906	220	31	relate_with_major	31	relate_with_major	array	[]	t	f		f		f	test.relate_with_major	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["id","somecolumn","major_table_id","created"]	[]	major_table_id	29	\N	\N	\N	\N	f	[]	f	f	f
+12905	220	29	datetime	29	datetime	datetime	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f	f
+12908	220	22	dname	\N	dname	text	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	31	\N	\N	select	test.dictionary_for_select	t	[]	f	f	f
+12909	220	22	id	\N	id_	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	32	\N	\N	select	test.dictionary_for_select	t	[]	f	f	f
+12912	221	1	id	1	N	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12913	221	2	viewid	2	id	label	[]	f	f		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["viewtype"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12915	221	4	col	4	column title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12916	221	5	column_id	5	column_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12917	221	6	title	6	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12918	221	7	type	7	type	select	[]	t	f		f		f	framework.columntypes	\N	\N	f	f	typename	f	2019-11-05 10:00:17.290746	["typename"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12919	221	27	fn	27	fn	select_api	[]	t	f		f		f	\N	/api/getfunctions	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+12921	221	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+12922	221	9	visible	9	visible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+12923	221	10	required	10	is required	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+12924	221	11	width	11	width	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+12925	221	12	join	12	join	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+12926	221	13	classname	13	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+12927	221	14	updatable	14	updatable	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	f	f	f
+12928	221	16	select_api	16	select_api	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	f	f	f
+12929	221	18	orderby	18	order by	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	\N	\N	\N	\N	f	[]	f	f	f
+12930	221	19	orderbydesc	19	order by desc	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+12931	221	15	relation	15	relation table	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f	f
+12932	221	17	multiselecttable	17	multiselecttable	select_api	[]	t	f		f		f	\N	/api/gettables	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f	f
+12933	221	20	relcol	20	relcol	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f	f
+12934	221	21	depency	21	 is depency	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	24	\N	\N	\N	\N	f	[]	f	f	f
+12935	221	24	multicolums	24	multicolums	multiselect_api	[]	t	f		f		f	\N	/api/multi_tabcolumns	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f	f
+12936	221	23	relationcolums	23	relationcolums	multiselect_api	[]	t	f		f		f	\N	/api/rel_tabcolumns	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	26	\N	\N	\N	\N	f	[]	f	f	f
+12937	221	25	depencycol	25	depencycol	label	[]	f	f		f		f	\N	/api/dep_tabcolumns	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	27	\N	\N	\N	\N	f	[]	f	f	f
+12938	221	29	defaultval	29	defaultval	array	[]	t	f		f		f	framework.defaultval	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	[]	[]	configid	28	\N	\N	\N	\N	f	[]	f	f	f
+12939	221	30	select_condition	29	select_condition	array	[]	t	f		f		f	framework.select_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["col","operation","const","val_desc"]	[]	configid	29	\N	\N	\N	\N	f	[]	f	f	f
+12940	221	31	visible_condition	29	visible_condition	array	[]	t	f		f		f	framework.visible_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	[]	[]	configid	30	\N	\N	\N	\N	f	[]	f	f	f
+12942	222	1	id	1	CN	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12943	222	2	configid	2	N	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12944	222	3	col	3	col	select_api	[]	t	f		f		f	\N	/api/tabcolumns_for_sc	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12945	222	5	operation	5	operation	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12946	222	9	val_desc	9	val_desc	select_api	[]	t	f		f		f	\N	/api/view_cols_for_sc	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12947	222	6	const	6	const	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12948	222	7	value	7	value	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12949	222	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12950	223	1	id	1	CN	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12951	223	2	configid	2	configid	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12952	223	8	val_desc	3	val_desc	select_api	[]	t	f		f		f	framework.config	/api/view_cols_for_sc	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12953	223	3	col	3	col	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12954	223	4	title	4	title	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+12955	223	5	operation	5	operation	select	[]	t	f		f		f	framework.operations	\N	\N	f	f	value	f	2019-11-05 10:00:17.290746	["value"]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12956	223	6	value	6	value	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12957	223	7	created	7	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12983	227	4	viewid	4	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13020	229	1	id	1	paramid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13021	229	2	actionid	2	act_id	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13022	229	3	paramtitle	3	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13024	229	5	paramconst	5	const	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13025	229	6	paraminput	6	input	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13026	229	4	paramt	4	method type	select	[]	t	f		f		f	framework.paramtypes	\N	\N	f	f	val	f	2019-11-05 10:00:17.290746	["val"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13027	229	9	query_type	9	query type	select	[]	t	f		f		f	framework.actparam_querytypes	\N	\N	f	f	aqname	f	2019-11-05 10:00:17.290746	["aqname"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13045	26	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13046	26	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13047	26	3	url	3	url	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13048	26	4	descr	4	descr	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13049	26	5	roles	5	roles	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13050	26	6	created	6	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13051	28	1	id	1	id	label	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13052	28	2	title	2	title	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13053	28	3	url	3	url	text	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13054	28	4	descr	4	descr	textarea	[]	t	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13055	28	5	roles	5	roles	multiselect	[]	t	f		f	col-md-11	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13056	28	6	created	6	created	label	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13057	30	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13058	30	2	treesid	2	treesid	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13059	30	3	title	3	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13061	30	6	icon	6	icon	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13062	30	7	created	7	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13063	30	7	treeviewtype	8	treeviewtype	number	[]	t	f		f	\N	f	framework.treeviewtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13065	30	9	compoid	10	compoid	number	[]	f	f		f	\N	f	framework.compos	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13041	233	2	viewid	2	viewid	label	[]	f	f		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13042	233	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13043	233	6	title	6	setting	select_api	[]	t	f		f		f	\N	/api/configsettings_selectapi	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13044	233	4	col	4	column	select_api	[]	t	f		f		f	\N	/api/view_cols_for_fn	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13078	101	1	id	1	bid	number	[]	f	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13079	101	2	treesid	2	treesid	number	[]	f	f	30%	f	col-md-11	f	framework.trees	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13081	101	4	icon	4	icon	text	[]	t	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13082	101	5	classname	5	classname	text	[]	t	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13083	101	6	act	6	act	text	[]	t	f	30%	f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13084	101	7	created	7	created	date	[]	f	f		f	col-md-11	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13096	235	1	id	1	id	label	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13097	235	2	title	2	title	text	[]	t	f		f	col-md-12	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13098	235	3	parentid	3	parent	select	[]	t	f		f	col-md-12	f	framework.mainmenu	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13099	235	4	roles	4	roles	multiselect	[]	t	f		f	col-md-12	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13100	235	5	created	5	created	label	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13101	235	6	systemfield	6	system field	checkbox	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13102	235	7	orderby	7	order by	number	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13103	235	8	path	8	path	text	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13104	235	10	test	10	test	array	[]	f	f		f	col-md-12	f	framework.test	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	[]	[]	relat	9	\N	\N	\N	\N	f	[]	f	f	f
+13105	235	9	icon	10	icon	text	[]	t	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13106	235	11	menuid	10	menuid	number	[]	f	f		f	col-md-12	f	framework.menus	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+13129	238	3	descr	3	descr	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13125	238	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13127	238	21	tablename	4	tablename	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13130	238	8	path	8	path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13131	238	5	viewtype	5	viewtype	select	[]	t	f		f		f	framework.viewtypes	\N	\N	f	f	vtypename	f	2019-11-05 10:00:17.290746	["vtypename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13132	238	13	roles	13	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13133	238	14	classname	14	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13134	238	6	pagination	6	pagination	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13135	238	15	orderby	15	orderby	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+13136	238	16	ispagesize	16	ispagesize	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+13137	238	17	pagecount	17	pagecount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+13138	238	18	foundcount	18	foundcount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+13139	238	19	subscrible	19	subscrible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+13140	238	20	checker	20	checker	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+13060	30	5	parentid	5	parentid	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f	f
+13116	236	9	created	9	created	date	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f	f
+13115	236	8	isactive	8	isactive	checkbox	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+13114	236	12	orgs	15	orgs	multiselect	[]	f	f		f	\N	f	\N	\N	framework.orgs	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["orgname"]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+13112	236	5	login	5	login	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+13107	236	1	id	1	id	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13113	236	9	roles	11	roles	multiselect	[]	f	f		f	\N	f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["rolename"]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+13163	239	21	depency	21	depency	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	23	\N	\N	\N	\N	f	[]	f	f	f
+13167	240	1	id	1	cni	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13168	240	2	configid	2	N	label	[]	f	t		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["viewid"]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13169	240	3	col	3	col	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13170	240	5	operation	5	operation	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13171	240	9	val_desc	10	val_desc	label	[]	f	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13172	240	6	const	6	const	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13173	240	7	value	7	val	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13174	240	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13175	240	9	title	\N	value	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	val_desc	framework.config	t	[]	f	f	f
+13176	240	2	viewid	\N	viewid	label	[]	f	f	\N	f		f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	configid	framework.config	t	[]	f	f	f
+13178	241	2	viewid	2	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13203	243	3	paramtitle	3	title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13204	243	8	title	\N	column	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	val_desc	framework.config	t	[]	f	f	f
+13109	236	3	im	3	firstname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+13110	236	4	ot	4	secondname	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+13205	243	5	paramconst	5	const	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13206	243	6	paraminput	6	input	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13207	243	4	paramt	4	method type	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13208	243	8	val_desc	8	val_desc	label	[]	f	f		f		f	framework.config	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["title"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13209	243	9	query_type	9	query type	label	[]	t	f		f		f	framework.actparam_querytypes	\N	\N	f	f	aqname	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13216	245	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13217	245	4	tablename	4	table name	select_api	[]	t	f		f		f	\N	/api/gettables	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13218	245	21	tablename	4	tablename	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13219	245	2	title	2	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13220	245	3	descr	3	descr	textarea	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13221	245	8	path	8	path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13222	245	5	viewtype	5	viewtype	select	[]	t	f		f		f	framework.viewtypes	\N	\N	f	f	vtypename	f	2019-11-05 10:00:17.290746	["vtypename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+13223	245	13	roles	13	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["id","rolename"]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13224	245	14	classname	14	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+13225	245	6	pagination	6	pagination	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13226	245	15	orderby	15	orderby	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+13227	245	16	ispagesize	16	ispagesize	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+13228	245	17	pagecount	17	pagecount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+13229	245	18	foundcount	18	foundcount	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+13230	245	19	subscrible	19	subscrible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+13231	245	20	checker	20	checker	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+13663	221	40	editable	34	is editable cell	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 09:35:28.103632	[]	[]	\N	21	\N	\N	\N	\N	f	[]	f	f	f
+13689	220	3	data	3	data_33	date	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 10:59:05.158573	[]	[]	\N	6	\N	\N	\N	\N	f	[]	t	f	f
+13703	220	15	number	15	number_34	number	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 11:31:40.154123	[]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f	f
+12907	220	22	select	22	select	select	[]	t	f		f		f	test.dictionary_for_select	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	["id", "dname"]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f	f
+13201	243	1	id	1	p_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13145	239	4	col	4	column	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13165	239	25	depencycol	25	depencycol	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	25	\N	\N	\N	\N	f	[]	f	f	f
+13183	241	6	column	6	column	select_api	[]	t	f		f		f	\N	/api/tabcolumns_for_filters	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+13182	241	5	classname	5	classname	text	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	t	f	f
+12911	221	26	column_order	26	column order	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12982	227	16	act_type	16	act_type	select	[]	t	f		f		f	framework.acttypes	\N	\N	f	f	actname	f	2019-11-05 10:00:17.290746	["actname"]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f	f
+13185	241	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	["id", "rolename"]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f	f
+12987	227	8	api_method	8	api method	select	[]	t	f		f		f	framework.apicallingmethods	\N	\N	f	f	aname	f	2019-11-05 10:00:17.290746	["aname"]	[]	\N	9	\N	\N	\N	\N	f	[]	t	f	f
+13179	241	12	column_order	2	column_order	number	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	t	f	f
+13180	241	3	title	3	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f	f
+13773	239	2	viewtype	\N	viewtype	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-11 17:02:52.048476	[]	[]	\N	29	\N	\N	viewid	framework.views	t	[]	f	f	f
+12981	227	3	title	3	act title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	t	f	f
+12984	227	5	icon	5	act icon	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	t	f	f
+12985	227	6	classname	6	class name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f	f
+12986	227	7	act_url	7	act url	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	t	f	f
+12980	227	2	column_order	2	order by	number	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	t	f	f
+13152	239	11	width	11	width	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	17	\N	\N	\N	\N	f	[]	t	f	f
+19344	118	3	roles	3	Roles	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13789	241	13	val_desc	13	col	select	[]	t	f	\N	f	\N	f	framework.config	\N	\N	f	f	id	f	2019-11-11 21:53:56.51403	["id", "title"]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f	f
+13166	239	27	defaultval	27	default value	array	[]	t	f		f		f	framework.defaultval	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["bool", "act", "value"]	[]	configid	26	\N	\N	\N	\N	f	[]	f	f	f
+13796	227	9	api_type	9	api_type	select	[]	t	f	\N	f	\N	f	framework.methodtypes	\N	\N	f	f	methotypename	f	2019-11-11 22:21:30.217723	["methotypename"]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f	f
+12920	221	28	fncolumns	28	fn columns	multiselect_api	[]	t	f		f		f	\N	/api/view_cols_for_fn	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13184	241	7	columns	7	columns	multiselect_api	[]	t	f		f		f	\N	/api/tabcolumns_for_filters_arr	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	t	f	f
+12992	227	13	forevery	13	for every row	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	t	f	f
+12993	227	14	main_action	14	main_action	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	15	\N	\N	\N	\N	f	[]	t	f	f
+12989	227	10	refresh_data	10	refresh data	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f	f
+12990	227	11	ask_confirm	11	ask confirm	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	t	f	f
+12991	227	12	roles	12	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	["id", "rolename"]	[]	\N	13	\N	\N	\N	\N	f	[]	t	f	f
+13177	241	1	id	1	f_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+13847	221	28	fncolumns	28	Function input parametrs	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-12 11:19:41.149179	[]	[]	\N	34	\N	\N	\N	\N	f	[]	f	f	f
+12941	221	2	viewtype	\N	viewtype	label	[]	f	f	\N	f		f	framework.viewtypes	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	0	\N	\N	viewid	framework.views	t	[]	f	f	f
+13142	239	1	id	1	key	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12979	227	1	id	1	a_id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+16458	5542	5	login	5	login	label	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+13146	239	5	column_id	5	column_id	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13733	239	7	type	7	type	select	[]	t	f	\N	f	\N	f	framework.columntypes	\N	\N	f	f	typename	f	2019-11-11 09:30:09.143427	["typename"]	[]	\N	8	\N	\N	\N	\N	f	[]	t	f	f
+16153	239	28	fncolumns	28	fn_columns	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-12-05 15:54:51.85706	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+16466	5542	13	usersettings	13	usersettings	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+13147	239	6	title	6	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	t	f	f
+13150	239	9	visible	9	visible	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	9	\N	\N	\N	\N	f	[]	t	f	f
+13156	239	18	orderby	18	order by	checkbox	[]	t	f	\N	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f	f
+13155	239	14	updatable	14	updatable	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	13	\N	\N	\N	\N	f	[]	t	f	f
+13157	239	19	orderbydesc	19	desc	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	12	\N	\N	\N	\N	f	[]	t	f	f
+13151	239	10	required	10	required	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f	f
+13153	239	12	join	12	join	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	t	f	f
+13158	239	\N	relation	\N	relation table	text	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	19	framework.fn_config_relation	[13142]		\N	t	null	t	f	f
+13143	239	2	viewid	2	id	label	[]	f	t		f		f	framework.views	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13149	239	8	roles	8	roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	18	\N	\N	\N	\N	f	[]	t	f	f
+13751	239	23	relationcolums	23	relation columns	multiselect_api	[]	t	f	\N	f	\N	f	\N	/api/rel_tabcolumns	\N	f	f	\N	f	2019-11-11 14:49:20.081457	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f	f
+13160	239	28	select_condition	27	select condition	text	[]	t	f		f		f	framework.select_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["val_desc", "operation", "value"]	[]	configid	21	\N	\N	\N	\N	f	[]	f	f	f
+13161	239	29	visible_condition	27	visible condition	array	[]	t	f		f		f	framework.visible_condition	\N	\N	f	f	\N	t	2019-11-05 10:00:17.290746	["val_desc", "operation", "value"]	[]	configid	22	\N	\N	\N	\N	f	[]	f	f	f
+16465	5542	12	orgs	12	orgs	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+13064	30	8	viewid	9	viewid	number	[]	t	f		f	\N	f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	8	\N	\N	\N	\N	f	[]	t	f	f
+12804	215	19	multitypehead_api	19	multitypehead_api	multitypehead_api	[]	t	f		f		f	\N	/api/select_api_test	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+16454	5542	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12767	212	3	procedurename	3	function	select_api	[]	t	f		f	col-md-11	f	\N	/api/functions_getall_spapi	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+16467	5542	14	orgid	14	user org	select_api	[]	t	f	24	f		f	framework.orgs	/api/userorgss	\N	f	f	id	f	2019-12-09 18:09:00.445033	["id", "orgname"]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+16455	5542	2	fam	2	fam	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+16457	5542	4	ot	4	ot	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+16463	5542	10	roleid	10	roleid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+16462	5542	9	roles	9	roles	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+16464	5542	11	photo	11	photo	image	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+16456	5542	3	im	3	im	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-09 18:09:00.445033	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+12755	225	3	bool	3	Bool operator	select	[]	t	f		f		f	framework.booloper	\N	\N	f	f	bname	f	2019-11-05 10:00:17.290746	["id","bname"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+13662	239	40	editable	34	editable cell	checkbox	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-09 09:34:37.399096	[]	[]	\N	15	\N	\N	\N	\N	f	[]	t	f	f
+12975	226	3	bool	3	Bool operator	select	[]	t	f		f		f	framework.booloper	\N	\N	f	f	bname	f	2019-11-05 10:00:17.290746	["bname"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+16656	55	16	thumbprint	17	Certificate	certificate	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-12-11 11:15:13.088394	[]	[]	\N	16	\N	\N	\N	\N	f	[]	f	f	f
+13066	30	10	orderby	11	orderby	number	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	10	\N	\N	\N	\N	f	[]	t	f	f
+19355	119	2	title	2	Title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+19398	119	15	functitle	7	Function	select_api	[]	t	f		f	col-md-12	f	\N	/api/getreports_fn	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+19356	119	3	roles	3	Roles	multiselect	[]	t	f		f		f	\N	\N	framework.roles	f	f	\N	f	2019-12-25 10:56:44.415375	["id", "rolename"]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+19357	119	4	path	4	Path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+19358	119	5	template	5	Template	file	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+19362	119	9	section	9	Section	autocomplete	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+19377	121	3	ptitle	3	Title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+19378	121	4	func_paramtitle	4	Function parametr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+19423	121	17	orderby	9	Order By	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12789	215	1	id	1	id	label	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+12820	215	32	link	16	link sdkfjkqjkefmrfkefkdsfk dfkjsdkfj knksdj fksak jdk234 2jkk23 rk2j k32j k23j jk jr 	link	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	32	\N	\N	\N	\N	f	[]	f	f	f
+19343	118	2	title	2	Title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+12791	215	15	number	15	number title	number	[]	t	f	6	f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+19345	118	4	path	4	Path	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+19342	118	1	id	1	id	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19374	120	9	orderby	9	Order By	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+19370	120	5	ptype	5	Param Type	label	[]	f	f		f		f	reports.paramtypes	\N	\N	f	f	id	f	2019-12-25 10:56:45.989848	["typename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+19348	118	7	functitle	7	Function name	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+19426	120	18	colorr	\N	colorr	colorrow	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2019-12-25 11:15:57.01164	[]	[]	\N	10	public.fn_completed_colorblack	[19373]	\N	\N	f	[]	f	f	f
+19350	118	9	section	9	Section	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+19364	119	11	filename	11	filename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+19382	121	8	completed	8	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+19369	120	4	func_paramtitle	4	Function Param	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+19368	120	3	ptitle	3	Title	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+19353	118	12	reportparams	12	reportparams	array	[]	f	f		f		f	reports.reportparams	\N	\N	f	f	\N	t	2019-12-25 10:56:42.165857	[]	[]	reportlistid	12	\N	\N	\N	\N	f	[]	f	f	f
+19365	119	12	reportparams	12	reportparams	array	[]	f	f		f		f	reports.reportparams	\N	\N	f	f	\N	t	2019-12-25 10:56:44.415375	[]	[]	reportlistid	12	\N	\N	\N	\N	f	[]	f	f	f
+19363	119	10	completed	10	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+19354	119	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:44.415375	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19373	120	8	completed	8	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+19371	120	6	created	6	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+19367	120	2	reportlistid	2	reportlistid	label	[]	f	f		f		f	reports.reportlist	\N	\N	f	f	id	f	2019-12-25 10:56:45.989848	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+19366	120	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:45.989848	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19376	121	2	reportlistid	2	reportlistid	label	[]	f	f		f		f	reports.reportlist	\N	\N	f	f	id	f	2019-12-25 10:57:10.533471	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+19375	121	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:57:10.533471	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19352	118	11	filename	11	filename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+19351	118	10	completed	10	completed	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+19349	118	8	created	8	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+19347	118	6	template_path	6	template_path	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+19396	119	13	id	1	reportlistid	number	[]	f	f		f	col-md-12	f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19406	120	10	id	1	param_id	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19416	121	10	id	1	paramid	number	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+19421	121	15	created	7	created	date	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+19427	120	5	typename	\N	Type	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	id	f	2019-12-25 11:24:06.247663	[]	[]	\N	5	\N	\N	ptype	reports.paramtypes	t	[]	f	f	f
+32354	119	16	ishtml	12	Out in html	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-17 06:07:34.112362	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+19379	121	5	ptype	5	Type	select	[]	t	f		f		f	reports.paramtypes	\N	\N	f	f	id	f	2019-12-25 10:57:10.533471	["id", "typename"]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+19381	121	7	apimethod	7	Method	typehead	[]	t	f		f		f	framework.spapi	\N	\N	f	f	id	f	2019-12-25 10:57:10.533471	["id", "methodname", "procedurename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+32438	120	19	Метод API	\N	API	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 03:06:22.700614	[]	[]	\N	7	concat	["32437", "32436"]	\N	\N	f	[]	f	f	f
+13074	32	23	viewid	9	viewid	typehead	[]	t	f		f	col-md-12	f	framework.views	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	["id","title","path"]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+12885	220	8	multiselect	8	multiselect	multiselect	[]	t	f		f		f	\N	\N	test.dictionary_for_select	f	f	\N	f	2019-11-05 10:00:17.290746	[]	["dname"]	\N	8	\N	\N	\N	\N	f	[]	t	f	f
+12712	44	6	foruser	6	foruser	number	[]	f	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+13154	239	13	classname	13	classname	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	14	\N	\N	\N	\N	f	[]	t	f	f
+13241	239	27	fn	27	fn	select_api	[]	t	f	50px	f	break_word	f	\N	/api/getfunctions	\N	f	f	\N	f	2019-11-05 14:31:51.940762	[]	[]	\N	1	\N	\N	\N	\N	f	[]	t	f	f
+13141	239	26	column_order	26	column order	number	[]	t	f	80px	f	\N	f	\N	\N	\N	t	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	0	\N	\N	\N	\N	f	[]	t	f	f
+32437	120	7	procedurename	\N	procedurename	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-03-18 03:05:28.411065	[]	[]	\N	11	\N	\N	apimethod	framework.spapi	t	[]	f	f	f
+32436	120	7	methodname	\N	methodname	label	[]	t	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-03-18 03:04:18.994558	[]	[]	\N	7	\N	\N	apimethod	framework.spapi	t	[]	f	f	f
+19372	120	7	apimethod	7	apimethod	label	[]	f	f		f		f	framework.spapi	\N	\N	f	f	id	f	2019-12-25 10:56:45.989848	["methodname", "procedurename"]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+32523	6424	9	id	9	id	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 11:47:27.067402	[]	[]	\N	81	\N	\N	\N	\N	f	[]	f	f	f
+32497	6424	7	isactiv	7	isactiv	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+32496	6424	6	redirect401	6	redirect when status 401	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+32495	6424	5	primaryAuthorization	5	primary authorization	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+32494	6424	4	maindomain	4	main domain	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+32493	6424	3	developerRole	3	developer role id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+32492	6424	2	port	2	project server port	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+32491	6424	1	dsn	1	db connection string	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+32498	6424	8	usercss	8	css file	codeEditor	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 11:03:14.765649	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+32603	243	12	orderby	12	orderby	number	[]	t	f	\N	f	\N	f	\N	\N	\N	t	f	\N	f	2020-03-19 08:09:28.571976	[]	[]	\N	11	\N	\N	\N	\N	f	[]	t	f	f
+12881	220	4	check	4	check	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	t	f	f
+13126	238	4	tablename	4	table name	select_api	[]	t	f		f	\N	f	\N	/api/gettables	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+13128	238	2	title	2	title	text	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+13117	237	1	id	1	id	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+33336	237	9	created	9	created_8	label	[]	f	f	\N	f	\N	f	\N	\N	\N	t	t	\N	f	2020-03-23 03:39:48.434754	[]	[]	\N	9	\N	\N	\N	\N	f	[]	f	f	f
+33582	220	32	text	2	text_35	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-25 08:56:48.322494	[]	[]	\N	34	\N	\N	\N	\N	f	[]	f	f	f
+33583	220	33	text	2	text_36	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-25 08:57:46.025617	[]	[]	\N	35	\N	\N	\N	\N	f	[]	f	f	f
+601862	218	32	rate	31	rate	rate	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-06 20:35:47.50216	[]	[]	\N	32	\N	\N	\N	\N	f	[]	f	f	f
+32490	215	35	texteditor	17	texteditor_34	codeEditor	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-03-18 10:24:26.490987	[]	[]	\N	35	\N	\N	\N	\N	f	[]	f	f	f
+601861	215	36	rate	31	rate	rate	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-06 20:33:35.54051	[]	[]	\N	36	\N	\N	\N	\N	f	[]	f	f	f
+13181	241	4	type	4	type	select	[]	t	f		f		f	framework.filtertypes	\N	\N	f	f	ftname	f	2019-11-05 10:00:17.290746	["ftname"]	[]	\N	5	\N	\N	\N	\N	f	[]	t	f	f
+601863	241	4	ftname	\N	ftname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	ftname	f	2020-05-06 22:14:58.609463	[]	[]	\N	11	\N	\N	type	framework.filtertypes	t	[]	f	f	f
+601865	241	13	title	\N	title_13789	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-06 22:15:40.056	[]	[]	\N	13	\N	\N	val_desc	framework.config	t	[]	f	f	f
+601864	241	13	id	\N	id_13789	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-06 22:15:32.776994	[]	[]	\N	12	\N	\N	val_desc	framework.config	t	[]	f	f	f
+601869	50785	3	schemadescr	3	schemadescr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f	f
+601874	50786	3	linkurl	3	linkurl	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601872	50786	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601873	50786	2	oname	2	 	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:53:08.044615	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601875	50786	4	schemaname	4	schemaname	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-11 17:36:42.392127	[]	[]	\N	31	\N	\N	\N	\N	f	[]	f	f	f
+601876	50788	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601884	50789	2	functionschema	2	functionschema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601883	50789	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601867	50785	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601868	50785	2	schemaname	2	schemaname	text	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 16:45:27.915281	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f	f
+601877	50788	2	tableschemaname	2	tableschemaname	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601879	50788	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601903	50791	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601904	50791	2	tablename	2	tablename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601880	50788	5	descr	5	descr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f	f
+601902	50790	13	noscript	13	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	130	\N	\N	\N	\N	f	[]	f	f	f
+601905	50791	3	colname	3	Field Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601912	50791	10	defval	10	Default	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f	f
+601892	50790	3	colname	3	Field  Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f	f
+601917	50792	2	schemaname	2	Schema Name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601918	50792	3	schemadescr	3	Description	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601907	50791	5	coltype	5	Field Type	select_api	[]	t	f		f		f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+601891	50790	2	tablename	2	tablename	text	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601911	50791	9	uniq	9	uniq	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+601910	50791	8	notnull	8	Not Null	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+601909	50791	7	accur	7	Accur	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+601908	50791	6	size	6	Size	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+601894	50790	5	coltype	5	Field Type	select_api	[]	t	f		f		f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f	f
+601893	50790	4	coldesc	4	Description	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	40	\N	\N	\N	\N	f	[]	t	f	f
+601895	50790	6	size	6	Size	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	60	\N	\N	\N	\N	f	[]	t	f	f
+601896	50790	7	accur	7	Accur	number	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	70	\N	\N	\N	\N	f	[]	t	f	f
+601897	50790	8	notnull	8	Not Null	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	80	\N	\N	\N	\N	f	[]	t	f	f
+601898	50790	9	uniq	9	Uniq	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	90	\N	\N	\N	\N	f	[]	t	f	f
+601899	50790	10	defval	10	Default	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	100	\N	\N	\N	\N	f	[]	t	f	f
+601906	50791	4	coldesc	4	Description	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 17:58:34.996501	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601916	50792	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-13 18:38:40.005858	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601930	50793	4	fullname	4	fullname	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-14 10:32:19.679899	[]	[]	\N	81	\N	\N	\N	\N	f	[]	f	f	f
+601922	50793	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601923	50793	2	tableschemaname	2	tableschemaname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601929	50793	8	noscript	8	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+601924	50793	3	tablename	3	Table name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601931	50789	9	functionfulltitle	9	title	label	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-14 12:10:53.300908	[]	[]	\N	45	\N	\N	\N	\N	f	[]	f	f	f
+601926	50793	5	descr	5	Description	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 09:50:06.44016	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+601886	50789	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601885	50789	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601932	50794	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601934	50794	3	functiontitle	3	functiontitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601933	50794	2	functionschema	2	functionschema	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601935	50794	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601936	50794	5	descr	5	descr	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+601940	50794	9	functionfulltitle	9	functionfulltitle	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+601887	50789	5	descr	5	descr	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-11 18:46:40.658036	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f	f
+601941	50794	10	dll	10	DLL	codeEditor	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 13:19:40.032952	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f	f
+601944	50796	2	functionschema	2	schema	select_api	[]	t	f	12	f		f	\N	/api/schemas_sel	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601947	50796	5	descr	5	descr	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+601946	50796	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601945	50796	3	functiontitle	3	title	text	[]	t	f	12	f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601943	50796	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-14 17:00:53.37245	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601957	50797	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601956	50797	4	fullname	4	fullname	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+601955	50797	5	descr	5	descr	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+601958	50797	12	returntype	13	Return	select_api	[]	t	f	24	f	\N	f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-15 10:35:58.563052	[]	[]	\N	51	\N	\N	\N	\N	f	[]	f	f	f
+601953	50797	3	functiontitle	3	Title	text	[]	t	f	12	f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601954	50797	2	functionschema	2	Schema	select_api	[]	t	f	12	f		f	\N	/api/schemas_sel	\N	f	f	\N	f	2020-05-15 10:15:56.440015	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601878	50788	3	tablename	3	tablename	text	[]	t	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-11 18:07:01.30863	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f	f
+601961	50798	3	argname	3	Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	30	\N	\N	\N	\N	f	[]	t	f	f
+601967	50799	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601968	50799	2	triggername	2	Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f	f
+601972	50799	6	functionname	7	Function	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+601962	50798	4	argtype	4	Type	select_api	[]	t	f		f		f	\N	/api/types_sel	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	40	\N	\N	\N	\N	f	[]	t	f	f
+601973	50799	7	functionoid	8	functionoid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+601959	50798	1	id	1	aid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601960	50798	2	oid	2	id	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601963	50798	5	argmode	5	Mode	select_api	[]	t	f		f		f	\N	/api/modes_sel	\N	t	f	\N	f	2020-05-15 10:41:27.990213	[]	[]	\N	50	\N	\N	\N	\N	f	[]	t	f	f
+601966	50797	13	definition	14	Definition	codeEditor	[]	t	f	24	f	\N	t	\N	\N	\N	f	f	\N	f	2020-05-15 11:16:42.567809	[]	[]	\N	52	\N	\N	\N	\N	f	[]	f	f	f
+601977	50799	11	oninstead	12	Instead	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f	f
+601974	50799	8	enables	9	Enable	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	80	\N	\N	\N	\N	f	[]	t	f	f
+601975	50799	9	onbefore	10	Before	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	90	\N	\N	\N	\N	f	[]	t	f	f
+601976	50799	10	onafter	11	After	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	100	\N	\N	\N	\N	f	[]	t	f	f
+601978	50799	12	oninsert	13	Insert	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	120	\N	\N	\N	\N	f	[]	t	f	f
+601979	50799	13	onupdate	14	Update	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	130	\N	\N	\N	\N	f	[]	t	f	f
+601980	50799	14	ondelete	15	Delete	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	140	\N	\N	\N	\N	f	[]	t	f	f
+601981	50799	15	ontruncate	16	Truncate	checkbox	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	150	\N	\N	\N	\N	f	[]	t	f	f
+601982	50800	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601984	50800	3	tablename	4	tablename	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+601997	50800	16	noscript	17	noscript	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	160	\N	\N	\N	\N	f	[]	f	f	f
+601983	50800	2	triggername	2	Name	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+601993	50800	12	oninsert	13	On Insert	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f	f
+601994	50800	13	onupdate	14	On Update	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	130	\N	\N	\N	\N	f	[]	f	f	f
+601995	50800	14	ondelete	15	On Delete	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	140	\N	\N	\N	\N	f	[]	f	f	f
+601996	50800	15	ontruncate	16	On Truncate	checkbox	[]	t	f	2	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	150	\N	\N	\N	\N	f	[]	f	f	f
+601990	50800	9	onbefore	10	Before	checkbox	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+601991	50800	10	onafter	11	After	checkbox	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 11:44:13.185014	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f	f
+601998	50801	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602014	50801	17	functiondef	18	Definition	codeEditor	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	170	\N	\N	\N	\N	f	[]	f	f	f
+602000	50801	3	tablename	4	Table	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+601999	50801	2	triggername	2	Trigger Name	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602003	50801	6	functionname	7	Function	label	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-18 14:11:08.704342	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602015	50802	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602018	50802	4	maintableid	4	maintableid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602020	50802	6	parenttableid	6	parenttableid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602030	50803	5	parentablename	5	Foreign Table	select_api	[]	t	f		f		f	\N	/api/fk_tables_sel	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+602033	50803	8	parentcol	8	Foreign Field	select_api	[]	t	f		f		f	\N	/api/fk_parentcols_sel	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+602016	50802	2	ftitle	2	Foreign Key Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	20	\N	\N	\N	\N	f	[]	t	f	f
+602017	50802	3	maintablename	3	tablename	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602021	50802	7	maincol	7	On Field	select_api	[]	t	f		f		f	\N	/api/fk_maintablecols_select	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	23	\N	\N	\N	\N	f	[]	t	f	f
+602026	50803	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602031	50803	6	parenttableid	6	parenttableid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602019	50802	5	parentablename	5	FK Table	select_api	[]	t	f		f		f	\N	/api/fk_tables_sel	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	33	\N	\N	\N	\N	f	[]	t	f	f
+602027	50803	2	ftitle	2	FK Name	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602022	50802	8	parentcol	8	FK Field	select_api	[]	t	f		f		f	\N	/api/fk_parentcols_sel	\N	f	f	\N	f	2020-05-18 16:10:55.732921	[]	[]	\N	35	\N	\N	\N	\N	f	[]	t	f	f
+602032	50803	7	maincol	7	Main Field	select_api	[]	t	f		f		f	\N	/api/fk_maintablecols_select	\N	f	f	\N	f	2020-05-18 17:26:37.113545	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602038	50804	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-21 14:00:19.69668	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+601969	50799	3	tablename	4	tablename	label	[]	t	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-15 17:03:32.139491	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602040	50804	3	tablename	3	Table	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-21 14:00:19.69668	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602056	50799	18	fields	18	Fields	multiselect_api	[]	t	f	\N	f	\N	f	\N	/api/trigger_fields	\N	f	f	\N	f	2020-05-21 14:11:42.745277	[]	[]	\N	151	\N	\N	\N	\N	f	[]	t	f	f
+13080	101	3	title	3	title	text	[]	t	f	30%	f	col-md-11	t	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	3	\N	\N	\N	\N	f	[]	f	f	f
+602055	50804	18	fields	18	Fields	multiselect_api	[]	t	f		f		t	\N	/api/trigger_fields	\N	f	f	\N	f	2020-05-21 14:00:19.69668	[]	[]	\N	180	\N	\N	\N	\N	f	[]	f	f	f
+602057	50783	13	ischat	13	ischat	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-05-21 16:28:46.985152	[]	[]	\N	92	\N	\N	\N	\N	f	[]	f	f	f
+603332	50854	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+603333	50854	2	title	2	title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+603334	50854	3	path	3	path	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+603335	50854	4	config	4	config	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 04:40:56	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+603339	50854	6	viscond_function	6	viscond_function	select_api	[]	t	f	\N	f	\N	f	\N	/api/getfunctions	\N	f	f	\N	f	2020-05-22 04:43:46	[]	[]	\N	41	\N	\N	\N	\N	f	[]	f	f	f
+603447	50855	1	id	1	ciid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+603448	50855	2	compoid	2	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+603450	50855	4	width	4	width	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	55	\N	\N	\N	\N	f	[]	t	f	f
+603451	50855	5	created	5	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-22 06:59:33	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+603528	50855	6	rownum	5	rownum	number	[]	t	f	\N	f	\N	f	\N	\N	\N	t	f	\N	f	2020-05-22 08:08:41	[]	[]	\N	40	\N	\N	\N	\N	f	[]	t	f	f
+603453	50855	3	viewid	3	view	typehead	[]	t	f	\N	f	\N	f	framework.views	\N	\N	f	f	id	f	2020-05-22 07:00:58	["id", "title"]	[]	\N	51	\N	\N	\N	\N	f	[]	t	f	f
+13202	243	2	actionid	2	act_id	label	[]	f	t		f		f	framework.actions	\N	\N	f	f	id	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+602073	241	14	fname	\N	fname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-29 11:15:17.143855	[]	[]	\N	16	\N	\N	position	framework.filter_position	t	[]	f	f	f
+602072	241	14	id	\N	id_602071	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-05-29 11:15:13.50691	[]	[]	\N	15	\N	\N	position	framework.filter_position	t	[]	f	f	f
+602071	241	14	position	14	position	select	[]	t	f	\N	f	\N	f	framework.filter_position	\N	\N	f	f	id	f	2020-05-29 11:14:45.249131	["id", "fname"]	[]	\N	14	\N	\N	\N	\N	f	[]	t	f	f
+602077	50856	2	lang	2	lang	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:07.261626	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602095	50859	8	first_message	8	first message in dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+602088	50859	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602083	50857	4	created	4	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602076	50856	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:07.261626	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602079	50856	4	created	4	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:07.261626	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602097	50859	10	photo	10	photo	image	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	1	\N	\N	\N	\N	f	[]	f	f	f
+602081	50857	2	lang	2	lang	text	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602082	50857	3	instructtext	3	instructtext	texteditor	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602096	50859	9	last_message_date	9	last mesage date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+602080	50857	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 18:47:45.413894	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602084	50858	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602087	50858	4	created	4	created	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602086	50858	3	instructtext	3	_	innerHtml	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602099	50859	12	creator	12	dialog creator userid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f	f
+602098	50859	11	dialog_admins	11	admin users	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f	f
+602090	50859	3	users	3	users of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602092	50859	5	userid	5	user who create dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+602093	50859	6	created	6	create date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602094	50859	7	status	7	status of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+602112	50860	10	isread	10	when user read message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f	f
+602113	50860	11	isupdated	11	when user update the message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f	f
+602101	50859	14	last_mennsage	\N	last_message	label	[]	t	f	20	f	nob	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:13:33.308205	[]	[]	\N	23	framework.fn_dialog_lasmessage	["602088"]	\N	\N	f	[]	f	f	f
+602117	50860	2	photo	\N	photo	image	[]	t	f	5	f	nob avka	f	\N	\N	\N	f	f	id	f	2020-06-06 22:21:16.040046	[]	[]	\N	19	\N	\N	userid	framework.users	t	[]	f	f	f
+602114	50860	12	user_reads	12	users who reads the message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f	f
+602119	50855	3	id	\N	id_603453	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-06-08 19:42:51.144022	[]	[]	\N	57	\N	\N	viewid	framework.views	t	[]	f	f	f
+602118	50855	3	classname	\N	classname	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-06-08 19:42:49.955429	[]	[]	\N	56	\N	\N	viewid	framework.views	t	[]	f	f	f
+602109	50860	7	files	7	files	filelist	[]	t	f		f	nob	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+602107	50860	5	forwarded_from	5	forward from message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+602106	50860	4	reply_to	4	reply to message id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602103	50860	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602110	50860	8	images	8	images	gallery	[]	t	f		f	nob	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+602116	50860	2	login	\N	login	label	[]	t	f	6	f	nob chat_login 	f	\N	\N	\N	f	f	id	f	2020-06-06 22:21:06.072179	[]	[]	\N	20	\N	\N	userid	framework.users	t	[]	f	f	f
+602115	50860	2	userid	2	userid	label	[]	f	f	\N	f	\N	f	framework.users	\N	\N	f	f	id	f	2020-06-06 22:11:21.024565	["login", "photo"]	[]	\N	15	\N	\N	\N	\N	f	[]	f	f	f
+602111	50860	9	created	9	created	label	[]	t	f	7	f	nob chat_time	f	\N	\N	\N	t	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	22	\N	\N	\N	\N	f	[]	f	f	f
+602105	50860	3	message_text	3	message	label	[]	t	f	24	f	nob chat_message	f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602089	50859	2	title	2	title	label	[]	t	f	19	f	nob chattitle	f	\N	\N	\N	f	f	\N	f	2020-06-06 20:57:19.360481	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602127	50861	7	status	7	status of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+602120	50855	3	title	\N	title	label	[]	f	f	\N	f		f	\N	\N	\N	f	f	id	f	2020-06-08 19:43:01.447303	[]	[]	\N	58	\N	\N	viewid	framework.views	t	[]	f	f	f
+602108	50860	6	dialog_id	6	dialog_id	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-06-06 21:43:02.428185	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602133	50862	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602134	50862	2	title	2	Title	text	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602145	50859	4	dtype	4	dtype	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-09 13:10:40.243928	[]	[]	\N	121	\N	\N	\N	\N	f	[]	f	f	f
+602128	50861	8	first_message	8	first message in dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+602121	50861	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602122	50861	2	title	2	title of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602141	50862	9	last_message_date	9	last mesage date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+602137	50862	5	userid	5	user who create dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+602135	50862	3	users	3	Users	multitypehead	[]	t	f		f		f	\N	\N	framework.users	f	f	\N	f	2020-06-09 12:32:45.365758	["id", "login"]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602148	50859	16	dialog photo	\N	dialog photo	gallery	[]	t	f	\N	f	nob avka	f	\N	\N	\N	f	f	\N	f	2020-06-09 13:19:14.980615	[]	[]	\N	13	framework.fn_dialog_photo	["_userid_", "602145", "602090", "602097"]	\N	\N	f	[]	f	f	f
+602140	50862	8	first_message	8	First Message	textarea	[]	f	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-09 12:32:45.365758	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f	f
+602150	50863	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602151	50863	2	userid	2	who send	label	[]	f	f		f		f	framework.users	\N	\N	f	f	id	f	2020-06-09 17:07:40.589023	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602153	50863	4	reply_to	4	reply to message id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602154	50863	5	forwarded_from	5	forward from message	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+602155	50863	6	dialog_id	6	dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602156	50863	7	files	7	files	files	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	70	\N	\N	\N	\N	f	[]	f	f	f
+602157	50863	8	images	8	images	images	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	80	\N	\N	\N	\N	f	[]	f	f	f
+602152	50863	3	message_text	3	message	textarea	[]	t	f	24	f		t	\N	\N	\N	f	f	\N	f	2020-06-09 17:07:40.589023	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602147	50859	15	cond	\N	cond	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-09 13:16:01.777021	[]	[]	\N	13	framework.fn_dialog_userinchat	["_userid_", "602090"]	\N	\N	f	[]	f	f	f
+602149	50860	13	collorrow	\N	collorrow	colorrow	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-09 16:53:42.381901	[]	[]	\N	13	framework.fn_dialogmessage_color	["_userid_", "602115"]	\N	\N	f	[]	f	f	f
+602123	50861	3	users	3	users of dialog	multitypehead	[]	t	f		f		f	\N	\N	framework.users	f	f	\N	f	2020-06-09 11:44:37.71825	["id", "login"]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602129	50861	9	last_message_date	9	last mesage date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	90	\N	\N	\N	\N	f	[]	f	f	f
+602130	50861	10	photo	10	dialog photo\r\nonly for groups	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	100	\N	\N	\N	\N	f	[]	f	f	f
+602124	50861	4	dtype	4	type of dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602125	50861	5	userid	5	user who create dialog	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	50	\N	\N	\N	\N	f	[]	f	f	f
+602126	50861	6	created	6	create date	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602131	50861	11	dialog_admins	11	admin users	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	110	\N	\N	\N	\N	f	[]	f	f	f
+602132	50861	12	creator	12	dialog creator userid	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 11:44:37.71825	[]	[]	\N	120	\N	\N	\N	\N	f	[]	f	f	f
+602176	50864	12	isadmin	\N	isadmin	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:27:26.577332	[]	[]	\N	12	framework.fn_dialog_isadmin	["602175", "_userid_"]	\N	\N	f	[]	f	f	f
+602184	50866	3	querytext	3	querytext	textarea	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	30	\N	\N	\N	\N	f	[]	f	f	f
+602185	50866	4	result	4	result	innerHtml	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	40	\N	\N	\N	\N	f	[]	f	f	f
+602187	50866	6	exectime	7	exectime	label	[]	t	f	24	f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	60	\N	\N	\N	\N	f	[]	f	f	f
+602178	50864	2	title	2	title	text	[]	t	f	24	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:29:00.784895	[]	[]	\N	8	\N	\N	\N	\N	f	[]	f	f	f
+602179	50864	10	photo	10	photo	image	[]	t	f	24	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:30:36.486474	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+602174	50859	17	unreaded	\N	unreaded	label	[]	t	f	4	f	nob unreaded	f	\N	\N	\N	f	f	\N	f	2020-06-10 16:25:27.983358	[]	[]	\N	24	framework.fn_dialog_unreadedcount	["602088", "_userid_"]	\N	\N	f	[]	f	f	f
+602164	50864	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-09 17:18:42.98408	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602180	50864	3	users	3	users	multiselect	[]	t	f	24	f	\N	f	\N	\N	framework.users	f	f	\N	f	2020-06-10 20:34:17.90959	["id", "login"]	[]	\N	14	\N	\N	\N	\N	f	[]	f	f	f
+602175	50864	11	dialog_admins	11	admins	multiselect	[]	t	f	24	f	\N	f	\N	\N	framework.users	f	f	\N	f	2020-06-10 20:12:22.856449	["id", "login"]	["id", "login"]	\N	11	\N	\N	\N	\N	f	[]	f	f	f
+602177	50864	4	dtype	4	dtype	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 20:28:42.095719	[]	[]	\N	13	\N	\N	\N	\N	f	[]	f	f	f
+602181	50859	18	isadmin	\N	isadmin	label	[]	f	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2020-06-10 21:11:17.317736	[]	[]	\N	13	framework.fn_dialog_isadmin	["602098", "_userid_"]	\N	\N	f	[]	f	f	f
+19346	118	5	template	5	Template	filelist	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 10:56:42.165857	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+19388	118	17	filename	13	File name	text	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2019-12-25 11:04:47.818399	[]	[]	\N	5	\N	\N	\N	\N	f	[]	f	f	f
+601890	50790	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	t	f	\N	f	2020-05-13 09:32:22.479359	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+602182	50866	1	id	1	id	label	[]	f	f		f		f	\N	\N	\N	f	f	\N	f	2020-06-16 21:15:28.054102	[]	[]	\N	10	\N	\N	\N	\N	f	[]	f	f	f
+13123	237	8	path	8	path	label	[]	t	f		f		f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	7	\N	\N	\N	\N	f	[]	f	f	f
+12963	55	6	password	6	Password	password	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	6	\N	\N	\N	\N	f	[]	f	f	f
+12961	55	4	ot	4	SecondName	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	4	\N	\N	\N	\N	f	[]	f	f	f
+12959	55	2	fam	2	LastName	label	[]	t	f		f	\N	f	\N	\N	\N	f	f	\N	f	2019-11-05 10:00:17.290746	[]	[]	\N	2	\N	\N	\N	\N	f	[]	f	f	f
+602188	50783	14	template	14	template	select	[]	t	f	\N	f	\N	f	framework.templates	\N	\N	f	f	template	f	2021-03-14 21:13:52.58357	["template"]	[]	\N	93	\N	\N	\N	\N	f	[]	f	f	f
+602085	50858	2	lang	2	lang	label	[]	f	t		f		f	\N	\N	\N	f	f	\N	f	2020-05-31 21:04:43.985807	[]	[]	\N	20	\N	\N	\N	\N	f	[]	f	f	f
+602190	215	37	diagram	32	diagram	diagram_api	[]	t	f	\N	f	\N	f	\N	/api/diagram	\N	f	f	\N	f	2021-03-16 08:32:12.434269	[]	[]	\N	37	\N	\N	\N	\N	f	[]	f	f	f
+602191	32	12	roles	12	roles	multiselect	[]	t	f	\N	f	\N	f	\N	\N	framework.roles	f	f	\N	f	2021-03-25 12:59:32.094846	["id", "rolename"]	[]	\N	12	\N	\N	\N	\N	f	[]	f	f	f
+602200	239	35	disabled	35	disabled	checkbox	[]	t	f	\N	f	\N	f	\N	\N	\N	f	f	\N	f	2021-05-12 11:36:33.90645	[]	[]	\N	16	\N	\N	\N	\N	f	[]	t	f	f
 \.
 
 
 --
--- TOC entry 3800 (class 0 OID 0)
+-- TOC entry 3804 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: config_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('config_id_seq', 602199, true);
+SELECT pg_catalog.setval('config_id_seq', 602200, true);
 
 
 --
--- TOC entry 3300 (class 0 OID 52245)
+-- TOC entry 3304 (class 0 OID 52245)
 -- Dependencies: 214
 -- Data for Name: configsettings; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22897,7 +23095,7 @@ COPY configsettings (id, sname) FROM stdin;
 
 
 --
--- TOC entry 3801 (class 0 OID 0)
+-- TOC entry 3805 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: configsettings_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22906,7 +23104,7 @@ SELECT pg_catalog.setval('configsettings_id_seq', 10, true);
 
 
 --
--- TOC entry 3302 (class 0 OID 52250)
+-- TOC entry 3306 (class 0 OID 52250)
 -- Dependencies: 216
 -- Data for Name: defaultval; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22927,7 +23125,7 @@ COPY defaultval (id, configid, bool, act, value, created) FROM stdin;
 
 
 --
--- TOC entry 3802 (class 0 OID 0)
+-- TOC entry 3806 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: defaultval_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22936,7 +23134,7 @@ SELECT pg_catalog.setval('defaultval_id_seq', 732, true);
 
 
 --
--- TOC entry 3304 (class 0 OID 52256)
+-- TOC entry 3308 (class 0 OID 52256)
 -- Dependencies: 218
 -- Data for Name: dialog_messages; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22947,7 +23145,7 @@ COPY dialog_messages (id, userid, message_text, reply_to, forwarded_from, dialog
 
 
 --
--- TOC entry 3803 (class 0 OID 0)
+-- TOC entry 3807 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: dialog_messages_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22956,7 +23154,7 @@ SELECT pg_catalog.setval('dialog_messages_id_seq', 38, true);
 
 
 --
--- TOC entry 3306 (class 0 OID 52270)
+-- TOC entry 3310 (class 0 OID 52270)
 -- Dependencies: 220
 -- Data for Name: dialog_notifications; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22979,7 +23177,7 @@ COPY dialog_notifications (id, dialog_id, sender_userid, userid, message_text, c
 
 
 --
--- TOC entry 3804 (class 0 OID 0)
+-- TOC entry 3808 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: dialog_notifications_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22988,7 +23186,7 @@ SELECT pg_catalog.setval('dialog_notifications_id_seq', 13, true);
 
 
 --
--- TOC entry 3308 (class 0 OID 52281)
+-- TOC entry 3312 (class 0 OID 52281)
 -- Dependencies: 222
 -- Data for Name: dialog_statuses; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22998,7 +23196,7 @@ COPY dialog_statuses (id, sname) FROM stdin;
 
 
 --
--- TOC entry 3805 (class 0 OID 0)
+-- TOC entry 3809 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: dialog_statuses_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23007,7 +23205,7 @@ SELECT pg_catalog.setval('dialog_statuses_id_seq', 1, false);
 
 
 --
--- TOC entry 3310 (class 0 OID 52286)
+-- TOC entry 3314 (class 0 OID 52286)
 -- Dependencies: 224
 -- Data for Name: dialog_types; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23019,7 +23217,7 @@ COPY dialog_types (id, tname) FROM stdin;
 
 
 --
--- TOC entry 3311 (class 0 OID 52289)
+-- TOC entry 3315 (class 0 OID 52289)
 -- Dependencies: 225
 -- Data for Name: dialogs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23030,7 +23228,7 @@ COPY dialogs (id, title, users, dtype, userid, created, status, first_message, l
 
 
 --
--- TOC entry 3806 (class 0 OID 0)
+-- TOC entry 3810 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: dialogs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23039,7 +23237,7 @@ SELECT pg_catalog.setval('dialogs_id_seq', 32, true);
 
 
 --
--- TOC entry 3807 (class 0 OID 0)
+-- TOC entry 3811 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: dialogs_status_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23048,7 +23246,7 @@ SELECT pg_catalog.setval('dialogs_status_seq', 1, false);
 
 
 --
--- TOC entry 3314 (class 0 OID 52307)
+-- TOC entry 3318 (class 0 OID 52307)
 -- Dependencies: 228
 -- Data for Name: filter_position; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23060,7 +23258,7 @@ COPY filter_position (id, fname) FROM stdin;
 
 
 --
--- TOC entry 3315 (class 0 OID 52310)
+-- TOC entry 3319 (class 0 OID 52310)
 -- Dependencies: 229
 -- Data for Name: filters; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23106,7 +23304,7 @@ COPY filters (id, column_order, viewid, title, type, classname, "column", column
 
 
 --
--- TOC entry 3808 (class 0 OID 0)
+-- TOC entry 3812 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: filters_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23115,7 +23313,7 @@ SELECT pg_catalog.setval('filters_id_seq', 6036, true);
 
 
 --
--- TOC entry 3317 (class 0 OID 52325)
+-- TOC entry 3321 (class 0 OID 52325)
 -- Dependencies: 231
 -- Data for Name: filtertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23133,7 +23331,7 @@ COPY filtertypes (id, ftname) FROM stdin;
 
 
 --
--- TOC entry 3318 (class 0 OID 52328)
+-- TOC entry 3322 (class 0 OID 52328)
 -- Dependencies: 232
 -- Data for Name: functions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23148,7 +23346,7 @@ COPY functions (id, funcname, functype) FROM stdin;
 
 
 --
--- TOC entry 3319 (class 0 OID 52331)
+-- TOC entry 3323 (class 0 OID 52331)
 -- Dependencies: 233
 -- Data for Name: instructions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23160,7 +23358,7 @@ COPY instructions (id, lang, instructtext, created) FROM stdin;
 
 
 --
--- TOC entry 3809 (class 0 OID 0)
+-- TOC entry 3813 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: instructions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23169,7 +23367,7 @@ SELECT pg_catalog.setval('instructions_id_seq', 2, true);
 
 
 --
--- TOC entry 3321 (class 0 OID 52340)
+-- TOC entry 3325 (class 0 OID 52340)
 -- Dependencies: 235
 -- Data for Name: logtable; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23179,16 +23377,16 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 
 
 --
--- TOC entry 3810 (class 0 OID 0)
+-- TOC entry 3814 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 429, true);
+SELECT pg_catalog.setval('logtable_id_seq', 433, true);
 
 
 --
--- TOC entry 3323 (class 0 OID 52350)
+-- TOC entry 3327 (class 0 OID 52350)
 -- Dependencies: 237
 -- Data for Name: mainmenu; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23222,7 +23420,7 @@ COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, 
 
 
 --
--- TOC entry 3811 (class 0 OID 0)
+-- TOC entry 3815 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: mainmenu_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23231,7 +23429,7 @@ SELECT pg_catalog.setval('mainmenu_id_seq', 271, true);
 
 
 --
--- TOC entry 3325 (class 0 OID 52365)
+-- TOC entry 3329 (class 0 OID 52365)
 -- Dependencies: 239
 -- Data for Name: mainsettings; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23242,7 +23440,7 @@ COPY mainsettings (id, dsn, port, "developerRole", maindomain, "primaryAuthoriza
 
 
 --
--- TOC entry 3326 (class 0 OID 52384)
+-- TOC entry 3330 (class 0 OID 52384)
 -- Dependencies: 240
 -- Data for Name: menus; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23254,7 +23452,7 @@ COPY menus (id, menutype, menutitle, ismainmenu) FROM stdin;
 
 
 --
--- TOC entry 3812 (class 0 OID 0)
+-- TOC entry 3816 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: menus_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23263,7 +23461,7 @@ SELECT pg_catalog.setval('menus_id_seq', 3, true);
 
 
 --
--- TOC entry 3328 (class 0 OID 52390)
+-- TOC entry 3332 (class 0 OID 52390)
 -- Dependencies: 242
 -- Data for Name: menutypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23276,7 +23474,7 @@ COPY menutypes (id, mtypename) FROM stdin;
 
 
 --
--- TOC entry 3813 (class 0 OID 0)
+-- TOC entry 3817 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: menutypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23285,7 +23483,7 @@ SELECT pg_catalog.setval('menutypes_id_seq', 4, true);
 
 
 --
--- TOC entry 3330 (class 0 OID 52398)
+-- TOC entry 3334 (class 0 OID 52398)
 -- Dependencies: 244
 -- Data for Name: methodtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23299,7 +23497,7 @@ COPY methodtypes (id, methotypename) FROM stdin;
 
 
 --
--- TOC entry 3331 (class 0 OID 52401)
+-- TOC entry 3335 (class 0 OID 52401)
 -- Dependencies: 245
 -- Data for Name: notifications; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23311,7 +23509,7 @@ COPY notifications (id, message, messagetype, for_userid, sended_sessions, isrea
 
 
 --
--- TOC entry 3814 (class 0 OID 0)
+-- TOC entry 3818 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: notifications_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23320,7 +23518,7 @@ SELECT pg_catalog.setval('notifications_id_seq', 6, true);
 
 
 --
--- TOC entry 3333 (class 0 OID 52413)
+-- TOC entry 3337 (class 0 OID 52413)
 -- Dependencies: 247
 -- Data for Name: operations; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23344,7 +23542,7 @@ COPY operations (id, value, js, python, sql) FROM stdin;
 
 
 --
--- TOC entry 3815 (class 0 OID 0)
+-- TOC entry 3819 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: operations_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23353,7 +23551,7 @@ SELECT pg_catalog.setval('operations_id_seq', 14, true);
 
 
 --
--- TOC entry 3335 (class 0 OID 52418)
+-- TOC entry 3339 (class 0 OID 52418)
 -- Dependencies: 249
 -- Data for Name: opertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23367,7 +23565,7 @@ COPY opertypes (id, typename, alias) FROM stdin;
 
 
 --
--- TOC entry 3336 (class 0 OID 52421)
+-- TOC entry 3340 (class 0 OID 52421)
 -- Dependencies: 250
 -- Data for Name: orgs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23378,7 +23576,7 @@ COPY orgs (id, orgname, orgtype, parentid, shortname, created, userid, photo) FR
 
 
 --
--- TOC entry 3816 (class 0 OID 0)
+-- TOC entry 3820 (class 0 OID 0)
 -- Dependencies: 251
 -- Name: orgs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23387,7 +23585,7 @@ SELECT pg_catalog.setval('orgs_id_seq', 11, true);
 
 
 --
--- TOC entry 3338 (class 0 OID 52433)
+-- TOC entry 3342 (class 0 OID 52433)
 -- Dependencies: 252
 -- Data for Name: orgtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23398,7 +23596,7 @@ COPY orgtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3339 (class 0 OID 52436)
+-- TOC entry 3343 (class 0 OID 52436)
 -- Dependencies: 253
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23411,7 +23609,7 @@ COPY paramtypes (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 3340 (class 0 OID 52440)
+-- TOC entry 3344 (class 0 OID 52440)
 -- Dependencies: 254
 -- Data for Name: roles; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23422,7 +23620,7 @@ COPY roles (id, rolename, hierarchy) FROM stdin;
 
 
 --
--- TOC entry 3341 (class 0 OID 52443)
+-- TOC entry 3345 (class 0 OID 52443)
 -- Dependencies: 255
 -- Data for Name: select_condition; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23441,7 +23639,7 @@ COPY select_condition (id, configid, col, operation, const, value, created, val_
 
 
 --
--- TOC entry 3817 (class 0 OID 0)
+-- TOC entry 3821 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: select_condition_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23450,17 +23648,18 @@ SELECT pg_catalog.setval('select_condition_id_seq', 1198, true);
 
 
 --
--- TOC entry 3343 (class 0 OID 52452)
+-- TOC entry 3347 (class 0 OID 52452)
 -- Dependencies: 257
 -- Data for Name: sess; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY sess (id, userid, created, killed) FROM stdin;
+d081bf08-9af5-45e7-bbfd-4231b576fc8d	1	2021-05-12 11:36:05.697253	\N
 \.
 
 
 --
--- TOC entry 3344 (class 0 OID 52456)
+-- TOC entry 3348 (class 0 OID 52456)
 -- Dependencies: 258
 -- Data for Name: spapi; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23570,7 +23769,7 @@ COPY spapi (id, methodname, procedurename, created, methodtype, roles) FROM stdi
 
 
 --
--- TOC entry 3818 (class 0 OID 0)
+-- TOC entry 3822 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: spapi_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23579,7 +23778,7 @@ SELECT pg_catalog.setval('spapi_id_seq', 832, true);
 
 
 --
--- TOC entry 3399 (class 0 OID 68342)
+-- TOC entry 3403 (class 0 OID 68342)
 -- Dependencies: 313
 -- Data for Name: templates; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23591,7 +23790,7 @@ COPY templates (id, template) FROM stdin;
 
 
 --
--- TOC entry 3819 (class 0 OID 0)
+-- TOC entry 3823 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: templates_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23600,7 +23799,7 @@ SELECT pg_catalog.setval('templates_id_seq', 2, true);
 
 
 --
--- TOC entry 3346 (class 0 OID 52466)
+-- TOC entry 3350 (class 0 OID 52466)
 -- Dependencies: 260
 -- Data for Name: trees; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23612,7 +23811,7 @@ COPY trees (id, title, url, descr, roles, created, userid, orgid, acts) FROM std
 
 
 --
--- TOC entry 3820 (class 0 OID 0)
+-- TOC entry 3824 (class 0 OID 0)
 -- Dependencies: 261
 -- Name: trees_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23621,7 +23820,7 @@ SELECT pg_catalog.setval('trees_id_seq', 3, true);
 
 
 --
--- TOC entry 3348 (class 0 OID 52477)
+-- TOC entry 3352 (class 0 OID 52477)
 -- Dependencies: 262
 -- Data for Name: treesacts; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23631,7 +23830,7 @@ COPY treesacts (id, treesid, title, icon, classname, act, created) FROM stdin;
 
 
 --
--- TOC entry 3821 (class 0 OID 0)
+-- TOC entry 3825 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: treesacts_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23640,7 +23839,7 @@ SELECT pg_catalog.setval('treesacts_id_seq', 1, false);
 
 
 --
--- TOC entry 3350 (class 0 OID 52486)
+-- TOC entry 3354 (class 0 OID 52486)
 -- Dependencies: 264
 -- Data for Name: treesbranches; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23654,7 +23853,7 @@ COPY treesbranches (id, treesid, title, parentid, icon, created, treeviewtype, v
 
 
 --
--- TOC entry 3822 (class 0 OID 0)
+-- TOC entry 3826 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: treesbranches_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23663,7 +23862,7 @@ SELECT pg_catalog.setval('treesbranches_id_seq', 4, true);
 
 
 --
--- TOC entry 3352 (class 0 OID 52496)
+-- TOC entry 3356 (class 0 OID 52496)
 -- Dependencies: 266
 -- Data for Name: treeviewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23675,7 +23874,7 @@ COPY treeviewtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3353 (class 0 OID 52499)
+-- TOC entry 3357 (class 0 OID 52499)
 -- Dependencies: 267
 -- Data for Name: users; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23687,7 +23886,7 @@ COPY users (id, fam, im, ot, login, password, isactive, created, roles, roleid, 
 
 
 --
--- TOC entry 3823 (class 0 OID 0)
+-- TOC entry 3827 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23696,7 +23895,7 @@ SELECT pg_catalog.setval('users_id_seq', 8, true);
 
 
 --
--- TOC entry 3355 (class 0 OID 52515)
+-- TOC entry 3359 (class 0 OID 52515)
 -- Dependencies: 269
 -- Data for Name: views; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23790,7 +23989,7 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 
 
 --
--- TOC entry 3824 (class 0 OID 0)
+-- TOC entry 3828 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: views_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23799,7 +23998,7 @@ SELECT pg_catalog.setval('views_id_seq', 50868, true);
 
 
 --
--- TOC entry 3357 (class 0 OID 52539)
+-- TOC entry 3361 (class 0 OID 52539)
 -- Dependencies: 271
 -- Data for Name: viewsnotification; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23863,7 +24062,7 @@ COPY viewsnotification (id, viewid, col, tableid, notificationtext, foruser, iss
 
 
 --
--- TOC entry 3825 (class 0 OID 0)
+-- TOC entry 3829 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: viewsnotification_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23872,7 +24071,7 @@ SELECT pg_catalog.setval('viewsnotification_id_seq', 54, true);
 
 
 --
--- TOC entry 3359 (class 0 OID 52551)
+-- TOC entry 3363 (class 0 OID 52551)
 -- Dependencies: 273
 -- Data for Name: viewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23887,7 +24086,7 @@ COPY viewtypes (id, vtypename, viewlink) FROM stdin;
 
 
 --
--- TOC entry 3360 (class 0 OID 52557)
+-- TOC entry 3364 (class 0 OID 52557)
 -- Dependencies: 274
 -- Data for Name: visible_condition; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24045,7 +24244,7 @@ COPY visible_condition (id, configid, val_desc, col, title, operation, value, cr
 
 
 --
--- TOC entry 3826 (class 0 OID 0)
+-- TOC entry 3830 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: visible_condition_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24056,7 +24255,7 @@ SELECT pg_catalog.setval('visible_condition_id_seq', 5968, true);
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 3362 (class 0 OID 52566)
+-- TOC entry 3366 (class 0 OID 52566)
 -- Dependencies: 276
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -24066,7 +24265,7 @@ COPY paramtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3363 (class 0 OID 52569)
+-- TOC entry 3367 (class 0 OID 52569)
 -- Dependencies: 277
 -- Data for Name: reportlist; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -24077,7 +24276,7 @@ COPY reportlist (id, title, roles, path, template, template_path, functitle, cre
 
 
 --
--- TOC entry 3827 (class 0 OID 0)
+-- TOC entry 3831 (class 0 OID 0)
 -- Dependencies: 278
 -- Name: reportlist_id_seq; Type: SEQUENCE SET; Schema: reports; Owner: postgres
 --
@@ -24086,7 +24285,7 @@ SELECT pg_catalog.setval('reportlist_id_seq', 1, true);
 
 
 --
--- TOC entry 3365 (class 0 OID 52581)
+-- TOC entry 3369 (class 0 OID 52581)
 -- Dependencies: 279
 -- Data for Name: reportparams; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -24096,7 +24295,7 @@ COPY reportparams (id, reportlistid, ptitle, func_paramtitle, ptype, created, ap
 
 
 --
--- TOC entry 3828 (class 0 OID 0)
+-- TOC entry 3832 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: reportparams_id_seq; Type: SEQUENCE SET; Schema: reports; Owner: postgres
 --
@@ -24107,7 +24306,7 @@ SELECT pg_catalog.setval('reportparams_id_seq', 1, false);
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3367 (class 0 OID 52589)
+-- TOC entry 3371 (class 0 OID 52589)
 -- Dependencies: 281
 -- Data for Name: foreignkeys; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24151,7 +24350,7 @@ COPY foreignkeys (id, ftitle, maintablename, maintableid, parentablename, parent
 
 
 --
--- TOC entry 3829 (class 0 OID 0)
+-- TOC entry 3833 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: foreignkeys_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24160,7 +24359,7 @@ SELECT pg_catalog.setval('foreignkeys_id_seq', 3, true);
 
 
 --
--- TOC entry 3369 (class 0 OID 52599)
+-- TOC entry 3373 (class 0 OID 52599)
 -- Dependencies: 283
 -- Data for Name: functionargs; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24493,7 +24692,7 @@ COPY functionargs (id, oid, argname, argtype, argmode, created, userid) FROM std
 
 
 --
--- TOC entry 3830 (class 0 OID 0)
+-- TOC entry 3834 (class 0 OID 0)
 -- Dependencies: 284
 -- Name: functionargs_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24502,7 +24701,7 @@ SELECT pg_catalog.setval('functionargs_id_seq', 1249, true);
 
 
 --
--- TOC entry 3371 (class 0 OID 52605)
+-- TOC entry 3375 (class 0 OID 52605)
 -- Dependencies: 285
 -- Data for Name: functionslist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24779,7 +24978,7 @@ COPY functionslist (id, functionschema, functiontitle, fullname, descr, created,
 
 
 --
--- TOC entry 3831 (class 0 OID 0)
+-- TOC entry 3835 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: functionslist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24788,7 +24987,7 @@ SELECT pg_catalog.setval('functionslist_id_seq', 6, true);
 
 
 --
--- TOC entry 3373 (class 0 OID 52617)
+-- TOC entry 3377 (class 0 OID 52617)
 -- Dependencies: 287
 -- Data for Name: queries; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24802,7 +25001,7 @@ COPY queries (id, userid, querytext, result, created, exectime) FROM stdin;
 
 
 --
--- TOC entry 3832 (class 0 OID 0)
+-- TOC entry 3836 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: queries_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24811,7 +25010,7 @@ SELECT pg_catalog.setval('queries_id_seq', 23, true);
 
 
 --
--- TOC entry 3375 (class 0 OID 52626)
+-- TOC entry 3379 (class 0 OID 52626)
 -- Dependencies: 289
 -- Data for Name: schemalist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24826,7 +25025,7 @@ COPY schemalist (id, schemaname, schemadescr, created, userid, noscript) FROM st
 
 
 --
--- TOC entry 3833 (class 0 OID 0)
+-- TOC entry 3837 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: schemalist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24835,7 +25034,7 @@ SELECT pg_catalog.setval('schemalist_id_seq', 6, true);
 
 
 --
--- TOC entry 3377 (class 0 OID 52637)
+-- TOC entry 3381 (class 0 OID 52637)
 -- Dependencies: 291
 -- Data for Name: schemaobjects; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24865,7 +25064,7 @@ COPY schemaobjects (id, oname, schemaname, linkurl) FROM stdin;
 
 
 --
--- TOC entry 3834 (class 0 OID 0)
+-- TOC entry 3838 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: schemaobjects_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24874,7 +25073,7 @@ SELECT pg_catalog.setval('schemaobjects_id_seq', 42, true);
 
 
 --
--- TOC entry 3379 (class 0 OID 52646)
+-- TOC entry 3383 (class 0 OID 52646)
 -- Dependencies: 293
 -- Data for Name: tablecolumns; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25012,7 +25211,7 @@ COPY tablecolumns (id, tablename, colname, coldesc, coltype, size, accur, "notnu
 
 
 --
--- TOC entry 3835 (class 0 OID 0)
+-- TOC entry 3839 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: tablecolumns_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25021,7 +25220,7 @@ SELECT pg_catalog.setval('tablecolumns_id_seq', 148, true);
 
 
 --
--- TOC entry 3381 (class 0 OID 52659)
+-- TOC entry 3385 (class 0 OID 52659)
 -- Dependencies: 295
 -- Data for Name: tableindexes; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25031,7 +25230,7 @@ COPY tableindexes (id, tablename, index_name, columns, typename, userid, created
 
 
 --
--- TOC entry 3836 (class 0 OID 0)
+-- TOC entry 3840 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: tableindexes_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25040,7 +25239,7 @@ SELECT pg_catalog.setval('tableindexes_id_seq', 1, false);
 
 
 --
--- TOC entry 3383 (class 0 OID 52670)
+-- TOC entry 3387 (class 0 OID 52670)
 -- Dependencies: 297
 -- Data for Name: tablelist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25120,7 +25319,7 @@ COPY tablelist (id, tableschemaname, tablename, fullname, descr, userid, created
 
 
 --
--- TOC entry 3837 (class 0 OID 0)
+-- TOC entry 3841 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: tablelist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25129,7 +25328,7 @@ SELECT pg_catalog.setval('tablelist_id_seq', 10, true);
 
 
 --
--- TOC entry 3385 (class 0 OID 52681)
+-- TOC entry 3389 (class 0 OID 52681)
 -- Dependencies: 299
 -- Data for Name: triggers; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25207,7 +25406,7 @@ COPY triggers (id, triggername, tablename, created, userid, functionname, functi
 
 
 --
--- TOC entry 3838 (class 0 OID 0)
+-- TOC entry 3842 (class 0 OID 0)
 -- Dependencies: 300
 -- Name: triggers_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25218,7 +25417,7 @@ SELECT pg_catalog.setval('triggers_id_seq', 7, true);
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3387 (class 0 OID 52701)
+-- TOC entry 3391 (class 0 OID 52701)
 -- Dependencies: 301
 -- Data for Name: dictionary_for_select; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25233,7 +25432,7 @@ COPY dictionary_for_select (id, dname, onemoreraltionid) FROM stdin;
 
 
 --
--- TOC entry 3839 (class 0 OID 0)
+-- TOC entry 3843 (class 0 OID 0)
 -- Dependencies: 302
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -25242,7 +25441,7 @@ SELECT pg_catalog.setval('dictionary_for_select_id_seq', 5, true);
 
 
 --
--- TOC entry 3389 (class 0 OID 52706)
+-- TOC entry 3393 (class 0 OID 52706)
 -- Dependencies: 303
 -- Data for Name: fel; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25252,7 +25451,7 @@ COPY fel (id, logdata, created) FROM stdin;
 
 
 --
--- TOC entry 3840 (class 0 OID 0)
+-- TOC entry 3844 (class 0 OID 0)
 -- Dependencies: 304
 -- Name: fel_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -25261,7 +25460,7 @@ SELECT pg_catalog.setval('fel_id_seq', 1, false);
 
 
 --
--- TOC entry 3391 (class 0 OID 52716)
+-- TOC entry 3395 (class 0 OID 52716)
 -- Dependencies: 305
 -- Data for Name: major_table; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25274,7 +25473,7 @@ COPY major_table (id, text, data, "check", "time", password, color, multiselect,
 
 
 --
--- TOC entry 3841 (class 0 OID 0)
+-- TOC entry 3845 (class 0 OID 0)
 -- Dependencies: 306
 -- Name: major_table_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -25283,7 +25482,7 @@ SELECT pg_catalog.setval('major_table_id_seq', 34, true);
 
 
 --
--- TOC entry 3393 (class 0 OID 52724)
+-- TOC entry 3397 (class 0 OID 52724)
 -- Dependencies: 307
 -- Data for Name: onemorerelation; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25295,7 +25494,7 @@ COPY onemorerelation (id, oname) FROM stdin;
 
 
 --
--- TOC entry 3842 (class 0 OID 0)
+-- TOC entry 3846 (class 0 OID 0)
 -- Dependencies: 308
 -- Name: onemorerelation_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -25304,7 +25503,7 @@ SELECT pg_catalog.setval('onemorerelation_id_seq', 2, true);
 
 
 --
--- TOC entry 3395 (class 0 OID 52729)
+-- TOC entry 3399 (class 0 OID 52729)
 -- Dependencies: 309
 -- Data for Name: relate_with_major; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25314,7 +25513,7 @@ COPY relate_with_major (id, somecolumn, major_table_id, created) FROM stdin;
 
 
 --
--- TOC entry 3843 (class 0 OID 0)
+-- TOC entry 3847 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: relate_with_major_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -25323,7 +25522,7 @@ SELECT pg_catalog.setval('relate_with_major_id_seq', 2, true);
 
 
 --
--- TOC entry 3397 (class 0 OID 52735)
+-- TOC entry 3401 (class 0 OID 52735)
 -- Dependencies: 311
 -- Data for Name: testmanager; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25335,7 +25534,7 @@ COPY testmanager (id, col5, textfield1, intfield, "boolField") FROM stdin;
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2934 (class 2606 OID 52840)
+-- TOC entry 2936 (class 2606 OID 52840)
 -- Name: act_parametrs act_parametrs_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25344,7 +25543,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 2937 (class 2606 OID 52842)
+-- TOC entry 2939 (class 2606 OID 52842)
 -- Name: act_visible_condions act_visible_condions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25353,7 +25552,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 2940 (class 2606 OID 52844)
+-- TOC entry 2942 (class 2606 OID 52844)
 -- Name: actions actions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25362,7 +25561,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 2943 (class 2606 OID 52846)
+-- TOC entry 2945 (class 2606 OID 52846)
 -- Name: actparam_querytypes actparam_querytypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25371,7 +25570,7 @@ ALTER TABLE ONLY actparam_querytypes
 
 
 --
--- TOC entry 2946 (class 2606 OID 52848)
+-- TOC entry 2948 (class 2606 OID 52848)
 -- Name: acttypes acttypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25380,7 +25579,7 @@ ALTER TABLE ONLY acttypes
 
 
 --
--- TOC entry 2949 (class 2606 OID 52850)
+-- TOC entry 2951 (class 2606 OID 52850)
 -- Name: apicallingmethods apicallingmethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25389,7 +25588,7 @@ ALTER TABLE ONLY apicallingmethods
 
 
 --
--- TOC entry 2951 (class 2606 OID 52852)
+-- TOC entry 2953 (class 2606 OID 52852)
 -- Name: apimethods apimethods_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25398,7 +25597,7 @@ ALTER TABLE ONLY apimethods
 
 
 --
--- TOC entry 2955 (class 2606 OID 52854)
+-- TOC entry 2957 (class 2606 OID 52854)
 -- Name: booloper booloper_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25407,7 +25606,7 @@ ALTER TABLE ONLY booloper
 
 
 --
--- TOC entry 2957 (class 2606 OID 52856)
+-- TOC entry 2959 (class 2606 OID 52856)
 -- Name: columntypes columntypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25416,7 +25615,7 @@ ALTER TABLE ONLY columntypes
 
 
 --
--- TOC entry 2960 (class 2606 OID 52858)
+-- TOC entry 2962 (class 2606 OID 52858)
 -- Name: compoitems compoitems_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25425,7 +25624,7 @@ ALTER TABLE ONLY compoitems
 
 
 --
--- TOC entry 2962 (class 2606 OID 52860)
+-- TOC entry 2964 (class 2606 OID 52860)
 -- Name: compos compos_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25434,7 +25633,7 @@ ALTER TABLE ONLY compos
 
 
 --
--- TOC entry 2966 (class 2606 OID 52862)
+-- TOC entry 2968 (class 2606 OID 52862)
 -- Name: config config_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25443,7 +25642,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 2968 (class 2606 OID 52864)
+-- TOC entry 2970 (class 2606 OID 52864)
 -- Name: configsettings configsettings_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25452,7 +25651,7 @@ ALTER TABLE ONLY configsettings
 
 
 --
--- TOC entry 2971 (class 2606 OID 52866)
+-- TOC entry 2973 (class 2606 OID 52866)
 -- Name: defaultval defaultval_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25461,7 +25660,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 2973 (class 2606 OID 52868)
+-- TOC entry 2975 (class 2606 OID 52868)
 -- Name: filter_position filter_position_id_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25470,7 +25669,7 @@ ALTER TABLE ONLY filter_position
 
 
 --
--- TOC entry 2977 (class 2606 OID 52870)
+-- TOC entry 2979 (class 2606 OID 52870)
 -- Name: filters filters_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25479,7 +25678,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 2980 (class 2606 OID 52872)
+-- TOC entry 2982 (class 2606 OID 52872)
 -- Name: filtertypes filtertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25488,7 +25687,7 @@ ALTER TABLE ONLY filtertypes
 
 
 --
--- TOC entry 2982 (class 2606 OID 52874)
+-- TOC entry 2984 (class 2606 OID 52874)
 -- Name: functions functions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25497,7 +25696,7 @@ ALTER TABLE ONLY functions
 
 
 --
--- TOC entry 2984 (class 2606 OID 52876)
+-- TOC entry 2986 (class 2606 OID 52876)
 -- Name: instructions instructions_lang_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25506,7 +25705,7 @@ ALTER TABLE ONLY instructions
 
 
 --
--- TOC entry 2986 (class 2606 OID 52878)
+-- TOC entry 2988 (class 2606 OID 52878)
 -- Name: instructions instructions_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25515,7 +25714,16 @@ ALTER TABLE ONLY instructions
 
 
 --
--- TOC entry 2988 (class 2606 OID 52880)
+-- TOC entry 2990 (class 2606 OID 92921)
+-- Name: logtable logtable_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY logtable
+    ADD CONSTRAINT logtable_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2992 (class 2606 OID 52880)
 -- Name: menus menus_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25524,7 +25732,7 @@ ALTER TABLE ONLY menus
 
 
 --
--- TOC entry 3007 (class 2606 OID 92812)
+-- TOC entry 3011 (class 2606 OID 92812)
 -- Name: spapi met_un_spap; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25533,7 +25741,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 2991 (class 2606 OID 52882)
+-- TOC entry 2995 (class 2606 OID 52882)
 -- Name: methodtypes methodtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25542,7 +25750,7 @@ ALTER TABLE ONLY methodtypes
 
 
 --
--- TOC entry 2993 (class 2606 OID 52884)
+-- TOC entry 2997 (class 2606 OID 52884)
 -- Name: notifications notifications_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25551,7 +25759,7 @@ ALTER TABLE ONLY notifications
 
 
 --
--- TOC entry 2995 (class 2606 OID 52886)
+-- TOC entry 2999 (class 2606 OID 52886)
 -- Name: operations operations_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25560,7 +25768,7 @@ ALTER TABLE ONLY operations
 
 
 --
--- TOC entry 2998 (class 2606 OID 52888)
+-- TOC entry 3002 (class 2606 OID 52888)
 -- Name: opertypes opertypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25569,7 +25777,7 @@ ALTER TABLE ONLY opertypes
 
 
 --
--- TOC entry 3002 (class 2606 OID 52890)
+-- TOC entry 3006 (class 2606 OID 52890)
 -- Name: paramtypes paramtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25578,7 +25786,7 @@ ALTER TABLE ONLY paramtypes
 
 
 --
--- TOC entry 3005 (class 2606 OID 52892)
+-- TOC entry 3009 (class 2606 OID 52892)
 -- Name: select_condition select_condition_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25587,7 +25795,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3009 (class 2606 OID 92805)
+-- TOC entry 3013 (class 2606 OID 92805)
 -- Name: spapi spapi_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25596,7 +25804,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 3053 (class 2606 OID 68347)
+-- TOC entry 3057 (class 2606 OID 68347)
 -- Name: templates templates_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25605,7 +25813,7 @@ ALTER TABLE ONLY templates
 
 
 --
--- TOC entry 3055 (class 2606 OID 68349)
+-- TOC entry 3059 (class 2606 OID 68349)
 -- Name: templates templates_template_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25614,7 +25822,7 @@ ALTER TABLE ONLY templates
 
 
 --
--- TOC entry 3011 (class 2606 OID 52894)
+-- TOC entry 3015 (class 2606 OID 52894)
 -- Name: treeviewtypes treeviewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25623,7 +25831,7 @@ ALTER TABLE ONLY treeviewtypes
 
 
 --
--- TOC entry 3014 (class 2606 OID 52896)
+-- TOC entry 3018 (class 2606 OID 52896)
 -- Name: views views_path_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25632,7 +25840,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 3016 (class 2606 OID 52898)
+-- TOC entry 3020 (class 2606 OID 52898)
 -- Name: views views_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25641,7 +25849,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 3018 (class 2606 OID 52900)
+-- TOC entry 3022 (class 2606 OID 52900)
 -- Name: viewtypes viewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25650,7 +25858,7 @@ ALTER TABLE ONLY viewtypes
 
 
 --
--- TOC entry 3020 (class 2606 OID 52902)
+-- TOC entry 3024 (class 2606 OID 52902)
 -- Name: visible_condition visible_condition_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -25661,7 +25869,7 @@ ALTER TABLE ONLY visible_condition
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3022 (class 2606 OID 52904)
+-- TOC entry 3026 (class 2606 OID 52904)
 -- Name: foreignkeys foreignkeys_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25670,7 +25878,7 @@ ALTER TABLE ONLY foreignkeys
 
 
 --
--- TOC entry 3024 (class 2606 OID 52906)
+-- TOC entry 3028 (class 2606 OID 52906)
 -- Name: functionargs functionargs_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25679,7 +25887,7 @@ ALTER TABLE ONLY functionargs
 
 
 --
--- TOC entry 3026 (class 2606 OID 52908)
+-- TOC entry 3030 (class 2606 OID 52908)
 -- Name: functionslist functionslist_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25688,7 +25896,7 @@ ALTER TABLE ONLY functionslist
 
 
 --
--- TOC entry 3028 (class 2606 OID 52910)
+-- TOC entry 3032 (class 2606 OID 52910)
 -- Name: queries queries_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25697,7 +25905,7 @@ ALTER TABLE ONLY queries
 
 
 --
--- TOC entry 3030 (class 2606 OID 52912)
+-- TOC entry 3034 (class 2606 OID 52912)
 -- Name: schemalist schemalist_id_key; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25706,7 +25914,7 @@ ALTER TABLE ONLY schemalist
 
 
 --
--- TOC entry 3032 (class 2606 OID 52914)
+-- TOC entry 3036 (class 2606 OID 52914)
 -- Name: schemaobjects schemaobjects_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25715,7 +25923,7 @@ ALTER TABLE ONLY schemaobjects
 
 
 --
--- TOC entry 3034 (class 2606 OID 52916)
+-- TOC entry 3038 (class 2606 OID 52916)
 -- Name: tablecolumns tablecolumns_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25724,7 +25932,7 @@ ALTER TABLE ONLY tablecolumns
 
 
 --
--- TOC entry 3036 (class 2606 OID 52918)
+-- TOC entry 3040 (class 2606 OID 52918)
 -- Name: tableindexes tableindexes_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25733,7 +25941,7 @@ ALTER TABLE ONLY tableindexes
 
 
 --
--- TOC entry 3038 (class 2606 OID 52920)
+-- TOC entry 3042 (class 2606 OID 52920)
 -- Name: tablelist tablelist_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25742,7 +25950,7 @@ ALTER TABLE ONLY tablelist
 
 
 --
--- TOC entry 3040 (class 2606 OID 52922)
+-- TOC entry 3044 (class 2606 OID 52922)
 -- Name: triggers triggers_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -25753,7 +25961,7 @@ ALTER TABLE ONLY triggers
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3042 (class 2606 OID 52924)
+-- TOC entry 3046 (class 2606 OID 52924)
 -- Name: dictionary_for_select dictionary_for_select_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -25762,7 +25970,7 @@ ALTER TABLE ONLY dictionary_for_select
 
 
 --
--- TOC entry 3044 (class 2606 OID 52926)
+-- TOC entry 3048 (class 2606 OID 52926)
 -- Name: fel fel_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -25771,7 +25979,7 @@ ALTER TABLE ONLY fel
 
 
 --
--- TOC entry 3047 (class 2606 OID 52928)
+-- TOC entry 3051 (class 2606 OID 52928)
 -- Name: major_table major_table_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -25780,7 +25988,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 3049 (class 2606 OID 52930)
+-- TOC entry 3053 (class 2606 OID 52930)
 -- Name: onemorerelation onemorerelation_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -25789,7 +25997,7 @@ ALTER TABLE ONLY onemorerelation
 
 
 --
--- TOC entry 3051 (class 2606 OID 52932)
+-- TOC entry 3055 (class 2606 OID 52932)
 -- Name: relate_with_major relate_with_major_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -25800,7 +26008,7 @@ ALTER TABLE ONLY relate_with_major
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 2932 (class 1259 OID 52933)
+-- TOC entry 2934 (class 1259 OID 52933)
 -- Name: act_parametrs_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25808,7 +26016,7 @@ CREATE INDEX act_parametrs_idx ON framework.act_parametrs USING btree (actionid)
 
 
 --
--- TOC entry 2935 (class 1259 OID 52934)
+-- TOC entry 2937 (class 1259 OID 52934)
 -- Name: act_visible_condions_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25816,7 +26024,7 @@ CREATE INDEX act_visible_condions_idx ON framework.act_visible_condions USING bt
 
 
 --
--- TOC entry 2938 (class 1259 OID 52935)
+-- TOC entry 2940 (class 1259 OID 52935)
 -- Name: actions_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25824,7 +26032,7 @@ CREATE INDEX actions_idx ON framework.actions USING btree (viewid);
 
 
 --
--- TOC entry 2941 (class 1259 OID 52936)
+-- TOC entry 2943 (class 1259 OID 52936)
 -- Name: actparam_querytypes_aqname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25832,7 +26040,7 @@ CREATE UNIQUE INDEX actparam_querytypes_aqname_key ON framework.actparam_queryty
 
 
 --
--- TOC entry 2944 (class 1259 OID 52937)
+-- TOC entry 2946 (class 1259 OID 52937)
 -- Name: acttypes_actname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25840,7 +26048,7 @@ CREATE UNIQUE INDEX acttypes_actname_key ON framework.acttypes USING btree (actn
 
 
 --
--- TOC entry 2947 (class 1259 OID 52938)
+-- TOC entry 2949 (class 1259 OID 52938)
 -- Name: apicallingmethods_aname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25848,7 +26056,7 @@ CREATE UNIQUE INDEX apicallingmethods_aname_key ON framework.apicallingmethods U
 
 
 --
--- TOC entry 2952 (class 1259 OID 52939)
+-- TOC entry 2954 (class 1259 OID 52939)
 -- Name: apimethods_val_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25856,7 +26064,7 @@ CREATE UNIQUE INDEX apimethods_val_key ON framework.apimethods USING btree (val)
 
 
 --
--- TOC entry 2953 (class 1259 OID 52940)
+-- TOC entry 2955 (class 1259 OID 52940)
 -- Name: booloper_bname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25864,7 +26072,7 @@ CREATE UNIQUE INDEX booloper_bname_key ON framework.booloper USING btree (bname)
 
 
 --
--- TOC entry 2958 (class 1259 OID 52941)
+-- TOC entry 2960 (class 1259 OID 52941)
 -- Name: columntypes_typename_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25872,7 +26080,7 @@ CREATE UNIQUE INDEX columntypes_typename_key ON framework.columntypes USING btre
 
 
 --
--- TOC entry 2963 (class 1259 OID 52942)
+-- TOC entry 2965 (class 1259 OID 52942)
 -- Name: config_idx_uniq_title; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25880,7 +26088,7 @@ CREATE UNIQUE INDEX config_idx_uniq_title ON framework.config USING btree (viewi
 
 
 --
--- TOC entry 2964 (class 1259 OID 52943)
+-- TOC entry 2966 (class 1259 OID 52943)
 -- Name: config_idx_view; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25888,7 +26096,7 @@ CREATE INDEX config_idx_view ON framework.config USING btree (viewid);
 
 
 --
--- TOC entry 2969 (class 1259 OID 52944)
+-- TOC entry 2971 (class 1259 OID 52944)
 -- Name: defaultval_idxconfd; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25896,7 +26104,7 @@ CREATE INDEX defaultval_idxconfd ON framework.defaultval USING btree (configid);
 
 
 --
--- TOC entry 2974 (class 1259 OID 52945)
+-- TOC entry 2976 (class 1259 OID 52945)
 -- Name: filters_idx; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25904,7 +26112,7 @@ CREATE UNIQUE INDEX filters_idx ON framework.filters USING btree (title, viewid)
 
 
 --
--- TOC entry 2975 (class 1259 OID 52946)
+-- TOC entry 2977 (class 1259 OID 52946)
 -- Name: filters_idx1; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25912,7 +26120,7 @@ CREATE INDEX filters_idx1 ON framework.filters USING btree (viewid);
 
 
 --
--- TOC entry 2978 (class 1259 OID 52947)
+-- TOC entry 2980 (class 1259 OID 52947)
 -- Name: filtertypes_ftname_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25920,7 +26128,7 @@ CREATE UNIQUE INDEX filtertypes_ftname_key ON framework.filtertypes USING btree 
 
 
 --
--- TOC entry 2989 (class 1259 OID 52948)
+-- TOC entry 2993 (class 1259 OID 52948)
 -- Name: methodtypes_methotypename_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25928,7 +26136,7 @@ CREATE UNIQUE INDEX methodtypes_methotypename_key ON framework.methodtypes USING
 
 
 --
--- TOC entry 2996 (class 1259 OID 52949)
+-- TOC entry 3000 (class 1259 OID 52949)
 -- Name: operations_value_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25936,7 +26144,7 @@ CREATE UNIQUE INDEX operations_value_key ON framework.operations USING btree (va
 
 
 --
--- TOC entry 2999 (class 1259 OID 52950)
+-- TOC entry 3003 (class 1259 OID 52950)
 -- Name: orgs_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25944,7 +26152,7 @@ CREATE UNIQUE INDEX orgs_id_key ON framework.orgs USING btree (id);
 
 
 --
--- TOC entry 3000 (class 1259 OID 52951)
+-- TOC entry 3004 (class 1259 OID 52951)
 -- Name: orgtypes_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25952,7 +26160,7 @@ CREATE UNIQUE INDEX orgtypes_id_key ON framework.orgtypes USING btree (id);
 
 
 --
--- TOC entry 3003 (class 1259 OID 52952)
+-- TOC entry 3007 (class 1259 OID 52952)
 -- Name: select_condition_idx_sc; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25960,7 +26168,7 @@ CREATE INDEX select_condition_idx_sc ON framework.select_condition USING btree (
 
 
 --
--- TOC entry 3012 (class 1259 OID 52953)
+-- TOC entry 3016 (class 1259 OID 52953)
 -- Name: users_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -25970,7 +26178,7 @@ CREATE UNIQUE INDEX users_id_key ON framework.users USING btree (id);
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3045 (class 1259 OID 52954)
+-- TOC entry 3049 (class 1259 OID 52954)
 -- Name: major_table_idx_1; Type: INDEX; Schema: test; Owner: postgres
 --
 
@@ -25980,7 +26188,7 @@ CREATE INDEX major_table_idx_1 ON test.major_table USING btree (text, color);
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3091 (class 2620 OID 52955)
+-- TOC entry 3095 (class 2620 OID 52955)
 -- Name: act_parametrs act_parametrs_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -25988,7 +26196,7 @@ CREATE TRIGGER act_parametrs_tr BEFORE INSERT OR UPDATE ON framework.act_paramet
 
 
 --
--- TOC entry 3092 (class 2620 OID 52956)
+-- TOC entry 3096 (class 2620 OID 52956)
 -- Name: actions actions_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -25996,7 +26204,7 @@ CREATE TRIGGER actions_tr BEFORE INSERT OR UPDATE ON framework.actions FOR EACH 
 
 
 --
--- TOC entry 3093 (class 2620 OID 52957)
+-- TOC entry 3097 (class 2620 OID 52957)
 -- Name: actions actions_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26004,7 +26212,7 @@ CREATE TRIGGER actions_tr_del BEFORE DELETE ON framework.actions FOR EACH ROW EX
 
 
 --
--- TOC entry 3094 (class 2620 OID 52958)
+-- TOC entry 3098 (class 2620 OID 52958)
 -- Name: compoitems compoitems_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26012,7 +26220,7 @@ CREATE TRIGGER compoitems_tr_del AFTER DELETE ON framework.compoitems FOR EACH R
 
 
 --
--- TOC entry 3095 (class 2620 OID 52959)
+-- TOC entry 3099 (class 2620 OID 52959)
 -- Name: compoitems compoitems_tr_upd; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26020,7 +26228,7 @@ CREATE TRIGGER compoitems_tr_upd AFTER UPDATE ON framework.compoitems FOR EACH R
 
 
 --
--- TOC entry 3096 (class 2620 OID 52960)
+-- TOC entry 3100 (class 2620 OID 52960)
 -- Name: config config_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26028,8 +26236,8 @@ CREATE TRIGGER config_tr BEFORE UPDATE ON framework.config FOR EACH ROW EXECUTE 
 
 
 --
--- TOC entry 3844 (class 0 OID 0)
--- Dependencies: 3096
+-- TOC entry 3848 (class 0 OID 0)
+-- Dependencies: 3100
 -- Name: TRIGGER config_tr ON config; Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -26037,7 +26245,7 @@ COMMENT ON TRIGGER config_tr ON config IS 'config checks';
 
 
 --
--- TOC entry 3097 (class 2620 OID 52961)
+-- TOC entry 3101 (class 2620 OID 52961)
 -- Name: config config_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26045,7 +26253,7 @@ CREATE TRIGGER config_tr_del BEFORE DELETE ON framework.config FOR EACH ROW EXEC
 
 
 --
--- TOC entry 3098 (class 2620 OID 52962)
+-- TOC entry 3102 (class 2620 OID 52962)
 -- Name: config config_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26053,7 +26261,7 @@ CREATE TRIGGER config_tr_ins BEFORE INSERT ON framework.config FOR EACH ROW EXEC
 
 
 --
--- TOC entry 3099 (class 2620 OID 52963)
+-- TOC entry 3103 (class 2620 OID 52963)
 -- Name: dialog_messages dialog_messages_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26061,7 +26269,7 @@ CREATE TRIGGER dialog_messages_tr_ins BEFORE INSERT ON framework.dialog_messages
 
 
 --
--- TOC entry 3100 (class 2620 OID 52964)
+-- TOC entry 3104 (class 2620 OID 52964)
 -- Name: dialog_messages dialog_messages_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26069,7 +26277,7 @@ CREATE TRIGGER dialog_messages_tr_ins_after BEFORE INSERT ON framework.dialog_me
 
 
 --
--- TOC entry 3101 (class 2620 OID 52965)
+-- TOC entry 3105 (class 2620 OID 52965)
 -- Name: dialogs dialogs_tr_edit; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26077,7 +26285,7 @@ CREATE TRIGGER dialogs_tr_edit BEFORE UPDATE ON framework.dialogs FOR EACH ROW E
 
 
 --
--- TOC entry 3102 (class 2620 OID 52966)
+-- TOC entry 3106 (class 2620 OID 52966)
 -- Name: dialogs dialogs_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26085,7 +26293,7 @@ CREATE TRIGGER dialogs_tr_ins BEFORE INSERT ON framework.dialogs FOR EACH ROW EX
 
 
 --
--- TOC entry 3103 (class 2620 OID 52967)
+-- TOC entry 3107 (class 2620 OID 52967)
 -- Name: dialogs dialogs_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26093,7 +26301,7 @@ CREATE TRIGGER dialogs_tr_ins_after AFTER INSERT ON framework.dialogs FOR EACH R
 
 
 --
--- TOC entry 3104 (class 2620 OID 52968)
+-- TOC entry 3108 (class 2620 OID 52968)
 -- Name: filters filters_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26101,7 +26309,7 @@ CREATE TRIGGER filters_tr BEFORE INSERT OR UPDATE ON framework.filters FOR EACH 
 
 
 --
--- TOC entry 3105 (class 2620 OID 52969)
+-- TOC entry 3109 (class 2620 OID 52969)
 -- Name: menus menus_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26109,7 +26317,7 @@ CREATE TRIGGER menus_tr BEFORE INSERT OR UPDATE OF menutype, ismainmenu ON frame
 
 
 --
--- TOC entry 3106 (class 2620 OID 52970)
+-- TOC entry 3110 (class 2620 OID 52970)
 -- Name: menus menus_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26117,7 +26325,7 @@ CREATE TRIGGER menus_tr_del BEFORE DELETE ON framework.menus FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 3107 (class 2620 OID 52971)
+-- TOC entry 3111 (class 2620 OID 52971)
 -- Name: select_condition select_condition_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26127,7 +26335,7 @@ ALTER TABLE select_condition DISABLE TRIGGER select_condition_tr;
 
 
 --
--- TOC entry 3108 (class 2620 OID 52972)
+-- TOC entry 3112 (class 2620 OID 52972)
 -- Name: spapi spapi_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26135,7 +26343,7 @@ CREATE TRIGGER spapi_tr BEFORE INSERT OR UPDATE ON framework.spapi FOR EACH ROW 
 
 
 --
--- TOC entry 3109 (class 2620 OID 52973)
+-- TOC entry 3113 (class 2620 OID 52973)
 -- Name: trees trees_add_org; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26143,7 +26351,7 @@ CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON framework.trees
 
 
 --
--- TOC entry 3110 (class 2620 OID 52974)
+-- TOC entry 3114 (class 2620 OID 52974)
 -- Name: trees trees_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26151,7 +26359,7 @@ CREATE TRIGGER trees_tr_del BEFORE DELETE ON framework.trees FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 3111 (class 2620 OID 52975)
+-- TOC entry 3115 (class 2620 OID 52975)
 -- Name: treesbranches treesbranches_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26159,7 +26367,7 @@ CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, isma
 
 
 --
--- TOC entry 3112 (class 2620 OID 52976)
+-- TOC entry 3116 (class 2620 OID 52976)
 -- Name: users users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26167,7 +26375,7 @@ CREATE TRIGGER users_tr BEFORE INSERT OR UPDATE OF password, roles, orgs, userid
 
 
 --
--- TOC entry 3113 (class 2620 OID 52977)
+-- TOC entry 3117 (class 2620 OID 52977)
 -- Name: views views_tr_check; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26175,7 +26383,7 @@ CREATE TRIGGER views_tr_check BEFORE INSERT OR UPDATE ON framework.views FOR EAC
 
 
 --
--- TOC entry 3114 (class 2620 OID 52978)
+-- TOC entry 3118 (class 2620 OID 52978)
 -- Name: views views_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26183,7 +26391,7 @@ CREATE TRIGGER views_tr_del BEFORE DELETE ON framework.views FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 3115 (class 2620 OID 52979)
+-- TOC entry 3119 (class 2620 OID 52979)
 -- Name: views views_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26191,7 +26399,7 @@ CREATE TRIGGER views_tr_ins_after AFTER INSERT ON framework.views FOR EACH ROW E
 
 
 --
--- TOC entry 3116 (class 2620 OID 52980)
+-- TOC entry 3120 (class 2620 OID 52980)
 -- Name: visible_condition visible_condition_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26203,7 +26411,7 @@ ALTER TABLE visible_condition DISABLE TRIGGER visible_condition_tr;
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 3117 (class 2620 OID 52981)
+-- TOC entry 3121 (class 2620 OID 52981)
 -- Name: reportlist reportlist_tr; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -26211,7 +26419,7 @@ CREATE TRIGGER reportlist_tr BEFORE UPDATE OF title, path, template, functitle, 
 
 
 --
--- TOC entry 3118 (class 2620 OID 52982)
+-- TOC entry 3122 (class 2620 OID 52982)
 -- Name: reportlist reportlist_tr_ins; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -26219,7 +26427,7 @@ CREATE TRIGGER reportlist_tr_ins BEFORE INSERT ON reports.reportlist FOR EACH RO
 
 
 --
--- TOC entry 3119 (class 2620 OID 52983)
+-- TOC entry 3123 (class 2620 OID 52983)
 -- Name: reportparams reportparams_tr; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -26229,7 +26437,7 @@ CREATE TRIGGER reportparams_tr BEFORE INSERT OR UPDATE ON reports.reportparams F
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3120 (class 2620 OID 52984)
+-- TOC entry 3124 (class 2620 OID 52984)
 -- Name: foreignkeys foreignkeys_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26237,7 +26445,7 @@ CREATE TRIGGER foreignkeys_tr_del BEFORE DELETE ON sqlmanager.foreignkeys FOR EA
 
 
 --
--- TOC entry 3121 (class 2620 OID 52985)
+-- TOC entry 3125 (class 2620 OID 52985)
 -- Name: foreignkeys foreignkeys_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26245,7 +26453,7 @@ CREATE TRIGGER foreignkeys_tr_ins BEFORE INSERT ON sqlmanager.foreignkeys FOR EA
 
 
 --
--- TOC entry 3122 (class 2620 OID 52986)
+-- TOC entry 3126 (class 2620 OID 52986)
 -- Name: foreignkeys foreignkeys_tr_maincol; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26253,7 +26461,7 @@ CREATE TRIGGER foreignkeys_tr_maincol BEFORE UPDATE OF parentablename, maincol, 
 
 
 --
--- TOC entry 3123 (class 2620 OID 52987)
+-- TOC entry 3127 (class 2620 OID 52987)
 -- Name: foreignkeys foreignkeys_tr_title; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26261,7 +26469,7 @@ CREATE TRIGGER foreignkeys_tr_title BEFORE UPDATE OF ftitle ON sqlmanager.foreig
 
 
 --
--- TOC entry 3124 (class 2620 OID 52988)
+-- TOC entry 3128 (class 2620 OID 52988)
 -- Name: functionslist functionslist_tr_args; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26269,7 +26477,7 @@ CREATE TRIGGER functionslist_tr_args BEFORE INSERT OR UPDATE OF args ON sqlmanag
 
 
 --
--- TOC entry 3125 (class 2620 OID 52989)
+-- TOC entry 3129 (class 2620 OID 52989)
 -- Name: functionslist functionslist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26277,7 +26485,7 @@ CREATE TRIGGER functionslist_tr_del BEFORE DELETE ON sqlmanager.functionslist FO
 
 
 --
--- TOC entry 3126 (class 2620 OID 52990)
+-- TOC entry 3130 (class 2620 OID 52990)
 -- Name: functionslist functionslist_tr_desc; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26285,7 +26493,7 @@ CREATE TRIGGER functionslist_tr_desc BEFORE UPDATE OF descr ON sqlmanager.functi
 
 
 --
--- TOC entry 3127 (class 2620 OID 52991)
+-- TOC entry 3131 (class 2620 OID 52991)
 -- Name: functionslist functionslist_tr_dll; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26295,7 +26503,7 @@ ALTER TABLE functionslist DISABLE TRIGGER functionslist_tr_dll;
 
 
 --
--- TOC entry 3128 (class 2620 OID 52992)
+-- TOC entry 3132 (class 2620 OID 52992)
 -- Name: functionslist functionslist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26303,7 +26511,7 @@ CREATE TRIGGER functionslist_tr_ins BEFORE INSERT ON sqlmanager.functionslist FO
 
 
 --
--- TOC entry 3129 (class 2620 OID 52993)
+-- TOC entry 3133 (class 2620 OID 52993)
 -- Name: functionslist functionslist_tr_upd; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26311,7 +26519,7 @@ CREATE TRIGGER functionslist_tr_upd BEFORE UPDATE OF functionschema, functiontit
 
 
 --
--- TOC entry 3130 (class 2620 OID 52994)
+-- TOC entry 3134 (class 2620 OID 52994)
 -- Name: queries queries_tr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26319,7 +26527,7 @@ CREATE TRIGGER queries_tr BEFORE INSERT OR UPDATE ON sqlmanager.queries FOR EACH
 
 
 --
--- TOC entry 3131 (class 2620 OID 52995)
+-- TOC entry 3135 (class 2620 OID 52995)
 -- Name: schemalist schemalist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26327,7 +26535,7 @@ CREATE TRIGGER schemalist_tr_del BEFORE DELETE ON sqlmanager.schemalist FOR EACH
 
 
 --
--- TOC entry 3132 (class 2620 OID 52996)
+-- TOC entry 3136 (class 2620 OID 52996)
 -- Name: schemalist schemalist_tr_descr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26335,7 +26543,7 @@ CREATE TRIGGER schemalist_tr_descr BEFORE UPDATE OF schemadescr ON sqlmanager.sc
 
 
 --
--- TOC entry 3133 (class 2620 OID 52997)
+-- TOC entry 3137 (class 2620 OID 52997)
 -- Name: schemalist schemalist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26343,7 +26551,7 @@ CREATE TRIGGER schemalist_tr_ins BEFORE INSERT ON sqlmanager.schemalist FOR EACH
 
 
 --
--- TOC entry 3134 (class 2620 OID 52998)
+-- TOC entry 3138 (class 2620 OID 52998)
 -- Name: schemalist schemalist_tr_name; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26351,7 +26559,7 @@ CREATE TRIGGER schemalist_tr_name BEFORE UPDATE OF schemaname ON sqlmanager.sche
 
 
 --
--- TOC entry 3135 (class 2620 OID 52999)
+-- TOC entry 3139 (class 2620 OID 52999)
 -- Name: tablecolumns tablecolumns_tr_accur; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26359,7 +26567,7 @@ CREATE TRIGGER tablecolumns_tr_accur BEFORE UPDATE OF accur ON sqlmanager.tablec
 
 
 --
--- TOC entry 3136 (class 2620 OID 53000)
+-- TOC entry 3140 (class 2620 OID 53000)
 -- Name: tablecolumns tablecolumns_tr_coldesc; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26367,7 +26575,7 @@ CREATE TRIGGER tablecolumns_tr_coldesc BEFORE UPDATE OF coldesc ON sqlmanager.ta
 
 
 --
--- TOC entry 3137 (class 2620 OID 53001)
+-- TOC entry 3141 (class 2620 OID 53001)
 -- Name: tablecolumns tablecolumns_tr_colname; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26375,7 +26583,7 @@ CREATE TRIGGER tablecolumns_tr_colname BEFORE UPDATE OF colname ON sqlmanager.ta
 
 
 --
--- TOC entry 3138 (class 2620 OID 53002)
+-- TOC entry 3142 (class 2620 OID 53002)
 -- Name: tablecolumns tablecolumns_tr_defval; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26383,7 +26591,7 @@ CREATE TRIGGER tablecolumns_tr_defval BEFORE UPDATE OF defval ON sqlmanager.tabl
 
 
 --
--- TOC entry 3139 (class 2620 OID 53003)
+-- TOC entry 3143 (class 2620 OID 53003)
 -- Name: tablecolumns tablecolumns_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26391,7 +26599,7 @@ CREATE TRIGGER tablecolumns_tr_del BEFORE DELETE ON sqlmanager.tablecolumns FOR 
 
 
 --
--- TOC entry 3140 (class 2620 OID 53004)
+-- TOC entry 3144 (class 2620 OID 53004)
 -- Name: tablecolumns tablecolumns_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26399,7 +26607,7 @@ CREATE TRIGGER tablecolumns_tr_ins BEFORE INSERT ON sqlmanager.tablecolumns FOR 
 
 
 --
--- TOC entry 3141 (class 2620 OID 53005)
+-- TOC entry 3145 (class 2620 OID 53005)
 -- Name: tablecolumns tablecolumns_tr_notnull; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26407,7 +26615,7 @@ CREATE TRIGGER tablecolumns_tr_notnull BEFORE UPDATE OF "notnull" ON sqlmanager.
 
 
 --
--- TOC entry 3142 (class 2620 OID 53006)
+-- TOC entry 3146 (class 2620 OID 53006)
 -- Name: tablecolumns tablecolumns_tr_size; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26415,7 +26623,7 @@ CREATE TRIGGER tablecolumns_tr_size BEFORE UPDATE OF size ON sqlmanager.tablecol
 
 
 --
--- TOC entry 3143 (class 2620 OID 53007)
+-- TOC entry 3147 (class 2620 OID 53007)
 -- Name: tablecolumns tablecolumns_tr_type; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26423,7 +26631,7 @@ CREATE TRIGGER tablecolumns_tr_type BEFORE UPDATE OF coltype ON sqlmanager.table
 
 
 --
--- TOC entry 3144 (class 2620 OID 53008)
+-- TOC entry 3148 (class 2620 OID 53008)
 -- Name: tablecolumns tablecolumns_tr_uniq; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26431,7 +26639,7 @@ CREATE TRIGGER tablecolumns_tr_uniq BEFORE UPDATE OF uniq ON sqlmanager.tablecol
 
 
 --
--- TOC entry 3145 (class 2620 OID 53009)
+-- TOC entry 3149 (class 2620 OID 53009)
 -- Name: tablelist tablelist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26439,7 +26647,7 @@ CREATE TRIGGER tablelist_tr_del BEFORE DELETE ON sqlmanager.tablelist FOR EACH R
 
 
 --
--- TOC entry 3146 (class 2620 OID 53010)
+-- TOC entry 3150 (class 2620 OID 53010)
 -- Name: tablelist tablelist_tr_descr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26447,7 +26655,7 @@ CREATE TRIGGER tablelist_tr_descr BEFORE UPDATE OF descr ON sqlmanager.tablelist
 
 
 --
--- TOC entry 3147 (class 2620 OID 53011)
+-- TOC entry 3151 (class 2620 OID 53011)
 -- Name: tablelist tablelist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26455,7 +26663,7 @@ CREATE TRIGGER tablelist_tr_ins BEFORE INSERT ON sqlmanager.tablelist FOR EACH R
 
 
 --
--- TOC entry 3148 (class 2620 OID 53012)
+-- TOC entry 3152 (class 2620 OID 53012)
 -- Name: tablelist tablelist_tr_name; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26463,7 +26671,7 @@ CREATE TRIGGER tablelist_tr_name BEFORE UPDATE OF tablename ON sqlmanager.tablel
 
 
 --
--- TOC entry 3149 (class 2620 OID 53013)
+-- TOC entry 3153 (class 2620 OID 53013)
 -- Name: triggers triggers_tr_beforafter; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26471,7 +26679,7 @@ CREATE TRIGGER triggers_tr_beforafter BEFORE UPDATE OF onbefore, onafter ON sqlm
 
 
 --
--- TOC entry 3150 (class 2620 OID 53014)
+-- TOC entry 3154 (class 2620 OID 53014)
 -- Name: triggers triggers_tr_def; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26479,7 +26687,7 @@ CREATE TRIGGER triggers_tr_def BEFORE INSERT OR UPDATE OF functiondef ON sqlmana
 
 
 --
--- TOC entry 3151 (class 2620 OID 53015)
+-- TOC entry 3155 (class 2620 OID 53015)
 -- Name: triggers triggers_tr_def_upd; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26487,7 +26695,7 @@ CREATE TRIGGER triggers_tr_def_upd BEFORE UPDATE OF functiondef ON sqlmanager.tr
 
 
 --
--- TOC entry 3152 (class 2620 OID 53016)
+-- TOC entry 3156 (class 2620 OID 53016)
 -- Name: triggers triggers_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26495,7 +26703,7 @@ CREATE TRIGGER triggers_tr_del BEFORE DELETE ON sqlmanager.triggers FOR EACH ROW
 
 
 --
--- TOC entry 3153 (class 2620 OID 53017)
+-- TOC entry 3157 (class 2620 OID 53017)
 -- Name: triggers triggers_tr_enabled; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26503,7 +26711,7 @@ CREATE TRIGGER triggers_tr_enabled BEFORE UPDATE OF enables ON sqlmanager.trigge
 
 
 --
--- TOC entry 3154 (class 2620 OID 53018)
+-- TOC entry 3158 (class 2620 OID 53018)
 -- Name: triggers triggers_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26511,7 +26719,7 @@ CREATE TRIGGER triggers_tr_ins BEFORE INSERT ON sqlmanager.triggers FOR EACH ROW
 
 
 --
--- TOC entry 3155 (class 2620 OID 53019)
+-- TOC entry 3159 (class 2620 OID 53019)
 -- Name: triggers triggers_tr_iudt; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26519,7 +26727,7 @@ CREATE TRIGGER triggers_tr_iudt BEFORE UPDATE OF oninsert, onupdate, ondelete, o
 
 
 --
--- TOC entry 3156 (class 2620 OID 53020)
+-- TOC entry 3160 (class 2620 OID 53020)
 -- Name: triggers triggers_tr_title; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26529,7 +26737,7 @@ CREATE TRIGGER triggers_tr_title BEFORE UPDATE OF triggername ON sqlmanager.trig
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3157 (class 2620 OID 53021)
+-- TOC entry 3161 (class 2620 OID 53021)
 -- Name: major_table major_table_tr; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -26537,7 +26745,7 @@ CREATE TRIGGER major_table_tr BEFORE INSERT OR UPDATE OF text ON test.major_tabl
 
 
 --
--- TOC entry 3158 (class 2620 OID 53022)
+-- TOC entry 3162 (class 2620 OID 53022)
 -- Name: major_table major_table_tr_2; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -26547,7 +26755,7 @@ CREATE TRIGGER major_table_tr_2 BEFORE UPDATE ON test.major_table FOR EACH ROW E
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3056 (class 2606 OID 53023)
+-- TOC entry 3060 (class 2606 OID 53023)
 -- Name: act_parametrs act_parametrs_fk_action; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26556,7 +26764,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 3057 (class 2606 OID 53028)
+-- TOC entry 3061 (class 2606 OID 53028)
 -- Name: act_parametrs act_parametrs_fk_confg; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26565,7 +26773,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 3058 (class 2606 OID 53033)
+-- TOC entry 3062 (class 2606 OID 53033)
 -- Name: act_parametrs act_parametrs_fk_qt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26574,7 +26782,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 3059 (class 2606 OID 53038)
+-- TOC entry 3063 (class 2606 OID 53038)
 -- Name: act_visible_condions act_visible_condions_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26583,7 +26791,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 3060 (class 2606 OID 53043)
+-- TOC entry 3064 (class 2606 OID 53043)
 -- Name: act_visible_condions act_visible_condions_fk1; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26592,7 +26800,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 3061 (class 2606 OID 53048)
+-- TOC entry 3065 (class 2606 OID 53048)
 -- Name: act_visible_condions act_visible_condions_fk_act; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26601,7 +26809,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 3062 (class 2606 OID 53053)
+-- TOC entry 3066 (class 2606 OID 53053)
 -- Name: actions actions_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26610,7 +26818,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3063 (class 2606 OID 53058)
+-- TOC entry 3067 (class 2606 OID 53058)
 -- Name: actions actions_fk_actype; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26619,7 +26827,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3064 (class 2606 OID 53063)
+-- TOC entry 3068 (class 2606 OID 53063)
 -- Name: actions actions_fk_apicalinme; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26628,7 +26836,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3065 (class 2606 OID 53068)
+-- TOC entry 3069 (class 2606 OID 53068)
 -- Name: actions actions_fk_apimeth; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26637,7 +26845,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3066 (class 2606 OID 53073)
+-- TOC entry 3070 (class 2606 OID 53073)
 -- Name: compoitems compoitems_fk_vi; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26646,7 +26854,7 @@ ALTER TABLE ONLY compoitems
 
 
 --
--- TOC entry 3067 (class 2606 OID 53078)
+-- TOC entry 3071 (class 2606 OID 53078)
 -- Name: config config_fk_ct; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26655,7 +26863,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 3068 (class 2606 OID 53083)
+-- TOC entry 3072 (class 2606 OID 53083)
 -- Name: config config_fk_view; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26664,7 +26872,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 3069 (class 2606 OID 53088)
+-- TOC entry 3073 (class 2606 OID 53088)
 -- Name: defaultval defaultval_fk_ao; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26673,7 +26881,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 3070 (class 2606 OID 53093)
+-- TOC entry 3074 (class 2606 OID 53093)
 -- Name: defaultval defaultval_fk_bo; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26682,7 +26890,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 3071 (class 2606 OID 53098)
+-- TOC entry 3075 (class 2606 OID 53098)
 -- Name: defaultval defaultval_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26691,7 +26899,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 3072 (class 2606 OID 53103)
+-- TOC entry 3076 (class 2606 OID 53103)
 -- Name: dialog_messages dialog_messages_fk_userid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26700,7 +26908,7 @@ ALTER TABLE ONLY dialog_messages
 
 
 --
--- TOC entry 3073 (class 2606 OID 53108)
+-- TOC entry 3077 (class 2606 OID 53108)
 -- Name: filters filters_fk_c; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26709,7 +26917,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3074 (class 2606 OID 53113)
+-- TOC entry 3078 (class 2606 OID 53113)
 -- Name: filters filters_fk_ft; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26718,7 +26926,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3075 (class 2606 OID 53118)
+-- TOC entry 3079 (class 2606 OID 53118)
 -- Name: filters filters_fk_pos; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26727,7 +26935,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3076 (class 2606 OID 53123)
+-- TOC entry 3080 (class 2606 OID 53123)
 -- Name: filters filters_fk_vi; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26736,7 +26944,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3077 (class 2606 OID 53128)
+-- TOC entry 3081 (class 2606 OID 53128)
 -- Name: mainmenu mainmenu_fk_mn; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26745,7 +26953,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
--- TOC entry 3078 (class 2606 OID 68358)
+-- TOC entry 3082 (class 2606 OID 68358)
 -- Name: mainsettings mainsettings_fk_template; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26754,7 +26962,7 @@ ALTER TABLE ONLY mainsettings
 
 
 --
--- TOC entry 3079 (class 2606 OID 53133)
+-- TOC entry 3083 (class 2606 OID 53133)
 -- Name: notifications notifications_fk_userid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26763,7 +26971,7 @@ ALTER TABLE ONLY notifications
 
 
 --
--- TOC entry 3080 (class 2606 OID 53138)
+-- TOC entry 3084 (class 2606 OID 53138)
 -- Name: orgs orgs_fk_ot; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26772,7 +26980,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 3081 (class 2606 OID 53143)
+-- TOC entry 3085 (class 2606 OID 53143)
 -- Name: select_condition select_condition_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26781,7 +26989,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3082 (class 2606 OID 53148)
+-- TOC entry 3086 (class 2606 OID 53148)
 -- Name: select_condition select_condition_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26790,7 +26998,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3083 (class 2606 OID 53153)
+-- TOC entry 3087 (class 2606 OID 53153)
 -- Name: select_condition select_condition_fk_valconf; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26799,7 +27007,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3084 (class 2606 OID 53158)
+-- TOC entry 3088 (class 2606 OID 53158)
 -- Name: visible_condition visible_condition_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26808,7 +27016,7 @@ ALTER TABLE ONLY visible_condition
 
 
 --
--- TOC entry 3085 (class 2606 OID 53163)
+-- TOC entry 3089 (class 2606 OID 53163)
 -- Name: visible_condition visible_condition_fk_oper; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26817,7 +27025,7 @@ ALTER TABLE ONLY visible_condition
 
 
 --
--- TOC entry 3086 (class 2606 OID 53168)
+-- TOC entry 3090 (class 2606 OID 53168)
 -- Name: visible_condition visible_condition_fk_v; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26828,7 +27036,7 @@ ALTER TABLE ONLY visible_condition
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3087 (class 2606 OID 53173)
+-- TOC entry 3091 (class 2606 OID 53173)
 -- Name: dictionary_for_select dictionary_for_select_fk_or; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26837,7 +27045,7 @@ ALTER TABLE ONLY dictionary_for_select
 
 
 --
--- TOC entry 3088 (class 2606 OID 53178)
+-- TOC entry 3092 (class 2606 OID 53178)
 -- Name: major_table major_table_seldic; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26846,7 +27054,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 3089 (class 2606 OID 53183)
+-- TOC entry 3093 (class 2606 OID 53183)
 -- Name: major_table major_table_th; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26855,7 +27063,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 3090 (class 2606 OID 53188)
+-- TOC entry 3094 (class 2606 OID 53188)
 -- Name: relate_with_major relate_with_major_tab_id; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26863,7 +27071,7 @@ ALTER TABLE ONLY relate_with_major
     ADD CONSTRAINT relate_with_major_tab_id FOREIGN KEY (major_table_id) REFERENCES major_table(id);
 
 
--- Completed on 2021-04-26 19:55:45
+-- Completed on 2021-05-12 11:47:08
 
 --
 -- PostgreSQL database dump complete
