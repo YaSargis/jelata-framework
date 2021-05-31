@@ -375,6 +375,19 @@
     color: #3f3ff5;
     font-weight: 500;
 }
-
-
 /* CHAT */
+
+.edit_view {
+  background-color: #11110c;
+  color: white;
+  border-radius: 100%;
+  font-size: smaller;
+}
+
+.edit_view span {
+  display:none;
+}
+
+.edit_view:hover {
+   background-color:#84d424bf;
+}
