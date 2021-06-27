@@ -51,7 +51,8 @@ class Schema(BaseHandler):
 		userdetail = userdetail.fetchone()[0]
 		userdetail['sessid'] = sesid
 		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
-
+		'''SELECT row_to_json (d) FROM (select *
+					from framework.views where path = %s) as d'''
 		result = []
 		roles = (userdetail.get('roles') or [])
 		if int(developerRole) not in roles:
@@ -70,6 +71,7 @@ class Schema(BaseHandler):
 			self.write('{"message":"view is not found"}')
 			return
 		result = result[0]
+		#self.write(dumps(result))
 		query = getList(result, {}, userdetail=userdetail)
 		squery = query[0]
 		self.write(squery)		
@@ -103,7 +105,9 @@ class Schema(BaseHandler):
 
 		userdetail = userdetail.fetchone()[0]
 		userdetail['sessid'] = sesid
+		#userdetail = userdetail.get('outjson')
 		if method == 'list':
+
 			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)'
 			result = []
 			try:
@@ -117,6 +121,7 @@ class Schema(BaseHandler):
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
+			#result = result[0]
 			if len(result.get('roles')) > 0:
 				x = False
 			else:
@@ -130,6 +135,7 @@ class Schema(BaseHandler):
 				return
 			user = {}
 			
+			# if exist initial action onLoad
 			actions = result.get('acts')
 			onLoad = None
 
@@ -172,31 +178,58 @@ class Schema(BaseHandler):
 					log(req_url + '_Error_onLoad', str(e))
 					log(req_url + '_Error_act', str(onLoad))
 					return
-
-	
-			query = getList(result, body, userdetail=userdetail)
-			squery = query[0]
-			scounquery = query[1]
+			# if exist initial action onLoad
 			data = []
-			try:
-				data = yield self.db.execute(squery)
-			except Exception as e:
-				showError(str(e), self)
-				log(url + '_Error', str(e))
-				return
-
-			data = curtojson([x for x in data],[x[0] for x in data.description])
 			count = 0
-			try:
-				count = yield self.db.execute(scounquery)
-			except Exception as e:
-				showError(str(e), self)
-				log(url + '_Error_count', str(e))
+			if result.get('viewtype').find('api_') == -1:
+				query = getList(result, body, userdetail=userdetail)
+				squery = query[0]
+				scounquery = query[1]
 				
-				return
+				try:
+					data = yield self.db.execute(squery)
+				except Exception as e:
+					showError(str(e), self)
+					log(url + '_Error', str(e))
+					return
 
-			count = count.fetchone()[0]
+				data = curtojson([x for x in data],[x[0] for x in data.description])
+				
+				try:
+					count = yield self.db.execute(scounquery)
+				except Exception as e:
+					showError(str(e), self)
+					log(url + '_Error_count', str(e))
+					
+					return
 
+				count = count.fetchone()[0]
+			else:
+				req_url = result.get('tablename')
+				if req_url[:4] != 'http':
+					req_url = maindomain + req_url
+				req = HTTPRequest(
+					url = req_url,
+					body = dumps(body),
+					method = 'POST',
+					headers = {'Cookie':'sesid=' + sesid}
+				)
+				try:
+					response = yield http_client.fetch(req)
+				except HTTPError as e:
+					if e.response and e.response.body:
+						e = e.response.body.decode('utf-8')
+					showError(str(e), self)
+					log(req_url + ' api error', str(e))
+					log(url + '_error_act', str(onLoad))
+					return
+				data = loads(response.body.decode('utf-8'))
+				if data is not None:
+					if 'outjson' in data:
+						data = data.get('outjson')
+				else:
+					data = []
+				count = len(data)
 			self.write(dumps({
 				'foundcount':count, 'data':data, 'config':result.get('config'),
 				'filters':result.get('filters'), 'acts':result.get('acts'),
@@ -209,7 +242,9 @@ class Schema(BaseHandler):
 			}))
 
 		elif method == 'getone':
-
+			'''SELECT row_to_json (d) FROM (select *
+				FROM framework.views
+				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d'''
 			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)' 
 			result = []
 			try:
@@ -222,6 +257,7 @@ class Schema(BaseHandler):
 				self.set_status(500,None)
 				self.write('{"message":"view is not found"}')
 				return
+			#result = result[0]
 			
 			if len(result.get('roles')) > 0:
 				x = False
@@ -235,6 +271,7 @@ class Schema(BaseHandler):
 				self.write('{"message":"access denied"}')
 				return
 				
+			# if exist initial action onLoad
 			actions = result.get('acts')
 			onLoad = None
 
@@ -273,28 +310,55 @@ class Schema(BaseHandler):
 					response = yield http_client.fetch(req)
 				except HTTPError as e:
 					if e.response and e.response.body:
-						e = e.response.body.decode("utf-8")
+						e = e.response.body.decode('utf-8')
 					showError(str(e), self)
 					log(req_url + '_Error_onLoad', str(e))
 					log(url + '_Error_act', str(onLoad))
 					return
-				
-			query = getList(result, body, userdetail=userdetail)
-			squery = query[0]
+			# if exist initial action onLoad
 			data = []
-			try:
-				data = yield self.db.execute(squery)
-			except Exception as e:
-				showError(str(e), self)
-				log(url + '_Error', str(e))
-				return
+			if result.get('viewtype').find('api_') == -1:
+				query = getList(result, body, userdetail=userdetail)
+				squery = query[0]
+			
+				try:
+					data = yield self.db.execute(squery)
+				except Exception as e:
+					showError(str(e), self)
+					log(url + '_Error', str(e))
+					return
 
-			data = curtojson([x for x in data],[x[0] for x in data.description])
-			if len(data)>1:
+				data = curtojson([x for x in data],[x[0] for x in data.description])
+			else:
+				req_url = result.get('tablename')
+				if req_url[:4] != 'http':
+					req_url = maindomain + req_url
+				req = HTTPRequest(
+					url = req_url,
+					body = dumps(body),
+					method = 'POST',
+					headers = {'Cookie':'sesid=' + sesid}
+				)
+				try:
+					response = yield http_client.fetch(req)
+				except HTTPError as e:
+					if e.response and e.response.body:
+						e = e.response.body.decode('utf-8')
+					showError(str(e), self)
+					log(req_url + ' api error', str(e))
+					log(url + '_error_act', str(onLoad))
+					return
+				data = loads(response.body.decode('utf-8'))
+				if data is not None:
+					if 'outjson' in data:
+						data = data.get('outjson')
+				else:
+					data = []
+			if len(data) > 1:
 				self.set_status(500,None)
 				self.write('{"message":"getone can\'t return more then 1 row"}')
 				return
-
+			#count = count.fetchone()[0]
 			self.set_status(200,None)
 			self.write(dumps({
 				'data':data, 'config':result.get('config'),
@@ -329,9 +393,10 @@ class Schema(BaseHandler):
 				self.write('{"message":"view is not found"}')
 				return
 			result = result[0]
+			#self.write(dumps(result))
 			query = getList(result, body, userdetail=userdetail)
 			squery = query[0]
-			self.write(dumps({'squery': squery + '; '}))
+			self.write(dumps({'squery':squery + '; '}))
 		else:
 			self.set_status(404,None)
 			self.write('{"message":"method not found"}')
