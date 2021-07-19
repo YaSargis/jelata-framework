@@ -51,8 +51,7 @@ class Schema(BaseHandler):
 		userdetail = userdetail.fetchone()[0]
 		userdetail['sessid'] = sesid
 		squery = 'SELECT framework."fn_view_getByPath_showSQL"(%s)'
-		'''SELECT row_to_json (d) FROM (select *
-					from framework.views where path = %s) as d'''
+
 		result = []
 		roles = (userdetail.get('roles') or [])
 		if int(developerRole) not in roles:
@@ -181,6 +180,18 @@ class Schema(BaseHandler):
 			# if exist initial action onLoad
 			data = []
 			count = 0
+			config = result.get('config')
+			filters = result.get('filters')
+			acts = result.get('acts')
+			title = result.get('title')
+			classname = result.get('classname')
+			pagination = result.get('pagination')
+			pagecount = result.get('pagecount')
+			ispagesize = result.get('ispagesize')
+			isfoundcount = result.get('isfoundcount')
+			subscrible = result.get('subscrible')
+			orderby = result.get('orderby')
+			checker = result.get('checker')
 			if result.get('viewtype').find('api_') == -1:
 				query = getList(result, body, userdetail=userdetail)
 				squery = query[0]
@@ -225,26 +236,64 @@ class Schema(BaseHandler):
 					return
 				data = loads(response.body.decode('utf-8'))
 				if data is not None:
+					if 'foundcount' in data:
+						count = data.get('foundcount')
+					else:
+						count = None
+
+					if 'config' in data and data.get('config') is not None:
+						config = data.get('config')
+					
+					if 'acts' in data and data.get('acts') is not None:
+						acts = data.get('acts')
+
+					if 'filters' in data and data.get('filters') is not None:
+						filters = data.get('filters')
+						
+					if 'classname' in data:
+						classname = data.get('classname')
+						
+					if 'title' in data:
+						title = data.get('title')
+						
+					if 'pagination' in data:
+						pagination = data.get('pagination')
+
+					if 'pagecount' in data:
+						pagecount = data.get('pagecount')
+						
+					if 'ispagesize' in data:
+						ispagesize = data.get('ispagesize')
+						
+					if 'isfoundcount' in data:
+						isfoundcount = data.get('isfoundcount')
+						
+					if 'subscrible' in data:
+						subscrible = data.get('subscrible')
+						
+					if 'orderby' in data:
+						orderby = data.get('orderby')
+						
+					if 'checker' in data:
+						checker = data.get('checker')
+						
 					if 'outjson' in data:
 						data = data.get('outjson')
 				else:
 					data = []
-				count = len(data)
+				
+				if count is None:
+					count = len(data)
+				
 			self.write(dumps({
-				'foundcount':count, 'data':data, 'config':result.get('config'),
-				'filters':result.get('filters'), 'acts':result.get('acts'),
-				'classname':result.get('classname'), 'title':result.get('title'),
-				'viewtype':result.get('viewtype'), 'pagination':result.get('pagination'),
-				'ispagecount':result.get('pagecount'), 'ispagesize':result.get('ispagesize'),
-				'isfoundcount':result.get('foundcount'), 'subscrible':result.get('subscrible'),
-				'isorderby':result.get('orderby'), 'viewid':result.get('id'),
-				'checker':result.get('checker'), 'user':user
+				'foundcount': count, 'data': data, 'config': config, 'filters': filters, 'acts': acts, 
+				'classname': classname, 'title': title, 'viewtype': result.get('viewtype'), 'pagination': pagination, 
+				'ispagecount': pagecount, 'ispagesize': ispagesize, 'isfoundcount': isfoundcount, 'subscrible': subscrible,
+				'isorderby': orderby, 'viewid': result.get('id'), 'checker': checker, 'user':user
 			}))
 
 		elif method == 'getone':
-			'''SELECT row_to_json (d) FROM (select *
-				FROM framework.views
-				WHERE path = %s and viewtype in ('form full', 'form not mutable') ) as d'''
+
 			squery = 'SELECT framework."fn_view_getByPath"(%s,%s)' 
 			result = []
 			try:
@@ -317,6 +366,13 @@ class Schema(BaseHandler):
 					return
 			# if exist initial action onLoad
 			data = []
+			config = result.get('config')
+			filters = result.get('filters')
+			acts = result.get('acts')
+			title = result.get('title')
+			classname = result.get('classname')
+			subscrible = result.get('subscrible')
+			
 			if result.get('viewtype').find('api_') == -1:
 				query = getList(result, body, userdetail=userdetail)
 				squery = query[0]
@@ -350,6 +406,25 @@ class Schema(BaseHandler):
 					return
 				data = loads(response.body.decode('utf-8'))
 				if data is not None:
+					if 'config' in data and data.get('config') is not None:
+						config = data.get('config')
+					
+					if 'acts' in data and data.get('acts') is not None:
+						acts = data.get('acts')
+
+					if 'filters' in data and data.get('filters') is not None:
+						filters = data.get('filters')
+						
+					if 'classname' in data:
+						classname = data.get('classname')
+						
+					if 'title' in data:
+						title = data.get('title')
+						
+					if 'subscrible' in data:
+						subscrible = data.get('subscrible')
+
+
 					if 'outjson' in data:
 						data = data.get('outjson')
 				else:
@@ -361,11 +436,9 @@ class Schema(BaseHandler):
 			#count = count.fetchone()[0]
 			self.set_status(200,None)
 			self.write(dumps({
-				'data':data, 'config':result.get('config'),
-				'acts':result.get('acts'), 'classname':result.get('classname'),
-				'table':result.get('tablename'), 'subscrible':result.get('subscrible'),
-				'title':result.get('title'), 'viewtype':result.get('viewtype'),
-				'id':result.get('id')
+				'data': data, 'config': config, 'acts': acts, 'classname': classname,
+				'table': result.get('tablename'), 'subscrible': subscrible,
+				'title': title, 'viewtype': result.get('viewtype'), 'id': result.get('id')
 			}))
 		elif method == 'squery':
 			squery = '''
