@@ -282,7 +282,20 @@ class Schema(BaseHandler):
 						data = data.get('outjson')
 				else:
 					data = []
-				
+				useroles = userdetail.get('roles') or []
+				if acts:
+					filteredActs = []
+					for act in acts:
+						if 'roles' in act and len(act.get('roles')) > 0:
+							fAct = []
+							for obj in act.get('roles'):
+								fAct.append(obj.get('value'))	
+								fAct.append(developerRole)
+							if len(list(set(fAct) & set(useroles))) > 0:
+								filteredActs.append(act)
+						else:
+							filteredActs.append(act)
+					acts = filteredActs
 				if count is None:
 					count = len(data)
 				
@@ -431,6 +444,20 @@ class Schema(BaseHandler):
 						data = data.get('outjson')
 				else:
 					data = []
+				useroles = userdetail.get('roles') or []
+				if acts:
+					filteredActs = []
+					for act in acts:
+						if 'roles' in act and len(act.get('roles')) > 0:
+							fAct = []
+							for obj in act.get('roles'):
+								fAct.append(obj.get('value'))	
+								fAct.append(developerRole)
+							if len(list(set(fAct) & set(useroles))) > 0:
+								filteredActs.append(act)
+						else:
+							filteredActs.append(act)
+					acts = filteredActs	
 			if len(data) > 1:
 				self.set_status(500,None)
 				self.write('{"message":"getone can\'t return more then 1 row"}')
