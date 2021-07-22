@@ -194,6 +194,7 @@ class Schema(BaseHandler):
 			checker = result.get('checker')
 			if result.get('viewtype').find('api_') == -1:
 				query = getList(result, body, userdetail=userdetail)
+				acts = result.get('acts')
 				squery = query[0]
 				scounquery = query[1]
 				
@@ -375,6 +376,7 @@ class Schema(BaseHandler):
 			
 			if result.get('viewtype').find('api_') == -1:
 				query = getList(result, body, userdetail=userdetail)
+				acts = result.get('acts')
 				squery = query[0]
 			
 				try:
