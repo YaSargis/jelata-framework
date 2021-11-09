@@ -50,6 +50,21 @@ def getList(result, body, userdetail=None):
 				filteredActs.append(act)
 		result['acts'] = filteredActs
 		
+	if config:
+		filteredConfig = []
+		for conf in config:
+			if 'roles' in conf and conf.get('roles') is not None and len(conf.get('roles')) > 0:
+				cRoles = conf.get('roles')
+
+				#cRoles.append(developerRole)
+
+				if len(list(set(cRoles) & set(useroles))) > 0:
+					
+					filteredConfig.append(conf)
+			else:
+				filteredConfig.append(conf)
+		config = filteredConfig	
+		result['config'] = config	
 	joins = ''
 	orderby = ''
 	where = ''
@@ -256,7 +271,10 @@ def getList(result, body, userdetail=None):
 
 			
 		if col.get('orderby'):
-			defaultOrderBy += ' t' + colT + '."' + col.get('col') + '"'
+			t = '1'
+			if col.get('related'):
+				t = str(col.get('t'))
+			defaultOrderBy += ' t' + t + '."' + col.get('col') + '"'
 			if col.get('orderbydesc'):
 				defaultOrderBy += ' desc'
 			defaultOrderBy += ','
