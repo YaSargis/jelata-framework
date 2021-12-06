@@ -5,7 +5,7 @@
 -- Dumped from database version 9.6.20
 -- Dumped by pg_dump version 9.6.0
 
--- Started on 2021-10-11 22:21:59
+-- Started on 2021-12-06 07:52:46
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -27,7 +27,7 @@ CREATE SCHEMA framework;
 ALTER SCHEMA framework OWNER TO postgres;
 
 --
--- TOC entry 3422 (class 0 OID 0)
+-- TOC entry 3424 (class 0 OID 0)
 -- Dependencies: 8
 -- Name: SCHEMA framework; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -46,7 +46,7 @@ CREATE SCHEMA reports;
 ALTER SCHEMA reports OWNER TO postgres;
 
 --
--- TOC entry 3424 (class 0 OID 0)
+-- TOC entry 3426 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: SCHEMA reports; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -65,7 +65,7 @@ CREATE SCHEMA sqlmanager;
 ALTER SCHEMA sqlmanager OWNER TO postgres;
 
 --
--- TOC entry 3425 (class 0 OID 0)
+-- TOC entry 3427 (class 0 OID 0)
 -- Dependencies: 7
 -- Name: SCHEMA sqlmanager; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -84,7 +84,7 @@ CREATE SCHEMA test;
 ALTER SCHEMA test OWNER TO postgres;
 
 --
--- TOC entry 3426 (class 0 OID 0)
+-- TOC entry 3428 (class 0 OID 0)
 -- Dependencies: 9
 -- Name: SCHEMA test; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -101,7 +101,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 3427 (class 0 OID 0)
+-- TOC entry 3429 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -118,7 +118,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 3428 (class 0 OID 0)
+-- TOC entry 3430 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -173,7 +173,7 @@ $$;
 ALTER FUNCTION framework.fn_action_add_untitle(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3429 (class 0 OID 0)
+-- TOC entry 3431 (class 0 OID 0)
 -- Dependencies: 362
 -- Name: FUNCTION fn_action_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -250,7 +250,7 @@ $$;
 ALTER FUNCTION framework.fn_action_copy(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3430 (class 0 OID 0)
+-- TOC entry 3432 (class 0 OID 0)
 -- Dependencies: 363
 -- Name: FUNCTION fn_action_copy(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -288,7 +288,7 @@ $$;
 ALTER FUNCTION framework.fn_apimethods(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3431 (class 0 OID 0)
+-- TOC entry 3433 (class 0 OID 0)
 -- Dependencies: 364
 -- Name: FUNCTION fn_apimethods(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -365,7 +365,7 @@ $_$;
 ALTER FUNCTION framework.fn_autocomplete(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3432 (class 0 OID 0)
+-- TOC entry 3434 (class 0 OID 0)
 -- Dependencies: 603
 -- Name: FUNCTION fn_autocomplete(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -410,7 +410,7 @@ $$;
 ALTER FUNCTION framework.fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3433 (class 0 OID 0)
+-- TOC entry 3435 (class 0 OID 0)
 -- Dependencies: 365
 -- Name: FUNCTION fn_branchestree_recurs(_parentid integer, _treesid integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -461,7 +461,7 @@ $$;
 ALTER FUNCTION framework.fn_col_add_select_condition(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3434 (class 0 OID 0)
+-- TOC entry 3436 (class 0 OID 0)
 -- Dependencies: 366
 -- Name: FUNCTION fn_col_add_select_condition(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -529,7 +529,7 @@ $_$;
 ALTER FUNCTION framework.fn_compo_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3435 (class 0 OID 0)
+-- TOC entry 3437 (class 0 OID 0)
 -- Dependencies: 367
 -- Name: FUNCTION fn_compo_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -599,7 +599,7 @@ $$;
 ALTER FUNCTION framework.fn_compo_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3436 (class 0 OID 0)
+-- TOC entry 3438 (class 0 OID 0)
 -- Dependencies: 368
 -- Name: FUNCTION fn_compo_onload(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -649,7 +649,7 @@ $$;
 ALTER FUNCTION framework.fn_compoitem_add(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3437 (class 0 OID 0)
+-- TOC entry 3439 (class 0 OID 0)
 -- Dependencies: 369
 -- Name: FUNCTION fn_compoitem_add(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -704,7 +704,7 @@ $$;
 ALTER FUNCTION framework.fn_config_fncol_add(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3438 (class 0 OID 0)
+-- TOC entry 3440 (class 0 OID 0)
 -- Dependencies: 370
 -- Name: FUNCTION fn_config_fncol_add(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -873,7 +873,7 @@ $$;
 ALTER FUNCTION framework.fn_config_inscol(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3439 (class 0 OID 0)
+-- TOC entry 3441 (class 0 OID 0)
 -- Dependencies: 371
 -- Name: FUNCTION fn_config_inscol(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -920,7 +920,7 @@ $$;
 ALTER FUNCTION framework.fn_config_relation(_id integer, OUT _relation character varying) OWNER TO postgres;
 
 --
--- TOC entry 3440 (class 0 OID 0)
+-- TOC entry 3442 (class 0 OID 0)
 -- Dependencies: 372
 -- Name: FUNCTION fn_config_relation(_id integer, OUT _relation character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -973,7 +973,7 @@ $$;
 ALTER FUNCTION framework.fn_config_relationcolumns(_id integer, OUT relation_columns character varying) OWNER TO postgres;
 
 --
--- TOC entry 3441 (class 0 OID 0)
+-- TOC entry 3443 (class 0 OID 0)
 -- Dependencies: 373
 -- Name: FUNCTION fn_config_relationcolumns(_id integer, OUT relation_columns character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1056,7 +1056,7 @@ $$;
 ALTER FUNCTION framework.fn_config_selectapi(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3442 (class 0 OID 0)
+-- TOC entry 3444 (class 0 OID 0)
 -- Dependencies: 374
 -- Name: FUNCTION fn_config_selectapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1092,7 +1092,7 @@ $$;
 ALTER FUNCTION framework.fn_config_settings_apply(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3443 (class 0 OID 0)
+-- TOC entry 3445 (class 0 OID 0)
 -- Dependencies: 375
 -- Name: FUNCTION fn_config_settings_apply(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1277,7 +1277,7 @@ $$;
 ALTER FUNCTION framework.fn_config_to_json(_viewid integer, OUT _config json) OWNER TO postgres;
 
 --
--- TOC entry 3444 (class 0 OID 0)
+-- TOC entry 3446 (class 0 OID 0)
 -- Dependencies: 604
 -- Name: FUNCTION fn_config_to_json(_viewid integer, OUT _config json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1316,7 +1316,7 @@ $$;
 ALTER FUNCTION framework.fn_configsettings_selectapi(insjon json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3445 (class 0 OID 0)
+-- TOC entry 3447 (class 0 OID 0)
 -- Dependencies: 376
 -- Name: FUNCTION fn_configsettings_selectapi(insjon json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1553,7 +1553,7 @@ $$;
 ALTER FUNCTION framework.fn_copyview(injson json, OUT _newid integer) OWNER TO postgres;
 
 --
--- TOC entry 3446 (class 0 OID 0)
+-- TOC entry 3448 (class 0 OID 0)
 -- Dependencies: 377
 -- Name: FUNCTION fn_copyview(injson json, OUT _newid integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1712,7 +1712,7 @@ $$;
 ALTER FUNCTION framework.fn_createconfig(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3447 (class 0 OID 0)
+-- TOC entry 3449 (class 0 OID 0)
 -- Dependencies: 378
 -- Name: FUNCTION fn_createconfig(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1775,7 +1775,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, OUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 3448 (class 0 OID 0)
+-- TOC entry 3450 (class 0 OID 0)
 -- Dependencies: 379
 -- Name: FUNCTION fn_cryptosess(injson json, OUT sessid character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1841,7 +1841,7 @@ $$;
 ALTER FUNCTION framework.fn_cryptosess(injson json, INOUT sessid character) OWNER TO postgres;
 
 --
--- TOC entry 3449 (class 0 OID 0)
+-- TOC entry 3451 (class 0 OID 0)
 -- Dependencies: 380
 -- Name: FUNCTION fn_cryptosess(injson json, INOUT sessid character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -1904,7 +1904,7 @@ $$;
 ALTER FUNCTION framework.fn_deleteconfig_checked(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3450 (class 0 OID 0)
+-- TOC entry 3452 (class 0 OID 0)
 -- Dependencies: 382
 -- Name: FUNCTION fn_deleteconfig_checked(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2032,7 +2032,7 @@ $_$;
 ALTER FUNCTION framework.fn_deleterow(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3451 (class 0 OID 0)
+-- TOC entry 3453 (class 0 OID 0)
 -- Dependencies: 383
 -- Name: FUNCTION fn_deleterow(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2157,7 +2157,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_addadmin(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3452 (class 0 OID 0)
+-- TOC entry 3454 (class 0 OID 0)
 -- Dependencies: 384
 -- Name: FUNCTION fn_dialog_addadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2274,7 +2274,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_adduser(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3453 (class 0 OID 0)
+-- TOC entry 3455 (class 0 OID 0)
 -- Dependencies: 385
 -- Name: FUNCTION fn_dialog_adduser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2377,7 +2377,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_edit(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3454 (class 0 OID 0)
+-- TOC entry 3456 (class 0 OID 0)
 -- Dependencies: 386
 -- Name: FUNCTION fn_dialog_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2451,7 +2451,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_group_create(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3455 (class 0 OID 0)
+-- TOC entry 3457 (class 0 OID 0)
 -- Dependencies: 387
 -- Name: FUNCTION fn_dialog_group_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2488,7 +2488,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_isadmin(_dialog_admins json, _userid integer, OUT _a boolean) OWNER TO postgres;
 
 --
--- TOC entry 3456 (class 0 OID 0)
+-- TOC entry 3458 (class 0 OID 0)
 -- Dependencies: 388
 -- Name: FUNCTION fn_dialog_isadmin(_dialog_admins json, _userid integer, OUT _a boolean); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2630,7 +2630,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_leave(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3457 (class 0 OID 0)
+-- TOC entry 3459 (class 0 OID 0)
 -- Dependencies: 389
 -- Name: FUNCTION fn_dialog_leave(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2798,7 +2798,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_bydialog(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3458 (class 0 OID 0)
+-- TOC entry 3460 (class 0 OID 0)
 -- Dependencies: 390
 -- Name: FUNCTION fn_dialog_message_bydialog(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -2893,7 +2893,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_delete(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3459 (class 0 OID 0)
+-- TOC entry 3461 (class 0 OID 0)
 -- Dependencies: 391
 -- Name: FUNCTION fn_dialog_message_delete(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3033,7 +3033,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_edit(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3460 (class 0 OID 0)
+-- TOC entry 3462 (class 0 OID 0)
 -- Dependencies: 392
 -- Name: FUNCTION fn_dialog_message_edit(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3204,7 +3204,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_send(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3461 (class 0 OID 0)
+-- TOC entry 3463 (class 0 OID 0)
 -- Dependencies: 393
 -- Name: FUNCTION fn_dialog_message_send(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3271,7 +3271,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_message_setread(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3462 (class 0 OID 0)
+-- TOC entry 3464 (class 0 OID 0)
 -- Dependencies: 394
 -- Name: FUNCTION fn_dialog_message_setread(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3339,7 +3339,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_messages_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3463 (class 0 OID 0)
+-- TOC entry 3465 (class 0 OID 0)
 -- Dependencies: 395
 -- Name: FUNCTION fn_dialog_messages_onload(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3421,7 +3421,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_personal_create(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3464 (class 0 OID 0)
+-- TOC entry 3466 (class 0 OID 0)
 -- Dependencies: 396
 -- Name: FUNCTION fn_dialog_personal_create(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3575,7 +3575,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_removeadmin(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3465 (class 0 OID 0)
+-- TOC entry 3467 (class 0 OID 0)
 -- Dependencies: 398
 -- Name: FUNCTION fn_dialog_removeadmin(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3711,7 +3711,7 @@ $$;
 ALTER FUNCTION framework.fn_dialog_removeuser(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3466 (class 0 OID 0)
+-- TOC entry 3468 (class 0 OID 0)
 -- Dependencies: 399
 -- Name: FUNCTION fn_dialog_removeuser(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -3977,7 +3977,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_byuser(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3467 (class 0 OID 0)
+-- TOC entry 3469 (class 0 OID 0)
 -- Dependencies: 404
 -- Name: FUNCTION fn_dialogs_byuser(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4133,7 +4133,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_chats_ws(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3468 (class 0 OID 0)
+-- TOC entry 3470 (class 0 OID 0)
 -- Dependencies: 405
 -- Name: FUNCTION fn_dialogs_chats_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4263,7 +4263,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_chatsmessages_ws(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3469 (class 0 OID 0)
+-- TOC entry 3471 (class 0 OID 0)
 -- Dependencies: 406
 -- Name: FUNCTION fn_dialogs_chatsmessages_ws(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4302,7 +4302,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3470 (class 0 OID 0)
+-- TOC entry 3472 (class 0 OID 0)
 -- Dependencies: 407
 -- Name: FUNCTION fn_dialogs_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4358,7 +4358,7 @@ $$;
 ALTER FUNCTION framework.fn_dialogs_usersearch(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3471 (class 0 OID 0)
+-- TOC entry 3473 (class 0 OID 0)
 -- Dependencies: 408
 -- Name: FUNCTION fn_dialogs_usersearch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4461,7 +4461,7 @@ $_$;
 ALTER FUNCTION framework.fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3472 (class 0 OID 0)
+-- TOC entry 3474 (class 0 OID 0)
 -- Dependencies: 410
 -- Name: FUNCTION fn_fapi(injson json, apititle character varying, apitype smallint, sessid character, primaryauthorization smallint, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4508,7 +4508,7 @@ $$;
 ALTER FUNCTION framework.fn_filter_add_untitle(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3473 (class 0 OID 0)
+-- TOC entry 3475 (class 0 OID 0)
 -- Dependencies: 411
 -- Name: FUNCTION fn_filter_add_untitle(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4817,7 +4817,7 @@ $_$;
 ALTER FUNCTION framework.fn_formselect(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3474 (class 0 OID 0)
+-- TOC entry 3476 (class 0 OID 0)
 -- Dependencies: 600
 -- Name: FUNCTION fn_formselect(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4874,7 +4874,7 @@ $$;
 ALTER FUNCTION framework.fn_functions_getall_spapi(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3475 (class 0 OID 0)
+-- TOC entry 3477 (class 0 OID 0)
 -- Dependencies: 412
 -- Name: FUNCTION fn_functions_getall_spapi(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -4958,7 +4958,7 @@ $$;
 ALTER FUNCTION framework.fn_getfunctions(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3476 (class 0 OID 0)
+-- TOC entry 3478 (class 0 OID 0)
 -- Dependencies: 414
 -- Name: FUNCTION fn_getfunctions(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5054,7 +5054,7 @@ $$;
 ALTER FUNCTION framework.fn_gettables_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3477 (class 0 OID 0)
+-- TOC entry 3479 (class 0 OID 0)
 -- Dependencies: 416
 -- Name: FUNCTION fn_gettables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5127,7 +5127,7 @@ $$;
 ALTER FUNCTION framework.fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying) OWNER TO postgres;
 
 --
--- TOC entry 3478 (class 0 OID 0)
+-- TOC entry 3480 (class 0 OID 0)
 -- Dependencies: 409
 -- Name: FUNCTION fn_htmldatatype(sqldatatype character varying, OUT htmltype character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5158,7 +5158,7 @@ $$;
 ALTER FUNCTION framework.fn_logout(sesid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3479 (class 0 OID 0)
+-- TOC entry 3481 (class 0 OID 0)
 -- Dependencies: 418
 -- Name: FUNCTION fn_logout(sesid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5445,7 +5445,7 @@ $$;
 ALTER FUNCTION framework.fn_logtable_rollback(injson json, OUT message character varying) OWNER TO postgres;
 
 --
--- TOC entry 3480 (class 0 OID 0)
+-- TOC entry 3482 (class 0 OID 0)
 -- Dependencies: 419
 -- Name: FUNCTION fn_logtable_rollback(injson json, OUT message character varying); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5505,7 +5505,7 @@ $$;
 ALTER FUNCTION framework.fn_mainsettings_save(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3481 (class 0 OID 0)
+-- TOC entry 3483 (class 0 OID 0)
 -- Dependencies: 420
 -- Name: FUNCTION fn_mainsettings_save(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5533,7 +5533,7 @@ $$;
 ALTER FUNCTION framework.fn_mainsettings_usercss(_css text) OWNER TO postgres;
 
 --
--- TOC entry 3482 (class 0 OID 0)
+-- TOC entry 3484 (class 0 OID 0)
 -- Dependencies: 421
 -- Name: FUNCTION fn_mainsettings_usercss(_css text); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5702,7 +5702,7 @@ $$;
 ALTER FUNCTION framework.fn_menus(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3483 (class 0 OID 0)
+-- TOC entry 3485 (class 0 OID 0)
 -- Dependencies: 423
 -- Name: FUNCTION fn_menus(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5733,7 +5733,7 @@ $$;
 ALTER FUNCTION framework.fn_notif_setsended(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3484 (class 0 OID 0)
+-- TOC entry 3486 (class 0 OID 0)
 -- Dependencies: 424
 -- Name: FUNCTION fn_notif_setsended(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5791,7 +5791,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_bysess(_sess character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3485 (class 0 OID 0)
+-- TOC entry 3487 (class 0 OID 0)
 -- Dependencies: 425
 -- Name: FUNCTION fn_notifications_bysess(_sess character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5829,7 +5829,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_setreaded_by_userid(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3486 (class 0 OID 0)
+-- TOC entry 3488 (class 0 OID 0)
 -- Dependencies: 426
 -- Name: FUNCTION fn_notifications_setreaded_by_userid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5871,7 +5871,7 @@ $$;
 ALTER FUNCTION framework.fn_notifications_setsended(_sess character) OWNER TO postgres;
 
 --
--- TOC entry 3487 (class 0 OID 0)
+-- TOC entry 3489 (class 0 OID 0)
 -- Dependencies: 427
 -- Name: FUNCTION fn_notifications_setsended(_sess character); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -5983,7 +5983,7 @@ $$;
 ALTER FUNCTION framework.fn_roles_fetch(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3488 (class 0 OID 0)
+-- TOC entry 3490 (class 0 OID 0)
 -- Dependencies: 429
 -- Name: FUNCTION fn_roles_fetch(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6408,7 +6408,7 @@ $_$;
 ALTER FUNCTION framework.fn_savestate(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3489 (class 0 OID 0)
+-- TOC entry 3491 (class 0 OID 0)
 -- Dependencies: 430
 -- Name: FUNCTION fn_savestate(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -6896,7 +6896,7 @@ $_$;
 ALTER FUNCTION framework.fn_savevalue(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3490 (class 0 OID 0)
+-- TOC entry 3492 (class 0 OID 0)
 -- Dependencies: 432
 -- Name: FUNCTION fn_savevalue(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7035,7 +7035,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_filters(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3491 (class 0 OID 0)
+-- TOC entry 3493 (class 0 OID 0)
 -- Dependencies: 435
 -- Name: FUNCTION fn_tabcolumns_for_filters(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7101,7 +7101,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_filters_arr(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3492 (class 0 OID 0)
+-- TOC entry 3494 (class 0 OID 0)
 -- Dependencies: 436
 -- Name: FUNCTION fn_tabcolumns_for_filters_arr(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7148,7 +7148,7 @@ $$;
 ALTER FUNCTION framework.fn_tabcolumns_for_sc(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3493 (class 0 OID 0)
+-- TOC entry 3495 (class 0 OID 0)
 -- Dependencies: 437
 -- Name: FUNCTION fn_tabcolumns_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7391,7 +7391,7 @@ $$;
 ALTER FUNCTION framework.fn_trees_bypath(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3494 (class 0 OID 0)
+-- TOC entry 3496 (class 0 OID 0)
 -- Dependencies: 441
 -- Name: FUNCTION fn_trees_bypath(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7437,7 +7437,7 @@ $$;
 ALTER FUNCTION framework.fn_userjson(sessid character, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3495 (class 0 OID 0)
+-- TOC entry 3497 (class 0 OID 0)
 -- Dependencies: 442
 -- Name: FUNCTION fn_userjson(sessid character, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7535,7 +7535,7 @@ $$;
 ALTER FUNCTION framework.fn_userorgs(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3496 (class 0 OID 0)
+-- TOC entry 3498 (class 0 OID 0)
 -- Dependencies: 444
 -- Name: FUNCTION fn_userorgs(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7591,7 +7591,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_fn(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3497 (class 0 OID 0)
+-- TOC entry 3499 (class 0 OID 0)
 -- Dependencies: 446
 -- Name: FUNCTION fn_view_cols_for_fn(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7648,7 +7648,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_param(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3498 (class 0 OID 0)
+-- TOC entry 3500 (class 0 OID 0)
 -- Dependencies: 447
 -- Name: FUNCTION fn_view_cols_for_param(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7706,7 +7706,7 @@ $$;
 ALTER FUNCTION framework.fn_view_cols_for_sc(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3499 (class 0 OID 0)
+-- TOC entry 3501 (class 0 OID 0)
 -- Dependencies: 448
 -- Name: FUNCTION fn_view_cols_for_sc(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -7846,7 +7846,7 @@ $$;
 ALTER FUNCTION framework.fn_view_deletebyid(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3500 (class 0 OID 0)
+-- TOC entry 3502 (class 0 OID 0)
 -- Dependencies: 449
 -- Name: FUNCTION fn_view_deletebyid(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8241,7 +8241,7 @@ $$;
 ALTER FUNCTION framework."fn_view_fromJson"(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3501 (class 0 OID 0)
+-- TOC entry 3503 (class 0 OID 0)
 -- Dependencies: 450
 -- Name: FUNCTION "fn_view_fromJson"(injson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8365,7 +8365,7 @@ $$;
 ALTER FUNCTION framework."fn_view_genJson"(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3502 (class 0 OID 0)
+-- TOC entry 3504 (class 0 OID 0)
 -- Dependencies: 451
 -- Name: FUNCTION "fn_view_genJson"(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8609,7 +8609,7 @@ $$;
 ALTER FUNCTION framework."fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3503 (class 0 OID 0)
+-- TOC entry 3505 (class 0 OID 0)
 -- Dependencies: 602
 -- Name: FUNCTION "fn_view_getByPath"(_path character varying, _viewtype character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8757,7 +8757,7 @@ $$;
 ALTER FUNCTION framework."fn_view_getByPath_showSQL"(_path character varying, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3504 (class 0 OID 0)
+-- TOC entry 3506 (class 0 OID 0)
 -- Dependencies: 452
 -- Name: FUNCTION "fn_view_getByPath_showSQL"(_path character varying, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -8871,7 +8871,7 @@ $$;
 ALTER FUNCTION framework.fn_view_json_for_copy(_id integer, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3505 (class 0 OID 0)
+-- TOC entry 3507 (class 0 OID 0)
 -- Dependencies: 445
 -- Name: FUNCTION fn_view_json_for_copy(_id integer, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9066,7 +9066,7 @@ $$;
 ALTER FUNCTION framework.fn_view_json_parse(injson json, _n integer) OWNER TO postgres;
 
 --
--- TOC entry 3506 (class 0 OID 0)
+-- TOC entry 3508 (class 0 OID 0)
 -- Dependencies: 455
 -- Name: FUNCTION fn_view_json_parse(injson json, _n integer); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9102,7 +9102,7 @@ $$;
 ALTER FUNCTION framework.fn_view_link_showsql(_path character varying, OUT _link json) OWNER TO postgres;
 
 --
--- TOC entry 3507 (class 0 OID 0)
+-- TOC entry 3509 (class 0 OID 0)
 -- Dependencies: 456
 -- Name: FUNCTION fn_view_link_showsql(_path character varying, OUT _link json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9305,7 +9305,7 @@ $$;
 ALTER FUNCTION framework.fn_viewnotif_get(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3508 (class 0 OID 0)
+-- TOC entry 3510 (class 0 OID 0)
 -- Dependencies: 458
 -- Name: FUNCTION fn_viewnotif_get(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -9364,7 +9364,7 @@ $$;
 ALTER FUNCTION framework.fn_views_compo_visible(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3509 (class 0 OID 0)
+-- TOC entry 3511 (class 0 OID 0)
 -- Dependencies: 461
 -- Name: FUNCTION fn_views_compo_visible(injson json, OUT outjson json); Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -11229,7 +11229,7 @@ $$;
 ALTER FUNCTION public.fn_logtable_for_users(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3510 (class 0 OID 0)
+-- TOC entry 3512 (class 0 OID 0)
 -- Dependencies: 601
 -- Name: FUNCTION fn_logtable_for_users(injson json, OUT outjson json); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11460,7 +11460,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_tables"(_schema character varying) OWNER TO postgres;
 
 --
--- TOC entry 3511 (class 0 OID 0)
+-- TOC entry 3513 (class 0 OID 0)
 -- Dependencies: 497
 -- Name: FUNCTION "fn_withoutDesc_tables"(_schema character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11502,7 +11502,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_triggers"(_schemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 3512 (class 0 OID 0)
+-- TOC entry 3514 (class 0 OID 0)
 -- Dependencies: 498
 -- Name: FUNCTION "fn_withoutDesc_triggers"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11539,7 +11539,7 @@ $$;
 ALTER FUNCTION public."fn_withoutDesc_triggers_test"(_schemaname character varying) OWNER TO postgres;
 
 --
--- TOC entry 3513 (class 0 OID 0)
+-- TOC entry 3515 (class 0 OID 0)
 -- Dependencies: 499
 -- Name: FUNCTION "fn_withoutDesc_triggers_test"(_schemaname character varying); Type: COMMENT; Schema: public; Owner: postgres
 --
@@ -11712,7 +11712,7 @@ $_$;
 ALTER FUNCTION reports.fn_call_report(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3514 (class 0 OID 0)
+-- TOC entry 3516 (class 0 OID 0)
 -- Dependencies: 504
 -- Name: FUNCTION fn_call_report(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11755,7 +11755,7 @@ $$;
 ALTER FUNCTION reports.fn_getmethod_info(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3515 (class 0 OID 0)
+-- TOC entry 3517 (class 0 OID 0)
 -- Dependencies: 505
 -- Name: FUNCTION fn_getmethod_info(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11801,7 +11801,7 @@ $$;
 ALTER FUNCTION reports.fn_getreports_fn(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3516 (class 0 OID 0)
+-- TOC entry 3518 (class 0 OID 0)
 -- Dependencies: 506
 -- Name: FUNCTION fn_getreports_fn(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11877,7 +11877,7 @@ $$;
 ALTER FUNCTION reports.fn_report_copy(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3517 (class 0 OID 0)
+-- TOC entry 3519 (class 0 OID 0)
 -- Dependencies: 507
 -- Name: FUNCTION fn_report_copy(injson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -11965,7 +11965,7 @@ $$;
 ALTER FUNCTION reports.fn_report_getone(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3518 (class 0 OID 0)
+-- TOC entry 3520 (class 0 OID 0)
 -- Dependencies: 508
 -- Name: FUNCTION fn_report_getone(injson json, OUT outjson json); Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -12219,7 +12219,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_fk_maintablecols_select(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3519 (class 0 OID 0)
+-- TOC entry 3521 (class 0 OID 0)
 -- Dependencies: 513
 -- Name: FUNCTION fn_fk_maintablecols_select(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12273,7 +12273,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_fk_parentcols_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3520 (class 0 OID 0)
+-- TOC entry 3522 (class 0 OID 0)
 -- Dependencies: 514
 -- Name: FUNCTION fn_fk_parentcols_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12314,7 +12314,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_fk_tables_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3521 (class 0 OID 0)
+-- TOC entry 3523 (class 0 OID 0)
 -- Dependencies: 515
 -- Name: FUNCTION fn_fk_tables_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12433,7 +12433,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_foreignkeys_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3522 (class 0 OID 0)
+-- TOC entry 3524 (class 0 OID 0)
 -- Dependencies: 516
 -- Name: FUNCTION fn_foreignkeys_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12613,7 +12613,7 @@ $_$;
 ALTER FUNCTION sqlmanager.fn_function_add(injson json, OUT _redirect character varying) OWNER TO postgres;
 
 --
--- TOC entry 3523 (class 0 OID 0)
+-- TOC entry 3525 (class 0 OID 0)
 -- Dependencies: 517
 -- Name: FUNCTION fn_function_add(injson json, OUT _redirect character varying); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12671,7 +12671,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_function_argadd(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3524 (class 0 OID 0)
+-- TOC entry 3526 (class 0 OID 0)
 -- Dependencies: 519
 -- Name: FUNCTION fn_function_argadd(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12872,7 +12872,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_function_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3525 (class 0 OID 0)
+-- TOC entry 3527 (class 0 OID 0)
 -- Dependencies: 522
 -- Name: FUNCTION fn_function_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -12990,7 +12990,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_functions_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3526 (class 0 OID 0)
+-- TOC entry 3528 (class 0 OID 0)
 -- Dependencies: 523
 -- Name: FUNCTION fn_functions_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13028,7 +13028,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_modes_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3527 (class 0 OID 0)
+-- TOC entry 3529 (class 0 OID 0)
 -- Dependencies: 524
 -- Name: FUNCTION fn_modes_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13120,7 +13120,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_schemalist_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3528 (class 0 OID 0)
+-- TOC entry 3530 (class 0 OID 0)
 -- Dependencies: 525
 -- Name: FUNCTION fn_schemalist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13160,7 +13160,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_schemas_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3529 (class 0 OID 0)
+-- TOC entry 3531 (class 0 OID 0)
 -- Dependencies: 526
 -- Name: FUNCTION fn_schemas_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13490,7 +13490,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_tablecols_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3530 (class 0 OID 0)
+-- TOC entry 3532 (class 0 OID 0)
 -- Dependencies: 527
 -- Name: FUNCTION fn_tablecols_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13556,7 +13556,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_tablelist_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3531 (class 0 OID 0)
+-- TOC entry 3533 (class 0 OID 0)
 -- Dependencies: 528
 -- Name: FUNCTION fn_tablelist_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13623,7 +13623,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_trigger_fields(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3532 (class 0 OID 0)
+-- TOC entry 3534 (class 0 OID 0)
 -- Dependencies: 529
 -- Name: FUNCTION fn_trigger_fields(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13823,7 +13823,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_triggers_onload(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3533 (class 0 OID 0)
+-- TOC entry 3535 (class 0 OID 0)
 -- Dependencies: 531
 -- Name: FUNCTION fn_triggers_onload(injson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -13874,7 +13874,7 @@ $$;
 ALTER FUNCTION sqlmanager.fn_types_sel(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3534 (class 0 OID 0)
+-- TOC entry 3536 (class 0 OID 0)
 -- Dependencies: 532
 -- Name: FUNCTION fn_types_sel(injson json, OUT outjson json); Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -15535,7 +15535,7 @@ $$;
 ALTER FUNCTION test.fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3535 (class 0 OID 0)
+-- TOC entry 3537 (class 0 OID 0)
 -- Dependencies: 570
 -- Name: FUNCTION fn_act_visible_conditions_intable(_vs json, act_id integer, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15715,7 +15715,7 @@ $$;
 ALTER FUNCTION test.fn_actions_in_table(_actions json, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3536 (class 0 OID 0)
+-- TOC entry 3538 (class 0 OID 0)
 -- Dependencies: 571
 -- Name: FUNCTION fn_actions_in_table(_actions json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15832,7 +15832,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3537 (class 0 OID 0)
+-- TOC entry 3539 (class 0 OID 0)
 -- Dependencies: 573
 -- Name: FUNCTION fn_config_in_table(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15877,7 +15877,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3538 (class 0 OID 0)
+-- TOC entry 3540 (class 0 OID 0)
 -- Dependencies: 574
 -- Name: FUNCTION fn_config_in_table_fncolumns_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15910,7 +15910,7 @@ $$;
 ALTER FUNCTION test.fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer) OWNER TO postgres;
 
 --
--- TOC entry 3539 (class 0 OID 0)
+-- TOC entry 3541 (class 0 OID 0)
 -- Dependencies: 575
 -- Name: FUNCTION fn_config_in_table_tpath_fix(_config json, INOUT _viewid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -15949,7 +15949,7 @@ $$;
 ALTER FUNCTION test.fn_defaultval_intable(INOUT _colid integer, _dv json) OWNER TO postgres;
 
 --
--- TOC entry 3540 (class 0 OID 0)
+-- TOC entry 3542 (class 0 OID 0)
 -- Dependencies: 576
 -- Name: FUNCTION fn_defaultval_intable(INOUT _colid integer, _dv json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16009,7 +16009,7 @@ $$;
 ALTER FUNCTION test.fn_diagram_test(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3541 (class 0 OID 0)
+-- TOC entry 3543 (class 0 OID 0)
 -- Dependencies: 577
 -- Name: FUNCTION fn_diagram_test(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16071,7 +16071,7 @@ $$;
 ALTER FUNCTION test.fn_filters_in_table(filtrs json, INOUT _vid integer) OWNER TO postgres;
 
 --
--- TOC entry 3542 (class 0 OID 0)
+-- TOC entry 3544 (class 0 OID 0)
 -- Dependencies: 578
 -- Name: FUNCTION fn_filters_in_table(filtrs json, INOUT _vid integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16116,7 +16116,7 @@ $$;
 ALTER FUNCTION test.fn_getmethodtest_setcolorblack(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3543 (class 0 OID 0)
+-- TOC entry 3545 (class 0 OID 0)
 -- Dependencies: 579
 -- Name: FUNCTION fn_getmethodtest_setcolorblack(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16150,7 +16150,7 @@ $$;
 ALTER FUNCTION test.fn_gettest_setallcolor_red(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3544 (class 0 OID 0)
+-- TOC entry 3546 (class 0 OID 0)
 -- Dependencies: 580
 -- Name: FUNCTION fn_gettest_setallcolor_red(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16199,7 +16199,7 @@ $$;
 ALTER FUNCTION test.fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer) OWNER TO postgres;
 
 --
--- TOC entry 3545 (class 0 OID 0)
+-- TOC entry 3547 (class 0 OID 0)
 -- Dependencies: 572
 -- Name: FUNCTION fn_parametrs_intotables(_params json, vi_id integer, INOUT act_id integer); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16244,7 +16244,7 @@ $$;
 ALTER FUNCTION test.fn_postmethodtest_setcolorblue(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3546 (class 0 OID 0)
+-- TOC entry 3548 (class 0 OID 0)
 -- Dependencies: 581
 -- Name: FUNCTION fn_postmethodtest_setcolorblue(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16295,7 +16295,7 @@ $$;
 ALTER FUNCTION test.fn_postmethodtest_setselectedcolor_black(injson json) OWNER TO postgres;
 
 --
--- TOC entry 3547 (class 0 OID 0)
+-- TOC entry 3549 (class 0 OID 0)
 -- Dependencies: 582
 -- Name: FUNCTION fn_postmethodtest_setselectedcolor_black(injson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16351,7 +16351,7 @@ $$;
 ALTER FUNCTION test.fn_select_api(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3548 (class 0 OID 0)
+-- TOC entry 3550 (class 0 OID 0)
 -- Dependencies: 583
 -- Name: FUNCTION fn_select_api(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16402,7 +16402,7 @@ $$;
 ALTER FUNCTION test.fn_select_condition_intable(INOUT _colid integer, _sc json) OWNER TO postgres;
 
 --
--- TOC entry 3549 (class 0 OID 0)
+-- TOC entry 3551 (class 0 OID 0)
 -- Dependencies: 584
 -- Name: FUNCTION fn_select_condition_intable(INOUT _colid integer, _sc json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16442,7 +16442,7 @@ $$;
 ALTER FUNCTION test."fn_setParamsKey"(conf json, INOUT paramcol jsonb) OWNER TO postgres;
 
 --
--- TOC entry 3550 (class 0 OID 0)
+-- TOC entry 3552 (class 0 OID 0)
 -- Dependencies: 585
 -- Name: FUNCTION "fn_setParamsKey"(conf json, INOUT paramcol jsonb); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16500,7 +16500,7 @@ $$;
 ALTER FUNCTION test.fn_test() OWNER TO postgres;
 
 --
--- TOC entry 3551 (class 0 OID 0)
+-- TOC entry 3553 (class 0 OID 0)
 -- Dependencies: 587
 -- Name: FUNCTION fn_test(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16554,7 +16554,7 @@ $$;
 ALTER FUNCTION test.fn_test_view_api(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3552 (class 0 OID 0)
+-- TOC entry 3554 (class 0 OID 0)
 -- Dependencies: 598
 -- Name: FUNCTION fn_test_view_api(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16595,7 +16595,7 @@ $$;
 ALTER FUNCTION test.fn_test_view_api_form(injson json, OUT outjson json) OWNER TO postgres;
 
 --
--- TOC entry 3553 (class 0 OID 0)
+-- TOC entry 3555 (class 0 OID 0)
 -- Dependencies: 599
 -- Name: FUNCTION fn_test_view_api_form(injson json, OUT outjson json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16639,7 +16639,7 @@ $$;
 ALTER FUNCTION test.fn_views_in_table() OWNER TO postgres;
 
 --
--- TOC entry 3554 (class 0 OID 0)
+-- TOC entry 3556 (class 0 OID 0)
 -- Dependencies: 589
 -- Name: FUNCTION fn_views_in_table(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16695,7 +16695,7 @@ $$;
 ALTER FUNCTION test.fn_visible_condition_intable(INOUT _colid integer, _vs json) OWNER TO postgres;
 
 --
--- TOC entry 3555 (class 0 OID 0)
+-- TOC entry 3557 (class 0 OID 0)
 -- Dependencies: 590
 -- Name: FUNCTION fn_visible_condition_intable(INOUT _colid integer, _vs json); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16757,7 +16757,7 @@ END;
 ALTER FUNCTION test.tr_major_table_tr() OWNER TO postgres;
 
 --
--- TOC entry 3556 (class 0 OID 0)
+-- TOC entry 3558 (class 0 OID 0)
 -- Dependencies: 592
 -- Name: FUNCTION tr_major_table_tr(); Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -16831,7 +16831,7 @@ CREATE TABLE act_parametrs (
 ALTER TABLE act_parametrs OWNER TO postgres;
 
 --
--- TOC entry 3557 (class 0 OID 0)
+-- TOC entry 3559 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: TABLE act_parametrs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16855,7 +16855,7 @@ CREATE SEQUENCE act_parametrs_id_seq
 ALTER TABLE act_parametrs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3558 (class 0 OID 0)
+-- TOC entry 3560 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: act_parametrs_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16883,7 +16883,7 @@ CREATE TABLE act_visible_condions (
 ALTER TABLE act_visible_condions OWNER TO postgres;
 
 --
--- TOC entry 3559 (class 0 OID 0)
+-- TOC entry 3561 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: TABLE act_visible_condions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16892,7 +16892,7 @@ COMMENT ON TABLE act_visible_condions IS 'action visible condition';
 
 
 --
--- TOC entry 3560 (class 0 OID 0)
+-- TOC entry 3562 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: COLUMN act_visible_condions.val_desc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16901,7 +16901,7 @@ COMMENT ON COLUMN act_visible_condions.val_desc IS 'column id in config';
 
 
 --
--- TOC entry 3561 (class 0 OID 0)
+-- TOC entry 3563 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: COLUMN act_visible_condions.operation; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16910,7 +16910,7 @@ COMMENT ON COLUMN act_visible_condions.operation IS 'bool operation ';
 
 
 --
--- TOC entry 3562 (class 0 OID 0)
+-- TOC entry 3564 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: COLUMN act_visible_condions.value; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16934,7 +16934,7 @@ CREATE SEQUENCE act_visible_condions_id_seq
 ALTER TABLE act_visible_condions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3563 (class 0 OID 0)
+-- TOC entry 3565 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: act_visible_condions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -16971,7 +16971,7 @@ CREATE TABLE actions (
 ALTER TABLE actions OWNER TO postgres;
 
 --
--- TOC entry 3564 (class 0 OID 0)
+-- TOC entry 3566 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: TABLE actions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -16980,7 +16980,7 @@ COMMENT ON TABLE actions IS 'VIEWS ACTIONS';
 
 
 --
--- TOC entry 3565 (class 0 OID 0)
+-- TOC entry 3567 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: COLUMN actions.sps; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17004,7 +17004,7 @@ CREATE SEQUENCE actions_id_seq
 ALTER TABLE actions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3566 (class 0 OID 0)
+-- TOC entry 3568 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: actions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17026,7 +17026,7 @@ CREATE TABLE actparam_querytypes (
 ALTER TABLE actparam_querytypes OWNER TO postgres;
 
 --
--- TOC entry 3567 (class 0 OID 0)
+-- TOC entry 3569 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: TABLE actparam_querytypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17050,7 +17050,7 @@ CREATE SEQUENCE actparam_querytypes_id_seq
 ALTER TABLE actparam_querytypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3568 (class 0 OID 0)
+-- TOC entry 3570 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: actparam_querytypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17073,7 +17073,7 @@ CREATE TABLE acttypes (
 ALTER TABLE acttypes OWNER TO postgres;
 
 --
--- TOC entry 3569 (class 0 OID 0)
+-- TOC entry 3571 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: TABLE acttypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17095,7 +17095,7 @@ CREATE TABLE apicallingmethods (
 ALTER TABLE apicallingmethods OWNER TO postgres;
 
 --
--- TOC entry 3570 (class 0 OID 0)
+-- TOC entry 3572 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: TABLE apicallingmethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17120,7 +17120,7 @@ CREATE SEQUENCE apicallingmethods_id_seq
 ALTER TABLE apicallingmethods_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3571 (class 0 OID 0)
+-- TOC entry 3573 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: apicallingmethods_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17143,7 +17143,7 @@ CREATE TABLE apimethods (
 ALTER TABLE apimethods OWNER TO postgres;
 
 --
--- TOC entry 3572 (class 0 OID 0)
+-- TOC entry 3574 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: TABLE apimethods; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17166,7 +17166,7 @@ CREATE TABLE booloper (
 ALTER TABLE booloper OWNER TO postgres;
 
 --
--- TOC entry 3573 (class 0 OID 0)
+-- TOC entry 3575 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: TABLE booloper; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17190,7 +17190,7 @@ CREATE SEQUENCE booloper_id_seq
 ALTER TABLE booloper_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3574 (class 0 OID 0)
+-- TOC entry 3576 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: booloper_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17213,7 +17213,7 @@ CREATE TABLE columntypes (
 ALTER TABLE columntypes OWNER TO postgres;
 
 --
--- TOC entry 3575 (class 0 OID 0)
+-- TOC entry 3577 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: TABLE columntypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17252,7 +17252,7 @@ CREATE SEQUENCE columntypes_id_seq1
 ALTER TABLE columntypes_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 3576 (class 0 OID 0)
+-- TOC entry 3578 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: columntypes_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17279,7 +17279,7 @@ CREATE TABLE compoitems (
 ALTER TABLE compoitems OWNER TO postgres;
 
 --
--- TOC entry 3577 (class 0 OID 0)
+-- TOC entry 3579 (class 0 OID 0)
 -- Dependencies: 207
 -- Name: TABLE compoitems; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17304,7 +17304,7 @@ CREATE SEQUENCE compoitems_id_seq
 ALTER TABLE compoitems_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3578 (class 0 OID 0)
+-- TOC entry 3580 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: compoitems_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17330,7 +17330,7 @@ CREATE TABLE compos (
 ALTER TABLE compos OWNER TO postgres;
 
 --
--- TOC entry 3579 (class 0 OID 0)
+-- TOC entry 3581 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: TABLE compos; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17339,7 +17339,7 @@ COMMENT ON TABLE compos IS 'compositions';
 
 
 --
--- TOC entry 3580 (class 0 OID 0)
+-- TOC entry 3582 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: COLUMN compos.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17348,7 +17348,7 @@ COMMENT ON COLUMN compos.title IS 'compositions title';
 
 
 --
--- TOC entry 3581 (class 0 OID 0)
+-- TOC entry 3583 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: COLUMN compos.path; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17357,7 +17357,7 @@ COMMENT ON COLUMN compos.path IS 'path';
 
 
 --
--- TOC entry 3582 (class 0 OID 0)
+-- TOC entry 3584 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: COLUMN compos.config; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17396,7 +17396,7 @@ CREATE SEQUENCE compos_id_seq1
 ALTER TABLE compos_id_seq1 OWNER TO postgres;
 
 --
--- TOC entry 3583 (class 0 OID 0)
+-- TOC entry 3585 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: compos_id_seq1; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17451,7 +17451,7 @@ CREATE TABLE config (
 ALTER TABLE config OWNER TO postgres;
 
 --
--- TOC entry 3584 (class 0 OID 0)
+-- TOC entry 3586 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: TABLE config; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17460,7 +17460,7 @@ COMMENT ON TABLE config IS 'view columns config';
 
 
 --
--- TOC entry 3585 (class 0 OID 0)
+-- TOC entry 3587 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.viewid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17469,7 +17469,7 @@ COMMENT ON COLUMN config.viewid IS 'view';
 
 
 --
--- TOC entry 3586 (class 0 OID 0)
+-- TOC entry 3588 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.t; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17478,7 +17478,7 @@ COMMENT ON COLUMN config.t IS 'column allias in query';
 
 
 --
--- TOC entry 3587 (class 0 OID 0)
+-- TOC entry 3589 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.col; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17487,7 +17487,7 @@ COMMENT ON COLUMN config.col IS 'column title';
 
 
 --
--- TOC entry 3588 (class 0 OID 0)
+-- TOC entry 3590 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.column_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17497,7 +17497,7 @@ use in createconfig function';
 
 
 --
--- TOC entry 3589 (class 0 OID 0)
+-- TOC entry 3591 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17506,7 +17506,7 @@ COMMENT ON COLUMN config.title IS 'title';
 
 
 --
--- TOC entry 3590 (class 0 OID 0)
+-- TOC entry 3592 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.type; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17515,7 +17515,7 @@ COMMENT ON COLUMN config.type IS 'type';
 
 
 --
--- TOC entry 3591 (class 0 OID 0)
+-- TOC entry 3593 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17524,7 +17524,7 @@ COMMENT ON COLUMN config.roles IS 'roles accessed to this column';
 
 
 --
--- TOC entry 3592 (class 0 OID 0)
+-- TOC entry 3594 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.visible; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17533,7 +17533,7 @@ COMMENT ON COLUMN config.visible IS 'is required in WHERE (query)';
 
 
 --
--- TOC entry 3593 (class 0 OID 0)
+-- TOC entry 3595 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.required; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17542,7 +17542,7 @@ COMMENT ON COLUMN config.required IS 'is required column value in WHERE';
 
 
 --
--- TOC entry 3594 (class 0 OID 0)
+-- TOC entry 3596 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.width; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17551,7 +17551,7 @@ COMMENT ON COLUMN config.width IS 'column width CSS';
 
 
 --
--- TOC entry 3595 (class 0 OID 0)
+-- TOC entry 3597 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config."join"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17561,7 +17561,7 @@ LEFT JOIN if false';
 
 
 --
--- TOC entry 3596 (class 0 OID 0)
+-- TOC entry 3598 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.classname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17570,7 +17570,7 @@ COMMENT ON COLUMN config.classname IS 'className CSS';
 
 
 --
--- TOC entry 3597 (class 0 OID 0)
+-- TOC entry 3599 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.updatable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17579,7 +17579,7 @@ COMMENT ON COLUMN config.updatable IS 'refresh data on this column change';
 
 
 --
--- TOC entry 3598 (class 0 OID 0)
+-- TOC entry 3600 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.relation; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17588,7 +17588,7 @@ COMMENT ON COLUMN config.relation IS 'relation table';
 
 
 --
--- TOC entry 3599 (class 0 OID 0)
+-- TOC entry 3601 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.select_api; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17597,7 +17597,7 @@ COMMENT ON COLUMN config.select_api IS 'api method path for type *_api';
 
 
 --
--- TOC entry 3600 (class 0 OID 0)
+-- TOC entry 3602 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.multiselecttable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17606,7 +17606,7 @@ COMMENT ON COLUMN config.multiselecttable IS 'tablename for type multiselect';
 
 
 --
--- TOC entry 3601 (class 0 OID 0)
+-- TOC entry 3603 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.orderby; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17615,7 +17615,7 @@ COMMENT ON COLUMN config.orderby IS 'order by this column by default';
 
 
 --
--- TOC entry 3602 (class 0 OID 0)
+-- TOC entry 3604 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.orderbydesc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17624,7 +17624,7 @@ COMMENT ON COLUMN config.orderbydesc IS 'order by desc or asc';
 
 
 --
--- TOC entry 3603 (class 0 OID 0)
+-- TOC entry 3605 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.depency; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17633,7 +17633,7 @@ COMMENT ON COLUMN config.depency IS 'this column is depency table';
 
 
 --
--- TOC entry 3604 (class 0 OID 0)
+-- TOC entry 3606 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.relationcolums; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17644,7 +17644,7 @@ for select filters in lists';
 
 
 --
--- TOC entry 3605 (class 0 OID 0)
+-- TOC entry 3607 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.multicolums; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17653,7 +17653,7 @@ COMMENT ON COLUMN config.multicolums IS 'columns array for multiselect type';
 
 
 --
--- TOC entry 3606 (class 0 OID 0)
+-- TOC entry 3608 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.column_order; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17662,7 +17662,7 @@ COMMENT ON COLUMN config.column_order IS 'column order in config';
 
 
 --
--- TOC entry 3607 (class 0 OID 0)
+-- TOC entry 3609 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.fn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17671,7 +17671,7 @@ COMMENT ON COLUMN config.fn IS 'function is SELECT';
 
 
 --
--- TOC entry 3608 (class 0 OID 0)
+-- TOC entry 3610 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.fncolumns; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17680,7 +17680,7 @@ COMMENT ON COLUMN config.fncolumns IS 'Function input parametrs';
 
 
 --
--- TOC entry 3609 (class 0 OID 0)
+-- TOC entry 3611 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config."table"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17689,7 +17689,7 @@ COMMENT ON COLUMN config."table" IS 'table name for related col';
 
 
 --
--- TOC entry 3610 (class 0 OID 0)
+-- TOC entry 3612 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.related; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17698,7 +17698,7 @@ COMMENT ON COLUMN config.related IS 'is related';
 
 
 --
--- TOC entry 3611 (class 0 OID 0)
+-- TOC entry 3613 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.tpath; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17707,7 +17707,7 @@ COMMENT ON COLUMN config.tpath IS 'join path';
 
 
 --
--- TOC entry 3612 (class 0 OID 0)
+-- TOC entry 3614 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.editable; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17716,7 +17716,7 @@ COMMENT ON COLUMN config.editable IS 'is editable cell';
 
 
 --
--- TOC entry 3613 (class 0 OID 0)
+-- TOC entry 3615 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: COLUMN config.copy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17740,7 +17740,7 @@ CREATE SEQUENCE config_id_seq
 ALTER TABLE config_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3614 (class 0 OID 0)
+-- TOC entry 3616 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: config_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17762,7 +17762,7 @@ CREATE TABLE configsettings (
 ALTER TABLE configsettings OWNER TO postgres;
 
 --
--- TOC entry 3615 (class 0 OID 0)
+-- TOC entry 3617 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: TABLE configsettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17786,7 +17786,7 @@ CREATE SEQUENCE configsettings_id_seq
 ALTER TABLE configsettings_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3616 (class 0 OID 0)
+-- TOC entry 3618 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: configsettings_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17812,7 +17812,7 @@ CREATE TABLE defaultval (
 ALTER TABLE defaultval OWNER TO postgres;
 
 --
--- TOC entry 3617 (class 0 OID 0)
+-- TOC entry 3619 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: TABLE defaultval; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17821,7 +17821,7 @@ COMMENT ON TABLE defaultval IS 'defaultval configs property';
 
 
 --
--- TOC entry 3618 (class 0 OID 0)
+-- TOC entry 3620 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.configid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17830,7 +17830,7 @@ COMMENT ON COLUMN defaultval.configid IS 'id from config table';
 
 
 --
--- TOC entry 3619 (class 0 OID 0)
+-- TOC entry 3621 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.bool; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17839,7 +17839,7 @@ COMMENT ON COLUMN defaultval.bool IS 'bool operator';
 
 
 --
--- TOC entry 3620 (class 0 OID 0)
+-- TOC entry 3622 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.act; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17848,7 +17848,7 @@ COMMENT ON COLUMN defaultval.act IS 'action';
 
 
 --
--- TOC entry 3621 (class 0 OID 0)
+-- TOC entry 3623 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: COLUMN defaultval.value; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17872,7 +17872,7 @@ CREATE SEQUENCE defaultval_id_seq
 ALTER TABLE defaultval_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3622 (class 0 OID 0)
+-- TOC entry 3624 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: defaultval_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -17904,7 +17904,7 @@ CREATE TABLE dialog_messages (
 ALTER TABLE dialog_messages OWNER TO postgres;
 
 --
--- TOC entry 3623 (class 0 OID 0)
+-- TOC entry 3625 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17913,7 +17913,7 @@ COMMENT ON COLUMN dialog_messages.userid IS 'who send';
 
 
 --
--- TOC entry 3624 (class 0 OID 0)
+-- TOC entry 3626 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.message_text; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17922,7 +17922,7 @@ COMMENT ON COLUMN dialog_messages.message_text IS 'message';
 
 
 --
--- TOC entry 3625 (class 0 OID 0)
+-- TOC entry 3627 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.reply_to; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17931,7 +17931,7 @@ COMMENT ON COLUMN dialog_messages.reply_to IS 'reply to message id';
 
 
 --
--- TOC entry 3626 (class 0 OID 0)
+-- TOC entry 3628 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.forwarded_from; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17940,7 +17940,7 @@ COMMENT ON COLUMN dialog_messages.forwarded_from IS 'forward from message';
 
 
 --
--- TOC entry 3627 (class 0 OID 0)
+-- TOC entry 3629 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.dialog_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17949,7 +17949,7 @@ COMMENT ON COLUMN dialog_messages.dialog_id IS 'dialog';
 
 
 --
--- TOC entry 3628 (class 0 OID 0)
+-- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.files; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17958,7 +17958,7 @@ COMMENT ON COLUMN dialog_messages.files IS 'files';
 
 
 --
--- TOC entry 3629 (class 0 OID 0)
+-- TOC entry 3631 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.images; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17967,7 +17967,7 @@ COMMENT ON COLUMN dialog_messages.images IS 'images';
 
 
 --
--- TOC entry 3630 (class 0 OID 0)
+-- TOC entry 3632 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.isread; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17976,7 +17976,7 @@ COMMENT ON COLUMN dialog_messages.isread IS 'when user read message';
 
 
 --
--- TOC entry 3631 (class 0 OID 0)
+-- TOC entry 3633 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.isupdated; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -17985,7 +17985,7 @@ COMMENT ON COLUMN dialog_messages.isupdated IS 'when user update the message';
 
 
 --
--- TOC entry 3632 (class 0 OID 0)
+-- TOC entry 3634 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: COLUMN dialog_messages.user_reads; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18009,7 +18009,7 @@ CREATE SEQUENCE dialog_messages_id_seq
 ALTER TABLE dialog_messages_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3633 (class 0 OID 0)
+-- TOC entry 3635 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: dialog_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18038,7 +18038,7 @@ CREATE TABLE dialog_notifications (
 ALTER TABLE dialog_notifications OWNER TO postgres;
 
 --
--- TOC entry 3634 (class 0 OID 0)
+-- TOC entry 3636 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: TABLE dialog_notifications; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18047,7 +18047,7 @@ COMMENT ON TABLE dialog_notifications IS 'ws notifications for dialogs';
 
 
 --
--- TOC entry 3635 (class 0 OID 0)
+-- TOC entry 3637 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: COLUMN dialog_notifications.dialog_id; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18056,7 +18056,7 @@ COMMENT ON COLUMN dialog_notifications.dialog_id IS 'dialog';
 
 
 --
--- TOC entry 3636 (class 0 OID 0)
+-- TOC entry 3638 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: COLUMN dialog_notifications.issend; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18080,7 +18080,7 @@ CREATE SEQUENCE dialog_notifications_id_seq
 ALTER TABLE dialog_notifications_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3637 (class 0 OID 0)
+-- TOC entry 3639 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: dialog_notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18102,7 +18102,7 @@ CREATE TABLE dialog_statuses (
 ALTER TABLE dialog_statuses OWNER TO postgres;
 
 --
--- TOC entry 3638 (class 0 OID 0)
+-- TOC entry 3640 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: TABLE dialog_statuses; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18126,7 +18126,7 @@ CREATE SEQUENCE dialog_statuses_id_seq
 ALTER TABLE dialog_statuses_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3639 (class 0 OID 0)
+-- TOC entry 3641 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: dialog_statuses_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18148,7 +18148,7 @@ CREATE TABLE dialog_types (
 ALTER TABLE dialog_types OWNER TO postgres;
 
 --
--- TOC entry 3640 (class 0 OID 0)
+-- TOC entry 3642 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: TABLE dialog_types; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18180,7 +18180,7 @@ CREATE TABLE dialogs (
 ALTER TABLE dialogs OWNER TO postgres;
 
 --
--- TOC entry 3641 (class 0 OID 0)
+-- TOC entry 3643 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: TABLE dialogs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18189,7 +18189,7 @@ COMMENT ON TABLE dialogs IS 'USERS CHAT DIALOGS';
 
 
 --
--- TOC entry 3642 (class 0 OID 0)
+-- TOC entry 3644 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18198,7 +18198,7 @@ COMMENT ON COLUMN dialogs.title IS 'title of dialog';
 
 
 --
--- TOC entry 3643 (class 0 OID 0)
+-- TOC entry 3645 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.users; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18207,7 +18207,7 @@ COMMENT ON COLUMN dialogs.users IS 'users of dialog';
 
 
 --
--- TOC entry 3644 (class 0 OID 0)
+-- TOC entry 3646 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.dtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18216,7 +18216,7 @@ COMMENT ON COLUMN dialogs.dtype IS 'type of dialog';
 
 
 --
--- TOC entry 3645 (class 0 OID 0)
+-- TOC entry 3647 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18225,7 +18225,7 @@ COMMENT ON COLUMN dialogs.userid IS 'user who create dialog';
 
 
 --
--- TOC entry 3646 (class 0 OID 0)
+-- TOC entry 3648 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.created; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18234,7 +18234,7 @@ COMMENT ON COLUMN dialogs.created IS 'create date';
 
 
 --
--- TOC entry 3647 (class 0 OID 0)
+-- TOC entry 3649 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.status; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18243,7 +18243,7 @@ COMMENT ON COLUMN dialogs.status IS 'status of dialog';
 
 
 --
--- TOC entry 3648 (class 0 OID 0)
+-- TOC entry 3650 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.first_message; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18252,7 +18252,7 @@ COMMENT ON COLUMN dialogs.first_message IS 'first message in dialog';
 
 
 --
--- TOC entry 3649 (class 0 OID 0)
+-- TOC entry 3651 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.last_message_date; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18261,7 +18261,7 @@ COMMENT ON COLUMN dialogs.last_message_date IS 'last mesage date';
 
 
 --
--- TOC entry 3650 (class 0 OID 0)
+-- TOC entry 3652 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.photo; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18271,7 +18271,7 @@ only for groups';
 
 
 --
--- TOC entry 3651 (class 0 OID 0)
+-- TOC entry 3653 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.dialog_admins; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18280,7 +18280,7 @@ COMMENT ON COLUMN dialogs.dialog_admins IS 'admin users';
 
 
 --
--- TOC entry 3652 (class 0 OID 0)
+-- TOC entry 3654 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: COLUMN dialogs.creator; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18304,7 +18304,7 @@ CREATE SEQUENCE dialogs_id_seq
 ALTER TABLE dialogs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3653 (class 0 OID 0)
+-- TOC entry 3655 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: dialogs_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18328,7 +18328,7 @@ CREATE SEQUENCE dialogs_status_seq
 ALTER TABLE dialogs_status_seq OWNER TO postgres;
 
 --
--- TOC entry 3654 (class 0 OID 0)
+-- TOC entry 3656 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: dialogs_status_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18350,7 +18350,7 @@ CREATE TABLE filter_position (
 ALTER TABLE filter_position OWNER TO postgres;
 
 --
--- TOC entry 3655 (class 0 OID 0)
+-- TOC entry 3657 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: TABLE filter_position; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18384,7 +18384,7 @@ CREATE TABLE filters (
 ALTER TABLE filters OWNER TO postgres;
 
 --
--- TOC entry 3656 (class 0 OID 0)
+-- TOC entry 3658 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: TABLE filters; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18393,7 +18393,7 @@ COMMENT ON TABLE filters IS 'view''s filters';
 
 
 --
--- TOC entry 3657 (class 0 OID 0)
+-- TOC entry 3659 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.column_order; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18402,7 +18402,7 @@ COMMENT ON COLUMN filters.column_order IS 'order by';
 
 
 --
--- TOC entry 3658 (class 0 OID 0)
+-- TOC entry 3660 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.viewid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18411,7 +18411,7 @@ COMMENT ON COLUMN filters.viewid IS 'view';
 
 
 --
--- TOC entry 3659 (class 0 OID 0)
+-- TOC entry 3661 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18420,7 +18420,7 @@ COMMENT ON COLUMN filters.title IS 'title';
 
 
 --
--- TOC entry 3660 (class 0 OID 0)
+-- TOC entry 3662 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.type; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18429,7 +18429,7 @@ COMMENT ON COLUMN filters.type IS 'filter type';
 
 
 --
--- TOC entry 3661 (class 0 OID 0)
+-- TOC entry 3663 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.classname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18438,7 +18438,7 @@ COMMENT ON COLUMN filters.classname IS 'css classname';
 
 
 --
--- TOC entry 3662 (class 0 OID 0)
+-- TOC entry 3664 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters."column"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18447,7 +18447,7 @@ COMMENT ON COLUMN filters."column" IS 'congig columns title';
 
 
 --
--- TOC entry 3663 (class 0 OID 0)
+-- TOC entry 3665 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.columns; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18456,7 +18456,7 @@ COMMENT ON COLUMN filters.columns IS 'config id json array';
 
 
 --
--- TOC entry 3664 (class 0 OID 0)
+-- TOC entry 3666 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18465,7 +18465,7 @@ COMMENT ON COLUMN filters.roles IS 'roles access';
 
 
 --
--- TOC entry 3665 (class 0 OID 0)
+-- TOC entry 3667 (class 0 OID 0)
 -- Dependencies: 229
 -- Name: COLUMN filters.val_desc; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18489,7 +18489,7 @@ CREATE SEQUENCE filters_id_seq
 ALTER TABLE filters_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3666 (class 0 OID 0)
+-- TOC entry 3668 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: filters_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18511,7 +18511,7 @@ CREATE TABLE filtertypes (
 ALTER TABLE filtertypes OWNER TO postgres;
 
 --
--- TOC entry 3667 (class 0 OID 0)
+-- TOC entry 3669 (class 0 OID 0)
 -- Dependencies: 231
 -- Name: TABLE filtertypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18549,7 +18549,7 @@ CREATE TABLE instructions (
 ALTER TABLE instructions OWNER TO postgres;
 
 --
--- TOC entry 3668 (class 0 OID 0)
+-- TOC entry 3670 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: TABLE instructions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18573,7 +18573,7 @@ CREATE SEQUENCE instructions_id_seq
 ALTER TABLE instructions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3669 (class 0 OID 0)
+-- TOC entry 3671 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: instructions_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18602,7 +18602,7 @@ CREATE TABLE logtable (
 ALTER TABLE logtable OWNER TO postgres;
 
 --
--- TOC entry 3670 (class 0 OID 0)
+-- TOC entry 3672 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.tablename; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18611,7 +18611,7 @@ COMMENT ON COLUMN logtable.tablename IS 'table name';
 
 
 --
--- TOC entry 3671 (class 0 OID 0)
+-- TOC entry 3673 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.tableid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18620,7 +18620,7 @@ COMMENT ON COLUMN logtable.tableid IS 'id columns value';
 
 
 --
--- TOC entry 3672 (class 0 OID 0)
+-- TOC entry 3674 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.opertype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18629,7 +18629,7 @@ COMMENT ON COLUMN logtable.opertype IS 'operations type';
 
 
 --
--- TOC entry 3673 (class 0 OID 0)
+-- TOC entry 3675 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.oldata; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18638,7 +18638,7 @@ COMMENT ON COLUMN logtable.oldata IS 'old data in json object';
 
 
 --
--- TOC entry 3674 (class 0 OID 0)
+-- TOC entry 3676 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.newdata; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18647,7 +18647,7 @@ COMMENT ON COLUMN logtable.newdata IS 'new data after operation. json object';
 
 
 --
--- TOC entry 3675 (class 0 OID 0)
+-- TOC entry 3677 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.colname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18656,7 +18656,7 @@ COMMENT ON COLUMN logtable.colname IS 'colname, if changed just one column in ta
 
 
 --
--- TOC entry 3676 (class 0 OID 0)
+-- TOC entry 3678 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: COLUMN logtable.userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18704,7 +18704,7 @@ CREATE TABLE mainmenu (
 ALTER TABLE mainmenu OWNER TO postgres;
 
 --
--- TOC entry 3677 (class 0 OID 0)
+-- TOC entry 3679 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.icon; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18713,7 +18713,7 @@ COMMENT ON COLUMN mainmenu.icon IS 'icon';
 
 
 --
--- TOC entry 3678 (class 0 OID 0)
+-- TOC entry 3680 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.nosession; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18722,7 +18722,7 @@ COMMENT ON COLUMN mainmenu.nosession IS 'only if not session';
 
 
 --
--- TOC entry 3679 (class 0 OID 0)
+-- TOC entry 3681 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.ws; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18731,7 +18731,7 @@ COMMENT ON COLUMN mainmenu.ws IS 'ws message';
 
 
 --
--- TOC entry 3680 (class 0 OID 0)
+-- TOC entry 3682 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: COLUMN mainmenu.istitle; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18755,7 +18755,7 @@ CREATE SEQUENCE mainmenu_id_seq
 ALTER TABLE mainmenu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3681 (class 0 OID 0)
+-- TOC entry 3683 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: mainmenu_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18789,7 +18789,7 @@ CREATE TABLE mainsettings (
 ALTER TABLE mainsettings OWNER TO postgres;
 
 --
--- TOC entry 3682 (class 0 OID 0)
+-- TOC entry 3684 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: TABLE mainsettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18799,7 +18799,7 @@ Must be the same as settings.json file';
 
 
 --
--- TOC entry 3683 (class 0 OID 0)
+-- TOC entry 3685 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.dsn; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18808,7 +18808,7 @@ COMMENT ON COLUMN mainsettings.dsn IS 'db connection string';
 
 
 --
--- TOC entry 3684 (class 0 OID 0)
+-- TOC entry 3686 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.port; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18817,7 +18817,7 @@ COMMENT ON COLUMN mainsettings.port IS 'project server port';
 
 
 --
--- TOC entry 3685 (class 0 OID 0)
+-- TOC entry 3687 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings."developerRole"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18826,7 +18826,7 @@ COMMENT ON COLUMN mainsettings."developerRole" IS 'developer role id';
 
 
 --
--- TOC entry 3686 (class 0 OID 0)
+-- TOC entry 3688 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.maindomain; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18835,7 +18835,7 @@ COMMENT ON COLUMN mainsettings.maindomain IS 'main domain';
 
 
 --
--- TOC entry 3687 (class 0 OID 0)
+-- TOC entry 3689 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings."primaryAuthorization"; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18844,7 +18844,7 @@ COMMENT ON COLUMN mainsettings."primaryAuthorization" IS 'primary authorization'
 
 
 --
--- TOC entry 3688 (class 0 OID 0)
+-- TOC entry 3690 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.redirect401; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18853,7 +18853,7 @@ COMMENT ON COLUMN mainsettings.redirect401 IS 'redirect when status 401';
 
 
 --
--- TOC entry 3689 (class 0 OID 0)
+-- TOC entry 3691 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.usercss; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18862,7 +18862,7 @@ COMMENT ON COLUMN mainsettings.usercss IS 'css file';
 
 
 --
--- TOC entry 3690 (class 0 OID 0)
+-- TOC entry 3692 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.homepage; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18871,7 +18871,7 @@ COMMENT ON COLUMN mainsettings.homepage IS 'home page';
 
 
 --
--- TOC entry 3691 (class 0 OID 0)
+-- TOC entry 3693 (class 0 OID 0)
 -- Dependencies: 239
 -- Name: COLUMN mainsettings.reports_url; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18895,7 +18895,7 @@ CREATE TABLE menus (
 ALTER TABLE menus OWNER TO postgres;
 
 --
--- TOC entry 3692 (class 0 OID 0)
+-- TOC entry 3694 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: TABLE menus; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18919,7 +18919,7 @@ CREATE SEQUENCE menus_id_seq
 ALTER TABLE menus_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3693 (class 0 OID 0)
+-- TOC entry 3695 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: menus_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18941,7 +18941,7 @@ CREATE TABLE menutypes (
 ALTER TABLE menutypes OWNER TO postgres;
 
 --
--- TOC entry 3694 (class 0 OID 0)
+-- TOC entry 3696 (class 0 OID 0)
 -- Dependencies: 242
 -- Name: TABLE menutypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -18965,7 +18965,7 @@ CREATE SEQUENCE menutypes_id_seq
 ALTER TABLE menutypes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3695 (class 0 OID 0)
+-- TOC entry 3697 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: menutypes_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -18987,7 +18987,7 @@ CREATE TABLE methodtypes (
 ALTER TABLE methodtypes OWNER TO postgres;
 
 --
--- TOC entry 3696 (class 0 OID 0)
+-- TOC entry 3698 (class 0 OID 0)
 -- Dependencies: 244
 -- Name: TABLE methodtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19015,7 +19015,7 @@ CREATE TABLE notifications (
 ALTER TABLE notifications OWNER TO postgres;
 
 --
--- TOC entry 3697 (class 0 OID 0)
+-- TOC entry 3699 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: TABLE notifications; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19024,7 +19024,7 @@ COMMENT ON TABLE notifications IS 'Global notifications for dashboard menu type'
 
 
 --
--- TOC entry 3698 (class 0 OID 0)
+-- TOC entry 3700 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.message; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19033,7 +19033,7 @@ COMMENT ON COLUMN notifications.message IS 'notifications message';
 
 
 --
--- TOC entry 3699 (class 0 OID 0)
+-- TOC entry 3701 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.messagetype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19042,7 +19042,7 @@ COMMENT ON COLUMN notifications.messagetype IS 'notifications message types';
 
 
 --
--- TOC entry 3700 (class 0 OID 0)
+-- TOC entry 3702 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.for_userid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19051,7 +19051,7 @@ COMMENT ON COLUMN notifications.for_userid IS 'for user';
 
 
 --
--- TOC entry 3701 (class 0 OID 0)
+-- TOC entry 3703 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.sended_sessions; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19060,7 +19060,7 @@ COMMENT ON COLUMN notifications.sended_sessions IS 'what sessions are already ge
 
 
 --
--- TOC entry 3702 (class 0 OID 0)
+-- TOC entry 3704 (class 0 OID 0)
 -- Dependencies: 245
 -- Name: COLUMN notifications.isread; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19084,7 +19084,7 @@ CREATE SEQUENCE notifications_id_seq
 ALTER TABLE notifications_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3703 (class 0 OID 0)
+-- TOC entry 3705 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: notifications_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19109,7 +19109,7 @@ CREATE TABLE operations (
 ALTER TABLE operations OWNER TO postgres;
 
 --
--- TOC entry 3704 (class 0 OID 0)
+-- TOC entry 3706 (class 0 OID 0)
 -- Dependencies: 247
 -- Name: TABLE operations; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19133,7 +19133,7 @@ CREATE SEQUENCE operations_id_seq
 ALTER TABLE operations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3705 (class 0 OID 0)
+-- TOC entry 3707 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: operations_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19156,7 +19156,7 @@ CREATE TABLE opertypes (
 ALTER TABLE opertypes OWNER TO postgres;
 
 --
--- TOC entry 3706 (class 0 OID 0)
+-- TOC entry 3708 (class 0 OID 0)
 -- Dependencies: 249
 -- Name: TABLE opertypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19184,7 +19184,7 @@ CREATE TABLE orgs (
 ALTER TABLE orgs OWNER TO postgres;
 
 --
--- TOC entry 3707 (class 0 OID 0)
+-- TOC entry 3709 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: TABLE orgs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19193,7 +19193,7 @@ COMMENT ON TABLE orgs IS 'ORGS';
 
 
 --
--- TOC entry 3708 (class 0 OID 0)
+-- TOC entry 3710 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: COLUMN orgs.orgname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19202,7 +19202,7 @@ COMMENT ON COLUMN orgs.orgname IS 'org title';
 
 
 --
--- TOC entry 3709 (class 0 OID 0)
+-- TOC entry 3711 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: COLUMN orgs.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19211,7 +19211,7 @@ COMMENT ON COLUMN orgs.parentid IS 'major org';
 
 
 --
--- TOC entry 3710 (class 0 OID 0)
+-- TOC entry 3712 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: COLUMN orgs.shortname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19248,7 +19248,7 @@ CREATE TABLE orgtypes (
 ALTER TABLE orgtypes OWNER TO postgres;
 
 --
--- TOC entry 3711 (class 0 OID 0)
+-- TOC entry 3713 (class 0 OID 0)
 -- Dependencies: 252
 -- Name: TABLE orgtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19271,7 +19271,7 @@ CREATE TABLE paramtypes (
 ALTER TABLE paramtypes OWNER TO postgres;
 
 --
--- TOC entry 3712 (class 0 OID 0)
+-- TOC entry 3714 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: TABLE paramtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19294,7 +19294,7 @@ CREATE TABLE roles (
 ALTER TABLE roles OWNER TO postgres;
 
 --
--- TOC entry 3713 (class 0 OID 0)
+-- TOC entry 3715 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: TABLE roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19303,7 +19303,7 @@ COMMENT ON TABLE roles IS 'project roles';
 
 
 --
--- TOC entry 3714 (class 0 OID 0)
+-- TOC entry 3716 (class 0 OID 0)
 -- Dependencies: 254
 -- Name: COLUMN roles.hierarchy; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19331,7 +19331,7 @@ CREATE TABLE select_condition (
 ALTER TABLE select_condition OWNER TO postgres;
 
 --
--- TOC entry 3715 (class 0 OID 0)
+-- TOC entry 3717 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: TABLE select_condition; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19355,7 +19355,7 @@ CREATE SEQUENCE select_condition_id_seq
 ALTER TABLE select_condition_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3716 (class 0 OID 0)
+-- TOC entry 3718 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: select_condition_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19379,7 +19379,7 @@ CREATE TABLE sess (
 ALTER TABLE sess OWNER TO postgres;
 
 --
--- TOC entry 3717 (class 0 OID 0)
+-- TOC entry 3719 (class 0 OID 0)
 -- Dependencies: 257
 -- Name: TABLE sess; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19406,7 +19406,7 @@ CREATE TABLE spapi (
 ALTER TABLE spapi OWNER TO postgres;
 
 --
--- TOC entry 3718 (class 0 OID 0)
+-- TOC entry 3720 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: TABLE spapi; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19417,7 +19417,7 @@ always pass in function injson JSON parametr';
 
 
 --
--- TOC entry 3719 (class 0 OID 0)
+-- TOC entry 3721 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.methodname; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19426,7 +19426,7 @@ COMMENT ON COLUMN spapi.methodname IS 'API method name (call like this /api/{met
 
 
 --
--- TOC entry 3720 (class 0 OID 0)
+-- TOC entry 3722 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.procedurename; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19437,7 +19437,7 @@ pass all parametrs in injson type of JSON
 
 
 --
--- TOC entry 3721 (class 0 OID 0)
+-- TOC entry 3723 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.methodtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19446,7 +19446,7 @@ COMMENT ON COLUMN spapi.methodtype IS 'rest method type';
 
 
 --
--- TOC entry 3722 (class 0 OID 0)
+-- TOC entry 3724 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: COLUMN spapi.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19470,7 +19470,7 @@ CREATE SEQUENCE spapi_id_seq
 ALTER TABLE spapi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3723 (class 0 OID 0)
+-- TOC entry 3725 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: spapi_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19492,7 +19492,7 @@ CREATE TABLE templates (
 ALTER TABLE templates OWNER TO postgres;
 
 --
--- TOC entry 3724 (class 0 OID 0)
+-- TOC entry 3726 (class 0 OID 0)
 -- Dependencies: 260
 -- Name: TABLE templates; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19516,7 +19516,7 @@ CREATE SEQUENCE templates_id_seq
 ALTER TABLE templates_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3725 (class 0 OID 0)
+-- TOC entry 3727 (class 0 OID 0)
 -- Dependencies: 261
 -- Name: templates_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19545,7 +19545,7 @@ CREATE TABLE trees (
 ALTER TABLE trees OWNER TO postgres;
 
 --
--- TOC entry 3726 (class 0 OID 0)
+-- TOC entry 3728 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: TABLE trees; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19554,7 +19554,7 @@ COMMENT ON TABLE trees IS 'Trees menus';
 
 
 --
--- TOC entry 3727 (class 0 OID 0)
+-- TOC entry 3729 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN trees.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19563,7 +19563,7 @@ COMMENT ON COLUMN trees.title IS 'page title';
 
 
 --
--- TOC entry 3728 (class 0 OID 0)
+-- TOC entry 3730 (class 0 OID 0)
 -- Dependencies: 262
 -- Name: COLUMN trees.url; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19587,7 +19587,7 @@ CREATE SEQUENCE trees_id_seq
 ALTER TABLE trees_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3729 (class 0 OID 0)
+-- TOC entry 3731 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: trees_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19615,7 +19615,7 @@ CREATE TABLE treesacts (
 ALTER TABLE treesacts OWNER TO postgres;
 
 --
--- TOC entry 3730 (class 0 OID 0)
+-- TOC entry 3732 (class 0 OID 0)
 -- Dependencies: 264
 -- Name: TABLE treesacts; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19639,7 +19639,7 @@ CREATE SEQUENCE treesacts_id_seq
 ALTER TABLE treesacts_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3731 (class 0 OID 0)
+-- TOC entry 3733 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: treesacts_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19672,7 +19672,7 @@ CREATE TABLE treesbranches (
 ALTER TABLE treesbranches OWNER TO postgres;
 
 --
--- TOC entry 3732 (class 0 OID 0)
+-- TOC entry 3734 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: TABLE treesbranches; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19681,7 +19681,7 @@ COMMENT ON TABLE treesbranches IS 'trees branches';
 
 
 --
--- TOC entry 3733 (class 0 OID 0)
+-- TOC entry 3735 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN treesbranches.treesid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19690,7 +19690,7 @@ COMMENT ON COLUMN treesbranches.treesid IS 'tree';
 
 
 --
--- TOC entry 3734 (class 0 OID 0)
+-- TOC entry 3736 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN treesbranches.title; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19699,7 +19699,7 @@ COMMENT ON COLUMN treesbranches.title IS 'menu item title';
 
 
 --
--- TOC entry 3735 (class 0 OID 0)
+-- TOC entry 3737 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN treesbranches.parentid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19708,7 +19708,7 @@ COMMENT ON COLUMN treesbranches.parentid IS 'parent';
 
 
 --
--- TOC entry 3736 (class 0 OID 0)
+-- TOC entry 3738 (class 0 OID 0)
 -- Dependencies: 266
 -- Name: COLUMN treesbranches.treeviewtype; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19732,7 +19732,7 @@ CREATE SEQUENCE treesbranches_id_seq
 ALTER TABLE treesbranches_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3737 (class 0 OID 0)
+-- TOC entry 3739 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: treesbranches_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19754,7 +19754,7 @@ CREATE TABLE treeviewtypes (
 ALTER TABLE treeviewtypes OWNER TO postgres;
 
 --
--- TOC entry 3738 (class 0 OID 0)
+-- TOC entry 3740 (class 0 OID 0)
 -- Dependencies: 268
 -- Name: TABLE treeviewtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19791,7 +19791,7 @@ CREATE TABLE users (
 ALTER TABLE users OWNER TO postgres;
 
 --
--- TOC entry 3739 (class 0 OID 0)
+-- TOC entry 3741 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: TABLE users; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19800,7 +19800,7 @@ COMMENT ON TABLE users IS 'USER';
 
 
 --
--- TOC entry 3740 (class 0 OID 0)
+-- TOC entry 3742 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.fam; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19809,7 +19809,7 @@ COMMENT ON COLUMN users.fam IS 'lastname';
 
 
 --
--- TOC entry 3741 (class 0 OID 0)
+-- TOC entry 3743 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.im; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19818,7 +19818,7 @@ COMMENT ON COLUMN users.im IS 'firstname';
 
 
 --
--- TOC entry 3742 (class 0 OID 0)
+-- TOC entry 3744 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.ot; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19827,7 +19827,7 @@ COMMENT ON COLUMN users.ot IS 'secondname';
 
 
 --
--- TOC entry 3743 (class 0 OID 0)
+-- TOC entry 3745 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.login; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19836,7 +19836,7 @@ COMMENT ON COLUMN users.login IS 'login';
 
 
 --
--- TOC entry 3744 (class 0 OID 0)
+-- TOC entry 3746 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.password; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19845,7 +19845,7 @@ COMMENT ON COLUMN users.password IS 'userpas';
 
 
 --
--- TOC entry 3745 (class 0 OID 0)
+-- TOC entry 3747 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.isactive; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19854,7 +19854,7 @@ COMMENT ON COLUMN users.isactive IS 'is active';
 
 
 --
--- TOC entry 3746 (class 0 OID 0)
+-- TOC entry 3748 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.roles; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19863,7 +19863,7 @@ COMMENT ON COLUMN users.roles IS 'roles';
 
 
 --
--- TOC entry 3747 (class 0 OID 0)
+-- TOC entry 3749 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.photo; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19872,7 +19872,7 @@ COMMENT ON COLUMN users.photo IS 'avatar';
 
 
 --
--- TOC entry 3748 (class 0 OID 0)
+-- TOC entry 3750 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.orgs; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19881,7 +19881,7 @@ COMMENT ON COLUMN users.orgs IS 'user orgs';
 
 
 --
--- TOC entry 3749 (class 0 OID 0)
+-- TOC entry 3751 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.usersettings; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19890,7 +19890,7 @@ COMMENT ON COLUMN users.usersettings IS 'this is views interface settings';
 
 
 --
--- TOC entry 3750 (class 0 OID 0)
+-- TOC entry 3752 (class 0 OID 0)
 -- Dependencies: 269
 -- Name: COLUMN users.thumbprint; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19914,7 +19914,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3751 (class 0 OID 0)
+-- TOC entry 3753 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -19956,7 +19956,7 @@ CREATE TABLE views (
 ALTER TABLE views OWNER TO postgres;
 
 --
--- TOC entry 3752 (class 0 OID 0)
+-- TOC entry 3754 (class 0 OID 0)
 -- Dependencies: 271
 -- Name: TABLE views; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -19980,7 +19980,7 @@ CREATE SEQUENCE views_id_seq
 ALTER TABLE views_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3753 (class 0 OID 0)
+-- TOC entry 3755 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: views_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -20011,7 +20011,7 @@ CREATE TABLE viewsnotification (
 ALTER TABLE viewsnotification OWNER TO postgres;
 
 --
--- TOC entry 3754 (class 0 OID 0)
+-- TOC entry 3756 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: TABLE viewsnotification; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -20021,7 +20021,7 @@ you can add here notification for different views on triggers';
 
 
 --
--- TOC entry 3755 (class 0 OID 0)
+-- TOC entry 3757 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: COLUMN viewsnotification.tableid; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -20030,7 +20030,7 @@ COMMENT ON COLUMN viewsnotification.tableid IS 'id from table';
 
 
 --
--- TOC entry 3756 (class 0 OID 0)
+-- TOC entry 3758 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: COLUMN viewsnotification.notificationtext; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -20039,7 +20039,7 @@ COMMENT ON COLUMN viewsnotification.notificationtext IS 'message';
 
 
 --
--- TOC entry 3757 (class 0 OID 0)
+-- TOC entry 3759 (class 0 OID 0)
 -- Dependencies: 273
 -- Name: COLUMN viewsnotification.foruser; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -20063,7 +20063,7 @@ CREATE SEQUENCE viewsnotification_id_seq
 ALTER TABLE viewsnotification_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3758 (class 0 OID 0)
+-- TOC entry 3760 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: viewsnotification_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -20086,7 +20086,7 @@ CREATE TABLE viewtypes (
 ALTER TABLE viewtypes OWNER TO postgres;
 
 --
--- TOC entry 3759 (class 0 OID 0)
+-- TOC entry 3761 (class 0 OID 0)
 -- Dependencies: 275
 -- Name: TABLE viewtypes; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -20114,7 +20114,7 @@ CREATE TABLE visible_condition (
 ALTER TABLE visible_condition OWNER TO postgres;
 
 --
--- TOC entry 3760 (class 0 OID 0)
+-- TOC entry 3762 (class 0 OID 0)
 -- Dependencies: 276
 -- Name: TABLE visible_condition; Type: COMMENT; Schema: framework; Owner: postgres
 --
@@ -20138,7 +20138,7 @@ CREATE SEQUENCE visible_condition_id_seq
 ALTER TABLE visible_condition_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3761 (class 0 OID 0)
+-- TOC entry 3763 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: visible_condition_id_seq; Type: SEQUENCE OWNED BY; Schema: framework; Owner: postgres
 --
@@ -20185,7 +20185,7 @@ CREATE TABLE reportlist (
 ALTER TABLE reportlist OWNER TO postgres;
 
 --
--- TOC entry 3762 (class 0 OID 0)
+-- TOC entry 3764 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: TABLE reportlist; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20194,7 +20194,7 @@ COMMENT ON TABLE reportlist IS 'reportslist';
 
 
 --
--- TOC entry 3763 (class 0 OID 0)
+-- TOC entry 3765 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.title; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20203,7 +20203,7 @@ COMMENT ON COLUMN reportlist.title IS 'Название';
 
 
 --
--- TOC entry 3764 (class 0 OID 0)
+-- TOC entry 3766 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.roles; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20212,7 +20212,7 @@ COMMENT ON COLUMN reportlist.roles IS 'Роли';
 
 
 --
--- TOC entry 3765 (class 0 OID 0)
+-- TOC entry 3767 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.path; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20221,7 +20221,7 @@ COMMENT ON COLUMN reportlist.path IS 'Путь';
 
 
 --
--- TOC entry 3766 (class 0 OID 0)
+-- TOC entry 3768 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.template; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20230,7 +20230,7 @@ COMMENT ON COLUMN reportlist.template IS 'Файл шаблона';
 
 
 --
--- TOC entry 3767 (class 0 OID 0)
+-- TOC entry 3769 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.functitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20239,7 +20239,7 @@ COMMENT ON COLUMN reportlist.functitle IS 'Название функции';
 
 
 --
--- TOC entry 3768 (class 0 OID 0)
+-- TOC entry 3770 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.section; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20248,7 +20248,7 @@ COMMENT ON COLUMN reportlist.section IS 'Секция';
 
 
 --
--- TOC entry 3769 (class 0 OID 0)
+-- TOC entry 3771 (class 0 OID 0)
 -- Dependencies: 279
 -- Name: COLUMN reportlist.ishtml; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20272,7 +20272,7 @@ CREATE SEQUENCE reportlist_id_seq
 ALTER TABLE reportlist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3770 (class 0 OID 0)
+-- TOC entry 3772 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: reportlist_id_seq; Type: SEQUENCE OWNED BY; Schema: reports; Owner: postgres
 --
@@ -20301,7 +20301,7 @@ CREATE TABLE reportparams (
 ALTER TABLE reportparams OWNER TO postgres;
 
 --
--- TOC entry 3771 (class 0 OID 0)
+-- TOC entry 3773 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: COLUMN reportparams.ptitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20310,7 +20310,7 @@ COMMENT ON COLUMN reportparams.ptitle IS 'parametr title';
 
 
 --
--- TOC entry 3772 (class 0 OID 0)
+-- TOC entry 3774 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: COLUMN reportparams.func_paramtitle; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20319,7 +20319,7 @@ COMMENT ON COLUMN reportparams.func_paramtitle IS 'param in function';
 
 
 --
--- TOC entry 3773 (class 0 OID 0)
+-- TOC entry 3775 (class 0 OID 0)
 -- Dependencies: 281
 -- Name: COLUMN reportparams.ptype; Type: COMMENT; Schema: reports; Owner: postgres
 --
@@ -20343,7 +20343,7 @@ CREATE SEQUENCE reportparams_id_seq
 ALTER TABLE reportparams_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3774 (class 0 OID 0)
+-- TOC entry 3776 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: reportparams_id_seq; Type: SEQUENCE OWNED BY; Schema: reports; Owner: postgres
 --
@@ -20376,7 +20376,7 @@ CREATE TABLE foreignkeys (
 ALTER TABLE foreignkeys OWNER TO postgres;
 
 --
--- TOC entry 3775 (class 0 OID 0)
+-- TOC entry 3777 (class 0 OID 0)
 -- Dependencies: 283
 -- Name: TABLE foreignkeys; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20400,7 +20400,7 @@ CREATE SEQUENCE foreignkeys_id_seq
 ALTER TABLE foreignkeys_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3776 (class 0 OID 0)
+-- TOC entry 3778 (class 0 OID 0)
 -- Dependencies: 284
 -- Name: foreignkeys_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20427,7 +20427,7 @@ CREATE TABLE functionargs (
 ALTER TABLE functionargs OWNER TO postgres;
 
 --
--- TOC entry 3777 (class 0 OID 0)
+-- TOC entry 3779 (class 0 OID 0)
 -- Dependencies: 285
 -- Name: TABLE functionargs; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20436,7 +20436,7 @@ COMMENT ON TABLE functionargs IS 'FUNCTION ARGUMENTS';
 
 
 --
--- TOC entry 3778 (class 0 OID 0)
+-- TOC entry 3780 (class 0 OID 0)
 -- Dependencies: 285
 -- Name: COLUMN functionargs.oid; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20460,7 +20460,7 @@ CREATE SEQUENCE functionargs_id_seq
 ALTER TABLE functionargs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3779 (class 0 OID 0)
+-- TOC entry 3781 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: functionargs_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20493,7 +20493,7 @@ CREATE TABLE functionslist (
 ALTER TABLE functionslist OWNER TO postgres;
 
 --
--- TOC entry 3780 (class 0 OID 0)
+-- TOC entry 3782 (class 0 OID 0)
 -- Dependencies: 287
 -- Name: TABLE functionslist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20517,7 +20517,7 @@ CREATE SEQUENCE functionslist_id_seq
 ALTER TABLE functionslist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3781 (class 0 OID 0)
+-- TOC entry 3783 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: functionslist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20543,7 +20543,7 @@ CREATE TABLE queries (
 ALTER TABLE queries OWNER TO postgres;
 
 --
--- TOC entry 3782 (class 0 OID 0)
+-- TOC entry 3784 (class 0 OID 0)
 -- Dependencies: 289
 -- Name: TABLE queries; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20567,7 +20567,7 @@ CREATE SEQUENCE queries_id_seq
 ALTER TABLE queries_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3783 (class 0 OID 0)
+-- TOC entry 3785 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: queries_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20593,7 +20593,7 @@ CREATE TABLE schemalist (
 ALTER TABLE schemalist OWNER TO postgres;
 
 --
--- TOC entry 3784 (class 0 OID 0)
+-- TOC entry 3786 (class 0 OID 0)
 -- Dependencies: 291
 -- Name: TABLE schemalist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20617,7 +20617,7 @@ CREATE SEQUENCE schemalist_id_seq
 ALTER TABLE schemalist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3785 (class 0 OID 0)
+-- TOC entry 3787 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: schemalist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20641,7 +20641,7 @@ CREATE TABLE schemaobjects (
 ALTER TABLE schemaobjects OWNER TO postgres;
 
 --
--- TOC entry 3786 (class 0 OID 0)
+-- TOC entry 3788 (class 0 OID 0)
 -- Dependencies: 293
 -- Name: TABLE schemaobjects; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20665,7 +20665,7 @@ CREATE SEQUENCE schemaobjects_id_seq
 ALTER TABLE schemaobjects_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3787 (class 0 OID 0)
+-- TOC entry 3789 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: schemaobjects_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20698,7 +20698,7 @@ CREATE TABLE tablecolumns (
 ALTER TABLE tablecolumns OWNER TO postgres;
 
 --
--- TOC entry 3788 (class 0 OID 0)
+-- TOC entry 3790 (class 0 OID 0)
 -- Dependencies: 295
 -- Name: TABLE tablecolumns; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20722,7 +20722,7 @@ CREATE SEQUENCE tablecolumns_id_seq
 ALTER TABLE tablecolumns_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3789 (class 0 OID 0)
+-- TOC entry 3791 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: tablecolumns_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20765,7 +20765,7 @@ CREATE SEQUENCE tableindexes_id_seq
 ALTER TABLE tableindexes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3790 (class 0 OID 0)
+-- TOC entry 3792 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: tableindexes_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20793,7 +20793,7 @@ CREATE TABLE tablelist (
 ALTER TABLE tablelist OWNER TO postgres;
 
 --
--- TOC entry 3791 (class 0 OID 0)
+-- TOC entry 3793 (class 0 OID 0)
 -- Dependencies: 299
 -- Name: TABLE tablelist; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20817,7 +20817,7 @@ CREATE SEQUENCE tablelist_id_seq
 ALTER TABLE tablelist_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3792 (class 0 OID 0)
+-- TOC entry 3794 (class 0 OID 0)
 -- Dependencies: 300
 -- Name: tablelist_id_seq; Type: SEQUENCE OWNED BY; Schema: sqlmanager; Owner: postgres
 --
@@ -20855,7 +20855,7 @@ CREATE TABLE triggers (
 ALTER TABLE triggers OWNER TO postgres;
 
 --
--- TOC entry 3793 (class 0 OID 0)
+-- TOC entry 3795 (class 0 OID 0)
 -- Dependencies: 301
 -- Name: TABLE triggers; Type: COMMENT; Schema: sqlmanager; Owner: postgres
 --
@@ -20895,7 +20895,7 @@ CREATE TABLE dictionary_for_select (
 ALTER TABLE dictionary_for_select OWNER TO postgres;
 
 --
--- TOC entry 3794 (class 0 OID 0)
+-- TOC entry 3796 (class 0 OID 0)
 -- Dependencies: 303
 -- Name: TABLE dictionary_for_select; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20919,7 +20919,7 @@ CREATE SEQUENCE dictionary_for_select_id_seq
 ALTER TABLE dictionary_for_select_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3795 (class 0 OID 0)
+-- TOC entry 3797 (class 0 OID 0)
 -- Dependencies: 304
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -20942,7 +20942,7 @@ CREATE TABLE fel (
 ALTER TABLE fel OWNER TO postgres;
 
 --
--- TOC entry 3796 (class 0 OID 0)
+-- TOC entry 3798 (class 0 OID 0)
 -- Dependencies: 305
 -- Name: TABLE fel; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -20966,7 +20966,7 @@ CREATE SEQUENCE fel_id_seq
 ALTER TABLE fel_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3797 (class 0 OID 0)
+-- TOC entry 3799 (class 0 OID 0)
 -- Dependencies: 306
 -- Name: fel_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -21019,7 +21019,7 @@ CREATE TABLE major_table (
 ALTER TABLE major_table OWNER TO postgres;
 
 --
--- TOC entry 3798 (class 0 OID 0)
+-- TOC entry 3800 (class 0 OID 0)
 -- Dependencies: 307
 -- Name: TABLE major_table; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21028,7 +21028,7 @@ COMMENT ON TABLE major_table IS 'table for testing framework interface';
 
 
 --
--- TOC entry 3799 (class 0 OID 0)
+-- TOC entry 3801 (class 0 OID 0)
 -- Dependencies: 307
 -- Name: COLUMN major_table.id; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21037,7 +21037,7 @@ COMMENT ON COLUMN major_table.id IS 'iddd';
 
 
 --
--- TOC entry 3800 (class 0 OID 0)
+-- TOC entry 3802 (class 0 OID 0)
 -- Dependencies: 307
 -- Name: COLUMN major_table.text; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21061,7 +21061,7 @@ CREATE SEQUENCE major_table_id_seq
 ALTER TABLE major_table_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3801 (class 0 OID 0)
+-- TOC entry 3803 (class 0 OID 0)
 -- Dependencies: 308
 -- Name: major_table_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -21083,7 +21083,7 @@ CREATE TABLE onemorerelation (
 ALTER TABLE onemorerelation OWNER TO postgres;
 
 --
--- TOC entry 3802 (class 0 OID 0)
+-- TOC entry 3804 (class 0 OID 0)
 -- Dependencies: 309
 -- Name: TABLE onemorerelation; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21107,7 +21107,7 @@ CREATE SEQUENCE onemorerelation_id_seq
 ALTER TABLE onemorerelation_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3803 (class 0 OID 0)
+-- TOC entry 3805 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: onemorerelation_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -21131,7 +21131,7 @@ CREATE TABLE relate_with_major (
 ALTER TABLE relate_with_major OWNER TO postgres;
 
 --
--- TOC entry 3804 (class 0 OID 0)
+-- TOC entry 3806 (class 0 OID 0)
 -- Dependencies: 311
 -- Name: TABLE relate_with_major; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21155,7 +21155,7 @@ CREATE SEQUENCE relate_with_major_id_seq
 ALTER TABLE relate_with_major_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3805 (class 0 OID 0)
+-- TOC entry 3807 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: relate_with_major_id_seq; Type: SEQUENCE OWNED BY; Schema: test; Owner: postgres
 --
@@ -21180,7 +21180,7 @@ CREATE TABLE testmanager (
 ALTER TABLE testmanager OWNER TO postgres;
 
 --
--- TOC entry 3806 (class 0 OID 0)
+-- TOC entry 3808 (class 0 OID 0)
 -- Dependencies: 313
 -- Name: COLUMN testmanager.col5; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21189,7 +21189,7 @@ COMMENT ON COLUMN testmanager.col5 IS 'column';
 
 
 --
--- TOC entry 3807 (class 0 OID 0)
+-- TOC entry 3809 (class 0 OID 0)
 -- Dependencies: 313
 -- Name: COLUMN testmanager.textfield1; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21198,7 +21198,7 @@ COMMENT ON COLUMN testmanager.textfield1 IS '<NO TITLE>';
 
 
 --
--- TOC entry 3808 (class 0 OID 0)
+-- TOC entry 3810 (class 0 OID 0)
 -- Dependencies: 313
 -- Name: COLUMN testmanager.intfield; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21207,7 +21207,7 @@ COMMENT ON COLUMN testmanager.intfield IS 'intfield';
 
 
 --
--- TOC entry 3809 (class 0 OID 0)
+-- TOC entry 3811 (class 0 OID 0)
 -- Dependencies: 313
 -- Name: COLUMN testmanager."boolField"; Type: COMMENT; Schema: test; Owner: postgres
 --
@@ -21618,7 +21618,7 @@ ALTER TABLE ONLY relate_with_major ALTER COLUMN id SET DEFAULT nextval('relate_w
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3293 (class 0 OID 109605)
+-- TOC entry 3295 (class 0 OID 109605)
 -- Dependencies: 190
 -- Data for Name: act_parametrs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22017,7 +22017,7 @@ COPY act_parametrs (id, actionid, paramtitle, paramt, paramconst, paraminput, pa
 
 
 --
--- TOC entry 3810 (class 0 OID 0)
+-- TOC entry 3812 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: act_parametrs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22026,7 +22026,7 @@ SELECT pg_catalog.setval('act_parametrs_id_seq', 136, true);
 
 
 --
--- TOC entry 3295 (class 0 OID 109616)
+-- TOC entry 3297 (class 0 OID 109616)
 -- Dependencies: 192
 -- Data for Name: act_visible_condions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22069,7 +22069,7 @@ COPY act_visible_condions (id, actionid, val_desc, col, title, operation, value,
 
 
 --
--- TOC entry 3811 (class 0 OID 0)
+-- TOC entry 3813 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: act_visible_condions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22078,7 +22078,7 @@ SELECT pg_catalog.setval('act_visible_condions_id_seq', 1369, true);
 
 
 --
--- TOC entry 3297 (class 0 OID 109625)
+-- TOC entry 3299 (class 0 OID 109625)
 -- Dependencies: 194
 -- Data for Name: actions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22408,7 +22408,7 @@ COPY actions (id, column_order, title, viewid, icon, classname, act_url, api_met
 
 
 --
--- TOC entry 3812 (class 0 OID 0)
+-- TOC entry 3814 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: actions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22417,7 +22417,7 @@ SELECT pg_catalog.setval('actions_id_seq', 12526, true);
 
 
 --
--- TOC entry 3299 (class 0 OID 109642)
+-- TOC entry 3301 (class 0 OID 109642)
 -- Dependencies: 196
 -- Data for Name: actparam_querytypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22429,7 +22429,7 @@ COPY actparam_querytypes (id, aqname) FROM stdin;
 
 
 --
--- TOC entry 3813 (class 0 OID 0)
+-- TOC entry 3815 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: actparam_querytypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22438,7 +22438,7 @@ SELECT pg_catalog.setval('actparam_querytypes_id_seq', 2, true);
 
 
 --
--- TOC entry 3301 (class 0 OID 109647)
+-- TOC entry 3303 (class 0 OID 109647)
 -- Dependencies: 198
 -- Data for Name: acttypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22459,7 +22459,7 @@ COPY acttypes (id, actname, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 3302 (class 0 OID 109654)
+-- TOC entry 3304 (class 0 OID 109654)
 -- Dependencies: 199
 -- Data for Name: apicallingmethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22471,7 +22471,7 @@ COPY apicallingmethods (id, aname) FROM stdin;
 
 
 --
--- TOC entry 3814 (class 0 OID 0)
+-- TOC entry 3816 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: apicallingmethods_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22480,7 +22480,7 @@ SELECT pg_catalog.setval('apicallingmethods_id_seq', 2, true);
 
 
 --
--- TOC entry 3304 (class 0 OID 109659)
+-- TOC entry 3306 (class 0 OID 109659)
 -- Dependencies: 201
 -- Data for Name: apimethods; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22492,7 +22492,7 @@ COPY apimethods (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 3305 (class 0 OID 109663)
+-- TOC entry 3307 (class 0 OID 109663)
 -- Dependencies: 202
 -- Data for Name: booloper; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22504,7 +22504,7 @@ COPY booloper (id, bname) FROM stdin;
 
 
 --
--- TOC entry 3815 (class 0 OID 0)
+-- TOC entry 3817 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: booloper_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22513,7 +22513,7 @@ SELECT pg_catalog.setval('booloper_id_seq', 2, true);
 
 
 --
--- TOC entry 3307 (class 0 OID 109668)
+-- TOC entry 3309 (class 0 OID 109668)
 -- Dependencies: 204
 -- Data for Name: columntypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22563,7 +22563,7 @@ COPY columntypes (id, typename, viewtypes) FROM stdin;
 
 
 --
--- TOC entry 3816 (class 0 OID 0)
+-- TOC entry 3818 (class 0 OID 0)
 -- Dependencies: 205
 -- Name: columntypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22572,7 +22572,7 @@ SELECT pg_catalog.setval('columntypes_id_seq', 2014, true);
 
 
 --
--- TOC entry 3817 (class 0 OID 0)
+-- TOC entry 3819 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: columntypes_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22581,7 +22581,7 @@ SELECT pg_catalog.setval('columntypes_id_seq1', 4, true);
 
 
 --
--- TOC entry 3310 (class 0 OID 109679)
+-- TOC entry 3312 (class 0 OID 109679)
 -- Dependencies: 207
 -- Data for Name: compoitems; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22607,7 +22607,7 @@ COPY compoitems (id, compoid, viewid, width, rownum, created, noscript) FROM std
 
 
 --
--- TOC entry 3818 (class 0 OID 0)
+-- TOC entry 3820 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: compoitems_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22616,7 +22616,7 @@ SELECT pg_catalog.setval('compoitems_id_seq', 210, true);
 
 
 --
--- TOC entry 3312 (class 0 OID 109687)
+-- TOC entry 3314 (class 0 OID 109687)
 -- Dependencies: 209
 -- Data for Name: compos; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -22641,7 +22641,7 @@ COPY compos (id, title, path, config, created, viscond_function) FROM stdin;
 
 
 --
--- TOC entry 3819 (class 0 OID 0)
+-- TOC entry 3821 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: compos_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22650,7 +22650,7 @@ SELECT pg_catalog.setval('compos_id_seq', 248, true);
 
 
 --
--- TOC entry 3820 (class 0 OID 0)
+-- TOC entry 3822 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: compos_id_seq1; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -22659,7 +22659,7 @@ SELECT pg_catalog.setval('compos_id_seq1', 5, true);
 
 
 --
--- TOC entry 3315 (class 0 OID 109699)
+-- TOC entry 3317 (class 0 OID 109699)
 -- Dependencies: 212
 -- Data for Name: config; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23587,7 +23587,7 @@ COPY config (id, viewid, t, col, column_id, title, type, roles, visible, require
 
 
 --
--- TOC entry 3821 (class 0 OID 0)
+-- TOC entry 3823 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: config_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23596,7 +23596,7 @@ SELECT pg_catalog.setval('config_id_seq', 602252, true);
 
 
 --
--- TOC entry 3317 (class 0 OID 109726)
+-- TOC entry 3319 (class 0 OID 109726)
 -- Dependencies: 214
 -- Data for Name: configsettings; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23616,7 +23616,7 @@ COPY configsettings (id, sname) FROM stdin;
 
 
 --
--- TOC entry 3822 (class 0 OID 0)
+-- TOC entry 3824 (class 0 OID 0)
 -- Dependencies: 215
 -- Name: configsettings_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23625,7 +23625,7 @@ SELECT pg_catalog.setval('configsettings_id_seq', 10, true);
 
 
 --
--- TOC entry 3319 (class 0 OID 109731)
+-- TOC entry 3321 (class 0 OID 109731)
 -- Dependencies: 216
 -- Data for Name: defaultval; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23646,7 +23646,7 @@ COPY defaultval (id, configid, bool, act, value, created) FROM stdin;
 
 
 --
--- TOC entry 3823 (class 0 OID 0)
+-- TOC entry 3825 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: defaultval_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23655,7 +23655,7 @@ SELECT pg_catalog.setval('defaultval_id_seq', 732, true);
 
 
 --
--- TOC entry 3321 (class 0 OID 109737)
+-- TOC entry 3323 (class 0 OID 109737)
 -- Dependencies: 218
 -- Data for Name: dialog_messages; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23670,7 +23670,7 @@ COPY dialog_messages (id, userid, message_text, reply_to, forwarded_from, dialog
 
 
 --
--- TOC entry 3824 (class 0 OID 0)
+-- TOC entry 3826 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: dialog_messages_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23679,7 +23679,7 @@ SELECT pg_catalog.setval('dialog_messages_id_seq', 42, true);
 
 
 --
--- TOC entry 3323 (class 0 OID 109751)
+-- TOC entry 3325 (class 0 OID 109751)
 -- Dependencies: 220
 -- Data for Name: dialog_notifications; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23710,7 +23710,7 @@ COPY dialog_notifications (id, dialog_id, sender_userid, userid, message_text, c
 
 
 --
--- TOC entry 3825 (class 0 OID 0)
+-- TOC entry 3827 (class 0 OID 0)
 -- Dependencies: 221
 -- Name: dialog_notifications_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23719,7 +23719,7 @@ SELECT pg_catalog.setval('dialog_notifications_id_seq', 21, true);
 
 
 --
--- TOC entry 3325 (class 0 OID 109762)
+-- TOC entry 3327 (class 0 OID 109762)
 -- Dependencies: 222
 -- Data for Name: dialog_statuses; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23729,7 +23729,7 @@ COPY dialog_statuses (id, sname) FROM stdin;
 
 
 --
--- TOC entry 3826 (class 0 OID 0)
+-- TOC entry 3828 (class 0 OID 0)
 -- Dependencies: 223
 -- Name: dialog_statuses_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23738,7 +23738,7 @@ SELECT pg_catalog.setval('dialog_statuses_id_seq', 1, false);
 
 
 --
--- TOC entry 3327 (class 0 OID 109767)
+-- TOC entry 3329 (class 0 OID 109767)
 -- Dependencies: 224
 -- Data for Name: dialog_types; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23750,7 +23750,7 @@ COPY dialog_types (id, tname) FROM stdin;
 
 
 --
--- TOC entry 3328 (class 0 OID 109770)
+-- TOC entry 3330 (class 0 OID 109770)
 -- Dependencies: 225
 -- Data for Name: dialogs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23762,7 +23762,7 @@ COPY dialogs (id, title, users, dtype, userid, created, status, first_message, l
 
 
 --
--- TOC entry 3827 (class 0 OID 0)
+-- TOC entry 3829 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: dialogs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23771,7 +23771,7 @@ SELECT pg_catalog.setval('dialogs_id_seq', 34, true);
 
 
 --
--- TOC entry 3828 (class 0 OID 0)
+-- TOC entry 3830 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: dialogs_status_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23780,7 +23780,7 @@ SELECT pg_catalog.setval('dialogs_status_seq', 1, false);
 
 
 --
--- TOC entry 3331 (class 0 OID 109788)
+-- TOC entry 3333 (class 0 OID 109788)
 -- Dependencies: 228
 -- Data for Name: filter_position; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23792,7 +23792,7 @@ COPY filter_position (id, fname) FROM stdin;
 
 
 --
--- TOC entry 3332 (class 0 OID 109791)
+-- TOC entry 3334 (class 0 OID 109791)
 -- Dependencies: 229
 -- Data for Name: filters; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23816,8 +23816,6 @@ COPY filters (id, column_order, viewid, title, type, classname, "column", column
 142	5	219	select filter	select		select	[]	[]	22	{"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}	2019-11-05 10:00:17.290746	12875	1
 143	6	219	multi	multiselect		multiselect	[]	[]	1	{"t": 8, "col": "multiselect", "join": false, "type": "multiselect", "roles": "[]", "title": "multiselect", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 8, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}	2019-11-05 10:00:17.290746	12853	1
 144	7	219	multi json	multijson		multitypehead	[]	[]	1	{"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}	2019-11-05 10:00:17.290746	12872	1
-145	1	220	SUBSTR TEXT	substr		text	[]	[]	1	{"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}	2019-11-05 10:00:17.290746	12879	1
-148	4	220	PERIOD	period		data	[]	[]	1	{"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}	2019-11-05 10:00:17.290746	12880	1
 149	5	220	select filter	select		select	[]	[]	22	{"t": 22, "col": "select", "join": false, "type": "label", "label": "select || select", "roles": "[]", "title": "select", "width": "", "relcol": "id", "depency": false, "visible": false, "relation": "test.dictionary_for_select", "classname": "", "column_id": 22, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": [{"label": "dname", "title": "dname", "value": "dname"}]}	2019-11-05 10:00:17.290746	12907	1
 151	7	220	multi json	multijson		multitypehead	[]	[]	1	{"t": 28, "col": "multitypehead", "join": false, "type": "multitypehead", "roles": "[]", "title": "multitypehead", "width": "", "relcol": null, "depency": false, "visible": false, "relation": null, "classname": "", "column_id": 28, "onetomany": false, "defaultval": null, "depencycol": null, "multicolums": [{"label": "dname", "value": "dname"}], "relationcolums": "[]", "multiselecttable": "test.dictionary_for_select"}	2019-11-05 10:00:17.290746	12904	1
 155	1	236	isactive	check	\N	isactive	[]	[]	1	null	2019-11-05 10:00:17.290746	13115	1
@@ -23825,7 +23823,6 @@ COPY filters (id, column_order, viewid, title, type, classname, "column", column
 157	3	236	roles	multijson	\N	roles	[]	[]	1	null	2019-11-05 10:00:17.290746	13113	1
 153	1	234	parent	multiselect	\N	parentid	[]	[0]	3	"framework.mainmenu"	2019-11-05 10:00:17.290746	13091	1
 217	1	118	Search	typehead		\N	["Название", "Название функции", "Путь", 19343, 19348]	[]	\N	{}	2019-12-25 11:04:47.818399	\N	1
-6033	8	220	date between	date_between	\N	data	[]	[]	1	{}	2020-05-06 22:12:59.427085	12880	1
 6034	1	50788	search	substr	\N	tablename	[]	[]	1	{}	2020-05-13 08:37:08.679362	601878	1
 6035	1	50789	search	substr	\N	fullname	[]	[]	1	{}	2020-05-13 08:37:35.466803	601886	1
 162	0	237	Title	substr	\N	title	[]	[]	1	{}	2019-11-07 14:34:20.394455	13118	2
@@ -23833,13 +23830,15 @@ COPY filters (id, column_order, viewid, title, type, classname, "column", column
 188	2	237	Table	substr	\N	tablename	[]	[]	1	{}	2019-12-02 09:06:20.264493	13120	2
 154	2	234	search	typehead		\N	["title","path"]	[]	\N	{}	2019-11-05 10:00:17.290746	\N	2
 187	1	237	Path	substr	\N	path	[]	[]	1	{}	2019-12-02 09:01:54.162823	13123	2
+148	4	220	PERIOD	period		data	[]	[]	1	{"t": 3, "col": "data", "join": false, "type": "date", "roles": "[]", "title": "data", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 3, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}	2019-11-05 10:00:17.290746	12880	1
 147	3	220	check	check		check	[]	[]	1	{"t": 4, "col": "check", "join": false, "type": "checkbox", "roles": "[]", "title": "check", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 4, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}	2019-11-05 10:00:17.290746	12881	2
 6037	1	50869	seach	typehead	\N	\N	[]	[]	1	{}	2021-06-27 23:50:32.161386	\N	1
+145	1	220	SUBSTR TEXT	substr		text	[]	[]	1	{"t": 2, "col": "text", "join": false, "type": "text", "roles": "[]", "title": "text", "width": "", "relcol": null, "depency": false, "visible": true, "relation": null, "classname": "", "column_id": 2, "onetomany": false, "defaultval": null, "depencycol": null, "relationcolums": "[]"}	2019-11-05 10:00:17.290746	12879	2
 \.
 
 
 --
--- TOC entry 3829 (class 0 OID 0)
+-- TOC entry 3831 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: filters_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23848,7 +23847,7 @@ SELECT pg_catalog.setval('filters_id_seq', 6037, true);
 
 
 --
--- TOC entry 3334 (class 0 OID 109806)
+-- TOC entry 3336 (class 0 OID 109806)
 -- Dependencies: 231
 -- Data for Name: filtertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23866,7 +23865,7 @@ COPY filtertypes (id, ftname) FROM stdin;
 
 
 --
--- TOC entry 3335 (class 0 OID 109809)
+-- TOC entry 3337 (class 0 OID 109809)
 -- Dependencies: 232
 -- Data for Name: functions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23881,7 +23880,7 @@ COPY functions (id, funcname, functype) FROM stdin;
 
 
 --
--- TOC entry 3336 (class 0 OID 109812)
+-- TOC entry 3338 (class 0 OID 109812)
 -- Dependencies: 233
 -- Data for Name: instructions; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23893,7 +23892,7 @@ COPY instructions (id, lang, instructtext, created) FROM stdin;
 
 
 --
--- TOC entry 3830 (class 0 OID 0)
+-- TOC entry 3832 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: instructions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23902,7 +23901,7 @@ SELECT pg_catalog.setval('instructions_id_seq', 2, true);
 
 
 --
--- TOC entry 3338 (class 0 OID 109821)
+-- TOC entry 3340 (class 0 OID 109821)
 -- Dependencies: 235
 -- Data for Name: logtable; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23912,16 +23911,16 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 
 
 --
--- TOC entry 3831 (class 0 OID 0)
+-- TOC entry 3833 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 479, true);
+SELECT pg_catalog.setval('logtable_id_seq', 484, true);
 
 
 --
--- TOC entry 3340 (class 0 OID 109831)
+-- TOC entry 3342 (class 0 OID 109831)
 -- Dependencies: 237
 -- Data for Name: mainmenu; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23955,7 +23954,7 @@ COPY mainmenu (id, title, parentid, created, systemfield, orderby, path, roles, 
 
 
 --
--- TOC entry 3832 (class 0 OID 0)
+-- TOC entry 3834 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: mainmenu_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23964,18 +23963,18 @@ SELECT pg_catalog.setval('mainmenu_id_seq', 271, true);
 
 
 --
--- TOC entry 3342 (class 0 OID 109847)
+-- TOC entry 3344 (class 0 OID 109847)
 -- Dependencies: 239
 -- Data for Name: mainsettings; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY mainsettings (id, dsn, port, "developerRole", maindomain, "primaryAuthorization", redirect401, isactiv, usercss, homepage, reports_url, login_url, ischat, template) FROM stdin;
-1	host=127.0.0.1 dbname=framework user=postgres password=12345678 port=5432	8080	0	http://127.0.0.1:8080	1	/login	t	/* YOU CAN ADD YOUR CLASSES HERE  */\n\n.flex_tiles {\n  display: flex;\n  overflow-x: auto;\n}\n.test_test {\n\tcursor:pointer;\n\tcolor:black;\n}\n\n/* SQL MANAGER */\n.schema_table {\n  font-size: 11px;\n}\n\n.schema_table tbody {\n  color: #1c92ff;\n}\n\n.schema_table td, th {\n  border-style: none;\n}\n\n.args_table {\n  font-size: 11px;\n  width:100%;\n}\n\n.args_table tbody {\n  color: #1c92ff;\n}\n\n.args_table td, th {\n  border-style: none;\n}\n\n.t_table {\n  font-size: 11px;\n}\n\n.t_table tbody {\n  color: #1c92ff;\n}\n\n.t_table tr {\n  border-style: outset;\n  border-color: #68ff00;\n  border-width: 1px;\n  cursor: pointer;\n\n}\n\n.et_table tr:hover {\n  background:#b5d9db;\n}\n\n.et_table {\n  font-size: 11px;\n}\n\n.et_table tbody {\n  color: #170653;\n}\n\n.et_table td {\n  border-style: outset;\n  border-color: #626262;\n  border-width: 1px;\n  cursor: pointer;\n  padding: 5px;\n\n}\n\n.t_table tr:hover {\n  background:#b5d9db;\n}\n\n.commit_btn {\n  background-color: #fff44c;\n  color: #000;\n}\n\n/* SQL MANAGER */\n\n.aa {}\n\n\n.resizable, div[id^="ace-editor"] {\n  overflow: hidden;\n  resize: both;\n}\n\n\n\n.content_app {\n  padding:2px;\n }\n\n .paleturquoise {\n  background-color:#AFEEEE;\n }\n\n .title22 {\n  font-size: 22px;\n }\n\n .title22 b {\n  display:none;\n }\n\n .nob {\n\n }\n\n .nob b {\n  display:none;\n }\n\n .lil_list_text {\n   font-size: 10px;\n }\n\n .lil_list_text span {\n    color: #557c9e;\n }\n\n\n .green_prety_b {\n\n }\n\n .green_prety_b b {\n   color: #2be242;\n }\n\n .green_prety_b span {\n    color: #0824ec;\n    font-size: 17px;\n }\n\n\n .bigtitle25 {\n    font-size: 25px;\n    color: #06a7b7d9;\n }\n\n .basket {\n    background: #fff705;\n    width: 300px;\n }\n\n .basket i {\n  font-size: 20px;\n  color: #ca3e09;\n }\n\n .contents {\n  display:contents;\n }\n\n .smaller {\n  font-size: smaller;\n }\n\n .food_table {\n  width:100%;\n }\n\n\n\n.food_table th, td {\n   border:none;\n}\n\n.food_table th:hover {\n   background:#ffff002e;\n   cursor:pointer;\n}\n\n.food_table td:hover {\n   background:#f5eff5;\n   cursor:pointer;\n}\n\n\n\n.food_table tr{\n    border-style: groove;\n    border-width: thin;\n    border-color: #b3aace8c;\n    text-align: center;\n\n}\n\n.food_table thead {\n    background:#f0fff28a;\n}\n\n.food_table tbody tr:hover {\n    background:#cffdcf;\n}\n\n.del_color {\n    background: #000652;\n    color: aliceblue;\n    text-align: center;\n    font-size: 17px;\n    font-family: cursive;\n}\n\n.big_s_button {\n    min-height: 40px;\n    min-width: 40px;\n    font-size: 20px;\n    color: #fdfdfd;\n    background: #0cbf22;\n}\n\n.notitle {\n\n}\n\n.notitle label {\n  display:none;\n}\n\n\n/* MOBILE */\n@media screen\n  and (max-device-width: 1080px)\n  and (max-device-height: 1920px)\n\n {\n  span, b, label, .ant-col, .ant-collapse-header {\n    font-size:25px;\n   /* margin-left:72px;*/\n  }\n\n  .css-1kdo2r7 {\n    font-size:25px;\n  }\n\n\n  .get_one_form .ant-form-item-label>label {\n      font-size:25px;\n  }\n\n  .ant-form-item-control input {\n      font-size:25px;\n      height:45px;\n  }\n\n  li, a, i, icon, tr, .ant-popover-message-title {\n    font-size:25px;\n  }\n\n  .ant-form label {\n    font-size:25px;\n  }\n\n  .fr_tiles .ant-card {\n\n      margin-bottom:25px;\n\n  }\n\n  button {\n    min-width:100px;\n    min-height:55px;\n\n  }\n  img {\n    width:170px;\n    height:170px;\n  }\n\n\n}\n/* MOBILE */\n\n.p11 {\n    font-size: 11px;\n}\n\n\n.p11 span {\n    font-size: 11px;\n}\n\n.commit_btn {\n  background-color: #fff44c;\n  color: #000;\n}\n\n/* CHAT */\n\n.chat_list {\n  background-color: aliceblue;\n}\n\n.chat_list div {\n  background-color: aliceblue;\n  margin: 0;\n  /*padding: 2px;*/\n}\n\n.avka {\n\n}\n\n.avka img {\n    height: 45px;\n    width: 45px;\n    display: inline-block;\n    border-radius: 50%;\n}\n\n.chattitle {\n    font-size: large;\n    font-weight: 500;\n    color: rgba(0,0,0,.65);\n}\n\n.chat_login {\n  background: #899ee8;\n  color: white;\n  text-align: center;\n  border-radius: 40%;\n}\n\n.chat_time {\n  font-size:9px;\n}\n\n.chat_message {\n  background: #abd4f9;\n  height: 60px;\n  width: 150px;\n  border-radius: 10%;\n  color: #291818;\n  padding: 20px;\n}\n\n.unreaded2 span {\n    width: 20px;\n    display: block;\n    background: #ffa0cc;\n    text-align: center;\n    border-radius: 50%;\n    border-width: 0.2pt;\n    border-style: ridge;\n    border-color: #e066c059;\n    text-shadow: 0 0 1px red, 0 0 0.1px #505852;\n}\n\n.unreaded span {\n    margin: 2px 0 2px 2px;\n    zoom: 1;\n    padding: 4px 6px;\n    vertical-align: top;\n    color: #5b6e85;\n    background: #d1d9e0;\n    font-weight: 700;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    font-size: 11px;\n    line-height: 17px;\n    height: 16px;\n    border-radius: 2px;\n    transition: background-color 200ms linear,color 200ms linear;\n}\n\n.unreaded div {\n    color: #3f3ff5;\n    font-weight: 500;\n}\n\n\n/* CHAT */\n	/composition/home	http://127.0.0.1:12318/report	/login	t	materialize
+1	host=127.0.0.1 dbname=framework user=postgres password=12345678 port=5432	8080	0	http://127.0.0.1:8080	1	/login	t	/* YOU CAN ADD YOUR CLASSES HERE  */\n\n.flex_tiles {\n  display: flex;\n  overflow-x: auto;\n}\n.test_test {\n\tcursor:pointer;\n\tcolor:black;\n}\n\n/* SQL MANAGER */\n.schema_table {\n  font-size: 11px;\n}\n\n.schema_table tbody {\n  color: #1c92ff;\n}\n\n.schema_table td, th {\n  border-style: none;\n}\n\n.args_table {\n  font-size: 11px;\n  width:100%;\n}\n\n.args_table tbody {\n  color: #1c92ff;\n}\n\n.args_table td, th {\n  border-style: none;\n}\n\n.t_table {\n  font-size: 11px;\n}\n\n.t_table tbody {\n  color: #1c92ff;\n}\n\n.t_table tr {\n  border-style: outset;\n  border-color: #68ff00;\n  border-width: 1px;\n  cursor: pointer;\n\n}\n\n.et_table tr:hover {\n  background:#b5d9db;\n}\n\n.et_table {\n  font-size: 11px;\n}\n\n.et_table tbody {\n  color: #170653;\n}\n\n.et_table td {\n  border-style: outset;\n  border-color: #626262;\n  border-width: 1px;\n  cursor: pointer;\n  padding: 5px;\n\n}\n\n.t_table tr:hover {\n  background:#b5d9db;\n}\n\n.commit_btn {\n  background-color: #fff44c;\n  color: #000;\n}\n\n/* SQL MANAGER */\n\n.aa {}\n\n\n.resizable, div[id^="ace-editor"] {\n  overflow: hidden;\n  resize: both;\n}\n\n\n\n.content_app {\n  padding:2px;\n }\n\n .paleturquoise {\n  background-color:#AFEEEE;\n }\n\n .title22 {\n  font-size: 22px;\n }\n\n .title22 b {\n  display:none;\n }\n\n .nob {\n\n }\n\n .nob b {\n  display:none;\n }\n\n .lil_list_text {\n   font-size: 10px;\n }\n\n .lil_list_text span {\n    color: #557c9e;\n }\n\n\n .green_prety_b {\n\n }\n\n .green_prety_b b {\n   color: #2be242;\n }\n\n .green_prety_b span {\n    color: #0824ec;\n    font-size: 17px;\n }\n\n\n .bigtitle25 {\n    font-size: 25px;\n    color: #06a7b7d9;\n }\n\n .basket {\n    background: #fff705;\n    width: 300px;\n }\n\n .basket i {\n  font-size: 20px;\n  color: #ca3e09;\n }\n\n .contents {\n  display:contents;\n }\n\n .smaller {\n  font-size: smaller;\n }\n\n .food_table {\n  width:100%;\n }\n\n\n\n.food_table th, td {\n   border:none;\n}\n\n.food_table th:hover {\n   background:#ffff002e;\n   cursor:pointer;\n}\n\n.food_table td:hover {\n   background:#f5eff5;\n   cursor:pointer;\n}\n\n\n\n.food_table tr{\n    border-style: groove;\n    border-width: thin;\n    border-color: #b3aace8c;\n    text-align: center;\n\n}\n\n.food_table thead {\n    background:#f0fff28a;\n}\n\n.food_table tbody tr:hover {\n    background:#cffdcf;\n}\n\n.del_color {\n    background: #000652;\n    color: aliceblue;\n    text-align: center;\n    font-size: 17px;\n    font-family: cursive;\n}\n\n.big_s_button {\n    min-height: 40px;\n    min-width: 40px;\n    font-size: 20px;\n    color: #fdfdfd;\n    background: #0cbf22;\n}\n\n.notitle {\n\n}\n\n.notitle label {\n  display:none;\n}\n\n\n/* MOBILE */\n@media screen\n  and (max-device-width: 1080px)\n  and (max-device-height: 1920px)\n\n {\n  span, b, label, .ant-col, .ant-collapse-header {\n    font-size:25px;\n   /* margin-left:72px;*/\n  }\n\n  .css-1kdo2r7 {\n    font-size:25px;\n  }\n\n\n  .get_one_form .ant-form-item-label>label {\n      font-size:25px;\n  }\n\n  .ant-form-item-control input {\n      font-size:25px;\n      height:45px;\n  }\n\n  li, a, i, icon, tr, .ant-popover-message-title {\n    font-size:25px;\n  }\n\n  .ant-form label {\n    font-size:25px;\n  }\n\n  .fr_tiles .ant-card {\n\n      margin-bottom:25px;\n\n  }\n\n  button {\n    min-width:100px;\n    min-height:55px;\n\n  }\n  img {\n    width:170px;\n    height:170px;\n  }\n\n\n}\n/* MOBILE */\n\n.p11 {\n    font-size: 11px;\n}\n\n\n.p11 span {\n    font-size: 11px;\n}\n\n.commit_btn {\n  background-color: #fff44c;\n  color: #000;\n}\n\n/* CHAT */\n\n.chat_list {\n  background-color: aliceblue;\n}\n\n.chat_list div {\n  background-color: aliceblue;\n  margin: 0;\n  /*padding: 2px;*/\n}\n\n.avka {\n\n}\n\n.avka img {\n    height: 45px;\n    width: 45px;\n    display: inline-block;\n    border-radius: 50%;\n}\n\n.chattitle {\n    font-size: large;\n    font-weight: 500;\n    color: rgba(0,0,0,.65);\n}\n\n.chat_login {\n  background: #899ee8;\n  color: white;\n  text-align: center;\n  border-radius: 40%;\n}\n\n.chat_time {\n  font-size:9px;\n}\n\n.chat_message {\n  background: #abd4f9;\n  height: 60px;\n  width: 150px;\n  border-radius: 10%;\n  color: #291818;\n  padding: 20px;\n}\n\n.unreaded2 span {\n    width: 20px;\n    display: block;\n    background: #ffa0cc;\n    text-align: center;\n    border-radius: 50%;\n    border-width: 0.2pt;\n    border-style: ridge;\n    border-color: #e066c059;\n    text-shadow: 0 0 1px red, 0 0 0.1px #505852;\n}\n\n.unreaded span {\n    margin: 2px 0 2px 2px;\n    zoom: 1;\n    padding: 4px 6px;\n    vertical-align: top;\n    color: #5b6e85;\n    background: #d1d9e0;\n    font-weight: 700;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    font-size: 11px;\n    line-height: 17px;\n    height: 16px;\n    border-radius: 2px;\n    transition: background-color 200ms linear,color 200ms linear;\n}\n\n.unreaded div {\n    color: #3f3ff5;\n    font-weight: 500;\n}\n\n\n/* CHAT */\n	/composition/home	http://127.0.0.1:12318/report	/login	t	ant
 \.
 
 
 --
--- TOC entry 3343 (class 0 OID 109867)
+-- TOC entry 3345 (class 0 OID 109867)
 -- Dependencies: 240
 -- Data for Name: menus; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -23987,7 +23986,7 @@ COPY menus (id, menutype, menutitle, ismainmenu) FROM stdin;
 
 
 --
--- TOC entry 3833 (class 0 OID 0)
+-- TOC entry 3835 (class 0 OID 0)
 -- Dependencies: 241
 -- Name: menus_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -23996,7 +23995,7 @@ SELECT pg_catalog.setval('menus_id_seq', 3, true);
 
 
 --
--- TOC entry 3345 (class 0 OID 109873)
+-- TOC entry 3347 (class 0 OID 109873)
 -- Dependencies: 242
 -- Data for Name: menutypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24009,7 +24008,7 @@ COPY menutypes (id, mtypename) FROM stdin;
 
 
 --
--- TOC entry 3834 (class 0 OID 0)
+-- TOC entry 3836 (class 0 OID 0)
 -- Dependencies: 243
 -- Name: menutypes_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24018,7 +24017,7 @@ SELECT pg_catalog.setval('menutypes_id_seq', 4, true);
 
 
 --
--- TOC entry 3347 (class 0 OID 109881)
+-- TOC entry 3349 (class 0 OID 109881)
 -- Dependencies: 244
 -- Data for Name: methodtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24032,7 +24031,7 @@ COPY methodtypes (id, methotypename) FROM stdin;
 
 
 --
--- TOC entry 3348 (class 0 OID 109884)
+-- TOC entry 3350 (class 0 OID 109884)
 -- Dependencies: 245
 -- Data for Name: notifications; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24048,7 +24047,7 @@ COPY notifications (id, message, messagetype, for_userid, sended_sessions, isrea
 
 
 --
--- TOC entry 3835 (class 0 OID 0)
+-- TOC entry 3837 (class 0 OID 0)
 -- Dependencies: 246
 -- Name: notifications_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24057,7 +24056,7 @@ SELECT pg_catalog.setval('notifications_id_seq', 10, true);
 
 
 --
--- TOC entry 3350 (class 0 OID 109896)
+-- TOC entry 3352 (class 0 OID 109896)
 -- Dependencies: 247
 -- Data for Name: operations; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24081,7 +24080,7 @@ COPY operations (id, value, js, python, sql) FROM stdin;
 
 
 --
--- TOC entry 3836 (class 0 OID 0)
+-- TOC entry 3838 (class 0 OID 0)
 -- Dependencies: 248
 -- Name: operations_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24090,7 +24089,7 @@ SELECT pg_catalog.setval('operations_id_seq', 14, true);
 
 
 --
--- TOC entry 3352 (class 0 OID 109901)
+-- TOC entry 3354 (class 0 OID 109901)
 -- Dependencies: 249
 -- Data for Name: opertypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24104,7 +24103,7 @@ COPY opertypes (id, typename, alias) FROM stdin;
 
 
 --
--- TOC entry 3353 (class 0 OID 109904)
+-- TOC entry 3355 (class 0 OID 109904)
 -- Dependencies: 250
 -- Data for Name: orgs; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24115,7 +24114,7 @@ COPY orgs (id, orgname, orgtype, parentid, shortname, created, userid, photo) FR
 
 
 --
--- TOC entry 3837 (class 0 OID 0)
+-- TOC entry 3839 (class 0 OID 0)
 -- Dependencies: 251
 -- Name: orgs_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24124,7 +24123,7 @@ SELECT pg_catalog.setval('orgs_id_seq', 11, true);
 
 
 --
--- TOC entry 3355 (class 0 OID 109916)
+-- TOC entry 3357 (class 0 OID 109916)
 -- Dependencies: 252
 -- Data for Name: orgtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24135,7 +24134,7 @@ COPY orgtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3356 (class 0 OID 109919)
+-- TOC entry 3358 (class 0 OID 109919)
 -- Dependencies: 253
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24148,7 +24147,7 @@ COPY paramtypes (id, val, created) FROM stdin;
 
 
 --
--- TOC entry 3357 (class 0 OID 109923)
+-- TOC entry 3359 (class 0 OID 109923)
 -- Dependencies: 254
 -- Data for Name: roles; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24159,7 +24158,7 @@ COPY roles (id, rolename, hierarchy) FROM stdin;
 
 
 --
--- TOC entry 3358 (class 0 OID 109926)
+-- TOC entry 3360 (class 0 OID 109926)
 -- Dependencies: 255
 -- Data for Name: select_condition; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24178,7 +24177,7 @@ COPY select_condition (id, configid, col, operation, const, value, created, val_
 
 
 --
--- TOC entry 3838 (class 0 OID 0)
+-- TOC entry 3840 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: select_condition_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24187,19 +24186,17 @@ SELECT pg_catalog.setval('select_condition_id_seq', 1198, true);
 
 
 --
--- TOC entry 3360 (class 0 OID 109935)
+-- TOC entry 3362 (class 0 OID 109935)
 -- Dependencies: 257
 -- Data for Name: sess; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY sess (id, userid, created, killed) FROM stdin;
-b572b205-729c-452c-92a1-5f280f65ba87	1	2021-06-27 23:12:35.060507	2021-06-28 00:14:11.495182
-53a0cd31-3150-417c-bc4c-99b82b034cf4	1	2021-10-11 22:15:31.06289	\N
 \.
 
 
 --
--- TOC entry 3361 (class 0 OID 109939)
+-- TOC entry 3363 (class 0 OID 109939)
 -- Dependencies: 258
 -- Data for Name: spapi; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24311,7 +24308,7 @@ COPY spapi (id, methodname, procedurename, created, methodtype, roles) FROM stdi
 
 
 --
--- TOC entry 3839 (class 0 OID 0)
+-- TOC entry 3841 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: spapi_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24320,7 +24317,7 @@ SELECT pg_catalog.setval('spapi_id_seq', 1217, false);
 
 
 --
--- TOC entry 3363 (class 0 OID 109949)
+-- TOC entry 3365 (class 0 OID 109949)
 -- Dependencies: 260
 -- Data for Name: templates; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24332,7 +24329,7 @@ COPY templates (id, template) FROM stdin;
 
 
 --
--- TOC entry 3840 (class 0 OID 0)
+-- TOC entry 3842 (class 0 OID 0)
 -- Dependencies: 261
 -- Name: templates_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24341,7 +24338,7 @@ SELECT pg_catalog.setval('templates_id_seq', 2, true);
 
 
 --
--- TOC entry 3365 (class 0 OID 109954)
+-- TOC entry 3367 (class 0 OID 109954)
 -- Dependencies: 262
 -- Data for Name: trees; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24353,7 +24350,7 @@ COPY trees (id, title, url, descr, roles, created, userid, orgid, acts) FROM std
 
 
 --
--- TOC entry 3841 (class 0 OID 0)
+-- TOC entry 3843 (class 0 OID 0)
 -- Dependencies: 263
 -- Name: trees_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24362,7 +24359,7 @@ SELECT pg_catalog.setval('trees_id_seq', 3, true);
 
 
 --
--- TOC entry 3367 (class 0 OID 109965)
+-- TOC entry 3369 (class 0 OID 109965)
 -- Dependencies: 264
 -- Data for Name: treesacts; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24372,7 +24369,7 @@ COPY treesacts (id, treesid, title, icon, classname, act, created, roles) FROM s
 
 
 --
--- TOC entry 3842 (class 0 OID 0)
+-- TOC entry 3844 (class 0 OID 0)
 -- Dependencies: 265
 -- Name: treesacts_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24381,7 +24378,7 @@ SELECT pg_catalog.setval('treesacts_id_seq', 1, false);
 
 
 --
--- TOC entry 3369 (class 0 OID 109975)
+-- TOC entry 3371 (class 0 OID 109975)
 -- Dependencies: 266
 -- Data for Name: treesbranches; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24395,7 +24392,7 @@ COPY treesbranches (id, treesid, title, parentid, icon, created, treeviewtype, v
 
 
 --
--- TOC entry 3843 (class 0 OID 0)
+-- TOC entry 3845 (class 0 OID 0)
 -- Dependencies: 267
 -- Name: treesbranches_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24404,7 +24401,7 @@ SELECT pg_catalog.setval('treesbranches_id_seq', 4, true);
 
 
 --
--- TOC entry 3371 (class 0 OID 109986)
+-- TOC entry 3373 (class 0 OID 109986)
 -- Dependencies: 268
 -- Data for Name: treeviewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24416,19 +24413,19 @@ COPY treeviewtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3372 (class 0 OID 109989)
+-- TOC entry 3374 (class 0 OID 109989)
 -- Dependencies: 269
 -- Data for Name: users; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
 
 COPY users (id, fam, im, ot, login, password, isactive, created, roles, roleid, photo, orgs, usersettings, orgid, userid, thumbprint) FROM stdin;
 8	admin	2		admin2	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2020-06-06 20:53:43.983935	[0]	\N	[{"src": "http://127.0.0.1:8080/files/707dac23-2745-4d9d-a9e5-f6c0248fa645тату2.png", "uri": "/files/707dac23-2745-4d9d-a9e5-f6c0248fa645тату2.png", "size": 2577, "filename": "тату2.png", "original": "http://127.0.0.1:8080/files/707dac23-2745-4d9d-a9e5-f6c0248fa645тату2.png", "thumbnail": "http://127.0.0.1:8080/files/707dac23-2745-4d9d-a9e5-f6c0248fa645тату2.png", "content_type": "image/png", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[]	{"menu": {}, "trees": {}, "views": {}}	\N	1	\N
-1	admin	admin	\N	admin	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2018-12-28 12:57:07	[0]	0	[{"src": "http://127.0.0.1:8080/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "uri": "/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "size": 49370, "filename": "photo_2020-02-01_16-10-52.jpg", "original": "http://127.0.0.1:8080/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "thumbnail": "http://127.0.0.1:8080/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[1]	{"menu": {}, "trees": {}, "views": {"/list/test": {"pagesize": 10}, "/list/spapi": {"pagesize": 100}, "/list/trees": {"pagesize": 10}, "/list/views": {"hide": [], "pagesize": 100}, "/composition/home": {"hide": ["Категория"]}, "/composition/view": {"hide": ["roles", "select condition", "depencycol", "default value", "table", "fn_columns"], "collapse": {"localActiveKey": [], "localChangeCollapse": true}}, "/composition/dogovor": {"pagesize": 20}}, "compositions": {}, "menuCollapse": true}	1	1	\N
+1	admin	admin	\N	admin	78d8045d684abd2eece923758f3cd781489df3a48e1278982466017f	t	2018-12-28 12:57:07	[0]	0	[{"src": "http://127.0.0.1:8080/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "uri": "/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "size": 49370, "filename": "photo_2020-02-01_16-10-52.jpg", "original": "http://127.0.0.1:8080/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "thumbnail": "http://127.0.0.1:8080/files/0a495c01-c0c7-42d6-9355-f7d1885321b5photo_2020-02-01_16-10-52.jpg", "content_type": "image/jpeg", "thumbnailWidth": 100, "thumbnailHeight": 100}]	[1]	{"menu": {}, "trees": {}, "views": {"configs": {"filters": {}}, "undefined": {"filters": {"text": "123"}}, "/list/test": {"filters": {}, "pagesize": 10}, "/list/spapi": {"pagesize": 100}, "/list/trees": {"pagesize": 10}, "/list/views": {"hide": [], "pagesize": 100}, "/composition/home": {"hide": ["Категория"]}, "/composition/view": {"hide": ["roles", "select condition", "depencycol", "default value", "table", "fn_columns"], "filters": {"seach": "da"}, "collapse": {"localActiveKey": [], "localChangeCollapse": true}}, "/composition/dogovor": {"pagesize": 20}}, "compositions": {}, "menuCollapse": true}	1	1	\N
 \.
 
 
 --
--- TOC entry 3844 (class 0 OID 0)
+-- TOC entry 3846 (class 0 OID 0)
 -- Dependencies: 270
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24437,7 +24434,7 @@ SELECT pg_catalog.setval('users_id_seq', 8, true);
 
 
 --
--- TOC entry 3374 (class 0 OID 110005)
+-- TOC entry 3376 (class 0 OID 110005)
 -- Dependencies: 271
 -- Data for Name: views; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24535,7 +24532,7 @@ COPY views (id, title, descr, tablename, viewtype, pagination, config, path, cre
 
 
 --
--- TOC entry 3845 (class 0 OID 0)
+-- TOC entry 3847 (class 0 OID 0)
 -- Dependencies: 272
 -- Name: views_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24544,7 +24541,7 @@ SELECT pg_catalog.setval('views_id_seq', 50872, true);
 
 
 --
--- TOC entry 3376 (class 0 OID 110029)
+-- TOC entry 3378 (class 0 OID 110029)
 -- Dependencies: 273
 -- Data for Name: viewsnotification; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24617,7 +24614,7 @@ COPY viewsnotification (id, viewid, col, tableid, notificationtext, foruser, iss
 
 
 --
--- TOC entry 3846 (class 0 OID 0)
+-- TOC entry 3848 (class 0 OID 0)
 -- Dependencies: 274
 -- Name: viewsnotification_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24626,7 +24623,7 @@ SELECT pg_catalog.setval('viewsnotification_id_seq', 63, true);
 
 
 --
--- TOC entry 3378 (class 0 OID 110041)
+-- TOC entry 3380 (class 0 OID 110041)
 -- Dependencies: 275
 -- Data for Name: viewtypes; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24642,7 +24639,7 @@ COPY viewtypes (id, vtypename, viewlink) FROM stdin;
 
 
 --
--- TOC entry 3379 (class 0 OID 110047)
+-- TOC entry 3381 (class 0 OID 110047)
 -- Dependencies: 276
 -- Data for Name: visible_condition; Type: TABLE DATA; Schema: framework; Owner: postgres
 --
@@ -24808,7 +24805,7 @@ COPY visible_condition (id, configid, val_desc, col, title, operation, value, cr
 
 
 --
--- TOC entry 3847 (class 0 OID 0)
+-- TOC entry 3849 (class 0 OID 0)
 -- Dependencies: 277
 -- Name: visible_condition_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
@@ -24819,7 +24816,7 @@ SELECT pg_catalog.setval('visible_condition_id_seq', 5976, true);
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 3381 (class 0 OID 110056)
+-- TOC entry 3383 (class 0 OID 110056)
 -- Dependencies: 278
 -- Data for Name: paramtypes; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -24829,7 +24826,7 @@ COPY paramtypes (id, typename) FROM stdin;
 
 
 --
--- TOC entry 3382 (class 0 OID 110059)
+-- TOC entry 3384 (class 0 OID 110059)
 -- Dependencies: 279
 -- Data for Name: reportlist; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -24840,7 +24837,7 @@ COPY reportlist (id, title, roles, path, template, template_path, functitle, cre
 
 
 --
--- TOC entry 3848 (class 0 OID 0)
+-- TOC entry 3850 (class 0 OID 0)
 -- Dependencies: 280
 -- Name: reportlist_id_seq; Type: SEQUENCE SET; Schema: reports; Owner: postgres
 --
@@ -24849,7 +24846,7 @@ SELECT pg_catalog.setval('reportlist_id_seq', 1, true);
 
 
 --
--- TOC entry 3384 (class 0 OID 110071)
+-- TOC entry 3386 (class 0 OID 110071)
 -- Dependencies: 281
 -- Data for Name: reportparams; Type: TABLE DATA; Schema: reports; Owner: postgres
 --
@@ -24859,7 +24856,7 @@ COPY reportparams (id, reportlistid, ptitle, func_paramtitle, ptype, created, ap
 
 
 --
--- TOC entry 3849 (class 0 OID 0)
+-- TOC entry 3851 (class 0 OID 0)
 -- Dependencies: 282
 -- Name: reportparams_id_seq; Type: SEQUENCE SET; Schema: reports; Owner: postgres
 --
@@ -24870,7 +24867,7 @@ SELECT pg_catalog.setval('reportparams_id_seq', 1, false);
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3386 (class 0 OID 110079)
+-- TOC entry 3388 (class 0 OID 110079)
 -- Dependencies: 283
 -- Data for Name: foreignkeys; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -24914,7 +24911,7 @@ COPY foreignkeys (id, ftitle, maintablename, maintableid, parentablename, parent
 
 
 --
--- TOC entry 3850 (class 0 OID 0)
+-- TOC entry 3852 (class 0 OID 0)
 -- Dependencies: 284
 -- Name: foreignkeys_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -24923,7 +24920,7 @@ SELECT pg_catalog.setval('foreignkeys_id_seq', 3, true);
 
 
 --
--- TOC entry 3388 (class 0 OID 110089)
+-- TOC entry 3390 (class 0 OID 110089)
 -- Dependencies: 285
 -- Data for Name: functionargs; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25256,7 +25253,7 @@ COPY functionargs (id, oid, argname, argtype, argmode, created, userid) FROM std
 
 
 --
--- TOC entry 3851 (class 0 OID 0)
+-- TOC entry 3853 (class 0 OID 0)
 -- Dependencies: 286
 -- Name: functionargs_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25265,7 +25262,7 @@ SELECT pg_catalog.setval('functionargs_id_seq', 1249, true);
 
 
 --
--- TOC entry 3390 (class 0 OID 110095)
+-- TOC entry 3392 (class 0 OID 110095)
 -- Dependencies: 287
 -- Data for Name: functionslist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25542,7 +25539,7 @@ COPY functionslist (id, functionschema, functiontitle, fullname, descr, created,
 
 
 --
--- TOC entry 3852 (class 0 OID 0)
+-- TOC entry 3854 (class 0 OID 0)
 -- Dependencies: 288
 -- Name: functionslist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25551,7 +25548,7 @@ SELECT pg_catalog.setval('functionslist_id_seq', 6, true);
 
 
 --
--- TOC entry 3392 (class 0 OID 110107)
+-- TOC entry 3394 (class 0 OID 110107)
 -- Dependencies: 289
 -- Data for Name: queries; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25565,7 +25562,7 @@ COPY queries (id, userid, querytext, result, created, exectime) FROM stdin;
 
 
 --
--- TOC entry 3853 (class 0 OID 0)
+-- TOC entry 3855 (class 0 OID 0)
 -- Dependencies: 290
 -- Name: queries_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25574,7 +25571,7 @@ SELECT pg_catalog.setval('queries_id_seq', 23, true);
 
 
 --
--- TOC entry 3394 (class 0 OID 110116)
+-- TOC entry 3396 (class 0 OID 110116)
 -- Dependencies: 291
 -- Data for Name: schemalist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25589,7 +25586,7 @@ COPY schemalist (id, schemaname, schemadescr, created, userid, noscript) FROM st
 
 
 --
--- TOC entry 3854 (class 0 OID 0)
+-- TOC entry 3856 (class 0 OID 0)
 -- Dependencies: 292
 -- Name: schemalist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25598,7 +25595,7 @@ SELECT pg_catalog.setval('schemalist_id_seq', 6, true);
 
 
 --
--- TOC entry 3396 (class 0 OID 110127)
+-- TOC entry 3398 (class 0 OID 110127)
 -- Dependencies: 293
 -- Data for Name: schemaobjects; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25628,7 +25625,7 @@ COPY schemaobjects (id, oname, schemaname, linkurl) FROM stdin;
 
 
 --
--- TOC entry 3855 (class 0 OID 0)
+-- TOC entry 3857 (class 0 OID 0)
 -- Dependencies: 294
 -- Name: schemaobjects_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25637,7 +25634,7 @@ SELECT pg_catalog.setval('schemaobjects_id_seq', 42, true);
 
 
 --
--- TOC entry 3398 (class 0 OID 110136)
+-- TOC entry 3400 (class 0 OID 110136)
 -- Dependencies: 295
 -- Data for Name: tablecolumns; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25775,7 +25772,7 @@ COPY tablecolumns (id, tablename, colname, coldesc, coltype, size, accur, "notnu
 
 
 --
--- TOC entry 3856 (class 0 OID 0)
+-- TOC entry 3858 (class 0 OID 0)
 -- Dependencies: 296
 -- Name: tablecolumns_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25784,7 +25781,7 @@ SELECT pg_catalog.setval('tablecolumns_id_seq', 148, true);
 
 
 --
--- TOC entry 3400 (class 0 OID 110149)
+-- TOC entry 3402 (class 0 OID 110149)
 -- Dependencies: 297
 -- Data for Name: tableindexes; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25794,7 +25791,7 @@ COPY tableindexes (id, tablename, index_name, columns, typename, userid, created
 
 
 --
--- TOC entry 3857 (class 0 OID 0)
+-- TOC entry 3859 (class 0 OID 0)
 -- Dependencies: 298
 -- Name: tableindexes_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25803,7 +25800,7 @@ SELECT pg_catalog.setval('tableindexes_id_seq', 1, false);
 
 
 --
--- TOC entry 3402 (class 0 OID 110160)
+-- TOC entry 3404 (class 0 OID 110160)
 -- Dependencies: 299
 -- Data for Name: tablelist; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25883,7 +25880,7 @@ COPY tablelist (id, tableschemaname, tablename, fullname, descr, userid, created
 
 
 --
--- TOC entry 3858 (class 0 OID 0)
+-- TOC entry 3860 (class 0 OID 0)
 -- Dependencies: 300
 -- Name: tablelist_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25892,7 +25889,7 @@ SELECT pg_catalog.setval('tablelist_id_seq', 10, true);
 
 
 --
--- TOC entry 3404 (class 0 OID 110171)
+-- TOC entry 3406 (class 0 OID 110171)
 -- Dependencies: 301
 -- Data for Name: triggers; Type: TABLE DATA; Schema: sqlmanager; Owner: postgres
 --
@@ -25970,7 +25967,7 @@ COPY triggers (id, triggername, tablename, created, userid, functionname, functi
 
 
 --
--- TOC entry 3859 (class 0 OID 0)
+-- TOC entry 3861 (class 0 OID 0)
 -- Dependencies: 302
 -- Name: triggers_id_seq; Type: SEQUENCE SET; Schema: sqlmanager; Owner: postgres
 --
@@ -25981,7 +25978,7 @@ SELECT pg_catalog.setval('triggers_id_seq', 7, true);
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3406 (class 0 OID 110191)
+-- TOC entry 3408 (class 0 OID 110191)
 -- Dependencies: 303
 -- Data for Name: dictionary_for_select; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -25996,7 +25993,7 @@ COPY dictionary_for_select (id, dname, onemoreraltionid) FROM stdin;
 
 
 --
--- TOC entry 3860 (class 0 OID 0)
+-- TOC entry 3862 (class 0 OID 0)
 -- Dependencies: 304
 -- Name: dictionary_for_select_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -26005,7 +26002,7 @@ SELECT pg_catalog.setval('dictionary_for_select_id_seq', 5, true);
 
 
 --
--- TOC entry 3408 (class 0 OID 110196)
+-- TOC entry 3410 (class 0 OID 110196)
 -- Dependencies: 305
 -- Data for Name: fel; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -26015,7 +26012,7 @@ COPY fel (id, logdata, created) FROM stdin;
 
 
 --
--- TOC entry 3861 (class 0 OID 0)
+-- TOC entry 3863 (class 0 OID 0)
 -- Dependencies: 306
 -- Name: fel_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -26024,7 +26021,7 @@ SELECT pg_catalog.setval('fel_id_seq', 1, false);
 
 
 --
--- TOC entry 3410 (class 0 OID 110206)
+-- TOC entry 3412 (class 0 OID 110206)
 -- Dependencies: 307
 -- Data for Name: major_table; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -26037,7 +26034,7 @@ COPY major_table (id, text, data, "check", "time", password, color, multiselect,
 
 
 --
--- TOC entry 3862 (class 0 OID 0)
+-- TOC entry 3864 (class 0 OID 0)
 -- Dependencies: 308
 -- Name: major_table_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -26046,7 +26043,7 @@ SELECT pg_catalog.setval('major_table_id_seq', 34, true);
 
 
 --
--- TOC entry 3412 (class 0 OID 110216)
+-- TOC entry 3414 (class 0 OID 110216)
 -- Dependencies: 309
 -- Data for Name: onemorerelation; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -26058,7 +26055,7 @@ COPY onemorerelation (id, oname) FROM stdin;
 
 
 --
--- TOC entry 3863 (class 0 OID 0)
+-- TOC entry 3865 (class 0 OID 0)
 -- Dependencies: 310
 -- Name: onemorerelation_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -26067,7 +26064,7 @@ SELECT pg_catalog.setval('onemorerelation_id_seq', 2, true);
 
 
 --
--- TOC entry 3414 (class 0 OID 110221)
+-- TOC entry 3416 (class 0 OID 110221)
 -- Dependencies: 311
 -- Data for Name: relate_with_major; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -26077,7 +26074,7 @@ COPY relate_with_major (id, somecolumn, major_table_id, created) FROM stdin;
 
 
 --
--- TOC entry 3864 (class 0 OID 0)
+-- TOC entry 3866 (class 0 OID 0)
 -- Dependencies: 312
 -- Name: relate_with_major_id_seq; Type: SEQUENCE SET; Schema: test; Owner: postgres
 --
@@ -26086,7 +26083,7 @@ SELECT pg_catalog.setval('relate_with_major_id_seq', 2, true);
 
 
 --
--- TOC entry 3416 (class 0 OID 110227)
+-- TOC entry 3418 (class 0 OID 110227)
 -- Dependencies: 313
 -- Data for Name: testmanager; Type: TABLE DATA; Schema: test; Owner: postgres
 --
@@ -26296,7 +26293,7 @@ ALTER TABLE ONLY menus
 
 
 --
--- TOC entry 3022 (class 2606 OID 110377)
+-- TOC entry 3024 (class 2606 OID 110377)
 -- Name: spapi met_un_spap; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26359,7 +26356,16 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3024 (class 2606 OID 110391)
+-- TOC entry 3022 (class 2606 OID 110737)
+-- Name: sess sess_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
+--
+
+ALTER TABLE ONLY sess
+    ADD CONSTRAINT sess_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3026 (class 2606 OID 110391)
 -- Name: spapi spapi_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26368,7 +26374,7 @@ ALTER TABLE ONLY spapi
 
 
 --
--- TOC entry 3026 (class 2606 OID 110393)
+-- TOC entry 3028 (class 2606 OID 110393)
 -- Name: templates templates_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26377,7 +26383,7 @@ ALTER TABLE ONLY templates
 
 
 --
--- TOC entry 3028 (class 2606 OID 110395)
+-- TOC entry 3030 (class 2606 OID 110395)
 -- Name: templates templates_template_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26386,7 +26392,7 @@ ALTER TABLE ONLY templates
 
 
 --
--- TOC entry 3030 (class 2606 OID 110397)
+-- TOC entry 3032 (class 2606 OID 110397)
 -- Name: treesacts treesacts_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26395,7 +26401,7 @@ ALTER TABLE ONLY treesacts
 
 
 --
--- TOC entry 3032 (class 2606 OID 110399)
+-- TOC entry 3034 (class 2606 OID 110399)
 -- Name: treeviewtypes treeviewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26404,7 +26410,7 @@ ALTER TABLE ONLY treeviewtypes
 
 
 --
--- TOC entry 3035 (class 2606 OID 110401)
+-- TOC entry 3037 (class 2606 OID 110401)
 -- Name: views views_path_key; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26413,7 +26419,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 3037 (class 2606 OID 110403)
+-- TOC entry 3039 (class 2606 OID 110403)
 -- Name: views views_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26422,7 +26428,7 @@ ALTER TABLE ONLY views
 
 
 --
--- TOC entry 3039 (class 2606 OID 110405)
+-- TOC entry 3041 (class 2606 OID 110405)
 -- Name: viewtypes viewtypes_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26431,7 +26437,7 @@ ALTER TABLE ONLY viewtypes
 
 
 --
--- TOC entry 3041 (class 2606 OID 110407)
+-- TOC entry 3043 (class 2606 OID 110407)
 -- Name: visible_condition visible_condition_pkey; Type: CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -26442,7 +26448,7 @@ ALTER TABLE ONLY visible_condition
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3043 (class 2606 OID 110409)
+-- TOC entry 3045 (class 2606 OID 110409)
 -- Name: foreignkeys foreignkeys_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26451,7 +26457,7 @@ ALTER TABLE ONLY foreignkeys
 
 
 --
--- TOC entry 3045 (class 2606 OID 110411)
+-- TOC entry 3047 (class 2606 OID 110411)
 -- Name: functionargs functionargs_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26460,7 +26466,7 @@ ALTER TABLE ONLY functionargs
 
 
 --
--- TOC entry 3047 (class 2606 OID 110413)
+-- TOC entry 3049 (class 2606 OID 110413)
 -- Name: functionslist functionslist_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26469,7 +26475,7 @@ ALTER TABLE ONLY functionslist
 
 
 --
--- TOC entry 3049 (class 2606 OID 110415)
+-- TOC entry 3051 (class 2606 OID 110415)
 -- Name: queries queries_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26478,7 +26484,7 @@ ALTER TABLE ONLY queries
 
 
 --
--- TOC entry 3051 (class 2606 OID 110417)
+-- TOC entry 3053 (class 2606 OID 110417)
 -- Name: schemalist schemalist_id_key; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26487,7 +26493,7 @@ ALTER TABLE ONLY schemalist
 
 
 --
--- TOC entry 3053 (class 2606 OID 110419)
+-- TOC entry 3055 (class 2606 OID 110419)
 -- Name: schemaobjects schemaobjects_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26496,7 +26502,7 @@ ALTER TABLE ONLY schemaobjects
 
 
 --
--- TOC entry 3055 (class 2606 OID 110421)
+-- TOC entry 3057 (class 2606 OID 110421)
 -- Name: tablecolumns tablecolumns_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26505,7 +26511,7 @@ ALTER TABLE ONLY tablecolumns
 
 
 --
--- TOC entry 3057 (class 2606 OID 110423)
+-- TOC entry 3059 (class 2606 OID 110423)
 -- Name: tableindexes tableindexes_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26514,7 +26520,7 @@ ALTER TABLE ONLY tableindexes
 
 
 --
--- TOC entry 3059 (class 2606 OID 110425)
+-- TOC entry 3061 (class 2606 OID 110425)
 -- Name: tablelist tablelist_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26523,7 +26529,7 @@ ALTER TABLE ONLY tablelist
 
 
 --
--- TOC entry 3061 (class 2606 OID 110427)
+-- TOC entry 3063 (class 2606 OID 110427)
 -- Name: triggers triggers_pkey; Type: CONSTRAINT; Schema: sqlmanager; Owner: postgres
 --
 
@@ -26534,7 +26540,7 @@ ALTER TABLE ONLY triggers
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3063 (class 2606 OID 110429)
+-- TOC entry 3065 (class 2606 OID 110429)
 -- Name: dictionary_for_select dictionary_for_select_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26543,7 +26549,7 @@ ALTER TABLE ONLY dictionary_for_select
 
 
 --
--- TOC entry 3065 (class 2606 OID 110431)
+-- TOC entry 3067 (class 2606 OID 110431)
 -- Name: fel fel_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26552,7 +26558,7 @@ ALTER TABLE ONLY fel
 
 
 --
--- TOC entry 3068 (class 2606 OID 110433)
+-- TOC entry 3070 (class 2606 OID 110433)
 -- Name: major_table major_table_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26561,7 +26567,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 3070 (class 2606 OID 110435)
+-- TOC entry 3072 (class 2606 OID 110435)
 -- Name: onemorerelation onemorerelation_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26570,7 +26576,7 @@ ALTER TABLE ONLY onemorerelation
 
 
 --
--- TOC entry 3072 (class 2606 OID 110437)
+-- TOC entry 3074 (class 2606 OID 110437)
 -- Name: relate_with_major relate_with_major_pkey; Type: CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -26741,7 +26747,7 @@ CREATE INDEX select_condition_idx_sc ON framework.select_condition USING btree (
 
 
 --
--- TOC entry 3033 (class 1259 OID 110458)
+-- TOC entry 3035 (class 1259 OID 110458)
 -- Name: users_id_key; Type: INDEX; Schema: framework; Owner: postgres
 --
 
@@ -26751,7 +26757,7 @@ CREATE UNIQUE INDEX users_id_key ON framework.users USING btree (id);
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3066 (class 1259 OID 110459)
+-- TOC entry 3068 (class 1259 OID 110459)
 -- Name: major_table_idx_1; Type: INDEX; Schema: test; Owner: postgres
 --
 
@@ -26761,7 +26767,7 @@ CREATE INDEX major_table_idx_1 ON test.major_table USING btree (text, color);
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3108 (class 2620 OID 110460)
+-- TOC entry 3110 (class 2620 OID 110460)
 -- Name: act_parametrs act_parametrs_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26769,7 +26775,7 @@ CREATE TRIGGER act_parametrs_tr BEFORE INSERT OR UPDATE ON framework.act_paramet
 
 
 --
--- TOC entry 3109 (class 2620 OID 110461)
+-- TOC entry 3111 (class 2620 OID 110461)
 -- Name: actions actions_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26777,7 +26783,7 @@ CREATE TRIGGER actions_tr BEFORE INSERT OR UPDATE ON framework.actions FOR EACH 
 
 
 --
--- TOC entry 3110 (class 2620 OID 110462)
+-- TOC entry 3112 (class 2620 OID 110462)
 -- Name: actions actions_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26785,7 +26791,7 @@ CREATE TRIGGER actions_tr_del BEFORE DELETE ON framework.actions FOR EACH ROW EX
 
 
 --
--- TOC entry 3111 (class 2620 OID 110463)
+-- TOC entry 3113 (class 2620 OID 110463)
 -- Name: compoitems compoitems_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26793,7 +26799,7 @@ CREATE TRIGGER compoitems_tr_del AFTER DELETE ON framework.compoitems FOR EACH R
 
 
 --
--- TOC entry 3112 (class 2620 OID 110464)
+-- TOC entry 3114 (class 2620 OID 110464)
 -- Name: compoitems compoitems_tr_upd; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26801,7 +26807,7 @@ CREATE TRIGGER compoitems_tr_upd AFTER UPDATE ON framework.compoitems FOR EACH R
 
 
 --
--- TOC entry 3113 (class 2620 OID 110465)
+-- TOC entry 3115 (class 2620 OID 110465)
 -- Name: config config_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26809,8 +26815,8 @@ CREATE TRIGGER config_tr BEFORE UPDATE ON framework.config FOR EACH ROW EXECUTE 
 
 
 --
--- TOC entry 3865 (class 0 OID 0)
--- Dependencies: 3113
+-- TOC entry 3867 (class 0 OID 0)
+-- Dependencies: 3115
 -- Name: TRIGGER config_tr ON config; Type: COMMENT; Schema: framework; Owner: postgres
 --
 
@@ -26818,7 +26824,7 @@ COMMENT ON TRIGGER config_tr ON config IS 'config checks';
 
 
 --
--- TOC entry 3114 (class 2620 OID 110466)
+-- TOC entry 3116 (class 2620 OID 110466)
 -- Name: config config_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26826,7 +26832,7 @@ CREATE TRIGGER config_tr_del BEFORE DELETE ON framework.config FOR EACH ROW EXEC
 
 
 --
--- TOC entry 3115 (class 2620 OID 110467)
+-- TOC entry 3117 (class 2620 OID 110467)
 -- Name: config config_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26834,7 +26840,7 @@ CREATE TRIGGER config_tr_ins BEFORE INSERT ON framework.config FOR EACH ROW EXEC
 
 
 --
--- TOC entry 3116 (class 2620 OID 110468)
+-- TOC entry 3118 (class 2620 OID 110468)
 -- Name: dialog_messages dialog_messages_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26842,7 +26848,7 @@ CREATE TRIGGER dialog_messages_tr_ins BEFORE INSERT ON framework.dialog_messages
 
 
 --
--- TOC entry 3117 (class 2620 OID 110469)
+-- TOC entry 3119 (class 2620 OID 110469)
 -- Name: dialog_messages dialog_messages_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26850,7 +26856,7 @@ CREATE TRIGGER dialog_messages_tr_ins_after BEFORE INSERT ON framework.dialog_me
 
 
 --
--- TOC entry 3118 (class 2620 OID 110470)
+-- TOC entry 3120 (class 2620 OID 110470)
 -- Name: dialogs dialogs_tr_edit; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26858,7 +26864,7 @@ CREATE TRIGGER dialogs_tr_edit BEFORE UPDATE ON framework.dialogs FOR EACH ROW E
 
 
 --
--- TOC entry 3119 (class 2620 OID 110471)
+-- TOC entry 3121 (class 2620 OID 110471)
 -- Name: dialogs dialogs_tr_ins; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26866,7 +26872,7 @@ CREATE TRIGGER dialogs_tr_ins BEFORE INSERT ON framework.dialogs FOR EACH ROW EX
 
 
 --
--- TOC entry 3120 (class 2620 OID 110472)
+-- TOC entry 3122 (class 2620 OID 110472)
 -- Name: dialogs dialogs_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26874,7 +26880,7 @@ CREATE TRIGGER dialogs_tr_ins_after AFTER INSERT ON framework.dialogs FOR EACH R
 
 
 --
--- TOC entry 3121 (class 2620 OID 110473)
+-- TOC entry 3123 (class 2620 OID 110473)
 -- Name: filters filters_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26882,7 +26888,7 @@ CREATE TRIGGER filters_tr BEFORE INSERT OR UPDATE ON framework.filters FOR EACH 
 
 
 --
--- TOC entry 3122 (class 2620 OID 110474)
+-- TOC entry 3124 (class 2620 OID 110474)
 -- Name: menus menus_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26890,7 +26896,7 @@ CREATE TRIGGER menus_tr BEFORE INSERT OR UPDATE OF menutype, ismainmenu ON frame
 
 
 --
--- TOC entry 3123 (class 2620 OID 110475)
+-- TOC entry 3125 (class 2620 OID 110475)
 -- Name: menus menus_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26898,7 +26904,7 @@ CREATE TRIGGER menus_tr_del BEFORE DELETE ON framework.menus FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 3124 (class 2620 OID 110476)
+-- TOC entry 3126 (class 2620 OID 110476)
 -- Name: select_condition select_condition_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26906,7 +26912,7 @@ CREATE TRIGGER select_condition_tr BEFORE INSERT OR UPDATE ON framework.select_c
 
 
 --
--- TOC entry 3125 (class 2620 OID 110477)
+-- TOC entry 3127 (class 2620 OID 110477)
 -- Name: spapi spapi_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26914,7 +26920,7 @@ CREATE TRIGGER spapi_tr BEFORE INSERT OR UPDATE ON framework.spapi FOR EACH ROW 
 
 
 --
--- TOC entry 3126 (class 2620 OID 110478)
+-- TOC entry 3128 (class 2620 OID 110478)
 -- Name: trees trees_add_org; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26922,7 +26928,7 @@ CREATE TRIGGER trees_add_org AFTER INSERT OR UPDATE OF userid ON framework.trees
 
 
 --
--- TOC entry 3127 (class 2620 OID 110479)
+-- TOC entry 3129 (class 2620 OID 110479)
 -- Name: trees trees_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26930,7 +26936,7 @@ CREATE TRIGGER trees_tr_del BEFORE DELETE ON framework.trees FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 3128 (class 2620 OID 110480)
+-- TOC entry 3130 (class 2620 OID 110480)
 -- Name: treesbranches treesbranches_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26938,7 +26944,7 @@ CREATE TRIGGER treesbranches_tr BEFORE INSERT OR UPDATE OF viewid, compoid, isma
 
 
 --
--- TOC entry 3129 (class 2620 OID 110481)
+-- TOC entry 3131 (class 2620 OID 110481)
 -- Name: users users_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26946,7 +26952,7 @@ CREATE TRIGGER users_tr BEFORE INSERT OR UPDATE OF password, roles, orgs, userid
 
 
 --
--- TOC entry 3130 (class 2620 OID 110482)
+-- TOC entry 3132 (class 2620 OID 110482)
 -- Name: views views_tr_check; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26954,7 +26960,7 @@ CREATE TRIGGER views_tr_check BEFORE INSERT OR UPDATE ON framework.views FOR EAC
 
 
 --
--- TOC entry 3131 (class 2620 OID 110483)
+-- TOC entry 3133 (class 2620 OID 110483)
 -- Name: views views_tr_del; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26962,7 +26968,7 @@ CREATE TRIGGER views_tr_del BEFORE DELETE ON framework.views FOR EACH ROW EXECUT
 
 
 --
--- TOC entry 3132 (class 2620 OID 110484)
+-- TOC entry 3134 (class 2620 OID 110484)
 -- Name: views views_tr_ins_after; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26970,7 +26976,7 @@ CREATE TRIGGER views_tr_ins_after AFTER INSERT ON framework.views FOR EACH ROW E
 
 
 --
--- TOC entry 3133 (class 2620 OID 110485)
+-- TOC entry 3135 (class 2620 OID 110485)
 -- Name: visible_condition visible_condition_tr; Type: TRIGGER; Schema: framework; Owner: postgres
 --
 
@@ -26980,7 +26986,7 @@ CREATE TRIGGER visible_condition_tr BEFORE INSERT OR UPDATE ON framework.visible
 SET search_path = reports, pg_catalog;
 
 --
--- TOC entry 3134 (class 2620 OID 110486)
+-- TOC entry 3136 (class 2620 OID 110486)
 -- Name: reportlist reportlist_tr; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -26988,7 +26994,7 @@ CREATE TRIGGER reportlist_tr BEFORE UPDATE OF title, path, template, functitle, 
 
 
 --
--- TOC entry 3135 (class 2620 OID 110487)
+-- TOC entry 3137 (class 2620 OID 110487)
 -- Name: reportlist reportlist_tr_ins; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -26996,7 +27002,7 @@ CREATE TRIGGER reportlist_tr_ins BEFORE INSERT ON reports.reportlist FOR EACH RO
 
 
 --
--- TOC entry 3136 (class 2620 OID 110488)
+-- TOC entry 3138 (class 2620 OID 110488)
 -- Name: reportparams reportparams_tr; Type: TRIGGER; Schema: reports; Owner: postgres
 --
 
@@ -27006,7 +27012,7 @@ CREATE TRIGGER reportparams_tr BEFORE INSERT OR UPDATE ON reports.reportparams F
 SET search_path = sqlmanager, pg_catalog;
 
 --
--- TOC entry 3137 (class 2620 OID 110489)
+-- TOC entry 3139 (class 2620 OID 110489)
 -- Name: foreignkeys foreignkeys_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27014,7 +27020,7 @@ CREATE TRIGGER foreignkeys_tr_del BEFORE DELETE ON sqlmanager.foreignkeys FOR EA
 
 
 --
--- TOC entry 3138 (class 2620 OID 110490)
+-- TOC entry 3140 (class 2620 OID 110490)
 -- Name: foreignkeys foreignkeys_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27022,7 +27028,7 @@ CREATE TRIGGER foreignkeys_tr_ins BEFORE INSERT ON sqlmanager.foreignkeys FOR EA
 
 
 --
--- TOC entry 3139 (class 2620 OID 110491)
+-- TOC entry 3141 (class 2620 OID 110491)
 -- Name: foreignkeys foreignkeys_tr_maincol; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27030,7 +27036,7 @@ CREATE TRIGGER foreignkeys_tr_maincol BEFORE UPDATE OF parentablename, maincol, 
 
 
 --
--- TOC entry 3140 (class 2620 OID 110492)
+-- TOC entry 3142 (class 2620 OID 110492)
 -- Name: foreignkeys foreignkeys_tr_title; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27038,7 +27044,7 @@ CREATE TRIGGER foreignkeys_tr_title BEFORE UPDATE OF ftitle ON sqlmanager.foreig
 
 
 --
--- TOC entry 3141 (class 2620 OID 110493)
+-- TOC entry 3143 (class 2620 OID 110493)
 -- Name: functionslist functionslist_tr_args; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27046,7 +27052,7 @@ CREATE TRIGGER functionslist_tr_args BEFORE INSERT OR UPDATE OF args ON sqlmanag
 
 
 --
--- TOC entry 3142 (class 2620 OID 110494)
+-- TOC entry 3144 (class 2620 OID 110494)
 -- Name: functionslist functionslist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27054,7 +27060,7 @@ CREATE TRIGGER functionslist_tr_del BEFORE DELETE ON sqlmanager.functionslist FO
 
 
 --
--- TOC entry 3143 (class 2620 OID 110495)
+-- TOC entry 3145 (class 2620 OID 110495)
 -- Name: functionslist functionslist_tr_desc; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27062,7 +27068,7 @@ CREATE TRIGGER functionslist_tr_desc BEFORE UPDATE OF descr ON sqlmanager.functi
 
 
 --
--- TOC entry 3144 (class 2620 OID 110496)
+-- TOC entry 3146 (class 2620 OID 110496)
 -- Name: functionslist functionslist_tr_dll; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27072,7 +27078,7 @@ ALTER TABLE functionslist DISABLE TRIGGER functionslist_tr_dll;
 
 
 --
--- TOC entry 3145 (class 2620 OID 110497)
+-- TOC entry 3147 (class 2620 OID 110497)
 -- Name: functionslist functionslist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27080,7 +27086,7 @@ CREATE TRIGGER functionslist_tr_ins BEFORE INSERT ON sqlmanager.functionslist FO
 
 
 --
--- TOC entry 3146 (class 2620 OID 110498)
+-- TOC entry 3148 (class 2620 OID 110498)
 -- Name: functionslist functionslist_tr_upd; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27088,7 +27094,7 @@ CREATE TRIGGER functionslist_tr_upd BEFORE UPDATE OF functionschema, functiontit
 
 
 --
--- TOC entry 3147 (class 2620 OID 110499)
+-- TOC entry 3149 (class 2620 OID 110499)
 -- Name: queries queries_tr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27096,7 +27102,7 @@ CREATE TRIGGER queries_tr BEFORE INSERT OR UPDATE ON sqlmanager.queries FOR EACH
 
 
 --
--- TOC entry 3148 (class 2620 OID 110500)
+-- TOC entry 3150 (class 2620 OID 110500)
 -- Name: schemalist schemalist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27104,7 +27110,7 @@ CREATE TRIGGER schemalist_tr_del BEFORE DELETE ON sqlmanager.schemalist FOR EACH
 
 
 --
--- TOC entry 3149 (class 2620 OID 110501)
+-- TOC entry 3151 (class 2620 OID 110501)
 -- Name: schemalist schemalist_tr_descr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27112,7 +27118,7 @@ CREATE TRIGGER schemalist_tr_descr BEFORE UPDATE OF schemadescr ON sqlmanager.sc
 
 
 --
--- TOC entry 3150 (class 2620 OID 110502)
+-- TOC entry 3152 (class 2620 OID 110502)
 -- Name: schemalist schemalist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27120,7 +27126,7 @@ CREATE TRIGGER schemalist_tr_ins BEFORE INSERT ON sqlmanager.schemalist FOR EACH
 
 
 --
--- TOC entry 3151 (class 2620 OID 110503)
+-- TOC entry 3153 (class 2620 OID 110503)
 -- Name: schemalist schemalist_tr_name; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27128,7 +27134,7 @@ CREATE TRIGGER schemalist_tr_name BEFORE UPDATE OF schemaname ON sqlmanager.sche
 
 
 --
--- TOC entry 3152 (class 2620 OID 110504)
+-- TOC entry 3154 (class 2620 OID 110504)
 -- Name: tablecolumns tablecolumns_tr_accur; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27136,7 +27142,7 @@ CREATE TRIGGER tablecolumns_tr_accur BEFORE UPDATE OF accur ON sqlmanager.tablec
 
 
 --
--- TOC entry 3153 (class 2620 OID 110505)
+-- TOC entry 3155 (class 2620 OID 110505)
 -- Name: tablecolumns tablecolumns_tr_coldesc; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27144,7 +27150,7 @@ CREATE TRIGGER tablecolumns_tr_coldesc BEFORE UPDATE OF coldesc ON sqlmanager.ta
 
 
 --
--- TOC entry 3154 (class 2620 OID 110506)
+-- TOC entry 3156 (class 2620 OID 110506)
 -- Name: tablecolumns tablecolumns_tr_colname; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27152,7 +27158,7 @@ CREATE TRIGGER tablecolumns_tr_colname BEFORE UPDATE OF colname ON sqlmanager.ta
 
 
 --
--- TOC entry 3155 (class 2620 OID 110507)
+-- TOC entry 3157 (class 2620 OID 110507)
 -- Name: tablecolumns tablecolumns_tr_defval; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27160,7 +27166,7 @@ CREATE TRIGGER tablecolumns_tr_defval BEFORE UPDATE OF defval ON sqlmanager.tabl
 
 
 --
--- TOC entry 3156 (class 2620 OID 110508)
+-- TOC entry 3158 (class 2620 OID 110508)
 -- Name: tablecolumns tablecolumns_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27168,7 +27174,7 @@ CREATE TRIGGER tablecolumns_tr_del BEFORE DELETE ON sqlmanager.tablecolumns FOR 
 
 
 --
--- TOC entry 3157 (class 2620 OID 110509)
+-- TOC entry 3159 (class 2620 OID 110509)
 -- Name: tablecolumns tablecolumns_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27176,7 +27182,7 @@ CREATE TRIGGER tablecolumns_tr_ins BEFORE INSERT ON sqlmanager.tablecolumns FOR 
 
 
 --
--- TOC entry 3158 (class 2620 OID 110510)
+-- TOC entry 3160 (class 2620 OID 110510)
 -- Name: tablecolumns tablecolumns_tr_notnull; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27184,7 +27190,7 @@ CREATE TRIGGER tablecolumns_tr_notnull BEFORE UPDATE OF "notnull" ON sqlmanager.
 
 
 --
--- TOC entry 3159 (class 2620 OID 110511)
+-- TOC entry 3161 (class 2620 OID 110511)
 -- Name: tablecolumns tablecolumns_tr_size; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27192,7 +27198,7 @@ CREATE TRIGGER tablecolumns_tr_size BEFORE UPDATE OF size ON sqlmanager.tablecol
 
 
 --
--- TOC entry 3160 (class 2620 OID 110512)
+-- TOC entry 3162 (class 2620 OID 110512)
 -- Name: tablecolumns tablecolumns_tr_type; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27200,7 +27206,7 @@ CREATE TRIGGER tablecolumns_tr_type BEFORE UPDATE OF coltype ON sqlmanager.table
 
 
 --
--- TOC entry 3161 (class 2620 OID 110513)
+-- TOC entry 3163 (class 2620 OID 110513)
 -- Name: tablecolumns tablecolumns_tr_uniq; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27208,7 +27214,7 @@ CREATE TRIGGER tablecolumns_tr_uniq BEFORE UPDATE OF uniq ON sqlmanager.tablecol
 
 
 --
--- TOC entry 3162 (class 2620 OID 110514)
+-- TOC entry 3164 (class 2620 OID 110514)
 -- Name: tablelist tablelist_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27216,7 +27222,7 @@ CREATE TRIGGER tablelist_tr_del BEFORE DELETE ON sqlmanager.tablelist FOR EACH R
 
 
 --
--- TOC entry 3163 (class 2620 OID 110515)
+-- TOC entry 3165 (class 2620 OID 110515)
 -- Name: tablelist tablelist_tr_descr; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27224,7 +27230,7 @@ CREATE TRIGGER tablelist_tr_descr BEFORE UPDATE OF descr ON sqlmanager.tablelist
 
 
 --
--- TOC entry 3164 (class 2620 OID 110516)
+-- TOC entry 3166 (class 2620 OID 110516)
 -- Name: tablelist tablelist_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27232,7 +27238,7 @@ CREATE TRIGGER tablelist_tr_ins BEFORE INSERT ON sqlmanager.tablelist FOR EACH R
 
 
 --
--- TOC entry 3165 (class 2620 OID 110517)
+-- TOC entry 3167 (class 2620 OID 110517)
 -- Name: tablelist tablelist_tr_name; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27240,7 +27246,7 @@ CREATE TRIGGER tablelist_tr_name BEFORE UPDATE OF tablename ON sqlmanager.tablel
 
 
 --
--- TOC entry 3166 (class 2620 OID 110518)
+-- TOC entry 3168 (class 2620 OID 110518)
 -- Name: triggers triggers_tr_beforafter; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27248,7 +27254,7 @@ CREATE TRIGGER triggers_tr_beforafter BEFORE UPDATE OF onbefore, onafter ON sqlm
 
 
 --
--- TOC entry 3167 (class 2620 OID 110519)
+-- TOC entry 3169 (class 2620 OID 110519)
 -- Name: triggers triggers_tr_def; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27256,7 +27262,7 @@ CREATE TRIGGER triggers_tr_def BEFORE INSERT OR UPDATE OF functiondef ON sqlmana
 
 
 --
--- TOC entry 3168 (class 2620 OID 110520)
+-- TOC entry 3170 (class 2620 OID 110520)
 -- Name: triggers triggers_tr_def_upd; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27264,7 +27270,7 @@ CREATE TRIGGER triggers_tr_def_upd BEFORE UPDATE OF functiondef ON sqlmanager.tr
 
 
 --
--- TOC entry 3169 (class 2620 OID 110521)
+-- TOC entry 3171 (class 2620 OID 110521)
 -- Name: triggers triggers_tr_del; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27272,7 +27278,7 @@ CREATE TRIGGER triggers_tr_del BEFORE DELETE ON sqlmanager.triggers FOR EACH ROW
 
 
 --
--- TOC entry 3170 (class 2620 OID 110522)
+-- TOC entry 3172 (class 2620 OID 110522)
 -- Name: triggers triggers_tr_enabled; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27280,7 +27286,7 @@ CREATE TRIGGER triggers_tr_enabled BEFORE UPDATE OF enables ON sqlmanager.trigge
 
 
 --
--- TOC entry 3171 (class 2620 OID 110523)
+-- TOC entry 3173 (class 2620 OID 110523)
 -- Name: triggers triggers_tr_ins; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27288,7 +27294,7 @@ CREATE TRIGGER triggers_tr_ins BEFORE INSERT ON sqlmanager.triggers FOR EACH ROW
 
 
 --
--- TOC entry 3172 (class 2620 OID 110524)
+-- TOC entry 3174 (class 2620 OID 110524)
 -- Name: triggers triggers_tr_iudt; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27296,7 +27302,7 @@ CREATE TRIGGER triggers_tr_iudt BEFORE UPDATE OF oninsert, onupdate, ondelete, o
 
 
 --
--- TOC entry 3173 (class 2620 OID 110525)
+-- TOC entry 3175 (class 2620 OID 110525)
 -- Name: triggers triggers_tr_title; Type: TRIGGER; Schema: sqlmanager; Owner: postgres
 --
 
@@ -27306,7 +27312,7 @@ CREATE TRIGGER triggers_tr_title BEFORE UPDATE OF triggername ON sqlmanager.trig
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3174 (class 2620 OID 110526)
+-- TOC entry 3176 (class 2620 OID 110526)
 -- Name: major_table major_table_tr; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -27314,7 +27320,7 @@ CREATE TRIGGER major_table_tr BEFORE INSERT OR UPDATE OF text ON test.major_tabl
 
 
 --
--- TOC entry 3175 (class 2620 OID 110527)
+-- TOC entry 3177 (class 2620 OID 110527)
 -- Name: major_table major_table_tr_2; Type: TRIGGER; Schema: test; Owner: postgres
 --
 
@@ -27324,7 +27330,7 @@ CREATE TRIGGER major_table_tr_2 BEFORE UPDATE ON test.major_table FOR EACH ROW E
 SET search_path = framework, pg_catalog;
 
 --
--- TOC entry 3073 (class 2606 OID 110528)
+-- TOC entry 3075 (class 2606 OID 110528)
 -- Name: act_parametrs act_parametrs_fk_action; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27333,7 +27339,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 3074 (class 2606 OID 110533)
+-- TOC entry 3076 (class 2606 OID 110533)
 -- Name: act_parametrs act_parametrs_fk_confg; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27342,7 +27348,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 3075 (class 2606 OID 110538)
+-- TOC entry 3077 (class 2606 OID 110538)
 -- Name: act_parametrs act_parametrs_fk_qt; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27351,7 +27357,7 @@ ALTER TABLE ONLY act_parametrs
 
 
 --
--- TOC entry 3076 (class 2606 OID 110543)
+-- TOC entry 3078 (class 2606 OID 110543)
 -- Name: act_visible_condions act_visible_condions_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27360,7 +27366,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 3077 (class 2606 OID 110548)
+-- TOC entry 3079 (class 2606 OID 110548)
 -- Name: act_visible_condions act_visible_condions_fk1; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27369,7 +27375,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 3078 (class 2606 OID 110553)
+-- TOC entry 3080 (class 2606 OID 110553)
 -- Name: act_visible_condions act_visible_condions_fk_act; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27378,7 +27384,7 @@ ALTER TABLE ONLY act_visible_condions
 
 
 --
--- TOC entry 3079 (class 2606 OID 110558)
+-- TOC entry 3081 (class 2606 OID 110558)
 -- Name: actions actions_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27387,7 +27393,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3080 (class 2606 OID 110563)
+-- TOC entry 3082 (class 2606 OID 110563)
 -- Name: actions actions_fk_actype; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27396,7 +27402,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3081 (class 2606 OID 110568)
+-- TOC entry 3083 (class 2606 OID 110568)
 -- Name: actions actions_fk_apicalinme; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27405,7 +27411,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3082 (class 2606 OID 110573)
+-- TOC entry 3084 (class 2606 OID 110573)
 -- Name: actions actions_fk_apimeth; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27414,7 +27420,7 @@ ALTER TABLE ONLY actions
 
 
 --
--- TOC entry 3083 (class 2606 OID 110578)
+-- TOC entry 3085 (class 2606 OID 110578)
 -- Name: compoitems compoitems_fk_vi; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27423,7 +27429,7 @@ ALTER TABLE ONLY compoitems
 
 
 --
--- TOC entry 3084 (class 2606 OID 110583)
+-- TOC entry 3086 (class 2606 OID 110583)
 -- Name: config config_fk_ct; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27432,7 +27438,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 3085 (class 2606 OID 110588)
+-- TOC entry 3087 (class 2606 OID 110588)
 -- Name: config config_fk_view; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27441,7 +27447,7 @@ ALTER TABLE ONLY config
 
 
 --
--- TOC entry 3086 (class 2606 OID 110593)
+-- TOC entry 3088 (class 2606 OID 110593)
 -- Name: defaultval defaultval_fk_ao; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27450,7 +27456,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 3087 (class 2606 OID 110598)
+-- TOC entry 3089 (class 2606 OID 110598)
 -- Name: defaultval defaultval_fk_bo; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27459,7 +27465,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 3088 (class 2606 OID 110603)
+-- TOC entry 3090 (class 2606 OID 110603)
 -- Name: defaultval defaultval_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27468,7 +27474,7 @@ ALTER TABLE ONLY defaultval
 
 
 --
--- TOC entry 3089 (class 2606 OID 110608)
+-- TOC entry 3091 (class 2606 OID 110608)
 -- Name: dialog_messages dialog_messages_fk_userid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27477,7 +27483,7 @@ ALTER TABLE ONLY dialog_messages
 
 
 --
--- TOC entry 3090 (class 2606 OID 110613)
+-- TOC entry 3092 (class 2606 OID 110613)
 -- Name: filters filters_fk_c; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27486,7 +27492,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3091 (class 2606 OID 110618)
+-- TOC entry 3093 (class 2606 OID 110618)
 -- Name: filters filters_fk_ft; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27495,7 +27501,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3092 (class 2606 OID 110623)
+-- TOC entry 3094 (class 2606 OID 110623)
 -- Name: filters filters_fk_pos; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27504,7 +27510,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3093 (class 2606 OID 110628)
+-- TOC entry 3095 (class 2606 OID 110628)
 -- Name: filters filters_fk_vi; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27513,7 +27519,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- TOC entry 3094 (class 2606 OID 110633)
+-- TOC entry 3096 (class 2606 OID 110633)
 -- Name: mainmenu mainmenu_fk_mn; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27522,7 +27528,7 @@ ALTER TABLE ONLY mainmenu
 
 
 --
--- TOC entry 3095 (class 2606 OID 110638)
+-- TOC entry 3097 (class 2606 OID 110638)
 -- Name: mainsettings mainsettings_fk_template; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27531,7 +27537,7 @@ ALTER TABLE ONLY mainsettings
 
 
 --
--- TOC entry 3096 (class 2606 OID 110643)
+-- TOC entry 3098 (class 2606 OID 110643)
 -- Name: notifications notifications_fk_userid; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27540,7 +27546,7 @@ ALTER TABLE ONLY notifications
 
 
 --
--- TOC entry 3097 (class 2606 OID 110648)
+-- TOC entry 3099 (class 2606 OID 110648)
 -- Name: orgs orgs_fk_ot; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27549,7 +27555,7 @@ ALTER TABLE ONLY orgs
 
 
 --
--- TOC entry 3098 (class 2606 OID 110653)
+-- TOC entry 3100 (class 2606 OID 110653)
 -- Name: select_condition select_condition_fk; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27558,7 +27564,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3099 (class 2606 OID 110658)
+-- TOC entry 3101 (class 2606 OID 110658)
 -- Name: select_condition select_condition_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27567,7 +27573,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3100 (class 2606 OID 110663)
+-- TOC entry 3102 (class 2606 OID 110663)
 -- Name: select_condition select_condition_fk_valconf; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27576,7 +27582,7 @@ ALTER TABLE ONLY select_condition
 
 
 --
--- TOC entry 3101 (class 2606 OID 110668)
+-- TOC entry 3103 (class 2606 OID 110668)
 -- Name: visible_condition visible_condition_fk_config; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27585,7 +27591,7 @@ ALTER TABLE ONLY visible_condition
 
 
 --
--- TOC entry 3102 (class 2606 OID 110673)
+-- TOC entry 3104 (class 2606 OID 110673)
 -- Name: visible_condition visible_condition_fk_oper; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27594,7 +27600,7 @@ ALTER TABLE ONLY visible_condition
 
 
 --
--- TOC entry 3103 (class 2606 OID 110678)
+-- TOC entry 3105 (class 2606 OID 110678)
 -- Name: visible_condition visible_condition_fk_v; Type: FK CONSTRAINT; Schema: framework; Owner: postgres
 --
 
@@ -27605,7 +27611,7 @@ ALTER TABLE ONLY visible_condition
 SET search_path = test, pg_catalog;
 
 --
--- TOC entry 3104 (class 2606 OID 110683)
+-- TOC entry 3106 (class 2606 OID 110683)
 -- Name: dictionary_for_select dictionary_for_select_fk_or; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -27614,7 +27620,7 @@ ALTER TABLE ONLY dictionary_for_select
 
 
 --
--- TOC entry 3105 (class 2606 OID 110688)
+-- TOC entry 3107 (class 2606 OID 110688)
 -- Name: major_table major_table_seldic; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -27623,7 +27629,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 3106 (class 2606 OID 110693)
+-- TOC entry 3108 (class 2606 OID 110693)
 -- Name: major_table major_table_th; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -27632,7 +27638,7 @@ ALTER TABLE ONLY major_table
 
 
 --
--- TOC entry 3107 (class 2606 OID 110698)
+-- TOC entry 3109 (class 2606 OID 110698)
 -- Name: relate_with_major relate_with_major_tab_id; Type: FK CONSTRAINT; Schema: test; Owner: postgres
 --
 
@@ -27640,7 +27646,7 @@ ALTER TABLE ONLY relate_with_major
     ADD CONSTRAINT relate_with_major_tab_id FOREIGN KEY (major_table_id) REFERENCES major_table(id);
 
 
--- Completed on 2021-10-11 22:22:12
+-- Completed on 2021-12-06 07:52:59
 
 --
 -- PostgreSQL database dump complete
