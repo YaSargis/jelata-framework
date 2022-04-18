@@ -188,6 +188,7 @@ class Schema(BaseHandler):
 			pagination = result.get('pagination')
 			pagecount = result.get('pagecount')
 			ispagesize = result.get('ispagesize')
+			rmnu = result.get('rmnu')
 			isfoundcount = result.get('isfoundcount')
 			subscrible = result.get('subscrible')
 			orderby = result.get('orderby')
@@ -269,6 +270,9 @@ class Schema(BaseHandler):
 						
 					if 'isfoundcount' in data:
 						isfoundcount = data.get('isfoundcount')
+					
+					if 'rmnu' in data:
+						rmnu = data.get('rmnu')
 						
 					if 'subscrible' in data:
 						subscrible = data.get('subscrible')
@@ -304,7 +308,7 @@ class Schema(BaseHandler):
 				'foundcount': count, 'data': data, 'config': config, 'filters': filters, 'acts': acts, 
 				'classname': classname, 'title': title, 'viewtype': result.get('viewtype'), 'pagination': pagination, 
 				'ispagecount': pagecount, 'ispagesize': ispagesize, 'isfoundcount': isfoundcount, 'subscrible': subscrible,
-				'isorderby': orderby, 'viewid': result.get('id'), 'checker': checker, 'user':user
+				'isorderby': orderby, 'viewid': result.get('id'), 'checker': checker, 'user':user, 'rmnu': rmnu
 			}))
 
 		elif method == 'getone':
