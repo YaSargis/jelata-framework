@@ -7,7 +7,7 @@
     "body-parser": "^1.18.3",
     "convertapi": "^1.4.0",
     "docxtemplater": "^1.0.8",
-    "express": "^4.13.4",
+    "express": "^4.17.3",
     "path": "^0.12.7",
     "xlsx-template": "^0.3.1"
   },
