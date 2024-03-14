@@ -5,7 +5,7 @@
 -- Dumped from database version 9.6.20
 -- Dumped by pg_dump version 9.6.0
 
--- Started on 2022-10-31 02:27:20
+-- Started on 2022-10-31 21:06:21
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -22237,12 +22237,12 @@ COPY act_parametrs (id, actionid, paramtitle, paramt, paramconst, paraminput, pa
 128	12516	_sub_title	\N	\N	\N	\N	\N	query	2021-06-27 23:50:32.161386	1
 129	12516	viewid	\N	\N	\N	\N	\N	query	2021-06-27 23:50:32.161386	1
 130	12517	CN	\N	-1	\N	\N	\N	query	2021-06-27 23:50:32.161386	1
-131	12517	configid	\N		\N	\N	\N	query	2021-06-27 23:50:32.161386	1
 132	12517	prev_title	\N	\N	_doctitle_	\N	\N	query	2021-06-27 23:50:32.161386	1
 133	12517	relation	\N	configid	\N	\N	\N	query	2021-06-27 23:50:32.161386	1
-134	12517	_sub_title	\N		\N	\N	\N	query	2021-06-27 23:50:32.161386	1
 135	12517	viewid	\N	\N	\N	\N	\N	query	2021-06-27 23:50:32.161386	1
 136	12524	id	\N	\N	\N	\N	602248	query	2021-06-27 23:51:44.690926	1
+131	12517	configid	\N		\N	\N	602209	query	2021-06-27 23:50:32.161386	1
+134	12517	_sub_title	\N	\N	\N	\N	602223	query	2021-06-27 23:50:32.161386	1
 \.
 
 
@@ -22651,6 +22651,7 @@ COPY actions (id, column_order, title, viewid, icon, classname, act_url, api_met
 12528	1	menu item1	215	line	primary	/	\N	\N	f	f	[]	f	f	2022-10-30 14:41:26.275404	Link	f	2	\N
 12529	1	menu child 2	215	line	primary	/	\N	\N	f	f	[]	f	f	2022-10-30 14:42:18.331096	Link	f	2	12528
 12531	3	menu item1	220	close	primary	/	\N	\N	f	f	[]	f	f	2022-10-31 02:18:24.753212	Link	f	2	\N
+12532	4	menu item2	220	github	primary	/	\N	\N	f	f	[]	f	f	2022-10-31 19:40:20.344287	Link	f	2	\N
 \.
 
 
@@ -22660,7 +22661,7 @@ COPY actions (id, column_order, title, viewid, icon, classname, act_url, api_met
 -- Name: actions_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('actions_id_seq', 12531, true);
+SELECT pg_catalog.setval('actions_id_seq', 12532, true);
 
 
 --
@@ -24172,7 +24173,7 @@ COPY logtable (id, tablename, tableid, opertype, oldata, newdata, created, colna
 -- Name: logtable_id_seq; Type: SEQUENCE SET; Schema: framework; Owner: postgres
 --
 
-SELECT pg_catalog.setval('logtable_id_seq', 537, true);
+SELECT pg_catalog.setval('logtable_id_seq', 544, true);
 
 
 --
@@ -26290,9 +26291,9 @@ SELECT pg_catalog.setval('fel_id_seq', 1, false);
 --
 
 COPY major_table (id, text, data, "check", "time", password, color, multiselect, file, typehead, image, images, gallery, label, number, link, texteditor, colorrow, multitypehead_api, multi_select_api, colorpicker, "select", autocomplete, textarea, files, typehead_api, select_api, multitypehead, datetime, html, rate, diagram, tags) FROM stdin;
-30	\N	\N	\N	\N	d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f	#ff0000	\N	\N	\N	\N	\N	\N	\N	1	{"title" : null, "link" : "/view/1"}	\N	#ff0000	\N	\N	ff0000	\N	\N	\N	\N	\N	\N	\N	\N	\N	0.5	{}	[]
 33	123	\N	\N	\N	d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f	#ff0000	\N	\N	\N	\N	\N	\N	123	\N	{"title" : "123", "link" : "/view/"}	\N	#ff0000	\N	\N	ff0000	\N	\N	\N	\N	\N	\N	\N	\N	\N	5.0	{}	[]
 34	12	2020-05-29	t	19:34:00	d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f	#2f00ff	\N	\N	1	\N	\N	\N	12	1123	{"title" : "12", "link" : "/view/1123"}	\N	#2f00ff	[1, 3]	[1, 2]	2f00ff	2	\N	\N	[{"src": "http://127.0.0.1:8080/files/8d2c72c4-9704-4153-8ec9-e7a97e5d0e65flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", "uri": "/files/8d2c72c4-9704-4153-8ec9-e7a97e5d0e65flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", "size": 100504, "filename": "flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", "original": "http://127.0.0.1:8080/files/8d2c72c4-9704-4153-8ec9-e7a97e5d0e65flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", "thumbnail": "http://127.0.0.1:8080/files/8d2c72c4-9704-4153-8ec9-e7a97e5d0e65flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2", "content_type": "application/octet-stream", "thumbnailWidth": 100, "thumbnailHeight": 100}]	\N	\N	\N	2020-06-19 19:35:00	\N	2.0	{}	[]
+30	\N	\N	\N	\N	d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f	#ff0000	\N	\N	\N	\N	\N	\N	\N	1	{"title" : "MODAL", "link" : "/list/views", "target":"modal"}	\N	#ff0000	\N	\N	ff0000	\N	\N	\N	\N	\N	\N	\N	\N	\N	0.5	{}	[]
 \.
 
 
@@ -27960,7 +27961,7 @@ ALTER TABLE ONLY relate_with_major
     ADD CONSTRAINT relate_with_major_tab_id FOREIGN KEY (major_table_id) REFERENCES major_table(id);
 
 
--- Completed on 2022-10-31 02:27:33
+-- Completed on 2022-10-31 21:06:34
 
 --
 -- PostgreSQL database dump complete

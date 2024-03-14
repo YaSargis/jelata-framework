@@ -6,7 +6,7 @@ from tornado import gen, websocket
 from libs.basehandler import BaseHandler
 from settings import maindomain, primaryAuthorization
 from libs.service_functions import showError, log, default_headers
-import subprocess
+#import subprocess
 
 
 class WebSocketViews(websocket.WebSocketHandler, BaseHandler):
@@ -23,7 +23,7 @@ class WebSocketViews(websocket.WebSocketHandler, BaseHandler):
 			self.write_message('{"error":"wrong data"}')
 			return	
 
-		log('ws', 'message:' + str(message))
+		#log('ws', 'message:' + str(message))
 		#print('self.sending', self.opened)
 		viewpath = message.get('viewpath')
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')
@@ -59,7 +59,7 @@ class WebSocketViews(websocket.WebSocketHandler, BaseHandler):
 
 	def on_close(self):
 		#print('Connection closed')
-		log('ws_closed', 'SUCCESS 1')
+		#log('ws_closed', 'SUCCESS 1')
 		self.opened = False
 		#print('self.sending', self.opened)
 		self.stream.close()
@@ -76,8 +76,8 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 		default_headers(self)
 	@gen.coroutine		
 	def on_message(self, message):
-		log('ws_global', 'message:' + str(message))
-		subprocess.run(['ss --tcp state CLOSE-WAIT --kill'], shell=True)
+		#log('ws_global', 'message:' + str(message))
+		#subprocess.run(['ss --tcp state CLOSE-WAIT --kill'], shell=True)
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')
 		#print('ws sesid:', sesid)
 		squery = '''
@@ -106,7 +106,7 @@ class WebSocketGlobal(websocket.WebSocketHandler, BaseHandler):
 
 	def on_close(self):
 		#print('Connection closed')
-		log('ws_closed', 'SUCCESS 2')
+		#log('ws_closed', 'SUCCESS 2')
 		self.opened = False
 		#print('self.sending', self.opened)
 		self.close()
@@ -130,7 +130,7 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 			self.write_message('{"error":"wrong data"}')
 			return		
 
-		log('ws_messages_chats', 'message:' + str(message))
+		#log('ws_messages_chats', 'message:' + str(message))
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')
 		
 		squery = '''
@@ -158,7 +158,7 @@ class WebSocketMessages(websocket.WebSocketHandler, BaseHandler):
 
 	def on_close(self):
 		#print('Connection closed')
-		log('ws_closed', 'SUCCESS 3')
+		#log('ws_closed', 'SUCCESS 3')
 		self.opened = False
 		#print('self.sending', self.opened)
 		self.close()
@@ -180,7 +180,7 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 		except Exception as e:
 			self.write_message('{"error":"wrong data"}')
 			return		
-		log('ws_messages', 'message:' + str(message))
+		#log('ws_messages', 'message:' + str(message))
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')
 		
 		squery = "select * from framework.fn_fapi(injson:=%s,apititle:='chats_messages',apitype:='1',sessid:=%s,primaryauthorization:=%s)"
@@ -205,7 +205,7 @@ class WebSocketMessageNotifications(websocket.WebSocketHandler, BaseHandler):
 
 	def on_close(self):
 		#print('Connection closed')
-		log('ws_closed', 'SUCCESS 4')
+		#log('ws_closed', 'SUCCESS 4')
 		self.opened = False
 		#print('self.sending', self.opened)
 		self.close()

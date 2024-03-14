@@ -107,7 +107,7 @@ def onRequest(self, url, type):
 	self.set_header("Content-Type",'application/json charset="utf-8"')
 	self.write(dumps(result, indent=4, default=lambda x:str(x),ensure_ascii=False))
 	self.set_status(200,None)	
-	self.finish()
+
 
 @gen.coroutine		
 def onFileUpload(self, url, type):
@@ -150,8 +150,7 @@ def onFileUpload(self, url, type):
 	self.set_header('Content-Type','application/json charset="utf-8"')
 	self.write(dumps(value, indent=4, default=lambda x:str(x),ensure_ascii=False))
 	self.set_status(200,None)	
-	self.finish()
-	
+
 	
 class FApi(BaseHandler):
 	'''
@@ -185,7 +184,7 @@ class UploadFiles(BaseHandler):
 
 	def options(self,url):
 		self.set_status(200,None)
-		self.finish()
+
 	@gen.coroutine		
 	def post(self, url):
 		yield onFileUpload(self,url,2)

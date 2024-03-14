@@ -103,7 +103,7 @@ def Report(self, url):
 		self.set_header('Content-Description', 'File Transfer')
 		self.write(req.body)
 	self.set_status(200)
-	self.finish()
+	
 
 class Reporter(BaseHandler):
 	"""
@@ -114,7 +114,7 @@ class Reporter(BaseHandler):
 
 	def options(self,url):
 		self.set_status(200,None)
-		self.finish()
+		
 		
 	@gen.coroutine		
 	def get(self, url):

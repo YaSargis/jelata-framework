@@ -116,12 +116,8 @@ def showError(err,self):
 		self.write('{"message":"access denied"}')
 		self.set_status(403,None)
 		return
-	elif err.find("\n") == -1:		
-		self.write('{"message":"' + err.replace('"','\\"') + '"}')
-		self.set_status(500,None)	
-		return
-	else:
-		self.write('{"message":"unknown error ' + err.replace('"','\\"')  + ' "}')
+	else:		
+		self.write(dumps({'message': err}))
 		self.set_status(500,None)	
 		return
 

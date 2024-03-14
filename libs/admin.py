@@ -233,7 +233,7 @@ class Log(BaseHandler):
 		
 		
 		self.write(dumps(res_json))
-		return
+		
 
 class CSS(BaseHandler):
 	def set_default_headers(self):
@@ -280,7 +280,7 @@ class CSS(BaseHandler):
 			return	
 		
 		self.write('{"message":"OK"}')
-		return
+		
 	
 	@gen.coroutine
 	def put(self, url):
@@ -328,5 +328,5 @@ class CSS(BaseHandler):
 			return	'''
 		
 		self.write('{"message":"OK"}')
-		return
+		
 		
