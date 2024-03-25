@@ -87,7 +87,7 @@ class Schema(BaseHandler):
 
 		method = url[7:].replace('/','').lower()
 		sesid = self.get_cookie('sesid') or self.request.headers.get('Auth')	#get session id cookie
-		log(url, 'path: '+ path + '; body: ' + str(body) + ' sessid:' + str(sesid) )
+		#log(url, 'path: '+ path + '; body: ' + str(body) + ' sessid:' + str(sesid) )
 
 		if primaryAuthorization == '1' and sesid is None:
 			self.set_status(401,None)
@@ -204,6 +204,7 @@ class Schema(BaseHandler):
 					data = yield self.db.execute(squery)
 				except Exception as e:
 					showError(str(e), self)
+					log(url + '_query', squery)
 					log(url + '_Error', str(e))
 					return
 
@@ -226,7 +227,7 @@ class Schema(BaseHandler):
 					url = req_url,
 					body = dumps(body),
 					method = 'POST',
-					headers = {'Cookie':'sesid=' + sesid}
+					headers = {'Cookie': self.request.headers.get('Cookie')}
 				)
 				try:
 					response = yield http_client.fetch(req)
@@ -405,7 +406,15 @@ class Schema(BaseHandler):
 					log(url + '_Error', str(e))
 					return
 
-				data = curtojson([x for x in data],[x[0] for x in data.description])
+				#xx  = [x for x in data]
+				#for x in data.description:
+				#	print('x:', x)
+				try:
+					data = curtojson([x for x in data],[x[0] for x in data.description])
+				except Exception as e:
+					showError(str(e), self)
+					log(url + '_Error_dataparse err:', str(e) + ' squery: ' + squery)
+					return
 			else:
 				req_url = result.get('tablename')
 				if req_url[:4] != 'http':
@@ -414,7 +423,7 @@ class Schema(BaseHandler):
 					url = req_url,
 					body = dumps(body),
 					method = 'POST',
-					headers = {'Cookie':'sesid=' + sesid}
+					headers = {'Cookie':self.request.headers.get('Cookie')}
 				)
 				try:
 					response = yield http_client.fetch(req)
