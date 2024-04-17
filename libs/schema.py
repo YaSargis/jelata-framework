@@ -6,9 +6,10 @@ from libs.sql_migration import getList
 from libs.service_functions import showError, default_headers, curtojson, log
 from settings import primaryAuthorization, developerRole, maindomain
 
-
 AsyncHTTPClient.configure('tornado.simple_httpclient.SimpleAsyncHTTPClient', max_clients=1000)
 http_client =  AsyncHTTPClient()
+
+
 class Schema(BaseHandler):
 	'''
 		for SQL query build methods
@@ -23,7 +24,6 @@ class Schema(BaseHandler):
 	@gen.coroutine	
 	def get(self, url):
 		args = self.request.arguments
-		
 		for k in args:
 			args[k] = args.get(k)[0].decode('utf-8')
 		
@@ -227,7 +227,7 @@ class Schema(BaseHandler):
 					url = req_url,
 					body = dumps(body),
 					method = 'POST',
-					headers = {'Cookie': self.request.headers.get('Cookie')}
+					headers = {'Cookie': ( self.request.headers.get('Cookie') or '') + '; sesid=' + sesid }
 				)
 				try:
 					response = yield http_client.fetch(req)
@@ -286,6 +286,7 @@ class Schema(BaseHandler):
 						
 					if 'outjson' in data:
 						data = data.get('outjson')
+
 				else:
 					data = []
 				useroles = userdetail.get('roles') or []
@@ -423,7 +424,7 @@ class Schema(BaseHandler):
 					url = req_url,
 					body = dumps(body),
 					method = 'POST',
-					headers = {'Cookie':self.request.headers.get('Cookie')}
+					headers = {'Cookie': ( self.request.headers.get('Cookie') or '') + '; sesid=' + sesid }
 				)
 				try:
 					response = yield http_client.fetch(req)
@@ -457,6 +458,7 @@ class Schema(BaseHandler):
 
 					if 'outjson' in data:
 						data = data.get('outjson')
+
 				else:
 					data = []
 				useroles = userdetail.get('roles') or []
